@@ -370,6 +370,17 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
 }
 
 #
+# cells_get_set_cell_html_string test
+#
+{
+    my $name = $BOOK1; # replace NULL with a proper value
+    my $sheet_name = $SHEET1; # replace NULL with a proper value
+    my $cell_name = $CELLNAME; # replace NULL with a proper value
+    my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    my $result = $api->cells_get_cell_html_string(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder);
+    is_undef($result)
+}
+#
 # cells_post_set_cell_html_string test
 #
 {

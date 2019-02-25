@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**cells_delete_worksheet_columns**](CellsApi.md#cells_delete_worksheet_columns) | **DELETE** /cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex} | Delete worksheet columns.
 [**cells_delete_worksheet_row**](CellsApi.md#cells_delete_worksheet_row) | **DELETE** /cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex} | Delete worksheet row.
 [**cells_delete_worksheet_rows**](CellsApi.md#cells_delete_worksheet_rows) | **DELETE** /cells/{name}/worksheets/{sheetName}/cells/rows | Delete several worksheet rows.
+[**cells_get_cell_html_string**](CellsApi.md#cells_get_cell_html_string) | **GET** /cells/{name}/worksheets/{sheetName}/cells/{cellName}/htmlstring | Read cell data by cell&#39;s name.
 [**cells_get_worksheet_cell**](CellsApi.md#cells_get_worksheet_cell) | **GET** /cells/{name}/worksheets/{sheetName}/cells/{cellOrMethodName} | Read cell data by cell&#39;s name.
 [**cells_get_worksheet_cell_style**](CellsApi.md#cells_get_worksheet_cell_style) | **GET** /cells/{name}/worksheets/{sheetName}/cells/{cellName}/style | Read cell&#39;s style info.
 [**cells_get_worksheet_cells**](CellsApi.md#cells_get_worksheet_cells) | **GET** /cells/{name}/worksheets/{sheetName}/cells | Get cells info.
@@ -202,6 +203,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SaaSposeResponse**](SaaSposeResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cells_get_cell_html_string**
+> object cells_get_cell_html_string(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage => $storage)
+
+Read cell data by cell's name.
+
+### Example 
+```perl
+use Data::Dumper;
+use AsposeCellsCloud::CellsApi;
+my $api_instance = AsposeCellsCloud::CellsApi->new(
+);
+
+my $name = 'name_example'; # string | Document name.
+my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
+my $cell_name = 'cell_name_example'; # string | The cell's  name.
+my $folder = 'folder_example'; # string | Document's folder.
+my $storage = 'storage_example'; # string | storage name.
+
+eval { 
+    my $result = $api_instance->cells_get_cell_html_string(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage => $storage);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling CellsApi->cells_get_cell_html_string: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| Document name. | 
+ **sheet_name** | **string**| Worksheet name. | 
+ **cell_name** | **string**| The cell&#39;s  name. | 
+ **folder** | **string**| Document&#39;s folder. | [optional] 
+ **storage** | **string**| storage name. | [optional] 
+
+### Return type
+
+**object**
 
 ### Authorization
 

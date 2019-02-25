@@ -2487,11 +2487,17 @@ sub cells_workbook_post_workbooks_text_search {
 #
 # Convert workbook from request content to some format.
 # 
+# @param string $workbook  (required)
 # @param string $format The format to convert. (optional)
 # @param string $password The workbook password. (optional)
 # @param string $out_path Path to save result (optional)
 {
     my $params = {
+    'workbook' => {
+        data_type => 'string',
+        description => '',
+        required => '1',
+    },
     'format' => {
         data_type => 'string',
         description => 'The format to convert.',
@@ -2518,6 +2524,11 @@ sub cells_workbook_post_workbooks_text_search {
 #
 sub cells_workbook_put_convert_workbook {
     my ($self, %args) = @_;
+
+    # verify the required parameter 'workbook' is set
+    unless (exists $args{'workbook'}) {
+      croak("Missing the required parameter 'workbook' when calling cells_workbook_put_convert_workbook");
+    }
 
     # parse inputs
     my $_resource_path = '/cells/convert';
@@ -2550,6 +2561,11 @@ sub cells_workbook_put_convert_workbook {
     }
 
     my $_body_data;
+    # body params
+    if ( exists $args{'workbook'}) {
+        $_body_data = $args{'workbook'};
+    }
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

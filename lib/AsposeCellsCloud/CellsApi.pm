@@ -476,6 +476,131 @@ sub cells_delete_worksheet_rows {
 }
 
 #
+# cells_get_cell_html_string
+#
+# Read cell data by cell's name.
+# 
+# @param string $name Document name. (required)
+# @param string $sheet_name Worksheet name. (required)
+# @param string $cell_name The cell&#39;s  name. (required)
+# @param string $folder Document&#39;s folder. (optional)
+# @param string $storage storage name. (optional)
+{
+    my $params = {
+    'name' => {
+        data_type => 'string',
+        description => 'Document name.',
+        required => '1',
+    },
+    'sheet_name' => {
+        data_type => 'string',
+        description => 'Worksheet name.',
+        required => '1',
+    },
+    'cell_name' => {
+        data_type => 'string',
+        description => 'The cell&#39;s  name.',
+        required => '1',
+    },
+    'folder' => {
+        data_type => 'string',
+        description => 'Document&#39;s folder.',
+        required => '0',
+    },
+    'storage' => {
+        data_type => 'string',
+        description => 'storage name.',
+        required => '0',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'cells_get_cell_html_string' } = { 
+    	summary => 'Read cell data by cell&#39;s name.',
+        params => $params,
+        returns => 'object',
+        };
+}
+# @return object
+#
+sub cells_get_cell_html_string {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'name' is set
+    unless (exists $args{'name'}) {
+      croak("Missing the required parameter 'name' when calling cells_get_cell_html_string");
+    }
+
+    # verify the required parameter 'sheet_name' is set
+    unless (exists $args{'sheet_name'}) {
+      croak("Missing the required parameter 'sheet_name' when calling cells_get_cell_html_string");
+    }
+
+    # verify the required parameter 'cell_name' is set
+    unless (exists $args{'cell_name'}) {
+      croak("Missing the required parameter 'cell_name' when calling cells_get_cell_html_string");
+    }
+
+    # parse inputs
+    my $_resource_path = '/cells/{name}/worksheets/{sheetName}/cells/{cellName}/htmlstring';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # query params
+    if ( exists $args{'folder'}) {
+        $query_params->{'folder'} = $self->{api_client}->to_query_value($args{'folder'});
+    }
+
+    # query params
+    if ( exists $args{'storage'}) {
+        $query_params->{'storage'} = $self->{api_client}->to_query_value($args{'storage'});
+    }
+
+    # path params
+    if ( exists $args{'name'}) {
+        my $_base_variable = "{" . "name" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'name'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    # path params
+    if ( exists $args{'sheet_name'}) {
+        my $_base_variable = "{" . "sheetName" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'sheet_name'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    # path params
+    if ( exists $args{'cell_name'}) {
+        my $_base_variable = "{" . "cellName" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'cell_name'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw()];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('object', $response);
+    return $_response_object;
+}
+
+#
 # cells_get_worksheet_cell
 #
 # Read cell data by cell's name.

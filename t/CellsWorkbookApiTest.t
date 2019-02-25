@@ -314,10 +314,20 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
 # cells_workbook_put_convert_workbook test
 #
 {
-    my $format = 'xlsx'; # replace NULL with a proper value
+    my $format = 'pdf'; # replace NULL with a proper value
     my $password = undef; # replace NULL with a proper value
     my $out_path = undef; # replace NULL with a proper value
-    $result = $api->cells_workbook_put_convert_workbook(format => $format, password => $password, out_path => $out_path);
+    my $Book1_data =undef;
+    my @fileinfos = stat("D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx");
+    my $filelength = @fileinfos[7];
+    print $filelength;
+    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx") or die "file.txt 文件无法打开, $!";
+    binmode(DATA);
+    # while( read (DATA, $Book1_data, 8)) {};
+    read (DATA, $Book1_data, $filelength);
+    close (DATA);
+    print "read file.";
+    $result = $api->cells_workbook_put_convert_workbook( workbook => $Book1_data, format => $format, password => $password, out_path => $out_path);
 }
 
 #

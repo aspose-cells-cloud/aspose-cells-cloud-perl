@@ -1204,7 +1204,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_put_convert_workbook**
-> string cells_workbook_put_convert_workbook(format => $format, password => $password, out_path => $out_path)
+> string cells_workbook_put_convert_workbook(workbook => $workbook, format => $format, password => $password, out_path => $out_path)
 
 Convert workbook from request content to some format.
 
@@ -1215,12 +1215,13 @@ use AsposeCellsCloud::CellsWorkbookApi;
 my $api_instance = AsposeCellsCloud::CellsWorkbookApi->new(
 );
 
+my $workbook = AsposeCellsCloud::Object::string->new(); # string | 
 my $format = 'format_example'; # string | The format to convert.
 my $password = 'password_example'; # string | The workbook password.
 my $out_path = 'out_path_example'; # string | Path to save result
 
 eval { 
-    my $result = $api_instance->cells_workbook_put_convert_workbook(format => $format, password => $password, out_path => $out_path);
+    my $result = $api_instance->cells_workbook_put_convert_workbook(workbook => $workbook, format => $format, password => $password, out_path => $out_path);
     print Dumper($result);
 };
 if ($@) {
@@ -1232,6 +1233,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **workbook** | **string**|  | 
  **format** | **string**| The format to convert. | [optional] 
  **password** | **string**| The workbook password. | [optional] 
  **out_path** | **string**| Path to save result | [optional] 

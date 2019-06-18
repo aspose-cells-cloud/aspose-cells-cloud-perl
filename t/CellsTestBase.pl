@@ -45,8 +45,8 @@ sub get_client
     my $oauth_api = AsposeCellsCloud::OAuthApi->new($client);
 
     my $grant_type = 'client_credentials'; # replace NULL with a proper value
-    my $client_id = 'xxxxxx-xxx-xxxx-xxxx-xxxxxxxxx'; # replace NULL with a proper value
-    my $client_secret =  'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'; # replace NULL with a proper value
+    my $client_id = '66164C51-693E-4904-A121-545961673EC1'; # replace NULL with a proper value
+    my $client_secret =  '536e76768419db9585afdd37bb5f7533'; # replace NULL with a proper value
     my $result = $oauth_api->o_auth_post(grant_type => $grant_type, client_id => $client_id, client_secret => $client_secret);
     my $access_token  = $result->access_token;
 

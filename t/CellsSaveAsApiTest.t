@@ -66,4 +66,23 @@ isa_ok($api, 'AsposeCellsCloud::CellsSaveAsApi');
 }
 
 
+#
+# cells_save_as_post_document_save_as md test
+#
+{
+    my $name = $BOOK1; # replace NULL with a proper value
+    my $save_options = undef; # replace NULL with a proper value
+    my $newfilename = 'newbook.md'; # replace NULL with a proper value
+    my $is_auto_fit_rows = 'true'; # replace NULL with a proper value
+    my $is_auto_fit_columns = 'true'; # replace NULL with a proper value
+    my $folder = $TEMPFOLDER ; # replace NULL with a proper value
+    $result = $api->cells_save_as_post_document_save_as(name => $name,
+     save_options => $save_options, 
+     newfilename => $newfilename, 
+     is_auto_fit_rows => $is_auto_fit_rows, 
+     is_auto_fit_columns => $is_auto_fit_columns, 
+     folder => $folder);
+    ok($result->status eq 'OK' ,'cells_save_as_post_document_save_as OK');
+}
+
 1;

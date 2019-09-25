@@ -23,7 +23,7 @@ use Test::Exception;
 use lib 'lib';
 use strict;
 use warnings;
-use_ok('AsposeCellsCloud::OAuthApi');
+
 use_ok('AsposeCellsCloud::Configuration');
 use_ok('AsposeCellsCloud::ApiClient');
 use_ok('AsposeCellsCloud::CellsApi');
@@ -32,7 +32,6 @@ use_ok('AsposeCellsCloud::Object::WorkbookProtectionRequest');
 use_ok('AsposeCellsCloud::Object::CalculationOptions');
 use_ok('AsposeCellsCloud::Object::WorkbookSettings');
 use_ok('AsposeCellsCloud::Object::Style');
-use_ok('AsposeCellsCloud::Object::SaaSposeResponse');
 use_ok('AsposeCellsCloud::Object::ImportOption');
 use_ok('AsposeCellsCloud::Object::ImportIntArrayOption');
 use_ok('AsposeCellsCloud::Object::PasswordRequest');
@@ -40,7 +39,7 @@ use_ok('AsposeCellsCloud::Object::PasswordRequest');
 require 't\CellsTestBase.pl';
 my $new_client = get_client();
 my $result =undef;
-copy_to_temp_1();
+
 my $BOOK1 = 'Book1.xlsx';
 my $MYDOC = 'myDocument.xlsx';
 my $PVTESTFILE = 'TestCase.xlsx';
@@ -57,10 +56,10 @@ my $CELLNAME = 'A1';
 my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
 
-use_ok('AsposeCellsCloud::CellsWorkbookApi');
+use_ok('AsposeCellsCloud::CellsApi');
 
-my $api = AsposeCellsCloud::CellsWorkbookApi->new($new_client);
-isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
+my $api = AsposeCellsCloud::CellsApi->new($new_client);
+isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #
 # cells_workbook_post_encrypt_document test
@@ -72,6 +71,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
         KeyLength =>128, 
         EncryptionType=>'XOR'); # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_post_encrypt_document(name => $name, encryption => $encryption, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_post_encrypt_document OK');
 }
@@ -86,6 +86,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
         KeyLength =>128 ,
         EncryptionType =>'XOR' );  # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_delete_decrypt_document(name => $name, encryption => $encryption, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_delete_decrypt_document OK');
 }
@@ -96,6 +97,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
 {
     my $name = $BOOK1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_delete_document_unprotect_from_changes(name => $name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_delete_document_unprotect_from_changes OK');
 }
@@ -107,6 +109,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $protection = AsposeCellsCloud::Object::WorkbookProtectionRequest->new( Password=>'123456', ProtectionType=>'All '); # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_delete_unprotect_document(name => $name, protection => $protection, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_delete_unprotect_document OK');
 }
@@ -121,6 +124,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
     my $password = undef; # replace NULL with a proper value
     my $is_auto_fit = 'true'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_get_workbook(name => $name, password => $password, is_auto_fit => $is_auto_fit, folder => $folder);    
 }
 
@@ -130,6 +134,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
 {
     my $name = $BOOK1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_get_workbook_default_style(name => $name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_get_workbook_default_style OK');
 }
@@ -141,6 +146,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $name_name = 'Name_3'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_get_workbook_name(name => $name, name_name => $name_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_get_workbook_name OK');
 }
@@ -152,6 +158,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $name_name = 'Name_3'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_get_workbook_name_value(name => $name, name_name => $name_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_get_workbook_name_value OK');
 }
@@ -162,6 +169,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
 {
     my $name = $BOOK1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_get_workbook_names(name => $name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_get_workbook_names OK');
 }
@@ -172,6 +180,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
 {
     my $name = $BOOK1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_get_workbook_settings(name => $name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_get_workbook_settings OK');
 }
@@ -182,6 +191,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
 {
     my $name = $BOOK1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_get_workbook_text_items(name => $name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_get_workbook_text_items OK');
 }
@@ -196,6 +206,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
     my $end_row = 100; # replace NULL with a proper value
     my $only_auto = 'true'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_post_autofit_workbook_rows(name => $name, auto_fitter_options => $auto_fitter_options, start_row => $start_row, end_row => $end_row, only_auto => $only_auto, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_post_autofit_workbook_rows OK');
 }
@@ -209,6 +220,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
     my @intarray = qw(1 2 3 4) ;
     my $importdata =  ' {"FirstRow":1,"FirstColumn":2,"IsVertical":true,"Data":[1,2,3],"DestinationWorksheet":"Sheet1","IsInsert":true,"ImportDataType":"IntArray","Source":null}';
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_post_import_data(name => $name, importdata => $importdata, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_post_import_data OK');
 }
@@ -220,6 +232,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $protection = AsposeCellsCloud::Object::WorkbookProtectionRequest->new( Password=>undef, ProtectionType=>'All'); # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_post_protect_document(name => $name, protection => $protection, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_post_protect_document OK');
 }
@@ -228,11 +241,12 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
 # cells_workbook_post_workbook_calculate_formula test
 #
 {
-    copy_to_temp_1();
+    
     my $name = $BOOK1; # replace NULL with a proper value
     my $options = AsposeCellsCloud::Object::CalculationOptions->new(IgnoreError=>'true'); # replace NULL with a proper value
     my $ignore_error = 'true'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_post_workbook_calculate_formula(name => $name, options => $options, ignore_error => $ignore_error, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_post_workbook_calculate_formula OK');
 }
@@ -245,6 +259,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
     my $xml_file = 'ReportData.xml'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
     my $out_path = undef; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_post_workbook_get_smart_marker_result(name => $name, xml_file => $xml_file, folder => $folder, out_path => $out_path);   
 }
 
@@ -255,6 +270,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $settings = AsposeCellsCloud::Object::WorkbookSettings->new (AutoCompressPictures=>'true'); # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_post_workbook_settings(name => $name, settings => $settings, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_post_workbook_settings OK');
 }
@@ -270,6 +286,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
     my $horizontal_resolution = 100; # replace NULL with a proper value
     my $vertical_resolution = 90; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_post_workbook_split(name => $name, format => $format, from => $from, to => $to, horizontal_resolution => $horizontal_resolution, vertical_resolution => $vertical_resolution, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_post_workbook_split OK');
 }
@@ -278,11 +295,10 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
 # cells_workbook_post_workbooks_merge test
 #
 {
-    copy_to_temp_1();
-    copy_to_temp_2();
     my $name = $BOOK1; # replace NULL with a proper value
     my $merge_with = 'myDocument.xlsx'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_post_workbooks_merge(name => $name, merge_with => $merge_with, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_post_workbooks_merge OK');
 }
@@ -295,6 +311,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
     my $old_value = 'undef111'; # replace NULL with a proper value
     my $new_value = 'undef'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_post_workbooks_text_replace(name => $name, old_value => $old_value, new_value => $new_value, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_post_workbooks_text_replace OK');
 }
@@ -306,6 +323,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $text = 'test'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_post_workbooks_text_search(name => $name, text => $text, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_post_workbooks_text_search OK');
 }
@@ -320,14 +338,14 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
     my $Book1_data =undef;
     my @fileinfos = stat("D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx");
     my $filelength = @fileinfos[7];
-    print $filelength;
     open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx") or die "file.txt 文件无法打开, $!";
     binmode(DATA);
     # while( read (DATA, $Book1_data, 8)) {};
     read (DATA, $Book1_data, $filelength);
-    close (DATA);
-    print "read file.";
-    $result = $api->cells_workbook_put_convert_workbook( workbook => $Book1_data, format => $format, password => $password, out_path => $out_path);
+    close (DATA);    
+    my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    # ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
+    $result = $api->cells_workbook_put_convert_workbook( workbook => $Book1_data, format => $format, password => $password, out_path => $out_path,folder =>$folder);
 }
 
 #
@@ -340,14 +358,14 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
     my $Book1_data =undef;
     my @fileinfos = stat("D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx");
     my $filelength = @fileinfos[7];
-    print $filelength;
     open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx") or die "file.txt 文件无法打开, $!";
     binmode(DATA);
     # while( read (DATA, $Book1_data, 8)) {};
     read (DATA, $Book1_data, $filelength);
     close (DATA);
-    print "read file.";
-    $result = $api->cells_workbook_put_convert_workbook( workbook => $Book1_data, format => $format, password => $password, out_path => $out_path);
+    my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    # ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
+    $result = $api->cells_workbook_put_convert_workbook( workbook => $Book1_data, format => $format, password => $password, out_path => $out_path,folder =>$folder);
 }
 
 #
@@ -357,6 +375,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $password = AsposeCellsCloud::Object::PasswordRequest->new(Password=>'123456'); # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_put_document_protect_from_changes(name => $name, password => $password, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_put_document_protect_from_changes OK');
 }
@@ -365,12 +384,12 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
 # cells_workbook_put_workbook_create test
 #
 {
-    copy_to_temp_1();
     my $name = 'NewBook'.$BOOK1; # replace NULL with a proper value
     my $template_file = $BOOK1; # replace NULL with a proper value
     my $data_file = 'ReportData.xml'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    $result = $api->cells_workbook_put_workbook_create(name => $name, template_file => $template_file, data_file => $data_file, folder => $folder);
+    ready_file('api'=> $api, 'file'=>$template_file ,'folder' =>$folder) ;  
+    $result = $api->cells_workbook_put_workbook_create(name => $name, template_file =>$folder."/".$template_file, data_file => $data_file, folder => $folder);
 }
 
 #
@@ -390,6 +409,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorkbookApi');
 {
     my $name = $BOOK1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_delete_workbook_names(name => $name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_delete_workbook_names OK');
 }

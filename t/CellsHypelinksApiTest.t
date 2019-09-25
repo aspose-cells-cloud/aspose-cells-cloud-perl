@@ -24,20 +24,20 @@ use lib 'lib';
 use strict;
 use warnings;
 
-use_ok('AsposeCellsCloud::OAuthApi');
-use_ok('AsposeCellsCloud::Configuration');
-use_ok('AsposeCellsCloud::ApiClient');
-use_ok('AsposeCellsCloud::CellsHypelinksApi');
-use_ok('AsposeCellsCloud::Object::ColumnsResponse');
-use_ok('AsposeCellsCloud::Object::CalculationOptions');
-use_ok('AsposeCellsCloud::Object::FontSetting');
-use_ok('AsposeCellsCloud::Object::Style');
-use_ok('AsposeCellsCloud::Object::SaaSposeResponse');
+
+use AsposeCellsCloud::Configuration;
+use AsposeCellsCloud::ApiClient;
+use AsposeCellsCloud::CellsApi;
+use AsposeCellsCloud::Object::ColumnsResponse;
+use AsposeCellsCloud::Object::CalculationOptions;
+use AsposeCellsCloud::Object::FontSetting;
+use AsposeCellsCloud::Object::Style;
+
 
 require 't\CellsTestBase.pl';
 my $new_client = get_client();
 my $result =undef;
-copy_to_temp_1();
+
 my $BOOK1 = 'Book1.xlsx';
 my $MYDOC = 'myDocument.xlsx';
 my $PVTESTFILE = 'TestCase.xlsx';
@@ -56,8 +56,8 @@ my $CELLAREA = 'A1:C10';
 
 
 
-my $api = AsposeCellsCloud::CellsHypelinksApi->new($new_client);
-isa_ok($api, 'AsposeCellsCloud::CellsHypelinksApi');
+my $api = AsposeCellsCloud::CellsApi->new($new_client);
+isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #
 # cells_hypelinks_put_worksheet_hyperlink test
@@ -71,6 +71,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsHypelinksApi');
     my $total_columns = 1; # replace NULL with a proper value
     my $address = "http://www.aspose.com"; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_hypelinks_put_worksheet_hyperlink(name => $name, sheet_name => $sheet_name, first_row => $first_row, first_column => $first_column, total_rows => $total_rows, total_columns => $total_columns, address => $address, folder => $folder);
     ok($result->status eq 'OK' ,'cells_hypelinks_put_worksheet_hyperlink OK');
 }
@@ -83,6 +84,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsHypelinksApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $hyperlink_index = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_hypelinks_get_worksheet_hyperlink(name => $name, sheet_name => $sheet_name, hyperlink_index => $hyperlink_index, folder => $folder);
     ok($result->status eq 'OK' ,'cells_hypelinks_get_worksheet_hyperlink OK');
 }
@@ -94,6 +96,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsHypelinksApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_hypelinks_get_worksheet_hyperlinks(name => $name, sheet_name => $sheet_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_hypelinks_get_worksheet_hyperlinks OK');
 }
@@ -107,6 +110,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsHypelinksApi');
     my $hyperlink_index = 0; # replace NULL with a proper value
     my $hyperlink = AsposeCellsCloud::Object::Hyperlink->new(address => 'http://www.aspose.com');; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_hypelinks_post_worksheet_hyperlink(name => $name, sheet_name => $sheet_name, hyperlink_index => $hyperlink_index, hyperlink => $hyperlink, folder => $folder);
     ok($result->status eq 'OK' ,'cells_hypelinks_post_worksheet_hyperlink OK');
 }
@@ -119,6 +123,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsHypelinksApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $hyperlink_index = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_hypelinks_delete_worksheet_hyperlink(name => $name, sheet_name => $sheet_name, hyperlink_index => $hyperlink_index, folder => $folder);
     ok($result->status eq 'OK' ,'cells_hypelinks_delete_worksheet_hyperlink OK');
 }
@@ -130,6 +135,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsHypelinksApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_hypelinks_delete_worksheet_hyperlinks(name => $name, sheet_name => $sheet_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_hypelinks_delete_worksheet_hyperlinks OK');
 }

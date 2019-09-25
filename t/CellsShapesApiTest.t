@@ -23,16 +23,15 @@ use Test::Exception;
 use lib 'lib';
 use strict;
 use warnings;
-use_ok('AsposeCellsCloud::OAuthApi');
+
 use_ok('AsposeCellsCloud::Configuration');
 use_ok('AsposeCellsCloud::ApiClient');
 use_ok('AsposeCellsCloud::Object::Shape');
-use_ok('AsposeCellsCloud::Object::SaaSposeResponse');
 
 require 't\CellsTestBase.pl';
 my $new_client = get_client();
 my $result =undef;
-copy_to_temp_1();
+
 my $BOOK1 = 'Book1.xlsx';
 my $MYDOC = 'myDocument.xlsx';
 my $PVTESTFILE = 'TestCase.xlsx';
@@ -50,10 +49,10 @@ my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
 
 
-use_ok('AsposeCellsCloud::CellsShapesApi');
+use_ok('AsposeCellsCloud::CellsApi');
 
-my $api = AsposeCellsCloud::CellsShapesApi->new($new_client);
-isa_ok($api, 'AsposeCellsCloud::CellsShapesApi');
+my $api = AsposeCellsCloud::CellsApi->new($new_client);
+isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #
 # cells_shapes_put_worksheet_shape test
@@ -69,6 +68,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsShapesApi');
     my $width = 100; # replace NULL with a proper value
     my $height = 90; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_shapes_put_worksheet_shape(name => $name, sheet_name => $sheet_name, drawing_type => $drawing_type, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, top => $top, left => $left, width => $width, height => $height, folder => $folder);
     ok($result->status eq 'OK' ,'cells_shapes_put_worksheet_shape OK');
 }
@@ -80,6 +80,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsShapesApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $shapeindex = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_shapes_get_worksheet_shape(name => $name, sheet_name => $sheet_name, shapeindex => $shapeindex, folder => $folder);
     ok($result->status eq 'OK' ,'cells_shapes_get_worksheet_shape OK');
 }
@@ -91,6 +92,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsShapesApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_shapes_get_worksheet_shapes(name => $name, sheet_name => $sheet_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_shapes_get_worksheet_shapes OK');
 }
@@ -104,6 +106,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsShapesApi');
     my $shapeindex = 0; # replace NULL with a proper value
     my $dto = AsposeCellsCloud::Object::Shape->new(AlternativeText=>'AlternativeText'); # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_shapes_post_worksheet_shape(name => $name, sheet_name => $sheet_name, shapeindex => $shapeindex, dto => $dto, folder => $folder);
     ok($result->status eq 'OK' ,'cells_shapes_post_worksheet_shape OK');
 }
@@ -117,6 +120,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsShapesApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $shapeindex = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_shapes_delete_worksheet_shape(name => $name, sheet_name => $sheet_name, shapeindex => $shapeindex, folder => $folder);
     ok($result->status eq 'OK' ,'cells_shapes_delete_worksheet_shape OK');
 }
@@ -128,6 +132,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsShapesApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_shapes_delete_worksheet_shapes(name => $name, sheet_name => $sheet_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_shapes_delete_worksheet_shapes OK');
 }

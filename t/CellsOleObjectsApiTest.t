@@ -24,20 +24,17 @@ use lib 'lib';
 use strict;
 use warnings;
 
-use_ok('AsposeCellsCloud::OAuthApi');
 use_ok('AsposeCellsCloud::Configuration');
 use_ok('AsposeCellsCloud::ApiClient');
-use_ok('AsposeCellsCloud::CellsOleObjectsApi');
+use_ok('AsposeCellsCloud::CellsApi');
 use_ok('AsposeCellsCloud::Object::ColumnsResponse');
 use_ok('AsposeCellsCloud::Object::OleObject');
 use_ok('AsposeCellsCloud::Object::FontSetting');
 use_ok('AsposeCellsCloud::Object::Style');
-use_ok('AsposeCellsCloud::Object::SaaSposeResponse');
 
 require 't\CellsTestBase.pl';
 my $new_client = get_client();
 my $result =undef;
-copy_to_temp_1();
 
 my $BOOK1 = 'Book1.xlsx';
 my $MYDOC = 'myDocument.xlsx';
@@ -55,16 +52,10 @@ my $CELLNAME = 'A1';
 my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
 
+use_ok('AsposeCellsCloud::CellsApi');
 
-
-
-use_ok('AsposeCellsCloud::CellsOleObjectsApi');
-
-my $api = AsposeCellsCloud::CellsOleObjectsApi->new($new_client);
-isa_ok($api, 'AsposeCellsCloud::CellsOleObjectsApi');
-
-
-
+my $api = AsposeCellsCloud::CellsApi->new($new_client);
+isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #
 # cells_ole_objects_put_worksheet_ole_object test
@@ -80,6 +71,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsOleObjectsApi');
     my $ole_file = 'OLEDoc.docx'; # replace NULL with a proper value
     my $image_file = 'word.jpg'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_ole_objects_put_worksheet_ole_object(name => $name, sheet_name => $sheet_name, ole_object => $ole_object, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, height => $height, width => $width, ole_file => $ole_file, image_file => $image_file, folder => $folder);
     ok($result->status eq 'OK' ,'cells_ole_objects_put_worksheet_ole_object OK');
 }
@@ -91,6 +83,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsOleObjectsApi');
     my $sheet_name = $SHEET6; # replace NULL with a proper value
     my $object_number = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_ole_objects_get_worksheet_ole_object(name => $name, sheet_name => $sheet_name, object_number => $object_number, folder => $folder);
 }
 
@@ -101,6 +94,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsOleObjectsApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET6; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_ole_objects_get_worksheet_ole_objects(name => $name, sheet_name => $sheet_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_ole_objects_get_worksheet_ole_objects OK');
 }
@@ -114,6 +108,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsOleObjectsApi');
     my $ole_object_index = 0; # replace NULL with a proper value
     my $ole = AsposeCellsCloud::Object::OleObject->new(width => 100); # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_ole_objects_post_update_worksheet_ole_object(name => $name, sheet_name => $sheet_name, ole_object_index => $ole_object_index, ole => $ole, folder => $folder);
     ok($result->status eq 'OK' ,'cells_ole_objects_post_update_worksheet_ole_object OK');
 }
@@ -126,6 +121,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsOleObjectsApi');
     my $sheet_name = $SHEET6; # replace NULL with a proper value
     my $ole_object_index = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_ole_objects_delete_worksheet_ole_object(name => $name, sheet_name => $sheet_name, ole_object_index => $ole_object_index, folder => $folder);
     ok($result->status eq 'OK' ,'cells_ole_objects_delete_worksheet_ole_object OK');
 }
@@ -137,6 +133,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsOleObjectsApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET6; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_ole_objects_delete_worksheet_ole_objects(name => $name, sheet_name => $sheet_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_ole_objects_delete_worksheet_ole_objects OK');
 }

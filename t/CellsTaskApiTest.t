@@ -24,7 +24,6 @@ use lib 'lib';
 use strict;
 use warnings;
 require 't\CellsTestBase.pl';
-use_ok('AsposeCellsCloud::OAuthApi');
 use_ok('AsposeCellsCloud::Configuration');
 use_ok('AsposeCellsCloud::ApiClient');
 use_ok('AsposeCellsCloud::CellsApi');
@@ -32,7 +31,6 @@ use_ok('AsposeCellsCloud::Object::SplitWorkbookTaskParameter');
 use_ok('AsposeCellsCloud::Object::TaskData');
 use_ok('AsposeCellsCloud::Object::TaskDescription');
 use_ok('AsposeCellsCloud::Object::FileSource');
-use_ok('AsposeCellsCloud::Object::SaaSposeResponse');
 
 my $result ;
 my $BOOK1 = 'Book1.xlsx';
@@ -52,20 +50,19 @@ my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
 my $workbook_path ='Temp\\Book1.xlsx';
 
-use_ok('AsposeCellsCloud::CellsTaskApi');
-my $api = AsposeCellsCloud::CellsTaskApi->new(get_client());
-isa_ok($api, 'AsposeCellsCloud::CellsTaskApi');
+use_ok('AsposeCellsCloud::CellsApi');
+my $api = AsposeCellsCloud::CellsApi->new(get_client());
+isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #
 # cells_task_post_run_task test
 #
 {
-    copy_to_temp_1();
     my $task_data =  '{"Tasks":[{"TaskType":"Convert","TaskParameter":{"Workbook":{"FileSourceType":"CloudFileSystem","FilePath":"Temp/Book1.xlsx"},"DestinationFile":"ConvetedExcel.png","SaveOptions":{"ImageFormat":"Png","SaveFormat":"png"}}}]}';
     # $task_data ='{"Tasks":[{"TaskType":"SplitWorkbook","TaskParameter":{"Workbook":{"FileSourceType":"CloudFileSystem","FilePath":"Book1.xlsx"},"DestinationFilePosition":{"FileSourceType":"CloudFileSystem","FilePath":""},"DestinationFileFormat":"xlsx","SplitNameRule":"sheetname"}}]}';
+    ready_file('api'=> $api, 'file'=>$BOOK1 ,'folder' =>$TEMPFOLDER) ;  
     $result = $api->cells_task_post_run_task(task_data => $task_data);
-    printf $result;
-    # ok($result->status eq 'OK' ,'cells_task_post_run_task OK');
+    ok('cells_task_post_run_task OK');
 }
 
 

@@ -23,20 +23,17 @@ use Test::Exception;
 use lib 'lib';
 use strict;
 use warnings;
-use_ok('AsposeCellsCloud::OAuthApi');
-use_ok('AsposeCellsCloud::Configuration');
-use_ok('AsposeCellsCloud::ApiClient');
-use_ok('AsposeCellsCloud::Object::Style');
-use_ok('AsposeCellsCloud::Object::SaaSposeResponse');
-use_ok('AsposeCellsCloud::Object::AutoShapeResponse');
-use_ok('AsposeCellsCloud::Object::AutoShape');
-use_ok('AsposeCellsCloud::CellsChartAreaApi');
+
+use AsposeCellsCloud::Configuration;
+use AsposeCellsCloud::ApiClient;
+use AsposeCellsCloud::Object::Style;
+use AsposeCellsCloud::Object::AutoShapeResponse;
+use AsposeCellsCloud::Object::AutoShape;
+use AsposeCellsCloud::CellsApi;
 
 require 't\CellsTestBase.pl';
 my $new_client = get_client();
 my $result =undef;
-copy_to_temp_2();
-
 my $BOOK1 = 'Book1.xlsx';
 my $MYDOC = 'myDocument.xlsx';
 my $PVTESTFILE = 'TestCase.xlsx';
@@ -54,8 +51,8 @@ my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
 
 
-my $api = AsposeCellsCloud::CellsChartAreaApi->new($new_client);
-isa_ok($api, 'AsposeCellsCloud::CellsChartAreaApi');
+my $api = AsposeCellsCloud::CellsApi->new($new_client);
+isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #
 # cells_chart_area_get_chart_area test
@@ -65,6 +62,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsChartAreaApi');
     my $sheet_name = $SHEET3; # replace NULL with a proper value
     my $chart_index = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     my $result = $api->cells_chart_area_get_chart_area(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder);
     ok($result->status eq 'OK' ,'cells_chart_area_get_chart_area OK');
 }
@@ -77,8 +75,9 @@ isa_ok($api, 'AsposeCellsCloud::CellsChartAreaApi');
     my $sheet_name = $SHEET3; # replace NULL with a proper value
     my $chart_index = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     my $result = $api->cells_chart_area_get_chart_area_border(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder);
-     ok($result->status eq 'OK' ,'cells_chart_area_get_chart_area_border OK');
+    ok($result->status eq 'OK' ,'cells_chart_area_get_chart_area_border OK');
 }
 
 #
@@ -89,6 +88,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsChartAreaApi');
     my $sheet_name = $SHEET3; # replace NULL with a proper value
     my $chart_index = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     my $result = $api->cells_chart_area_get_chart_area_fill_format(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder);
     ok($result->status eq 'OK' ,'cells_chart_area_get_chart_area_fill_format OK');
 }

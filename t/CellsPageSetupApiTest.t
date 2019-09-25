@@ -23,7 +23,7 @@ use Test::Exception;
 use lib 'lib';
 use strict;
 use warnings;
-use_ok('AsposeCellsCloud::OAuthApi');
+
 use_ok('AsposeCellsCloud::Configuration');
 use_ok('AsposeCellsCloud::ApiClient');
 use_ok('AsposeCellsCloud::CellsApi');
@@ -31,12 +31,11 @@ use_ok('AsposeCellsCloud::Object::ColumnsResponse');
 use_ok('AsposeCellsCloud::Object::PageSetup');
 use_ok('AsposeCellsCloud::Object::FontSetting');
 use_ok('AsposeCellsCloud::Object::Style');
-use_ok('AsposeCellsCloud::Object::SaaSposeResponse');
+
 
 require 't\CellsTestBase.pl';
 my $new_client = get_client();
 my $result =undef;
-copy_to_temp_1();
 
 my $BOOK1 = 'Book1.xlsx';
 my $MYDOC = 'myDocument.xlsx';
@@ -54,10 +53,10 @@ my $CELLNAME = 'A1';
 my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
 
-use_ok('AsposeCellsCloud::CellsPageSetupApi');
+use_ok('AsposeCellsCloud::CellsApi');
 
-my $api = AsposeCellsCloud::CellsPageSetupApi->new($new_client);
-isa_ok($api, 'AsposeCellsCloud::CellsPageSetupApi');
+my $api = AsposeCellsCloud::CellsApi->new($new_client);
+isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 
 
@@ -68,6 +67,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsPageSetupApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_page_setup_get_header(name => $name, sheet_name => $sheet_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_page_setup_get_header OK');
 }
@@ -79,6 +79,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsPageSetupApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_page_setup_get_footer(name => $name, sheet_name => $sheet_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_page_setup_get_footer OK');
 }
@@ -90,6 +91,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsPageSetupApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_page_setup_get_page_setup(name => $name, sheet_name => $sheet_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_page_setup_get_page_setup OK');
 }
@@ -104,6 +106,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsPageSetupApi');
     my $script = 'undef'; # replace NULL with a proper value
     my $is_first_page = 'true'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_page_setup_post_footer(name => $name, sheet_name => $sheet_name, section => $section, script => $script, is_first_page => $is_first_page, folder => $folder);
     ok($result->status eq 'OK' ,'cells_page_setup_post_footer OK');
 }
@@ -118,6 +121,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsPageSetupApi');
     my $script = 'undef'; # replace NULL with a proper value
     my $is_first_page = 'false'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_page_setup_post_header(name => $name, sheet_name => $sheet_name, section => $section, script => $script, is_first_page => $is_first_page, folder => $folder);
     ok($result->status eq 'OK' ,'cells_page_setup_post_header OK');
 }
@@ -130,6 +134,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsPageSetupApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $page_setup = AsposeCellsCloud::Object::PageSetup->new(print_draft => 'true'); # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_page_setup_post_page_setup(name => $name, sheet_name => $sheet_name, page_setup => $page_setup, folder => $folder);
     ok($result->status eq 'OK' ,'cells_page_setup_post_page_setup OK');
 }
@@ -141,6 +146,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsPageSetupApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_page_setup_delete_header_footer(name => $name, sheet_name => $sheet_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_page_setup_delete_header_footer OK');
 }

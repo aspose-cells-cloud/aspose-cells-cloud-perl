@@ -25,12 +25,12 @@ use utf8;
 use Exporter;
 use Carp qw( croak );
 use Log::Any qw($log);
+use File::Slurp;
 
-use AsposeCellsCloud::OAuthApi ;
 use AsposeCellsCloud::Configuration ;
 use AsposeCellsCloud::ApiClient ;
-use AsposeCellsCloud::CellsSaveAsApi ;
-use AsposeCellsCloud::Object::SaaSposeResponse ;
+use AsposeCellsCloud::CellsApi ;
+
 # sub new {
 #     my $class = shift;
 #     return bless {}, $class;
@@ -40,9 +40,9 @@ our $new_client = undef;
 sub get_client
 {
     my ($self, %args) = @_;
-    my $config = AsposeCellsCloud::Configuration->new('base_url' => 'https://api.aspose.cloud/');
+    my $config = AsposeCellsCloud::Configuration->new('base_url' => 'https://api.aspose.cloud');
     my $client = AsposeCellsCloud::ApiClient->new( $config);
-    my $oauth_api = AsposeCellsCloud::OAuthApi->new($client);
+    my $oauth_api = AsposeCellsCloud::CellsApi->new($client);
 
     my $grant_type = 'client_credentials'; # replace NULL with a proper value
     my $client_id = '66164C51-693E-4904-A121-545961673EC1'; # replace NULL with a proper value
@@ -50,78 +50,27 @@ sub get_client
     my $result = $oauth_api->o_auth_post(grant_type => $grant_type, client_id => $client_id, client_secret => $client_secret);
     my $access_token  = $result->access_token;
 
-    my $new_config = AsposeCellsCloud::Configuration->new('access_token' =>  $access_token, 'base_url' => 'https://api.aspose.cloud/v1.1');
+    my $new_config = AsposeCellsCloud::Configuration->new('access_token' =>  $access_token, 'base_url' => 'https://api.aspose.cloud/v3.0');
     $new_client = AsposeCellsCloud::ApiClient->new( $new_config);
     return $new_client;
 }
 
-sub copy_to_temp_1
+sub ready_file 
 {
-    my $BOOK1 = 'Book1.xlsx';
-    my $name = $BOOK1; # replace NULL with a proper value
-    my $save_options = undef; # replace NULL with a proper value
-    my $newfilename = 'Temp/Book1.xlsx'; # replace NULL with a proper value
-    my $is_auto_fit_rows = 'true'; # replace NULL with a proper value
-    my $is_auto_fit_columns = 'true'; # replace NULL with a proper value
-    my $folder = undef ; # replace NULL with a proper value
-    my $api = AsposeCellsCloud::CellsSaveAsApi->new($new_client);
-    $api->cells_save_as_post_document_save_as(name => $BOOK1,
-     save_options => $save_options,
-     newfilename => $newfilename,
-     is_auto_fit_rows => $is_auto_fit_rows,
-     is_auto_fit_columns => $is_auto_fit_columns,
-     folder => $folder);
-}
-sub copy_to_temp_2
-{
-    my $BOOK1 = 'myDocument.xlsx';
-    my $name = $BOOK1; # replace NULL with a proper value
-    my $save_options = undef; # replace NULL with a proper value
-    my $newfilename = 'Temp/myDocument.xlsx'; # replace NULL with a proper value
-    my $is_auto_fit_rows = 'true'; # replace NULL with a proper value
-    my $is_auto_fit_columns = 'true'; # replace NULL with a proper value
-    my $folder = undef ; # replace NULL with a proper value
-    my $api = AsposeCellsCloud::CellsSaveAsApi->new($new_client);
-    $api->cells_save_as_post_document_save_as(name => $BOOK1,
-     save_options => $save_options,
-     newfilename => $newfilename,
-     is_auto_fit_rows => $is_auto_fit_rows,
-     is_auto_fit_columns => $is_auto_fit_columns,
-     folder => $folder);
-}
-sub copy_to_temp_3
-{
-    my $BOOK1 = 'TestCase.xlsx';
-    my $name = $BOOK1; # replace NULL with a proper value
-    my $save_options = undef; # replace NULL with a proper value
-    my $newfilename = 'Temp/TestCase.xlsx'; # replace NULL with a proper value
-    my $is_auto_fit_rows = 'true'; # replace NULL with a proper value
-    my $is_auto_fit_columns = 'true'; # replace NULL with a proper value
-    my $folder = undef ; # replace NULL with a proper value
-    my $api = AsposeCellsCloud::CellsSaveAsApi->new($new_client);
-    $api->cells_save_as_post_document_save_as(name => $BOOK1,
-     save_options => $save_options,
-     newfilename => $newfilename,
-     is_auto_fit_rows => $is_auto_fit_rows,
-     is_auto_fit_columns => $is_auto_fit_columns,
-     folder => $folder);
-}
-sub copy_to_temp_4
-{
-    my $BOOK1 = 'NewCopy.xlsx';
-    my $name = $BOOK1; # replace NULL with a proper value
-    my $save_options = undef; # replace NULL with a proper value
-    my $newfilename = 'Temp/NewCopy.xlsx'; # replace NULL with a proper value
-    my $is_auto_fit_rows = 'true'; # replace NULL with a proper value
-    my $is_auto_fit_columns = 'true'; # replace NULL with a proper value
-    my $folder = undef ; # replace NULL with a proper value
-    my $api = AsposeCellsCloud::CellsSaveAsApi->new($new_client);
-    $api->cells_save_as_post_document_save_as(name => $BOOK1,
-     save_options => $save_options,
-     newfilename => $newfilename,
-     is_auto_fit_rows => $is_auto_fit_rows,
-     is_auto_fit_columns => $is_auto_fit_columns,
-     folder => $folder);
+    my  %args = @_;
+    my $path = "D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\".$args{'file'};
+    my @fileinfos = stat( $path );
+    my $filelength = $fileinfos[7];    
+    
+    my $fullfilename =  $args{'file'};
+    if (exists $args{'folder'}) {
+      $fullfilename = $args{'folder'}."/".$args{'file'};
+    }
+    my $upload_file_data = read_file( $path , binmode => ':raw' );;
+    # open(DATA, "< ".$path  ) or die $path ." can not open, $!";
+    # read (DATA, $upload_file_data, $filelength);
+    # close (DATA);    
+    $args{'api'}->upload_file(path=>$fullfilename ,file => $upload_file_data);
 }
 
 1;

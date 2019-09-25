@@ -23,19 +23,17 @@ use Test::Exception;
 use lib 'lib';
 use strict;
 use warnings;
-use_ok('AsposeCellsCloud::OAuthApi');
+
 use_ok('AsposeCellsCloud::Configuration');
 use_ok('AsposeCellsCloud::ApiClient');
 use_ok('AsposeCellsCloud::CellsApi');
 use_ok('AsposeCellsCloud::Object::Validation');
 use_ok('AsposeCellsCloud::Object::CellArea');
-use_ok('AsposeCellsCloud::Object::SaaSposeResponse');
-use_ok('AsposeCellsCloud::CellsWorksheetValidationsApi');
+
 
 require 't\CellsTestBase.pl';
 my $new_client = get_client();
 my $result =undef;
-copy_to_temp_1();
 
 my $BOOK1 = 'Book1.xlsx';
 my $MYDOC = 'myDocument.xlsx';
@@ -53,8 +51,8 @@ my $CELLNAME = 'A1';
 my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
 
-my $api = AsposeCellsCloud::CellsWorksheetValidationsApi->new($new_client);
-isa_ok($api, 'AsposeCellsCloud::CellsWorksheetValidationsApi');
+my $api = AsposeCellsCloud::CellsApi->new($new_client);
+isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #
 # cells_worksheet_validations_post_worksheet_validation test
@@ -68,6 +66,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorksheetValidationsApi');
     push @area_list , $cell_area;
     my $validation = AsposeCellsCloud::Object::Validation->new( IgnoreBlank=>'true'); # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_worksheet_validations_post_worksheet_validation(name => $name, sheet_name => $sheet_name, validation_index => $validation_index, validation => $validation, folder => $folder);
     ok($result->status eq 'OK' ,'cells_worksheet_validations_post_worksheet_validation OK');
 }
@@ -79,6 +78,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorksheetValidationsApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $range = $RANGE; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_worksheet_validations_put_worksheet_validation(name => $name, sheet_name => $sheet_name, range => $range, folder => $folder);
     ok($result->status eq 'OK' ,'cells_worksheet_validations_put_worksheet_validation OK');
 }
@@ -91,6 +91,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorksheetValidationsApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $validation_index = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_worksheet_validations_get_worksheet_validation(name => $name, sheet_name => $sheet_name, validation_index => $validation_index, folder => $folder);
     ok($result->status eq 'OK' ,'cells_worksheet_validations_get_worksheet_validation OK');
 }
@@ -102,6 +103,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorksheetValidationsApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_worksheet_validations_get_worksheet_validations(name => $name, sheet_name => $sheet_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_worksheet_validations_get_worksheet_validations OK');
 }
@@ -114,6 +116,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsWorksheetValidationsApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $validation_index = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_worksheet_validations_delete_worksheet_validation(name => $name, sheet_name => $sheet_name, validation_index => $validation_index, folder => $folder);
     ok($result->status eq 'OK' ,'cells_worksheet_validations_delete_worksheet_validation OK');
 }

@@ -23,20 +23,19 @@ use Test::Exception;
 use lib 'lib';
 use strict;
 use warnings;
-use_ok('AsposeCellsCloud::OAuthApi');
-use_ok('AsposeCellsCloud::Configuration');
-use_ok('AsposeCellsCloud::ApiClient');
-use_ok('AsposeCellsCloud::CellsListObjectsApi');
-use_ok('AsposeCellsCloud::Object::ColumnsResponse');
-use_ok('AsposeCellsCloud::Object::ListObject');
-use_ok('AsposeCellsCloud::Object::DataSorter');
-use_ok('AsposeCellsCloud::Object::CreatePivotTableRequest');
-use_ok('AsposeCellsCloud::Object::SaaSposeResponse');
+
+use AsposeCellsCloud::Configuration;
+use AsposeCellsCloud::ApiClient;
+use AsposeCellsCloud::CellsApi;
+use AsposeCellsCloud::Object::ColumnsResponse;
+use AsposeCellsCloud::Object::ListObject;
+use AsposeCellsCloud::Object::DataSorter;
+use AsposeCellsCloud::Object::CreatePivotTableRequest;
 
 require 't\CellsTestBase.pl';
 my $new_client = get_client();
 my $result =undef;
-copy_to_temp_1();
+
 
 my $BOOK1 = 'Book1.xlsx';
 my $MYDOC = 'myDocument.xlsx';
@@ -56,8 +55,8 @@ my $CELLAREA = 'A1:C10';
 
 
 
-my $api = AsposeCellsCloud::CellsListObjectsApi->new($new_client);
-isa_ok($api, 'AsposeCellsCloud::CellsListObjectsApi');
+my $api = AsposeCellsCloud::CellsApi->new($new_client);
+isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #
 # cells_list_objects_post_worksheet_list_object_summarize_with_pivot_table test
@@ -80,6 +79,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsListObjectsApi');
         PivotFieldData => @pivot_field_data ,
         PivotFieldRows =>@pivot_field_rows   ) ; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_list_objects_post_worksheet_list_object_summarize_with_pivot_table(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, destsheet_name => $destsheet_name, request => $request, folder => $folder);
     ok($result->status eq 'OK' ,'cells_postcells_list_objects_post_worksheet_list_object_summarize_with_pivot_table_cell_calculate OK');
 }
@@ -96,6 +96,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsListObjectsApi');
     my $end_column = 10; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
     my $has_headers = 'true'; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_list_objects_put_worksheet_list_object(name => $name, sheet_name => $sheet_name, start_row => $start_row, start_column => $start_column, end_row => $end_row, end_column => $end_column, folder => $folder, has_headers => $has_headers);
     ok($result->status eq 'OK' ,'cells_list_objects_put_worksheet_list_object OK');
 }
@@ -107,6 +108,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsListObjectsApi');
     my $sheet_name = $SHEET7; # replace NULL with a proper value
     my $listobjectindex = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_list_objects_get_worksheet_list_object(name => $name, sheet_name => $sheet_name, listobjectindex => $listobjectindex, folder => $folder);
     ok($result->status eq 'OK' ,'cells_list_objects_get_worksheet_list_object OK');
 }
@@ -118,6 +120,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsListObjectsApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET7; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_list_objects_get_worksheet_list_objects(name => $name, sheet_name => $sheet_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_list_objects_get_worksheet_list_objects OK');
 }
@@ -131,6 +134,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsListObjectsApi');
     my $list_object_index = 0; # replace NULL with a proper value
     my $list_object =  AsposeCellsCloud::Object::ListObject->new(display_name => 'display_name' ) ; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_list_objects_post_worksheet_list_object(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, list_object => $list_object, folder => $folder);
     ok($result->status eq 'OK' ,'cells_list_objects_post_worksheet_list_object OK');
 }
@@ -143,6 +147,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsListObjectsApi');
     my $sheet_name = $SHEET7; # replace NULL with a proper value
     my $list_object_index = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_list_objects_post_worksheet_list_object_convert_to_range(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, folder => $folder);
     ok($result->status eq 'OK' ,'cells_list_objects_post_worksheet_list_object_convert_to_range OK');
 }
@@ -156,6 +161,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsListObjectsApi');
     my $list_object_index = 0; # replace NULL with a proper value
     my $data_sorter = AsposeCellsCloud::Object::DataSorter->new(case_sensitive => 'true' ) ;; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_list_objects_post_worksheet_list_object_sort_table(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, data_sorter => $data_sorter, folder => $folder);
     ok($result->status eq 'OK' ,'cells_list_objects_post_worksheet_list_object_sort_table OK');
 }
@@ -169,6 +175,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsListObjectsApi');
     my $sheet_name = $SHEET7; # replace NULL with a proper value
     my $list_object_index = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_list_objects_delete_worksheet_list_object(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, folder => $folder);
     ok($result->status eq 'OK' ,'cells_list_objects_delete_worksheet_list_object OK');
 }
@@ -180,6 +187,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsListObjectsApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET7; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_list_objects_delete_worksheet_list_objects(name => $name, sheet_name => $sheet_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_list_objects_delete_worksheet_list_objects OK');
 }

@@ -24,20 +24,16 @@ use lib 'lib';
 use strict;
 use warnings;
 
-use_ok('AsposeCellsCloud::OAuthApi');
-use_ok('AsposeCellsCloud::Configuration');
-use_ok('AsposeCellsCloud::ApiClient');
-use_ok('AsposeCellsCloud::Object::Style');
-use_ok('AsposeCellsCloud::Object::SaaSposeResponse');
-use_ok('AsposeCellsCloud::Object::AutoShapeResponse');
-use_ok('AsposeCellsCloud::Object::AutoShape');
-use_ok('AsposeCellsCloud::CellsAutoshapesApi');
+use AsposeCellsCloud::Configuration;
+use AsposeCellsCloud::ApiClient;
+use AsposeCellsCloud::Object::Style;
+use AsposeCellsCloud::Object::AutoShapeResponse;
+use AsposeCellsCloud::Object::AutoShape;
+use AsposeCellsCloud::CellsApi;
 
 require 't\CellsTestBase.pl';
 my $new_client = get_client();
 my $result =undef;
-copy_to_temp_2();
-
 my $BOOK1 = 'Book1.xlsx';
 my $MYDOC = 'myDocument.xlsx';
 my $PVTESTFILE = 'TestCase.xlsx';
@@ -55,8 +51,8 @@ my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
 
 
-my $api = AsposeCellsCloud::CellsAutoshapesApi->new($new_client);
-isa_ok($api, 'AsposeCellsCloud::CellsAutoshapesApi');
+my $api = AsposeCellsCloud::CellsApi->new($new_client);
+isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #
 # cells_autoshapes_get_worksheet_autoshape test
@@ -67,6 +63,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsAutoshapesApi');
     my $autoshape_number = 4; # replace NULL with a proper value
     my $folder =  $TEMPFOLDER; # replace NULL with a proper value
     my $format = 'png';
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_autoshapes_get_worksheet_autoshape(name => $name, sheet_name => $sheet_name, autoshape_number => $autoshape_number, format => $format ,folder => $folder);
 
 }
@@ -78,6 +75,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsAutoshapesApi');
     my $name =  $MYDOC; # replace NULL with a proper value
     my $sheet_name = $SHEET2; # replace NULL with a proper value
     my $folder =  $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     my $result = $api->cells_autoshapes_get_worksheet_autoshapes(name => $name, sheet_name => $sheet_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_autoshapes_get_worksheet_autoshapes OK');
 }

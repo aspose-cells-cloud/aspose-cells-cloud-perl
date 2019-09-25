@@ -24,20 +24,18 @@ use lib 'lib';
 use strict;
 use warnings;
 
-use_ok('AsposeCellsCloud::OAuthApi');
-use_ok('AsposeCellsCloud::Configuration');
-use_ok('AsposeCellsCloud::ApiClient');
-use_ok('AsposeCellsCloud::CellsConditionalFormattingsApi');
-use_ok('AsposeCellsCloud::Object::ColumnsResponse');
-use_ok('AsposeCellsCloud::Object::FormatCondition');
-use_ok('AsposeCellsCloud::Object::FontSetting');
-use_ok('AsposeCellsCloud::Object::Style');
-use_ok('AsposeCellsCloud::Object::SaaSposeResponse');
+use AsposeCellsCloud::Configuration;
+use AsposeCellsCloud::ApiClient;
+use AsposeCellsCloud::CellsApi;
+use AsposeCellsCloud::Object::ColumnsResponse;
+use AsposeCellsCloud::Object::FormatCondition;
+use AsposeCellsCloud::Object::ConditionalFormattingValue;
+use AsposeCellsCloud::Object::FontSetting;
+use AsposeCellsCloud::Object::Style;
 
 require 't\CellsTestBase.pl';
 my $new_client = get_client();
 my $result =undef;
-copy_to_temp_1();
 my $BOOK1 = 'Book1.xlsx';
 my $MYDOC = 'myDocument.xlsx';
 my $PVTESTFILE = 'TestCase.xlsx';
@@ -55,24 +53,10 @@ my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
 
 
-my $api = AsposeCellsCloud::CellsConditionalFormattingsApi->new($new_client);
-isa_ok($api, 'AsposeCellsCloud::CellsConditionalFormattingsApi');
+my $api = AsposeCellsCloud::CellsApi->new($new_client);
+isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
-#
-# cells_conditional_formattings_put_worksheet_conditional_formatting test
-#
-{
-    my $name = $BOOK1; # replace NULL with a proper value
-    my $sheet_name = $SHEET1; # replace NULL with a proper value
-    my $cell_area = $CELLAREA; # replace NULL with a proper value
-    my $formatcondition =  AsposeCellsCloud::Object::FormatCondition->new( Type => 'EndsWith', 
-    Text => 'EndsWith', Operator=>'Between',Formula1=>'v1',Formula2=>'v2'); # replace NULL with a proper value
-    my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    $result = $api->cells_conditional_formattings_put_worksheet_conditional_formatting(name => $name, sheet_name => $sheet_name, cell_area => $cell_area, formatcondition => $formatcondition, folder => $folder);
-    ok($result->status eq 'OK' ,'cells_conditional_formattings_put_worksheet_conditional_formatting OK');
-}
 
-#
 # cells_conditional_formattings_get_worksheet_conditional_formatting test
 #
 {
@@ -80,6 +64,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsConditionalFormattingsApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $index = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_conditional_formattings_get_worksheet_conditional_formatting(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder);
     ok($result->status eq 'OK' ,'cells_conditional_formattings_get_worksheet_conditional_formatting OK');
 }
@@ -91,10 +76,25 @@ isa_ok($api, 'AsposeCellsCloud::CellsConditionalFormattingsApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_conditional_formattings_get_worksheet_conditional_formattings(name => $name, sheet_name => $sheet_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_conditional_formattings_get_worksheet_conditional_formattings OK');
 }
 
+#
+# cells_conditional_formattings_put_worksheet_conditional_formatting test
+#
+{
+    my $name = $BOOK1; # replace NULL with a proper value
+    my $sheet_name = $SHEET1; # replace NULL with a proper value
+    my $cell_area = $CELLAREA; # replace NULL with a proper value
+    my $formatcondition =  AsposeCellsCloud::Object::FormatCondition->new( Type => 'EndsWith', 
+    Text => 'EndsWith', Operator=>'Between',Formula1=>'v1',Formula2=>'v2'); # replace NULL with a proper value
+    my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
+    $result = $api->cells_conditional_formattings_put_worksheet_conditional_formatting(name => $name, sheet_name => $sheet_name, cell_area => $cell_area, formatcondition => $formatcondition, folder => $folder);
+    ok($result->status eq 'OK' ,'cells_conditional_formattings_put_worksheet_conditional_formatting OK');
+}
 
 #
 # cells_conditional_formattings_put_worksheet_format_condition test
@@ -109,6 +109,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsConditionalFormattingsApi');
     my $formula1 = 'v1'; # replace NULL with a proper value
     my $formula2 = 'v2'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_conditional_formattings_put_worksheet_format_condition(name => $name, sheet_name => $sheet_name, index => $index, cell_area => $cell_area, type => $type, operator_type => $operator_type, formula1 => $formula1, formula2 => $formula2, folder => $folder);
     ok($result->status eq 'OK' ,'cells_conditional_formattings_put_worksheet_format_condition OK');
 }
@@ -122,6 +123,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsConditionalFormattingsApi');
     my $index = 0; # replace NULL with a proper value
     my $cell_area = $CELLAREA; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_conditional_formattings_put_worksheet_format_condition_area(name => $name, sheet_name => $sheet_name, index => $index, cell_area => $cell_area, folder => $folder);
     ok($result->status eq 'OK' ,'cells_conditional_formattings_put_worksheet_format_condition_area OK');
 }
@@ -138,6 +140,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsConditionalFormattingsApi');
     my $formula1 = 'v1'; # replace NULL with a proper value
     my $formula2 = 'v2'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_conditional_formattings_put_worksheet_format_condition_condition(name => $name, sheet_name => $sheet_name, index => $index, type => $type, operator_type => $operator_type, formula1 => $formula1, formula2 => $formula2, folder => $folder);
     ok($result->status eq 'OK' ,'cells_conditional_formattings_put_worksheet_format_condition_condition OK');
 }
@@ -150,6 +153,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsConditionalFormattingsApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $index = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_conditional_formattings_delete_worksheet_conditional_formatting(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder);
     ok($result->status eq 'OK' ,'cells_conditional_formattings_delete_worksheet_conditional_formatting OK');
 }
@@ -176,6 +180,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsConditionalFormattingsApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_conditional_formattings_delete_worksheet_conditional_formattings(name => $name, sheet_name => $sheet_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_conditional_formattings_delete_worksheet_conditional_formattings OK');
 }

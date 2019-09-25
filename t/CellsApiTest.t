@@ -25,16 +25,14 @@ use strict;
 use warnings;
 require 't\CellsTestBase.pl';
 my $new_client = get_client();
-copy_to_temp_1();
-use_ok('AsposeCellsCloud::OAuthApi');
-use_ok('AsposeCellsCloud::Configuration');
-use_ok('AsposeCellsCloud::ApiClient');
-use_ok('AsposeCellsCloud::CellsApi');
-use_ok('AsposeCellsCloud::Object::ColumnsResponse');
-use_ok('AsposeCellsCloud::Object::CalculationOptions');
-use_ok('AsposeCellsCloud::Object::FontSetting');
-use_ok('AsposeCellsCloud::Object::Style');
-use_ok('AsposeCellsCloud::Object::SaaSposeResponse');
+
+use AsposeCellsCloud::Configuration;
+use AsposeCellsCloud::ApiClient;
+use AsposeCellsCloud::CellsApi;
+use AsposeCellsCloud::Object::ColumnsResponse;
+use AsposeCellsCloud::Object::CalculationOptions;
+use AsposeCellsCloud::Object::FontSetting;
+use AsposeCellsCloud::Object::Style;
 
 my $BOOK1 = 'Book1.xlsx';
 my $MYDOC = 'myDocument.xlsx';
@@ -67,6 +65,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $columns = 1; # replace NULL with a proper value
     my $update_reference = 'true'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$BOOK1 ,'folder' =>$TEMPFOLDER) ;   
     my $result = $api->cells_delete_worksheet_columns(name => $name, sheet_name => $sheet_name, column_index => $column_index, columns => $columns, update_reference => $update_reference, folder => $folder);
     ok($result->status eq 'OK' ,'cells_delete_worksheet_columns OK');
 }
@@ -79,6 +78,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $row_index = 1000; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$BOOK1 ,'folder' =>$TEMPFOLDER) ;   
     my $result = $api->cells_delete_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, folder => $folder);
     ok($result->status eq 'OK' ,'cells_delete_worksheet_row OK');
 }
@@ -93,6 +93,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $total_rows = 1; # replace NULL with a proper value
     my $update_reference = 'true'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$BOOK1 ,'folder' =>$TEMPFOLDER) ;   
     my $result = $api->cells_delete_worksheet_rows(name => $name, sheet_name => $sheet_name, startrow => $startrow, total_rows => $total_rows, update_reference => $update_reference, folder => $folder);
     ok($result->status eq 'OK' ,'cells_delete_worksheet_rows OK');
 }
@@ -105,6 +106,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $cell_or_method_name = 'firstcell'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$BOOK1 ,'folder' =>$TEMPFOLDER) ;   
     my $result = $api->cells_get_worksheet_cell(name => $name, sheet_name => $sheet_name, cell_or_method_name => $cell_or_method_name, folder => $folder);
     # ok($result->Status eq 'OK' ,'cells_get_worksheet_cell OK');
     #isa_ok($result, 'AsposeCellsCloud::Object::CellResponse');
@@ -120,6 +122,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $cell_name = $CELLNAME; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$BOOK1 ,'folder' =>$TEMPFOLDER) ;   
     my $result = $api->cells_get_worksheet_cell_style(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_get_worksheet_cell_style OK');
 }
@@ -133,6 +136,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $offest = 1; # replace NULL with a proper value
     my $count = 2 ; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$BOOK1 ,'folder' =>$TEMPFOLDER) ;   
     my $result = $api->cells_get_worksheet_cells(name => $name, sheet_name => $sheet_name, offest => $offest, count => $count, folder => $folder);
      ok($result->status eq 'OK' ,'cells_get_worksheet_cells OK');
 }
@@ -145,6 +149,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $column_index = 1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$BOOK1 ,'folder' =>$TEMPFOLDER) ;   
     my $result = $api->cells_get_worksheet_column(name => $name, sheet_name => $sheet_name, column_index => $column_index, folder => $folder);
      ok($result->status eq 'OK' ,'cells_get_worksheet_column OK');
 }

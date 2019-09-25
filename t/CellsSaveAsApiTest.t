@@ -41,10 +41,10 @@ my $SHEET8 = 'Sheet8';
 my $CELLNAME = 'A1';
 my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
-use_ok('AsposeCellsCloud::CellsSaveAsApi');
+use_ok('AsposeCellsCloud::CellsApi');
 
-my $api = AsposeCellsCloud::CellsSaveAsApi->new($new_client);
-isa_ok($api, 'AsposeCellsCloud::CellsSaveAsApi');
+my $api = AsposeCellsCloud::CellsApi->new($new_client);
+isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #
 # cells_save_as_post_document_save_as test
@@ -56,6 +56,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsSaveAsApi');
     my $is_auto_fit_rows = 'true'; # replace NULL with a proper value
     my $is_auto_fit_columns = 'true'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER ; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_save_as_post_document_save_as(name => $name,
      save_options => $save_options, 
      newfilename => $newfilename, 
@@ -76,6 +77,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsSaveAsApi');
     my $is_auto_fit_rows = 'true'; # replace NULL with a proper value
     my $is_auto_fit_columns = 'true'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER ; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_save_as_post_document_save_as(name => $name,
      save_options => $save_options, 
      newfilename => $newfilename, 

@@ -24,7 +24,7 @@ use lib 'lib';
 use strict;
 use warnings;
 
-use_ok('AsposeCellsCloud::OAuthApi');
+
 use_ok('AsposeCellsCloud::Configuration');
 use_ok('AsposeCellsCloud::ApiClient');
 use_ok('AsposeCellsCloud::CellsApi');
@@ -32,12 +32,12 @@ use_ok('AsposeCellsCloud::Object::ColumnsResponse');
 use_ok('AsposeCellsCloud::Object::Picture');
 use_ok('AsposeCellsCloud::Object::FontSetting');
 use_ok('AsposeCellsCloud::Object::Style');
-use_ok('AsposeCellsCloud::Object::SaaSposeResponse');
+
 
 require 't\CellsTestBase.pl';
 my $new_client = get_client();
 my $result =undef;
-copy_to_temp_1();
+
 
 my $BOOK1 = 'Book1.xlsx';
 my $MYDOC = 'myDocument.xlsx';
@@ -55,10 +55,10 @@ my $CELLNAME = 'A1';
 my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
 
-use_ok('AsposeCellsCloud::CellsPicturesApi');
+use_ok('AsposeCellsCloud::CellsApi');
 
-my $api = AsposeCellsCloud::CellsPicturesApi->new($new_client);
-isa_ok($api, 'AsposeCellsCloud::CellsPicturesApi');
+my $api = AsposeCellsCloud::CellsApi->new($new_client);
+isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #
 # cells_pictures_put_worksheet_add_picture test
@@ -73,6 +73,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsPicturesApi');
     my $lower_right_column = 10; # replace NULL with a proper value
     my $picture_path = 'WaterMark.png'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_pictures_put_worksheet_add_picture(name => $name, sheet_name => $sheet_name, picture => $picture, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, lower_right_row => $lower_right_row, lower_right_column => $lower_right_column, picture_path => $picture_path, folder => $folder);
     ok($result->status eq 'OK' ,'cells_pictures_put_worksheet_add_picture OK');
 }
@@ -85,6 +86,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsPicturesApi');
     my $sheet_name = $SHEET6; # replace NULL with a proper value
     my $picture_number = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_pictures_get_worksheet_picture(name => $name, 
         sheet_name => $sheet_name, picture_index => $picture_number, folder => $folder);
 }
@@ -96,6 +98,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsPicturesApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET6; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_pictures_get_worksheet_pictures(name => $name, sheet_name => $sheet_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_pictures_get_worksheet_pictures OK');
 }
@@ -109,6 +112,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsPicturesApi');
     my $picture_index = 0; # replace NULL with a proper value
     my $picture =  AsposeCellsCloud::Object::Picture->new(Top => 1 ); # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_pictures_post_worksheet_picture(name => $name, sheet_name => $sheet_name, picture_index => $picture_index, picture => $picture, folder => $folder);
     ok($result->status eq 'OK' ,'cells_pictures_post_worksheet_picture OK');
 }
@@ -123,6 +127,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsPicturesApi');
     my $sheet_name = $SHEET6; # replace NULL with a proper value
     my $picture_index = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_pictures_delete_worksheet_picture(name => $name, sheet_name => $sheet_name, picture_index => $picture_index, folder => $folder);
     ok($result->status eq 'OK' ,'cells_pictures_delete_worksheet_picture OK');
 }
@@ -134,6 +139,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsPicturesApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET6; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_pictures_delete_worksheet_pictures(name => $name, sheet_name => $sheet_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_pictures_delete_worksheet_pictures OK');
 }

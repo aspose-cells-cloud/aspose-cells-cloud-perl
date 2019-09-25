@@ -24,21 +24,20 @@ use lib 'lib';
 use strict;
 use warnings;
 
-use_ok('AsposeCellsCloud::OAuthApi');
-use_ok('AsposeCellsCloud::Configuration');
-use_ok('AsposeCellsCloud::ApiClient');
-use_ok('AsposeCellsCloud::CellsChartsApi');
-use_ok('AsposeCellsCloud::Object::ColumnsResponse');
-use_ok('AsposeCellsCloud::Object::Chart');
-use_ok('AsposeCellsCloud::Object::Legend');
-use_ok('AsposeCellsCloud::Object::Title');
-use_ok('AsposeCellsCloud::Object::FontSetting');
-use_ok('AsposeCellsCloud::Object::Style');
-use_ok('AsposeCellsCloud::Object::SaaSposeResponse');
+
+use AsposeCellsCloud::Configuration;
+use AsposeCellsCloud::ApiClient;
+use AsposeCellsCloud::CellsApi;
+use AsposeCellsCloud::Object::ColumnsResponse;
+use AsposeCellsCloud::Object::Chart;
+use AsposeCellsCloud::Object::Legend;
+use AsposeCellsCloud::Object::Title;
+use AsposeCellsCloud::Object::FontSetting;
+use AsposeCellsCloud::Object::Style;
+
 require 't\CellsTestBase.pl';
 my $new_client = get_client();
 my $result =undef;
-copy_to_temp_2();
 my $BOOK1 = 'Book1.xlsx';
 my $MYDOC = 'myDocument.xlsx';
 my $PVTESTFILE = 'TestCase.xlsx';
@@ -56,8 +55,8 @@ my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
 
 
-my $api = AsposeCellsCloud::CellsChartsApi->new( $new_client);
-isa_ok($api, 'AsposeCellsCloud::CellsChartsApi');
+my $api = AsposeCellsCloud::CellsApi->new( $new_client);
+isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 
 
@@ -70,6 +69,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsChartsApi');
     my $chart_number = 0; # replace NULL with a proper value
     my $format = 'png'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_charts_get_worksheet_chart(name => $name, sheet_name => $sheet_name, chart_number => $chart_number, format => $format, folder => $folder);
 }
 

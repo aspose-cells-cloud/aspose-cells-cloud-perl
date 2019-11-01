@@ -50,6 +50,18 @@ sub new {
         $api_client = AsposeCellsCloud::ApiClient->new(@_);
     }
 
+    my $access_token  =  $api_client->o_auth_post('grant_type' => "client_credentials", 'client_id' => $api_client->{config}->{app_sid}, 'client_secret' =>$api_client->{config}->{app_key})->access_token;
+    $api_client->{config}->{access_token} = $access_token;
+    my $base_url =  $api_client->{config}->{base_url};
+    
+    if( substr( $base_url,length($base_url)-1,1) eq '/'){
+         $base_url =  $base_url . $api_client->{config}->{api_version};
+    }else{
+         $base_url =  $base_url . '/'.$api_client->{config}->{api_version};
+    }
+    
+    $api_client->{config}->{base_url} =  $base_url;
+    
     bless { api_client => $api_client }, $class;
 
 }
@@ -25922,6 +25934,113 @@ sub cells_worksheet_validations_delete_worksheet_validation {
 }
 
 #
+# cells_worksheet_validations_delete_worksheet_validations
+#
+# Clear all validation in worksheet.
+# 
+# @param string $name Document name. (required)
+# @param string $sheet_name Worksheet name. (required)
+# @param string $folder Document&#39;s folder. (optional)
+# @param string $storage storage name. (optional)
+{
+    my $params = {
+    'name' => {
+        data_type => 'string',
+        description => 'Document name.',
+        required => '1',
+    },
+    'sheet_name' => {
+        data_type => 'string',
+        description => 'Worksheet name.',
+        required => '1',
+    },
+    'folder' => {
+        data_type => 'string',
+        description => 'Document&#39;s folder.',
+        required => '0',
+    },
+    'storage' => {
+        data_type => 'string',
+        description => 'storage name.',
+        required => '0',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'cells_worksheet_validations_delete_worksheet_validations' } = { 
+    	summary => 'Clear all validation in worksheet.',
+        params => $params,
+        returns => 'CellsCloudResponse',
+        };
+}
+# @return CellsCloudResponse
+#
+sub cells_worksheet_validations_delete_worksheet_validations {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'name' is set
+    unless (exists $args{'name'}) {
+      croak("Missing the required parameter 'name' when calling cells_worksheet_validations_delete_worksheet_validations");
+    }
+
+    # verify the required parameter 'sheet_name' is set
+    unless (exists $args{'sheet_name'}) {
+      croak("Missing the required parameter 'sheet_name' when calling cells_worksheet_validations_delete_worksheet_validations");
+    }
+
+    # parse inputs
+    my $_resource_path = '/cells/{name}/worksheets/{sheetName}/validations';
+
+    my $_method = 'DELETE';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # query params
+    if ( exists $args{'folder'}) {
+        $query_params->{'folder'} = $self->{api_client}->to_query_value($args{'folder'});
+    }
+
+    # query params
+    if ( exists $args{'storage'}) {
+        $query_params->{'storage'} = $self->{api_client}->to_query_value($args{'storage'});
+    }
+
+    # path params
+    if ( exists $args{'name'}) {
+        my $_base_variable = "{" . "name" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'name'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    # path params
+    if ( exists $args{'sheet_name'}) {
+        my $_base_variable = "{" . "sheetName" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'sheet_name'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw()];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('CellsCloudResponse', $response);
+    return $_response_object;
+}
+
+#
 # cells_worksheet_validations_get_worksheet_validation
 #
 # Get worksheet validation by index.
@@ -31915,15 +32034,15 @@ sub upload_file {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
-  # form params
+    # form params
     # if ( exists $args{'file'} ) {
     #             $form_params->{'File'} = $self->{api_client}->to_form_value($args{'file'});
     # }
     
     my $_body_data;
-     if ( exists $args{'file'} ) {
+    if ( exists $args{'file'} ) {
                  $_body_data = $args{'file'};
-    }
+    }    
     # authentication setting, if any
     my $auth_settings = [qw()];
 

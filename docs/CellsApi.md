@@ -203,6 +203,7 @@ Method | HTTP request | Description
 [**cells_workbook_put_document_protect_from_changes**](CellsApi.md#cells_workbook_put_document_protect_from_changes) | **PUT** /cells/{name}/writeProtection | Protect document from changes.
 [**cells_workbook_put_workbook_create**](CellsApi.md#cells_workbook_put_workbook_create) | **PUT** /cells/{name} | Create new workbook using deferent methods.
 [**cells_worksheet_validations_delete_worksheet_validation**](CellsApi.md#cells_worksheet_validations_delete_worksheet_validation) | **DELETE** /cells/{name}/worksheets/{sheetName}/validations/{validationIndex} | Delete worksheet validation by index.
+[**cells_worksheet_validations_delete_worksheet_validations**](CellsApi.md#cells_worksheet_validations_delete_worksheet_validations) | **DELETE** /cells/{name}/worksheets/{sheetName}/validations | Clear all validation in worksheet.
 [**cells_worksheet_validations_get_worksheet_validation**](CellsApi.md#cells_worksheet_validations_get_worksheet_validation) | **GET** /cells/{name}/worksheets/{sheetName}/validations/{validationIndex} | Get worksheet validation by index.
 [**cells_worksheet_validations_get_worksheet_validations**](CellsApi.md#cells_worksheet_validations_get_worksheet_validations) | **GET** /cells/{name}/worksheets/{sheetName}/validations | Get worksheet validations.
 [**cells_worksheet_validations_post_worksheet_validation**](CellsApi.md#cells_worksheet_validations_post_worksheet_validation) | **POST** /cells/{name}/worksheets/{sheetName}/validations/{validationIndex} | Update worksheet validation by index.
@@ -10687,6 +10688,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ValidationResponse**](ValidationResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cells_worksheet_validations_delete_worksheet_validations**
+> CellsCloudResponse cells_worksheet_validations_delete_worksheet_validations(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+
+Clear all validation in worksheet.
+
+### Example 
+```perl
+use Data::Dumper;
+use AsposeCellsCloud::CellsApi;
+my $api_instance = AsposeCellsCloud::CellsApi->new(
+);
+
+my $name = 'name_example'; # string | Document name.
+my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
+my $folder = 'folder_example'; # string | Document's folder.
+my $storage = 'storage_example'; # string | storage name.
+
+eval { 
+    my $result = $api_instance->cells_worksheet_validations_delete_worksheet_validations(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling CellsApi->cells_worksheet_validations_delete_worksheet_validations: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| Document name. | 
+ **sheet_name** | **string**| Worksheet name. | 
+ **folder** | **string**| Document&#39;s folder. | [optional] 
+ **storage** | **string**| storage name. | [optional] 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
 
 ### Authorization
 

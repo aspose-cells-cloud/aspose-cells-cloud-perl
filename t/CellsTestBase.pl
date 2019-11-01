@@ -40,19 +40,13 @@ our $new_client = undef;
 sub get_client
 {
     my ($self, %args) = @_;
-    my $config = AsposeCellsCloud::Configuration->new('base_url' => 'https://api.aspose.cloud');
-    my $client = AsposeCellsCloud::ApiClient->new( $config);
-    my $oauth_api = AsposeCellsCloud::CellsApi->new($client);
-
     my $grant_type = 'client_credentials'; # replace NULL with a proper value
     my $client_id = '66164C51-693E-4904-A121-545961673EC1'; # replace NULL with a proper value
     my $client_secret =  '536e76768419db9585afdd37bb5f7533'; # replace NULL with a proper value
-    my $result = $oauth_api->o_auth_post(grant_type => $grant_type, client_id => $client_id, client_secret => $client_secret);
-    my $access_token  = $result->access_token;
-
-    my $new_config = AsposeCellsCloud::Configuration->new('access_token' =>  $access_token, 'base_url' => 'https://api.aspose.cloud/v3.0');
-    $new_client = AsposeCellsCloud::ApiClient->new( $new_config);
-    return $new_client;
+    my $config = AsposeCellsCloud::Configuration->new('base_url' => 'https://api.aspose.cloud','api_version' => 'v3.0', app_sid => $client_id, app_key => $client_secret);
+    my $client = AsposeCellsCloud::ApiClient->new( $config);
+    my $oauth_api = AsposeCellsCloud::CellsApi->new($client);
+    return $oauth_api;
 }
 
 sub ready_file 

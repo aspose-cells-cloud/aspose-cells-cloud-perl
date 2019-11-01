@@ -51,7 +51,7 @@ my $CELLAREA = 'A1:C10';
 my $workbook_path ='Temp\\Book1.xlsx';
 
 use_ok('AsposeCellsCloud::CellsApi');
-my $api = AsposeCellsCloud::CellsApi->new(get_client());
+my $api = get_client();
 isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #

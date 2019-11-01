@@ -90,6 +90,74 @@ sub set_timeout {
     $self->{http_timeout} = $seconds;
 }
 
+# @return AccessTokenResponse
+#
+sub o_auth_post {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'grant_type' is set
+    unless (exists $args{'grant_type'}) {
+      croak("Missing the required parameter 'grant_type' when calling o_auth_post");
+    }
+
+    # verify the required parameter 'client_id' is set
+    unless (exists $args{'client_id'}) {
+      croak("Missing the required parameter 'client_id' when calling o_auth_post");
+    }
+
+    # verify the required parameter 'client_secret' is set
+    unless (exists $args{'client_secret'}) {
+      croak("Missing the required parameter 'client_secret' when calling o_auth_post");
+    }
+
+    # parse inputs
+    my $_resource_path = '/connect/token';
+    if($self->{config}->{api_version} eq "v1.1"){
+        $_resource_path = '/oauth2/token';
+    }
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->select_header_content_type('application/x-www-form-urlencoded');
+
+    # form params
+    if ( exists $args{'grant_type'} ) {
+                $form_params->{'grant_type'} = $self->to_form_value($args{'grant_type'});
+    }
+    
+    # form params
+    if ( exists $args{'client_id'} ) {
+                $form_params->{'client_id'} = $self->to_form_value($args{'client_id'});
+    }
+    
+    # form params
+    if ( exists $args{'client_secret'} ) {
+                $form_params->{'client_secret'} = $self->to_form_value($args{'client_secret'});
+    }
+    
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw()];
+
+    # make the API Call
+    my $response = $self->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->deserialize('AccessTokenResponse', $response);
+    return $_response_object;
+}
+
 # make the HTTP request
 # @param string $resourcePath path to method endpoint
 # @param string $method method to call
@@ -396,6 +464,12 @@ sub _global_auth_setup {
 	if (my $uname = delete $tokens->{username}) {
 		my $pword = delete $tokens->{password};
 		$header_params->{'Authorization'} = 'Basic '.encode_base64($uname.":".$pword);
+	}
+	# sid key
+	if (my $app_sid = delete $tokens->{app_sid}) {
+		my $app_key = delete $tokens->{app_key};
+		$query_params->{'app_sid'} = $app_sid;
+        $query_params->{'app_key'} = $app_key;
 	}
 	
 	# oauth

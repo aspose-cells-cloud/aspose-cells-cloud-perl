@@ -35,9 +35,8 @@ use_ok('AsposeCellsCloud::Object::Worksheet');
 use_ok('AsposeCellsCloud::Object::Comment');
 
 require 't\CellsTestBase.pl';
-my $new_client = get_client();
-my $result =undef;
 
+my $result =undef;
 my $BOOK1 = 'Book1.xlsx';
 my $MYDOC = 'myDocument.xlsx';
 my $PVTESTFILE = 'TestCase.xlsx';
@@ -56,7 +55,7 @@ my $CELLAREA = 'A1:C10';
 
 use_ok('AsposeCellsCloud::CellsApi');
 
-my $api = AsposeCellsCloud::CellsApi->new($new_client);
+my $api = get_client();
 isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #

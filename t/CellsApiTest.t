@@ -24,7 +24,6 @@ use lib 'lib';
 use strict;
 use warnings;
 require 't\CellsTestBase.pl';
-my $new_client = get_client();
 
 use AsposeCellsCloud::Configuration;
 use AsposeCellsCloud::ApiClient;
@@ -51,7 +50,7 @@ my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
 
 
-my $api = AsposeCellsCloud::CellsApi->new($new_client);
+my $api = get_client();
 
 isa_ok($api, 'AsposeCellsCloud::CellsApi');
 

@@ -35,7 +35,7 @@ use AsposeCellsCloud::Object::Style;
 
 
 require 't\CellsTestBase.pl';
-my $new_client = get_client();
+
 my $result =undef;
 
 my $BOOK1 = 'Book1.xlsx';
@@ -56,7 +56,7 @@ my $CELLAREA = 'A1:C10';
 
 
 
-my $api = AsposeCellsCloud::CellsApi->new($new_client);
+my $api = get_client();
 isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #

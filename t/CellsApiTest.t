@@ -36,7 +36,7 @@ use AsposeCellsCloud::Object::Style;
 my $BOOK1 = 'Book1.xlsx';
 my $MYDOC = 'myDocument.xlsx';
 my $PVTESTFILE = 'TestCase.xlsx';
-my $TEMPFOLDER = 'Temp';
+my $TEMPFOLDER = 'PerlTest';
 my $SHEET1 = 'Sheet1';
 my $SHEET2 = 'Sheet2';
 my $SHEET3 = 'Sheet3';

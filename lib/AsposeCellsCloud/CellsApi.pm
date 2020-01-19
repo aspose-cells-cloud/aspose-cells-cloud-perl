@@ -1,6 +1,6 @@
 =begin comment
 
-Copyright (c) 2019 Aspose.Cells Cloud
+Copyright (c) 2020 Aspose.Cells Cloud
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -26256,15 +26256,16 @@ sub cells_worksheet_validations_get_worksheet_validations {
         my $_base_value = $self->{api_client}->to_path_value($args{'sheet_name'});
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
-
+    
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
-
     # make the API Call
     my $response = $self->{api_client}->call_api($_resource_path, $_method,
                                            $query_params, $form_params,
                                            $header_params, $_body_data, $auth_settings);
+   
+                                          
     if (!$response) {
         return;
     }

@@ -257,6 +257,7 @@ sub cells_auto_filter_delete_worksheet_date_filter {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -391,6 +392,7 @@ sub cells_auto_filter_delete_worksheet_filter {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -498,6 +500,7 @@ sub cells_auto_filter_get_worksheet_auto_filter {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -605,6 +608,7 @@ sub cells_auto_filter_post_worksheet_auto_filter_refresh {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -728,6 +732,7 @@ sub cells_auto_filter_post_worksheet_match_blanks {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -851,6 +856,7 @@ sub cells_auto_filter_post_worksheet_match_non_blanks {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -1018,6 +1024,7 @@ sub cells_auto_filter_put_worksheet_color_filter {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'color_filter'}) {
@@ -1249,6 +1256,7 @@ sub cells_auto_filter_put_worksheet_custom_filter {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -1492,6 +1500,7 @@ sub cells_auto_filter_put_worksheet_date_filter {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -1669,6 +1678,7 @@ sub cells_auto_filter_put_worksheet_dynamic_filter {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -1846,6 +1856,7 @@ sub cells_auto_filter_put_worksheet_filter {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -2055,6 +2066,7 @@ sub cells_auto_filter_put_worksheet_filter_top10 {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -2248,6 +2260,7 @@ sub cells_auto_filter_put_worksheet_icon_filter {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -2384,6 +2397,7 @@ sub cells_autoshapes_get_worksheet_autoshape {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -2491,6 +2505,7 @@ sub cells_autoshapes_get_worksheet_autoshapes {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -2616,6 +2631,7 @@ sub cells_chart_area_get_chart_area {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -2741,6 +2757,7 @@ sub cells_chart_area_get_chart_area_border {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -2866,6 +2883,7 @@ sub cells_chart_area_get_chart_area_fill_format {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -2991,6 +3009,7 @@ sub cells_charts_delete_worksheet_chart_legend {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -3116,6 +3135,7 @@ sub cells_charts_delete_worksheet_chart_title {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -3223,6 +3243,7 @@ sub cells_charts_delete_worksheet_clear_charts {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -3348,6 +3369,7 @@ sub cells_charts_delete_worksheet_delete_chart {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -3484,6 +3506,7 @@ sub cells_charts_get_worksheet_chart {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -3609,6 +3632,7 @@ sub cells_charts_get_worksheet_chart_legend {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -3734,6 +3758,7 @@ sub cells_charts_get_worksheet_chart_title {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -3841,6 +3866,7 @@ sub cells_charts_get_worksheet_charts {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -3972,6 +3998,7 @@ sub cells_charts_post_worksheet_chart {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'chart'}) {
@@ -4108,6 +4135,7 @@ sub cells_charts_post_worksheet_chart_legend {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'legend'}) {
@@ -4244,6 +4272,7 @@ sub cells_charts_post_worksheet_chart_title {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'title'}) {
@@ -4471,6 +4500,7 @@ sub cells_charts_put_worksheet_add_chart {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -4596,6 +4626,7 @@ sub cells_charts_put_worksheet_chart_legend {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -4727,6 +4758,7 @@ sub cells_charts_put_worksheet_chart_title {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'title'}) {
@@ -4857,6 +4889,7 @@ sub cells_conditional_formattings_delete_worksheet_conditional_formatting {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -5028,6 +5061,7 @@ sub cells_conditional_formattings_delete_worksheet_conditional_formatting_area {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -5135,6 +5169,7 @@ sub cells_conditional_formattings_delete_worksheet_conditional_formattings {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -5260,6 +5295,7 @@ sub cells_conditional_formattings_get_worksheet_conditional_formatting {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -5367,6 +5403,7 @@ sub cells_conditional_formattings_get_worksheet_conditional_formattings {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -5496,6 +5533,7 @@ sub cells_conditional_formattings_put_worksheet_conditional_formatting {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'formatcondition'}) {
@@ -5706,6 +5744,7 @@ sub cells_conditional_formattings_put_worksheet_format_condition {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -5847,6 +5886,7 @@ sub cells_conditional_formattings_put_worksheet_format_condition_area {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -6036,6 +6076,7 @@ sub cells_conditional_formattings_put_worksheet_format_condition_condition {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -6193,6 +6234,7 @@ sub cells_delete_worksheet_columns {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -6318,6 +6360,7 @@ sub cells_delete_worksheet_row {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -6463,6 +6506,7 @@ sub cells_delete_worksheet_rows {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -6588,6 +6632,7 @@ sub cells_get_cell_html_string {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -6713,6 +6758,7 @@ sub cells_get_worksheet_cell {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -6838,6 +6884,7 @@ sub cells_get_worksheet_cell_style {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -6967,6 +7014,7 @@ sub cells_get_worksheet_cells {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -7092,6 +7140,7 @@ sub cells_get_worksheet_column {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -7199,6 +7248,7 @@ sub cells_get_worksheet_columns {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -7324,6 +7374,7 @@ sub cells_get_worksheet_row {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -7431,6 +7482,7 @@ sub cells_get_worksheet_rows {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -7556,6 +7608,7 @@ sub cells_hypelinks_delete_worksheet_hyperlink {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -7663,6 +7716,7 @@ sub cells_hypelinks_delete_worksheet_hyperlinks {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -7788,6 +7842,7 @@ sub cells_hypelinks_get_worksheet_hyperlink {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -7895,6 +7950,7 @@ sub cells_hypelinks_get_worksheet_hyperlinks {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -8026,6 +8082,7 @@ sub cells_hypelinks_post_worksheet_hyperlink {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'hyperlink'}) {
@@ -8218,6 +8275,7 @@ sub cells_hypelinks_put_worksheet_hyperlink {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -8343,6 +8401,7 @@ sub cells_list_objects_delete_worksheet_list_object {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -8450,6 +8509,7 @@ sub cells_list_objects_delete_worksheet_list_objects {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -8575,6 +8635,7 @@ sub cells_list_objects_get_worksheet_list_object {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -8682,6 +8743,7 @@ sub cells_list_objects_get_worksheet_list_objects {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -8813,6 +8875,7 @@ sub cells_list_objects_post_worksheet_list_object {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'list_object'}) {
@@ -8943,6 +9006,7 @@ sub cells_list_objects_post_worksheet_list_object_convert_to_range {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -9074,6 +9138,7 @@ sub cells_list_objects_post_worksheet_list_object_sort_table {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'data_sorter'}) {
@@ -9226,6 +9291,7 @@ sub cells_list_objects_post_worksheet_list_object_summarize_with_pivot_table {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'request'}) {
@@ -9413,6 +9479,7 @@ sub cells_list_objects_put_worksheet_list_object {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -9538,6 +9605,7 @@ sub cells_ole_objects_delete_worksheet_ole_object {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -9645,6 +9713,7 @@ sub cells_ole_objects_delete_worksheet_ole_objects {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -9781,6 +9850,7 @@ sub cells_ole_objects_get_worksheet_ole_object {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -9888,6 +9958,7 @@ sub cells_ole_objects_get_worksheet_ole_objects {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -10019,6 +10090,7 @@ sub cells_ole_objects_post_update_worksheet_ole_object {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'ole'}) {
@@ -10203,6 +10275,7 @@ sub cells_ole_objects_put_worksheet_ole_object {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'ole_object'}) {
@@ -10333,6 +10406,7 @@ sub cells_page_breaks_delete_horizontal_page_break {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -10451,6 +10525,7 @@ sub cells_page_breaks_delete_horizontal_page_breaks {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -10576,6 +10651,7 @@ sub cells_page_breaks_delete_vertical_page_break {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -10694,6 +10770,7 @@ sub cells_page_breaks_delete_vertical_page_breaks {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -10819,6 +10896,7 @@ sub cells_page_breaks_get_horizontal_page_break {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -10926,6 +11004,7 @@ sub cells_page_breaks_get_horizontal_page_breaks {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -11051,6 +11130,7 @@ sub cells_page_breaks_get_vertical_page_break {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -11158,6 +11238,7 @@ sub cells_page_breaks_get_vertical_page_breaks {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -11320,6 +11401,7 @@ sub cells_page_breaks_put_horizontal_page_break {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -11482,6 +11564,7 @@ sub cells_page_breaks_put_vertical_page_break {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -11589,6 +11672,7 @@ sub cells_page_setup_delete_header_footer {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -11696,6 +11780,7 @@ sub cells_page_setup_get_footer {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -11803,6 +11888,7 @@ sub cells_page_setup_get_header {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -11910,6 +11996,7 @@ sub cells_page_setup_get_page_setup {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -12065,6 +12152,7 @@ sub cells_page_setup_post_footer {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -12220,6 +12308,7 @@ sub cells_page_setup_post_header {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -12333,6 +12422,7 @@ sub cells_page_setup_post_page_setup {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'page_setup'}) {
@@ -12463,6 +12553,7 @@ sub cells_pictures_delete_worksheet_picture {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -12570,6 +12661,7 @@ sub cells_pictures_delete_worksheet_pictures {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -12706,6 +12798,7 @@ sub cells_pictures_get_worksheet_picture {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -12813,6 +12906,7 @@ sub cells_pictures_get_worksheet_pictures {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -12944,6 +13038,7 @@ sub cells_pictures_post_worksheet_picture {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'picture'}) {
@@ -13117,6 +13212,7 @@ sub cells_pictures_put_worksheet_add_picture {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'picture'}) {
@@ -13269,6 +13365,7 @@ sub cells_pivot_tables_delete_pivot_table_field {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'request'}) {
@@ -13399,6 +13496,7 @@ sub cells_pivot_tables_delete_worksheet_pivot_table {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -13553,6 +13651,7 @@ sub cells_pivot_tables_delete_worksheet_pivot_table_filter {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -13689,6 +13788,7 @@ sub cells_pivot_tables_delete_worksheet_pivot_table_filters {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -13796,6 +13896,7 @@ sub cells_pivot_tables_delete_worksheet_pivot_tables {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -13953,6 +14054,7 @@ sub cells_pivot_tables_get_pivot_table_field {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -14078,6 +14180,7 @@ sub cells_pivot_tables_get_worksheet_pivot_table {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -14221,6 +14324,7 @@ sub cells_pivot_tables_get_worksheet_pivot_table_filter {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -14346,6 +14450,7 @@ sub cells_pivot_tables_get_worksheet_pivot_table_filters {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -14453,6 +14558,7 @@ sub cells_pivot_tables_get_worksheet_pivot_tables {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -14627,6 +14733,7 @@ sub cells_pivot_tables_post_pivot_table_cell_style {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'style'}) {
@@ -14832,6 +14939,7 @@ sub cells_pivot_tables_post_pivot_table_field_hide_item {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -15005,6 +15113,7 @@ sub cells_pivot_tables_post_pivot_table_field_move_to {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -15147,6 +15256,7 @@ sub cells_pivot_tables_post_pivot_table_style {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'style'}) {
@@ -15277,6 +15387,7 @@ sub cells_pivot_tables_post_worksheet_pivot_table_calculate {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -15435,6 +15546,7 @@ sub cells_pivot_tables_post_worksheet_pivot_table_move {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -15593,6 +15705,7 @@ sub cells_pivot_tables_put_pivot_table_field {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'request'}) {
@@ -15755,6 +15868,7 @@ sub cells_pivot_tables_put_worksheet_pivot_table {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'request'}) {
@@ -15902,6 +16016,7 @@ sub cells_pivot_tables_put_worksheet_pivot_table_filter {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'filter'}) {
@@ -16038,6 +16153,7 @@ sub cells_post_cell_calculate {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'options'}) {
@@ -16174,6 +16290,7 @@ sub cells_post_cell_characters {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'options'}) {
@@ -16341,6 +16458,7 @@ sub cells_post_clear_contents {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -16503,6 +16621,7 @@ sub cells_post_clear_formats {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -16634,6 +16753,7 @@ sub cells_post_column_style {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'style'}) {
@@ -16813,6 +16933,7 @@ sub cells_post_copy_cell_into_cell {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -16979,6 +17100,7 @@ sub cells_post_copy_worksheet_columns {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -17145,6 +17267,7 @@ sub cells_post_copy_worksheet_rows {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -17295,6 +17418,7 @@ sub cells_post_group_worksheet_columns {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -17445,6 +17569,7 @@ sub cells_post_group_worksheet_rows {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -17584,6 +17709,7 @@ sub cells_post_hide_worksheet_columns {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -17723,6 +17849,7 @@ sub cells_post_hide_worksheet_rows {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -17854,6 +17981,7 @@ sub cells_post_row_style {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'style'}) {
@@ -17984,6 +18112,7 @@ sub cells_post_set_cell_html_string {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -18139,6 +18268,7 @@ sub cells_post_set_cell_range_value {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -18280,6 +18410,7 @@ sub cells_post_set_worksheet_column_width {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -18419,6 +18550,7 @@ sub cells_post_ungroup_worksheet_columns {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -18569,6 +18701,7 @@ sub cells_post_ungroup_worksheet_rows {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -18719,6 +18852,7 @@ sub cells_post_unhide_worksheet_columns {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -18869,6 +19003,7 @@ sub cells_post_unhide_worksheet_rows {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -19000,6 +19135,7 @@ sub cells_post_update_worksheet_cell_style {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'style'}) {
@@ -19134,6 +19270,7 @@ sub cells_post_update_worksheet_range_style {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'style'}) {
@@ -19275,6 +19412,7 @@ sub cells_post_update_worksheet_row {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -19433,6 +19571,7 @@ sub cells_post_worksheet_cell_set_value {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -19604,6 +19743,7 @@ sub cells_post_worksheet_merge {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -19775,6 +19915,7 @@ sub cells_post_worksheet_unmerge {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -19864,6 +20005,7 @@ sub cells_properties_delete_document_properties {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -19971,6 +20113,7 @@ sub cells_properties_delete_document_property {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -20060,6 +20203,7 @@ sub cells_properties_get_document_properties {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -20167,6 +20311,7 @@ sub cells_properties_get_document_property {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -20280,6 +20425,7 @@ sub cells_properties_put_document_property {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'property'}) {
@@ -20437,6 +20583,7 @@ sub cells_put_insert_worksheet_columns {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -20562,6 +20709,7 @@ sub cells_put_insert_worksheet_row {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -20707,6 +20855,7 @@ sub cells_put_insert_worksheet_rows {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -20869,6 +21018,7 @@ sub cells_ranges_get_worksheet_cells_range_value {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -20998,6 +21148,7 @@ sub cells_ranges_post_worksheet_cells_range_column_width {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'range'}) {
@@ -21116,6 +21267,7 @@ sub cells_ranges_post_worksheet_cells_range_merge {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'range'}) {
@@ -21266,6 +21418,7 @@ sub cells_ranges_post_worksheet_cells_range_move_to {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'range'}) {
@@ -21384,6 +21537,7 @@ sub cells_ranges_post_worksheet_cells_range_outline_border {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'range_operate'}) {
@@ -21518,6 +21672,7 @@ sub cells_ranges_post_worksheet_cells_range_row_height {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'range'}) {
@@ -21636,6 +21791,7 @@ sub cells_ranges_post_worksheet_cells_range_style {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'range_operate'}) {
@@ -21754,6 +21910,7 @@ sub cells_ranges_post_worksheet_cells_range_unmerge {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'range'}) {
@@ -21910,6 +22067,7 @@ sub cells_ranges_post_worksheet_cells_range_value {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'range'}) {
@@ -22028,6 +22186,7 @@ sub cells_ranges_post_worksheet_cells_ranges {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'range_operate'}) {
@@ -22161,6 +22320,7 @@ sub cells_save_as_post_document_save_as {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'save_options'}) {
@@ -22291,6 +22451,7 @@ sub cells_shapes_delete_worksheet_shape {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -22398,6 +22559,7 @@ sub cells_shapes_delete_worksheet_shapes {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -22523,6 +22685,7 @@ sub cells_shapes_get_worksheet_shape {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -22630,6 +22793,7 @@ sub cells_shapes_get_worksheet_shapes {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -22761,6 +22925,7 @@ sub cells_shapes_post_worksheet_shape {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'dto'}) {
@@ -22985,6 +23150,7 @@ sub cells_shapes_put_worksheet_shape {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -23045,6 +23211,7 @@ sub cells_task_post_run_task {
     }
     $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'task_data'}) {
@@ -23145,6 +23312,7 @@ sub cells_workbook_delete_decrypt_document {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'encryption'}) {
@@ -23239,6 +23407,7 @@ sub cells_workbook_delete_document_unprotect_from_changes {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -23334,6 +23503,7 @@ sub cells_workbook_delete_unprotect_document {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'protection'}) {
@@ -23446,6 +23616,7 @@ sub cells_workbook_delete_workbook_name {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -23535,6 +23706,7 @@ sub cells_workbook_delete_workbook_names {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -23679,6 +23851,7 @@ sub cells_workbook_get_workbook {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -23768,6 +23941,7 @@ sub cells_workbook_get_workbook_default_style {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -23875,6 +24049,7 @@ sub cells_workbook_get_workbook_name {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -23982,6 +24157,7 @@ sub cells_workbook_get_workbook_name_value {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -24071,6 +24247,7 @@ sub cells_workbook_get_workbook_names {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -24160,6 +24337,7 @@ sub cells_workbook_get_workbook_settings {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -24249,6 +24427,7 @@ sub cells_workbook_get_workbook_text_items {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -24377,6 +24556,7 @@ sub cells_workbook_post_autofit_workbook_rows {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'auto_fitter_options'}) {
@@ -24477,6 +24657,7 @@ sub cells_workbook_post_encrypt_document {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'encryption'}) {
@@ -24582,6 +24763,7 @@ sub cells_workbook_post_import_data {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'importdata'}) {
@@ -24682,6 +24864,7 @@ sub cells_workbook_post_protect_document {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'protection'}) {
@@ -24793,6 +24976,7 @@ sub cells_workbook_post_workbook_calculate_formula {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'options'}) {
@@ -24909,6 +25093,7 @@ sub cells_workbook_post_workbook_get_smart_marker_result {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -25004,6 +25189,7 @@ sub cells_workbook_post_workbook_settings {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'settings'}) {
@@ -25153,6 +25339,7 @@ sub cells_workbook_post_workbook_split {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -25258,6 +25445,7 @@ sub cells_workbook_post_workbooks_merge {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -25379,6 +25567,7 @@ sub cells_workbook_post_workbooks_text_replace {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -25484,6 +25673,7 @@ sub cells_workbook_post_workbooks_text_search {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -25577,6 +25767,7 @@ sub cells_workbook_put_convert_workbook {
         $query_params->{'outPath'} = $self->{api_client}->to_query_value($args{'out_path'});
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'workbook'}) {
@@ -25677,6 +25868,7 @@ sub cells_workbook_put_document_protect_from_changes {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'password'}) {
@@ -25793,6 +25985,7 @@ sub cells_workbook_put_workbook_create {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -25918,6 +26111,7 @@ sub cells_worksheet_validations_delete_worksheet_validation {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -26025,6 +26219,7 @@ sub cells_worksheet_validations_delete_worksheet_validations {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -26150,6 +26345,7 @@ sub cells_worksheet_validations_get_worksheet_validation {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -26256,16 +26452,16 @@ sub cells_worksheet_validations_get_worksheet_validations {
         my $_base_value = $self->{api_client}->to_path_value($args{'sheet_name'});
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
-    
+
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
+
     # make the API Call
     my $response = $self->{api_client}->call_api($_resource_path, $_method,
                                            $query_params, $form_params,
                                            $header_params, $_body_data, $auth_settings);
-   
-                                          
     if (!$response) {
         return;
     }
@@ -26389,6 +26585,7 @@ sub cells_worksheet_validations_post_worksheet_validation {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'validation'}) {
@@ -26512,6 +26709,7 @@ sub cells_worksheet_validations_put_worksheet_validation {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -26625,6 +26823,7 @@ sub cells_worksheets_delete_unprotect_worksheet {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'protect_parameter'}) {
@@ -26737,6 +26936,7 @@ sub cells_worksheets_delete_worksheet {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -26844,6 +27044,7 @@ sub cells_worksheets_delete_worksheet_background {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -26969,6 +27170,7 @@ sub cells_worksheets_delete_worksheet_comment {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -27076,6 +27278,7 @@ sub cells_worksheets_delete_worksheet_comments {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -27247,6 +27450,7 @@ sub cells_worksheets_delete_worksheet_freeze_panes {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -27336,6 +27540,7 @@ sub cells_worksheets_get_named_ranges {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -27476,6 +27681,7 @@ sub cells_worksheets_get_worksheet {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -27599,6 +27805,7 @@ sub cells_worksheets_get_worksheet_calculate_formula {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -27724,6 +27931,7 @@ sub cells_worksheets_get_worksheet_comment {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -27831,6 +28039,7 @@ sub cells_worksheets_get_worksheet_comments {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -27956,6 +28165,7 @@ sub cells_worksheets_get_worksheet_merged_cell {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -28063,6 +28273,7 @@ sub cells_worksheets_get_worksheet_merged_cells {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -28170,6 +28381,7 @@ sub cells_worksheets_get_worksheet_text_items {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -28259,6 +28471,7 @@ sub cells_worksheets_get_worksheets {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -28426,6 +28639,7 @@ sub cells_worksheets_post_autofit_worksheet_columns {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'auto_fitter_options'}) {
@@ -28592,6 +28806,7 @@ sub cells_worksheets_post_autofit_worksheet_row {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'auto_fitter_options'}) {
@@ -28743,6 +28958,7 @@ sub cells_worksheets_post_autofit_worksheet_rows {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'auto_fitter_options'}) {
@@ -28899,6 +29115,7 @@ sub cells_worksheets_post_copy_worksheet {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'options'}) {
@@ -29017,6 +29234,7 @@ sub cells_worksheets_post_move_worksheet {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'moving'}) {
@@ -29145,6 +29363,7 @@ sub cells_worksheets_post_rename_worksheet {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -29258,6 +29477,7 @@ sub cells_worksheets_post_update_worksheet_property {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'sheet'}) {
@@ -29386,6 +29606,7 @@ sub cells_worksheets_post_update_worksheet_zoom {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -29517,6 +29738,7 @@ sub cells_worksheets_post_worksheet_comment {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'comment'}) {
@@ -29651,6 +29873,7 @@ sub cells_worksheets_post_worksheet_range_sort {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'data_sorter'}) {
@@ -29779,6 +30002,7 @@ sub cells_worksheets_post_worksheet_text_search {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -29918,6 +30142,7 @@ sub cells_worksheets_post_worsheet_text_replace {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -30047,6 +30272,7 @@ sub cells_worksheets_put_add_new_worksheet {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -30170,6 +30396,7 @@ sub cells_worksheets_put_change_visibility_worksheet {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -30283,6 +30510,7 @@ sub cells_worksheets_put_protect_worksheet {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'protect_parameter'}) {
@@ -30406,6 +30634,7 @@ sub cells_worksheets_put_worksheet_background {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'png'}) {
@@ -30542,6 +30771,7 @@ sub cells_worksheets_put_worksheet_comment {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # body params
     if ( exists $args{'comment'}) {
@@ -30718,6 +30948,7 @@ sub cells_worksheets_put_worksheet_freeze_panes {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -30834,6 +31065,7 @@ sub copy_file {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -30935,6 +31167,7 @@ sub copy_folder {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -31009,6 +31242,7 @@ sub create_folder {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -31094,6 +31328,7 @@ sub delete_file {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -31179,6 +31414,7 @@ sub delete_folder {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -31264,6 +31500,7 @@ sub download_file {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -31324,6 +31561,7 @@ sub get_disc_usage {
         $query_params->{'storageName'} = $self->{api_client}->to_query_value($args{'storage_name'});
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -31402,6 +31640,7 @@ sub get_file_versions {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -31480,6 +31719,7 @@ sub get_files_list {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -31596,6 +31836,7 @@ sub move_file {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -31697,6 +31938,7 @@ sub move_folder {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -31779,17 +32021,18 @@ sub o_auth_post {
     if ( exists $args{'grant_type'} ) {
                 $form_params->{'grant_type'} = $self->{api_client}->to_form_value($args{'grant_type'});
     }
-    
+
     # form params
     if ( exists $args{'client_id'} ) {
                 $form_params->{'client_id'} = $self->{api_client}->to_form_value($args{'client_id'});
     }
-    
+
     # form params
     if ( exists $args{'client_secret'} ) {
                 $form_params->{'client_secret'} = $self->{api_client}->to_form_value($args{'client_secret'});
     }
-    
+
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -31879,6 +32122,7 @@ sub object_exists {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -31946,6 +32190,7 @@ sub storage_exists {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
+    $self->{api_client}->check_access_token();
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -32044,6 +32289,7 @@ sub upload_file {
     if ( exists $args{'file'} ) {
                  $_body_data = $args{'file'};
     }    
+    $self->{api_client}->check_access_token();
     # authentication setting, if any
     my $auth_settings = [qw()];
 

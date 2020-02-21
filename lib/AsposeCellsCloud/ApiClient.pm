@@ -55,6 +55,7 @@ sub new {
     my $class = shift;
 
     my $config;
+    my $get_access_token_time;
     if ( $_[0] && ref $_[0] && ref $_[0] eq 'AsposeCellsCloud::Configuration' ) {
         $config = $_[0];
     } else {
@@ -64,6 +65,7 @@ sub new {
     my (%args) = (
         'ua' => LWP::UserAgent->new,
         'config' => $config,
+        'get_access_token_time' =>$get_access_token_time,
     );
   
     return bless \%args, $class;
@@ -155,7 +157,23 @@ sub o_auth_post {
         return;
     }
     my $_response_object = $self->deserialize('AccessTokenResponse', $response);
+    $self->{get_access_token_time} = time();
     return $_response_object;
+}
+# check access token
+sub check_access_token {
+    my ($self, %args) = @_;
+    if($self->{get_access_token_time}){
+        my $difference_in_seconds=time() - $self->{get_access_token_time};       
+        if($difference_in_seconds < 86300){
+            return;
+        }
+    }
+    my $url = $self->{config}->{base_url};
+    $self->{config}->{base_url} ='https://api.aspose.cloud';
+    my $access_token  =  $self->o_auth_post('grant_type' => "client_credentials", 'client_id' => $self->{config}->{app_sid}, 'client_secret' =>$self->{config}->{app_key})->access_token;
+    $self->{config}->{base_url}  = $url ;
+    $self->{config}->{access_token} = $access_token;
 }
 
 # make the HTTP request
@@ -219,7 +237,7 @@ sub call_api {
     }
     else {
     }
-    
+   
     $self->{ua}->timeout($self->{http_timeout} || $self->{config}{http_timeout});
     $self->{ua}->agent($self->{http_user_agent} || $self->{config}{http_user_agent});
     

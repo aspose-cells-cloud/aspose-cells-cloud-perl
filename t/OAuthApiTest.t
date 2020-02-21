@@ -36,8 +36,8 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
 my $access_token;
 
 my $grant_type = 'client_credentials'; # replace NULL with a proper value
-my $client_id = '66164C51-693E-4904-A121-545961673EC1'; # replace NULL with a proper value
-my $client_secret =  '536e76768419db9585afdd37bb5f7533'; # replace NULL with a proper value
+my $client_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'; # replace NULL with a proper value
+my $client_secret =  'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'; # replace NULL with a proper value
 my $result = $api->o_auth_post(grant_type => $grant_type, client_id => $client_id, client_secret => $client_secret);
 $access_token =  $result->access_token;
 

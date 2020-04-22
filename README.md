@@ -1,94 +1,79 @@
-# Aspose.Cells Cloud SDK for Perl 
+# Perl REST API for Spreadsheet Processing in Cloud
 
-- API version: 3.0
-- SDK version: 20.2
+This Cloud SDK enhances your Perl cloud-based apps to [process & manipulate Microsoft Excel spreadsheets](https://products.aspose.cloud/cells/perl) in the cloud, without MS Office.
 
-This repository contains Aspose.Cells Cloud SDK for Perl  source code. This SDK allows you to work with Aspose.Cells Cloud REST APIs in your Perl applications quickly and easily, with zero initial cost.
+## Spreadsheet Processing Features
 
+- Add, update or delete charts, worksheet pictures, shapes, hyperlinks & validations.
+- Add or remove cells area for conditional formatting, or OleObjects from Excel worksheets.
+- Insert or delete, horizontal or vertical page breaks
+- Add ListObject at a specific place within an Excel file & convert them to a range of cells.
+- Delete specific or all ListObjects in a worksheet or summarize its data with pivot table.
+- Apply custom criteria to list filters of various types.
+- Get, update, show or hide chart legend & titles.
+- Manipulate page setup, header & footer.
+- Create, update, fetch or delete document properties.
+- Fetch the required shape from worksheet.
+- Load & Process Excel Spreadsheets via Cloud SDK.
+- Cloud SDK to Read & Process Excel Worksheets.
+- Leverage the Power of Pivot Tables & Ranges.
 
+## Enhancements in Version 20.4
 
-# Key Features
+- Support to export area or page of sheet to JPEG.
+- Support to add background for workbook.
+- Enhancement for splitting workbook.
+- Enhancement for create workbook.
 
-- Conversion between various document-related formats (20+ formats supported), including PDF<->Excel conversion
+## Read & Write Spreadsheet Formats
 
-- Splitting Excel documents
+**Microsoft Excel:** XLS, XLSX, XLSB, XLSM, XLT, XLTX, XLTM
+**OpenOffice:** ODS
+**SpreadsheetML:** XML
+**Text:** CSV, TSV, TXT (TabDelimited)
+**Web:** HTML, MHTML
+**PDF**
 
-- Accessing Excel document metadata and statistics
+## Save Spreadsheet As
 
-- Find and replace
+DIF, HTML, MHTML,PNG,JPG, TIFF, XPS, SVG, MD (Markdown), ODS ,xlsx,xls,xlsb, PDF,XML,TXT,CSV
 
-- Watermarks and protection
+## Read Spreadsheet Formats
 
-- Full read & write access to Cells Object Model, including workbook, worksheet, cell, shapes, tables, list object ,ole Object,headers/footers and many others
+SXC, FODS
 
-  
-
-See [API Reference](https://apireference.aspose.cloud/cells/) for full API specification.
-
-
-
-# Storage API support
-
-#### Since version 19.9 SDK includes support of storage operations for better user experience and unification, so now there's no need to use 2 different SDKs!
-
-It gives you an ability to:
-
-- Upload, download, copy, move and delete files, including versions handling (if you are using Cloud storage that supports this feature - true by default)
-- Create, copy, move and delete folders
-- Copy and move files and folders accross separate storages in scope of a single operation
-- Check if certain file, folder or storage exists
-
-# Licensing
-
-All Aspose.Cells Cloud SDKs are licensed under [MIT License](https://github.com/aspose-cells-cloud/aspose-cells-cloud-perl/blob/master/LICENSE).
-
-
-
-# How to use the SDK?
+## Getting Started with Aspose.Cells Cloud SDK for Perl
 
 The complete source code is available in this repository folder. You can either directly use it in your project via source code or get [Packagist distribution](https://www.cpan.org/) (recommended). For more details, please visit our [documentation website](https://docs.aspose.cloud/display/cellscloud/Available+SDKs).
 
- 
 
-### Prerequisites
+Please check the [GitHub Repository](https://github.com/aspose-cells-cloud/aspose-cells-cloud-perl) for other common usage scenarios.
 
- 
-
-To use Aspose.Cells Cloud SDK for Perl  you need to register an account with [Aspose Cloud](https://www.aspose.cloud/) and lookup/create App Key and SID at [Cloud Dashboard](https://dashboard.aspose.cloud/#/apps). There is free quota available. For more details, see [Aspose Cloud Pricing](https://purchase.aspose.cloud/pricing).
-
- 
-
-## Installation & Usage
-
-
-
-### Sample usage
 
 ```
-@instance = AsposeCellsCloud::CellsApi.new("appsid","appkey")
- name = 'Book1.xlsx'
- text = 'test'
- folder = 'Temp'
- @instance.cells_workbook_post_workbooks_text_search(name, text, { :folder=>folder})
+
+## Using Perl to Convert an Excel File to another File Format
+
+The following code example elaborates how you can use Perl code to convert an Excel document to another file format in the cloud:
+
+```Perl
+    @api = AsposeCellsCloud::CellsApi.new("appsid","appkey")
+    my $format = 'pdf'; # replace NULL with a proper value
+    my $password = undef; # replace NULL with a proper value
+    my $out_path = undef; # replace NULL with a proper value
+    my $Book1_data =undef;
+    my @fileinfos = stat("D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx");
+    my $filelength = @fileinfos[7];
+    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx") or die "file.txt can not open, $!";
+    binmode(DATA);
+    # while( read (DATA, $Book1_data, 8)) {};
+    read (DATA, $Book1_data, $filelength);
+    close (DATA);    
+    my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    # ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
+    $result = $api->cells_workbook_put_convert_workbook( workbook => $Book1_data, format => $format, password => $password, out_path => $out_path,folder =>$folder);conver
 ```
 
-# Tests
-
-[Tests](https://github.com/aspose-cells-cloud/aspose-cells-cloud-perl/tree/master/t) contain various examples of using the SDK.
+[Product Page](https://products.aspose.cloud/cells/perl) | [Documentation](https://docs.aspose.cloud/display/cellscloud/Home) | [Live Demo](https://products.aspose.app/cells/family) | [API Reference](https://apireference.aspose.cloud/cells/) | [Code Samples](https://github.com/aspose-cells-cloud/aspose-cells-cloud-perl) | [Blog](https://blog.aspose.cloud/category/cells/) | [Free Support](https://forum.aspose.cloud/c/cells) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
 
 
-
-# Contact Us
-
-Your feedback is very important to us. Please feel free to contact via
-
-- [**Free Support Forum**](https://forum.aspose.cloud/c/cells)
-- [**Paid Support Helpdesk**](https://helpdesk.aspose.cloud/)
-
-# Resources
-
-- [**Web API reference**](https://apireference.aspose.cloud/cells/)
-- [**Website**](https://www.aspose.cloud)
-- [**Product Home**](https://products.aspose.cloud/cells)
-- [**Documentation**](https://docs.aspose.cloud/display/cellscloud/Home)
-- [**Blog**](https://blog.aspose.cloud/category/cells/)

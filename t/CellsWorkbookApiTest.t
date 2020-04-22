@@ -337,14 +337,14 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $Book1_data =undef;
     my @fileinfos = stat("D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx");
     my $filelength = @fileinfos[7];
-    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx") or die "file.txt 文件无法打开, $!";
+    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx") or die "file.txt  can not open, $!";
     binmode(DATA);
     # while( read (DATA, $Book1_data, 8)) {};
     read (DATA, $Book1_data, $filelength);
     close (DATA);    
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
     # ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
-    $result = $api->cells_workbook_put_convert_workbook( workbook => $Book1_data, format => $format, password => $password, out_path => $out_path,folder =>$folder);
+    $result = $api->cells_workbook_put_convert_workbook( workbook => $Book1_data, format => $format, password => $password, out_path => $out_path,folder =>$folder);conver
 }
 
 #
@@ -357,7 +357,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $Book1_data =undef;
     my @fileinfos = stat("D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx");
     my $filelength = @fileinfos[7];
-    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx") or die "file.txt 文件无法打开, $!";
+    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx") or die "file.txt can not open, $!";
     binmode(DATA);
     # while( read (DATA, $Book1_data, 8)) {};
     read (DATA, $Book1_data, $filelength);
@@ -388,7 +388,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $data_file = 'ReportData.xml'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
     ready_file('api'=> $api, 'file'=>$template_file ,'folder' =>$folder) ;  
-    $result = $api->cells_workbook_put_workbook_create(name => $name, template_file =>$folder."/".$template_file, data_file => $data_file, folder => $folder);
+    $result = $api->cells_workbook_put_workbook_create(name => $name, template_file =>$folder."/".$template_file,is_write_over=>'true', data_file => $data_file, folder => $folder);
 }
 
 #
@@ -411,5 +411,39 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_delete_workbook_names(name => $name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_delete_workbook_names OK');
+}
+
+#
+# cells_workbook_put_workbook_background test ?
+#
+{
+    
+    my $name = $BOOK1; # replace NULL with a proper value
+    my $sheet_name = $SHEET1; # replace NULL with a proper value
+    my $png = undef; # replace NULL with a proper value
+    my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\WaterMark.png") or die "file.txt did not open, $!";
+    binmode(DATA);
+    read (DATA, $png, 8);
+    close (DATA);
+    $result = $api->cells_workbook_put_workbook_background(name => $name, png => $png, folder => $folder);
+    ok($result->status eq 'OK' ,'cells_worksheets_put_workbook_background OK');
+}
+
+#
+# cells_workbook_delete_workbook_background test ?
+#
+{
+    
+    my $name = $BOOK1; # replace NULL with a proper value
+    my $sheet_name = $SHEET1; # replace NULL with a proper value
+    my $png = undef; # replace NULL with a proper value
+    my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\WaterMark.png") or die "file.txt did not open, $!";
+    binmode(DATA);
+    read (DATA, $png, 8);
+    close (DATA);
+    $result = $api->cells_workbook_delete_workbook_background(name => $name, sheet_name => $sheet_name, png => $png, folder => $folder);
+    ok($result->status eq 'OK' ,'cells_worksheets_delete_workbook_background OK');
 }
 1;

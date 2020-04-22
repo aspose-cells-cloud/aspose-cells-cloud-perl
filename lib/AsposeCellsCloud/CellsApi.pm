@@ -23525,6 +23525,96 @@ sub cells_workbook_delete_unprotect_document {
 }
 
 #
+# cells_workbook_delete_workbook_background
+#
+# Set worksheet background image.
+# 
+# @param string $name  (required)
+# @param string $folder  (optional)
+# @param string $storage storage name. (optional)
+{
+    my $params = {
+    'name' => {
+        data_type => 'string',
+        description => '',
+        required => '1',
+    },
+    'folder' => {
+        data_type => 'string',
+        description => '',
+        required => '0',
+    },
+    'storage' => {
+        data_type => 'string',
+        description => 'storage name.',
+        required => '0',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'cells_workbook_delete_workbook_background' } = { 
+    	summary => 'Set worksheet background image.',
+        params => $params,
+        returns => 'CellsCloudResponse',
+        };
+}
+# @return CellsCloudResponse
+#
+sub cells_workbook_delete_workbook_background {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'name' is set
+    unless (exists $args{'name'}) {
+      croak("Missing the required parameter 'name' when calling cells_workbook_delete_workbook_background");
+    }
+
+    # parse inputs
+    my $_resource_path = '/cells/{name}/background';
+
+    my $_method = 'DELETE';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # query params
+    if ( exists $args{'folder'}) {
+        $query_params->{'folder'} = $self->{api_client}->to_query_value($args{'folder'});
+    }
+
+    # query params
+    if ( exists $args{'storage'}) {
+        $query_params->{'storage'} = $self->{api_client}->to_query_value($args{'storage'});
+    }
+
+    # path params
+    if ( exists $args{'name'}) {
+        my $_base_variable = "{" . "name" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'name'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    $self->{api_client}->check_access_token();
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw()];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('CellsCloudResponse', $response);
+    return $_response_object;
+}
+
+#
 # cells_workbook_delete_workbook_name
 #
 # Clean workbook's names.
@@ -25222,6 +25312,7 @@ sub cells_workbook_post_workbook_settings {
 # @param int $horizontal_resolution Image horizontal resolution. (optional, default to 0)
 # @param int $vertical_resolution Image vertical resolution. (optional, default to 0)
 # @param string $folder The workbook folder. (optional)
+# @param string $out_folder out Folder. (optional)
 # @param string $storage storage name. (optional)
 {
     my $params = {
@@ -25258,6 +25349,11 @@ sub cells_workbook_post_workbook_settings {
     'folder' => {
         data_type => 'string',
         description => 'The workbook folder.',
+        required => '0',
+    },
+    'out_folder' => {
+        data_type => 'string',
+        description => 'out Folder.',
         required => '0',
     },
     'storage' => {
@@ -25325,6 +25421,11 @@ sub cells_workbook_post_workbook_split {
     # query params
     if ( exists $args{'folder'}) {
         $query_params->{'folder'} = $self->{api_client}->to_query_value($args{'folder'});
+    }
+
+    # query params
+    if ( exists $args{'out_folder'}) {
+        $query_params->{'outFolder'} = $self->{api_client}->to_query_value($args{'out_folder'});
     }
 
     # query params
@@ -25694,7 +25795,7 @@ sub cells_workbook_post_workbooks_text_search {
 #
 # Convert workbook from request content to some format.
 # 
-# @param string $workbook  (required)
+# @param string $workbook File to convert (required)
 # @param string $format The format to convert. (optional)
 # @param string $password The workbook password. (optional)
 # @param string $out_path Path to save result (optional)
@@ -25702,7 +25803,7 @@ sub cells_workbook_post_workbooks_text_search {
     my $params = {
     'workbook' => {
         data_type => 'string',
-        description => '',
+        description => 'File to convert',
         required => '1',
     },
     'format' => {
@@ -25890,6 +25991,112 @@ sub cells_workbook_put_document_protect_from_changes {
 }
 
 #
+# cells_workbook_put_workbook_background
+#
+# Set workbook background image.
+# 
+# @param string $name  (required)
+# @param string $png  (required)
+# @param string $folder  (optional)
+# @param string $storage storage name. (optional)
+{
+    my $params = {
+    'name' => {
+        data_type => 'string',
+        description => '',
+        required => '1',
+    },
+    'png' => {
+        data_type => 'string',
+        description => '',
+        required => '1',
+    },
+    'folder' => {
+        data_type => 'string',
+        description => '',
+        required => '0',
+    },
+    'storage' => {
+        data_type => 'string',
+        description => 'storage name.',
+        required => '0',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'cells_workbook_put_workbook_background' } = { 
+    	summary => 'Set workbook background image.',
+        params => $params,
+        returns => 'CellsCloudResponse',
+        };
+}
+# @return CellsCloudResponse
+#
+sub cells_workbook_put_workbook_background {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'name' is set
+    unless (exists $args{'name'}) {
+      croak("Missing the required parameter 'name' when calling cells_workbook_put_workbook_background");
+    }
+
+    # verify the required parameter 'png' is set
+    unless (exists $args{'png'}) {
+      croak("Missing the required parameter 'png' when calling cells_workbook_put_workbook_background");
+    }
+
+    # parse inputs
+    my $_resource_path = '/cells/{name}/background';
+
+    my $_method = 'PUT';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # query params
+    if ( exists $args{'folder'}) {
+        $query_params->{'folder'} = $self->{api_client}->to_query_value($args{'folder'});
+    }
+
+    # query params
+    if ( exists $args{'storage'}) {
+        $query_params->{'storage'} = $self->{api_client}->to_query_value($args{'storage'});
+    }
+
+    # path params
+    if ( exists $args{'name'}) {
+        my $_base_variable = "{" . "name" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'name'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    $self->{api_client}->check_access_token();
+    my $_body_data;
+    # body params
+    if ( exists $args{'png'}) {
+        $_body_data = $args{'png'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw()];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('CellsCloudResponse', $response);
+    return $_response_object;
+}
+
+#
 # cells_workbook_put_workbook_create
 #
 # Create new workbook using deferent methods.
@@ -25897,6 +26104,7 @@ sub cells_workbook_put_document_protect_from_changes {
 # @param string $name The new document name. (required)
 # @param string $template_file The template file, if the data not provided default workbook is created. (optional)
 # @param string $data_file Smart marker data file, if the data not provided the request content is checked for the data. (optional)
+# @param boolean $is_write_over write over file. (optional)
 # @param string $folder The new document folder. (optional)
 # @param string $storage storage name. (optional)
 {
@@ -25914,6 +26122,11 @@ sub cells_workbook_put_document_protect_from_changes {
     'data_file' => {
         data_type => 'string',
         description => 'Smart marker data file, if the data not provided the request content is checked for the data.',
+        required => '0',
+    },
+    'is_write_over' => {
+        data_type => 'boolean',
+        description => 'write over file.',
         required => '0',
     },
     'folder' => {
@@ -25966,6 +26179,11 @@ sub cells_workbook_put_workbook_create {
     # query params
     if ( exists $args{'data_file'}) {
         $query_params->{'dataFile'} = $self->{api_client}->to_query_value($args{'data_file'});
+    }
+
+    # query params
+    if ( exists $args{'is_write_over'}) {
+        $query_params->{'isWriteOver'} = $self->{api_client}->to_query_value($args{'is_write_over'});
     }
 
     # query params
@@ -32280,16 +32498,13 @@ sub upload_file {
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
-    # form params
-    # if ( exists $args{'file'} ) {
-    #             $form_params->{'File'} = $self->{api_client}->to_form_value($args{'file'});
-    # }
-    
-    my $_body_data;
-    if ( exists $args{'file'} ) {
-                 $_body_data = $args{'file'};
-    }    
     $self->{api_client}->check_access_token();
+    my $_body_data;
+    # body params
+    if ( exists $args{'file'}) {
+        $_body_data = $args{'file'};
+    }
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

@@ -164,7 +164,7 @@ sub o_auth_post {
 sub check_access_token {
     my ($self, %args) = @_;
     if($self->{get_access_token_time}){
-        my $difference_in_seconds=time() - $self->{get_access_token_time};       
+        my $difference_in_seconds=time() - $self->{get_access_token_time};
         if($difference_in_seconds < 86300){
             return;
         }

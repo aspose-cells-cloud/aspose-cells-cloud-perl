@@ -204,16 +204,16 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
 #
 # cells_post_cell_characters test
 #
-{
-    my $name = $BOOK1; # replace NULL with a proper value
-    my $sheet_name = $SHEET1; # replace NULL with a proper value
-    my $cell_name = $CELLNAME; # replace NULL with a proper value
-    my $opt1 =  AsposeCellsCloud::Object::FontSetting->new();
-    my @options = ($opt1); # replace NULL with a proper value
-    my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    my $result = $api->cells_post_cell_characters(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, options => @options, folder => $folder);
-    ok($result->status eq 'OK' ,'cells_post_cell_characters OK');
-}
+# {
+#     my $name = $BOOK1; # replace NULL with a proper value
+#     my $sheet_name = $SHEET1; # replace NULL with a proper value
+#     my $cell_name = $CELLNAME; # replace NULL with a proper value
+#     my $opt1 =  AsposeCellsCloud::Object::FontSetting->new();
+#     my @options = ($opt1); # replace NULL with a proper value
+#     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+#     my $result = $api->cells_post_cell_characters(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, options => @options, folder => $folder);
+#     ok($result->status eq 'OK' ,'cells_post_cell_characters OK');
+# }
 
 #
 # cells_post_clear_contents test

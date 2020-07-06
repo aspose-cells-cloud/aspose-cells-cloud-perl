@@ -306,16 +306,16 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
 #
 # cells_pivot_tables_delete_worksheet_pivot_table_filter test
 #
-{
-    my $name = $PVTESTFILE; # replace NULL with a proper value
-    my $sheet_name = $SHEET4; # replace NULL with a proper value
-    my $pivot_table_index = 0; # replace NULL with a proper value
-    my $field_index = 0; # replace NULL with a proper value
-    my $need_re_calculate = 'true'; # replace NULL with a proper value
-    my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    $result = $api->cells_pivot_tables_delete_worksheet_pivot_table_filter(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, field_index => $field_index, need_re_calculate => $need_re_calculate, folder => $folder);
-    ok($result->status eq 'OK' ,'cells_pivot_tables_delete_worksheet_pivot_table_filter OK');
-}
+# {
+#     my $name = $PVTESTFILE; # replace NULL with a proper value
+#     my $sheet_name = $SHEET4; # replace NULL with a proper value
+#     my $pivot_table_index = 0; # replace NULL with a proper value
+#     my $field_index = 0; # replace NULL with a proper value
+#     my $need_re_calculate = 'true'; # replace NULL with a proper value
+#     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+#     $result = $api->cells_pivot_tables_delete_worksheet_pivot_table_filter(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, field_index => $field_index, need_re_calculate => $need_re_calculate, folder => $folder);
+#     ok($result->status eq 'OK' ,'cells_pivot_tables_delete_worksheet_pivot_table_filter OK');
+# }
 
 
 #
@@ -388,20 +388,29 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
         folder => $folder);
     ok($result->status eq 'OK' ,'cells_pivot_tables_put_worksheet_pivot_table_filter OK');
 
-    
+    my $field_index = 0; # replace NULL with a proper value
+    my $filter_index = 0;
+
+    my $result1 = $api->cells_pivot_tables_get_worksheet_pivot_table_filter(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, filter_index => $filter_index, folder => $folder);
+
+    ok($result1->status eq 'OK' ,'cells_pivot_tables_get_worksheet_pivot_table_filter OK');
+
+    $result = $api->cells_pivot_tables_delete_worksheet_pivot_table_filter(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, field_index => $field_index, need_re_calculate => $need_re_calculate, folder => $folder);
+    ok($result->status eq 'OK' ,'cells_pivot_tables_delete_worksheet_pivot_table_filter OK');
 }
 #
 # cells_pivot_tables_get_worksheet_pivot_table_filter test
 #
-{
-    my $name = $PVTESTFILE; # replace NULL with a proper value
-    my $sheet_name = $SHEET4; # replace NULL with a proper value
-    my $pivot_table_index = 0; # replace NULL with a proper value
-    my $filter_index = 0; # replace NULL with a proper value
-    my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    $result = $api->cells_pivot_tables_get_worksheet_pivot_table_filter(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, filter_index => $filter_index, folder => $folder);
-    ok($result->status eq 'OK' ,'cells_pivot_tables_get_worksheet_pivot_table_filter OK');
-}
+# {
+#     my $name = $PVTESTFILE; # replace NULL with a proper value
+#     my $sheet_name = $SHEET4; # replace NULL with a proper value
+#     my $pivot_table_index = 0; # replace NULL with a proper value
+#     my $filter_index = 0; # replace NULL with a proper value
+#     my $folder = $TEMPFOLDER; # replace NULL with a proper value
+#     ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;
+#     $result = $api->cells_pivot_tables_get_worksheet_pivot_table_filter(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, filter_index => $filter_index, folder => $folder);
+#     ok($result->status eq 'OK' ,'cells_pivot_tables_get_worksheet_pivot_table_filter OK');
+# }
 #
 # cells_pivot_tables_get_worksheet_pivot_table_filters test
 #

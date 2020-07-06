@@ -3,7 +3,10 @@ use ExtUtils::MakeMaker;
 WriteMakefile
 (
   'NAME' => 'AsposeCellsCloud::CellsApi',
-  'VERSION_FROM' => 'lib/AsposeCellsCloud/CellsApi.pm',
+  'LICENSE' => 'MIT',
+  'VERSION' => '20.6',
+  'ABSTRACT' =>'Aspose.Cells Cloud SDK',
+  'AUTHOR' =>'Aspose.Cells',
   'PREREQ_PM' => {
                    'Carp' => 0,
                    'Data::Dumper' => 0,
@@ -23,6 +26,7 @@ WriteMakefile
                    'Scalar::Util' => 0,
                    'Test::Exception' => 0,
                    'Test::More' => '0.10',
+                   'File::Slurp' => 0,
                    'URI::Escape' => 0,
                    'URI::Query' => 0,
                    'strict' => 0,

@@ -35,8 +35,8 @@ use_ok('AsposeCellsCloud::Object::Style');
 use_ok('AsposeCellsCloud::Object::ImportOption');
 use_ok('AsposeCellsCloud::Object::ImportIntArrayOption');
 use_ok('AsposeCellsCloud::Object::PasswordRequest');
-
-require 't\CellsTestBase.pl';
+use_ok('AsposeCellsCloud::Object::TextWaterMarkerRequest');
+require 't/CellsTestBase.pl';
 
 my $result =undef;
 my $BOOK1 = 'Book1.xlsx';
@@ -344,7 +344,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     close (DATA);    
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
     # ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
-    $result = $api->cells_workbook_put_convert_workbook( workbook => $Book1_data, format => $format, password => $password, out_path => $out_path,folder =>$folder);conver
+    $result = $api->cells_workbook_put_convert_workbook( workbook => $Book1_data, format => $format, password => $password, out_path => $out_path,folder =>$folder);
 }
 
 #
@@ -388,7 +388,8 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $data_file = 'ReportData.xml'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
     ready_file('api'=> $api, 'file'=>$template_file ,'folder' =>$folder) ;  
-    $result = $api->cells_workbook_put_workbook_create(name => $name, template_file =>$folder."/".$template_file,is_write_over=>'true', data_file => $data_file, folder => $folder);
+    ready_file('api'=> $api, 'file'=>$data_file ,'folder' =>$folder);
+    $result = $api->cells_workbook_put_workbook_create(name => $name, template_file =>$folder."/".$template_file, data_file => $folder."/".$data_file, folder => $folder,is_write_over => 'true');
 }
 
 #
@@ -439,11 +440,21 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $png = undef; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\WaterMark.png") or die "file.txt did not open, $!";
-    binmode(DATA);
-    read (DATA, $png, 8);
-    close (DATA);
-    $result = $api->cells_workbook_delete_workbook_background(name => $name, sheet_name => $sheet_name, png => $png, folder => $folder);
+    $result = $api->cells_workbook_delete_workbook_background(name => $name, sheet_name => $sheet_name, folder => $folder);
+    ok($result->status eq 'OK' ,'cells_worksheets_delete_workbook_background OK');
+}
+
+#
+# cells_workbook_delete_workbook_background test ?
+#
+{
+    
+    my $name = $BOOK1; # replace NULL with a proper value
+    my $sheet_name = $SHEET1; # replace NULL with a proper value
+    my $text_water_marker_request =  AsposeCellsCloud::Object::TextWaterMarkerRequest->new(Text=>'Aspose.Cells Cloud SDK');; # replace NULL with a proper value
+    my $folder = $TEMPFOLDER; # replace NULL with a proper value
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;
+    $result = $api->cells_workbook_put_workbook_water_marker(name => $name,  folder => $folder,text_water_marker_request =>  $text_water_marker_request);
     ok($result->status eq 'OK' ,'cells_worksheets_delete_workbook_background OK');
 }
 1;

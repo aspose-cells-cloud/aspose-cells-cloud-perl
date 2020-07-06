@@ -68,7 +68,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $start_column = 1; # replace NULL with a proper value
     my $end_column = 1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;
     my $result = $api->cells_page_breaks_put_horizontal_page_break(name => $name, sheet_name => $sheet_name, cellname => $cellname, row => $row, column => $column, start_column => $start_column, end_column => $end_column, folder => $folder);
     ok($result->status eq 'OK' ,'cells_page_breaks_put_horizontal_page_break OK');
 }
@@ -85,7 +85,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $start_row = 1; # replace NULL with a proper value
     my $end_row = 1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;
     my $result = $api->cells_page_breaks_put_vertical_page_break(name => $name, sheet_name => $sheet_name, cellname => $cellname, column => $column, row => $row, start_row => $start_row, end_row => $end_row, folder => $folder);
     ok($result->status eq 'OK' ,'cells_page_breaks_put_vertical_page_break OK');
 }
@@ -97,7 +97,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $index = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;
     my $result = $api->cells_page_breaks_get_horizontal_page_break(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder);
     ok($result->status eq 'OK' ,'cells_page_breaks_get_horizontal_page_break OK');
 }
@@ -109,7 +109,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;
     my $result = $api->cells_page_breaks_get_horizontal_page_breaks(name => $name, sheet_name => $sheet_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_page_breaks_get_horizontal_page_breaks OK');
 }
@@ -122,7 +122,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $index = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;
     my $result = $api->cells_page_breaks_get_vertical_page_break(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder);
     ok($result->status eq 'OK' ,'cells_page_breaks_get_vertical_page_break OK');
 }
@@ -134,7 +134,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;
     my $result = $api->cells_page_breaks_get_vertical_page_breaks(name => $name, sheet_name => $sheet_name, folder => $folder);
     ok($result->status eq 'OK' ,'cells_page_breaks_get_vertical_page_breaks OK');
 }
@@ -147,7 +147,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $index = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;
     my $result = $api->cells_page_breaks_delete_horizontal_page_break(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder);
     ok($result->status eq 'OK' ,'cells_page_breaks_delete_horizontal_page_break OK');
 }
@@ -158,9 +158,9 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
 {
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET1; # replace NULL with a proper value
-    my $row = 1; # replace NULL with a proper value
+    my $row = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;
     my $result = $api->cells_page_breaks_delete_horizontal_page_breaks(name => $name, sheet_name => $sheet_name, row => $row, folder => $folder);
     ok($result->status eq 'OK' ,'cells_page_breaks_delete_horizontal_page_breaks OK');
 }
@@ -183,9 +183,9 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
 {
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET1; # replace NULL with a proper value
-    my $column = 1; # replace NULL with a proper value
+    my $column = 0; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;
     my $result = $api->cells_page_breaks_delete_vertical_page_breaks(name => $name, sheet_name => $sheet_name, column => $column, folder => $folder);
     ok($result->status eq 'OK' ,'cells_page_breaks_delete_vertical_page_breaks OK');
 }

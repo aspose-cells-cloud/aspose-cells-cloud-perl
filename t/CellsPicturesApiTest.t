@@ -71,8 +71,9 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $lower_right_column = 10; # replace NULL with a proper value
     my $picture_path = 'WaterMark.png'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
-    $result = $api->cells_pictures_put_worksheet_add_picture(name => $name, sheet_name => $sheet_name, picture => $picture, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, lower_right_row => $lower_right_row, lower_right_column => $lower_right_column, picture_path => $picture_path, folder => $folder);
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;
+    ready_file('api'=> $api, 'file'=>$picture_path ,'folder' =>$folder) ;  
+    $result = $api->cells_pictures_put_worksheet_add_picture(name => $name, sheet_name => $sheet_name, picture => $picture, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, lower_right_row => $lower_right_row, lower_right_column => $lower_right_column, picture_path =>($folder."/".$picture_path) , folder => $folder);
     ok($result->status eq 'OK' ,'cells_pictures_put_worksheet_add_picture OK');
 }
 

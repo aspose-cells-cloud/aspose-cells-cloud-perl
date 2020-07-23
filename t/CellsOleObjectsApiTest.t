@@ -72,7 +72,9 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $image_file = 'word.jpg'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
     ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
-    $result = $api->cells_ole_objects_put_worksheet_ole_object(name => $name, sheet_name => $sheet_name, ole_object => $ole_object, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, height => $height, width => $width, ole_file => $ole_file, image_file => $image_file, folder => $folder);
+    ready_file('api'=> $api, 'file'=>$ole_file ,'folder' =>$folder) ;  
+    ready_file('api'=> $api, 'file'=>$image_file ,'folder' =>$folder) ;  
+    $result = $api->cells_ole_objects_put_worksheet_ole_object(name => $name, sheet_name => $sheet_name, ole_object => $ole_object, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, height => $height, width => $width, ole_file => ($folder."/".$ole_file) , image_file => ($folder."/". $image_file), folder => $folder);
     ok($result->status eq 'OK' ,'cells_ole_objects_put_worksheet_ole_object OK');
 }
 #

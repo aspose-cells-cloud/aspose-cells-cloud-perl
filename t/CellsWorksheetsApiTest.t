@@ -465,7 +465,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $png = undef; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\WaterMark.png") or die "file.txt 文件无法打开, $!";
+    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cells.Cloud.SDK\\src\\TestData\\WaterMark.png") or die "file.txt 文件无法打开, $!";
     binmode(DATA);
     read (DATA, $png, 8);
     close (DATA);

@@ -55,12 +55,20 @@ my $api = get_client();
 isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #
-# cells_task_post_run_task test
+# cells_task_post_run_task test convert
 #
 {
-    my $task_data =  '{"Tasks":[{"TaskType":"Convert","TaskParameter":{"Workbook":{"FileSourceType":"CloudFileSystem","FilePath":"Temp/Book1.xlsx"},"DestinationFile":"ConvetedExcel.png","SaveOptions":{"ImageFormat":"Png","SaveFormat":"png"}}}]}';
-    # $task_data ='{"Tasks":[{"TaskType":"SplitWorkbook","TaskParameter":{"Workbook":{"FileSourceType":"CloudFileSystem","FilePath":"Book1.xlsx"},"DestinationFilePosition":{"FileSourceType":"CloudFileSystem","FilePath":""},"DestinationFileFormat":"xlsx","SplitNameRule":"sheetname"}}]}';
-    ready_file('api'=> $api, 'file'=>$BOOK1 ,'folder' =>$TEMPFOLDER) ;  
+    my $task_data =  '{"Tasks":[{"TaskType":"Convert","TaskParameter":{"Workbook":{"FileSourceType":"CloudFileSystem","FilePath":"PerlTest/Book1.xlsx"},"DestinationFile":"PerlTest/ConvetedExcel.png","SaveOptions":{"ImageFormat":"Png","SaveFormat":"png"}}}]}';
+    ready_file('api'=> $api, 'file'=>$BOOK1 ,'folder' =>$TEMPFOLDER) ;
+    $result = $api->cells_task_post_run_task(task_data => $task_data);
+    ok('cells_task_post_run_task OK');
+}
+#
+# cells_task_post_run_task test  split
+#
+{
+    my $task_data ='{"Tasks":[{"TaskType":"SplitWorkbook","TaskParameter":{"Workbook":{"FileSourceType":"CloudFileSystem","FilePath":"PerlTest/Book1.xlsx"},"DestinationFilePosition":{"FileSourceType":"CloudFileSystem","FilePath":"PerlTest"},"DestinationFileFormat":"xlsx","SplitNameRule":"sheetname"}}]}';
+    ready_file('api'=> $api, 'file'=>$BOOK1 ,'folder' =>$TEMPFOLDER) ;
     $result = $api->cells_task_post_run_task(task_data => $task_data);
     ok('cells_task_post_run_task OK');
 }

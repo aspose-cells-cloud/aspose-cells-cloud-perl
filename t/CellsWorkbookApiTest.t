@@ -258,8 +258,9 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $xml_file = 'ReportData.xml'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
     my $out_path = undef; # replace NULL with a proper value
-    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
-    $result = $api->cells_workbook_post_workbook_get_smart_marker_result(name => $name, xml_file => $xml_file, folder => $folder, out_path => $out_path);   
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;
+    ready_file('api'=> $api, 'file'=>$xml_file ,'folder' =>$folder) ;  
+    $result = $api->cells_workbook_post_workbook_get_smart_marker_result(name => $name, xml_file => ($folder ."/". $xml_file), folder => $folder, out_path => $out_path);   
 }
 
 #
@@ -286,7 +287,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $vertical_resolution = 90; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
     ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
-    $result = $api->cells_workbook_post_workbook_split(name => $name, format => $format, from => $from, to => $to, horizontal_resolution => $horizontal_resolution, vertical_resolution => $vertical_resolution, folder => $folder);
+    $result = $api->cells_workbook_post_workbook_split(name => $name, format => $format, from => $from, to => $to, horizontal_resolution => $horizontal_resolution, vertical_resolution => $vertical_resolution, folder => $folder, out_folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_post_workbook_split OK');
 }
 
@@ -297,8 +298,10 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $merge_with = 'myDocument.xlsx'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
-    $result = $api->cells_workbook_post_workbooks_merge(name => $name, merge_with => $merge_with, folder => $folder);
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;
+    ready_file('api'=> $api, 'file'=>$merge_with ,'folder' =>$folder) ;
+    my $merge_file =  $folder . '/' . $merge_with;
+    $result = $api->cells_workbook_post_workbooks_merge(name => $name, merge_with => $merge_file, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_post_workbooks_merge OK');
 }
 
@@ -335,9 +338,9 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $password = undef; # replace NULL with a proper value
     my $out_path = undef; # replace NULL with a proper value
     my $Book1_data =undef;
-    my @fileinfos = stat("D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx");
+    my @fileinfos = stat("D:\\Projects\\Aspose\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx");
     my $filelength = @fileinfos[7];
-    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx") or die "file.txt  can not open, $!";
+    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx") or die "file.txt  can not open, $!";
     binmode(DATA);
     # while( read (DATA, $Book1_data, 8)) {};
     read (DATA, $Book1_data, $filelength);
@@ -355,9 +358,9 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $password = undef; # replace NULL with a proper value
     my $out_path = undef; # replace NULL with a proper value
     my $Book1_data =undef;
-    my @fileinfos = stat("D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx");
+    my @fileinfos = stat("D:\\Projects\\Aspose\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx");
     my $filelength = @fileinfos[7];
-    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx") or die "file.txt can not open, $!";
+    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx") or die "file.txt can not open, $!";
     binmode(DATA);
     # while( read (DATA, $Book1_data, 8)) {};
     read (DATA, $Book1_data, $filelength);
@@ -374,7 +377,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $name = $BOOK1; # replace NULL with a proper value
     my $password = AsposeCellsCloud::Object::PasswordRequest->new(Password=>'123456'); # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;
     $result = $api->cells_workbook_put_document_protect_from_changes(name => $name, password => $password, folder => $folder);
     ok($result->status eq 'OK' ,'cells_workbook_put_document_protect_from_changes OK');
 }
@@ -423,7 +426,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $png = undef; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\WaterMark.png") or die "file.txt did not open, $!";
+    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cells.Cloud.SDK\\src\\TestData\\WaterMark.png") or die "file.txt did not open, $!";
     binmode(DATA);
     read (DATA, $png, 8);
     close (DATA);

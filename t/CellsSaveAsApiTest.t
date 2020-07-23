@@ -56,10 +56,11 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $is_auto_fit_rows = 'true'; # replace NULL with a proper value
     my $is_auto_fit_columns = 'true'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER ; # replace NULL with a proper value
-    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;
+    my $newfilepath = $folder . '/' . $newfilename;
     $result = $api->cells_save_as_post_document_save_as(name => $name,
-     save_options => $save_options, 
-     newfilename => $newfilename, 
+     save_options => $save_options,
+     newfilename => $newfilepath, 
      is_auto_fit_rows => $is_auto_fit_rows, 
      is_auto_fit_columns => $is_auto_fit_columns, 
      folder => $folder);
@@ -72,11 +73,11 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
 #
 {
     my $name = $BOOK1; # replace NULL with a proper value
-    my $save_options = undef; # replace NULL with a proper value
-    my $newfilename = 'newbook.md'; # replace NULL with a proper value
+    my $save_options = undef; # replace NULL with a proper value   
     my $is_auto_fit_rows = 'true'; # replace NULL with a proper value
     my $is_auto_fit_columns = 'true'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER ; # replace NULL with a proper value
+     my $newfilename = $folder.'/'.'newbook.md'; # replace NULL with a proper value
     ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_save_as_post_document_save_as(name => $name,
      save_options => $save_options, 

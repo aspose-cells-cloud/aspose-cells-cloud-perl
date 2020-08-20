@@ -179,6 +179,7 @@ Method | HTTP request | Description
 [**cells_workbook_delete_decrypt_document**](CellsApi.md#cells_workbook_delete_decrypt_document) | **DELETE** /cells/{name}/encryption | Decrypt document.
 [**cells_workbook_delete_document_unprotect_from_changes**](CellsApi.md#cells_workbook_delete_document_unprotect_from_changes) | **DELETE** /cells/{name}/writeProtection | Unprotect document from changes.
 [**cells_workbook_delete_unprotect_document**](CellsApi.md#cells_workbook_delete_unprotect_document) | **DELETE** /cells/{name}/protection | Unprotect document.
+[**cells_workbook_delete_workbook_background**](CellsApi.md#cells_workbook_delete_workbook_background) | **DELETE** /cells/{name}/background | Set worksheet background image.
 [**cells_workbook_delete_workbook_name**](CellsApi.md#cells_workbook_delete_workbook_name) | **DELETE** /cells/{name}/names/{nameName} | Clean workbook&#39;s names.
 [**cells_workbook_delete_workbook_names**](CellsApi.md#cells_workbook_delete_workbook_names) | **DELETE** /cells/{name}/names | Clean workbook&#39;s names.
 [**cells_workbook_get_workbook**](CellsApi.md#cells_workbook_get_workbook) | **GET** /cells/{name} | Read workbook info or export.
@@ -201,7 +202,9 @@ Method | HTTP request | Description
 [**cells_workbook_post_workbooks_text_search**](CellsApi.md#cells_workbook_post_workbooks_text_search) | **POST** /cells/{name}/findText | Search text.
 [**cells_workbook_put_convert_workbook**](CellsApi.md#cells_workbook_put_convert_workbook) | **PUT** /cells/convert | Convert workbook from request content to some format.
 [**cells_workbook_put_document_protect_from_changes**](CellsApi.md#cells_workbook_put_document_protect_from_changes) | **PUT** /cells/{name}/writeProtection | Protect document from changes.
+[**cells_workbook_put_workbook_background**](CellsApi.md#cells_workbook_put_workbook_background) | **PUT** /cells/{name}/background | Set workbook background image.
 [**cells_workbook_put_workbook_create**](CellsApi.md#cells_workbook_put_workbook_create) | **PUT** /cells/{name} | Create new workbook using deferent methods.
+[**cells_workbook_put_workbook_water_marker**](CellsApi.md#cells_workbook_put_workbook_water_marker) | **PUT** /cells/{name}/watermarker | Set workbook background image.
 [**cells_worksheet_validations_delete_worksheet_validation**](CellsApi.md#cells_worksheet_validations_delete_worksheet_validation) | **DELETE** /cells/{name}/worksheets/{sheetName}/validations/{validationIndex} | Delete worksheet validation by index.
 [**cells_worksheet_validations_delete_worksheet_validations**](CellsApi.md#cells_worksheet_validations_delete_worksheet_validations) | **DELETE** /cells/{name}/worksheets/{sheetName}/validations | Clear all validation in worksheet.
 [**cells_worksheet_validations_get_worksheet_validation**](CellsApi.md#cells_worksheet_validations_get_worksheet_validation) | **GET** /cells/{name}/worksheets/{sheetName}/validations/{validationIndex} | Get worksheet validation by index.
@@ -259,7 +262,7 @@ Method | HTTP request | Description
 
 
 # **cells_auto_filter_delete_worksheet_date_filter**
-> CellsCloudResponse cells_auto_filter_delete_worksheet_date_filter(name => $name, sheet_name => $sheet_name, field_index => $field_index, date_time_grouping_type => $date_time_grouping_type, year => $year, month => $month, day => $day, hour => $hour, minute => $minute, second => $second, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_auto_filter_delete_worksheet_date_filter(name => $name, sheet_name => $sheet_name, field_index => $field_index, date_time_grouping_type => $date_time_grouping_type, year => $year, month => $month, day => $day, hour => $hour, minute => $minute, second => $second, folder => $folder, storage_name => $storage_name)
 
 Removes a date filter.             
 
@@ -281,10 +284,10 @@ my $hour = 56; # int |
 my $minute = 56; # int | 
 my $second = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_auto_filter_delete_worksheet_date_filter(name => $name, sheet_name => $sheet_name, field_index => $field_index, date_time_grouping_type => $date_time_grouping_type, year => $year, month => $month, day => $day, hour => $hour, minute => $minute, second => $second, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_auto_filter_delete_worksheet_date_filter(name => $name, sheet_name => $sheet_name, field_index => $field_index, date_time_grouping_type => $date_time_grouping_type, year => $year, month => $month, day => $day, hour => $hour, minute => $minute, second => $second, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -307,7 +310,7 @@ Name | Type | Description  | Notes
  **minute** | **int**|  | [optional] [default to 0]
  **second** | **int**|  | [optional] [default to 0]
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -325,7 +328,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_auto_filter_delete_worksheet_filter**
-> CellsCloudResponse cells_auto_filter_delete_worksheet_filter(name => $name, sheet_name => $sheet_name, field_index => $field_index, criteria => $criteria, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_auto_filter_delete_worksheet_filter(name => $name, sheet_name => $sheet_name, field_index => $field_index, criteria => $criteria, folder => $folder, storage_name => $storage_name)
 
 Delete a filter for a filter column.             
 
@@ -341,10 +344,10 @@ my $sheet_name = 'sheet_name_example'; # string |
 my $field_index = 56; # int | 
 my $criteria = 'criteria_example'; # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_auto_filter_delete_worksheet_filter(name => $name, sheet_name => $sheet_name, field_index => $field_index, criteria => $criteria, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_auto_filter_delete_worksheet_filter(name => $name, sheet_name => $sheet_name, field_index => $field_index, criteria => $criteria, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -361,7 +364,7 @@ Name | Type | Description  | Notes
  **field_index** | **int**|  | 
  **criteria** | **string**|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -379,7 +382,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_auto_filter_get_worksheet_auto_filter**
-> AutoFilterResponse cells_auto_filter_get_worksheet_auto_filter(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> AutoFilterResponse cells_auto_filter_get_worksheet_auto_filter(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Get Auto filter Description
 
@@ -393,10 +396,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | 
 my $sheet_name = 'sheet_name_example'; # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_auto_filter_get_worksheet_auto_filter(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_auto_filter_get_worksheet_auto_filter(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -411,7 +414,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  | 
  **sheet_name** | **string**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -429,7 +432,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_auto_filter_post_worksheet_auto_filter_refresh**
-> CellsCloudResponse cells_auto_filter_post_worksheet_auto_filter_refresh(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_auto_filter_post_worksheet_auto_filter_refresh(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -443,10 +446,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | 
 my $sheet_name = 'sheet_name_example'; # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_auto_filter_post_worksheet_auto_filter_refresh(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_auto_filter_post_worksheet_auto_filter_refresh(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -461,7 +464,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  | 
  **sheet_name** | **string**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -479,7 +482,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_auto_filter_post_worksheet_match_blanks**
-> CellsCloudResponse cells_auto_filter_post_worksheet_match_blanks(name => $name, sheet_name => $sheet_name, field_index => $field_index, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_auto_filter_post_worksheet_match_blanks(name => $name, sheet_name => $sheet_name, field_index => $field_index, folder => $folder, storage_name => $storage_name)
 
 Match all blank cell in the list.
 
@@ -494,10 +497,10 @@ my $name = 'name_example'; # string |
 my $sheet_name = 'sheet_name_example'; # string | 
 my $field_index = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_auto_filter_post_worksheet_match_blanks(name => $name, sheet_name => $sheet_name, field_index => $field_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_auto_filter_post_worksheet_match_blanks(name => $name, sheet_name => $sheet_name, field_index => $field_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -513,7 +516,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  | 
  **field_index** | **int**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -531,7 +534,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_auto_filter_post_worksheet_match_non_blanks**
-> CellsCloudResponse cells_auto_filter_post_worksheet_match_non_blanks(name => $name, sheet_name => $sheet_name, field_index => $field_index, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_auto_filter_post_worksheet_match_non_blanks(name => $name, sheet_name => $sheet_name, field_index => $field_index, folder => $folder, storage_name => $storage_name)
 
 Match all not blank cell in the list.             
 
@@ -546,10 +549,10 @@ my $name = 'name_example'; # string |
 my $sheet_name = 'sheet_name_example'; # string | 
 my $field_index = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_auto_filter_post_worksheet_match_non_blanks(name => $name, sheet_name => $sheet_name, field_index => $field_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_auto_filter_post_worksheet_match_non_blanks(name => $name, sheet_name => $sheet_name, field_index => $field_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -565,7 +568,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  | 
  **field_index** | **int**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -583,7 +586,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_auto_filter_put_worksheet_color_filter**
-> CellsCloudResponse cells_auto_filter_put_worksheet_color_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, color_filter => $color_filter, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_auto_filter_put_worksheet_color_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, color_filter => $color_filter, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -602,10 +605,10 @@ my $color_filter = AsposeCellsCloud::Object::ColorFilterRequest->new(); # ColorF
 my $match_blanks = 1; # boolean | 
 my $refresh = 1; # boolean | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_auto_filter_put_worksheet_color_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, color_filter => $color_filter, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_auto_filter_put_worksheet_color_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, color_filter => $color_filter, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -625,7 +628,7 @@ Name | Type | Description  | Notes
  **match_blanks** | **boolean**|  | [optional] 
  **refresh** | **boolean**|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -643,7 +646,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_auto_filter_put_worksheet_custom_filter**
-> CellsCloudResponse cells_auto_filter_put_worksheet_custom_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, operator_type1 => $operator_type1, criteria1 => $criteria1, is_and => $is_and, operator_type2 => $operator_type2, criteria2 => $criteria2, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_auto_filter_put_worksheet_custom_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, operator_type1 => $operator_type1, criteria1 => $criteria1, is_and => $is_and, operator_type2 => $operator_type2, criteria2 => $criteria2, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage_name => $storage_name)
 
 Filters a list with a custom criteria.             
 
@@ -666,10 +669,10 @@ my $criteria2 = 'criteria2_example'; # string |
 my $match_blanks = 1; # boolean | 
 my $refresh = 1; # boolean | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_auto_filter_put_worksheet_custom_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, operator_type1 => $operator_type1, criteria1 => $criteria1, is_and => $is_and, operator_type2 => $operator_type2, criteria2 => $criteria2, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_auto_filter_put_worksheet_custom_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, operator_type1 => $operator_type1, criteria1 => $criteria1, is_and => $is_and, operator_type2 => $operator_type2, criteria2 => $criteria2, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -693,7 +696,7 @@ Name | Type | Description  | Notes
  **match_blanks** | **boolean**|  | [optional] 
  **refresh** | **boolean**|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -711,7 +714,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_auto_filter_put_worksheet_date_filter**
-> CellsCloudResponse cells_auto_filter_put_worksheet_date_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, date_time_grouping_type => $date_time_grouping_type, year => $year, month => $month, day => $day, hour => $hour, minute => $minute, second => $second, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_auto_filter_put_worksheet_date_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, date_time_grouping_type => $date_time_grouping_type, year => $year, month => $month, day => $day, hour => $hour, minute => $minute, second => $second, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage_name => $storage_name)
 
 add date filter in worksheet 
 
@@ -736,10 +739,10 @@ my $second = 56; # int |
 my $match_blanks = 1; # boolean | 
 my $refresh = 1; # boolean | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_auto_filter_put_worksheet_date_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, date_time_grouping_type => $date_time_grouping_type, year => $year, month => $month, day => $day, hour => $hour, minute => $minute, second => $second, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_auto_filter_put_worksheet_date_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, date_time_grouping_type => $date_time_grouping_type, year => $year, month => $month, day => $day, hour => $hour, minute => $minute, second => $second, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -765,7 +768,7 @@ Name | Type | Description  | Notes
  **match_blanks** | **boolean**|  | [optional] 
  **refresh** | **boolean**|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -783,7 +786,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_auto_filter_put_worksheet_dynamic_filter**
-> CellsCloudResponse cells_auto_filter_put_worksheet_dynamic_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, dynamic_filter_type => $dynamic_filter_type, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_auto_filter_put_worksheet_dynamic_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, dynamic_filter_type => $dynamic_filter_type, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -802,10 +805,10 @@ my $dynamic_filter_type = 'dynamic_filter_type_example'; # string |
 my $match_blanks = 1; # boolean | 
 my $refresh = 1; # boolean | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_auto_filter_put_worksheet_dynamic_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, dynamic_filter_type => $dynamic_filter_type, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_auto_filter_put_worksheet_dynamic_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, dynamic_filter_type => $dynamic_filter_type, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -825,7 +828,7 @@ Name | Type | Description  | Notes
  **match_blanks** | **boolean**|  | [optional] 
  **refresh** | **boolean**|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -843,7 +846,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_auto_filter_put_worksheet_filter**
-> CellsCloudResponse cells_auto_filter_put_worksheet_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, criteria => $criteria, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_auto_filter_put_worksheet_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, criteria => $criteria, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage_name => $storage_name)
 
 Adds a filter for a filter column.             
 
@@ -862,10 +865,10 @@ my $criteria = 'criteria_example'; # string |
 my $match_blanks = 1; # boolean | 
 my $refresh = 1; # boolean | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_auto_filter_put_worksheet_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, criteria => $criteria, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_auto_filter_put_worksheet_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, criteria => $criteria, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -885,7 +888,7 @@ Name | Type | Description  | Notes
  **match_blanks** | **boolean**|  | [optional] 
  **refresh** | **boolean**|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -903,7 +906,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_auto_filter_put_worksheet_filter_top10**
-> CellsCloudResponse cells_auto_filter_put_worksheet_filter_top10(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, is_top => $is_top, is_percent => $is_percent, item_count => $item_count, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_auto_filter_put_worksheet_filter_top10(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, is_top => $is_top, is_percent => $is_percent, item_count => $item_count, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage_name => $storage_name)
 
 Filter the top 10 item in the list
 
@@ -924,10 +927,10 @@ my $item_count = 56; # int |
 my $match_blanks = 1; # boolean | 
 my $refresh = 1; # boolean | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_auto_filter_put_worksheet_filter_top10(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, is_top => $is_top, is_percent => $is_percent, item_count => $item_count, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_auto_filter_put_worksheet_filter_top10(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, is_top => $is_top, is_percent => $is_percent, item_count => $item_count, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -949,7 +952,7 @@ Name | Type | Description  | Notes
  **match_blanks** | **boolean**|  | [optional] 
  **refresh** | **boolean**|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -967,7 +970,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_auto_filter_put_worksheet_icon_filter**
-> CellsCloudResponse cells_auto_filter_put_worksheet_icon_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, icon_set_type => $icon_set_type, icon_id => $icon_id, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_auto_filter_put_worksheet_icon_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, icon_set_type => $icon_set_type, icon_id => $icon_id, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage_name => $storage_name)
 
 Adds an icon filter.
 
@@ -987,10 +990,10 @@ my $icon_id = 56; # int |
 my $match_blanks = 1; # boolean | 
 my $refresh = 1; # boolean | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_auto_filter_put_worksheet_icon_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, icon_set_type => $icon_set_type, icon_id => $icon_id, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_auto_filter_put_worksheet_icon_filter(name => $name, sheet_name => $sheet_name, range => $range, field_index => $field_index, icon_set_type => $icon_set_type, icon_id => $icon_id, match_blanks => $match_blanks, refresh => $refresh, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -1011,7 +1014,7 @@ Name | Type | Description  | Notes
  **match_blanks** | **boolean**|  | [optional] 
  **refresh** | **boolean**|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -1029,7 +1032,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_autoshapes_get_worksheet_autoshape**
-> string cells_autoshapes_get_worksheet_autoshape(name => $name, sheet_name => $sheet_name, autoshape_number => $autoshape_number, format => $format, folder => $folder, storage => $storage)
+> string cells_autoshapes_get_worksheet_autoshape(name => $name, sheet_name => $sheet_name, autoshape_number => $autoshape_number, format => $format, folder => $folder, storage_name => $storage_name)
 
 Get autoshape info.
 
@@ -1045,10 +1048,10 @@ my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $autoshape_number = 56; # int | The autoshape number.
 my $format = 'format_example'; # string | Exported format.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_autoshapes_get_worksheet_autoshape(name => $name, sheet_name => $sheet_name, autoshape_number => $autoshape_number, format => $format, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_autoshapes_get_worksheet_autoshape(name => $name, sheet_name => $sheet_name, autoshape_number => $autoshape_number, format => $format, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -1065,7 +1068,7 @@ Name | Type | Description  | Notes
  **autoshape_number** | **int**| The autoshape number. | 
  **format** | **string**| Exported format. | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -1083,7 +1086,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_autoshapes_get_worksheet_autoshapes**
-> AutoShapesResponse cells_autoshapes_get_worksheet_autoshapes(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> AutoShapesResponse cells_autoshapes_get_worksheet_autoshapes(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Get worksheet autoshapes info.
 
@@ -1097,10 +1100,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_autoshapes_get_worksheet_autoshapes(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_autoshapes_get_worksheet_autoshapes(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -1115,7 +1118,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. | 
  **sheet_name** | **string**| The worksheet name. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -1133,7 +1136,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_chart_area_get_chart_area**
-> ChartAreaResponse cells_chart_area_get_chart_area(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage => $storage)
+> ChartAreaResponse cells_chart_area_get_chart_area(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage_name => $storage_name)
 
 Get chart area info.
 
@@ -1148,10 +1151,10 @@ my $name = 'name_example'; # string | Workbook name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $chart_index = 56; # int | The chart index.
 my $folder = 'folder_example'; # string | Workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_chart_area_get_chart_area(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_chart_area_get_chart_area(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -1167,7 +1170,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. | 
  **chart_index** | **int**| The chart index. | 
  **folder** | **string**| Workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -1185,7 +1188,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_chart_area_get_chart_area_border**
-> LineResponse cells_chart_area_get_chart_area_border(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage => $storage)
+> LineResponse cells_chart_area_get_chart_area_border(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage_name => $storage_name)
 
 Get chart area border info.
 
@@ -1200,10 +1203,10 @@ my $name = 'name_example'; # string | Workbook name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $chart_index = 56; # int | The chart index.
 my $folder = 'folder_example'; # string | Workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_chart_area_get_chart_area_border(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_chart_area_get_chart_area_border(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -1219,7 +1222,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. | 
  **chart_index** | **int**| The chart index. | 
  **folder** | **string**| Workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -1237,7 +1240,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_chart_area_get_chart_area_fill_format**
-> FillFormatResponse cells_chart_area_get_chart_area_fill_format(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage => $storage)
+> FillFormatResponse cells_chart_area_get_chart_area_fill_format(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage_name => $storage_name)
 
 Get chart area fill format info.
 
@@ -1252,10 +1255,10 @@ my $name = 'name_example'; # string | Workbook name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $chart_index = 56; # int | The chart index.
 my $folder = 'folder_example'; # string | Workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_chart_area_get_chart_area_fill_format(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_chart_area_get_chart_area_fill_format(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -1271,7 +1274,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. | 
  **chart_index** | **int**| The chart index. | 
  **folder** | **string**| Workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -1289,7 +1292,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_charts_delete_worksheet_chart_legend**
-> CellsCloudResponse cells_charts_delete_worksheet_chart_legend(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_charts_delete_worksheet_chart_legend(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage_name => $storage_name)
 
 Hide legend in chart
 
@@ -1304,10 +1307,10 @@ my $name = 'name_example'; # string | Workbook name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $chart_index = 56; # int | The chart index.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_charts_delete_worksheet_chart_legend(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_charts_delete_worksheet_chart_legend(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -1323,7 +1326,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. | 
  **chart_index** | **int**| The chart index. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -1341,7 +1344,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_charts_delete_worksheet_chart_title**
-> CellsCloudResponse cells_charts_delete_worksheet_chart_title(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_charts_delete_worksheet_chart_title(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage_name => $storage_name)
 
 Hide title in chart
 
@@ -1356,10 +1359,10 @@ my $name = 'name_example'; # string | Workbook name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $chart_index = 56; # int | The chart index.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_charts_delete_worksheet_chart_title(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_charts_delete_worksheet_chart_title(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -1375,7 +1378,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. | 
  **chart_index** | **int**| The chart index. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -1393,7 +1396,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_charts_delete_worksheet_clear_charts**
-> CellsCloudResponse cells_charts_delete_worksheet_clear_charts(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_charts_delete_worksheet_clear_charts(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Clear the charts.
 
@@ -1407,10 +1410,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Workbook name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_charts_delete_worksheet_clear_charts(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_charts_delete_worksheet_clear_charts(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -1425,7 +1428,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Workbook name. | 
  **sheet_name** | **string**| The worksheet name. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -1443,7 +1446,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_charts_delete_worksheet_delete_chart**
-> ChartsResponse cells_charts_delete_worksheet_delete_chart(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage => $storage)
+> ChartsResponse cells_charts_delete_worksheet_delete_chart(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage_name => $storage_name)
 
 Delete worksheet chart by index.
 
@@ -1458,10 +1461,10 @@ my $name = 'name_example'; # string | Workbook name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $chart_index = 56; # int | The chart index.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_charts_delete_worksheet_delete_chart(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_charts_delete_worksheet_delete_chart(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -1477,7 +1480,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. | 
  **chart_index** | **int**| The chart index. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -1495,7 +1498,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_charts_get_worksheet_chart**
-> string cells_charts_get_worksheet_chart(name => $name, sheet_name => $sheet_name, chart_number => $chart_number, format => $format, folder => $folder, storage => $storage)
+> string cells_charts_get_worksheet_chart(name => $name, sheet_name => $sheet_name, chart_number => $chart_number, format => $format, folder => $folder, storage_name => $storage_name)
 
 Get chart info.
 
@@ -1511,10 +1514,10 @@ my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $chart_number = 56; # int | The chart number.
 my $format = 'format_example'; # string | The exported file format.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_charts_get_worksheet_chart(name => $name, sheet_name => $sheet_name, chart_number => $chart_number, format => $format, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_charts_get_worksheet_chart(name => $name, sheet_name => $sheet_name, chart_number => $chart_number, format => $format, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -1531,7 +1534,7 @@ Name | Type | Description  | Notes
  **chart_number** | **int**| The chart number. | 
  **format** | **string**| The exported file format. | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -1549,7 +1552,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_charts_get_worksheet_chart_legend**
-> LegendResponse cells_charts_get_worksheet_chart_legend(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage => $storage)
+> LegendResponse cells_charts_get_worksheet_chart_legend(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage_name => $storage_name)
 
 Get chart legend
 
@@ -1564,10 +1567,10 @@ my $name = 'name_example'; # string | Workbook name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $chart_index = 56; # int | The chart index.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_charts_get_worksheet_chart_legend(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_charts_get_worksheet_chart_legend(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -1583,7 +1586,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. | 
  **chart_index** | **int**| The chart index. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -1601,7 +1604,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_charts_get_worksheet_chart_title**
-> TitleResponse cells_charts_get_worksheet_chart_title(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage => $storage)
+> TitleResponse cells_charts_get_worksheet_chart_title(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage_name => $storage_name)
 
 Get chart title
 
@@ -1616,10 +1619,10 @@ my $name = 'name_example'; # string | Workbook name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $chart_index = 56; # int | The chart index.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_charts_get_worksheet_chart_title(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_charts_get_worksheet_chart_title(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -1635,7 +1638,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. | 
  **chart_index** | **int**| The chart index. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -1653,7 +1656,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_charts_get_worksheet_charts**
-> ChartsResponse cells_charts_get_worksheet_charts(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> ChartsResponse cells_charts_get_worksheet_charts(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Get worksheet charts info.
 
@@ -1667,10 +1670,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_charts_get_worksheet_charts(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_charts_get_worksheet_charts(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -1685,7 +1688,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. | 
  **sheet_name** | **string**| The worksheet name. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -1703,7 +1706,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_charts_post_worksheet_chart**
-> CellsCloudResponse cells_charts_post_worksheet_chart(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, chart => $chart, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_charts_post_worksheet_chart(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, chart => $chart, folder => $folder, storage_name => $storage_name)
 
 Update chart propreties
 
@@ -1719,10 +1722,10 @@ my $sheet_name = 'sheet_name_example'; # string |
 my $chart_index = 56; # int | 
 my $chart = AsposeCellsCloud::Object::Chart->new(); # Chart | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_charts_post_worksheet_chart(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, chart => $chart, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_charts_post_worksheet_chart(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, chart => $chart, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -1739,7 +1742,7 @@ Name | Type | Description  | Notes
  **chart_index** | **int**|  | 
  **chart** | [**Chart**](Chart.md)|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -1757,7 +1760,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_charts_post_worksheet_chart_legend**
-> LegendResponse cells_charts_post_worksheet_chart_legend(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, legend => $legend, folder => $folder, storage => $storage)
+> LegendResponse cells_charts_post_worksheet_chart_legend(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, legend => $legend, folder => $folder, storage_name => $storage_name)
 
 Update chart legend
 
@@ -1773,10 +1776,10 @@ my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $chart_index = 56; # int | The chart index.
 my $legend = AsposeCellsCloud::Object::Legend->new(); # Legend | 
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_charts_post_worksheet_chart_legend(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, legend => $legend, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_charts_post_worksheet_chart_legend(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, legend => $legend, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -1793,7 +1796,7 @@ Name | Type | Description  | Notes
  **chart_index** | **int**| The chart index. | 
  **legend** | [**Legend**](Legend.md)|  | [optional] 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -1811,7 +1814,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_charts_post_worksheet_chart_title**
-> TitleResponse cells_charts_post_worksheet_chart_title(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, title => $title, folder => $folder, storage => $storage)
+> TitleResponse cells_charts_post_worksheet_chart_title(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, title => $title, folder => $folder, storage_name => $storage_name)
 
 Update chart title
 
@@ -1827,10 +1830,10 @@ my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $chart_index = 56; # int | The chart index.
 my $title = AsposeCellsCloud::Object::Title->new(); # Title | Chart title
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_charts_post_worksheet_chart_title(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, title => $title, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_charts_post_worksheet_chart_title(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, title => $title, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -1847,7 +1850,7 @@ Name | Type | Description  | Notes
  **chart_index** | **int**| The chart index. | 
  **title** | [**Title**](Title.md)| Chart title | [optional] 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -1865,7 +1868,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_charts_put_worksheet_add_chart**
-> ChartsResponse cells_charts_put_worksheet_add_chart(name => $name, sheet_name => $sheet_name, chart_type => $chart_type, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, lower_right_row => $lower_right_row, lower_right_column => $lower_right_column, area => $area, is_vertical => $is_vertical, category_data => $category_data, is_auto_get_serial_name => $is_auto_get_serial_name, title => $title, folder => $folder, storage => $storage)
+> ChartsResponse cells_charts_put_worksheet_add_chart(name => $name, sheet_name => $sheet_name, chart_type => $chart_type, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, lower_right_row => $lower_right_row, lower_right_column => $lower_right_column, area => $area, is_vertical => $is_vertical, category_data => $category_data, is_auto_get_serial_name => $is_auto_get_serial_name, title => $title, folder => $folder, storage_name => $storage_name)
 
 Add new chart to worksheet.
 
@@ -1889,10 +1892,10 @@ my $category_data = 'category_data_example'; # string | Gets or sets the range o
 my $is_auto_get_serial_name = 1; # boolean | Specifies whether auto update serial name. 
 my $title = 'title_example'; # string | Specifies chart title name.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_charts_put_worksheet_add_chart(name => $name, sheet_name => $sheet_name, chart_type => $chart_type, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, lower_right_row => $lower_right_row, lower_right_column => $lower_right_column, area => $area, is_vertical => $is_vertical, category_data => $category_data, is_auto_get_serial_name => $is_auto_get_serial_name, title => $title, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_charts_put_worksheet_add_chart(name => $name, sheet_name => $sheet_name, chart_type => $chart_type, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, lower_right_row => $lower_right_row, lower_right_column => $lower_right_column, area => $area, is_vertical => $is_vertical, category_data => $category_data, is_auto_get_serial_name => $is_auto_get_serial_name, title => $title, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -1917,7 +1920,7 @@ Name | Type | Description  | Notes
  **is_auto_get_serial_name** | **boolean**| Specifies whether auto update serial name.  | [optional] [default to true]
  **title** | **string**| Specifies chart title name. | [optional] 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -1935,7 +1938,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_charts_put_worksheet_chart_legend**
-> CellsCloudResponse cells_charts_put_worksheet_chart_legend(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_charts_put_worksheet_chart_legend(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage_name => $storage_name)
 
 Show legend in chart
 
@@ -1950,10 +1953,10 @@ my $name = 'name_example'; # string | Workbook name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $chart_index = 56; # int | The chart index.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_charts_put_worksheet_chart_legend(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_charts_put_worksheet_chart_legend(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -1969,7 +1972,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. | 
  **chart_index** | **int**| The chart index. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -1987,7 +1990,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_charts_put_worksheet_chart_title**
-> TitleResponse cells_charts_put_worksheet_chart_title(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, title => $title, folder => $folder, storage => $storage)
+> TitleResponse cells_charts_put_worksheet_chart_title(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, title => $title, folder => $folder, storage_name => $storage_name)
 
 Add chart title / Set chart title visible
 
@@ -2003,10 +2006,10 @@ my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $chart_index = 56; # int | The chart index.
 my $title = AsposeCellsCloud::Object::Title->new(); # Title | Chart title.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_charts_put_worksheet_chart_title(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, title => $title, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_charts_put_worksheet_chart_title(name => $name, sheet_name => $sheet_name, chart_index => $chart_index, title => $title, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -2023,7 +2026,7 @@ Name | Type | Description  | Notes
  **chart_index** | **int**| The chart index. | 
  **title** | [**Title**](Title.md)| Chart title. | [optional] 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -2041,7 +2044,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_conditional_formattings_delete_worksheet_conditional_formatting**
-> CellsCloudResponse cells_conditional_formattings_delete_worksheet_conditional_formatting(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_conditional_formattings_delete_worksheet_conditional_formatting(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage_name => $storage_name)
 
 Remove conditional formatting
 
@@ -2056,10 +2059,10 @@ my $name = 'name_example'; # string |
 my $sheet_name = 'sheet_name_example'; # string | 
 my $index = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_conditional_formattings_delete_worksheet_conditional_formatting(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_conditional_formattings_delete_worksheet_conditional_formatting(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -2075,7 +2078,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  | 
  **index** | **int**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -2093,7 +2096,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_conditional_formattings_delete_worksheet_conditional_formatting_area**
-> CellsCloudResponse cells_conditional_formattings_delete_worksheet_conditional_formatting_area(name => $name, sheet_name => $sheet_name, start_row => $start_row, start_column => $start_column, total_rows => $total_rows, total_columns => $total_columns, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_conditional_formattings_delete_worksheet_conditional_formatting_area(name => $name, sheet_name => $sheet_name, start_row => $start_row, start_column => $start_column, total_rows => $total_rows, total_columns => $total_columns, folder => $folder, storage_name => $storage_name)
 
 Remove cell area from conditional formatting.
 
@@ -2111,10 +2114,10 @@ my $start_column = 56; # int |
 my $total_rows = 56; # int | 
 my $total_columns = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_conditional_formattings_delete_worksheet_conditional_formatting_area(name => $name, sheet_name => $sheet_name, start_row => $start_row, start_column => $start_column, total_rows => $total_rows, total_columns => $total_columns, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_conditional_formattings_delete_worksheet_conditional_formatting_area(name => $name, sheet_name => $sheet_name, start_row => $start_row, start_column => $start_column, total_rows => $total_rows, total_columns => $total_columns, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -2133,7 +2136,7 @@ Name | Type | Description  | Notes
  **total_rows** | **int**|  | 
  **total_columns** | **int**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -2151,7 +2154,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_conditional_formattings_delete_worksheet_conditional_formattings**
-> CellsCloudResponse cells_conditional_formattings_delete_worksheet_conditional_formattings(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_conditional_formattings_delete_worksheet_conditional_formattings(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Clear all condition formattings
 
@@ -2165,10 +2168,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | 
 my $sheet_name = 'sheet_name_example'; # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_conditional_formattings_delete_worksheet_conditional_formattings(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_conditional_formattings_delete_worksheet_conditional_formattings(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -2183,7 +2186,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  | 
  **sheet_name** | **string**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -2201,7 +2204,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_conditional_formattings_get_worksheet_conditional_formatting**
-> ConditionalFormattingResponse cells_conditional_formattings_get_worksheet_conditional_formatting(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage => $storage)
+> ConditionalFormattingResponse cells_conditional_formattings_get_worksheet_conditional_formatting(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage_name => $storage_name)
 
 Get conditional formatting
 
@@ -2216,10 +2219,10 @@ my $name = 'name_example'; # string |
 my $sheet_name = 'sheet_name_example'; # string | 
 my $index = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_conditional_formattings_get_worksheet_conditional_formatting(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_conditional_formattings_get_worksheet_conditional_formatting(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -2235,7 +2238,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  | 
  **index** | **int**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -2253,7 +2256,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_conditional_formattings_get_worksheet_conditional_formattings**
-> ConditionalFormattingsResponse cells_conditional_formattings_get_worksheet_conditional_formattings(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> ConditionalFormattingsResponse cells_conditional_formattings_get_worksheet_conditional_formattings(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Get conditional formattings 
 
@@ -2267,10 +2270,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | 
 my $sheet_name = 'sheet_name_example'; # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_conditional_formattings_get_worksheet_conditional_formattings(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_conditional_formattings_get_worksheet_conditional_formattings(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -2285,7 +2288,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  | 
  **sheet_name** | **string**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -2303,7 +2306,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_conditional_formattings_put_worksheet_conditional_formatting**
-> CellsCloudResponse cells_conditional_formattings_put_worksheet_conditional_formatting(name => $name, sheet_name => $sheet_name, cell_area => $cell_area, formatcondition => $formatcondition, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_conditional_formattings_put_worksheet_conditional_formatting(name => $name, sheet_name => $sheet_name, cell_area => $cell_area, formatcondition => $formatcondition, folder => $folder, storage_name => $storage_name)
 
 Add a condition formatting.
 
@@ -2319,10 +2322,10 @@ my $sheet_name = 'sheet_name_example'; # string |
 my $cell_area = 'cell_area_example'; # string | 
 my $formatcondition = AsposeCellsCloud::Object::FormatCondition->new(); # FormatCondition | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_conditional_formattings_put_worksheet_conditional_formatting(name => $name, sheet_name => $sheet_name, cell_area => $cell_area, formatcondition => $formatcondition, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_conditional_formattings_put_worksheet_conditional_formatting(name => $name, sheet_name => $sheet_name, cell_area => $cell_area, formatcondition => $formatcondition, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -2339,7 +2342,7 @@ Name | Type | Description  | Notes
  **cell_area** | **string**|  | 
  **formatcondition** | [**FormatCondition**](FormatCondition.md)|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -2357,7 +2360,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_conditional_formattings_put_worksheet_format_condition**
-> CellsCloudResponse cells_conditional_formattings_put_worksheet_format_condition(name => $name, sheet_name => $sheet_name, index => $index, cell_area => $cell_area, type => $type, operator_type => $operator_type, formula1 => $formula1, formula2 => $formula2, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_conditional_formattings_put_worksheet_format_condition(name => $name, sheet_name => $sheet_name, index => $index, cell_area => $cell_area, type => $type, operator_type => $operator_type, formula1 => $formula1, formula2 => $formula2, folder => $folder, storage_name => $storage_name)
 
 Add a format condition.
 
@@ -2377,10 +2380,10 @@ my $operator_type = 'operator_type_example'; # string |
 my $formula1 = 'formula1_example'; # string | 
 my $formula2 = 'formula2_example'; # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_conditional_formattings_put_worksheet_format_condition(name => $name, sheet_name => $sheet_name, index => $index, cell_area => $cell_area, type => $type, operator_type => $operator_type, formula1 => $formula1, formula2 => $formula2, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_conditional_formattings_put_worksheet_format_condition(name => $name, sheet_name => $sheet_name, index => $index, cell_area => $cell_area, type => $type, operator_type => $operator_type, formula1 => $formula1, formula2 => $formula2, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -2401,7 +2404,7 @@ Name | Type | Description  | Notes
  **formula1** | **string**|  | 
  **formula2** | **string**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -2419,7 +2422,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_conditional_formattings_put_worksheet_format_condition_area**
-> CellsCloudResponse cells_conditional_formattings_put_worksheet_format_condition_area(name => $name, sheet_name => $sheet_name, index => $index, cell_area => $cell_area, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_conditional_formattings_put_worksheet_format_condition_area(name => $name, sheet_name => $sheet_name, index => $index, cell_area => $cell_area, folder => $folder, storage_name => $storage_name)
 
 add a cell area for format condition             
 
@@ -2435,10 +2438,10 @@ my $sheet_name = 'sheet_name_example'; # string |
 my $index = 56; # int | 
 my $cell_area = 'cell_area_example'; # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_conditional_formattings_put_worksheet_format_condition_area(name => $name, sheet_name => $sheet_name, index => $index, cell_area => $cell_area, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_conditional_formattings_put_worksheet_format_condition_area(name => $name, sheet_name => $sheet_name, index => $index, cell_area => $cell_area, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -2455,7 +2458,7 @@ Name | Type | Description  | Notes
  **index** | **int**|  | 
  **cell_area** | **string**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -2473,7 +2476,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_conditional_formattings_put_worksheet_format_condition_condition**
-> CellsCloudResponse cells_conditional_formattings_put_worksheet_format_condition_condition(name => $name, sheet_name => $sheet_name, index => $index, type => $type, operator_type => $operator_type, formula1 => $formula1, formula2 => $formula2, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_conditional_formattings_put_worksheet_format_condition_condition(name => $name, sheet_name => $sheet_name, index => $index, type => $type, operator_type => $operator_type, formula1 => $formula1, formula2 => $formula2, folder => $folder, storage_name => $storage_name)
 
 Add a condition for format condition.
 
@@ -2492,10 +2495,10 @@ my $operator_type = 'operator_type_example'; # string |
 my $formula1 = 'formula1_example'; # string | 
 my $formula2 = 'formula2_example'; # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_conditional_formattings_put_worksheet_format_condition_condition(name => $name, sheet_name => $sheet_name, index => $index, type => $type, operator_type => $operator_type, formula1 => $formula1, formula2 => $formula2, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_conditional_formattings_put_worksheet_format_condition_condition(name => $name, sheet_name => $sheet_name, index => $index, type => $type, operator_type => $operator_type, formula1 => $formula1, formula2 => $formula2, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -2515,7 +2518,7 @@ Name | Type | Description  | Notes
  **formula1** | **string**|  | 
  **formula2** | **string**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -2533,7 +2536,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_delete_worksheet_columns**
-> ColumnsResponse cells_delete_worksheet_columns(name => $name, sheet_name => $sheet_name, column_index => $column_index, columns => $columns, update_reference => $update_reference, folder => $folder, storage => $storage)
+> ColumnsResponse cells_delete_worksheet_columns(name => $name, sheet_name => $sheet_name, column_index => $column_index, columns => $columns, update_reference => $update_reference, folder => $folder, storage_name => $storage_name)
 
 Delete worksheet columns.
 
@@ -2550,10 +2553,10 @@ my $column_index = 56; # int | The column index.
 my $columns = 56; # int | The columns.
 my $update_reference = 1; # boolean | The update reference.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_delete_worksheet_columns(name => $name, sheet_name => $sheet_name, column_index => $column_index, columns => $columns, update_reference => $update_reference, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_delete_worksheet_columns(name => $name, sheet_name => $sheet_name, column_index => $column_index, columns => $columns, update_reference => $update_reference, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -2571,7 +2574,7 @@ Name | Type | Description  | Notes
  **columns** | **int**| The columns. | 
  **update_reference** | **boolean**| The update reference. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -2589,7 +2592,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_delete_worksheet_row**
-> CellsCloudResponse cells_delete_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_delete_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, folder => $folder, storage_name => $storage_name)
 
 Delete worksheet row.
 
@@ -2604,10 +2607,10 @@ my $name = 'name_example'; # string | The workbook name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet bame.
 my $row_index = 56; # int | The row index.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_delete_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_delete_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -2623,7 +2626,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet bame. | 
  **row_index** | **int**| The row index. | 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -2641,7 +2644,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_delete_worksheet_rows**
-> CellsCloudResponse cells_delete_worksheet_rows(name => $name, sheet_name => $sheet_name, startrow => $startrow, total_rows => $total_rows, update_reference => $update_reference, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_delete_worksheet_rows(name => $name, sheet_name => $sheet_name, startrow => $startrow, total_rows => $total_rows, update_reference => $update_reference, folder => $folder, storage_name => $storage_name)
 
 Delete several worksheet rows.
 
@@ -2658,10 +2661,10 @@ my $startrow = 56; # int | The begin row index to be operated.
 my $total_rows = 56; # int | Number of rows to be operated.
 my $update_reference = 1; # boolean | Indicates if update references in other worksheets.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_delete_worksheet_rows(name => $name, sheet_name => $sheet_name, startrow => $startrow, total_rows => $total_rows, update_reference => $update_reference, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_delete_worksheet_rows(name => $name, sheet_name => $sheet_name, startrow => $startrow, total_rows => $total_rows, update_reference => $update_reference, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -2679,7 +2682,7 @@ Name | Type | Description  | Notes
  **total_rows** | **int**| Number of rows to be operated. | [optional] [default to 1]
  **update_reference** | **boolean**| Indicates if update references in other worksheets. | [optional] [default to true]
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -2697,7 +2700,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_get_cell_html_string**
-> object cells_get_cell_html_string(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage => $storage)
+> object cells_get_cell_html_string(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage_name => $storage_name)
 
 Read cell data by cell's name.
 
@@ -2712,10 +2715,10 @@ my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $cell_name = 'cell_name_example'; # string | The cell's  name.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_get_cell_html_string(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_get_cell_html_string(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -2731,7 +2734,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. | 
  **cell_name** | **string**| The cell&#39;s  name. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -2749,7 +2752,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_get_worksheet_cell**
-> object cells_get_worksheet_cell(name => $name, sheet_name => $sheet_name, cell_or_method_name => $cell_or_method_name, folder => $folder, storage => $storage)
+> object cells_get_worksheet_cell(name => $name, sheet_name => $sheet_name, cell_or_method_name => $cell_or_method_name, folder => $folder, storage_name => $storage_name)
 
 Read cell data by cell's name.
 
@@ -2764,10 +2767,10 @@ my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $cell_or_method_name = 'cell_or_method_name_example'; # string | The cell's or method name. (Method name like firstcell, endcell etc.)
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_get_worksheet_cell(name => $name, sheet_name => $sheet_name, cell_or_method_name => $cell_or_method_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_get_worksheet_cell(name => $name, sheet_name => $sheet_name, cell_or_method_name => $cell_or_method_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -2783,7 +2786,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. | 
  **cell_or_method_name** | **string**| The cell&#39;s or method name. (Method name like firstcell, endcell etc.) | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -2801,7 +2804,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_get_worksheet_cell_style**
-> StyleResponse cells_get_worksheet_cell_style(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage => $storage)
+> StyleResponse cells_get_worksheet_cell_style(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage_name => $storage_name)
 
 Read cell's style info.
 
@@ -2816,10 +2819,10 @@ my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $cell_name = 'cell_name_example'; # string | Cell's name.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_get_worksheet_cell_style(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_get_worksheet_cell_style(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -2835,7 +2838,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. | 
  **cell_name** | **string**| Cell&#39;s name. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -2853,7 +2856,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_get_worksheet_cells**
-> CellsResponse cells_get_worksheet_cells(name => $name, sheet_name => $sheet_name, offest => $offest, count => $count, folder => $folder, storage => $storage)
+> CellsResponse cells_get_worksheet_cells(name => $name, sheet_name => $sheet_name, offest => $offest, count => $count, folder => $folder, storage_name => $storage_name)
 
 Get cells info.
 
@@ -2869,10 +2872,10 @@ my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $offest = 56; # int | Begginig offset.
 my $count = 56; # int | Maximum amount of cells in the response.
 my $folder = 'folder_example'; # string | Document's folder name.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_get_worksheet_cells(name => $name, sheet_name => $sheet_name, offest => $offest, count => $count, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_get_worksheet_cells(name => $name, sheet_name => $sheet_name, offest => $offest, count => $count, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -2889,7 +2892,7 @@ Name | Type | Description  | Notes
  **offest** | **int**| Begginig offset. | [optional] [default to 0]
  **count** | **int**| Maximum amount of cells in the response. | [optional] [default to 0]
  **folder** | **string**| Document&#39;s folder name. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -2907,7 +2910,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_get_worksheet_column**
-> ColumnResponse cells_get_worksheet_column(name => $name, sheet_name => $sheet_name, column_index => $column_index, folder => $folder, storage => $storage)
+> ColumnResponse cells_get_worksheet_column(name => $name, sheet_name => $sheet_name, column_index => $column_index, folder => $folder, storage_name => $storage_name)
 
 Read worksheet column data by column's index.
 
@@ -2922,10 +2925,10 @@ my $name = 'name_example'; # string | The workbook name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $column_index = 56; # int | The column index.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_get_worksheet_column(name => $name, sheet_name => $sheet_name, column_index => $column_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_get_worksheet_column(name => $name, sheet_name => $sheet_name, column_index => $column_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -2941,7 +2944,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet name. | 
  **column_index** | **int**| The column index. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -2959,7 +2962,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_get_worksheet_columns**
-> ColumnsResponse cells_get_worksheet_columns(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> ColumnsResponse cells_get_worksheet_columns(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Read worksheet columns info.
 
@@ -2973,10 +2976,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | The workbook name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $folder = 'folder_example'; # string | The workdook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_get_worksheet_columns(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_get_worksheet_columns(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -2991,7 +2994,7 @@ Name | Type | Description  | Notes
  **name** | **string**| The workbook name. | 
  **sheet_name** | **string**| The worksheet name. | 
  **folder** | **string**| The workdook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -3009,7 +3012,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_get_worksheet_row**
-> RowResponse cells_get_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, folder => $folder, storage => $storage)
+> RowResponse cells_get_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, folder => $folder, storage_name => $storage_name)
 
 Read worksheet row data by row's index.
 
@@ -3024,10 +3027,10 @@ my $name = 'name_example'; # string | The workbook name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $row_index = 56; # int | The row index.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_get_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_get_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -3043,7 +3046,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet name. | 
  **row_index** | **int**| The row index. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -3061,7 +3064,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_get_worksheet_rows**
-> RowsResponse cells_get_worksheet_rows(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> RowsResponse cells_get_worksheet_rows(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Read worksheet rows info.
 
@@ -3075,10 +3078,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | The workbook name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $folder = 'folder_example'; # string | The workdook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_get_worksheet_rows(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_get_worksheet_rows(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -3093,7 +3096,7 @@ Name | Type | Description  | Notes
  **name** | **string**| The workbook name. | 
  **sheet_name** | **string**| The worksheet name. | 
  **folder** | **string**| The workdook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -3111,7 +3114,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_hypelinks_delete_worksheet_hyperlink**
-> CellsCloudResponse cells_hypelinks_delete_worksheet_hyperlink(name => $name, sheet_name => $sheet_name, hyperlink_index => $hyperlink_index, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_hypelinks_delete_worksheet_hyperlink(name => $name, sheet_name => $sheet_name, hyperlink_index => $hyperlink_index, folder => $folder, storage_name => $storage_name)
 
 Delete worksheet hyperlink by index.
 
@@ -3126,10 +3129,10 @@ my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $hyperlink_index = 56; # int | The hyperlink's index.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_hypelinks_delete_worksheet_hyperlink(name => $name, sheet_name => $sheet_name, hyperlink_index => $hyperlink_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_hypelinks_delete_worksheet_hyperlink(name => $name, sheet_name => $sheet_name, hyperlink_index => $hyperlink_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -3145,7 +3148,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. | 
  **hyperlink_index** | **int**| The hyperlink&#39;s index. | 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -3163,7 +3166,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_hypelinks_delete_worksheet_hyperlinks**
-> CellsCloudResponse cells_hypelinks_delete_worksheet_hyperlinks(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_hypelinks_delete_worksheet_hyperlinks(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Delete all hyperlinks in worksheet.
 
@@ -3177,10 +3180,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_hypelinks_delete_worksheet_hyperlinks(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_hypelinks_delete_worksheet_hyperlinks(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -3195,7 +3198,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. | 
  **sheet_name** | **string**| Worksheet name. | 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -3213,7 +3216,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_hypelinks_get_worksheet_hyperlink**
-> HyperlinkResponse cells_hypelinks_get_worksheet_hyperlink(name => $name, sheet_name => $sheet_name, hyperlink_index => $hyperlink_index, folder => $folder, storage => $storage)
+> HyperlinkResponse cells_hypelinks_get_worksheet_hyperlink(name => $name, sheet_name => $sheet_name, hyperlink_index => $hyperlink_index, folder => $folder, storage_name => $storage_name)
 
 Get worksheet hyperlink by index.
 
@@ -3228,10 +3231,10 @@ my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $hyperlink_index = 56; # int | The hyperlink's index.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_hypelinks_get_worksheet_hyperlink(name => $name, sheet_name => $sheet_name, hyperlink_index => $hyperlink_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_hypelinks_get_worksheet_hyperlink(name => $name, sheet_name => $sheet_name, hyperlink_index => $hyperlink_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -3247,7 +3250,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. | 
  **hyperlink_index** | **int**| The hyperlink&#39;s index. | 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -3265,7 +3268,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_hypelinks_get_worksheet_hyperlinks**
-> HyperlinksResponse cells_hypelinks_get_worksheet_hyperlinks(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> HyperlinksResponse cells_hypelinks_get_worksheet_hyperlinks(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Get worksheet hyperlinks.
 
@@ -3279,10 +3282,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_hypelinks_get_worksheet_hyperlinks(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_hypelinks_get_worksheet_hyperlinks(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -3297,7 +3300,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. | 
  **sheet_name** | **string**| The worksheet name. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -3315,7 +3318,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_hypelinks_post_worksheet_hyperlink**
-> HyperlinkResponse cells_hypelinks_post_worksheet_hyperlink(name => $name, sheet_name => $sheet_name, hyperlink_index => $hyperlink_index, hyperlink => $hyperlink, folder => $folder, storage => $storage)
+> HyperlinkResponse cells_hypelinks_post_worksheet_hyperlink(name => $name, sheet_name => $sheet_name, hyperlink_index => $hyperlink_index, hyperlink => $hyperlink, folder => $folder, storage_name => $storage_name)
 
 Update worksheet hyperlink by index.
 
@@ -3331,10 +3334,10 @@ my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $hyperlink_index = 56; # int | The hyperlink's index.
 my $hyperlink = AsposeCellsCloud::Object::Hyperlink->new(); # Hyperlink | Hyperlink object
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_hypelinks_post_worksheet_hyperlink(name => $name, sheet_name => $sheet_name, hyperlink_index => $hyperlink_index, hyperlink => $hyperlink, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_hypelinks_post_worksheet_hyperlink(name => $name, sheet_name => $sheet_name, hyperlink_index => $hyperlink_index, hyperlink => $hyperlink, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -3351,7 +3354,7 @@ Name | Type | Description  | Notes
  **hyperlink_index** | **int**| The hyperlink&#39;s index. | 
  **hyperlink** | [**Hyperlink**](Hyperlink.md)| Hyperlink object | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -3369,7 +3372,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_hypelinks_put_worksheet_hyperlink**
-> HyperlinkResponse cells_hypelinks_put_worksheet_hyperlink(name => $name, sheet_name => $sheet_name, first_row => $first_row, first_column => $first_column, total_rows => $total_rows, total_columns => $total_columns, address => $address, folder => $folder, storage => $storage)
+> HyperlinkResponse cells_hypelinks_put_worksheet_hyperlink(name => $name, sheet_name => $sheet_name, first_row => $first_row, first_column => $first_column, total_rows => $total_rows, total_columns => $total_columns, address => $address, folder => $folder, storage_name => $storage_name)
 
 Add worksheet hyperlink.
 
@@ -3388,10 +3391,10 @@ my $total_rows = 56; # int |
 my $total_columns = 56; # int | 
 my $address = 'address_example'; # string | 
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_hypelinks_put_worksheet_hyperlink(name => $name, sheet_name => $sheet_name, first_row => $first_row, first_column => $first_column, total_rows => $total_rows, total_columns => $total_columns, address => $address, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_hypelinks_put_worksheet_hyperlink(name => $name, sheet_name => $sheet_name, first_row => $first_row, first_column => $first_column, total_rows => $total_rows, total_columns => $total_columns, address => $address, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -3411,7 +3414,7 @@ Name | Type | Description  | Notes
  **total_columns** | **int**|  | 
  **address** | **string**|  | 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -3429,7 +3432,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_list_objects_delete_worksheet_list_object**
-> CellsCloudResponse cells_list_objects_delete_worksheet_list_object(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_list_objects_delete_worksheet_list_object(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, folder => $folder, storage_name => $storage_name)
 
 Delete worksheet list object by index
 
@@ -3444,10 +3447,10 @@ my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $list_object_index = 56; # int | List object index
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_list_objects_delete_worksheet_list_object(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_list_objects_delete_worksheet_list_object(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -3463,7 +3466,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet name. | 
  **list_object_index** | **int**| List object index | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -3481,7 +3484,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_list_objects_delete_worksheet_list_objects**
-> CellsCloudResponse cells_list_objects_delete_worksheet_list_objects(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_list_objects_delete_worksheet_list_objects(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Delete worksheet list objects
 
@@ -3495,10 +3498,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_list_objects_delete_worksheet_list_objects(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_list_objects_delete_worksheet_list_objects(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -3513,7 +3516,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. | 
  **sheet_name** | **string**| The worksheet name. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -3531,7 +3534,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_list_objects_get_worksheet_list_object**
-> ListObjectResponse cells_list_objects_get_worksheet_list_object(name => $name, sheet_name => $sheet_name, listobjectindex => $listobjectindex, folder => $folder, storage => $storage)
+> ListObjectResponse cells_list_objects_get_worksheet_list_object(name => $name, sheet_name => $sheet_name, listobjectindex => $listobjectindex, folder => $folder, storage_name => $storage_name)
 
 Get worksheet list object info by index.
 
@@ -3546,10 +3549,10 @@ my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $listobjectindex = 56; # int | list object index.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_list_objects_get_worksheet_list_object(name => $name, sheet_name => $sheet_name, listobjectindex => $listobjectindex, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_list_objects_get_worksheet_list_object(name => $name, sheet_name => $sheet_name, listobjectindex => $listobjectindex, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -3565,7 +3568,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet name. | 
  **listobjectindex** | **int**| list object index. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -3583,7 +3586,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_list_objects_get_worksheet_list_objects**
-> ListObjectsResponse cells_list_objects_get_worksheet_list_objects(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> ListObjectsResponse cells_list_objects_get_worksheet_list_objects(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Get worksheet listobjects info.
 
@@ -3597,10 +3600,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_list_objects_get_worksheet_list_objects(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_list_objects_get_worksheet_list_objects(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -3615,7 +3618,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. | 
  **sheet_name** | **string**| The worksheet name. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -3633,7 +3636,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_list_objects_post_worksheet_list_object**
-> CellsCloudResponse cells_list_objects_post_worksheet_list_object(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, list_object => $list_object, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_list_objects_post_worksheet_list_object(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, list_object => $list_object, folder => $folder, storage_name => $storage_name)
 
 Update  list object 
 
@@ -3649,10 +3652,10 @@ my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $list_object_index = 56; # int | list Object index
 my $list_object = AsposeCellsCloud::Object::ListObject->new(); # ListObject | listObject dto in request body.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_list_objects_post_worksheet_list_object(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, list_object => $list_object, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_list_objects_post_worksheet_list_object(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, list_object => $list_object, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -3669,7 +3672,7 @@ Name | Type | Description  | Notes
  **list_object_index** | **int**| list Object index | 
  **list_object** | [**ListObject**](ListObject.md)| listObject dto in request body. | [optional] 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -3687,7 +3690,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_list_objects_post_worksheet_list_object_convert_to_range**
-> CellsCloudResponse cells_list_objects_post_worksheet_list_object_convert_to_range(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_list_objects_post_worksheet_list_object_convert_to_range(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -3702,10 +3705,10 @@ my $name = 'name_example'; # string |
 my $sheet_name = 'sheet_name_example'; # string | 
 my $list_object_index = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_list_objects_post_worksheet_list_object_convert_to_range(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_list_objects_post_worksheet_list_object_convert_to_range(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -3721,7 +3724,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  | 
  **list_object_index** | **int**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -3739,7 +3742,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_list_objects_post_worksheet_list_object_sort_table**
-> CellsCloudResponse cells_list_objects_post_worksheet_list_object_sort_table(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, data_sorter => $data_sorter, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_list_objects_post_worksheet_list_object_sort_table(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, data_sorter => $data_sorter, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -3755,10 +3758,10 @@ my $sheet_name = 'sheet_name_example'; # string |
 my $list_object_index = 56; # int | 
 my $data_sorter = AsposeCellsCloud::Object::DataSorter->new(); # DataSorter | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_list_objects_post_worksheet_list_object_sort_table(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, data_sorter => $data_sorter, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_list_objects_post_worksheet_list_object_sort_table(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, data_sorter => $data_sorter, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -3775,7 +3778,7 @@ Name | Type | Description  | Notes
  **list_object_index** | **int**|  | 
  **data_sorter** | [**DataSorter**](DataSorter.md)|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -3793,7 +3796,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_list_objects_post_worksheet_list_object_summarize_with_pivot_table**
-> CellsCloudResponse cells_list_objects_post_worksheet_list_object_summarize_with_pivot_table(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, destsheet_name => $destsheet_name, request => $request, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_list_objects_post_worksheet_list_object_summarize_with_pivot_table(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, destsheet_name => $destsheet_name, request => $request, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -3810,10 +3813,10 @@ my $list_object_index = 56; # int |
 my $destsheet_name = 'destsheet_name_example'; # string | 
 my $request = AsposeCellsCloud::Object::CreatePivotTableRequest->new(); # CreatePivotTableRequest | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_list_objects_post_worksheet_list_object_summarize_with_pivot_table(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, destsheet_name => $destsheet_name, request => $request, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_list_objects_post_worksheet_list_object_summarize_with_pivot_table(name => $name, sheet_name => $sheet_name, list_object_index => $list_object_index, destsheet_name => $destsheet_name, request => $request, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -3831,7 +3834,7 @@ Name | Type | Description  | Notes
  **destsheet_name** | **string**|  | 
  **request** | [**CreatePivotTableRequest**](CreatePivotTableRequest.md)|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -3849,7 +3852,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_list_objects_put_worksheet_list_object**
-> ListObjectResponse cells_list_objects_put_worksheet_list_object(name => $name, sheet_name => $sheet_name, start_row => $start_row, start_column => $start_column, end_row => $end_row, end_column => $end_column, folder => $folder, storage => $storage, has_headers => $has_headers)
+> ListObjectResponse cells_list_objects_put_worksheet_list_object(name => $name, sheet_name => $sheet_name, start_row => $start_row, start_column => $start_column, end_row => $end_row, end_column => $end_column, has_headers => $has_headers, list_object => $list_object, folder => $folder, storage_name => $storage_name, has_headers2 => $has_headers2)
 
 Add a list object into worksheet.
 
@@ -3866,12 +3869,14 @@ my $start_row = 56; # int | The start row of the list range.
 my $start_column = 56; # int | The start row of the list range.
 my $end_row = 56; # int | The start row of the list range.
 my $end_column = 56; # int | The start row of the list range.
-my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
 my $has_headers = 1; # boolean | Whether the range has headers.
+my $list_object = AsposeCellsCloud::Object::ListObject->new(); # ListObject | List Object
+my $folder = 'folder_example'; # string | Document's folder.
+my $storage_name = 'storage_name_example'; # string | storage name.
+my $has_headers2 = 1; # boolean | Whether the range has headers.
 
 eval { 
-    my $result = $api_instance->cells_list_objects_put_worksheet_list_object(name => $name, sheet_name => $sheet_name, start_row => $start_row, start_column => $start_column, end_row => $end_row, end_column => $end_column, folder => $folder, storage => $storage, has_headers => $has_headers);
+    my $result = $api_instance->cells_list_objects_put_worksheet_list_object(name => $name, sheet_name => $sheet_name, start_row => $start_row, start_column => $start_column, end_row => $end_row, end_column => $end_column, has_headers => $has_headers, list_object => $list_object, folder => $folder, storage_name => $storage_name, has_headers2 => $has_headers2);
     print Dumper($result);
 };
 if ($@) {
@@ -3889,9 +3894,11 @@ Name | Type | Description  | Notes
  **start_column** | **int**| The start row of the list range. | 
  **end_row** | **int**| The start row of the list range. | 
  **end_column** | **int**| The start row of the list range. | 
- **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
  **has_headers** | **boolean**| Whether the range has headers. | [optional] [default to true]
+ **list_object** | [**ListObject**](ListObject.md)| List Object | [optional] 
+ **folder** | **string**| Document&#39;s folder. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
+ **has_headers2** | **boolean**| Whether the range has headers. | [optional] [default to true]
 
 ### Return type
 
@@ -3909,7 +3916,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_ole_objects_delete_worksheet_ole_object**
-> CellsCloudResponse cells_ole_objects_delete_worksheet_ole_object(name => $name, sheet_name => $sheet_name, ole_object_index => $ole_object_index, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_ole_objects_delete_worksheet_ole_object(name => $name, sheet_name => $sheet_name, ole_object_index => $ole_object_index, folder => $folder, storage_name => $storage_name)
 
 Delete OLE object.
 
@@ -3924,10 +3931,10 @@ my $name = 'name_example'; # string | The workbook name.
 my $sheet_name = 'sheet_name_example'; # string | The worsheet name.
 my $ole_object_index = 56; # int | Ole object index
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_ole_objects_delete_worksheet_ole_object(name => $name, sheet_name => $sheet_name, ole_object_index => $ole_object_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_ole_objects_delete_worksheet_ole_object(name => $name, sheet_name => $sheet_name, ole_object_index => $ole_object_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -3943,7 +3950,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worsheet name. | 
  **ole_object_index** | **int**| Ole object index | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -3961,7 +3968,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_ole_objects_delete_worksheet_ole_objects**
-> CellsCloudResponse cells_ole_objects_delete_worksheet_ole_objects(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_ole_objects_delete_worksheet_ole_objects(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Delete all OLE objects.
 
@@ -3975,10 +3982,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | The workbook name.
 my $sheet_name = 'sheet_name_example'; # string | The worsheet name.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_ole_objects_delete_worksheet_ole_objects(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_ole_objects_delete_worksheet_ole_objects(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -3993,7 +4000,7 @@ Name | Type | Description  | Notes
  **name** | **string**| The workbook name. | 
  **sheet_name** | **string**| The worsheet name. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -4011,7 +4018,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_ole_objects_get_worksheet_ole_object**
-> string cells_ole_objects_get_worksheet_ole_object(name => $name, sheet_name => $sheet_name, object_number => $object_number, format => $format, folder => $folder, storage => $storage)
+> string cells_ole_objects_get_worksheet_ole_object(name => $name, sheet_name => $sheet_name, object_number => $object_number, format => $format, folder => $folder, storage_name => $storage_name)
 
 Get OLE object info.
 
@@ -4027,10 +4034,10 @@ my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $object_number = 56; # int | The object number.
 my $format = 'format_example'; # string | The exported object format.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_ole_objects_get_worksheet_ole_object(name => $name, sheet_name => $sheet_name, object_number => $object_number, format => $format, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_ole_objects_get_worksheet_ole_object(name => $name, sheet_name => $sheet_name, object_number => $object_number, format => $format, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -4047,7 +4054,7 @@ Name | Type | Description  | Notes
  **object_number** | **int**| The object number. | 
  **format** | **string**| The exported object format. | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -4065,7 +4072,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_ole_objects_get_worksheet_ole_objects**
-> OleObjectsResponse cells_ole_objects_get_worksheet_ole_objects(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> OleObjectsResponse cells_ole_objects_get_worksheet_ole_objects(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Get worksheet OLE objects info.
 
@@ -4079,10 +4086,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_ole_objects_get_worksheet_ole_objects(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_ole_objects_get_worksheet_ole_objects(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -4097,7 +4104,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. | 
  **sheet_name** | **string**| The worksheet name. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -4115,7 +4122,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_ole_objects_post_update_worksheet_ole_object**
-> CellsCloudResponse cells_ole_objects_post_update_worksheet_ole_object(name => $name, sheet_name => $sheet_name, ole_object_index => $ole_object_index, ole => $ole, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_ole_objects_post_update_worksheet_ole_object(name => $name, sheet_name => $sheet_name, ole_object_index => $ole_object_index, ole => $ole, folder => $folder, storage_name => $storage_name)
 
 Update OLE object.
 
@@ -4131,10 +4138,10 @@ my $sheet_name = 'sheet_name_example'; # string | The worsheet name.
 my $ole_object_index = 56; # int | Ole object index
 my $ole = AsposeCellsCloud::Object::OleObject->new(); # OleObject | Ole Object
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_ole_objects_post_update_worksheet_ole_object(name => $name, sheet_name => $sheet_name, ole_object_index => $ole_object_index, ole => $ole, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_ole_objects_post_update_worksheet_ole_object(name => $name, sheet_name => $sheet_name, ole_object_index => $ole_object_index, ole => $ole, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -4151,7 +4158,7 @@ Name | Type | Description  | Notes
  **ole_object_index** | **int**| Ole object index | 
  **ole** | [**OleObject**](OleObject.md)| Ole Object | [optional] 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -4169,7 +4176,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_ole_objects_put_worksheet_ole_object**
-> OleObjectResponse cells_ole_objects_put_worksheet_ole_object(name => $name, sheet_name => $sheet_name, ole_object => $ole_object, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, height => $height, width => $width, ole_file => $ole_file, image_file => $image_file, folder => $folder, storage => $storage)
+> OleObjectResponse cells_ole_objects_put_worksheet_ole_object(name => $name, sheet_name => $sheet_name, ole_object => $ole_object, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, height => $height, width => $width, ole_file => $ole_file, image_file => $image_file, folder => $folder, storage_name => $storage_name)
 
 Add OLE object
 
@@ -4190,10 +4197,10 @@ my $width = 56; # int | Width of oleObject, in unit of pixel
 my $ole_file = 'ole_file_example'; # string | OLE filename
 my $image_file = 'image_file_example'; # string | Image filename
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_ole_objects_put_worksheet_ole_object(name => $name, sheet_name => $sheet_name, ole_object => $ole_object, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, height => $height, width => $width, ole_file => $ole_file, image_file => $image_file, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_ole_objects_put_worksheet_ole_object(name => $name, sheet_name => $sheet_name, ole_object => $ole_object, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, height => $height, width => $width, ole_file => $ole_file, image_file => $image_file, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -4215,7 +4222,7 @@ Name | Type | Description  | Notes
  **ole_file** | **string**| OLE filename | [optional] 
  **image_file** | **string**| Image filename | [optional] 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -4233,7 +4240,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_page_breaks_delete_horizontal_page_break**
-> CellsCloudResponse cells_page_breaks_delete_horizontal_page_break(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_page_breaks_delete_horizontal_page_break(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -4248,10 +4255,10 @@ my $name = 'name_example'; # string |
 my $sheet_name = 'sheet_name_example'; # string | 
 my $index = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_page_breaks_delete_horizontal_page_break(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_page_breaks_delete_horizontal_page_break(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -4267,7 +4274,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  | 
  **index** | **int**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -4285,7 +4292,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_page_breaks_delete_horizontal_page_breaks**
-> CellsCloudResponse cells_page_breaks_delete_horizontal_page_breaks(name => $name, sheet_name => $sheet_name, row => $row, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_page_breaks_delete_horizontal_page_breaks(name => $name, sheet_name => $sheet_name, row => $row, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -4300,10 +4307,10 @@ my $name = 'name_example'; # string |
 my $sheet_name = 'sheet_name_example'; # string | 
 my $row = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_page_breaks_delete_horizontal_page_breaks(name => $name, sheet_name => $sheet_name, row => $row, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_page_breaks_delete_horizontal_page_breaks(name => $name, sheet_name => $sheet_name, row => $row, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -4319,7 +4326,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  | 
  **row** | **int**|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -4337,7 +4344,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_page_breaks_delete_vertical_page_break**
-> CellsCloudResponse cells_page_breaks_delete_vertical_page_break(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_page_breaks_delete_vertical_page_break(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -4352,10 +4359,10 @@ my $name = 'name_example'; # string |
 my $sheet_name = 'sheet_name_example'; # string | 
 my $index = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_page_breaks_delete_vertical_page_break(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_page_breaks_delete_vertical_page_break(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -4371,7 +4378,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  | 
  **index** | **int**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -4389,7 +4396,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_page_breaks_delete_vertical_page_breaks**
-> CellsCloudResponse cells_page_breaks_delete_vertical_page_breaks(name => $name, sheet_name => $sheet_name, column => $column, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_page_breaks_delete_vertical_page_breaks(name => $name, sheet_name => $sheet_name, column => $column, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -4404,10 +4411,10 @@ my $name = 'name_example'; # string |
 my $sheet_name = 'sheet_name_example'; # string | 
 my $column = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_page_breaks_delete_vertical_page_breaks(name => $name, sheet_name => $sheet_name, column => $column, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_page_breaks_delete_vertical_page_breaks(name => $name, sheet_name => $sheet_name, column => $column, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -4423,7 +4430,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  | 
  **column** | **int**|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -4441,7 +4448,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_page_breaks_get_horizontal_page_break**
-> HorizontalPageBreakResponse cells_page_breaks_get_horizontal_page_break(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage => $storage)
+> HorizontalPageBreakResponse cells_page_breaks_get_horizontal_page_break(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -4456,10 +4463,10 @@ my $name = 'name_example'; # string |
 my $sheet_name = 'sheet_name_example'; # string | 
 my $index = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_page_breaks_get_horizontal_page_break(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_page_breaks_get_horizontal_page_break(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -4475,7 +4482,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  | 
  **index** | **int**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -4493,7 +4500,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_page_breaks_get_horizontal_page_breaks**
-> HorizontalPageBreaksResponse cells_page_breaks_get_horizontal_page_breaks(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> HorizontalPageBreaksResponse cells_page_breaks_get_horizontal_page_breaks(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -4507,10 +4514,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | 
 my $sheet_name = 'sheet_name_example'; # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_page_breaks_get_horizontal_page_breaks(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_page_breaks_get_horizontal_page_breaks(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -4525,7 +4532,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  | 
  **sheet_name** | **string**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -4543,7 +4550,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_page_breaks_get_vertical_page_break**
-> VerticalPageBreakResponse cells_page_breaks_get_vertical_page_break(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage => $storage)
+> VerticalPageBreakResponse cells_page_breaks_get_vertical_page_break(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -4558,10 +4565,10 @@ my $name = 'name_example'; # string |
 my $sheet_name = 'sheet_name_example'; # string | 
 my $index = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_page_breaks_get_vertical_page_break(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_page_breaks_get_vertical_page_break(name => $name, sheet_name => $sheet_name, index => $index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -4577,7 +4584,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  | 
  **index** | **int**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -4595,7 +4602,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_page_breaks_get_vertical_page_breaks**
-> VerticalPageBreaksResponse cells_page_breaks_get_vertical_page_breaks(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> VerticalPageBreaksResponse cells_page_breaks_get_vertical_page_breaks(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -4609,10 +4616,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | 
 my $sheet_name = 'sheet_name_example'; # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_page_breaks_get_vertical_page_breaks(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_page_breaks_get_vertical_page_breaks(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -4627,7 +4634,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  | 
  **sheet_name** | **string**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -4645,7 +4652,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_page_breaks_put_horizontal_page_break**
-> CellsCloudResponse cells_page_breaks_put_horizontal_page_break(name => $name, sheet_name => $sheet_name, cellname => $cellname, row => $row, column => $column, start_column => $start_column, end_column => $end_column, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_page_breaks_put_horizontal_page_break(name => $name, sheet_name => $sheet_name, cellname => $cellname, row => $row, column => $column, start_column => $start_column, end_column => $end_column, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -4664,10 +4671,10 @@ my $column = 56; # int |
 my $start_column = 56; # int | 
 my $end_column = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_page_breaks_put_horizontal_page_break(name => $name, sheet_name => $sheet_name, cellname => $cellname, row => $row, column => $column, start_column => $start_column, end_column => $end_column, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_page_breaks_put_horizontal_page_break(name => $name, sheet_name => $sheet_name, cellname => $cellname, row => $row, column => $column, start_column => $start_column, end_column => $end_column, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -4687,7 +4694,7 @@ Name | Type | Description  | Notes
  **start_column** | **int**|  | [optional] 
  **end_column** | **int**|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -4705,7 +4712,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_page_breaks_put_vertical_page_break**
-> CellsCloudResponse cells_page_breaks_put_vertical_page_break(name => $name, sheet_name => $sheet_name, cellname => $cellname, column => $column, row => $row, start_row => $start_row, end_row => $end_row, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_page_breaks_put_vertical_page_break(name => $name, sheet_name => $sheet_name, cellname => $cellname, column => $column, row => $row, start_row => $start_row, end_row => $end_row, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -4724,10 +4731,10 @@ my $row = 56; # int |
 my $start_row = 56; # int | 
 my $end_row = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_page_breaks_put_vertical_page_break(name => $name, sheet_name => $sheet_name, cellname => $cellname, column => $column, row => $row, start_row => $start_row, end_row => $end_row, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_page_breaks_put_vertical_page_break(name => $name, sheet_name => $sheet_name, cellname => $cellname, column => $column, row => $row, start_row => $start_row, end_row => $end_row, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -4747,7 +4754,7 @@ Name | Type | Description  | Notes
  **start_row** | **int**|  | [optional] 
  **end_row** | **int**|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -4765,7 +4772,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_page_setup_delete_header_footer**
-> CellsCloudResponse cells_page_setup_delete_header_footer(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_page_setup_delete_header_footer(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 clear header footer
 
@@ -4779,10 +4786,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | 
 my $sheet_name = 'sheet_name_example'; # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_page_setup_delete_header_footer(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_page_setup_delete_header_footer(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -4797,7 +4804,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  | 
  **sheet_name** | **string**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -4815,7 +4822,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_page_setup_get_footer**
-> PageSectionsResponse cells_page_setup_get_footer(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> PageSectionsResponse cells_page_setup_get_footer(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 get page footer information
 
@@ -4829,10 +4836,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | 
 my $sheet_name = 'sheet_name_example'; # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_page_setup_get_footer(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_page_setup_get_footer(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -4847,7 +4854,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  | 
  **sheet_name** | **string**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -4865,7 +4872,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_page_setup_get_header**
-> PageSectionsResponse cells_page_setup_get_header(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> PageSectionsResponse cells_page_setup_get_header(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 get page header information
 
@@ -4879,10 +4886,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | 
 my $sheet_name = 'sheet_name_example'; # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_page_setup_get_header(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_page_setup_get_header(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -4897,7 +4904,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  | 
  **sheet_name** | **string**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -4915,7 +4922,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_page_setup_get_page_setup**
-> PageSetupResponse cells_page_setup_get_page_setup(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> PageSetupResponse cells_page_setup_get_page_setup(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Get Page Setup information.             
 
@@ -4929,10 +4936,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | 
 my $sheet_name = 'sheet_name_example'; # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_page_setup_get_page_setup(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_page_setup_get_page_setup(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -4947,7 +4954,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  | 
  **sheet_name** | **string**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -4965,7 +4972,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_page_setup_post_footer**
-> CellsCloudResponse cells_page_setup_post_footer(name => $name, sheet_name => $sheet_name, section => $section, script => $script, is_first_page => $is_first_page, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_page_setup_post_footer(name => $name, sheet_name => $sheet_name, section => $section, script => $script, is_first_page => $is_first_page, folder => $folder, storage_name => $storage_name)
 
 update  page footer information 
 
@@ -4982,10 +4989,10 @@ my $section = 56; # int |
 my $script = 'script_example'; # string | 
 my $is_first_page = 1; # boolean | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_page_setup_post_footer(name => $name, sheet_name => $sheet_name, section => $section, script => $script, is_first_page => $is_first_page, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_page_setup_post_footer(name => $name, sheet_name => $sheet_name, section => $section, script => $script, is_first_page => $is_first_page, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -5003,7 +5010,7 @@ Name | Type | Description  | Notes
  **script** | **string**|  | 
  **is_first_page** | **boolean**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -5021,7 +5028,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_page_setup_post_header**
-> CellsCloudResponse cells_page_setup_post_header(name => $name, sheet_name => $sheet_name, section => $section, script => $script, is_first_page => $is_first_page, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_page_setup_post_header(name => $name, sheet_name => $sheet_name, section => $section, script => $script, is_first_page => $is_first_page, folder => $folder, storage_name => $storage_name)
 
 update  page header information 
 
@@ -5038,10 +5045,10 @@ my $section = 56; # int |
 my $script = 'script_example'; # string | 
 my $is_first_page = 1; # boolean | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_page_setup_post_header(name => $name, sheet_name => $sheet_name, section => $section, script => $script, is_first_page => $is_first_page, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_page_setup_post_header(name => $name, sheet_name => $sheet_name, section => $section, script => $script, is_first_page => $is_first_page, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -5059,7 +5066,7 @@ Name | Type | Description  | Notes
  **script** | **string**|  | 
  **is_first_page** | **boolean**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -5077,7 +5084,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_page_setup_post_page_setup**
-> CellsCloudResponse cells_page_setup_post_page_setup(name => $name, sheet_name => $sheet_name, page_setup => $page_setup, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_page_setup_post_page_setup(name => $name, sheet_name => $sheet_name, page_setup => $page_setup, folder => $folder, storage_name => $storage_name)
 
 Update Page Setup information.
 
@@ -5092,10 +5099,10 @@ my $name = 'name_example'; # string |
 my $sheet_name = 'sheet_name_example'; # string | 
 my $page_setup = AsposeCellsCloud::Object::PageSetup->new(); # PageSetup | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_page_setup_post_page_setup(name => $name, sheet_name => $sheet_name, page_setup => $page_setup, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_page_setup_post_page_setup(name => $name, sheet_name => $sheet_name, page_setup => $page_setup, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -5111,7 +5118,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  | 
  **page_setup** | [**PageSetup**](PageSetup.md)|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -5129,7 +5136,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pictures_delete_worksheet_picture**
-> CellsCloudResponse cells_pictures_delete_worksheet_picture(name => $name, sheet_name => $sheet_name, picture_index => $picture_index, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_pictures_delete_worksheet_picture(name => $name, sheet_name => $sheet_name, picture_index => $picture_index, folder => $folder, storage_name => $storage_name)
 
 Delete a picture object in worksheet
 
@@ -5144,10 +5151,10 @@ my $name = 'name_example'; # string | The workbook name.
 my $sheet_name = 'sheet_name_example'; # string | The worsheet name.
 my $picture_index = 56; # int | Picture index
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pictures_delete_worksheet_picture(name => $name, sheet_name => $sheet_name, picture_index => $picture_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pictures_delete_worksheet_picture(name => $name, sheet_name => $sheet_name, picture_index => $picture_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -5163,7 +5170,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worsheet name. | 
  **picture_index** | **int**| Picture index | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -5181,7 +5188,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pictures_delete_worksheet_pictures**
-> CellsCloudResponse cells_pictures_delete_worksheet_pictures(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_pictures_delete_worksheet_pictures(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Delete all pictures in worksheet.
 
@@ -5195,10 +5202,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pictures_delete_worksheet_pictures(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pictures_delete_worksheet_pictures(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -5213,7 +5220,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. | 
  **sheet_name** | **string**| Worksheet name. | 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -5231,7 +5238,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pictures_get_worksheet_picture**
-> string cells_pictures_get_worksheet_picture(name => $name, sheet_name => $sheet_name, picture_index => $picture_index, format => $format, folder => $folder, storage => $storage)
+> string cells_pictures_get_worksheet_picture(name => $name, sheet_name => $sheet_name, picture_index => $picture_index, format => $format, folder => $folder, storage_name => $storage_name)
 
 GRead worksheet picture by number.
 
@@ -5247,10 +5254,10 @@ my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $picture_index = 56; # int | The picture index.
 my $format = 'format_example'; # string | The exported object format.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pictures_get_worksheet_picture(name => $name, sheet_name => $sheet_name, picture_index => $picture_index, format => $format, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pictures_get_worksheet_picture(name => $name, sheet_name => $sheet_name, picture_index => $picture_index, format => $format, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -5267,7 +5274,7 @@ Name | Type | Description  | Notes
  **picture_index** | **int**| The picture index. | 
  **format** | **string**| The exported object format. | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -5285,7 +5292,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pictures_get_worksheet_pictures**
-> PicturesResponse cells_pictures_get_worksheet_pictures(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> PicturesResponse cells_pictures_get_worksheet_pictures(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Read worksheet pictures.
 
@@ -5299,10 +5306,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pictures_get_worksheet_pictures(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pictures_get_worksheet_pictures(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -5317,7 +5324,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. | 
  **sheet_name** | **string**| The worksheet name. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -5335,7 +5342,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pictures_post_worksheet_picture**
-> PictureResponse cells_pictures_post_worksheet_picture(name => $name, sheet_name => $sheet_name, picture_index => $picture_index, picture => $picture, folder => $folder, storage => $storage)
+> PictureResponse cells_pictures_post_worksheet_picture(name => $name, sheet_name => $sheet_name, picture_index => $picture_index, picture => $picture, folder => $folder, storage_name => $storage_name)
 
 Update worksheet picture by index.
 
@@ -5351,10 +5358,10 @@ my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $picture_index = 56; # int | The picture's index.
 my $picture = AsposeCellsCloud::Object::Picture->new(); # Picture | Picture object
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pictures_post_worksheet_picture(name => $name, sheet_name => $sheet_name, picture_index => $picture_index, picture => $picture, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pictures_post_worksheet_picture(name => $name, sheet_name => $sheet_name, picture_index => $picture_index, picture => $picture, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -5371,7 +5378,7 @@ Name | Type | Description  | Notes
  **picture_index** | **int**| The picture&#39;s index. | 
  **picture** | [**Picture**](Picture.md)| Picture object | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -5389,7 +5396,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pictures_put_worksheet_add_picture**
-> PicturesResponse cells_pictures_put_worksheet_add_picture(name => $name, sheet_name => $sheet_name, picture => $picture, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, lower_right_row => $lower_right_row, lower_right_column => $lower_right_column, picture_path => $picture_path, folder => $folder, storage => $storage)
+> PicturesResponse cells_pictures_put_worksheet_add_picture(name => $name, sheet_name => $sheet_name, picture => $picture, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, lower_right_row => $lower_right_row, lower_right_column => $lower_right_column, picture_path => $picture_path, folder => $folder, storage_name => $storage_name)
 
 Add a new worksheet picture.
 
@@ -5409,10 +5416,10 @@ my $lower_right_row = 56; # int | The image low right row.
 my $lower_right_column = 56; # int | The image low right column.
 my $picture_path = 'picture_path_example'; # string | The picture path, if not provided the picture data is inspected in the request body.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pictures_put_worksheet_add_picture(name => $name, sheet_name => $sheet_name, picture => $picture, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, lower_right_row => $lower_right_row, lower_right_column => $lower_right_column, picture_path => $picture_path, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pictures_put_worksheet_add_picture(name => $name, sheet_name => $sheet_name, picture => $picture, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, lower_right_row => $lower_right_row, lower_right_column => $lower_right_column, picture_path => $picture_path, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -5433,7 +5440,7 @@ Name | Type | Description  | Notes
  **lower_right_column** | **int**| The image low right column. | [optional] [default to 0]
  **picture_path** | **string**| The picture path, if not provided the picture data is inspected in the request body. | [optional] 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -5451,7 +5458,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pivot_tables_delete_pivot_table_field**
-> CellsCloudResponse cells_pivot_tables_delete_pivot_table_field(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, pivot_field_type => $pivot_field_type, request => $request, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_pivot_tables_delete_pivot_table_field(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, pivot_field_type => $pivot_field_type, request => $request, folder => $folder, storage_name => $storage_name)
 
 Delete pivot field into into pivot table
 
@@ -5468,10 +5475,10 @@ my $pivot_table_index = 56; # int | Pivot table index
 my $pivot_field_type = 'pivot_field_type_example'; # string | The fields area type.
 my $request = AsposeCellsCloud::Object::PivotTableFieldRequest->new(); # PivotTableFieldRequest | Dto that conrains field indexes
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pivot_tables_delete_pivot_table_field(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, pivot_field_type => $pivot_field_type, request => $request, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pivot_tables_delete_pivot_table_field(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, pivot_field_type => $pivot_field_type, request => $request, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -5489,7 +5496,7 @@ Name | Type | Description  | Notes
  **pivot_field_type** | **string**| The fields area type. | 
  **request** | [**PivotTableFieldRequest**](PivotTableFieldRequest.md)| Dto that conrains field indexes | [optional] 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -5507,7 +5514,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pivot_tables_delete_worksheet_pivot_table**
-> CellsCloudResponse cells_pivot_tables_delete_worksheet_pivot_table(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_pivot_tables_delete_worksheet_pivot_table(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, folder => $folder, storage_name => $storage_name)
 
 Delete worksheet pivot table by index
 
@@ -5522,10 +5529,10 @@ my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $pivot_table_index = 56; # int | Pivot table index
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pivot_tables_delete_worksheet_pivot_table(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pivot_tables_delete_worksheet_pivot_table(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -5541,7 +5548,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet name. | 
  **pivot_table_index** | **int**| Pivot table index | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -5559,7 +5566,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pivot_tables_delete_worksheet_pivot_table_filter**
-> CellsCloudResponse cells_pivot_tables_delete_worksheet_pivot_table_filter(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, field_index => $field_index, need_re_calculate => $need_re_calculate, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_pivot_tables_delete_worksheet_pivot_table_filter(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, field_index => $field_index, need_re_calculate => $need_re_calculate, folder => $folder, storage_name => $storage_name)
 
 delete  pivot filter for piovt table             
 
@@ -5576,10 +5583,10 @@ my $pivot_table_index = 56; # int |
 my $field_index = 56; # int | 
 my $need_re_calculate = 1; # boolean | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pivot_tables_delete_worksheet_pivot_table_filter(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, field_index => $field_index, need_re_calculate => $need_re_calculate, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pivot_tables_delete_worksheet_pivot_table_filter(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, field_index => $field_index, need_re_calculate => $need_re_calculate, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -5597,7 +5604,7 @@ Name | Type | Description  | Notes
  **field_index** | **int**|  | 
  **need_re_calculate** | **boolean**|  | [optional] [default to false]
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -5615,7 +5622,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pivot_tables_delete_worksheet_pivot_table_filters**
-> CellsCloudResponse cells_pivot_tables_delete_worksheet_pivot_table_filters(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, need_re_calculate => $need_re_calculate, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_pivot_tables_delete_worksheet_pivot_table_filters(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, need_re_calculate => $need_re_calculate, folder => $folder, storage_name => $storage_name)
 
 delete all pivot filters for piovt table
 
@@ -5631,10 +5638,10 @@ my $sheet_name = 'sheet_name_example'; # string |
 my $pivot_table_index = 56; # int | 
 my $need_re_calculate = 1; # boolean | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pivot_tables_delete_worksheet_pivot_table_filters(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, need_re_calculate => $need_re_calculate, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pivot_tables_delete_worksheet_pivot_table_filters(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, need_re_calculate => $need_re_calculate, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -5651,7 +5658,7 @@ Name | Type | Description  | Notes
  **pivot_table_index** | **int**|  | 
  **need_re_calculate** | **boolean**|  | [optional] [default to false]
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -5669,7 +5676,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pivot_tables_delete_worksheet_pivot_tables**
-> CellsCloudResponse cells_pivot_tables_delete_worksheet_pivot_tables(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_pivot_tables_delete_worksheet_pivot_tables(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Delete worksheet pivot tables
 
@@ -5683,10 +5690,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pivot_tables_delete_worksheet_pivot_tables(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pivot_tables_delete_worksheet_pivot_tables(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -5701,7 +5708,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. | 
  **sheet_name** | **string**| The worksheet name. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -5719,7 +5726,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pivot_tables_get_pivot_table_field**
-> PivotFieldResponse cells_pivot_tables_get_pivot_table_field(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, pivot_field_index => $pivot_field_index, pivot_field_type => $pivot_field_type, folder => $folder, storage => $storage)
+> PivotFieldResponse cells_pivot_tables_get_pivot_table_field(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, pivot_field_index => $pivot_field_index, pivot_field_type => $pivot_field_type, folder => $folder, storage_name => $storage_name)
 
 Get pivot field into into pivot table
 
@@ -5736,10 +5743,10 @@ my $pivot_table_index = 56; # int | Pivot table index
 my $pivot_field_index = 56; # int | The field index in the base fields.
 my $pivot_field_type = 'pivot_field_type_example'; # string | The fields area type.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pivot_tables_get_pivot_table_field(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, pivot_field_index => $pivot_field_index, pivot_field_type => $pivot_field_type, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pivot_tables_get_pivot_table_field(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, pivot_field_index => $pivot_field_index, pivot_field_type => $pivot_field_type, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -5757,7 +5764,7 @@ Name | Type | Description  | Notes
  **pivot_field_index** | **int**| The field index in the base fields. | 
  **pivot_field_type** | **string**| The fields area type. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -5775,7 +5782,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pivot_tables_get_worksheet_pivot_table**
-> PivotTableResponse cells_pivot_tables_get_worksheet_pivot_table(name => $name, sheet_name => $sheet_name, pivottable_index => $pivottable_index, folder => $folder, storage => $storage)
+> PivotTableResponse cells_pivot_tables_get_worksheet_pivot_table(name => $name, sheet_name => $sheet_name, pivottable_index => $pivottable_index, folder => $folder, storage_name => $storage_name)
 
 Get worksheet pivottable info by index.
 
@@ -5790,10 +5797,10 @@ my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $pivottable_index = 56; # int | 
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pivot_tables_get_worksheet_pivot_table(name => $name, sheet_name => $sheet_name, pivottable_index => $pivottable_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pivot_tables_get_worksheet_pivot_table(name => $name, sheet_name => $sheet_name, pivottable_index => $pivottable_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -5809,7 +5816,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet name. | 
  **pivottable_index** | **int**|  | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -5827,7 +5834,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pivot_tables_get_worksheet_pivot_table_filter**
-> PivotFilterResponse cells_pivot_tables_get_worksheet_pivot_table_filter(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, filter_index => $filter_index, folder => $folder, storage => $storage)
+> PivotFilterResponse cells_pivot_tables_get_worksheet_pivot_table_filter(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, filter_index => $filter_index, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -5843,10 +5850,10 @@ my $sheet_name = 'sheet_name_example'; # string |
 my $pivot_table_index = 56; # int | 
 my $filter_index = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pivot_tables_get_worksheet_pivot_table_filter(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, filter_index => $filter_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pivot_tables_get_worksheet_pivot_table_filter(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, filter_index => $filter_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -5863,7 +5870,7 @@ Name | Type | Description  | Notes
  **pivot_table_index** | **int**|  | 
  **filter_index** | **int**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -5881,7 +5888,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pivot_tables_get_worksheet_pivot_table_filters**
-> PivotFiltersResponse cells_pivot_tables_get_worksheet_pivot_table_filters(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, folder => $folder, storage => $storage)
+> PivotFiltersResponse cells_pivot_tables_get_worksheet_pivot_table_filters(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -5896,10 +5903,10 @@ my $name = 'name_example'; # string |
 my $sheet_name = 'sheet_name_example'; # string | 
 my $pivot_table_index = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pivot_tables_get_worksheet_pivot_table_filters(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pivot_tables_get_worksheet_pivot_table_filters(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -5915,7 +5922,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  | 
  **pivot_table_index** | **int**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -5933,7 +5940,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pivot_tables_get_worksheet_pivot_tables**
-> PivotTablesResponse cells_pivot_tables_get_worksheet_pivot_tables(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> PivotTablesResponse cells_pivot_tables_get_worksheet_pivot_tables(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Get worksheet pivottables info.
 
@@ -5947,10 +5954,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pivot_tables_get_worksheet_pivot_tables(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pivot_tables_get_worksheet_pivot_tables(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -5965,7 +5972,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. | 
  **sheet_name** | **string**| The worksheet name. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -5983,7 +5990,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pivot_tables_post_pivot_table_cell_style**
-> CellsCloudResponse cells_pivot_tables_post_pivot_table_cell_style(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, column => $column, row => $row, style => $style, need_re_calculate => $need_re_calculate, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_pivot_tables_post_pivot_table_cell_style(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, column => $column, row => $row, style => $style, need_re_calculate => $need_re_calculate, folder => $folder, storage_name => $storage_name)
 
 Update cell style for pivot table
 
@@ -6002,10 +6009,10 @@ my $row = 56; # int |
 my $style = AsposeCellsCloud::Object::Style->new(); # Style | Style dto in request body.
 my $need_re_calculate = 1; # boolean | 
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pivot_tables_post_pivot_table_cell_style(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, column => $column, row => $row, style => $style, need_re_calculate => $need_re_calculate, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pivot_tables_post_pivot_table_cell_style(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, column => $column, row => $row, style => $style, need_re_calculate => $need_re_calculate, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -6025,7 +6032,7 @@ Name | Type | Description  | Notes
  **style** | [**Style**](Style.md)| Style dto in request body. | [optional] 
  **need_re_calculate** | **boolean**|  | [optional] [default to false]
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -6043,7 +6050,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pivot_tables_post_pivot_table_field_hide_item**
-> CellsCloudResponse cells_pivot_tables_post_pivot_table_field_hide_item(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, pivot_field_type => $pivot_field_type, field_index => $field_index, item_index => $item_index, is_hide => $is_hide, need_re_calculate => $need_re_calculate, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_pivot_tables_post_pivot_table_field_hide_item(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, pivot_field_type => $pivot_field_type, field_index => $field_index, item_index => $item_index, is_hide => $is_hide, need_re_calculate => $need_re_calculate, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -6063,10 +6070,10 @@ my $item_index = 56; # int |
 my $is_hide = 1; # boolean | 
 my $need_re_calculate = 1; # boolean | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pivot_tables_post_pivot_table_field_hide_item(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, pivot_field_type => $pivot_field_type, field_index => $field_index, item_index => $item_index, is_hide => $is_hide, need_re_calculate => $need_re_calculate, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pivot_tables_post_pivot_table_field_hide_item(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, pivot_field_type => $pivot_field_type, field_index => $field_index, item_index => $item_index, is_hide => $is_hide, need_re_calculate => $need_re_calculate, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -6087,7 +6094,7 @@ Name | Type | Description  | Notes
  **is_hide** | **boolean**|  | 
  **need_re_calculate** | **boolean**|  | [optional] [default to false]
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -6105,7 +6112,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pivot_tables_post_pivot_table_field_move_to**
-> CellsCloudResponse cells_pivot_tables_post_pivot_table_field_move_to(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, field_index => $field_index, from => $from, to => $to, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_pivot_tables_post_pivot_table_field_move_to(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, field_index => $field_index, from => $from, to => $to, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -6123,10 +6130,10 @@ my $field_index = 56; # int |
 my $from = 'from_example'; # string | 
 my $to = 'to_example'; # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pivot_tables_post_pivot_table_field_move_to(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, field_index => $field_index, from => $from, to => $to, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pivot_tables_post_pivot_table_field_move_to(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, field_index => $field_index, from => $from, to => $to, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -6145,7 +6152,7 @@ Name | Type | Description  | Notes
  **from** | **string**|  | 
  **to** | **string**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -6163,7 +6170,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pivot_tables_post_pivot_table_style**
-> CellsCloudResponse cells_pivot_tables_post_pivot_table_style(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, style => $style, need_re_calculate => $need_re_calculate, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_pivot_tables_post_pivot_table_style(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, style => $style, need_re_calculate => $need_re_calculate, folder => $folder, storage_name => $storage_name)
 
 Update style for pivot table
 
@@ -6180,10 +6187,10 @@ my $pivot_table_index = 56; # int | Pivot table index
 my $style = AsposeCellsCloud::Object::Style->new(); # Style | Style dto in request body.
 my $need_re_calculate = 1; # boolean | 
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pivot_tables_post_pivot_table_style(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, style => $style, need_re_calculate => $need_re_calculate, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pivot_tables_post_pivot_table_style(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, style => $style, need_re_calculate => $need_re_calculate, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -6201,7 +6208,7 @@ Name | Type | Description  | Notes
  **style** | [**Style**](Style.md)| Style dto in request body. | [optional] 
  **need_re_calculate** | **boolean**|  | [optional] [default to false]
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -6219,7 +6226,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pivot_tables_post_worksheet_pivot_table_calculate**
-> CellsCloudResponse cells_pivot_tables_post_worksheet_pivot_table_calculate(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_pivot_tables_post_worksheet_pivot_table_calculate(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, folder => $folder, storage_name => $storage_name)
 
 Calculates pivottable's data to cells.
 
@@ -6234,10 +6241,10 @@ my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $pivot_table_index = 56; # int | Pivot table index
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pivot_tables_post_worksheet_pivot_table_calculate(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pivot_tables_post_worksheet_pivot_table_calculate(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -6253,7 +6260,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet name. | 
  **pivot_table_index** | **int**| Pivot table index | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -6271,7 +6278,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pivot_tables_post_worksheet_pivot_table_move**
-> CellsCloudResponse cells_pivot_tables_post_worksheet_pivot_table_move(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, row => $row, column => $column, dest_cell_name => $dest_cell_name, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_pivot_tables_post_worksheet_pivot_table_move(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, row => $row, column => $column, dest_cell_name => $dest_cell_name, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -6289,10 +6296,10 @@ my $row = 56; # int |
 my $column = 56; # int | 
 my $dest_cell_name = 'dest_cell_name_example'; # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pivot_tables_post_worksheet_pivot_table_move(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, row => $row, column => $column, dest_cell_name => $dest_cell_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pivot_tables_post_worksheet_pivot_table_move(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, row => $row, column => $column, dest_cell_name => $dest_cell_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -6311,7 +6318,7 @@ Name | Type | Description  | Notes
  **column** | **int**|  | [optional] 
  **dest_cell_name** | **string**|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -6329,7 +6336,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pivot_tables_put_pivot_table_field**
-> CellsCloudResponse cells_pivot_tables_put_pivot_table_field(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, pivot_field_type => $pivot_field_type, request => $request, need_re_calculate => $need_re_calculate, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_pivot_tables_put_pivot_table_field(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, pivot_field_type => $pivot_field_type, request => $request, need_re_calculate => $need_re_calculate, folder => $folder, storage_name => $storage_name)
 
 Add pivot field into into pivot table
 
@@ -6347,10 +6354,10 @@ my $pivot_field_type = 'pivot_field_type_example'; # string | The fields area ty
 my $request = AsposeCellsCloud::Object::PivotTableFieldRequest->new(); # PivotTableFieldRequest | Dto that conrains field indexes
 my $need_re_calculate = 1; # boolean | 
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pivot_tables_put_pivot_table_field(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, pivot_field_type => $pivot_field_type, request => $request, need_re_calculate => $need_re_calculate, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pivot_tables_put_pivot_table_field(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, pivot_field_type => $pivot_field_type, request => $request, need_re_calculate => $need_re_calculate, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -6369,7 +6376,7 @@ Name | Type | Description  | Notes
  **request** | [**PivotTableFieldRequest**](PivotTableFieldRequest.md)| Dto that conrains field indexes | [optional] 
  **need_re_calculate** | **boolean**|  | [optional] [default to false]
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -6387,7 +6394,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pivot_tables_put_worksheet_pivot_table**
-> PivotTableResponse cells_pivot_tables_put_worksheet_pivot_table(name => $name, sheet_name => $sheet_name, request => $request, folder => $folder, storage => $storage, source_data => $source_data, dest_cell_name => $dest_cell_name, table_name => $table_name, use_same_source => $use_same_source)
+> PivotTableResponse cells_pivot_tables_put_worksheet_pivot_table(name => $name, sheet_name => $sheet_name, request => $request, folder => $folder, storage_name => $storage_name, source_data => $source_data, dest_cell_name => $dest_cell_name, table_name => $table_name, use_same_source => $use_same_source)
 
 Add a pivot table into worksheet.
 
@@ -6402,14 +6409,14 @@ my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $request = AsposeCellsCloud::Object::CreatePivotTableRequest->new(); # CreatePivotTableRequest | CreatePivotTableRequest dto in request body.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 my $source_data = 'source_data_example'; # string | The data for the new PivotTable cache.
 my $dest_cell_name = 'dest_cell_name_example'; # string | The cell in the upper-left corner of the PivotTable report's destination range.
 my $table_name = 'table_name_example'; # string | The name of the new PivotTable report.
 my $use_same_source = 1; # boolean | Indicates whether using same data source when another existing pivot table has used this data source. If the property is true, it will save memory.
 
 eval { 
-    my $result = $api_instance->cells_pivot_tables_put_worksheet_pivot_table(name => $name, sheet_name => $sheet_name, request => $request, folder => $folder, storage => $storage, source_data => $source_data, dest_cell_name => $dest_cell_name, table_name => $table_name, use_same_source => $use_same_source);
+    my $result = $api_instance->cells_pivot_tables_put_worksheet_pivot_table(name => $name, sheet_name => $sheet_name, request => $request, folder => $folder, storage_name => $storage_name, source_data => $source_data, dest_cell_name => $dest_cell_name, table_name => $table_name, use_same_source => $use_same_source);
     print Dumper($result);
 };
 if ($@) {
@@ -6425,7 +6432,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet name. | 
  **request** | [**CreatePivotTableRequest**](CreatePivotTableRequest.md)| CreatePivotTableRequest dto in request body. | [optional] 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
  **source_data** | **string**| The data for the new PivotTable cache. | [optional] 
  **dest_cell_name** | **string**| The cell in the upper-left corner of the PivotTable report&#39;s destination range. | [optional] 
  **table_name** | **string**| The name of the new PivotTable report. | [optional] 
@@ -6447,7 +6454,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_pivot_tables_put_worksheet_pivot_table_filter**
-> CellsCloudResponse cells_pivot_tables_put_worksheet_pivot_table_filter(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, filter => $filter, need_re_calculate => $need_re_calculate, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_pivot_tables_put_worksheet_pivot_table_filter(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, filter => $filter, need_re_calculate => $need_re_calculate, folder => $folder, storage_name => $storage_name)
 
 Add pivot filter for piovt table index
 
@@ -6464,10 +6471,10 @@ my $pivot_table_index = 56; # int |
 my $filter = AsposeCellsCloud::Object::PivotFilter->new(); # PivotFilter | 
 my $need_re_calculate = 1; # boolean | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_pivot_tables_put_worksheet_pivot_table_filter(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, filter => $filter, need_re_calculate => $need_re_calculate, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_pivot_tables_put_worksheet_pivot_table_filter(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, filter => $filter, need_re_calculate => $need_re_calculate, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -6485,7 +6492,7 @@ Name | Type | Description  | Notes
  **filter** | [**PivotFilter**](PivotFilter.md)|  | [optional] 
  **need_re_calculate** | **boolean**|  | [optional] [default to false]
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -6503,7 +6510,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_cell_calculate**
-> CellsCloudResponse cells_post_cell_calculate(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, options => $options, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_cell_calculate(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, options => $options, folder => $folder, storage_name => $storage_name)
 
 Cell calculate formula
 
@@ -6519,10 +6526,10 @@ my $sheet_name = 'sheet_name_example'; # string |
 my $cell_name = 'cell_name_example'; # string | 
 my $options = AsposeCellsCloud::Object::CalculationOptions->new(); # CalculationOptions | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_cell_calculate(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, options => $options, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_cell_calculate(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, options => $options, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -6539,7 +6546,7 @@ Name | Type | Description  | Notes
  **cell_name** | **string**|  | 
  **options** | [**CalculationOptions**](CalculationOptions.md)|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -6557,7 +6564,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_cell_characters**
-> CellsCloudResponse cells_post_cell_characters(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, options => $options, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_cell_characters(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, options => $options, folder => $folder, storage_name => $storage_name)
 
 Set cell characters 
 
@@ -6573,10 +6580,10 @@ my $sheet_name = 'sheet_name_example'; # string |
 my $cell_name = 'cell_name_example'; # string | 
 my $options = [AsposeCellsCloud::Object::ARRAY[FontSetting]->new()]; # ARRAY[FontSetting] | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_cell_characters(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, options => $options, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_cell_characters(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, options => $options, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -6593,7 +6600,7 @@ Name | Type | Description  | Notes
  **cell_name** | **string**|  | 
  **options** | [**ARRAY[FontSetting]**](FontSetting.md)|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -6611,7 +6618,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_clear_contents**
-> CellsCloudResponse cells_post_clear_contents(name => $name, sheet_name => $sheet_name, range => $range, start_row => $start_row, start_column => $start_column, end_row => $end_row, end_column => $end_column, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_clear_contents(name => $name, sheet_name => $sheet_name, range => $range, start_row => $start_row, start_column => $start_column, end_row => $end_row, end_column => $end_column, folder => $folder, storage_name => $storage_name)
 
 Clear cells contents.
 
@@ -6630,10 +6637,10 @@ my $start_column = 56; # int | The start column.
 my $end_row = 56; # int | The end row.
 my $end_column = 56; # int | The end column.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_clear_contents(name => $name, sheet_name => $sheet_name, range => $range, start_row => $start_row, start_column => $start_column, end_row => $end_row, end_column => $end_column, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_clear_contents(name => $name, sheet_name => $sheet_name, range => $range, start_row => $start_row, start_column => $start_column, end_row => $end_row, end_column => $end_column, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -6653,7 +6660,7 @@ Name | Type | Description  | Notes
  **end_row** | **int**| The end row. | [optional] 
  **end_column** | **int**| The end column. | [optional] 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -6671,7 +6678,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_clear_formats**
-> CellsCloudResponse cells_post_clear_formats(name => $name, sheet_name => $sheet_name, range => $range, start_row => $start_row, start_column => $start_column, end_row => $end_row, end_column => $end_column, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_clear_formats(name => $name, sheet_name => $sheet_name, range => $range, start_row => $start_row, start_column => $start_column, end_row => $end_row, end_column => $end_column, folder => $folder, storage_name => $storage_name)
 
 Clear cells contents.
 
@@ -6690,10 +6697,10 @@ my $start_column = 56; # int | The start column.
 my $end_row = 56; # int | The end row.
 my $end_column = 56; # int | The end column.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_clear_formats(name => $name, sheet_name => $sheet_name, range => $range, start_row => $start_row, start_column => $start_column, end_row => $end_row, end_column => $end_column, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_clear_formats(name => $name, sheet_name => $sheet_name, range => $range, start_row => $start_row, start_column => $start_column, end_row => $end_row, end_column => $end_column, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -6713,7 +6720,7 @@ Name | Type | Description  | Notes
  **end_row** | **int**| The end row. | [optional] 
  **end_column** | **int**| The end column. | [optional] 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -6731,7 +6738,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_column_style**
-> CellsCloudResponse cells_post_column_style(name => $name, sheet_name => $sheet_name, column_index => $column_index, style => $style, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_column_style(name => $name, sheet_name => $sheet_name, column_index => $column_index, style => $style, folder => $folder, storage_name => $storage_name)
 
 Set column style
 
@@ -6747,10 +6754,10 @@ my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $column_index = 56; # int | The column index.
 my $style = AsposeCellsCloud::Object::Style->new(); # Style | Style dto
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_column_style(name => $name, sheet_name => $sheet_name, column_index => $column_index, style => $style, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_column_style(name => $name, sheet_name => $sheet_name, column_index => $column_index, style => $style, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -6767,7 +6774,7 @@ Name | Type | Description  | Notes
  **column_index** | **int**| The column index. | 
  **style** | [**Style**](Style.md)| Style dto | [optional] 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -6785,7 +6792,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_copy_cell_into_cell**
-> CellsCloudResponse cells_post_copy_cell_into_cell(name => $name, dest_cell_name => $dest_cell_name, sheet_name => $sheet_name, worksheet => $worksheet, cellname => $cellname, row => $row, column => $column, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_copy_cell_into_cell(name => $name, dest_cell_name => $dest_cell_name, sheet_name => $sheet_name, worksheet => $worksheet, cellname => $cellname, row => $row, column => $column, folder => $folder, storage_name => $storage_name)
 
 Copy cell into cell
 
@@ -6804,10 +6811,10 @@ my $cellname = 'cellname_example'; # string | Source cell name
 my $row = 56; # int | Source row
 my $column = 56; # int | Source column
 my $folder = 'folder_example'; # string | Folder name
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_copy_cell_into_cell(name => $name, dest_cell_name => $dest_cell_name, sheet_name => $sheet_name, worksheet => $worksheet, cellname => $cellname, row => $row, column => $column, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_copy_cell_into_cell(name => $name, dest_cell_name => $dest_cell_name, sheet_name => $sheet_name, worksheet => $worksheet, cellname => $cellname, row => $row, column => $column, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -6827,7 +6834,7 @@ Name | Type | Description  | Notes
  **row** | **int**| Source row | [optional] 
  **column** | **int**| Source column | [optional] 
  **folder** | **string**| Folder name | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -6845,7 +6852,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_copy_worksheet_columns**
-> CellsCloudResponse cells_post_copy_worksheet_columns(name => $name, sheet_name => $sheet_name, source_column_index => $source_column_index, destination_column_index => $destination_column_index, column_number => $column_number, worksheet => $worksheet, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_copy_worksheet_columns(name => $name, sheet_name => $sheet_name, source_column_index => $source_column_index, destination_column_index => $destination_column_index, column_number => $column_number, worksheet => $worksheet, folder => $folder, storage_name => $storage_name)
 
 Copy worksheet columns.
 
@@ -6863,10 +6870,10 @@ my $destination_column_index = 56; # int | Destination column index
 my $column_number = 56; # int | The copied column number
 my $worksheet = 'worksheet_example'; # string | The Worksheet
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_copy_worksheet_columns(name => $name, sheet_name => $sheet_name, source_column_index => $source_column_index, destination_column_index => $destination_column_index, column_number => $column_number, worksheet => $worksheet, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_copy_worksheet_columns(name => $name, sheet_name => $sheet_name, source_column_index => $source_column_index, destination_column_index => $destination_column_index, column_number => $column_number, worksheet => $worksheet, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -6885,7 +6892,7 @@ Name | Type | Description  | Notes
  **column_number** | **int**| The copied column number | 
  **worksheet** | **string**| The Worksheet | [optional] [default to ]
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -6903,7 +6910,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_copy_worksheet_rows**
-> CellsCloudResponse cells_post_copy_worksheet_rows(name => $name, sheet_name => $sheet_name, source_row_index => $source_row_index, destination_row_index => $destination_row_index, row_number => $row_number, worksheet => $worksheet, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_copy_worksheet_rows(name => $name, sheet_name => $sheet_name, source_row_index => $source_row_index, destination_row_index => $destination_row_index, row_number => $row_number, worksheet => $worksheet, folder => $folder, storage_name => $storage_name)
 
 Copy worksheet rows.
 
@@ -6921,10 +6928,10 @@ my $destination_row_index = 56; # int | Destination row index
 my $row_number = 56; # int | The copied row number
 my $worksheet = 'worksheet_example'; # string | worksheet
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_copy_worksheet_rows(name => $name, sheet_name => $sheet_name, source_row_index => $source_row_index, destination_row_index => $destination_row_index, row_number => $row_number, worksheet => $worksheet, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_copy_worksheet_rows(name => $name, sheet_name => $sheet_name, source_row_index => $source_row_index, destination_row_index => $destination_row_index, row_number => $row_number, worksheet => $worksheet, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -6943,7 +6950,7 @@ Name | Type | Description  | Notes
  **row_number** | **int**| The copied row number | 
  **worksheet** | **string**| worksheet | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -6961,7 +6968,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_group_worksheet_columns**
-> CellsCloudResponse cells_post_group_worksheet_columns(name => $name, sheet_name => $sheet_name, first_index => $first_index, last_index => $last_index, hide => $hide, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_group_worksheet_columns(name => $name, sheet_name => $sheet_name, first_index => $first_index, last_index => $last_index, hide => $hide, folder => $folder, storage_name => $storage_name)
 
 Group worksheet columns.
 
@@ -6978,10 +6985,10 @@ my $first_index = 56; # int | The first column index to be operated.
 my $last_index = 56; # int | The last column index to be operated.
 my $hide = 1; # boolean | columns visible state
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_group_worksheet_columns(name => $name, sheet_name => $sheet_name, first_index => $first_index, last_index => $last_index, hide => $hide, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_group_worksheet_columns(name => $name, sheet_name => $sheet_name, first_index => $first_index, last_index => $last_index, hide => $hide, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -6999,7 +7006,7 @@ Name | Type | Description  | Notes
  **last_index** | **int**| The last column index to be operated. | 
  **hide** | **boolean**| columns visible state | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -7017,7 +7024,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_group_worksheet_rows**
-> CellsCloudResponse cells_post_group_worksheet_rows(name => $name, sheet_name => $sheet_name, first_index => $first_index, last_index => $last_index, hide => $hide, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_group_worksheet_rows(name => $name, sheet_name => $sheet_name, first_index => $first_index, last_index => $last_index, hide => $hide, folder => $folder, storage_name => $storage_name)
 
 Group worksheet rows.
 
@@ -7034,10 +7041,10 @@ my $first_index = 56; # int | The first row index to be operated.
 my $last_index = 56; # int | The last row index to be operated.
 my $hide = 1; # boolean | rows visible state
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_group_worksheet_rows(name => $name, sheet_name => $sheet_name, first_index => $first_index, last_index => $last_index, hide => $hide, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_group_worksheet_rows(name => $name, sheet_name => $sheet_name, first_index => $first_index, last_index => $last_index, hide => $hide, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -7055,7 +7062,7 @@ Name | Type | Description  | Notes
  **last_index** | **int**| The last row index to be operated. | 
  **hide** | **boolean**| rows visible state | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -7073,7 +7080,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_hide_worksheet_columns**
-> CellsCloudResponse cells_post_hide_worksheet_columns(name => $name, sheet_name => $sheet_name, start_column => $start_column, total_columns => $total_columns, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_hide_worksheet_columns(name => $name, sheet_name => $sheet_name, start_column => $start_column, total_columns => $total_columns, folder => $folder, storage_name => $storage_name)
 
 Hide worksheet columns.
 
@@ -7089,10 +7096,10 @@ my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $start_column = 56; # int | The begin column index to be operated.
 my $total_columns = 56; # int | Number of columns to be operated.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_hide_worksheet_columns(name => $name, sheet_name => $sheet_name, start_column => $start_column, total_columns => $total_columns, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_hide_worksheet_columns(name => $name, sheet_name => $sheet_name, start_column => $start_column, total_columns => $total_columns, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -7109,7 +7116,7 @@ Name | Type | Description  | Notes
  **start_column** | **int**| The begin column index to be operated. | 
  **total_columns** | **int**| Number of columns to be operated. | 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -7127,7 +7134,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_hide_worksheet_rows**
-> CellsCloudResponse cells_post_hide_worksheet_rows(name => $name, sheet_name => $sheet_name, startrow => $startrow, total_rows => $total_rows, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_hide_worksheet_rows(name => $name, sheet_name => $sheet_name, startrow => $startrow, total_rows => $total_rows, folder => $folder, storage_name => $storage_name)
 
 Hide worksheet rows.
 
@@ -7143,10 +7150,10 @@ my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $startrow = 56; # int | The begin row index to be operated.
 my $total_rows = 56; # int | Number of rows to be operated.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_hide_worksheet_rows(name => $name, sheet_name => $sheet_name, startrow => $startrow, total_rows => $total_rows, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_hide_worksheet_rows(name => $name, sheet_name => $sheet_name, startrow => $startrow, total_rows => $total_rows, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -7163,7 +7170,7 @@ Name | Type | Description  | Notes
  **startrow** | **int**| The begin row index to be operated. | 
  **total_rows** | **int**| Number of rows to be operated. | 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -7181,7 +7188,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_row_style**
-> CellsCloudResponse cells_post_row_style(name => $name, sheet_name => $sheet_name, row_index => $row_index, style => $style, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_row_style(name => $name, sheet_name => $sheet_name, row_index => $row_index, style => $style, folder => $folder, storage_name => $storage_name)
 
 Set row style.
 
@@ -7197,10 +7204,10 @@ my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $row_index = 56; # int | The row index.
 my $style = AsposeCellsCloud::Object::Style->new(); # Style | Style dto
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_row_style(name => $name, sheet_name => $sheet_name, row_index => $row_index, style => $style, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_row_style(name => $name, sheet_name => $sheet_name, row_index => $row_index, style => $style, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -7217,7 +7224,7 @@ Name | Type | Description  | Notes
  **row_index** | **int**| The row index. | 
  **style** | [**Style**](Style.md)| Style dto | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -7235,7 +7242,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_set_cell_html_string**
-> CellResponse cells_post_set_cell_html_string(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage => $storage)
+> CellResponse cells_post_set_cell_html_string(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage_name => $storage_name)
 
 Set htmlstring value into cell
 
@@ -7250,10 +7257,10 @@ my $name = 'name_example'; # string | Workbook name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $cell_name = 'cell_name_example'; # string | The cell name.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_set_cell_html_string(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_set_cell_html_string(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -7269,7 +7276,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. | 
  **cell_name** | **string**| The cell name. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -7287,7 +7294,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_set_cell_range_value**
-> CellsCloudResponse cells_post_set_cell_range_value(name => $name, sheet_name => $sheet_name, cellarea => $cellarea, value => $value, type => $type, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_set_cell_range_value(name => $name, sheet_name => $sheet_name, cellarea => $cellarea, value => $value, type => $type, folder => $folder, storage_name => $storage_name)
 
 Set cell range value 
 
@@ -7304,10 +7311,10 @@ my $cellarea = 'cellarea_example'; # string | Cell area (like \"A1:C2\")
 my $value = 'value_example'; # string | Range value
 my $type = 'type_example'; # string | Value data type (like \"int\")
 my $folder = 'folder_example'; # string | Folder name
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_set_cell_range_value(name => $name, sheet_name => $sheet_name, cellarea => $cellarea, value => $value, type => $type, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_set_cell_range_value(name => $name, sheet_name => $sheet_name, cellarea => $cellarea, value => $value, type => $type, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -7325,7 +7332,7 @@ Name | Type | Description  | Notes
  **value** | **string**| Range value | 
  **type** | **string**| Value data type (like \&quot;int\&quot;) | 
  **folder** | **string**| Folder name | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -7343,7 +7350,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_set_worksheet_column_width**
-> ColumnResponse cells_post_set_worksheet_column_width(name => $name, sheet_name => $sheet_name, column_index => $column_index, width => $width, folder => $folder, storage => $storage)
+> ColumnResponse cells_post_set_worksheet_column_width(name => $name, sheet_name => $sheet_name, column_index => $column_index, width => $width, folder => $folder, storage_name => $storage_name)
 
 Set worksheet column width.
 
@@ -7359,10 +7366,10 @@ my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $column_index = 56; # int | The column index.
 my $width = 1.2; # double | The width.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_set_worksheet_column_width(name => $name, sheet_name => $sheet_name, column_index => $column_index, width => $width, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_set_worksheet_column_width(name => $name, sheet_name => $sheet_name, column_index => $column_index, width => $width, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -7379,7 +7386,7 @@ Name | Type | Description  | Notes
  **column_index** | **int**| The column index. | 
  **width** | **double**| The width. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -7397,7 +7404,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_ungroup_worksheet_columns**
-> CellsCloudResponse cells_post_ungroup_worksheet_columns(name => $name, sheet_name => $sheet_name, first_index => $first_index, last_index => $last_index, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_ungroup_worksheet_columns(name => $name, sheet_name => $sheet_name, first_index => $first_index, last_index => $last_index, folder => $folder, storage_name => $storage_name)
 
 Ungroup worksheet columns.
 
@@ -7413,10 +7420,10 @@ my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $first_index = 56; # int | The first column index to be operated.
 my $last_index = 56; # int | The last column index to be operated.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_ungroup_worksheet_columns(name => $name, sheet_name => $sheet_name, first_index => $first_index, last_index => $last_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_ungroup_worksheet_columns(name => $name, sheet_name => $sheet_name, first_index => $first_index, last_index => $last_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -7433,7 +7440,7 @@ Name | Type | Description  | Notes
  **first_index** | **int**| The first column index to be operated. | 
  **last_index** | **int**| The last column index to be operated. | 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -7451,7 +7458,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_ungroup_worksheet_rows**
-> CellsCloudResponse cells_post_ungroup_worksheet_rows(name => $name, sheet_name => $sheet_name, first_index => $first_index, last_index => $last_index, is_all => $is_all, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_ungroup_worksheet_rows(name => $name, sheet_name => $sheet_name, first_index => $first_index, last_index => $last_index, is_all => $is_all, folder => $folder, storage_name => $storage_name)
 
 Ungroup worksheet rows.
 
@@ -7468,10 +7475,10 @@ my $first_index = 56; # int | The first row index to be operated.
 my $last_index = 56; # int | The last row index to be operated.
 my $is_all = 1; # boolean | Is all row to be operated
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_ungroup_worksheet_rows(name => $name, sheet_name => $sheet_name, first_index => $first_index, last_index => $last_index, is_all => $is_all, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_ungroup_worksheet_rows(name => $name, sheet_name => $sheet_name, first_index => $first_index, last_index => $last_index, is_all => $is_all, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -7489,7 +7496,7 @@ Name | Type | Description  | Notes
  **last_index** | **int**| The last row index to be operated. | 
  **is_all** | **boolean**| Is all row to be operated | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -7507,7 +7514,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_unhide_worksheet_columns**
-> CellsCloudResponse cells_post_unhide_worksheet_columns(name => $name, sheet_name => $sheet_name, startcolumn => $startcolumn, total_columns => $total_columns, width => $width, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_unhide_worksheet_columns(name => $name, sheet_name => $sheet_name, startcolumn => $startcolumn, total_columns => $total_columns, width => $width, folder => $folder, storage_name => $storage_name)
 
 Unhide worksheet columns.
 
@@ -7524,10 +7531,10 @@ my $startcolumn = 56; # int | The begin column index to be operated.
 my $total_columns = 56; # int | Number of columns to be operated.
 my $width = 1.2; # double | The new column width.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_unhide_worksheet_columns(name => $name, sheet_name => $sheet_name, startcolumn => $startcolumn, total_columns => $total_columns, width => $width, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_unhide_worksheet_columns(name => $name, sheet_name => $sheet_name, startcolumn => $startcolumn, total_columns => $total_columns, width => $width, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -7545,7 +7552,7 @@ Name | Type | Description  | Notes
  **total_columns** | **int**| Number of columns to be operated. | 
  **width** | **double**| The new column width. | [optional] [default to 50.0]
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -7563,7 +7570,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_unhide_worksheet_rows**
-> CellsCloudResponse cells_post_unhide_worksheet_rows(name => $name, sheet_name => $sheet_name, startrow => $startrow, total_rows => $total_rows, height => $height, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_unhide_worksheet_rows(name => $name, sheet_name => $sheet_name, startrow => $startrow, total_rows => $total_rows, height => $height, folder => $folder, storage_name => $storage_name)
 
 Unhide worksheet rows.
 
@@ -7580,10 +7587,10 @@ my $startrow = 56; # int | The begin row index to be operated.
 my $total_rows = 56; # int | Number of rows to be operated.
 my $height = 1.2; # double | The new row height.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_unhide_worksheet_rows(name => $name, sheet_name => $sheet_name, startrow => $startrow, total_rows => $total_rows, height => $height, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_unhide_worksheet_rows(name => $name, sheet_name => $sheet_name, startrow => $startrow, total_rows => $total_rows, height => $height, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -7601,7 +7608,7 @@ Name | Type | Description  | Notes
  **total_rows** | **int**| Number of rows to be operated. | 
  **height** | **double**| The new row height. | [optional] [default to 15.0]
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -7619,7 +7626,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_update_worksheet_cell_style**
-> StyleResponse cells_post_update_worksheet_cell_style(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, style => $style, folder => $folder, storage => $storage)
+> StyleResponse cells_post_update_worksheet_cell_style(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, style => $style, folder => $folder, storage_name => $storage_name)
 
 Update cell's style.
 
@@ -7635,10 +7642,10 @@ my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $cell_name = 'cell_name_example'; # string | The cell name.
 my $style = AsposeCellsCloud::Object::Style->new(); # Style | with update style settings.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_update_worksheet_cell_style(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, style => $style, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_update_worksheet_cell_style(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, style => $style, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -7655,7 +7662,7 @@ Name | Type | Description  | Notes
  **cell_name** | **string**| The cell name. | 
  **style** | [**Style**](Style.md)| with update style settings. | [optional] 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -7673,7 +7680,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_update_worksheet_range_style**
-> CellsCloudResponse cells_post_update_worksheet_range_style(name => $name, sheet_name => $sheet_name, range => $range, style => $style, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_update_worksheet_range_style(name => $name, sheet_name => $sheet_name, range => $range, style => $style, folder => $folder, storage_name => $storage_name)
 
 Update cell's range style.
 
@@ -7689,10 +7696,10 @@ my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $range = 'range_example'; # string | The range.
 my $style = AsposeCellsCloud::Object::Style->new(); # Style | with update style settings.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_update_worksheet_range_style(name => $name, sheet_name => $sheet_name, range => $range, style => $style, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_update_worksheet_range_style(name => $name, sheet_name => $sheet_name, range => $range, style => $style, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -7709,7 +7716,7 @@ Name | Type | Description  | Notes
  **range** | **string**| The range. | 
  **style** | [**Style**](Style.md)| with update style settings. | [optional] 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -7727,7 +7734,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_update_worksheet_row**
-> RowResponse cells_post_update_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, height => $height, folder => $folder, storage => $storage)
+> RowResponse cells_post_update_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, height => $height, folder => $folder, storage_name => $storage_name)
 
 Update worksheet row.
 
@@ -7743,10 +7750,10 @@ my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $row_index = 56; # int | The row index.
 my $height = 1.2; # double | The new row height.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_update_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, height => $height, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_update_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, height => $height, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -7763,7 +7770,7 @@ Name | Type | Description  | Notes
  **row_index** | **int**| The row index. | 
  **height** | **double**| The new row height. | [optional] [default to 0.0]
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -7781,7 +7788,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_worksheet_cell_set_value**
-> CellResponse cells_post_worksheet_cell_set_value(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, value => $value, type => $type, formula => $formula, folder => $folder, storage => $storage)
+> CellResponse cells_post_worksheet_cell_set_value(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, value => $value, type => $type, formula => $formula, folder => $folder, storage_name => $storage_name)
 
 Set cell value.
 
@@ -7799,10 +7806,10 @@ my $value = 'value_example'; # string | The cell value.
 my $type = 'type_example'; # string | The value type.
 my $formula = 'formula_example'; # string | Formula for cell
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_worksheet_cell_set_value(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, value => $value, type => $type, formula => $formula, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_worksheet_cell_set_value(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, value => $value, type => $type, formula => $formula, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -7821,7 +7828,7 @@ Name | Type | Description  | Notes
  **type** | **string**| The value type. | [optional] 
  **formula** | **string**| Formula for cell | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -7839,7 +7846,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_worksheet_merge**
-> CellsCloudResponse cells_post_worksheet_merge(name => $name, sheet_name => $sheet_name, start_row => $start_row, start_column => $start_column, total_rows => $total_rows, total_columns => $total_columns, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_worksheet_merge(name => $name, sheet_name => $sheet_name, start_row => $start_row, start_column => $start_column, total_rows => $total_rows, total_columns => $total_columns, folder => $folder, storage_name => $storage_name)
 
 Merge cells.
 
@@ -7857,10 +7864,10 @@ my $start_column = 56; # int | The start column.
 my $total_rows = 56; # int | The total rows
 my $total_columns = 56; # int | The total columns.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_worksheet_merge(name => $name, sheet_name => $sheet_name, start_row => $start_row, start_column => $start_column, total_rows => $total_rows, total_columns => $total_columns, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_worksheet_merge(name => $name, sheet_name => $sheet_name, start_row => $start_row, start_column => $start_column, total_rows => $total_rows, total_columns => $total_columns, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -7879,7 +7886,7 @@ Name | Type | Description  | Notes
  **total_rows** | **int**| The total rows | 
  **total_columns** | **int**| The total columns. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -7897,7 +7904,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_post_worksheet_unmerge**
-> CellsCloudResponse cells_post_worksheet_unmerge(name => $name, sheet_name => $sheet_name, start_row => $start_row, start_column => $start_column, total_rows => $total_rows, total_columns => $total_columns, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_post_worksheet_unmerge(name => $name, sheet_name => $sheet_name, start_row => $start_row, start_column => $start_column, total_rows => $total_rows, total_columns => $total_columns, folder => $folder, storage_name => $storage_name)
 
 Unmerge cells.
 
@@ -7915,10 +7922,10 @@ my $start_column = 56; # int | The start column.
 my $total_rows = 56; # int | The total rows
 my $total_columns = 56; # int | The total columns.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_post_worksheet_unmerge(name => $name, sheet_name => $sheet_name, start_row => $start_row, start_column => $start_column, total_rows => $total_rows, total_columns => $total_columns, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_post_worksheet_unmerge(name => $name, sheet_name => $sheet_name, start_row => $start_row, start_column => $start_column, total_rows => $total_rows, total_columns => $total_columns, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -7937,7 +7944,7 @@ Name | Type | Description  | Notes
  **total_rows** | **int**| The total rows | 
  **total_columns** | **int**| The total columns. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -7955,7 +7962,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_properties_delete_document_properties**
-> CellsDocumentPropertiesResponse cells_properties_delete_document_properties(name => $name, folder => $folder, storage => $storage)
+> CellsDocumentPropertiesResponse cells_properties_delete_document_properties(name => $name, folder => $folder, storage_name => $storage_name)
 
 Delete all custom document properties and clean built-in ones.
 
@@ -7968,10 +7975,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 
 my $name = 'name_example'; # string | The document name.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_properties_delete_document_properties(name => $name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_properties_delete_document_properties(name => $name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -7985,7 +7992,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| The document name. | 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -8003,7 +8010,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_properties_delete_document_property**
-> CellsDocumentPropertiesResponse cells_properties_delete_document_property(name => $name, property_name => $property_name, folder => $folder, storage => $storage)
+> CellsDocumentPropertiesResponse cells_properties_delete_document_property(name => $name, property_name => $property_name, folder => $folder, storage_name => $storage_name)
 
 Delete document property.
 
@@ -8017,10 +8024,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | The document name.
 my $property_name = 'property_name_example'; # string | The property name.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_properties_delete_document_property(name => $name, property_name => $property_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_properties_delete_document_property(name => $name, property_name => $property_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -8035,7 +8042,7 @@ Name | Type | Description  | Notes
  **name** | **string**| The document name. | 
  **property_name** | **string**| The property name. | 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -8053,7 +8060,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_properties_get_document_properties**
-> CellsDocumentPropertiesResponse cells_properties_get_document_properties(name => $name, folder => $folder, storage => $storage)
+> CellsDocumentPropertiesResponse cells_properties_get_document_properties(name => $name, folder => $folder, storage_name => $storage_name)
 
 Read document properties.
 
@@ -8066,10 +8073,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 
 my $name = 'name_example'; # string | The document name.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_properties_get_document_properties(name => $name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_properties_get_document_properties(name => $name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -8083,7 +8090,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| The document name. | 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -8101,7 +8108,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_properties_get_document_property**
-> CellsDocumentPropertyResponse cells_properties_get_document_property(name => $name, property_name => $property_name, folder => $folder, storage => $storage)
+> CellsDocumentPropertyResponse cells_properties_get_document_property(name => $name, property_name => $property_name, folder => $folder, storage_name => $storage_name)
 
 Read document property by name.
 
@@ -8115,10 +8122,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | The document name.
 my $property_name = 'property_name_example'; # string | The property name.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_properties_get_document_property(name => $name, property_name => $property_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_properties_get_document_property(name => $name, property_name => $property_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -8133,7 +8140,7 @@ Name | Type | Description  | Notes
  **name** | **string**| The document name. | 
  **property_name** | **string**| The property name. | 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -8151,7 +8158,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_properties_put_document_property**
-> CellsDocumentPropertyResponse cells_properties_put_document_property(name => $name, property_name => $property_name, property => $property, folder => $folder, storage => $storage)
+> CellsDocumentPropertyResponse cells_properties_put_document_property(name => $name, property_name => $property_name, property => $property, folder => $folder, storage_name => $storage_name)
 
 Set/create document property.
 
@@ -8166,10 +8173,10 @@ my $name = 'name_example'; # string | The document name.
 my $property_name = 'property_name_example'; # string | The property name.
 my $property = AsposeCellsCloud::Object::CellsDocumentProperty->new(); # CellsDocumentProperty | with new property value.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_properties_put_document_property(name => $name, property_name => $property_name, property => $property, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_properties_put_document_property(name => $name, property_name => $property_name, property => $property, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -8185,7 +8192,7 @@ Name | Type | Description  | Notes
  **property_name** | **string**| The property name. | 
  **property** | [**CellsDocumentProperty**](CellsDocumentProperty.md)| with new property value. | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -8203,7 +8210,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_put_insert_worksheet_columns**
-> ColumnsResponse cells_put_insert_worksheet_columns(name => $name, sheet_name => $sheet_name, column_index => $column_index, columns => $columns, update_reference => $update_reference, folder => $folder, storage => $storage)
+> ColumnsResponse cells_put_insert_worksheet_columns(name => $name, sheet_name => $sheet_name, column_index => $column_index, columns => $columns, update_reference => $update_reference, folder => $folder, storage_name => $storage_name)
 
 Insert worksheet columns.
 
@@ -8220,10 +8227,10 @@ my $column_index = 56; # int | The column index.
 my $columns = 56; # int | The columns.
 my $update_reference = 1; # boolean | The update reference.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_put_insert_worksheet_columns(name => $name, sheet_name => $sheet_name, column_index => $column_index, columns => $columns, update_reference => $update_reference, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_put_insert_worksheet_columns(name => $name, sheet_name => $sheet_name, column_index => $column_index, columns => $columns, update_reference => $update_reference, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -8241,7 +8248,7 @@ Name | Type | Description  | Notes
  **columns** | **int**| The columns. | 
  **update_reference** | **boolean**| The update reference. | [optional] [default to true]
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -8259,7 +8266,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_put_insert_worksheet_row**
-> RowResponse cells_put_insert_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, folder => $folder, storage => $storage)
+> RowResponse cells_put_insert_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, folder => $folder, storage_name => $storage_name)
 
 Insert new worksheet row.
 
@@ -8274,10 +8281,10 @@ my $name = 'name_example'; # string | The workbook name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $row_index = 56; # int | The new row index.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_put_insert_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_put_insert_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -8293,7 +8300,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet name. | 
  **row_index** | **int**| The new row index. | 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -8311,7 +8318,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_put_insert_worksheet_rows**
-> CellsCloudResponse cells_put_insert_worksheet_rows(name => $name, sheet_name => $sheet_name, startrow => $startrow, total_rows => $total_rows, update_reference => $update_reference, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_put_insert_worksheet_rows(name => $name, sheet_name => $sheet_name, startrow => $startrow, total_rows => $total_rows, update_reference => $update_reference, folder => $folder, storage_name => $storage_name)
 
 Insert several new worksheet rows.
 
@@ -8328,10 +8335,10 @@ my $startrow = 56; # int | The begin row index to be operated.
 my $total_rows = 56; # int | Number of rows to be operated.
 my $update_reference = 1; # boolean | Indicates if update references in other worksheets.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_put_insert_worksheet_rows(name => $name, sheet_name => $sheet_name, startrow => $startrow, total_rows => $total_rows, update_reference => $update_reference, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_put_insert_worksheet_rows(name => $name, sheet_name => $sheet_name, startrow => $startrow, total_rows => $total_rows, update_reference => $update_reference, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -8349,7 +8356,7 @@ Name | Type | Description  | Notes
  **total_rows** | **int**| Number of rows to be operated. | [optional] [default to 1]
  **update_reference** | **boolean**| Indicates if update references in other worksheets. | [optional] [default to true]
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -8367,7 +8374,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_ranges_get_worksheet_cells_range_value**
-> RangeValueResponse cells_ranges_get_worksheet_cells_range_value(name => $name, sheet_name => $sheet_name, namerange => $namerange, first_row => $first_row, first_column => $first_column, row_count => $row_count, column_count => $column_count, folder => $folder, storage => $storage)
+> RangeValueResponse cells_ranges_get_worksheet_cells_range_value(name => $name, sheet_name => $sheet_name, namerange => $namerange, first_row => $first_row, first_column => $first_column, row_count => $row_count, column_count => $column_count, folder => $folder, storage_name => $storage_name)
 
 Get cells list in a range by range name or row column indexes  
 
@@ -8386,10 +8393,10 @@ my $first_column = 56; # int | the first column of the range
 my $row_count = 56; # int | the count of rows in the range
 my $column_count = 56; # int | the count of columns in the range
 my $folder = 'folder_example'; # string | Workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_ranges_get_worksheet_cells_range_value(name => $name, sheet_name => $sheet_name, namerange => $namerange, first_row => $first_row, first_column => $first_column, row_count => $row_count, column_count => $column_count, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_ranges_get_worksheet_cells_range_value(name => $name, sheet_name => $sheet_name, namerange => $namerange, first_row => $first_row, first_column => $first_column, row_count => $row_count, column_count => $column_count, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -8409,7 +8416,7 @@ Name | Type | Description  | Notes
  **row_count** | **int**| the count of rows in the range | [optional] 
  **column_count** | **int**| the count of columns in the range | [optional] 
  **folder** | **string**| Workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -8427,7 +8434,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_ranges_post_worksheet_cells_range_column_width**
-> CellsCloudResponse cells_ranges_post_worksheet_cells_range_column_width(name => $name, sheet_name => $sheet_name, value => $value, range => $range, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_ranges_post_worksheet_cells_range_column_width(name => $name, sheet_name => $sheet_name, value => $value, range => $range, folder => $folder, storage_name => $storage_name)
 
 Set column width of range
 
@@ -8443,10 +8450,10 @@ my $sheet_name = 'sheet_name_example'; # string |
 my $value = 1.2; # double | 
 my $range = AsposeCellsCloud::Object::Range->new(); # Range | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_ranges_post_worksheet_cells_range_column_width(name => $name, sheet_name => $sheet_name, value => $value, range => $range, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_ranges_post_worksheet_cells_range_column_width(name => $name, sheet_name => $sheet_name, value => $value, range => $range, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -8463,7 +8470,7 @@ Name | Type | Description  | Notes
  **value** | **double**|  | 
  **range** | [**Range**](Range.md)|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -8481,7 +8488,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_ranges_post_worksheet_cells_range_merge**
-> CellsCloudResponse cells_ranges_post_worksheet_cells_range_merge(name => $name, sheet_name => $sheet_name, range => $range, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_ranges_post_worksheet_cells_range_merge(name => $name, sheet_name => $sheet_name, range => $range, folder => $folder, storage_name => $storage_name)
 
 Combines a range of cells into a single cell.              
 
@@ -8496,10 +8503,10 @@ my $name = 'name_example'; # string | workbook name
 my $sheet_name = 'sheet_name_example'; # string | worksheet name
 my $range = AsposeCellsCloud::Object::Range->new(); # Range | range in worksheet 
 my $folder = 'folder_example'; # string | Workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_ranges_post_worksheet_cells_range_merge(name => $name, sheet_name => $sheet_name, range => $range, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_ranges_post_worksheet_cells_range_merge(name => $name, sheet_name => $sheet_name, range => $range, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -8515,7 +8522,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| worksheet name | 
  **range** | [**Range**](Range.md)| range in worksheet  | [optional] 
  **folder** | **string**| Workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -8533,7 +8540,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_ranges_post_worksheet_cells_range_move_to**
-> CellsCloudResponse cells_ranges_post_worksheet_cells_range_move_to(name => $name, sheet_name => $sheet_name, dest_row => $dest_row, dest_column => $dest_column, range => $range, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_ranges_post_worksheet_cells_range_move_to(name => $name, sheet_name => $sheet_name, dest_row => $dest_row, dest_column => $dest_column, range => $range, folder => $folder, storage_name => $storage_name)
 
 Move the current range to the dest range.             
 
@@ -8550,10 +8557,10 @@ my $dest_row = 56; # int | The start row of the dest range.
 my $dest_column = 56; # int | The start column of the dest range.
 my $range = AsposeCellsCloud::Object::Range->new(); # Range | range in worksheet 
 my $folder = 'folder_example'; # string | Workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_ranges_post_worksheet_cells_range_move_to(name => $name, sheet_name => $sheet_name, dest_row => $dest_row, dest_column => $dest_column, range => $range, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_ranges_post_worksheet_cells_range_move_to(name => $name, sheet_name => $sheet_name, dest_row => $dest_row, dest_column => $dest_column, range => $range, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -8571,7 +8578,7 @@ Name | Type | Description  | Notes
  **dest_column** | **int**| The start column of the dest range. | 
  **range** | [**Range**](Range.md)| range in worksheet  | [optional] 
  **folder** | **string**| Workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -8589,7 +8596,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_ranges_post_worksheet_cells_range_outline_border**
-> CellsCloudResponse cells_ranges_post_worksheet_cells_range_outline_border(name => $name, sheet_name => $sheet_name, range_operate => $range_operate, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_ranges_post_worksheet_cells_range_outline_border(name => $name, sheet_name => $sheet_name, range_operate => $range_operate, folder => $folder, storage_name => $storage_name)
 
 Sets outline border around a range of cells.
 
@@ -8604,10 +8611,10 @@ my $name = 'name_example'; # string | workbook name
 my $sheet_name = 'sheet_name_example'; # string | worksheet name
 my $range_operate = AsposeCellsCloud::Object::RangeSetOutlineBorderRequest->new(); # RangeSetOutlineBorderRequest | Range Set OutlineBorder Request 
 my $folder = 'folder_example'; # string | Workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_ranges_post_worksheet_cells_range_outline_border(name => $name, sheet_name => $sheet_name, range_operate => $range_operate, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_ranges_post_worksheet_cells_range_outline_border(name => $name, sheet_name => $sheet_name, range_operate => $range_operate, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -8623,7 +8630,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| worksheet name | 
  **range_operate** | [**RangeSetOutlineBorderRequest**](RangeSetOutlineBorderRequest.md)| Range Set OutlineBorder Request  | [optional] 
  **folder** | **string**| Workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -8641,7 +8648,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_ranges_post_worksheet_cells_range_row_height**
-> CellsCloudResponse cells_ranges_post_worksheet_cells_range_row_height(name => $name, sheet_name => $sheet_name, value => $value, range => $range, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_ranges_post_worksheet_cells_range_row_height(name => $name, sheet_name => $sheet_name, value => $value, range => $range, folder => $folder, storage_name => $storage_name)
 
 set row height of range
 
@@ -8657,10 +8664,10 @@ my $sheet_name = 'sheet_name_example'; # string |
 my $value = 1.2; # double | 
 my $range = AsposeCellsCloud::Object::Range->new(); # Range | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_ranges_post_worksheet_cells_range_row_height(name => $name, sheet_name => $sheet_name, value => $value, range => $range, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_ranges_post_worksheet_cells_range_row_height(name => $name, sheet_name => $sheet_name, value => $value, range => $range, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -8677,7 +8684,7 @@ Name | Type | Description  | Notes
  **value** | **double**|  | 
  **range** | [**Range**](Range.md)|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -8695,7 +8702,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_ranges_post_worksheet_cells_range_style**
-> CellsCloudResponse cells_ranges_post_worksheet_cells_range_style(name => $name, sheet_name => $sheet_name, range_operate => $range_operate, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_ranges_post_worksheet_cells_range_style(name => $name, sheet_name => $sheet_name, range_operate => $range_operate, folder => $folder, storage_name => $storage_name)
 
 Sets the style of the range.             
 
@@ -8710,10 +8717,10 @@ my $name = 'name_example'; # string | workbook name
 my $sheet_name = 'sheet_name_example'; # string | worksheet name
 my $range_operate = AsposeCellsCloud::Object::RangeSetStyleRequest->new(); # RangeSetStyleRequest | Range Set Style Request 
 my $folder = 'folder_example'; # string | Workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_ranges_post_worksheet_cells_range_style(name => $name, sheet_name => $sheet_name, range_operate => $range_operate, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_ranges_post_worksheet_cells_range_style(name => $name, sheet_name => $sheet_name, range_operate => $range_operate, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -8729,7 +8736,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| worksheet name | 
  **range_operate** | [**RangeSetStyleRequest**](RangeSetStyleRequest.md)| Range Set Style Request  | [optional] 
  **folder** | **string**| Workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -8747,7 +8754,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_ranges_post_worksheet_cells_range_unmerge**
-> CellsCloudResponse cells_ranges_post_worksheet_cells_range_unmerge(name => $name, sheet_name => $sheet_name, range => $range, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_ranges_post_worksheet_cells_range_unmerge(name => $name, sheet_name => $sheet_name, range => $range, folder => $folder, storage_name => $storage_name)
 
 Unmerges merged cells of this range.             
 
@@ -8762,10 +8769,10 @@ my $name = 'name_example'; # string | workbook name
 my $sheet_name = 'sheet_name_example'; # string | worksheet name
 my $range = AsposeCellsCloud::Object::Range->new(); # Range | range in worksheet 
 my $folder = 'folder_example'; # string | Workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_ranges_post_worksheet_cells_range_unmerge(name => $name, sheet_name => $sheet_name, range => $range, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_ranges_post_worksheet_cells_range_unmerge(name => $name, sheet_name => $sheet_name, range => $range, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -8781,7 +8788,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| worksheet name | 
  **range** | [**Range**](Range.md)| range in worksheet  | [optional] 
  **folder** | **string**| Workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -8799,7 +8806,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_ranges_post_worksheet_cells_range_value**
-> CellsCloudResponse cells_ranges_post_worksheet_cells_range_value(name => $name, sheet_name => $sheet_name, value => $value, range => $range, is_converted => $is_converted, set_style => $set_style, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_ranges_post_worksheet_cells_range_value(name => $name, sheet_name => $sheet_name, value => $value, range => $range, is_converted => $is_converted, set_style => $set_style, folder => $folder, storage_name => $storage_name)
 
 Puts a value into the range, if appropriate the value will be converted to other data type and cell's number format will be reset.             
 
@@ -8817,10 +8824,10 @@ my $range = AsposeCellsCloud::Object::Range->new(); # Range | range in worksheet
 my $is_converted = 1; # boolean | True: converted to other data type if appropriate.
 my $set_style = 1; # boolean | True: set the number format to cell's style when converting to other data type
 my $folder = 'folder_example'; # string | Workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_ranges_post_worksheet_cells_range_value(name => $name, sheet_name => $sheet_name, value => $value, range => $range, is_converted => $is_converted, set_style => $set_style, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_ranges_post_worksheet_cells_range_value(name => $name, sheet_name => $sheet_name, value => $value, range => $range, is_converted => $is_converted, set_style => $set_style, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -8839,7 +8846,7 @@ Name | Type | Description  | Notes
  **is_converted** | **boolean**| True: converted to other data type if appropriate. | [optional] [default to false]
  **set_style** | **boolean**| True: set the number format to cell&#39;s style when converting to other data type | [optional] [default to false]
  **folder** | **string**| Workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -8857,7 +8864,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_ranges_post_worksheet_cells_ranges**
-> CellsCloudResponse cells_ranges_post_worksheet_cells_ranges(name => $name, sheet_name => $sheet_name, range_operate => $range_operate, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_ranges_post_worksheet_cells_ranges(name => $name, sheet_name => $sheet_name, range_operate => $range_operate, folder => $folder, storage_name => $storage_name)
 
 copy range in the worksheet
 
@@ -8872,10 +8879,10 @@ my $name = 'name_example'; # string | workbook name
 my $sheet_name = 'sheet_name_example'; # string | worksheet name
 my $range_operate = AsposeCellsCloud::Object::RangeCopyRequest->new(); # RangeCopyRequest | copydata,copystyle,copyto,copyvalue
 my $folder = 'folder_example'; # string | Workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_ranges_post_worksheet_cells_ranges(name => $name, sheet_name => $sheet_name, range_operate => $range_operate, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_ranges_post_worksheet_cells_ranges(name => $name, sheet_name => $sheet_name, range_operate => $range_operate, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -8891,7 +8898,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| worksheet name | 
  **range_operate** | [**RangeCopyRequest**](RangeCopyRequest.md)| copydata,copystyle,copyto,copyvalue | [optional] 
  **folder** | **string**| Workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -8909,7 +8916,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_save_as_post_document_save_as**
-> SaveResponse cells_save_as_post_document_save_as(name => $name, save_options => $save_options, newfilename => $newfilename, is_auto_fit_rows => $is_auto_fit_rows, is_auto_fit_columns => $is_auto_fit_columns, folder => $folder, storage => $storage)
+> SaveResponse cells_save_as_post_document_save_as(name => $name, save_options => $save_options, newfilename => $newfilename, is_auto_fit_rows => $is_auto_fit_rows, is_auto_fit_columns => $is_auto_fit_columns, folder => $folder, storage_name => $storage_name)
 
 Convert document and save result to storage.
 
@@ -8926,10 +8933,10 @@ my $newfilename = 'newfilename_example'; # string | The new file name.
 my $is_auto_fit_rows = 1; # boolean | Autofit rows.
 my $is_auto_fit_columns = 1; # boolean | Autofit columns.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_save_as_post_document_save_as(name => $name, save_options => $save_options, newfilename => $newfilename, is_auto_fit_rows => $is_auto_fit_rows, is_auto_fit_columns => $is_auto_fit_columns, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_save_as_post_document_save_as(name => $name, save_options => $save_options, newfilename => $newfilename, is_auto_fit_rows => $is_auto_fit_rows, is_auto_fit_columns => $is_auto_fit_columns, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -8947,7 +8954,7 @@ Name | Type | Description  | Notes
  **is_auto_fit_rows** | **boolean**| Autofit rows. | [optional] [default to false]
  **is_auto_fit_columns** | **boolean**| Autofit columns. | [optional] [default to false]
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -8965,7 +8972,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_shapes_delete_worksheet_shape**
-> CellsCloudResponse cells_shapes_delete_worksheet_shape(name => $name, sheet_name => $sheet_name, shapeindex => $shapeindex, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_shapes_delete_worksheet_shape(name => $name, sheet_name => $sheet_name, shapeindex => $shapeindex, folder => $folder, storage_name => $storage_name)
 
 Delete a shape in worksheet
 
@@ -8980,10 +8987,10 @@ my $name = 'name_example'; # string | document name.
 my $sheet_name = 'sheet_name_example'; # string | worksheet name.
 my $shapeindex = 56; # int | shape index in worksheet shapes.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_shapes_delete_worksheet_shape(name => $name, sheet_name => $sheet_name, shapeindex => $shapeindex, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_shapes_delete_worksheet_shape(name => $name, sheet_name => $sheet_name, shapeindex => $shapeindex, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -8999,7 +9006,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| worksheet name. | 
  **shapeindex** | **int**| shape index in worksheet shapes. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -9017,7 +9024,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_shapes_delete_worksheet_shapes**
-> CellsCloudResponse cells_shapes_delete_worksheet_shapes(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_shapes_delete_worksheet_shapes(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 delete all shapes in worksheet
 
@@ -9031,10 +9038,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | document name.
 my $sheet_name = 'sheet_name_example'; # string | worksheet name.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_shapes_delete_worksheet_shapes(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_shapes_delete_worksheet_shapes(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -9049,7 +9056,7 @@ Name | Type | Description  | Notes
  **name** | **string**| document name. | 
  **sheet_name** | **string**| worksheet name. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -9067,7 +9074,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_shapes_get_worksheet_shape**
-> ShapeResponse cells_shapes_get_worksheet_shape(name => $name, sheet_name => $sheet_name, shapeindex => $shapeindex, folder => $folder, storage => $storage)
+> ShapeResponse cells_shapes_get_worksheet_shape(name => $name, sheet_name => $sheet_name, shapeindex => $shapeindex, folder => $folder, storage_name => $storage_name)
 
 Get worksheet shape
 
@@ -9082,10 +9089,10 @@ my $name = 'name_example'; # string | document name.
 my $sheet_name = 'sheet_name_example'; # string | worksheet name.
 my $shapeindex = 56; # int | shape index in worksheet shapes.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_shapes_get_worksheet_shape(name => $name, sheet_name => $sheet_name, shapeindex => $shapeindex, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_shapes_get_worksheet_shape(name => $name, sheet_name => $sheet_name, shapeindex => $shapeindex, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -9101,7 +9108,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| worksheet name. | 
  **shapeindex** | **int**| shape index in worksheet shapes. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -9119,7 +9126,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_shapes_get_worksheet_shapes**
-> ShapesResponse cells_shapes_get_worksheet_shapes(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> ShapesResponse cells_shapes_get_worksheet_shapes(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Get worksheet shapes 
 
@@ -9133,10 +9140,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | document name.
 my $sheet_name = 'sheet_name_example'; # string | worksheet name.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_shapes_get_worksheet_shapes(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_shapes_get_worksheet_shapes(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -9151,7 +9158,7 @@ Name | Type | Description  | Notes
  **name** | **string**| document name. | 
  **sheet_name** | **string**| worksheet name. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -9169,7 +9176,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_shapes_post_worksheet_shape**
-> CellsCloudResponse cells_shapes_post_worksheet_shape(name => $name, sheet_name => $sheet_name, shapeindex => $shapeindex, dto => $dto, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_shapes_post_worksheet_shape(name => $name, sheet_name => $sheet_name, shapeindex => $shapeindex, dto => $dto, folder => $folder, storage_name => $storage_name)
 
 Update a shape in worksheet
 
@@ -9185,10 +9192,10 @@ my $sheet_name = 'sheet_name_example'; # string | worksheet name.
 my $shapeindex = 56; # int | shape index in worksheet shapes.
 my $dto = AsposeCellsCloud::Object::Shape->new(); # Shape | 
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_shapes_post_worksheet_shape(name => $name, sheet_name => $sheet_name, shapeindex => $shapeindex, dto => $dto, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_shapes_post_worksheet_shape(name => $name, sheet_name => $sheet_name, shapeindex => $shapeindex, dto => $dto, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -9205,7 +9212,7 @@ Name | Type | Description  | Notes
  **shapeindex** | **int**| shape index in worksheet shapes. | 
  **dto** | [**Shape**](Shape.md)|  | [optional] 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -9223,7 +9230,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_shapes_put_worksheet_shape**
-> ShapeResponse cells_shapes_put_worksheet_shape(name => $name, sheet_name => $sheet_name, drawing_type => $drawing_type, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, top => $top, left => $left, width => $width, height => $height, folder => $folder, storage => $storage)
+> ShapeResponse cells_shapes_put_worksheet_shape(name => $name, sheet_name => $sheet_name, shape_dto => $shape_dto, drawing_type => $drawing_type, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, top => $top, left => $left, width => $width, height => $height, folder => $folder, storage_name => $storage_name)
 
 Add shape in worksheet
 
@@ -9236,6 +9243,7 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 
 my $name = 'name_example'; # string | document name.
 my $sheet_name = 'sheet_name_example'; # string | worksheet name.
+my $shape_dto = AsposeCellsCloud::Object::Shape->new(); # Shape | 
 my $drawing_type = 'drawing_type_example'; # string | shape object type
 my $upper_left_row = 56; # int | Upper left row index.
 my $upper_left_column = 56; # int | Upper left column index.
@@ -9244,10 +9252,10 @@ my $left = 56; # int | Represents the horizontal offset of Spinner from its left
 my $width = 56; # int | Represents the height of Spinner, in unit of pixel.
 my $height = 56; # int | Represents the width of Spinner, in unit of pixel.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_shapes_put_worksheet_shape(name => $name, sheet_name => $sheet_name, drawing_type => $drawing_type, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, top => $top, left => $left, width => $width, height => $height, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_shapes_put_worksheet_shape(name => $name, sheet_name => $sheet_name, shape_dto => $shape_dto, drawing_type => $drawing_type, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, top => $top, left => $left, width => $width, height => $height, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -9261,15 +9269,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| document name. | 
  **sheet_name** | **string**| worksheet name. | 
- **drawing_type** | **string**| shape object type | 
- **upper_left_row** | **int**| Upper left row index. | 
- **upper_left_column** | **int**| Upper left column index. | 
- **top** | **int**| Represents the vertical offset of Spinner from its left row, in unit of pixel. | 
- **left** | **int**| Represents the horizontal offset of Spinner from its left column, in unit of pixel. | 
- **width** | **int**| Represents the height of Spinner, in unit of pixel. | 
- **height** | **int**| Represents the width of Spinner, in unit of pixel. | 
+ **shape_dto** | [**Shape**](Shape.md)|  | [optional] 
+ **drawing_type** | **string**| shape object type | [optional] 
+ **upper_left_row** | **int**| Upper left row index. | [optional] 
+ **upper_left_column** | **int**| Upper left column index. | [optional] 
+ **top** | **int**| Represents the vertical offset of Spinner from its left row, in unit of pixel. | [optional] 
+ **left** | **int**| Represents the horizontal offset of Spinner from its left column, in unit of pixel. | [optional] 
+ **width** | **int**| Represents the height of Spinner, in unit of pixel. | [optional] 
+ **height** | **int**| Represents the width of Spinner, in unit of pixel. | [optional] 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -9331,7 +9340,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_delete_decrypt_document**
-> CellsCloudResponse cells_workbook_delete_decrypt_document(name => $name, encryption => $encryption, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_workbook_delete_decrypt_document(name => $name, encryption => $encryption, folder => $folder, storage_name => $storage_name)
 
 Decrypt document.
 
@@ -9345,10 +9354,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | The document name.
 my $encryption = AsposeCellsCloud::Object::WorkbookEncryptionRequest->new(); # WorkbookEncryptionRequest | Encryption settings, only password can be specified.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_delete_decrypt_document(name => $name, encryption => $encryption, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_delete_decrypt_document(name => $name, encryption => $encryption, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -9363,7 +9372,7 @@ Name | Type | Description  | Notes
  **name** | **string**| The document name. | 
  **encryption** | [**WorkbookEncryptionRequest**](WorkbookEncryptionRequest.md)| Encryption settings, only password can be specified. | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -9381,7 +9390,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_delete_document_unprotect_from_changes**
-> CellsCloudResponse cells_workbook_delete_document_unprotect_from_changes(name => $name, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_workbook_delete_document_unprotect_from_changes(name => $name, folder => $folder, storage_name => $storage_name)
 
 Unprotect document from changes.
 
@@ -9394,10 +9403,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 
 my $name = 'name_example'; # string | The document name.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_delete_document_unprotect_from_changes(name => $name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_delete_document_unprotect_from_changes(name => $name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -9411,7 +9420,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| The document name. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -9429,7 +9438,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_delete_unprotect_document**
-> CellsCloudResponse cells_workbook_delete_unprotect_document(name => $name, protection => $protection, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_workbook_delete_unprotect_document(name => $name, protection => $protection, folder => $folder, storage_name => $storage_name)
 
 Unprotect document.
 
@@ -9443,10 +9452,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | The document name.
 my $protection = AsposeCellsCloud::Object::WorkbookProtectionRequest->new(); # WorkbookProtectionRequest | Protection settings, only password can be specified.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_delete_unprotect_document(name => $name, protection => $protection, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_delete_unprotect_document(name => $name, protection => $protection, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -9461,7 +9470,55 @@ Name | Type | Description  | Notes
  **name** | **string**| The document name. | 
  **protection** | [**WorkbookProtectionRequest**](WorkbookProtectionRequest.md)| Protection settings, only password can be specified. | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cells_workbook_delete_workbook_background**
+> CellsCloudResponse cells_workbook_delete_workbook_background(name => $name, folder => $folder, storage_name => $storage_name)
+
+Set worksheet background image.
+
+### Example 
+```perl
+use Data::Dumper;
+use AsposeCellsCloud::CellsApi;
+my $api_instance = AsposeCellsCloud::CellsApi->new(
+);
+
+my $name = 'name_example'; # string | 
+my $folder = 'folder_example'; # string | 
+my $storage_name = 'storage_name_example'; # string | storage name.
+
+eval { 
+    my $result = $api_instance->cells_workbook_delete_workbook_background(name => $name, folder => $folder, storage_name => $storage_name);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling CellsApi->cells_workbook_delete_workbook_background: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  | 
+ **folder** | **string**|  | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -9479,7 +9536,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_delete_workbook_name**
-> CellsCloudResponse cells_workbook_delete_workbook_name(name => $name, name_name => $name_name, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_workbook_delete_workbook_name(name => $name, name_name => $name_name, folder => $folder, storage_name => $storage_name)
 
 Clean workbook's names.
 
@@ -9493,10 +9550,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | The workbook name.
 my $name_name = 'name_name_example'; # string | The name.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_delete_workbook_name(name => $name, name_name => $name_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_delete_workbook_name(name => $name, name_name => $name_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -9511,7 +9568,7 @@ Name | Type | Description  | Notes
  **name** | **string**| The workbook name. | 
  **name_name** | **string**| The name. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -9529,7 +9586,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_delete_workbook_names**
-> CellsCloudResponse cells_workbook_delete_workbook_names(name => $name, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_workbook_delete_workbook_names(name => $name, folder => $folder, storage_name => $storage_name)
 
 Clean workbook's names.
 
@@ -9542,10 +9599,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 
 my $name = 'name_example'; # string | The workbook name.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_delete_workbook_names(name => $name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_delete_workbook_names(name => $name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -9559,7 +9616,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| The workbook name. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -9577,7 +9634,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_get_workbook**
-> string cells_workbook_get_workbook(name => $name, password => $password, format => $format, is_auto_fit => $is_auto_fit, only_save_table => $only_save_table, folder => $folder, storage => $storage, out_path => $out_path)
+> string cells_workbook_get_workbook(name => $name, password => $password, format => $format, is_auto_fit => $is_auto_fit, only_save_table => $only_save_table, folder => $folder, storage_name => $storage_name, out_path => $out_path)
 
 Read workbook info or export.
 
@@ -9594,11 +9651,11 @@ my $format = 'format_example'; # string | The exported file format.
 my $is_auto_fit = 1; # boolean | Set document rows to be autofit.
 my $only_save_table = 1; # boolean | Only save table data.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 my $out_path = 'out_path_example'; # string | The document output folder.
 
 eval { 
-    my $result = $api_instance->cells_workbook_get_workbook(name => $name, password => $password, format => $format, is_auto_fit => $is_auto_fit, only_save_table => $only_save_table, folder => $folder, storage => $storage, out_path => $out_path);
+    my $result = $api_instance->cells_workbook_get_workbook(name => $name, password => $password, format => $format, is_auto_fit => $is_auto_fit, only_save_table => $only_save_table, folder => $folder, storage_name => $storage_name, out_path => $out_path);
     print Dumper($result);
 };
 if ($@) {
@@ -9616,7 +9673,7 @@ Name | Type | Description  | Notes
  **is_auto_fit** | **boolean**| Set document rows to be autofit. | [optional] [default to false]
  **only_save_table** | **boolean**| Only save table data. | [optional] [default to false]
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
  **out_path** | **string**| The document output folder. | [optional] 
 
 ### Return type
@@ -9635,7 +9692,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_get_workbook_default_style**
-> StyleResponse cells_workbook_get_workbook_default_style(name => $name, folder => $folder, storage => $storage)
+> StyleResponse cells_workbook_get_workbook_default_style(name => $name, folder => $folder, storage_name => $storage_name)
 
 Read workbook default style info.
 
@@ -9648,10 +9705,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 
 my $name = 'name_example'; # string | The workbook name.
 my $folder = 'folder_example'; # string | The document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_get_workbook_default_style(name => $name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_get_workbook_default_style(name => $name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -9665,7 +9722,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| The workbook name. | 
  **folder** | **string**| The document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -9683,7 +9740,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_get_workbook_name**
-> NameResponse cells_workbook_get_workbook_name(name => $name, name_name => $name_name, folder => $folder, storage => $storage)
+> NameResponse cells_workbook_get_workbook_name(name => $name, name_name => $name_name, folder => $folder, storage_name => $storage_name)
 
 Read workbook's name.
 
@@ -9697,10 +9754,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | The workbook name.
 my $name_name = 'name_name_example'; # string | The name.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_get_workbook_name(name => $name, name_name => $name_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_get_workbook_name(name => $name, name_name => $name_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -9715,7 +9772,7 @@ Name | Type | Description  | Notes
  **name** | **string**| The workbook name. | 
  **name_name** | **string**| The name. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -9733,7 +9790,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_get_workbook_name_value**
-> RangeValueResponse cells_workbook_get_workbook_name_value(name => $name, name_name => $name_name, folder => $folder, storage => $storage)
+> RangeValueResponse cells_workbook_get_workbook_name_value(name => $name, name_name => $name_name, folder => $folder, storage_name => $storage_name)
 
 Get workbook's name value.
 
@@ -9747,10 +9804,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | The workbook name.
 my $name_name = 'name_name_example'; # string | The name.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_get_workbook_name_value(name => $name, name_name => $name_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_get_workbook_name_value(name => $name, name_name => $name_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -9765,7 +9822,7 @@ Name | Type | Description  | Notes
  **name** | **string**| The workbook name. | 
  **name_name** | **string**| The name. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -9783,7 +9840,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_get_workbook_names**
-> NamesResponse cells_workbook_get_workbook_names(name => $name, folder => $folder, storage => $storage)
+> NamesResponse cells_workbook_get_workbook_names(name => $name, folder => $folder, storage_name => $storage_name)
 
 Read workbook's names.
 
@@ -9796,10 +9853,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 
 my $name = 'name_example'; # string | The workbook name.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_get_workbook_names(name => $name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_get_workbook_names(name => $name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -9813,7 +9870,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| The workbook name. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -9831,7 +9888,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_get_workbook_settings**
-> WorkbookSettingsResponse cells_workbook_get_workbook_settings(name => $name, folder => $folder, storage => $storage)
+> WorkbookSettingsResponse cells_workbook_get_workbook_settings(name => $name, folder => $folder, storage_name => $storage_name)
 
 Get Workbook Settings DTO
 
@@ -9844,10 +9901,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 
 my $name = 'name_example'; # string | Document name.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_get_workbook_settings(name => $name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_get_workbook_settings(name => $name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -9861,7 +9918,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| Document name. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -9879,7 +9936,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_get_workbook_text_items**
-> TextItemsResponse cells_workbook_get_workbook_text_items(name => $name, folder => $folder, storage => $storage)
+> TextItemsResponse cells_workbook_get_workbook_text_items(name => $name, folder => $folder, storage_name => $storage_name)
 
 Read workbook's text items.
 
@@ -9892,10 +9949,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 
 my $name = 'name_example'; # string | The workbook name.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_get_workbook_text_items(name => $name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_get_workbook_text_items(name => $name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -9909,7 +9966,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| The workbook name. | 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -9927,7 +9984,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_post_autofit_workbook_rows**
-> CellsCloudResponse cells_workbook_post_autofit_workbook_rows(name => $name, auto_fitter_options => $auto_fitter_options, start_row => $start_row, end_row => $end_row, only_auto => $only_auto, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_workbook_post_autofit_workbook_rows(name => $name, auto_fitter_options => $auto_fitter_options, start_row => $start_row, end_row => $end_row, only_auto => $only_auto, folder => $folder, storage_name => $storage_name)
 
 Autofit workbook rows.
 
@@ -9944,10 +10001,10 @@ my $start_row = 56; # int | Start row.
 my $end_row = 56; # int | End row.
 my $only_auto = 1; # boolean | Only auto.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_post_autofit_workbook_rows(name => $name, auto_fitter_options => $auto_fitter_options, start_row => $start_row, end_row => $end_row, only_auto => $only_auto, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_post_autofit_workbook_rows(name => $name, auto_fitter_options => $auto_fitter_options, start_row => $start_row, end_row => $end_row, only_auto => $only_auto, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -9965,7 +10022,7 @@ Name | Type | Description  | Notes
  **end_row** | **int**| End row. | [optional] 
  **only_auto** | **boolean**| Only auto. | [optional] [default to false]
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -9983,7 +10040,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_post_encrypt_document**
-> CellsCloudResponse cells_workbook_post_encrypt_document(name => $name, encryption => $encryption, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_workbook_post_encrypt_document(name => $name, encryption => $encryption, folder => $folder, storage_name => $storage_name)
 
 Encript document.
 
@@ -9997,10 +10054,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | The document name.
 my $encryption = AsposeCellsCloud::Object::WorkbookEncryptionRequest->new(); # WorkbookEncryptionRequest | Encryption parameters.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_post_encrypt_document(name => $name, encryption => $encryption, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_post_encrypt_document(name => $name, encryption => $encryption, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -10015,7 +10072,7 @@ Name | Type | Description  | Notes
  **name** | **string**| The document name. | 
  **encryption** | [**WorkbookEncryptionRequest**](WorkbookEncryptionRequest.md)| Encryption parameters. | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -10033,7 +10090,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_post_import_data**
-> CellsCloudResponse cells_workbook_post_import_data(name => $name, importdata => $importdata, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_workbook_post_import_data(name => $name, importdata => $importdata, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -10047,10 +10104,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | 
 my $importdata = AsposeCellsCloud::Object::String->new(); # String | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_post_import_data(name => $name, importdata => $importdata, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_post_import_data(name => $name, importdata => $importdata, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -10065,7 +10122,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  | 
  **importdata** | [**String**](String.md)|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -10083,7 +10140,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_post_protect_document**
-> CellsCloudResponse cells_workbook_post_protect_document(name => $name, protection => $protection, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_workbook_post_protect_document(name => $name, protection => $protection, folder => $folder, storage_name => $storage_name)
 
 Protect document.
 
@@ -10097,10 +10154,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | The document name.
 my $protection = AsposeCellsCloud::Object::WorkbookProtectionRequest->new(); # WorkbookProtectionRequest | The protection settings.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_post_protect_document(name => $name, protection => $protection, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_post_protect_document(name => $name, protection => $protection, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -10115,7 +10172,7 @@ Name | Type | Description  | Notes
  **name** | **string**| The document name. | 
  **protection** | [**WorkbookProtectionRequest**](WorkbookProtectionRequest.md)| The protection settings. | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -10133,7 +10190,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_post_workbook_calculate_formula**
-> CellsCloudResponse cells_workbook_post_workbook_calculate_formula(name => $name, options => $options, ignore_error => $ignore_error, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_workbook_post_workbook_calculate_formula(name => $name, options => $options, ignore_error => $ignore_error, folder => $folder, storage_name => $storage_name)
 
 Calculate all formulas in workbook.
 
@@ -10148,10 +10205,10 @@ my $name = 'name_example'; # string | Document name.
 my $options = AsposeCellsCloud::Object::CalculationOptions->new(); # CalculationOptions | Calculation Options.
 my $ignore_error = 1; # boolean | ignore Error.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_post_workbook_calculate_formula(name => $name, options => $options, ignore_error => $ignore_error, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_post_workbook_calculate_formula(name => $name, options => $options, ignore_error => $ignore_error, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -10167,7 +10224,7 @@ Name | Type | Description  | Notes
  **options** | [**CalculationOptions**](CalculationOptions.md)| Calculation Options. | [optional] 
  **ignore_error** | **boolean**| ignore Error. | [optional] 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -10185,7 +10242,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_post_workbook_get_smart_marker_result**
-> string cells_workbook_post_workbook_get_smart_marker_result(name => $name, xml_file => $xml_file, folder => $folder, storage => $storage, out_path => $out_path)
+> string cells_workbook_post_workbook_get_smart_marker_result(name => $name, xml_file => $xml_file, folder => $folder, storage_name => $storage_name, out_path => $out_path)
 
 Smart marker processing result.
 
@@ -10199,11 +10256,11 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | The workbook name.
 my $xml_file = 'xml_file_example'; # string | The xml file full path, if empty the data is read from request body.
 my $folder = 'folder_example'; # string | The workbook folder full path.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 my $out_path = 'out_path_example'; # string | Path to save result
 
 eval { 
-    my $result = $api_instance->cells_workbook_post_workbook_get_smart_marker_result(name => $name, xml_file => $xml_file, folder => $folder, storage => $storage, out_path => $out_path);
+    my $result = $api_instance->cells_workbook_post_workbook_get_smart_marker_result(name => $name, xml_file => $xml_file, folder => $folder, storage_name => $storage_name, out_path => $out_path);
     print Dumper($result);
 };
 if ($@) {
@@ -10218,7 +10275,7 @@ Name | Type | Description  | Notes
  **name** | **string**| The workbook name. | 
  **xml_file** | **string**| The xml file full path, if empty the data is read from request body. | [optional] 
  **folder** | **string**| The workbook folder full path. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
  **out_path** | **string**| Path to save result | [optional] 
 
 ### Return type
@@ -10237,7 +10294,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_post_workbook_settings**
-> CellsCloudResponse cells_workbook_post_workbook_settings(name => $name, settings => $settings, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_workbook_post_workbook_settings(name => $name, settings => $settings, folder => $folder, storage_name => $storage_name)
 
 Update Workbook setting 
 
@@ -10251,10 +10308,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Document name.
 my $settings = AsposeCellsCloud::Object::WorkbookSettings->new(); # WorkbookSettings | Workbook Setting DTO
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_post_workbook_settings(name => $name, settings => $settings, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_post_workbook_settings(name => $name, settings => $settings, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -10269,7 +10326,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. | 
  **settings** | [**WorkbookSettings**](WorkbookSettings.md)| Workbook Setting DTO | [optional] 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -10287,7 +10344,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_post_workbook_split**
-> SplitResultResponse cells_workbook_post_workbook_split(name => $name, format => $format, from => $from, to => $to, horizontal_resolution => $horizontal_resolution, vertical_resolution => $vertical_resolution, folder => $folder, storage => $storage)
+> SplitResultResponse cells_workbook_post_workbook_split(name => $name, format => $format, from => $from, to => $to, horizontal_resolution => $horizontal_resolution, vertical_resolution => $vertical_resolution, folder => $folder, out_folder => $out_folder, storage_name => $storage_name)
 
 Split workbook.
 
@@ -10305,10 +10362,11 @@ my $to = 56; # int | End worksheet index.
 my $horizontal_resolution = 56; # int | Image horizontal resolution.
 my $vertical_resolution = 56; # int | Image vertical resolution.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $out_folder = 'out_folder_example'; # string | out Folder.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_post_workbook_split(name => $name, format => $format, from => $from, to => $to, horizontal_resolution => $horizontal_resolution, vertical_resolution => $vertical_resolution, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_post_workbook_split(name => $name, format => $format, from => $from, to => $to, horizontal_resolution => $horizontal_resolution, vertical_resolution => $vertical_resolution, folder => $folder, out_folder => $out_folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -10327,7 +10385,8 @@ Name | Type | Description  | Notes
  **horizontal_resolution** | **int**| Image horizontal resolution. | [optional] [default to 0]
  **vertical_resolution** | **int**| Image vertical resolution. | [optional] [default to 0]
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **out_folder** | **string**| out Folder. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -10345,7 +10404,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_post_workbooks_merge**
-> WorkbookResponse cells_workbook_post_workbooks_merge(name => $name, merge_with => $merge_with, folder => $folder, storage => $storage)
+> WorkbookResponse cells_workbook_post_workbooks_merge(name => $name, merge_with => $merge_with, folder => $folder, storage_name => $storage_name)
 
 Merge workbooks.
 
@@ -10359,10 +10418,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Workbook name.
 my $merge_with = 'merge_with_example'; # string | The workbook to merge with.
 my $folder = 'folder_example'; # string | Source workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_post_workbooks_merge(name => $name, merge_with => $merge_with, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_post_workbooks_merge(name => $name, merge_with => $merge_with, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -10377,7 +10436,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Workbook name. | 
  **merge_with** | **string**| The workbook to merge with. | 
  **folder** | **string**| Source workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -10395,7 +10454,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_post_workbooks_text_replace**
-> WorkbookReplaceResponse cells_workbook_post_workbooks_text_replace(name => $name, old_value => $old_value, new_value => $new_value, folder => $folder, storage => $storage)
+> WorkbookReplaceResponse cells_workbook_post_workbooks_text_replace(name => $name, old_value => $old_value, new_value => $new_value, folder => $folder, storage_name => $storage_name)
 
 Replace text.
 
@@ -10410,10 +10469,10 @@ my $name = 'name_example'; # string | Document name.
 my $old_value = 'old_value_example'; # string | The old value.
 my $new_value = 'new_value_example'; # string | The new value.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_post_workbooks_text_replace(name => $name, old_value => $old_value, new_value => $new_value, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_post_workbooks_text_replace(name => $name, old_value => $old_value, new_value => $new_value, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -10429,7 +10488,7 @@ Name | Type | Description  | Notes
  **old_value** | **string**| The old value. | 
  **new_value** | **string**| The new value. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -10447,7 +10506,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_post_workbooks_text_search**
-> TextItemsResponse cells_workbook_post_workbooks_text_search(name => $name, text => $text, folder => $folder, storage => $storage)
+> TextItemsResponse cells_workbook_post_workbooks_text_search(name => $name, text => $text, folder => $folder, storage_name => $storage_name)
 
 Search text.
 
@@ -10461,10 +10520,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Document name.
 my $text = 'text_example'; # string | Text sample.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_post_workbooks_text_search(name => $name, text => $text, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_post_workbooks_text_search(name => $name, text => $text, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -10479,7 +10538,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. | 
  **text** | **string**| Text sample. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -10508,7 +10567,7 @@ use AsposeCellsCloud::CellsApi;
 my $api_instance = AsposeCellsCloud::CellsApi->new(
 );
 
-my $workbook = AsposeCellsCloud::Object::string->new(); # string | 
+my $workbook = AsposeCellsCloud::Object::string->new(); # string | File to convert
 my $format = 'format_example'; # string | The format to convert.
 my $password = 'password_example'; # string | The workbook password.
 my $out_path = 'out_path_example'; # string | Path to save result
@@ -10526,7 +10585,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workbook** | **string**|  | 
+ **workbook** | **string**| File to convert | 
  **format** | **string**| The format to convert. | [optional] 
  **password** | **string**| The workbook password. | [optional] 
  **out_path** | **string**| Path to save result | [optional] 
@@ -10547,7 +10606,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_put_document_protect_from_changes**
-> CellsCloudResponse cells_workbook_put_document_protect_from_changes(name => $name, password => $password, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_workbook_put_document_protect_from_changes(name => $name, password => $password, folder => $folder, storage_name => $storage_name)
 
 Protect document from changes.
 
@@ -10561,10 +10620,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Document name.
 my $password = AsposeCellsCloud::Object::PasswordRequest->new(); # PasswordRequest | Modification password.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_put_document_protect_from_changes(name => $name, password => $password, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_put_document_protect_from_changes(name => $name, password => $password, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -10579,7 +10638,57 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. | 
  **password** | [**PasswordRequest**](PasswordRequest.md)| Modification password. | [optional] 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cells_workbook_put_workbook_background**
+> CellsCloudResponse cells_workbook_put_workbook_background(name => $name, png => $png, folder => $folder, storage_name => $storage_name)
+
+Set workbook background image.
+
+### Example 
+```perl
+use Data::Dumper;
+use AsposeCellsCloud::CellsApi;
+my $api_instance = AsposeCellsCloud::CellsApi->new(
+);
+
+my $name = 'name_example'; # string | 
+my $png = AsposeCellsCloud::Object::string->new(); # string | 
+my $folder = 'folder_example'; # string | 
+my $storage_name = 'storage_name_example'; # string | storage name.
+
+eval { 
+    my $result = $api_instance->cells_workbook_put_workbook_background(name => $name, png => $png, folder => $folder, storage_name => $storage_name);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling CellsApi->cells_workbook_put_workbook_background: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  | 
+ **png** | **string**|  | 
+ **folder** | **string**|  | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -10597,7 +10706,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_workbook_put_workbook_create**
-> WorkbookResponse cells_workbook_put_workbook_create(name => $name, template_file => $template_file, data_file => $data_file, folder => $folder, storage => $storage)
+> WorkbookResponse cells_workbook_put_workbook_create(name => $name, template_file => $template_file, data_file => $data_file, is_write_over => $is_write_over, folder => $folder, storage_name => $storage_name)
 
 Create new workbook using deferent methods.
 
@@ -10611,11 +10720,12 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | The new document name.
 my $template_file = 'template_file_example'; # string | The template file, if the data not provided default workbook is created.
 my $data_file = 'data_file_example'; # string | Smart marker data file, if the data not provided the request content is checked for the data.
+my $is_write_over = 1; # boolean | write over file.
 my $folder = 'folder_example'; # string | The new document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_workbook_put_workbook_create(name => $name, template_file => $template_file, data_file => $data_file, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_workbook_put_workbook_create(name => $name, template_file => $template_file, data_file => $data_file, is_write_over => $is_write_over, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -10630,8 +10740,9 @@ Name | Type | Description  | Notes
  **name** | **string**| The new document name. | 
  **template_file** | **string**| The template file, if the data not provided default workbook is created. | [optional] 
  **data_file** | **string**| Smart marker data file, if the data not provided the request content is checked for the data. | [optional] 
+ **is_write_over** | **boolean**| write over file. | [optional] 
  **folder** | **string**| The new document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -10648,8 +10759,58 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **cells_workbook_put_workbook_water_marker**
+> CellsCloudResponse cells_workbook_put_workbook_water_marker(name => $name, folder => $folder, storage_name => $storage_name, text_water_marker_request => $text_water_marker_request)
+
+Set workbook background image.
+
+### Example 
+```perl
+use Data::Dumper;
+use AsposeCellsCloud::CellsApi;
+my $api_instance = AsposeCellsCloud::CellsApi->new(
+);
+
+my $name = 'name_example'; # string | 
+my $folder = 'folder_example'; # string | 
+my $storage_name = 'storage_name_example'; # string | storage name.
+my $text_water_marker_request = AsposeCellsCloud::Object::TextWaterMarkerRequest->new(); # TextWaterMarkerRequest | The text water marker request.
+
+eval { 
+    my $result = $api_instance->cells_workbook_put_workbook_water_marker(name => $name, folder => $folder, storage_name => $storage_name, text_water_marker_request => $text_water_marker_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling CellsApi->cells_workbook_put_workbook_water_marker: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  | 
+ **folder** | **string**|  | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
+ **text_water_marker_request** | [**TextWaterMarkerRequest**](TextWaterMarkerRequest.md)| The text water marker request. | [optional] 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **cells_worksheet_validations_delete_worksheet_validation**
-> ValidationResponse cells_worksheet_validations_delete_worksheet_validation(name => $name, sheet_name => $sheet_name, validation_index => $validation_index, folder => $folder, storage => $storage)
+> ValidationResponse cells_worksheet_validations_delete_worksheet_validation(name => $name, sheet_name => $sheet_name, validation_index => $validation_index, folder => $folder, storage_name => $storage_name)
 
 Delete worksheet validation by index.
 
@@ -10664,10 +10825,10 @@ my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $validation_index = 56; # int | The validation index.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheet_validations_delete_worksheet_validation(name => $name, sheet_name => $sheet_name, validation_index => $validation_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheet_validations_delete_worksheet_validation(name => $name, sheet_name => $sheet_name, validation_index => $validation_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -10683,7 +10844,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. | 
  **validation_index** | **int**| The validation index. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -10701,7 +10862,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheet_validations_delete_worksheet_validations**
-> CellsCloudResponse cells_worksheet_validations_delete_worksheet_validations(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_worksheet_validations_delete_worksheet_validations(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Clear all validation in worksheet.
 
@@ -10715,10 +10876,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheet_validations_delete_worksheet_validations(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheet_validations_delete_worksheet_validations(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -10733,7 +10894,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. | 
  **sheet_name** | **string**| Worksheet name. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -10751,7 +10912,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheet_validations_get_worksheet_validation**
-> ValidationResponse cells_worksheet_validations_get_worksheet_validation(name => $name, sheet_name => $sheet_name, validation_index => $validation_index, folder => $folder, storage => $storage)
+> ValidationResponse cells_worksheet_validations_get_worksheet_validation(name => $name, sheet_name => $sheet_name, validation_index => $validation_index, folder => $folder, storage_name => $storage_name)
 
 Get worksheet validation by index.
 
@@ -10766,10 +10927,10 @@ my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $validation_index = 56; # int | The validation index.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheet_validations_get_worksheet_validation(name => $name, sheet_name => $sheet_name, validation_index => $validation_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheet_validations_get_worksheet_validation(name => $name, sheet_name => $sheet_name, validation_index => $validation_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -10785,7 +10946,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. | 
  **validation_index** | **int**| The validation index. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -10803,7 +10964,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheet_validations_get_worksheet_validations**
-> ValidationsResponse cells_worksheet_validations_get_worksheet_validations(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> ValidationsResponse cells_worksheet_validations_get_worksheet_validations(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Get worksheet validations.
 
@@ -10817,10 +10978,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $folder = 'folder_example'; # string | Document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheet_validations_get_worksheet_validations(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheet_validations_get_worksheet_validations(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -10835,7 +10996,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. | 
  **sheet_name** | **string**| Worksheet name. | 
  **folder** | **string**| Document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -10853,7 +11014,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheet_validations_post_worksheet_validation**
-> ValidationResponse cells_worksheet_validations_post_worksheet_validation(name => $name, sheet_name => $sheet_name, validation_index => $validation_index, validation => $validation, folder => $folder, storage => $storage)
+> ValidationResponse cells_worksheet_validations_post_worksheet_validation(name => $name, sheet_name => $sheet_name, validation_index => $validation_index, validation => $validation, folder => $folder, storage_name => $storage_name)
 
 Update worksheet validation by index.
 
@@ -10869,10 +11030,10 @@ my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $validation_index = 56; # int | The validation index.
 my $validation = AsposeCellsCloud::Object::Validation->new(); # Validation | 
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheet_validations_post_worksheet_validation(name => $name, sheet_name => $sheet_name, validation_index => $validation_index, validation => $validation, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheet_validations_post_worksheet_validation(name => $name, sheet_name => $sheet_name, validation_index => $validation_index, validation => $validation, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -10889,7 +11050,7 @@ Name | Type | Description  | Notes
  **validation_index** | **int**| The validation index. | 
  **validation** | [**Validation**](Validation.md)|  | [optional] 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -10907,7 +11068,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheet_validations_put_worksheet_validation**
-> ValidationResponse cells_worksheet_validations_put_worksheet_validation(name => $name, sheet_name => $sheet_name, range => $range, folder => $folder, storage => $storage)
+> ValidationResponse cells_worksheet_validations_put_worksheet_validation(name => $name, sheet_name => $sheet_name, range => $range, validation => $validation, folder => $folder, storage_name => $storage_name)
 
 Add worksheet validation at index.
 
@@ -10921,11 +11082,12 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $range = 'range_example'; # string | Specified cells area
+my $validation = AsposeCellsCloud::Object::Validation->new(); # Validation | validation
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheet_validations_put_worksheet_validation(name => $name, sheet_name => $sheet_name, range => $range, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheet_validations_put_worksheet_validation(name => $name, sheet_name => $sheet_name, range => $range, validation => $validation, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -10940,8 +11102,9 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. | 
  **sheet_name** | **string**| Worksheet name. | 
  **range** | **string**| Specified cells area | [optional] 
+ **validation** | [**Validation**](Validation.md)| validation | [optional] 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -10959,7 +11122,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_delete_unprotect_worksheet**
-> WorksheetResponse cells_worksheets_delete_unprotect_worksheet(name => $name, sheet_name => $sheet_name, protect_parameter => $protect_parameter, folder => $folder, storage => $storage)
+> WorksheetResponse cells_worksheets_delete_unprotect_worksheet(name => $name, sheet_name => $sheet_name, protect_parameter => $protect_parameter, folder => $folder, storage_name => $storage_name)
 
 Unprotect worksheet.
 
@@ -10974,10 +11137,10 @@ my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $protect_parameter = AsposeCellsCloud::Object::ProtectSheetParameter->new(); # ProtectSheetParameter | with protection settings. Only password is used here.
 my $folder = 'folder_example'; # string | Document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_delete_unprotect_worksheet(name => $name, sheet_name => $sheet_name, protect_parameter => $protect_parameter, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_delete_unprotect_worksheet(name => $name, sheet_name => $sheet_name, protect_parameter => $protect_parameter, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -10993,7 +11156,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet name. | 
  **protect_parameter** | [**ProtectSheetParameter**](ProtectSheetParameter.md)| with protection settings. Only password is used here. | [optional] 
  **folder** | **string**| Document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -11011,7 +11174,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_delete_worksheet**
-> WorksheetsResponse cells_worksheets_delete_worksheet(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> WorksheetsResponse cells_worksheets_delete_worksheet(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Delete worksheet.
 
@@ -11025,10 +11188,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_delete_worksheet(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_delete_worksheet(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -11043,7 +11206,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. | 
  **sheet_name** | **string**| The worksheet name. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -11061,7 +11224,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_delete_worksheet_background**
-> CellsCloudResponse cells_worksheets_delete_worksheet_background(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_worksheets_delete_worksheet_background(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Set worksheet background image.
 
@@ -11075,10 +11238,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | 
 my $sheet_name = 'sheet_name_example'; # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_delete_worksheet_background(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_delete_worksheet_background(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -11093,7 +11256,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  | 
  **sheet_name** | **string**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -11111,7 +11274,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_delete_worksheet_comment**
-> CellsCloudResponse cells_worksheets_delete_worksheet_comment(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_worksheets_delete_worksheet_comment(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage_name => $storage_name)
 
 Delete worksheet's cell comment.
 
@@ -11126,10 +11289,10 @@ my $name = 'name_example'; # string | The document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $cell_name = 'cell_name_example'; # string | The cell name
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_delete_worksheet_comment(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_delete_worksheet_comment(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -11145,7 +11308,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet name. | 
  **cell_name** | **string**| The cell name | 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -11163,7 +11326,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_delete_worksheet_comments**
-> CellsCloudResponse cells_worksheets_delete_worksheet_comments(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_worksheets_delete_worksheet_comments(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Delete all comments for worksheet.
 
@@ -11177,10 +11340,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | 
 my $sheet_name = 'sheet_name_example'; # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_delete_worksheet_comments(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_delete_worksheet_comments(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -11195,7 +11358,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  | 
  **sheet_name** | **string**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -11213,7 +11376,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_delete_worksheet_freeze_panes**
-> CellsCloudResponse cells_worksheets_delete_worksheet_freeze_panes(name => $name, sheet_name => $sheet_name, row => $row, column => $column, freezed_rows => $freezed_rows, freezed_columns => $freezed_columns, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_worksheets_delete_worksheet_freeze_panes(name => $name, sheet_name => $sheet_name, row => $row, column => $column, freezed_rows => $freezed_rows, freezed_columns => $freezed_columns, folder => $folder, storage_name => $storage_name)
 
 Unfreeze panes
 
@@ -11231,10 +11394,10 @@ my $column = 56; # int |
 my $freezed_rows = 56; # int | 
 my $freezed_columns = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_delete_worksheet_freeze_panes(name => $name, sheet_name => $sheet_name, row => $row, column => $column, freezed_rows => $freezed_rows, freezed_columns => $freezed_columns, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_delete_worksheet_freeze_panes(name => $name, sheet_name => $sheet_name, row => $row, column => $column, freezed_rows => $freezed_rows, freezed_columns => $freezed_columns, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -11253,7 +11416,7 @@ Name | Type | Description  | Notes
  **freezed_rows** | **int**|  | 
  **freezed_columns** | **int**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -11271,7 +11434,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_get_named_ranges**
-> RangesResponse cells_worksheets_get_named_ranges(name => $name, folder => $folder, storage => $storage)
+> RangesResponse cells_worksheets_get_named_ranges(name => $name, folder => $folder, storage_name => $storage_name)
 
 Read worksheets ranges info.
 
@@ -11284,10 +11447,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 
 my $name = 'name_example'; # string | Document name.
 my $folder = 'folder_example'; # string | Document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_get_named_ranges(name => $name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_get_named_ranges(name => $name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -11301,7 +11464,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| Document name. | 
  **folder** | **string**| Document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -11319,7 +11482,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_get_worksheet**
-> string cells_worksheets_get_worksheet(name => $name, sheet_name => $sheet_name, format => $format, vertical_resolution => $vertical_resolution, horizontal_resolution => $horizontal_resolution, folder => $folder, storage => $storage)
+> string cells_worksheets_get_worksheet(name => $name, sheet_name => $sheet_name, format => $format, vertical_resolution => $vertical_resolution, horizontal_resolution => $horizontal_resolution, area => $area, page_index => $page_index, folder => $folder, storage_name => $storage_name)
 
 Read worksheet info or export.
 
@@ -11335,11 +11498,13 @@ my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $format = 'format_example'; # string | The exported file format.
 my $vertical_resolution = 56; # int | Image vertical resolution.
 my $horizontal_resolution = 56; # int | Image horizontal resolution.
+my $area = 'area_example'; # string | Exported area.
+my $page_index = 56; # int | Exported page index.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_get_worksheet(name => $name, sheet_name => $sheet_name, format => $format, vertical_resolution => $vertical_resolution, horizontal_resolution => $horizontal_resolution, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_get_worksheet(name => $name, sheet_name => $sheet_name, format => $format, vertical_resolution => $vertical_resolution, horizontal_resolution => $horizontal_resolution, area => $area, page_index => $page_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -11356,8 +11521,10 @@ Name | Type | Description  | Notes
  **format** | **string**| The exported file format. | [optional] 
  **vertical_resolution** | **int**| Image vertical resolution. | [optional] [default to 0]
  **horizontal_resolution** | **int**| Image horizontal resolution. | [optional] [default to 0]
+ **area** | **string**| Exported area. | [optional] 
+ **page_index** | **int**| Exported page index. | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -11375,7 +11542,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_get_worksheet_calculate_formula**
-> SingleValueResponse cells_worksheets_get_worksheet_calculate_formula(name => $name, sheet_name => $sheet_name, formula => $formula, folder => $folder, storage => $storage)
+> SingleValueResponse cells_worksheets_get_worksheet_calculate_formula(name => $name, sheet_name => $sheet_name, formula => $formula, folder => $folder, storage_name => $storage_name)
 
 Calculate formula value.
 
@@ -11390,10 +11557,10 @@ my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $formula = 'formula_example'; # string | The formula.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_get_worksheet_calculate_formula(name => $name, sheet_name => $sheet_name, formula => $formula, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_get_worksheet_calculate_formula(name => $name, sheet_name => $sheet_name, formula => $formula, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -11409,7 +11576,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. | 
  **formula** | **string**| The formula. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -11427,7 +11594,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_get_worksheet_comment**
-> CommentResponse cells_worksheets_get_worksheet_comment(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage => $storage)
+> CommentResponse cells_worksheets_get_worksheet_comment(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage_name => $storage_name)
 
 Get worksheet comment by cell name.
 
@@ -11442,10 +11609,10 @@ my $name = 'name_example'; # string | The document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $cell_name = 'cell_name_example'; # string | The cell name
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_get_worksheet_comment(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_get_worksheet_comment(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -11461,7 +11628,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet name. | 
  **cell_name** | **string**| The cell name | 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -11479,7 +11646,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_get_worksheet_comments**
-> CommentsResponse cells_worksheets_get_worksheet_comments(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> CommentsResponse cells_worksheets_get_worksheet_comments(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Get worksheet comments.
 
@@ -11493,10 +11660,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Workbook name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_get_worksheet_comments(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_get_worksheet_comments(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -11511,7 +11678,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Workbook name. | 
  **sheet_name** | **string**| The worksheet name. | 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -11529,7 +11696,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_get_worksheet_merged_cell**
-> MergedCellResponse cells_worksheets_get_worksheet_merged_cell(name => $name, sheet_name => $sheet_name, merged_cell_index => $merged_cell_index, folder => $folder, storage => $storage)
+> MergedCellResponse cells_worksheets_get_worksheet_merged_cell(name => $name, sheet_name => $sheet_name, merged_cell_index => $merged_cell_index, folder => $folder, storage_name => $storage_name)
 
 Get worksheet merged cell by its index.
 
@@ -11544,10 +11711,10 @@ my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $merged_cell_index = 56; # int | Merged cell index.
 my $folder = 'folder_example'; # string | Document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_get_worksheet_merged_cell(name => $name, sheet_name => $sheet_name, merged_cell_index => $merged_cell_index, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_get_worksheet_merged_cell(name => $name, sheet_name => $sheet_name, merged_cell_index => $merged_cell_index, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -11563,7 +11730,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. | 
  **merged_cell_index** | **int**| Merged cell index. | 
  **folder** | **string**| Document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -11581,7 +11748,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_get_worksheet_merged_cells**
-> MergedCellsResponse cells_worksheets_get_worksheet_merged_cells(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> MergedCellsResponse cells_worksheets_get_worksheet_merged_cells(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Get worksheet merged cells.
 
@@ -11595,10 +11762,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The workseet name.
 my $folder = 'folder_example'; # string | Document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_get_worksheet_merged_cells(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_get_worksheet_merged_cells(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -11613,7 +11780,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. | 
  **sheet_name** | **string**| The workseet name. | 
  **folder** | **string**| Document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -11631,7 +11798,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_get_worksheet_text_items**
-> TextItemsResponse cells_worksheets_get_worksheet_text_items(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage)
+> TextItemsResponse cells_worksheets_get_worksheet_text_items(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name)
 
 Get worksheet text items.
 
@@ -11645,10 +11812,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 my $name = 'name_example'; # string | Workbook name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $folder = 'folder_example'; # string | The workbook's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_get_worksheet_text_items(name => $name, sheet_name => $sheet_name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_get_worksheet_text_items(name => $name, sheet_name => $sheet_name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -11663,7 +11830,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Workbook name. | 
  **sheet_name** | **string**| The worksheet name. | 
  **folder** | **string**| The workbook&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -11681,7 +11848,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_get_worksheets**
-> WorksheetsResponse cells_worksheets_get_worksheets(name => $name, folder => $folder, storage => $storage)
+> WorksheetsResponse cells_worksheets_get_worksheets(name => $name, folder => $folder, storage_name => $storage_name)
 
 Read worksheets info.
 
@@ -11694,10 +11861,10 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 
 my $name = 'name_example'; # string | Document name.
 my $folder = 'folder_example'; # string | Document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_get_worksheets(name => $name, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_get_worksheets(name => $name, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -11711,7 +11878,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| Document name. | 
  **folder** | **string**| Document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -11729,7 +11896,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_post_autofit_worksheet_columns**
-> CellsCloudResponse cells_worksheets_post_autofit_worksheet_columns(name => $name, sheet_name => $sheet_name, first_column => $first_column, last_column => $last_column, auto_fitter_options => $auto_fitter_options, first_row => $first_row, last_row => $last_row, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_worksheets_post_autofit_worksheet_columns(name => $name, sheet_name => $sheet_name, first_column => $first_column, last_column => $last_column, auto_fitter_options => $auto_fitter_options, first_row => $first_row, last_row => $last_row, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -11748,10 +11915,10 @@ my $auto_fitter_options = AsposeCellsCloud::Object::AutoFitterOptions->new(); # 
 my $first_row = 56; # int | 
 my $last_row = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_post_autofit_worksheet_columns(name => $name, sheet_name => $sheet_name, first_column => $first_column, last_column => $last_column, auto_fitter_options => $auto_fitter_options, first_row => $first_row, last_row => $last_row, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_post_autofit_worksheet_columns(name => $name, sheet_name => $sheet_name, first_column => $first_column, last_column => $last_column, auto_fitter_options => $auto_fitter_options, first_row => $first_row, last_row => $last_row, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -11771,7 +11938,7 @@ Name | Type | Description  | Notes
  **first_row** | **int**|  | [optional] 
  **last_row** | **int**|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -11789,7 +11956,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_post_autofit_worksheet_row**
-> CellsCloudResponse cells_worksheets_post_autofit_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, first_column => $first_column, last_column => $last_column, auto_fitter_options => $auto_fitter_options, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_worksheets_post_autofit_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, first_column => $first_column, last_column => $last_column, auto_fitter_options => $auto_fitter_options, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -11807,10 +11974,10 @@ my $first_column = 56; # int |
 my $last_column = 56; # int | 
 my $auto_fitter_options = AsposeCellsCloud::Object::AutoFitterOptions->new(); # AutoFitterOptions | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_post_autofit_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, first_column => $first_column, last_column => $last_column, auto_fitter_options => $auto_fitter_options, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_post_autofit_worksheet_row(name => $name, sheet_name => $sheet_name, row_index => $row_index, first_column => $first_column, last_column => $last_column, auto_fitter_options => $auto_fitter_options, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -11829,7 +11996,7 @@ Name | Type | Description  | Notes
  **last_column** | **int**|  | 
  **auto_fitter_options** | [**AutoFitterOptions**](AutoFitterOptions.md)|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -11847,7 +12014,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_post_autofit_worksheet_rows**
-> CellsCloudResponse cells_worksheets_post_autofit_worksheet_rows(name => $name, sheet_name => $sheet_name, auto_fitter_options => $auto_fitter_options, start_row => $start_row, end_row => $end_row, only_auto => $only_auto, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_worksheets_post_autofit_worksheet_rows(name => $name, sheet_name => $sheet_name, auto_fitter_options => $auto_fitter_options, start_row => $start_row, end_row => $end_row, only_auto => $only_auto, folder => $folder, storage_name => $storage_name)
 
 Autofit worksheet rows.
 
@@ -11865,10 +12032,10 @@ my $start_row = 56; # int | Start row.
 my $end_row = 56; # int | End row.
 my $only_auto = 1; # boolean | Only auto.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_post_autofit_worksheet_rows(name => $name, sheet_name => $sheet_name, auto_fitter_options => $auto_fitter_options, start_row => $start_row, end_row => $end_row, only_auto => $only_auto, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_post_autofit_worksheet_rows(name => $name, sheet_name => $sheet_name, auto_fitter_options => $auto_fitter_options, start_row => $start_row, end_row => $end_row, only_auto => $only_auto, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -11887,7 +12054,7 @@ Name | Type | Description  | Notes
  **end_row** | **int**| End row. | [optional] 
  **only_auto** | **boolean**| Only auto. | [optional] [default to false]
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -11905,7 +12072,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_post_copy_worksheet**
-> CellsCloudResponse cells_worksheets_post_copy_worksheet(name => $name, sheet_name => $sheet_name, source_sheet => $source_sheet, options => $options, source_workbook => $source_workbook, source_folder => $source_folder, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_worksheets_post_copy_worksheet(name => $name, sheet_name => $sheet_name, source_sheet => $source_sheet, options => $options, source_workbook => $source_workbook, source_folder => $source_folder, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -11923,10 +12090,10 @@ my $options = AsposeCellsCloud::Object::CopyOptions->new(); # CopyOptions |
 my $source_workbook = 'source_workbook_example'; # string | 
 my $source_folder = 'source_folder_example'; # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_post_copy_worksheet(name => $name, sheet_name => $sheet_name, source_sheet => $source_sheet, options => $options, source_workbook => $source_workbook, source_folder => $source_folder, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_post_copy_worksheet(name => $name, sheet_name => $sheet_name, source_sheet => $source_sheet, options => $options, source_workbook => $source_workbook, source_folder => $source_folder, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -11945,7 +12112,7 @@ Name | Type | Description  | Notes
  **source_workbook** | **string**|  | [optional] 
  **source_folder** | **string**|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -11963,7 +12130,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_post_move_worksheet**
-> WorksheetsResponse cells_worksheets_post_move_worksheet(name => $name, sheet_name => $sheet_name, moving => $moving, folder => $folder, storage => $storage)
+> WorksheetsResponse cells_worksheets_post_move_worksheet(name => $name, sheet_name => $sheet_name, moving => $moving, folder => $folder, storage_name => $storage_name)
 
 Move worksheet.
 
@@ -11978,10 +12145,10 @@ my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $moving = AsposeCellsCloud::Object::WorksheetMovingRequest->new(); # WorksheetMovingRequest | with moving parameters.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_post_move_worksheet(name => $name, sheet_name => $sheet_name, moving => $moving, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_post_move_worksheet(name => $name, sheet_name => $sheet_name, moving => $moving, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -11997,7 +12164,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet name. | 
  **moving** | [**WorksheetMovingRequest**](WorksheetMovingRequest.md)| with moving parameters. | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -12015,7 +12182,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_post_rename_worksheet**
-> CellsCloudResponse cells_worksheets_post_rename_worksheet(name => $name, sheet_name => $sheet_name, newname => $newname, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_worksheets_post_rename_worksheet(name => $name, sheet_name => $sheet_name, newname => $newname, folder => $folder, storage_name => $storage_name)
 
 Rename worksheet
 
@@ -12030,10 +12197,10 @@ my $name = 'name_example'; # string |
 my $sheet_name = 'sheet_name_example'; # string | 
 my $newname = 'newname_example'; # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_post_rename_worksheet(name => $name, sheet_name => $sheet_name, newname => $newname, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_post_rename_worksheet(name => $name, sheet_name => $sheet_name, newname => $newname, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -12049,7 +12216,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  | 
  **newname** | **string**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -12067,7 +12234,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_post_update_worksheet_property**
-> WorksheetResponse cells_worksheets_post_update_worksheet_property(name => $name, sheet_name => $sheet_name, sheet => $sheet, folder => $folder, storage => $storage)
+> WorksheetResponse cells_worksheets_post_update_worksheet_property(name => $name, sheet_name => $sheet_name, sheet => $sheet, folder => $folder, storage_name => $storage_name)
 
 Update worksheet property
 
@@ -12082,10 +12249,10 @@ my $name = 'name_example'; # string |
 my $sheet_name = 'sheet_name_example'; # string | 
 my $sheet = AsposeCellsCloud::Object::Worksheet->new(); # Worksheet | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_post_update_worksheet_property(name => $name, sheet_name => $sheet_name, sheet => $sheet, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_post_update_worksheet_property(name => $name, sheet_name => $sheet_name, sheet => $sheet, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -12101,7 +12268,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  | 
  **sheet** | [**Worksheet**](Worksheet.md)|  | [optional] 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -12119,7 +12286,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_post_update_worksheet_zoom**
-> CellsCloudResponse cells_worksheets_post_update_worksheet_zoom(name => $name, sheet_name => $sheet_name, value => $value, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_worksheets_post_update_worksheet_zoom(name => $name, sheet_name => $sheet_name, value => $value, folder => $folder, storage_name => $storage_name)
 
 
 
@@ -12134,10 +12301,10 @@ my $name = 'name_example'; # string |
 my $sheet_name = 'sheet_name_example'; # string | 
 my $value = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_post_update_worksheet_zoom(name => $name, sheet_name => $sheet_name, value => $value, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_post_update_worksheet_zoom(name => $name, sheet_name => $sheet_name, value => $value, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -12153,7 +12320,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  | 
  **value** | **int**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -12171,7 +12338,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_post_worksheet_comment**
-> CellsCloudResponse cells_worksheets_post_worksheet_comment(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, comment => $comment, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_worksheets_post_worksheet_comment(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, comment => $comment, folder => $folder, storage_name => $storage_name)
 
 Update worksheet's cell comment.
 
@@ -12187,10 +12354,10 @@ my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $cell_name = 'cell_name_example'; # string | The cell name
 my $comment = AsposeCellsCloud::Object::Comment->new(); # Comment | Comment object
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_post_worksheet_comment(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, comment => $comment, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_post_worksheet_comment(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, comment => $comment, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -12207,7 +12374,7 @@ Name | Type | Description  | Notes
  **cell_name** | **string**| The cell name | 
  **comment** | [**Comment**](Comment.md)| Comment object | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -12225,7 +12392,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_post_worksheet_range_sort**
-> CellsCloudResponse cells_worksheets_post_worksheet_range_sort(name => $name, sheet_name => $sheet_name, cell_area => $cell_area, data_sorter => $data_sorter, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_worksheets_post_worksheet_range_sort(name => $name, sheet_name => $sheet_name, cell_area => $cell_area, data_sorter => $data_sorter, folder => $folder, storage_name => $storage_name)
 
 Sort worksheet range.
 
@@ -12241,10 +12408,10 @@ my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $cell_area = 'cell_area_example'; # string | The range to sort.
 my $data_sorter = AsposeCellsCloud::Object::DataSorter->new(); # DataSorter | with sorting settings.
 my $folder = 'folder_example'; # string | The workbook folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_post_worksheet_range_sort(name => $name, sheet_name => $sheet_name, cell_area => $cell_area, data_sorter => $data_sorter, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_post_worksheet_range_sort(name => $name, sheet_name => $sheet_name, cell_area => $cell_area, data_sorter => $data_sorter, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -12261,7 +12428,7 @@ Name | Type | Description  | Notes
  **cell_area** | **string**| The range to sort. | 
  **data_sorter** | [**DataSorter**](DataSorter.md)| with sorting settings. | [optional] 
  **folder** | **string**| The workbook folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -12279,7 +12446,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_post_worksheet_text_search**
-> TextItemsResponse cells_worksheets_post_worksheet_text_search(name => $name, sheet_name => $sheet_name, text => $text, folder => $folder, storage => $storage)
+> TextItemsResponse cells_worksheets_post_worksheet_text_search(name => $name, sheet_name => $sheet_name, text => $text, folder => $folder, storage_name => $storage_name)
 
 Search text.
 
@@ -12294,10 +12461,10 @@ my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $text = 'text_example'; # string | Text to search.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_post_worksheet_text_search(name => $name, sheet_name => $sheet_name, text => $text, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_post_worksheet_text_search(name => $name, sheet_name => $sheet_name, text => $text, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -12313,7 +12480,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet name. | 
  **text** | **string**| Text to search. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -12331,7 +12498,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_post_worsheet_text_replace**
-> WorksheetReplaceResponse cells_worksheets_post_worsheet_text_replace(name => $name, sheet_name => $sheet_name, old_value => $old_value, new_value => $new_value, folder => $folder, storage => $storage)
+> WorksheetReplaceResponse cells_worksheets_post_worsheet_text_replace(name => $name, sheet_name => $sheet_name, old_value => $old_value, new_value => $new_value, folder => $folder, storage_name => $storage_name)
 
 Replace text.
 
@@ -12347,10 +12514,10 @@ my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $old_value = 'old_value_example'; # string | The old text to replace.
 my $new_value = 'new_value_example'; # string | The new text to replace by.
 my $folder = 'folder_example'; # string | Document's folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_post_worsheet_text_replace(name => $name, sheet_name => $sheet_name, old_value => $old_value, new_value => $new_value, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_post_worsheet_text_replace(name => $name, sheet_name => $sheet_name, old_value => $old_value, new_value => $new_value, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -12367,7 +12534,7 @@ Name | Type | Description  | Notes
  **old_value** | **string**| The old text to replace. | 
  **new_value** | **string**| The new text to replace by. | 
  **folder** | **string**| Document&#39;s folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -12385,7 +12552,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_put_add_new_worksheet**
-> WorksheetsResponse cells_worksheets_put_add_new_worksheet(name => $name, sheet_name => $sheet_name, position => $position, sheettype => $sheettype, folder => $folder, storage => $storage)
+> WorksheetsResponse cells_worksheets_put_add_new_worksheet(name => $name, sheet_name => $sheet_name, position => $position, sheettype => $sheettype, folder => $folder, storage_name => $storage_name)
 
 Add new worksheet.
 
@@ -12401,10 +12568,10 @@ my $sheet_name = 'sheet_name_example'; # string | The new sheet name.
 my $position = 56; # int | The new sheet position.
 my $sheettype = 'sheettype_example'; # string | The new sheet type.
 my $folder = 'folder_example'; # string | Document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_put_add_new_worksheet(name => $name, sheet_name => $sheet_name, position => $position, sheettype => $sheettype, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_put_add_new_worksheet(name => $name, sheet_name => $sheet_name, position => $position, sheettype => $sheettype, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -12421,7 +12588,7 @@ Name | Type | Description  | Notes
  **position** | **int**| The new sheet position. | [optional] 
  **sheettype** | **string**| The new sheet type. | [optional] 
  **folder** | **string**| Document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -12439,7 +12606,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_put_change_visibility_worksheet**
-> WorksheetResponse cells_worksheets_put_change_visibility_worksheet(name => $name, sheet_name => $sheet_name, is_visible => $is_visible, folder => $folder, storage => $storage)
+> WorksheetResponse cells_worksheets_put_change_visibility_worksheet(name => $name, sheet_name => $sheet_name, is_visible => $is_visible, folder => $folder, storage_name => $storage_name)
 
 Change worksheet visibility.
 
@@ -12454,10 +12621,10 @@ my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | Worksheet name.
 my $is_visible = 1; # boolean | New worksheet visibility value.
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_put_change_visibility_worksheet(name => $name, sheet_name => $sheet_name, is_visible => $is_visible, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_put_change_visibility_worksheet(name => $name, sheet_name => $sheet_name, is_visible => $is_visible, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -12473,7 +12640,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. | 
  **is_visible** | **boolean**| New worksheet visibility value. | 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -12491,7 +12658,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_put_protect_worksheet**
-> WorksheetResponse cells_worksheets_put_protect_worksheet(name => $name, sheet_name => $sheet_name, protect_parameter => $protect_parameter, folder => $folder, storage => $storage)
+> WorksheetResponse cells_worksheets_put_protect_worksheet(name => $name, sheet_name => $sheet_name, protect_parameter => $protect_parameter, folder => $folder, storage_name => $storage_name)
 
 Protect worksheet.
 
@@ -12506,10 +12673,10 @@ my $name = 'name_example'; # string | Document name.
 my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $protect_parameter = AsposeCellsCloud::Object::ProtectSheetParameter->new(); # ProtectSheetParameter | with protection settings.
 my $folder = 'folder_example'; # string | Document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_put_protect_worksheet(name => $name, sheet_name => $sheet_name, protect_parameter => $protect_parameter, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_put_protect_worksheet(name => $name, sheet_name => $sheet_name, protect_parameter => $protect_parameter, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -12525,7 +12692,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet name. | 
  **protect_parameter** | [**ProtectSheetParameter**](ProtectSheetParameter.md)| with protection settings. | [optional] 
  **folder** | **string**| Document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -12543,7 +12710,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_put_worksheet_background**
-> CellsCloudResponse cells_worksheets_put_worksheet_background(name => $name, sheet_name => $sheet_name, png => $png, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_worksheets_put_worksheet_background(name => $name, sheet_name => $sheet_name, png => $png, folder => $folder, storage_name => $storage_name)
 
 Set worksheet background image.
 
@@ -12558,10 +12725,10 @@ my $name = 'name_example'; # string |
 my $sheet_name = 'sheet_name_example'; # string | 
 my $png = AsposeCellsCloud::Object::string->new(); # string | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_put_worksheet_background(name => $name, sheet_name => $sheet_name, png => $png, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_put_worksheet_background(name => $name, sheet_name => $sheet_name, png => $png, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -12577,7 +12744,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  | 
  **png** | **string**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -12595,7 +12762,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_put_worksheet_comment**
-> CommentResponse cells_worksheets_put_worksheet_comment(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, comment => $comment, folder => $folder, storage => $storage)
+> CommentResponse cells_worksheets_put_worksheet_comment(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, comment => $comment, folder => $folder, storage_name => $storage_name)
 
 Add worksheet's cell comment.
 
@@ -12611,10 +12778,10 @@ my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
 my $cell_name = 'cell_name_example'; # string | The cell name
 my $comment = AsposeCellsCloud::Object::Comment->new(); # Comment | Comment object
 my $folder = 'folder_example'; # string | The document folder.
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_put_worksheet_comment(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, comment => $comment, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_put_worksheet_comment(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, comment => $comment, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -12631,7 +12798,7 @@ Name | Type | Description  | Notes
  **cell_name** | **string**| The cell name | 
  **comment** | [**Comment**](Comment.md)| Comment object | [optional] 
  **folder** | **string**| The document folder. | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -12649,7 +12816,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_worksheets_put_worksheet_freeze_panes**
-> CellsCloudResponse cells_worksheets_put_worksheet_freeze_panes(name => $name, sheet_name => $sheet_name, row => $row, column => $column, freezed_rows => $freezed_rows, freezed_columns => $freezed_columns, folder => $folder, storage => $storage)
+> CellsCloudResponse cells_worksheets_put_worksheet_freeze_panes(name => $name, sheet_name => $sheet_name, row => $row, column => $column, freezed_rows => $freezed_rows, freezed_columns => $freezed_columns, folder => $folder, storage_name => $storage_name)
 
 Set freeze panes
 
@@ -12667,10 +12834,10 @@ my $column = 56; # int |
 my $freezed_rows = 56; # int | 
 my $freezed_columns = 56; # int | 
 my $folder = 'folder_example'; # string | 
-my $storage = 'storage_example'; # string | storage name.
+my $storage_name = 'storage_name_example'; # string | storage name.
 
 eval { 
-    my $result = $api_instance->cells_worksheets_put_worksheet_freeze_panes(name => $name, sheet_name => $sheet_name, row => $row, column => $column, freezed_rows => $freezed_rows, freezed_columns => $freezed_columns, folder => $folder, storage => $storage);
+    my $result = $api_instance->cells_worksheets_put_worksheet_freeze_panes(name => $name, sheet_name => $sheet_name, row => $row, column => $column, freezed_rows => $freezed_rows, freezed_columns => $freezed_columns, folder => $folder, storage_name => $storage_name);
     print Dumper($result);
 };
 if ($@) {
@@ -12689,7 +12856,7 @@ Name | Type | Description  | Notes
  **freezed_rows** | **int**|  | 
  **freezed_columns** | **int**|  | 
  **folder** | **string**|  | [optional] 
- **storage** | **string**| storage name. | [optional] 
+ **storage_name** | **string**| storage name. | [optional] 
 
 ### Return type
 
@@ -13382,7 +13549,7 @@ my $api_instance = AsposeCellsCloud::CellsApi->new(
 );
 
 my $path = 'path_example'; # string | Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.             
-my $file = 'file_example'; # string | File to upload
+my $file = AsposeCellsCloud::Object::string->new(); # string | File to upload
 my $storage_name = 'storage_name_example'; # string | Storage name
 
 eval { 

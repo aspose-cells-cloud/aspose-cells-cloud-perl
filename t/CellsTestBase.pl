@@ -52,7 +52,7 @@ sub get_client
 sub ready_file 
 {
     my  %args = @_;
-    my $path = "D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\".$args{'file'};
+    my $path = "D:\\Projects\\Aspose\\Aspose.Cells.Cloud.SDK\\src\\TestData\\".$args{'file'};
     my @fileinfos = stat( $path );
     my $filelength = $fileinfos[7];    
     

@@ -24,7 +24,7 @@ SOFTWARE.
 =cut
 
 
-package AsposeCellsCloud::Object::SplitResult;
+package AsposeCellsCloud::Object::CellsCloudFileInfo;
 
 require 5.6.0;
 use strict;
@@ -37,7 +37,6 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use AsposeCellsCloud::Object::CellsCloudFileInfo;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -121,14 +120,35 @@ sub _deserialize {
 
 
 __PACKAGE__->class_documentation({description => '',
-                                  class => 'SplitResult',
+                                  class => 'CellsCloudFileInfo',
                                   required => [], # TODO
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'documents' => {
-    	datatype => 'ARRAY[CellsCloudFileInfo]',
-    	base_name => 'Documents',
+    'name' => {
+    	datatype => 'string',
+    	base_name => 'Name',
+    	description => '',
+    	format => '',
+    	read_only => '',
+    		},
+    'size' => {
+    	datatype => 'int',
+    	base_name => 'Size',
+    	description => '',
+    	format => '',
+    	read_only => '',
+    		},
+    'folder' => {
+    	datatype => 'string',
+    	base_name => 'Folder',
+    	description => '',
+    	format => '',
+    	read_only => '',
+    		},
+    'storage' => {
+    	datatype => 'string',
+    	base_name => 'Storage',
     	description => '',
     	format => '',
     	read_only => '',
@@ -136,11 +156,17 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->swagger_types( {
-    'documents' => 'ARRAY[CellsCloudFileInfo]'
+    'name' => 'string',
+    'size' => 'int',
+    'folder' => 'string',
+    'storage' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
-    'documents' => 'Documents'
+    'name' => 'Name',
+    'size' => 'Size',
+    'folder' => 'Folder',
+    'storage' => 'Storage'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

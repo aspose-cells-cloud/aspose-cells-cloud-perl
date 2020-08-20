@@ -1,14 +1,17 @@
-# AsposeCellsCloud::Object::SaveResult
+# AsposeCellsCloud::Object::CellsCloudFileInfo
 
 ## Load the model package
 ```perl
-use AsposeCellsCloud::Object::SaveResult;
+use AsposeCellsCloud::Object::CellsCloudFileInfo;
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**documents** | [**ARRAY[CellsCloudFileInfo]**](CellsCloudFileInfo.md) |  | [optional] 
+**name** | **string** |  | [optional] 
+**size** | **int** |  | 
+**folder** | **string** |  | [optional] 
+**storage** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

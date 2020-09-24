@@ -33,7 +33,7 @@ use AsposeCellsCloud::Object::ConditionalFormattingValue;
 use AsposeCellsCloud::Object::FontSetting;
 use AsposeCellsCloud::Object::Style;
 
-require 't\CellsTestBase.pl';
+require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
 
 my $result =undef;
 my $BOOK1 = 'Book1.xlsx';
@@ -52,11 +52,7 @@ my $CELLNAME = 'A1';
 my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
 
-
 my $api = get_client();
-isa_ok($api, 'AsposeCellsCloud::CellsApi');
-
-
 # cells_conditional_formattings_get_worksheet_conditional_formatting test
 #
 {

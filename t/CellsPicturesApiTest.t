@@ -25,16 +25,15 @@ use strict;
 use warnings;
 
 
-use_ok('AsposeCellsCloud::Configuration');
-use_ok('AsposeCellsCloud::ApiClient');
-use_ok('AsposeCellsCloud::CellsApi');
-use_ok('AsposeCellsCloud::Object::ColumnsResponse');
-use_ok('AsposeCellsCloud::Object::Picture');
-use_ok('AsposeCellsCloud::Object::FontSetting');
-use_ok('AsposeCellsCloud::Object::Style');
+use AsposeCellsCloud::Configuration;
+use AsposeCellsCloud::ApiClient;
+use AsposeCellsCloud::CellsApi;
+use AsposeCellsCloud::Object::ColumnsResponse;
+use AsposeCellsCloud::Object::Picture;
+use AsposeCellsCloud::Object::FontSetting;
+use AsposeCellsCloud::Object::Style;
 
-
-require 't\CellsTestBase.pl';
+require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
 
 my $result =undef;
 my $BOOK1 = 'Book1.xlsx';
@@ -53,10 +52,7 @@ my $CELLNAME = 'A1';
 my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
 
-use_ok('AsposeCellsCloud::CellsApi');
-
 my $api = get_client();
-isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #
 # cells_pictures_put_worksheet_add_picture test

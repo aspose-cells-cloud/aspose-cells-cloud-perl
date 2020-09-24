@@ -23,8 +23,6 @@ use Test::Exception;
 use lib 'lib';
 use strict;
 use warnings;
-require 't\CellsTestBase.pl';
-
 use AsposeCellsCloud::Configuration;
 use AsposeCellsCloud::ApiClient;
 use AsposeCellsCloud::CellsApi;
@@ -32,7 +30,10 @@ use AsposeCellsCloud::Object::ColumnsResponse;
 use AsposeCellsCloud::Object::CalculationOptions;
 use AsposeCellsCloud::Object::FontSetting;
 use AsposeCellsCloud::Object::Style;
+require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
 
+
+my $result =undef;
 my $BOOK1 = 'Book1.xlsx';
 my $MYDOC = 'myDocument.xlsx';
 my $PVTESTFILE = 'TestCase.xlsx';
@@ -52,19 +53,22 @@ my $CELLAREA = 'A1:C10';
 
 my $api = get_client();
 
-isa_ok($api, 'AsposeCellsCloud::CellsApi');
-
 #
 # cells_delete_worksheet_columns test
 #
 {
+    
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET1; # replace NULL with a proper value
-    my $column_index = 10; # replace NULL with a proper value
-    my $columns = 1; # replace NULL with a proper value
-    my $update_reference = 'true'; # replace NULL with a proper value
+    my $png = undef; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    # ready_file('api'=> $api, 'file'=>$BOOK1 ,'folder' =>$TEMPFOLDER) ;
-    my $result = $api->cells_delete_worksheet_columns(name => $name, sheet_name => $sheet_name, column_index => $column_index, columns => $columns, update_reference => $update_reference, folder => $folder);
-    ok($result->status eq 'OK' ,'cells_delete_worksheet_columns OK');
+	print get_path( file=> "WaterMark.png");
+    open(DATA, "<".get_path( file=> "WaterMark.png")) or die "file.txt 文件无法打开, $!";
+    binmode(DATA);
+    read (DATA, $png, 8);
+    close (DATA);
+	print  $png;
+    $result = $api->cells_worksheets_put_worksheet_background(name => $name, sheet_name => $sheet_name, png => $png, folder => $folder);
+    ok($result->status eq 'OK' ,'cells_worksheets_put_worksheet_background OK');
 }
+1;

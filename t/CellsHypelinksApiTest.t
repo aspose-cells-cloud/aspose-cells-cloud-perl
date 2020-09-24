@@ -23,8 +23,6 @@ use Test::Exception;
 use lib 'lib';
 use strict;
 use warnings;
-
-
 use AsposeCellsCloud::Configuration;
 use AsposeCellsCloud::ApiClient;
 use AsposeCellsCloud::CellsApi;
@@ -33,8 +31,7 @@ use AsposeCellsCloud::Object::CalculationOptions;
 use AsposeCellsCloud::Object::FontSetting;
 use AsposeCellsCloud::Object::Style;
 
-
-require 't\CellsTestBase.pl';
+require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
 
 my $result =undef;
 
@@ -57,7 +54,6 @@ my $CELLAREA = 'A1:C10';
 
 
 my $api = get_client();
-isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #
 # cells_hypelinks_put_worksheet_hyperlink test

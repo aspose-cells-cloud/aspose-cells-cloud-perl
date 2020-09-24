@@ -119,6 +119,8 @@ Method | HTTP request | Description
 [**cells_pivot_tables_post_pivot_table_field_hide_item**](CellsApi.md#cells_pivot_tables_post_pivot_table_field_hide_item) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Hide | 
 [**cells_pivot_tables_post_pivot_table_field_move_to**](CellsApi.md#cells_pivot_tables_post_pivot_table_field_move_to) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Move | 
 [**cells_pivot_tables_post_pivot_table_style**](CellsApi.md#cells_pivot_tables_post_pivot_table_style) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/FormatAll | Update style for pivot table
+[**cells_pivot_tables_post_pivot_table_update_pivot_field**](CellsApi.md#cells_pivot_tables_post_pivot_table_update_pivot_field) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields/{pivotFieldIndex} | 
+[**cells_pivot_tables_post_pivot_table_update_pivot_fields**](CellsApi.md#cells_pivot_tables_post_pivot_table_update_pivot_fields) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields | 
 [**cells_pivot_tables_post_worksheet_pivot_table_calculate**](CellsApi.md#cells_pivot_tables_post_worksheet_pivot_table_calculate) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Calculate | Calculates pivottable&#39;s data to cells.
 [**cells_pivot_tables_post_worksheet_pivot_table_move**](CellsApi.md#cells_pivot_tables_post_worksheet_pivot_table_move) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Move | 
 [**cells_pivot_tables_put_pivot_table_field**](CellsApi.md#cells_pivot_tables_put_pivot_table_field) | **PUT** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField | Add pivot field into into pivot table
@@ -175,6 +177,12 @@ Method | HTTP request | Description
 [**cells_shapes_get_worksheet_shapes**](CellsApi.md#cells_shapes_get_worksheet_shapes) | **GET** /cells/{name}/worksheets/{sheetName}/shapes | Get worksheet shapes 
 [**cells_shapes_post_worksheet_shape**](CellsApi.md#cells_shapes_post_worksheet_shape) | **POST** /cells/{name}/worksheets/{sheetName}/shapes/{shapeindex} | Update a shape in worksheet
 [**cells_shapes_put_worksheet_shape**](CellsApi.md#cells_shapes_put_worksheet_shape) | **PUT** /cells/{name}/worksheets/{sheetName}/shapes | Add shape in worksheet
+[**cells_sparkline_groups_delete_worksheet_sparkline_group**](CellsApi.md#cells_sparkline_groups_delete_worksheet_sparkline_group) | **DELETE** /cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineIndex} | 
+[**cells_sparkline_groups_delete_worksheet_sparkline_groups**](CellsApi.md#cells_sparkline_groups_delete_worksheet_sparkline_groups) | **DELETE** /cells/{name}/worksheets/{sheetName}/sparklinegroups | 
+[**cells_sparkline_groups_get_worksheet_sparkline_group**](CellsApi.md#cells_sparkline_groups_get_worksheet_sparkline_group) | **GET** /cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineIndex} | 
+[**cells_sparkline_groups_get_worksheet_sparkline_groups**](CellsApi.md#cells_sparkline_groups_get_worksheet_sparkline_groups) | **GET** /cells/{name}/worksheets/{sheetName}/sparklinegroups | Get worksheet charts description.
+[**cells_sparkline_groups_post_worksheet_sparkline_group**](CellsApi.md#cells_sparkline_groups_post_worksheet_sparkline_group) | **POST** /cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineIndex} | 
+[**cells_sparkline_groups_put_worksheet_sparkline_group**](CellsApi.md#cells_sparkline_groups_put_worksheet_sparkline_group) | **PUT** /cells/{name}/worksheets/{sheetName}/sparklinegroups | 
 [**cells_task_post_run_task**](CellsApi.md#cells_task_post_run_task) | **POST** /cells/task/runtask | Run tasks  
 [**cells_workbook_delete_decrypt_document**](CellsApi.md#cells_workbook_delete_decrypt_document) | **DELETE** /cells/{name}/encryption | Decrypt document.
 [**cells_workbook_delete_document_unprotect_from_changes**](CellsApi.md#cells_workbook_delete_document_unprotect_from_changes) | **DELETE** /cells/{name}/writeProtection | Unprotect document from changes.
@@ -1868,7 +1876,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cells_charts_put_worksheet_add_chart**
-> ChartsResponse cells_charts_put_worksheet_add_chart(name => $name, sheet_name => $sheet_name, chart_type => $chart_type, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, lower_right_row => $lower_right_row, lower_right_column => $lower_right_column, area => $area, is_vertical => $is_vertical, category_data => $category_data, is_auto_get_serial_name => $is_auto_get_serial_name, title => $title, folder => $folder, storage_name => $storage_name)
+> ChartsResponse cells_charts_put_worksheet_add_chart(name => $name, sheet_name => $sheet_name, chart_type => $chart_type, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, lower_right_row => $lower_right_row, lower_right_column => $lower_right_column, area => $area, is_vertical => $is_vertical, category_data => $category_data, is_auto_get_serial_name => $is_auto_get_serial_name, title => $title, folder => $folder, storage_name => $storage_name, data_labels => $data_labels, data_labels_position => $data_labels_position, pivot_table_sheet => $pivot_table_sheet, pivot_table_name => $pivot_table_name)
 
 Add new chart to worksheet.
 
@@ -1893,9 +1901,13 @@ my $is_auto_get_serial_name = 1; # boolean | Specifies whether auto update seria
 my $title = 'title_example'; # string | Specifies chart title name.
 my $folder = 'folder_example'; # string | The workbook folder.
 my $storage_name = 'storage_name_example'; # string | storage name.
+my $data_labels = 1; # boolean | 
+my $data_labels_position = 'data_labels_position_example'; # string | 
+my $pivot_table_sheet = 'pivot_table_sheet_example'; # string | 
+my $pivot_table_name = 'pivot_table_name_example'; # string | 
 
 eval { 
-    my $result = $api_instance->cells_charts_put_worksheet_add_chart(name => $name, sheet_name => $sheet_name, chart_type => $chart_type, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, lower_right_row => $lower_right_row, lower_right_column => $lower_right_column, area => $area, is_vertical => $is_vertical, category_data => $category_data, is_auto_get_serial_name => $is_auto_get_serial_name, title => $title, folder => $folder, storage_name => $storage_name);
+    my $result = $api_instance->cells_charts_put_worksheet_add_chart(name => $name, sheet_name => $sheet_name, chart_type => $chart_type, upper_left_row => $upper_left_row, upper_left_column => $upper_left_column, lower_right_row => $lower_right_row, lower_right_column => $lower_right_column, area => $area, is_vertical => $is_vertical, category_data => $category_data, is_auto_get_serial_name => $is_auto_get_serial_name, title => $title, folder => $folder, storage_name => $storage_name, data_labels => $data_labels, data_labels_position => $data_labels_position, pivot_table_sheet => $pivot_table_sheet, pivot_table_name => $pivot_table_name);
     print Dumper($result);
 };
 if ($@) {
@@ -1921,6 +1933,10 @@ Name | Type | Description  | Notes
  **title** | **string**| Specifies chart title name. | [optional] 
  **folder** | **string**| The workbook folder. | [optional] 
  **storage_name** | **string**| storage name. | [optional] 
+ **data_labels** | **boolean**|  | [optional] [default to true]
+ **data_labels_position** | **string**|  | [optional] [default to Above]
+ **pivot_table_sheet** | **string**|  | [optional] 
+ **pivot_table_name** | **string**|  | [optional] 
 
 ### Return type
 
@@ -6225,6 +6241,120 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **cells_pivot_tables_post_pivot_table_update_pivot_field**
+> CellsCloudResponse cells_pivot_tables_post_pivot_table_update_pivot_field(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, pivot_field_index => $pivot_field_index, pivot_field_type => $pivot_field_type, pivot_field => $pivot_field, need_re_calculate => $need_re_calculate, folder => $folder)
+
+
+
+### Example 
+```perl
+use Data::Dumper;
+use AsposeCellsCloud::CellsApi;
+my $api_instance = AsposeCellsCloud::CellsApi->new(
+);
+
+my $name = 'name_example'; # string | 
+my $sheet_name = 'sheet_name_example'; # string | 
+my $pivot_table_index = 56; # int | 
+my $pivot_field_index = 56; # int | 
+my $pivot_field_type = 'pivot_field_type_example'; # string | 
+my $pivot_field = AsposeCellsCloud::Object::PivotField->new(); # PivotField | 
+my $need_re_calculate = 1; # boolean | 
+my $folder = 'folder_example'; # string | 
+
+eval { 
+    my $result = $api_instance->cells_pivot_tables_post_pivot_table_update_pivot_field(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, pivot_field_index => $pivot_field_index, pivot_field_type => $pivot_field_type, pivot_field => $pivot_field, need_re_calculate => $need_re_calculate, folder => $folder);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling CellsApi->cells_pivot_tables_post_pivot_table_update_pivot_field: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  | 
+ **sheet_name** | **string**|  | 
+ **pivot_table_index** | **int**|  | 
+ **pivot_field_index** | **int**|  | 
+ **pivot_field_type** | **string**|  | 
+ **pivot_field** | [**PivotField**](PivotField.md)|  | 
+ **need_re_calculate** | **boolean**|  | [optional] [default to false]
+ **folder** | **string**|  | [optional] 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cells_pivot_tables_post_pivot_table_update_pivot_fields**
+> CellsCloudResponse cells_pivot_tables_post_pivot_table_update_pivot_fields(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, pivot_field_type => $pivot_field_type, pivot_field => $pivot_field, need_re_calculate => $need_re_calculate, folder => $folder)
+
+
+
+### Example 
+```perl
+use Data::Dumper;
+use AsposeCellsCloud::CellsApi;
+my $api_instance = AsposeCellsCloud::CellsApi->new(
+);
+
+my $name = 'name_example'; # string | 
+my $sheet_name = 'sheet_name_example'; # string | 
+my $pivot_table_index = 56; # int | 
+my $pivot_field_type = 'pivot_field_type_example'; # string | 
+my $pivot_field = AsposeCellsCloud::Object::PivotField->new(); # PivotField | 
+my $need_re_calculate = 1; # boolean | 
+my $folder = 'folder_example'; # string | 
+
+eval { 
+    my $result = $api_instance->cells_pivot_tables_post_pivot_table_update_pivot_fields(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, pivot_field_type => $pivot_field_type, pivot_field => $pivot_field, need_re_calculate => $need_re_calculate, folder => $folder);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling CellsApi->cells_pivot_tables_post_pivot_table_update_pivot_fields: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  | 
+ **sheet_name** | **string**|  | 
+ **pivot_table_index** | **int**|  | 
+ **pivot_field_type** | **string**|  | 
+ **pivot_field** | [**PivotField**](PivotField.md)|  | 
+ **need_re_calculate** | **boolean**|  | [optional] [default to false]
+ **folder** | **string**|  | [optional] 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **cells_pivot_tables_post_worksheet_pivot_table_calculate**
 > CellsCloudResponse cells_pivot_tables_post_worksheet_pivot_table_calculate(name => $name, sheet_name => $sheet_name, pivot_table_index => $pivot_table_index, folder => $folder, storage_name => $storage_name)
 
@@ -9283,6 +9413,310 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ShapeResponse**](ShapeResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cells_sparkline_groups_delete_worksheet_sparkline_group**
+> CellsCloudResponse cells_sparkline_groups_delete_worksheet_sparkline_group(name => $name, sheet_name => $sheet_name, sparkline_index => $sparkline_index, folder => $folder)
+
+
+
+### Example 
+```perl
+use Data::Dumper;
+use AsposeCellsCloud::CellsApi;
+my $api_instance = AsposeCellsCloud::CellsApi->new(
+);
+
+my $name = 'name_example'; # string | 
+my $sheet_name = 'sheet_name_example'; # string | 
+my $sparkline_index = 56; # int | 
+my $folder = 'folder_example'; # string | 
+
+eval { 
+    my $result = $api_instance->cells_sparkline_groups_delete_worksheet_sparkline_group(name => $name, sheet_name => $sheet_name, sparkline_index => $sparkline_index, folder => $folder);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling CellsApi->cells_sparkline_groups_delete_worksheet_sparkline_group: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  | 
+ **sheet_name** | **string**|  | 
+ **sparkline_index** | **int**|  | 
+ **folder** | **string**|  | [optional] 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cells_sparkline_groups_delete_worksheet_sparkline_groups**
+> CellsCloudResponse cells_sparkline_groups_delete_worksheet_sparkline_groups(name => $name, sheet_name => $sheet_name, folder => $folder)
+
+
+
+### Example 
+```perl
+use Data::Dumper;
+use AsposeCellsCloud::CellsApi;
+my $api_instance = AsposeCellsCloud::CellsApi->new(
+);
+
+my $name = 'name_example'; # string | 
+my $sheet_name = 'sheet_name_example'; # string | 
+my $folder = 'folder_example'; # string | 
+
+eval { 
+    my $result = $api_instance->cells_sparkline_groups_delete_worksheet_sparkline_groups(name => $name, sheet_name => $sheet_name, folder => $folder);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling CellsApi->cells_sparkline_groups_delete_worksheet_sparkline_groups: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  | 
+ **sheet_name** | **string**|  | 
+ **folder** | **string**|  | [optional] 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cells_sparkline_groups_get_worksheet_sparkline_group**
+> SparklineGroupResponse cells_sparkline_groups_get_worksheet_sparkline_group(name => $name, sheet_name => $sheet_name, sparkline_index => $sparkline_index, folder => $folder)
+
+
+
+### Example 
+```perl
+use Data::Dumper;
+use AsposeCellsCloud::CellsApi;
+my $api_instance = AsposeCellsCloud::CellsApi->new(
+);
+
+my $name = 'name_example'; # string | 
+my $sheet_name = 'sheet_name_example'; # string | 
+my $sparkline_index = 56; # int | 
+my $folder = 'folder_example'; # string | 
+
+eval { 
+    my $result = $api_instance->cells_sparkline_groups_get_worksheet_sparkline_group(name => $name, sheet_name => $sheet_name, sparkline_index => $sparkline_index, folder => $folder);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling CellsApi->cells_sparkline_groups_get_worksheet_sparkline_group: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  | 
+ **sheet_name** | **string**|  | 
+ **sparkline_index** | **int**|  | 
+ **folder** | **string**|  | [optional] 
+
+### Return type
+
+[**SparklineGroupResponse**](SparklineGroupResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cells_sparkline_groups_get_worksheet_sparkline_groups**
+> SparklineGroupsResponse cells_sparkline_groups_get_worksheet_sparkline_groups(name => $name, sheet_name => $sheet_name, folder => $folder)
+
+Get worksheet charts description.
+
+### Example 
+```perl
+use Data::Dumper;
+use AsposeCellsCloud::CellsApi;
+my $api_instance = AsposeCellsCloud::CellsApi->new(
+);
+
+my $name = 'name_example'; # string | Document name.
+my $sheet_name = 'sheet_name_example'; # string | The worksheet name.
+my $folder = 'folder_example'; # string | Document's folder.
+
+eval { 
+    my $result = $api_instance->cells_sparkline_groups_get_worksheet_sparkline_groups(name => $name, sheet_name => $sheet_name, folder => $folder);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling CellsApi->cells_sparkline_groups_get_worksheet_sparkline_groups: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| Document name. | 
+ **sheet_name** | **string**| The worksheet name. | 
+ **folder** | **string**| Document&#39;s folder. | [optional] 
+
+### Return type
+
+[**SparklineGroupsResponse**](SparklineGroupsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cells_sparkline_groups_post_worksheet_sparkline_group**
+> CellsCloudResponse cells_sparkline_groups_post_worksheet_sparkline_group(name => $name, sheet_name => $sheet_name, sparkline_group_index => $sparkline_group_index, sparkline_group => $sparkline_group, folder => $folder)
+
+
+
+### Example 
+```perl
+use Data::Dumper;
+use AsposeCellsCloud::CellsApi;
+my $api_instance = AsposeCellsCloud::CellsApi->new(
+);
+
+my $name = 'name_example'; # string | 
+my $sheet_name = 'sheet_name_example'; # string | 
+my $sparkline_group_index = 56; # int | 
+my $sparkline_group = AsposeCellsCloud::Object::SparklineGroup->new(); # SparklineGroup | 
+my $folder = 'folder_example'; # string | 
+
+eval { 
+    my $result = $api_instance->cells_sparkline_groups_post_worksheet_sparkline_group(name => $name, sheet_name => $sheet_name, sparkline_group_index => $sparkline_group_index, sparkline_group => $sparkline_group, folder => $folder);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling CellsApi->cells_sparkline_groups_post_worksheet_sparkline_group: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  | 
+ **sheet_name** | **string**|  | 
+ **sparkline_group_index** | **int**|  | 
+ **sparkline_group** | [**SparklineGroup**](SparklineGroup.md)|  | 
+ **folder** | **string**|  | [optional] 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cells_sparkline_groups_put_worksheet_sparkline_group**
+> CellsCloudResponse cells_sparkline_groups_put_worksheet_sparkline_group(name => $name, sheet_name => $sheet_name, type => $type, data_range => $data_range, is_vertical => $is_vertical, location_range => $location_range, folder => $folder)
+
+
+
+### Example 
+```perl
+use Data::Dumper;
+use AsposeCellsCloud::CellsApi;
+my $api_instance = AsposeCellsCloud::CellsApi->new(
+);
+
+my $name = 'name_example'; # string | 
+my $sheet_name = 'sheet_name_example'; # string | 
+my $type = 'type_example'; # string | 
+my $data_range = 'data_range_example'; # string | 
+my $is_vertical = 1; # boolean | 
+my $location_range = 'location_range_example'; # string | 
+my $folder = 'folder_example'; # string | 
+
+eval { 
+    my $result = $api_instance->cells_sparkline_groups_put_worksheet_sparkline_group(name => $name, sheet_name => $sheet_name, type => $type, data_range => $data_range, is_vertical => $is_vertical, location_range => $location_range, folder => $folder);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling CellsApi->cells_sparkline_groups_put_worksheet_sparkline_group: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  | 
+ **sheet_name** | **string**|  | 
+ **type** | **string**|  | 
+ **data_range** | **string**|  | 
+ **is_vertical** | **boolean**|  | 
+ **location_range** | **string**|  | 
+ **folder** | **string**|  | [optional] 
+
+### Return type
+
+[**CellsCloudResponse**](CellsCloudResponse.md)
 
 ### Authorization
 

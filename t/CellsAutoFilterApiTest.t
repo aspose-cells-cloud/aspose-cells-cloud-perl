@@ -34,7 +34,8 @@ use AsposeCellsCloud::Object::Style;
 use AsposeCellsCloud::Object::CellsColor;
 use AsposeCellsCloud::Object::ColorFilterRequest;
 
-require 't\CellsTestBase.pl';
+require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
+
 
 my $BOOK1 = 'Book1.xlsx';
 my $MYDOC = 'myDocument.xlsx';
@@ -54,8 +55,6 @@ my $CELLAREA = 'A1:C10';
 
 
 my $api = get_client();
-isa_ok($api, 'AsposeCellsCloud::CellsApi');
-
 
 #
 # cells_auto_filter_put_worksheet_color_filter test

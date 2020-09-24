@@ -23,7 +23,7 @@ use Test::Exception;
 use lib 'lib';
 use strict;
 use warnings;
-require 't\CellsTestBase.pl';
+require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
 
 use AsposeCellsCloud::Configuration;
 use AsposeCellsCloud::ApiClient;
@@ -51,8 +51,6 @@ my $CELLAREA = 'A1:C10';
 
 
 my $api = get_client();
-
-isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #
 # cells_delete_worksheet_columns test

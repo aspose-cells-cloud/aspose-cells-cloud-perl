@@ -23,19 +23,19 @@ use Test::Exception;
 use lib 'lib';
 use strict;
 use warnings;
+use AsposeCellsCloud::Configuration;
+use AsposeCellsCloud::ApiClient;
+use AsposeCellsCloud::CellsApi;
+use AsposeCellsCloud::Object::CreatePivotTableRequest;
+use AsposeCellsCloud::Object::PivotTableFieldRequest;
+use AsposeCellsCloud::Object::AutoFilter;
+use AsposeCellsCloud::Object::Top10Filter;
+use AsposeCellsCloud::Object::PivotFilter;
+use AsposeCellsCloud::Object::Style;
 
-use_ok('AsposeCellsCloud::Configuration');
-use_ok('AsposeCellsCloud::ApiClient');
-use_ok('AsposeCellsCloud::CellsApi');
-use_ok('AsposeCellsCloud::Object::CreatePivotTableRequest');
-use_ok('AsposeCellsCloud::Object::PivotTableFieldRequest');
-use_ok('AsposeCellsCloud::Object::AutoFilter');
-use_ok('AsposeCellsCloud::Object::Top10Filter');
-use_ok('AsposeCellsCloud::Object::PivotFilter');
-use_ok('AsposeCellsCloud::Object::Style');
 
+require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
 
-require 't\CellsTestBase.pl';
 
 my $result =undef;
 my $BOOK1 = 'Book1.xlsx';
@@ -53,10 +53,10 @@ my $SHEET8 = 'Sheet8';
 my $CELLNAME = 'A1';
 my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
-use_ok('AsposeCellsCloud::CellsApi');
+
 
 my $api = get_client();
-isa_ok($api, 'AsposeCellsCloud::CellsApi');
+
 
 
 #

@@ -24,15 +24,15 @@ use lib 'lib';
 use strict;
 use warnings;
 
-use_ok('AsposeCellsCloud::Configuration');
-use_ok('AsposeCellsCloud::ApiClient');
-use_ok('AsposeCellsCloud::CellsApi');
-use_ok('AsposeCellsCloud::Object::ColumnsResponse');
-use_ok('AsposeCellsCloud::Object::CalculationOptions');
-use_ok('AsposeCellsCloud::Object::FontSetting');
-use_ok('AsposeCellsCloud::Object::CellsDocumentProperty');
+use AsposeCellsCloud::Configuration;
+use AsposeCellsCloud::ApiClient;
+use AsposeCellsCloud::CellsApi;
+use AsposeCellsCloud::Object::ColumnsResponse;
+use AsposeCellsCloud::Object::CalculationOptions;
+use AsposeCellsCloud::Object::FontSetting;
+use AsposeCellsCloud::Object::CellsDocumentProperty;
 
-require 't\CellsTestBase.pl';
+require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
 
 my $result =undef;
 my $BOOK1 = 'Book1.xlsx';
@@ -50,10 +50,8 @@ my $SHEET8 = 'Sheet8';
 my $CELLNAME = 'A1';
 my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
-use_ok('AsposeCellsCloud::CellsApi');
 
 my $api = get_client();
-isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 
 

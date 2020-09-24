@@ -23,14 +23,16 @@ use Test::Exception;
 use lib 'lib';
 use strict;
 use warnings;
-require 't\CellsTestBase.pl';
-use_ok('AsposeCellsCloud::Configuration');
-use_ok('AsposeCellsCloud::ApiClient');
-use_ok('AsposeCellsCloud::CellsApi');
-use_ok('AsposeCellsCloud::Object::SplitWorkbookTaskParameter');
-use_ok('AsposeCellsCloud::Object::TaskData');
-use_ok('AsposeCellsCloud::Object::TaskDescription');
-use_ok('AsposeCellsCloud::Object::FileSource');
+require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
+
+use AsposeCellsCloud::Configuration;
+use AsposeCellsCloud::ApiClient;
+use AsposeCellsCloud::CellsApi;
+use AsposeCellsCloud::Object::SplitWorkbookTaskParameter;
+use AsposeCellsCloud::Object::TaskData;
+use AsposeCellsCloud::Object::TaskDescription;
+use AsposeCellsCloud::Object::FileSource;
+use AsposeCellsCloud::CellsApi;
 
 my $result ;
 my $BOOK1 = 'Book1.xlsx';
@@ -50,9 +52,7 @@ my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
 my $workbook_path ='Temp\\Book1.xlsx';
 
-use_ok('AsposeCellsCloud::CellsApi');
 my $api = get_client();
-isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #
 # cells_task_post_run_task test convert

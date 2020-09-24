@@ -23,7 +23,8 @@ use Test::Exception;
 use lib 'lib';
 use strict;
 use warnings;
-require 't\CellsTestBase.pl';
+use AsposeCellsCloud::CellsApi;
+require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
 
 my $result = undef;
 my $BOOK1 = 'Book1.xlsx';
@@ -41,10 +42,9 @@ my $SHEET8 = 'Sheet8';
 my $CELLNAME = 'A1';
 my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
-use_ok('AsposeCellsCloud::CellsApi');
 
 my $api = get_client();
-isa_ok($api, 'AsposeCellsCloud::CellsApi');
+
 
 #
 # cells_save_as_post_document_save_as test

@@ -37,13 +37,19 @@ use AsposeCellsCloud::CellsApi ;
 # }
 our $new_client = undef;
 
+sub get_path
+{
+	my  %args = @_;
+	my $path = "/home/roy/aspose/cells/cloud/sdk/TestData/".$args{'file'};
+	return  $path;
+}
 sub get_client
 {
     my ($self, %args) = @_;
     my $grant_type = 'client_credentials'; # replace NULL with a proper value
-    my $client_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'; # replace NULL with a proper value
-    my $client_secret =  'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'; # replace NULL with a proper value
-    my $config = AsposeCellsCloud::Configuration->new('base_url' => 'https://api.aspose.cloud','api_version' => 'v3.0', app_sid => $client_id, app_key => $client_secret);
+    my $client_id = '91A2FD07-BBA1-4B32-9112-ABFB1FE8AEBD'; # replace NULL with a proper value
+    my $client_secret =  '0fbf678c5ecabdb5caca48452a736dd0'; # replace NULL with a proper value
+    my $config = AsposeCellsCloud::Configuration->new('base_url' => 'https://api-qa.aspose.cloud','api_version' => 'v3.0', app_sid => $client_id, app_key => $client_secret);
     my $client = AsposeCellsCloud::ApiClient->new( $config);
     my $oauth_api = AsposeCellsCloud::CellsApi->new($client);
     return $oauth_api;
@@ -52,7 +58,7 @@ sub get_client
 sub ready_file 
 {
     my  %args = @_;
-    my $path = "D:\\Projects\\Aspose\\Aspose.Cells.Cloud.SDK\\src\\TestData\\".$args{'file'};
+    my $path = get_path( file => $args{'file'});
     my @fileinfos = stat( $path );
     my $filelength = $fileinfos[7];    
     

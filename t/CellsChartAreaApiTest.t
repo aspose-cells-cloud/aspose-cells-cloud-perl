@@ -31,7 +31,8 @@ use AsposeCellsCloud::Object::AutoShapeResponse;
 use AsposeCellsCloud::Object::AutoShape;
 use AsposeCellsCloud::CellsApi;
 
-require 't\CellsTestBase.pl';
+require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
+
 
 my $result =undef;
 my $BOOK1 = 'Book1.xlsx';
@@ -52,8 +53,6 @@ my $CELLAREA = 'A1:C10';
 
 
 my $api = get_client();
-isa_ok($api, 'AsposeCellsCloud::CellsApi');
-
 #
 # cells_chart_area_get_chart_area test
 #

@@ -24,17 +24,18 @@ use lib 'lib';
 use strict;
 use warnings;
 
-use_ok('AsposeCellsCloud::Configuration');
-use_ok('AsposeCellsCloud::ApiClient');
-use_ok('AsposeCellsCloud::CellsApi');
-use_ok('AsposeCellsCloud::Object::ProtectSheetParameter');
-use_ok('AsposeCellsCloud::Object::CopyOptions');
-use_ok('AsposeCellsCloud::Object::WorksheetMovingRequest');
-use_ok('AsposeCellsCloud::Object::DataSorter');
-use_ok('AsposeCellsCloud::Object::Worksheet');
-use_ok('AsposeCellsCloud::Object::Comment');
+use AsposeCellsCloud::Configuration;
+use AsposeCellsCloud::ApiClient;
+use AsposeCellsCloud::CellsApi;
+use AsposeCellsCloud::Object::ProtectSheetParameter;
+use AsposeCellsCloud::Object::CopyOptions;
+use AsposeCellsCloud::Object::WorksheetMovingRequest;
+use AsposeCellsCloud::Object::DataSorter;
+use AsposeCellsCloud::Object::Worksheet;
+use AsposeCellsCloud::Object::Comment;
+use AsposeCellsCloud::CellsApi;
+require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
 
-require 't\CellsTestBase.pl';
 
 my $result =undef;
 my $BOOK1 = 'Book1.xlsx';
@@ -53,11 +54,9 @@ my $CELLNAME = 'A1';
 my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
 
-use_ok('AsposeCellsCloud::CellsApi');
+
 
 my $api = get_client();
-isa_ok($api, 'AsposeCellsCloud::CellsApi');
-
 #
 # cells_worksheets_delete_unprotect_worksheet test 
 #
@@ -124,12 +123,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $horizontal_resolution = 120; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
     ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
-    $result = $api->cells_worksheets_get_worksheet(name => $name,
-    sheet_name => $sheet_name,
-    format => $format,
-    vertical_resolution => $vertical_resolution,
-    horizontal_resolution => $horizontal_resolution,
-    folder => $folder);
+    $result = $api->cells_worksheets_get_worksheet(name => $name, sheet_name => $sheet_name, format => $format, vertical_resolution => $vertical_resolution,horizontal_resolution => $horizontal_resolution, folder => $folder);
 }
 
 
@@ -457,26 +451,6 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
 }
 
 #
-# cells_worksheets_put_worksheet_background test ?
-#
-{
-    
-    my $name = $BOOK1; # replace NULL with a proper value
-    my $sheet_name = $SHEET1; # replace NULL with a proper value
-    my $png = undef; # replace NULL with a proper value
-    my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cells.Cloud.SDK\\src\\TestData\\WaterMark.png") or die "file.txt 文件无法打开, $!";
-    binmode(DATA);
-    read (DATA, $png, 8);
-    close (DATA);
-    $result = $api->cells_worksheets_put_worksheet_background(name => $name, sheet_name => $sheet_name, png => $png, folder => $folder);
-    ok($result->status eq 'OK' ,'cells_worksheets_put_worksheet_background OK');
-}
-
-
-
-
-#
 # cells_worksheets_delete_worksheet_comment test
 #
 {
@@ -524,4 +498,21 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     ok($result->status eq 'OK' ,'cells_worksheets_delete_worksheet OK');
 }
 
+#
+# cells_worksheets_put_worksheet_background test ?
+#
+{
+    
+    my $name = $BOOK1; # replace NULL with a proper value
+    my $sheet_name = $SHEET1; # replace NULL with a proper value
+    my $png = undef; # replace NULL with a proper value
+    my $folder = $TEMPFOLDER; # replace NULL with a proper value
+	ready_file('api'=> $api, 'file'=>$BOOK1 ,'folder' =>$TEMPFOLDER) ;
+    open(DATA, "<".get_path( file=> "WaterMark.png")) or die "file.txt 文件无法打开, $!";
+    binmode(DATA);
+    read (DATA, $png, 8);
+    close (DATA);
+    $result = $api->cells_worksheets_put_worksheet_background(name => $name, sheet_name => $sheet_name, png => $png, folder => $folder);
+    ok($result->status eq 'OK' ,'cells_worksheets_put_worksheet_background OK');
+}
 1;

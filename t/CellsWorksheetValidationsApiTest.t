@@ -24,14 +24,14 @@ use lib 'lib';
 use strict;
 use warnings;
 
-use_ok('AsposeCellsCloud::Configuration');
-use_ok('AsposeCellsCloud::ApiClient');
-use_ok('AsposeCellsCloud::CellsApi');
-use_ok('AsposeCellsCloud::Object::Validation');
-use_ok('AsposeCellsCloud::Object::CellArea');
+use AsposeCellsCloud::Configuration;
+use AsposeCellsCloud::ApiClient;
+use AsposeCellsCloud::CellsApi;
+use AsposeCellsCloud::Object::Validation;
+use AsposeCellsCloud::Object::CellArea;
 
+require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
 
-require 't\CellsTestBase.pl';
 
 my $result =undef;
 my $BOOK1 = 'Book1.xlsx';
@@ -51,7 +51,7 @@ my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
 
 my $api = get_client();
-isa_ok($api, 'AsposeCellsCloud::CellsApi');
+
 
 #
 # cells_worksheet_validations_post_worksheet_validation test

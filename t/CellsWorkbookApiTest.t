@@ -24,19 +24,20 @@ use lib 'lib';
 use strict;
 use warnings;
 
-use_ok('AsposeCellsCloud::Configuration');
-use_ok('AsposeCellsCloud::ApiClient');
-use_ok('AsposeCellsCloud::CellsApi');
-use_ok('AsposeCellsCloud::Object::WorkbookEncryptionRequest');
-use_ok('AsposeCellsCloud::Object::WorkbookProtectionRequest');
-use_ok('AsposeCellsCloud::Object::CalculationOptions');
-use_ok('AsposeCellsCloud::Object::WorkbookSettings');
-use_ok('AsposeCellsCloud::Object::Style');
-use_ok('AsposeCellsCloud::Object::ImportOption');
-use_ok('AsposeCellsCloud::Object::ImportIntArrayOption');
-use_ok('AsposeCellsCloud::Object::PasswordRequest');
-use_ok('AsposeCellsCloud::Object::TextWaterMarkerRequest');
-require 't/CellsTestBase.pl';
+use AsposeCellsCloud::Configuration;
+use AsposeCellsCloud::ApiClient;
+use AsposeCellsCloud::CellsApi;
+use AsposeCellsCloud::Object::WorkbookEncryptionRequest;
+use AsposeCellsCloud::Object::WorkbookProtectionRequest;
+use AsposeCellsCloud::Object::CalculationOptions;
+use AsposeCellsCloud::Object::WorkbookSettings;;
+use AsposeCellsCloud::Object::Style;
+use AsposeCellsCloud::Object::ImportOption;
+use AsposeCellsCloud::Object::ImportIntArrayOption;
+use AsposeCellsCloud::Object::PasswordRequest;
+use AsposeCellsCloud::Object::TextWaterMarkerRequest;
+use AsposeCellsCloud::CellsApi;
+require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
 
 my $result =undef;
 my $BOOK1 = 'Book1.xlsx';
@@ -55,10 +56,8 @@ my $CELLNAME = 'A1';
 my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
 
-use_ok('AsposeCellsCloud::CellsApi');
 
 my $api = get_client();
-isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #
 # cells_workbook_post_encrypt_document test
@@ -338,9 +337,9 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $password = undef; # replace NULL with a proper value
     my $out_path = undef; # replace NULL with a proper value
     my $Book1_data =undef;
-    my @fileinfos = stat("D:\\Projects\\Aspose\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx");
+    my @fileinfos = stat(get_path(file=>"Book1.xlsx"));
     my $filelength = @fileinfos[7];
-    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx") or die "file.txt  can not open, $!";
+    open(DATA, "<".get_path(file=>"Book1.xlsx")) or die "file.txt  can not open, $!";
     binmode(DATA);
     # while( read (DATA, $Book1_data, 8)) {};
     read (DATA, $Book1_data, $filelength);
@@ -358,9 +357,9 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $password = undef; # replace NULL with a proper value
     my $out_path = undef; # replace NULL with a proper value
     my $Book1_data =undef;
-    my @fileinfos = stat("D:\\Projects\\Aspose\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx");
+    my @fileinfos = stat(get_path(file=>"Book1.xlsx"));
     my $filelength = @fileinfos[7];
-    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx") or die "file.txt can not open, $!";
+    open(DATA, "<".get_path(file=>"Book1.xlsx")) or die "file.txt can not open, $!";
     binmode(DATA);
     # while( read (DATA, $Book1_data, 8)) {};
     read (DATA, $Book1_data, $filelength);
@@ -426,7 +425,7 @@ isa_ok($api, 'AsposeCellsCloud::CellsApi');
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $png = undef; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cells.Cloud.SDK\\src\\TestData\\WaterMark.png") or die "file.txt did not open, $!";
+    open(DATA, "<".get_path(file=>"WaterMark.png")) or die "file.txt did not open, $!";
     binmode(DATA);
     read (DATA, $png, 8);
     close (DATA);

@@ -24,46 +24,25 @@ use lib 'lib';
 use strict;
 use warnings;
 
-use_ok('AsposeCellsCloud::Configuration');
-use_ok('AsposeCellsCloud::ApiClient');
-use_ok('AsposeCellsCloud::CellsApi');
-use_ok('AsposeCellsCloud::Object::ColumnsResponse');
-my $config = AsposeCellsCloud::Configuration->new('base_url' => 'https://api.aspose.cloud');
+use AsposeCellsCloud::Configuration;
+use AsposeCellsCloud::ApiClient;
+use AsposeCellsCloud::CellsApi;
+use AsposeCellsCloud::Object::ColumnsResponse;
+my $config = AsposeCellsCloud::Configuration->new('base_url' => 'https://api-qa.aspose.cloud');
 my $client = AsposeCellsCloud::ApiClient->new( $config);
 my $api = AsposeCellsCloud::CellsApi->new($client);
-isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 my $access_token;
 
 my $grant_type = 'client_credentials'; # replace NULL with a proper value
-my $client_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'; # replace NULL with a proper value
-my $client_secret =  'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'; # replace NULL with a proper value
+my $client_id = '91A2FD07-BBA1-4B32-9112-ABFB1FE8AEBD'; # replace NULL with a proper value
+my $client_secret =  '0fbf678c5ecabdb5caca48452a736dd0'; # replace NULL with a proper value
 my $result = $api->o_auth_post(grant_type => $grant_type, client_id => $client_id, client_secret => $client_secret);
 $access_token =  $result->access_token;
 
-# printf $access_token;
+printf $access_token;
 # printf "\n";
 
-my $newconfig = AsposeCellsCloud::Configuration->new('access_token' =>  $access_token, 'base_url' => 'https://api.aspose.cloud/v3.0');
-my $newclient = AsposeCellsCloud::ApiClient->new( $newconfig);
-my $newapi = AsposeCellsCloud::CellsApi->new($newclient);
 
-{
-    my $name = 'Book1.xlsx'; # replace NULL with a proper value
-    my $sheet_name = 'Sheet1'; # replace NULL with a proper value
-    my $column_index = 1; # replace NULL with a proper value
-    my $columns = 10; # replace NULL with a proper value
-    my $update_reference = 'true' ; # replace NULL with a proper value
-    my $folder = 'Temp'; # replace NULL with a proper value
-    my $xlsxdata;
-    my @args = stat("D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx");
-    my $size = $args[7];
-
-    open(DATA, "<D:\\Projects\\Aspose\\Aspose.Cloud\\Aspose.Cells.Cloud.SDK\\src\\TestData\\Book1.xlsx") or die "file.txt 文件无法打开, $!";
-    binmode(DATA);
-    read(DATA, $xlsxdata, $size);
-    close (DATA);
-    my $result = $newapi->upload_file('path' => "TempBook1.xlsx", 'file'=>$xlsxdata );
-}
 
 1;

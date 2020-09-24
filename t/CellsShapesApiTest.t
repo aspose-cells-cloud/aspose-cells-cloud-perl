@@ -23,12 +23,12 @@ use Test::Exception;
 use lib 'lib';
 use strict;
 use warnings;
+use AsposeCellsCloud::Configuration;
+use AsposeCellsCloud::ApiClient;
+use AsposeCellsCloud::Object::Shape;
+use AsposeCellsCloud::CellsApi;
 
-use_ok('AsposeCellsCloud::Configuration');
-use_ok('AsposeCellsCloud::ApiClient');
-use_ok('AsposeCellsCloud::Object::Shape');
-
-require 't\CellsTestBase.pl';
+require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
 
 my $result =undef;
 my $BOOK1 = 'Book1.xlsx';
@@ -47,11 +47,7 @@ my $CELLNAME = 'A1';
 my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
 
-
-use_ok('AsposeCellsCloud::CellsApi');
-
 my $api = get_client();
-isa_ok($api, 'AsposeCellsCloud::CellsApi');
 
 #
 # cells_shapes_put_worksheet_shape test

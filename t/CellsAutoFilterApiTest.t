@@ -34,7 +34,7 @@ use AsposeCellsCloud::Object::Style;
 use AsposeCellsCloud::Object::CellsColor;
 use AsposeCellsCloud::Object::ColorFilterRequest;
 
-require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
+require './t/CellsTestBase.pl';
 
 
 my $BOOK1 = 'Book1.xlsx';

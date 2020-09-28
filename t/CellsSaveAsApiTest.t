@@ -24,7 +24,7 @@ use lib 'lib';
 use strict;
 use warnings;
 use AsposeCellsCloud::CellsApi;
-require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
+require './t/CellsTestBase.pl';
 
 my $result = undef;
 my $BOOK1 = 'Book1.xlsx';

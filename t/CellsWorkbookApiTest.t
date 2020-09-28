@@ -37,7 +37,7 @@ use AsposeCellsCloud::Object::ImportIntArrayOption;
 use AsposeCellsCloud::Object::PasswordRequest;
 use AsposeCellsCloud::Object::TextWaterMarkerRequest;
 use AsposeCellsCloud::CellsApi;
-require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
+require './t/CellsTestBase.pl';
 
 my $result =undef;
 my $BOOK1 = 'Book1.xlsx';

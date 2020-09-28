@@ -31,7 +31,7 @@ use AsposeCellsCloud::Object::ListObject;
 use AsposeCellsCloud::Object::DataSorter;
 use AsposeCellsCloud::Object::CreatePivotTableRequest;
 
-require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
+require './t/CellsTestBase.pl';
 
 
 my $result =undef;

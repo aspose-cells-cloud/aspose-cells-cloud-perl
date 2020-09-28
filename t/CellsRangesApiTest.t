@@ -31,7 +31,7 @@ use AsposeCellsCloud::Object::RangeSetOutlineBorderRequest;
 use AsposeCellsCloud::Object::PasteOptions;
 use AsposeCellsCloud::Object::RangeCopyRequest;
 use AsposeCellsCloud::Object::Color;
-require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
+require './t/CellsTestBase.pl';
 
 
 my $BOOK1 = 'Book1.xlsx';

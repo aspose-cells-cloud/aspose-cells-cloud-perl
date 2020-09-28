@@ -26,7 +26,7 @@ use Exporter;
 use Carp qw( croak );
 use Log::Any qw($log);
 use File::Slurp;
-
+use Cwd;
 use AsposeCellsCloud::Configuration ;
 use AsposeCellsCloud::ApiClient ;
 use AsposeCellsCloud::CellsApi ;
@@ -40,8 +40,10 @@ our $new_client = undef;
 sub get_path
 {
 	my  %args = @_;
-	my $path = "/home/roy/aspose/cells/cloud/sdk/TestData/".$args{'file'};
-	return  $path;
+  # my $dir = getcwd;
+  # my $path =  $dir."/TestData/".$args{'file'};
+	my $path =  "TestData/".$args{'file'};
+  return  $path;
 }
 sub get_client
 {

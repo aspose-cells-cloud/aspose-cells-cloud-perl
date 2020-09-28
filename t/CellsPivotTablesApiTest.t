@@ -32,9 +32,7 @@ use AsposeCellsCloud::Object::AutoFilter;
 use AsposeCellsCloud::Object::Top10Filter;
 use AsposeCellsCloud::Object::PivotFilter;
 use AsposeCellsCloud::Object::Style;
-
-
-require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
+require './t/CellsTestBase.pl';
 
 
 my $result =undef;

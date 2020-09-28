@@ -29,9 +29,7 @@ use AsposeCellsCloud::ApiClient;
 use AsposeCellsCloud::CellsApi;
 use AsposeCellsCloud::Object::Validation;
 use AsposeCellsCloud::Object::CellArea;
-
-require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
-
+require './t/CellsTestBase.pl';
 
 my $result =undef;
 my $BOOK1 = 'Book1.xlsx';

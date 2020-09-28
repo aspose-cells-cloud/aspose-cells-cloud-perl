@@ -23,7 +23,7 @@ use Test::Exception;
 use lib 'lib';
 use strict;
 use warnings;
-require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
+require './t/CellsTestBase.pl';
 
 use AsposeCellsCloud::Configuration;
 use AsposeCellsCloud::ApiClient;

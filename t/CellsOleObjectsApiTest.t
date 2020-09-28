@@ -32,7 +32,7 @@ use AsposeCellsCloud::Object::FontSetting;
 use AsposeCellsCloud::Object::Style;
 use AsposeCellsCloud::CellsApi;
 
-require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
+require './t/CellsTestBase.pl';
 
 my $result =undef;
 

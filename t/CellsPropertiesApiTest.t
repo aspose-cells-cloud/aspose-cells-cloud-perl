@@ -32,7 +32,7 @@ use AsposeCellsCloud::Object::CalculationOptions;
 use AsposeCellsCloud::Object::FontSetting;
 use AsposeCellsCloud::Object::CellsDocumentProperty;
 
-require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
+require './t/CellsTestBase.pl';
 
 my $result =undef;
 my $BOOK1 = 'Book1.xlsx';

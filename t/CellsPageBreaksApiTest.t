@@ -29,7 +29,7 @@ use AsposeCellsCloud::CellsApi;
 use AsposeCellsCloud::Object::ColumnsResponse;
 use AsposeCellsCloud::Object::FontSetting;
 use AsposeCellsCloud::Object::Style;
-require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
+require './t/CellsTestBase.pl';
 
 my $BOOK1 = 'Book1.xlsx';
 my $MYDOC = 'myDocument.xlsx';

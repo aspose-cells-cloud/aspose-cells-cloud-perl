@@ -43,7 +43,7 @@ SXC, FODS
 
 ## Getting Started with Aspose.Cells Cloud SDK for Perl
 
-The complete source code is available in this repository folder. You can either directly use it in your project via source code or get [Packagist distribution](https://www.cpan.org/) (recommended). For more details, please visit our [documentation website](https://docs.aspose.cloud/display/cellscloud/Available+SDKs).
+The complete source code is available in this repository folder. You can either directly use it in your project via source code or get [Packagist distribution](https://www.cpan.org/) (recommended). For more details, please visit our [documentation website](https://docs.aspose.cloud/cells/available-sdks/).
 
 
 Please check the [GitHub Repository](https://github.com/aspose-cells-cloud/aspose-cells-cloud-perl) for other common usage scenarios.
@@ -73,6 +73,6 @@ The following code example elaborates how you can use Perl code to convert an Ex
     $result = $api->cells_workbook_put_convert_workbook( workbook => $Book1_data, format => $format, password => $password, out_path => $out_path,folder =>$folder);conver
 ```
 
-[Product Page](https://products.aspose.cloud/cells/perl) | [Documentation](https://docs.aspose.cloud/display/cellscloud/Home) | [Live Demo](https://products.aspose.app/cells/family) | [API Reference](https://apireference.aspose.cloud/cells/) | [Code Samples](https://github.com/aspose-cells-cloud/aspose-cells-cloud-perl) | [Blog](https://blog.aspose.cloud/category/cells/) | [Free Support](https://forum.aspose.cloud/c/cells) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
+[Product Page](https://products.aspose.cloud/cells/perl) | [Documentation](https://docs.aspose.cloud/cells/) | [Live Demo](https://products.aspose.app/cells/family) | [API Reference](https://apireference.aspose.cloud/cells/) | [Code Samples](https://github.com/aspose-cells-cloud/aspose-cells-cloud-perl) | [Blog](https://blog.aspose.cloud/category/cells/) | [Free Support](https://forum.aspose.cloud/c/cells) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
 
 

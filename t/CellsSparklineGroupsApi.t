@@ -73,7 +73,7 @@ my $api = get_client();
 
     my $sparklineGroup = AsposeCellsCloud::Object::SparklineGroup->new('display_hidden' => 'true');
     
-    $result = $api->(name => $name, sheet_name => $sheet_name, sparkline_index=>0 ,sparkline_group => $sparklineGroup  ,folder => $folder);
+    $result = $api->cells_sparkline_groups_post_worksheet_sparkline_group(name => $name, sheet_name => $sheet_name, sparkline_index=>0 ,sparkline_group => $sparklineGroup  ,folder => $folder);
     ok($result->status eq 'OK' ,'cells_sparkline_groups_post_worksheet_sparkline_group OK');
 
     $result = $api->cells_sparkline_groups_delete_worksheet_sparkline_group(name => $name, sheet_name => $sheet_name, sparkline_index=>0 ,folder => $folder);

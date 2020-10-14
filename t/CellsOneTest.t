@@ -30,7 +30,7 @@ use AsposeCellsCloud::Object::ColumnsResponse;
 use AsposeCellsCloud::Object::CalculationOptions;
 use AsposeCellsCloud::Object::FontSetting;
 use AsposeCellsCloud::Object::Style;
-require '/home/roy/aspose/cells/cloud/sdk/perl/t/CellsTestBase.pl';
+require './t/CellsTestBase.pl';
 
 
 my $result =undef;
@@ -63,7 +63,7 @@ my $api = get_client();
     my $png = undef; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
 	print get_path( file=> "WaterMark.png");
-    open(DATA, "<".get_path( file=> "WaterMark.png")) or die "file.txt 文件无法打开, $!";
+    open(DATA, "<".get_path( file=> "WaterMark.png")) or die "file.txt 锟侥硷拷锟睫凤拷锟斤拷, $!";
     binmode(DATA);
     read (DATA, $png, 8);
     close (DATA);

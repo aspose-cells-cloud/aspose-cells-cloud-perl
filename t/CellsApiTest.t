@@ -65,6 +65,7 @@ my $api = get_client();
     ready_file('api'=> $api, 'file'=>$BOOK1 ,'folder' =>$TEMPFOLDER) ;   
     my $result = $api->cells_delete_worksheet_columns(name => $name, sheet_name => $sheet_name, column_index => $column_index, columns => $columns, update_reference => $update_reference, folder => $folder);
     ok($result->status eq 'OK' ,'cells_delete_worksheet_columns OK');
+
 }
 
 #

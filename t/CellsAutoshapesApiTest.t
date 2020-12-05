@@ -58,6 +58,9 @@ my $api = get_client();
 # cells_autoshapes_get_worksheet_autoshape test
 #
 {
+    if( is_docker_sdk()){
+        return ;
+    }
     my $name =  $MYDOC; # replace NULL with a proper value
     my $sheet_name = $SHEET2; # replace NULL with a proper value
     my $autoshape_number = 4; # replace NULL with a proper value
@@ -72,6 +75,9 @@ my $api = get_client();
 # cells_autoshapes_get_worksheet_autoshapes test
 #
 {
+    if( is_docker_sdk()){
+        return ;
+    }
     my $name =  $MYDOC; # replace NULL with a proper value
     my $sheet_name = $SHEET2; # replace NULL with a proper value
     my $folder =  $TEMPFOLDER; # replace NULL with a proper value

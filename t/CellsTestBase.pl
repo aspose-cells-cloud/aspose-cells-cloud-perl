@@ -49,9 +49,9 @@ sub get_client
 {
     my ($self, %args) = @_;
     my $grant_type = 'client_credentials'; # replace NULL with a proper value
-    my $client_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx'; # replace NULL with a proper value
-    my $client_secret =  'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'; # replace NULL with a proper value
-    my $config = AsposeCellsCloud::Configuration->new('base_url' => 'https://api-qa.aspose.cloud','api_version' => 'v3.0', app_sid => $client_id, app_key => $client_secret);
+    my $client_id = $ENV{'CellsCloudTestClientId'}; # replace NULL with a proper value
+    my $client_secret =  $ENV{'CellsCloudTestClientSecret'}; # replace NULL with a proper value
+    my $config = AsposeCellsCloud::Configuration->new('base_url' =>$ENV{'CellsCloudTestApiBaseUrl'},'api_version' => 'v3.0', app_sid => $client_id, app_key => $client_secret);
     my $client = AsposeCellsCloud::ApiClient->new( $config);
     my $oauth_api = AsposeCellsCloud::CellsApi->new($client);
     return $oauth_api;
@@ -75,4 +75,9 @@ sub ready_file
     $args{'api'}->upload_file(path=>$fullfilename ,file => $upload_file_data);
 }
 
+sub is_docker_sdk
+{
+    my $result = lc $ENV{'CellsCloudTestIsDockerTest'};
+    return $result eq 'true'
+}
 1;

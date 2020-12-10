@@ -338,7 +338,7 @@ my $api = get_client();
     my $out_path = undef; # replace NULL with a proper value
     my $Book1_data =undef;
     my @fileinfos = stat(get_path(file=>"Book1.xlsx"));
-    my $filelength = @fileinfos[7];
+    my $filelength = $fileinfos[7];
     open(DATA, "<".get_path(file=>"Book1.xlsx")) or die "file.txt  can not open, $!";
     binmode(DATA);
     # while( read (DATA, $Book1_data, 8)) {};
@@ -358,7 +358,7 @@ my $api = get_client();
     my $out_path = undef; # replace NULL with a proper value
     my $Book1_data =undef;
     my @fileinfos = stat(get_path(file=>"Book1.xlsx"));
-    my $filelength = @fileinfos[7];
+    my $filelength = $fileinfos[7];
     open(DATA, "<".get_path(file=>"Book1.xlsx")) or die "file.txt can not open, $!";
     binmode(DATA);
     # while( read (DATA, $Book1_data, 8)) {};

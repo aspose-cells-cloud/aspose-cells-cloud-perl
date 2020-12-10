@@ -78,6 +78,10 @@ sub ready_file
 sub is_docker_sdk
 {
     my $result = lc $ENV{'CellsCloudTestIsDockerTest'};
-    return $result eq 'true'
+    if( $result eq 'true'  ){
+      return 1;
+    }else{
+      return 0;
+    }      
 }
 1;

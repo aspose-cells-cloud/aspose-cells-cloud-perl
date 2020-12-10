@@ -58,32 +58,33 @@ my $api = get_client();
 # cells_autoshapes_get_worksheet_autoshape test
 #
 {
-    if( is_docker_sdk()){
-        return ;
+    if( not is_docker_sdk()){        
+        my $name =  $MYDOC; # replace NULL with a proper value
+        my $sheet_name = $SHEET2; # replace NULL with a proper value
+        my $autoshape_number = 4; # replace NULL with a proper value
+        my $folder =  $TEMPFOLDER; # replace NULL with a proper value
+        my $format = 'png';
+        ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
+        $result = $api->cells_autoshapes_get_worksheet_autoshape(name => $name, sheet_name => $sheet_name, autoshape_number => $autoshape_number, format => $format ,folder => $folder);
+    }else{
+       ok( 1,"") ;
     }
-    my $name =  $MYDOC; # replace NULL with a proper value
-    my $sheet_name = $SHEET2; # replace NULL with a proper value
-    my $autoshape_number = 4; # replace NULL with a proper value
-    my $folder =  $TEMPFOLDER; # replace NULL with a proper value
-    my $format = 'png';
-    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
-    $result = $api->cells_autoshapes_get_worksheet_autoshape(name => $name, sheet_name => $sheet_name, autoshape_number => $autoshape_number, format => $format ,folder => $folder);
-
 }
 
 #
 # cells_autoshapes_get_worksheet_autoshapes test
 #
 {
-    if( is_docker_sdk()){
-        return ;
+    if( not is_docker_sdk()){         
+        my $name =  $MYDOC; # replace NULL with a proper value
+        my $sheet_name = $SHEET2; # replace NULL with a proper value
+        my $folder =  $TEMPFOLDER; # replace NULL with a proper value
+        ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
+        my $result = $api->cells_autoshapes_get_worksheet_autoshapes(name => $name, sheet_name => $sheet_name, folder => $folder);
+        ok($result->status eq 'OK' ,'cells_autoshapes_get_worksheet_autoshapes OK');
+    }else{
+       ok( 1,"") ;
     }
-    my $name =  $MYDOC; # replace NULL with a proper value
-    my $sheet_name = $SHEET2; # replace NULL with a proper value
-    my $folder =  $TEMPFOLDER; # replace NULL with a proper value
-    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
-    my $result = $api->cells_autoshapes_get_worksheet_autoshapes(name => $name, sheet_name => $sheet_name, folder => $folder);
-    ok($result->status eq 'OK' ,'cells_autoshapes_get_worksheet_autoshapes OK');
 }
 
 

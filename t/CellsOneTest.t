@@ -53,22 +53,18 @@ my $CELLAREA = 'A1:C10';
 
 my $api = get_client();
 
+
 #
-# cells_delete_worksheet_columns test
+# cells_post_cell_characters test
 #
 {
-    
     my $name = $BOOK1; # replace NULL with a proper value
     my $sheet_name = $SHEET1; # replace NULL with a proper value
-    my $png = undef; # replace NULL with a proper value
+    my $cell_name = $CELLNAME; # replace NULL with a proper value
+    my $opt1 =  AsposeCellsCloud::Object::FontSetting->new();
+    my $options = ($opt1); # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-	print get_path( file=> "WaterMark.png");
-    open(DATA, "<".get_path( file=> "WaterMark.png")) or die "file.txt �ļ��޷���, $!";
-    binmode(DATA);
-    read (DATA, $png, 8);
-    close (DATA);
-	print  $png;
-    $result = $api->cells_worksheets_put_worksheet_background(name => $name, sheet_name => $sheet_name, png => $png, folder => $folder);
-    ok($result->status eq 'OK' ,'cells_worksheets_put_worksheet_background OK');
+    my $result = $api->cells_post_cell_characters(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, options => $options, folder => $folder);
+    ok($result->status eq 'OK' ,'cells_post_cell_characters OK');
 }
 1;

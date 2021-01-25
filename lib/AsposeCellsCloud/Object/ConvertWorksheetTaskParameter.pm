@@ -24,7 +24,7 @@ SOFTWARE.
 =cut
 
 
-package AsposeCellsCloud::Object::VerticalPageBreaks;
+package AsposeCellsCloud::Object::ConvertWorksheetTaskParameter;
 
 require 5.6.0;
 use strict;
@@ -37,9 +37,8 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use AsposeCellsCloud::Object::Link;
-use AsposeCellsCloud::Object::LinkElement;
-use AsposeCellsCloud::Object::VerticalPageBreak;
+use AsposeCellsCloud::Object::FileSource;
+use AsposeCellsCloud::Object::TaskParameter;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -123,21 +122,63 @@ sub _deserialize {
 
 
 __PACKAGE__->class_documentation({description => '',
-                                  class => 'VerticalPageBreaks',
+                                  class => 'ConvertWorksheetTaskParameter',
                                   required => [], # TODO
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'link' => {
-    	datatype => 'Link',
-    	base_name => 'link',
+    'workbook' => {
+    	datatype => 'FileSource',
+    	base_name => 'Workbook',
     	description => '',
     	format => '',
     	read_only => '',
     		},
-    'vertical_page_break_list' => {
-    	datatype => 'ARRAY[VerticalPageBreak]',
-    	base_name => 'VerticalPageBreakList',
+    'sheet' => {
+    	datatype => 'string',
+    	base_name => 'Sheet',
+    	description => '',
+    	format => '',
+    	read_only => '',
+    		},
+    'target' => {
+    	datatype => 'FileSource',
+    	base_name => 'Target',
+    	description => '',
+    	format => '',
+    	read_only => '',
+    		},
+    'format' => {
+    	datatype => 'string',
+    	base_name => 'Format',
+    	description => '',
+    	format => '',
+    	read_only => '',
+    		},
+    'area' => {
+    	datatype => 'string',
+    	base_name => 'Area',
+    	description => '',
+    	format => '',
+    	read_only => '',
+    		},
+    'page_index' => {
+    	datatype => 'int',
+    	base_name => 'PageIndex',
+    	description => '',
+    	format => '',
+    	read_only => '',
+    		},
+    'vertical_resolution' => {
+    	datatype => 'int',
+    	base_name => 'VerticalResolution',
+    	description => '',
+    	format => '',
+    	read_only => '',
+    		},
+    'horizontal_resolution' => {
+    	datatype => 'int',
+    	base_name => 'HorizontalResolution',
     	description => '',
     	format => '',
     	read_only => '',
@@ -145,13 +186,25 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->swagger_types( {
-    'link' => 'Link',
-    'vertical_page_break_list' => 'ARRAY[VerticalPageBreak]'
+    'workbook' => 'FileSource',
+    'sheet' => 'string',
+    'target' => 'FileSource',
+    'format' => 'string',
+    'area' => 'string',
+    'page_index' => 'int',
+    'vertical_resolution' => 'int',
+    'horizontal_resolution' => 'int'
 } );
 
 __PACKAGE__->attribute_map( {
-    'link' => 'link',
-    'vertical_page_break_list' => 'VerticalPageBreakList'
+    'workbook' => 'Workbook',
+    'sheet' => 'Sheet',
+    'target' => 'Target',
+    'format' => 'Format',
+    'area' => 'Area',
+    'page_index' => 'PageIndex',
+    'vertical_resolution' => 'VerticalResolution',
+    'horizontal_resolution' => 'HorizontalResolution'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

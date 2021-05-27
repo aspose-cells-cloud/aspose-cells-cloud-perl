@@ -66,6 +66,7 @@ my $api = get_client();
         my $format = 'png';
         ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
         $result = $api->cells_autoshapes_get_worksheet_autoshape(name => $name, sheet_name => $sheet_name, autoshape_number => $autoshape_number, format => $format ,folder => $folder);
+        ok( length( $result)>0,"cells_autoshapes_get_worksheet_autoshape OK" )
     }else{
        ok( 1,"") ;
     }

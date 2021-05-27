@@ -24,7 +24,7 @@ SOFTWARE.
 =cut
 
 
-package AsposeCellsCloud::Object::ChartOperateParameter;
+package AsposeCellsCloud::Object::WorksheetOperateParameter;
 
 require 5.6.0;
 use strict;
@@ -38,6 +38,7 @@ use Date::Parse;
 use DateTime;
 
 use AsposeCellsCloud::Object::OperateParameter;
+use AsposeCellsCloud::Object::WorksheetMovingRequest;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -121,7 +122,7 @@ sub _deserialize {
 
 
 __PACKAGE__->class_documentation({description => '',
-                                  class => 'ChartOperateParameter',
+                                  class => 'WorksheetOperateParameter',
                                   required => [], # TODO
 }                                 );
 
@@ -133,65 +134,30 @@ __PACKAGE__->method_documentation({
     	format => '',
     	read_only => '',
     		},
-    'title' => {
+    'name' => {
     	datatype => 'string',
-    	base_name => 'Title',
+    	base_name => 'Name',
     	description => '',
     	format => '',
     	read_only => '',
     		},
-    'area' => {
+    'sheet_type' => {
     	datatype => 'string',
-    	base_name => 'Area',
+    	base_name => 'SheetType',
     	description => '',
     	format => '',
     	read_only => '',
     		},
-    'category_data' => {
+    'new_name' => {
     	datatype => 'string',
-    	base_name => 'CategoryData',
+    	base_name => 'NewName',
     	description => '',
     	format => '',
     	read_only => '',
     		},
-    'upper_left_row' => {
-    	datatype => 'int',
-    	base_name => 'UpperLeftRow',
-    	description => '',
-    	format => '',
-    	read_only => '',
-    		},
-    'lower_right_column' => {
-    	datatype => 'int',
-    	base_name => 'LowerRightColumn',
-    	description => '',
-    	format => '',
-    	read_only => '',
-    		},
-    'lower_right_row' => {
-    	datatype => 'int',
-    	base_name => 'LowerRightRow',
-    	description => '',
-    	format => '',
-    	read_only => '',
-    		},
-    'is_auto_get_serial_name' => {
-    	datatype => 'boolean',
-    	base_name => 'IsAutoGetSerialName',
-    	description => '',
-    	format => '',
-    	read_only => '',
-    		},
-    'chart_type' => {
-    	datatype => 'string',
-    	base_name => 'ChartType',
-    	description => '',
-    	format => '',
-    	read_only => '',
-    		},
-    'is_vertical' => {
-    	datatype => 'boolean',
-    	base_name => 'IsVertical',
+    'moving_request' => {
+    	datatype => 'WorksheetMovingRequest',
+    	base_name => 'MovingRequest',
     	description => '',
     	format => '',
     	read_only => '',
@@ -200,28 +166,18 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->swagger_types( {
     'operate_type' => 'string',
-    'title' => 'string',
-    'area' => 'string',
-    'category_data' => 'string',
-    'upper_left_row' => 'int',
-    'lower_right_column' => 'int',
-    'lower_right_row' => 'int',
-    'is_auto_get_serial_name' => 'boolean',
-    'chart_type' => 'string',
-    'is_vertical' => 'boolean'
+    'name' => 'string',
+    'sheet_type' => 'string',
+    'new_name' => 'string',
+    'moving_request' => 'WorksheetMovingRequest'
 } );
 
 __PACKAGE__->attribute_map( {
     'operate_type' => 'OperateType',
-    'title' => 'Title',
-    'area' => 'Area',
-    'category_data' => 'CategoryData',
-    'upper_left_row' => 'UpperLeftRow',
-    'lower_right_column' => 'LowerRightColumn',
-    'lower_right_row' => 'LowerRightRow',
-    'is_auto_get_serial_name' => 'IsAutoGetSerialName',
-    'chart_type' => 'ChartType',
-    'is_vertical' => 'IsVertical'
+    'name' => 'Name',
+    'sheet_type' => 'SheetType',
+    'new_name' => 'NewName',
+    'moving_request' => 'MovingRequest'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

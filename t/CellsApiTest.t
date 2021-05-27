@@ -389,7 +389,8 @@ my $api = get_client();
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $cell_name = $CELLNAME; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    my $result = $api->cells_post_set_cell_html_string(name => $name, sheet_name => $sheet_name, cell_name => $cell_name, folder => $folder);
+    my $html_string = "ABC";
+    my $result = $api->cells_post_set_cell_html_string(name => $name, sheet_name => $sheet_name, cell_name => $cell_name,html_string=>$html_string, folder => $folder);
     ok($result->status eq 'OK' ,'cells_post_set_cell_html_string OK');
 }
 

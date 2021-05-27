@@ -211,7 +211,7 @@ my $api = get_client();
     my $shift = "Down";
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
     ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
-    my $result = $api->cells_ranges_put_worksheet_cells_range(name => $name, sheet_name => $sheet_name, range => $range, shift=>$shift folder => $folder);
+    my $result = $api->cells_ranges_put_worksheet_cells_range(name => $name, sheet_name => $sheet_name, range => $range, shift=>$shift, folder => $folder);
     ok($result->status eq 'OK' ,'cells_ranges_put_worksheet_cells_range OK');
 }
 
@@ -225,7 +225,7 @@ my $api = get_client();
     my $shift = "Up";
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
     ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
-    my $result = $api->cells_ranges_delete_worksheet_cells_range(name => $name, sheet_name => $sheet_name, range => $range, shift=>$shift folder => $folder);
+    my $result = $api->cells_ranges_delete_worksheet_cells_range(name => $name, sheet_name => $sheet_name, range => $range, shift=>$shift, folder => $folder);
     ok($result->status eq 'OK' ,'cells_ranges_delete_worksheet_cells_range OK');
 }
 1;

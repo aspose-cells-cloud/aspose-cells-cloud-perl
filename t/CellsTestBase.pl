@@ -30,7 +30,7 @@ use Cwd;
 use AsposeCellsCloud::Configuration ;
 use AsposeCellsCloud::ApiClient ;
 use AsposeCellsCloud::CellsApi ;
-
+use AsposeCellsCloud::LiteCellsApi ;
 # sub new {
 #     my $class = shift;
 #     return bless {}, $class;
@@ -45,6 +45,7 @@ sub get_path
 	my $path =  "TestData/".$args{'file'};
   return  $path;
 }
+
 sub get_client
 {
     my ($self, %args) = @_;
@@ -54,6 +55,18 @@ sub get_client
     my $config = AsposeCellsCloud::Configuration->new('base_url' =>$ENV{'CellsCloudTestApiBaseUrl'},'api_version' => 'v3.0', client_id => $client_id, client_secret => $client_secret);
     my $client = AsposeCellsCloud::ApiClient->new( $config);
     my $oauth_api = AsposeCellsCloud::CellsApi->new($client);
+    return $oauth_api;
+}
+
+sub get_litecells
+{
+    my ($self, %args) = @_;
+    my $grant_type = 'client_credentials'; # replace NULL with a proper value
+    my $client_id = $ENV{'CellsCloudTestClientId'}; # replace NULL with a proper value
+    my $client_secret =  $ENV{'CellsCloudTestClientSecret'}; # replace NULL with a proper value
+    my $config = AsposeCellsCloud::Configuration->new('base_url' =>$ENV{'CellsCloudTestApiBaseUrl'},'api_version' => 'v3.0', client_id => $client_id, client_secret => $client_secret);
+    my $client = AsposeCellsCloud::ApiClient->new( $config);
+    my $oauth_api = AsposeCellsCloud::LiteCellsApi->new($client);
     return $oauth_api;
 }
 

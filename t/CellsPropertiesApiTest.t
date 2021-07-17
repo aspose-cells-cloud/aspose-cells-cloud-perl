@@ -65,7 +65,7 @@ my $api = get_client();
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
     ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_properties_put_document_property(name => $name, property_name => $property_name, property => $property, folder => $folder);
-    ok($result->status eq 'Created' ,'cells_properties_put_document_property OK');
+    ok($result->status eq 'OK' ,'cells_properties_put_document_property OK');
 }
 
 #

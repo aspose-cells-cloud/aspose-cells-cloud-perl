@@ -24,7 +24,7 @@ SOFTWARE.
 =cut
 
 
-package AsposeCellsCloud::Object::CellsDocumentProperty;
+package AsposeCellsCloud::Object::FileInfo;
 
 require 5.6.0;
 use strict;
@@ -37,8 +37,6 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use AsposeCellsCloud::Object::Link;
-use AsposeCellsCloud::Object::LinkElement;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -122,80 +120,44 @@ sub _deserialize {
 
 
 __PACKAGE__->class_documentation({description => '',
-                                  class => 'CellsDocumentProperty',
+                                  class => 'FileInfo',
                                   required => [], # TODO
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'link' => {
-    	datatype => 'Link',
-    	base_name => 'link',
+    'filename' => {
+    	datatype => 'string',
+    	base_name => 'Filename',
     	description => '',
     	format => '',
     	read_only => '',
     		},
-    'name' => {
-    	datatype => 'string',
-    	base_name => 'Name',
-    	description => 'Returns the name of the property.             ',
+    'file_size' => {
+    	datatype => 'int',
+    	base_name => 'FileSize',
+    	description => '',
     	format => '',
     	read_only => '',
     		},
-    'value' => {
+    'file_content' => {
     	datatype => 'string',
-    	base_name => 'Value',
-    	description => 'Gets or sets the value of the property.',
-    	format => '',
-    	read_only => '',
-    		},
-    'is_linked_to_content' => {
-    	datatype => 'string',
-    	base_name => 'IsLinkedToContent',
-    	description => 'Indicates whether this property is linked to content',
-    	format => '',
-    	read_only => '',
-    		},
-    'source' => {
-    	datatype => 'string',
-    	base_name => 'Source',
-    	description => 'The linked content source.',
-    	format => '',
-    	read_only => '',
-    		},
-    'type' => {
-    	datatype => 'string',
-    	base_name => 'Type',
-    	description => 'Gets the data type of the property.             ',
-    	format => '',
-    	read_only => '',
-    		},
-    'is_generated_name' => {
-    	datatype => 'string',
-    	base_name => 'IsGeneratedName',
-    	description => 'Returns true if this property does not have a name in the OLE2 storage and a   unique name was generated only for the public API.             ',
+    	base_name => 'FileContent',
+    	description => '',
     	format => '',
     	read_only => '',
     		},
 });
 
 __PACKAGE__->swagger_types( {
-    'link' => 'Link',
-    'name' => 'string',
-    'value' => 'string',
-    'is_linked_to_content' => 'string',
-    'source' => 'string',
-    'type' => 'string',
-    'is_generated_name' => 'string'
+    'filename' => 'string',
+    'file_size' => 'int',
+    'file_content' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
-    'link' => 'link',
-    'name' => 'Name',
-    'value' => 'Value',
-    'is_linked_to_content' => 'IsLinkedToContent',
-    'source' => 'Source',
-    'type' => 'Type',
-    'is_generated_name' => 'IsGeneratedName'
+    'filename' => 'Filename',
+    'file_size' => 'FileSize',
+    'file_content' => 'FileContent'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

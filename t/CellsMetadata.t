@@ -28,6 +28,7 @@ use AsposeCellsCloud::Configuration;
 use AsposeCellsCloud::ApiClient;
 use AsposeCellsCloud::LiteCellsApi;
 use AsposeCellsCloud::Object::CellsDocumentProperty;
+
 require './t/CellsTestBase.pl';
 
 
@@ -68,10 +69,12 @@ my $api = get_litecells();
 }
 
 {
-    my $filemap = {$assemblytest => get_path(file=>$assemblytest),$datasource => get_path(file=>$datasource)};    
-    my $document_properties =[ AsposeCellsCloud::Object::CellsDocumentProperty->new (name=>'test', value=>'test')];
+    my $filemap = {$assemblytest => get_path(file=>$assemblytest),$datasource => get_path(file=>$datasource)};  
+    my $dp = AsposeCellsCloud::Object::CellsDocumentProperty->new (Name=>'test', Value=>'test');  
+    my $json_str = encode_json   $dp->TO_JSON;    
+    my $document_properties = "ARRAY[".$json_str . "]" ;    
     my $result = $api->post_metadata(file => $filemap,document_properties=>$document_properties);
-    ok($result,'delete_metadata objects test OK');
+    ok($result,'post_metadata objects test OK');
 }
 
 1;

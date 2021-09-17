@@ -81,7 +81,9 @@ sub ready_file
     if (exists $args{'folder'}) {
       $fullfilename = $args{'folder'}."/".$args{'file'};
     }
-    my $upload_file_data = read_file( $path , binmode => ':raw' );;
+
+    my $upload_file_data = read_file( $path , binmode => ':raw' );
+    # print ($upload_file_data);
     # open(DATA, "< ".$path  ) or die $path ." can not open, $!";
     # read (DATA, $upload_file_data, $filelength);
     # close (DATA);    

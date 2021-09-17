@@ -325,7 +325,7 @@ my $api = get_client();
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $first_index = 1000; # replace NULL with a proper value
     my $last_index = 1003; # replace NULL with a proper value
-    my $hide = 'ture'; # replace NULL with a proper value
+    my $hide = 'true'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
     my $result = $api->cells_post_group_worksheet_rows(name => $name, sheet_name => $sheet_name, first_index => $first_index, last_index => $last_index, hide => $hide, folder => $folder);
     ok($result->status eq 'OK' ,'cells_post_group_worksheet_rows OK');
@@ -442,7 +442,7 @@ my $api = get_client();
     my $sheet_name = $SHEET1; # replace NULL with a proper value
     my $first_index = 1000; # replace NULL with a proper value
     my $last_index = 1003; # replace NULL with a proper value
-    my $is_all = 'ture'; # replace NULL with a proper value
+    my $is_all = 'true'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
     my $result = $api->cells_post_ungroup_worksheet_rows(name => $name, sheet_name => $sheet_name, first_index => $first_index, last_index => $last_index, is_all => $is_all, folder => $folder);
     ok($result->status eq 'OK' ,'cells_post_ungroup_worksheet_rows OK');

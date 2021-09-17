@@ -55,14 +55,6 @@ my $api = get_litecells();
 # clear objects test
 #
 {
-    # my $Book1_data =undef;
-    # my @fileinfos = stat(get_path(file=>$BOOK1));
-    # my $filelength = $fileinfos[7];
-    # open(DATA, "<".get_path(file=>$BOOK1)) or die "file.txt  can not open, $!";
-    # binmode(DATA);
-    # # while( read (DATA, $Book1_data, 8)) {};
-    # read (DATA, $Book1_data, $filelength);
-    # close (DATA);  
     my $filemap = {$BOOK1 => get_path(file=>$BOOK1),$MYDOC => get_path(file=>$MYDOC)};
     my $result = $api->post_clear_objects(file => $filemap , objecttype => 'chart' );
     ok($result,'clear objects test OK');

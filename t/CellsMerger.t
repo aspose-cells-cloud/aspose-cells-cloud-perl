@@ -56,7 +56,7 @@ my $api = get_litecells();
 #
 {
     my $filemap = {$BOOK1 => get_path(file=>$BOOK1),$MYDOC => get_path(file=>$MYDOC)};
-    my $result = $api->post_merge(file => $filemap , merge_to_one_sheet => 0,format => 'pdf');
+    my $result = $api->post_merge(file => $filemap , merge_to_one_sheet => 'false',format => 'pdf');
     ok($result,'post_merge objects test OK');
 }
 1;

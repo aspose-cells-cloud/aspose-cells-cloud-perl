@@ -20,3 +20,4 @@ perl.exe t\CellsTaskApiTest.t
 perl.exe t\CellsWorkbookApiTest.t
 perl.exe t\CellsWorksheetsApiTest.t
 perl.exe t\CellsWorksheetValidationsApiTest.t
+perl.exe t\CellsImport.t

@@ -41,7 +41,7 @@ my $api = get_client();
 
 
 #
-# cells_post_cell_characters test
+# post_batch_convert test
 #
 {
 	ready_file('api'=> $api, 'file'=> 'Book1.xlsx' ,'folder' =>'BatchFiles') ;   
@@ -50,9 +50,7 @@ my $api = get_client();
     
     my $all_sheets =  [ 'Book1.xlsx','myDocument.xlsx' ];
     my $match_condition = AsposeCellsCloud::Object::MatchConditionRequest->new(FullMatchConditions =>  $all_sheets);
-    # print $match_condition->full_match_conditions;
     my $batch_convert_request = AsposeCellsCloud::Object::BatchConvertRequest->new (SourceFolder =>'BatchFiles' , MatchCondition => $match_condition , Format => 'PDF');
-    # print $batch_convert_request;
     $result = $api->post_batch_convert(batch_convert_request => $batch_convert_request );
     ok(length($result) > 10 ,'post_batch_convert OK');
 }

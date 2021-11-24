@@ -1400,7 +1400,7 @@ sub post_replace {
       croak("Missing the required parameter 'newtext' when calling post_replace");
     }
     # parse inputs
-    my $_resource_path = '/cells/repleace';
+    my $_resource_path = '/cells/replace';
 
     my $_method = 'POST';
     my $query_params = {};

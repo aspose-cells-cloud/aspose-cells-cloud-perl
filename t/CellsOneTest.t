@@ -35,7 +35,21 @@ require './t/CellsTestBase.pl';
 
 
 my $result =undef;
-
+my $BOOK1 = 'Book1.xlsx';
+my $MYDOC = 'myDocument.xlsx';
+my $PVTESTFILE = 'TestCase.xlsx';
+my $TEMPFOLDER = 'PerlTest';
+my $SHEET1 = 'Sheet1';
+my $SHEET2 = 'Sheet2';
+my $SHEET3 = 'Sheet3';
+my $SHEET4 = 'Sheet4';
+my $SHEET5 = 'Sheet5';
+my $SHEET6 = 'Sheet6';
+my $SHEET7 = 'Sheet7';
+my $SHEET8 = 'Sheet8';
+my $CELLNAME = 'A1';
+my $RANGE = 'A1:C10';
+my $CELLAREA = 'A1:C10';
 
 my $api = get_client();
 
@@ -44,16 +58,10 @@ my $api = get_client();
 # cells_post_cell_characters test
 #
 {
-	ready_file('api'=> $api, 'file'=> 'Book1.xlsx' ,'folder' =>'BatchFiles') ;   
-    ready_file('api'=> $api, 'file'=> 'myDocument.xlsx' ,'folder' => 'BatchFiles') ; 
-    ready_file('api'=> $api, 'file'=> 'TestCase.xlsx' ,'folder' =>'BatchFiles') ; 
-    
-    my $all_sheets =  [ 'Book1.xlsx','myDocument.xlsx' ];
-    my $match_condition = AsposeCellsCloud::Object::MatchConditionRequest->new(FullMatchConditions =>  $all_sheets);
-    # print $match_condition->full_match_conditions;
-    my $batch_convert_request = AsposeCellsCloud::Object::BatchConvertRequest->new (SourceFolder =>'BatchFiles' , MatchCondition => $match_condition , Format => 'PDF');
-    # print $batch_convert_request;
-    $result = $api->post_batch_convert(batch_convert_request => $batch_convert_request );
-    ok(length($result) > 10 ,'post_batch_convert OK');
+    my $name = $BOOK1; # replace NULL with a proper value
+    my $folder = $TEMPFOLDER; # replace NULL with a proper value
+	ready_file('api'=> $api, 'file'=>$BOOK1 ,'folder' =>$TEMPFOLDER) ;   
+    $result = $api->cells_worksheets_get_page_count(name => $name,sheet_name=>$SHEET1 ,folder=> $folder);
+    ok($result gt 0);
 }
 1;

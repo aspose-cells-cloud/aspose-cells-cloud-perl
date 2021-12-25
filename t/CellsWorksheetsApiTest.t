@@ -418,7 +418,7 @@ my $api = get_client();
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
     ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_worksheets_put_add_new_worksheet(name => $name, sheet_name => $sheet_name, position => $position, sheettype => $sheettype, folder => $folder);
-    ok($result->status eq 'Created' ,'cells_worksheets_put_add_new_worksheet OK');
+    ok($result->status eq 'OK' ,'cells_worksheets_put_add_new_worksheet OK');
 }
 
 #

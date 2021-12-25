@@ -24917,7 +24917,7 @@ sub cells_sparkline_groups_post_worksheet_sparkline_group {
     }
 
     # parse inputs
-    my $_resource_path = '/cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineIndex}';
+    my $_resource_path = '/cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex}';
 
     my $_method = 'POST';
     my $query_params = {};
@@ -28001,6 +28001,7 @@ sub cells_workbook_post_workbooks_text_search {
 # @param string $format The format to convert. (optional)
 # @param string $password The workbook password. (optional)
 # @param string $out_path Path to save result (optional)
+# @param string $storage_name storage name. (optional)
 {
     my $params = {
     'workbook' => {
@@ -28021,6 +28022,11 @@ sub cells_workbook_post_workbooks_text_search {
     'out_path' => {
         data_type => 'string',
         description => 'Path to save result',
+        required => '0',
+    },
+    'storage_name' => {
+        data_type => 'string',
+        description => 'storage name.',
         required => '0',
     },
     };
@@ -28068,6 +28074,11 @@ sub cells_workbook_put_convert_workbook {
     # query params
     if ( exists $args{'out_path'}) {
         $query_params->{'outPath'} = $self->{api_client}->to_query_value($args{'out_path'});
+    }
+
+    # query params
+    if ( exists $args{'storage_name'}) {
+        $query_params->{'storageName'} = $self->{api_client}->to_query_value($args{'storage_name'});
     }
 
     $self->{api_client}->check_access_token();

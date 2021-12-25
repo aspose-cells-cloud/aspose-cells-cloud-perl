@@ -24,7 +24,7 @@ SOFTWARE.
 =cut
 
 
-package AsposeCellsCloud::Object::DynamicFilter;
+package AsposeCellsCloud::Object::TableTotalRequest;
 
 require 5.6.0;
 use strict;
@@ -120,28 +120,28 @@ sub _deserialize {
 
 
 __PACKAGE__->class_documentation({description => '',
-                                  class => 'DynamicFilter',
+                                  class => 'TableTotalRequest',
                                   required => [], # TODO
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'dynamic_filter_type' => {
+    'list_column_index' => {
+    	datatype => 'int',
+    	base_name => 'ListColumnIndex',
+    	description => '',
+    	format => '',
+    	read_only => '',
+    		},
+    'totals_calculation' => {
     	datatype => 'string',
-    	base_name => 'DynamicFilterType',
+    	base_name => 'TotalsCalculation',
     	description => '',
     	format => '',
     	read_only => '',
     		},
-    'max_value' => {
-    	datatype => 'int',
-    	base_name => 'MaxValue',
-    	description => '',
-    	format => '',
-    	read_only => '',
-    		},
-    'value' => {
-    	datatype => 'int',
-    	base_name => 'Value',
+    'custom_formula' => {
+    	datatype => 'string',
+    	base_name => 'CustomFormula',
     	description => '',
     	format => '',
     	read_only => '',
@@ -149,15 +149,15 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->swagger_types( {
-    'dynamic_filter_type' => 'string',
-    'max_value' => 'int',
-    'value' => 'int'
+    'list_column_index' => 'int',
+    'totals_calculation' => 'string',
+    'custom_formula' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
-    'dynamic_filter_type' => 'DynamicFilterType',
-    'max_value' => 'MaxValue',
-    'value' => 'Value'
+    'list_column_index' => 'ListColumnIndex',
+    'totals_calculation' => 'TotalsCalculation',
+    'custom_formula' => 'CustomFormula'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

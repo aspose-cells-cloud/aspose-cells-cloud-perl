@@ -81,13 +81,13 @@ sub ready_file
     if (exists $args{'folder'}) {
       $fullfilename = $args{'folder'}."/".$args{'file'};
     }
-
+    my $storage_name =  $args{'storage_name'};
     my $upload_file_data = read_file( $path , binmode => ':raw' );
     # print ($upload_file_data);
     # open(DATA, "< ".$path  ) or die $path ." can not open, $!";
     # read (DATA, $upload_file_data, $filelength);
     # close (DATA);    
-    $args{'api'}->upload_file(path=>$fullfilename ,file => $upload_file_data);
+    $args{'api'}->upload_file(path=>$fullfilename ,file => $upload_file_data,storage_name=>$storage_name);
 }
 
 sub is_docker_sdk

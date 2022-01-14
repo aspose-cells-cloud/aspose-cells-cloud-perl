@@ -55,13 +55,17 @@ my $api = get_client();
 
 
 #
-# cells_post_cell_characters test
+# cells_workbook_post_workbooks_merge other storage test
 #
 {
     my $name = $BOOK1; # replace NULL with a proper value
+    my $merge_with = 'myDocument.xlsx'; # replace NULL with a proper value
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
-	ready_file('api'=> $api, 'file'=>$BOOK1 ,'folder' =>$TEMPFOLDER) ;   
-    $result = $api->cells_worksheets_get_page_count(name => $name,sheet_name=>$SHEET1 ,folder=> $folder);
-    ok($result gt 0);
+    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;
+    ready_file('api'=> $api, 'file'=>$merge_with ,'folder' =>$folder, 'storage_name' => "DropBox") ;
+    my $merge_file =  $folder . '/' . $merge_with;
+    $result = $api->cells_workbook_post_workbooks_merge(name => $name, merge_with => $merge_file,
+     folder => $folder,merged_storage_name => 'DropBox');
+    ok($result->status eq 'OK' ,'cells_workbook_post_workbooks_merge OK');
 }
 1;

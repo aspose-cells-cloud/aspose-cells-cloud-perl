@@ -24,7 +24,7 @@ SOFTWARE.
 =cut
 
 
-package AsposeCellsCloud::LiteCellsApi;
+package AsposeCellsCloud::LightCellsApi;
 
 require 5.6.0;
 use strict;

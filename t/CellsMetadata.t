@@ -26,7 +26,7 @@ use warnings;
 use JSON;
 use AsposeCellsCloud::Configuration;
 use AsposeCellsCloud::ApiClient;
-use AsposeCellsCloud::LiteCellsApi;
+use AsposeCellsCloud::LightCellsApi;
 use AsposeCellsCloud::Object::CellsDocumentProperty;
 
 require './t/CellsTestBase.pl';

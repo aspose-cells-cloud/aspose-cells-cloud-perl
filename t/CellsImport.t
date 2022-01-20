@@ -25,7 +25,7 @@ use strict;
 use warnings;
 use AsposeCellsCloud::Configuration;
 use AsposeCellsCloud::ApiClient;
-use AsposeCellsCloud::LiteCellsApi;
+use AsposeCellsCloud::LightCellsApi;
 use AsposeCellsCloud::Object::ImportIntArrayOption;
 require './t/CellsTestBase.pl';
 

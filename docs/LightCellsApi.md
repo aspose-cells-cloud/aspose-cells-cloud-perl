@@ -1,26 +1,26 @@
-# AsposeCellsCloud::LiteCellsApi
+# AsposeCellsCloud::LightCellsApi
 
 ## Load the API package
 ```perl
-use AsposeCellsCloud::Object::LiteCellsApi;
+use AsposeCellsCloud::Object::LightCellsApi;
 ```
 
 All URIs are relative to *https://api.aspose.cloud/v3.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_metadata**](LiteCellsApi.md#delete_metadata) | **POST** /cells/metadata/delete | 
-[**get_metadata**](LiteCellsApi.md#get_metadata) | **POST** /cells/metadata/get | 
-[**post_assemble**](LiteCellsApi.md#post_assemble) | **POST** /cells/assemble | 
-[**post_clear_objects**](LiteCellsApi.md#post_clear_objects) | **POST** /cells/clearobjects | 
-[**post_export**](LiteCellsApi.md#post_export) | **POST** /cells/export | 
-[**post_merge**](LiteCellsApi.md#post_merge) | **POST** /cells/merge | 
-[**post_metadata**](LiteCellsApi.md#post_metadata) | **POST** /cells/metadata/update | 
-[**post_protect**](LiteCellsApi.md#post_protect) | **POST** /cells/protect | 
-[**post_search**](LiteCellsApi.md#post_search) | **POST** /cells/search | 
-[**post_split**](LiteCellsApi.md#post_split) | **POST** /cells/split | 
-[**post_unlock**](LiteCellsApi.md#post_unlock) | **POST** /cells/unlock | 
-[**post_watermark**](LiteCellsApi.md#post_watermark) | **POST** /cells/watermark | 
+[**delete_metadata**](LightCellsApi.md#delete_metadata) | **POST** /cells/metadata/delete | 
+[**get_metadata**](LightCellsApi.md#get_metadata) | **POST** /cells/metadata/get | 
+[**post_assemble**](LightCellsApi.md#post_assemble) | **POST** /cells/assemble | 
+[**post_clear_objects**](LightCellsApi.md#post_clear_objects) | **POST** /cells/clearobjects | 
+[**post_export**](LightCellsApi.md#post_export) | **POST** /cells/export | 
+[**post_merge**](LightCellsApi.md#post_merge) | **POST** /cells/merge | 
+[**post_metadata**](LightCellsApi.md#post_metadata) | **POST** /cells/metadata/update | 
+[**post_protect**](LightCellsApi.md#post_protect) | **POST** /cells/protect | 
+[**post_search**](LightCellsApi.md#post_search) | **POST** /cells/search | 
+[**post_split**](LightCellsApi.md#post_split) | **POST** /cells/split | 
+[**post_unlock**](LightCellsApi.md#post_unlock) | **POST** /cells/unlock | 
+[**post_watermark**](LightCellsApi.md#post_watermark) | **POST** /cells/watermark | 
 
 
 # **delete_metadata**
@@ -31,8 +31,8 @@ Method | HTTP request | Description
 ### Example 
 ```perl
 use Data::Dumper;
-use AsposeCellsCloud::LiteCellsApi;
-my $api_instance = AsposeCellsCloud::LiteCellsApi->new(
+use AsposeCellsCloud::LightCellsApi;
+my $api_instance = AsposeCellsCloud::LightCellsApi->new(
 );
 
 my $file = AsposeCellsCloud::Object::string->new(); # string | File to upload
@@ -43,7 +43,7 @@ eval {
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling LiteCellsApi->delete_metadata: $@\n";
+    warn "Exception when calling LightCellsApi->delete_metadata: $@\n";
 }
 ```
 
@@ -77,8 +77,8 @@ No authorization required
 ### Example 
 ```perl
 use Data::Dumper;
-use AsposeCellsCloud::LiteCellsApi;
-my $api_instance = AsposeCellsCloud::LiteCellsApi->new(
+use AsposeCellsCloud::LightCellsApi;
+my $api_instance = AsposeCellsCloud::LightCellsApi->new(
 );
 
 my $file = AsposeCellsCloud::Object::string->new(); # string | File to upload
@@ -89,7 +89,7 @@ eval {
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling LiteCellsApi->get_metadata: $@\n";
+    warn "Exception when calling LightCellsApi->get_metadata: $@\n";
 }
 ```
 
@@ -123,8 +123,8 @@ No authorization required
 ### Example 
 ```perl
 use Data::Dumper;
-use AsposeCellsCloud::LiteCellsApi;
-my $api_instance = AsposeCellsCloud::LiteCellsApi->new(
+use AsposeCellsCloud::LightCellsApi;
+my $api_instance = AsposeCellsCloud::LightCellsApi->new(
 );
 
 my $file = AsposeCellsCloud::Object::string->new(); # string | File to upload
@@ -136,7 +136,7 @@ eval {
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling LiteCellsApi->post_assemble: $@\n";
+    warn "Exception when calling LightCellsApi->post_assemble: $@\n";
 }
 ```
 
@@ -171,8 +171,8 @@ No authorization required
 ### Example 
 ```perl
 use Data::Dumper;
-use AsposeCellsCloud::LiteCellsApi;
-my $api_instance = AsposeCellsCloud::LiteCellsApi->new(
+use AsposeCellsCloud::LightCellsApi;
+my $api_instance = AsposeCellsCloud::LightCellsApi->new(
 );
 
 my $file = '/path/to/file.txt'; # File | File to upload
@@ -183,7 +183,7 @@ eval {
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling LiteCellsApi->post_clear_objects: $@\n";
+    warn "Exception when calling LightCellsApi->post_clear_objects: $@\n";
 }
 ```
 
@@ -217,8 +217,8 @@ No authorization required
 ### Example 
 ```perl
 use Data::Dumper;
-use AsposeCellsCloud::LiteCellsApi;
-my $api_instance = AsposeCellsCloud::LiteCellsApi->new(
+use AsposeCellsCloud::LightCellsApi;
+my $api_instance = AsposeCellsCloud::LightCellsApi->new(
 );
 
 my $file = AsposeCellsCloud::Object::string->new(); # string | File to upload
@@ -230,7 +230,7 @@ eval {
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling LiteCellsApi->post_export: $@\n";
+    warn "Exception when calling LightCellsApi->post_export: $@\n";
 }
 ```
 
@@ -265,8 +265,8 @@ No authorization required
 ### Example 
 ```perl
 use Data::Dumper;
-use AsposeCellsCloud::LiteCellsApi;
-my $api_instance = AsposeCellsCloud::LiteCellsApi->new(
+use AsposeCellsCloud::LightCellsApi;
+my $api_instance = AsposeCellsCloud::LightCellsApi->new(
 );
 
 my $file = AsposeCellsCloud::Object::string->new(); # string | File to upload
@@ -278,7 +278,7 @@ eval {
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling LiteCellsApi->post_merge: $@\n";
+    warn "Exception when calling LightCellsApi->post_merge: $@\n";
 }
 ```
 
@@ -313,8 +313,8 @@ No authorization required
 ### Example 
 ```perl
 use Data::Dumper;
-use AsposeCellsCloud::LiteCellsApi;
-my $api_instance = AsposeCellsCloud::LiteCellsApi->new(
+use AsposeCellsCloud::LightCellsApi;
+my $api_instance = AsposeCellsCloud::LightCellsApi->new(
 );
 
 my $file = AsposeCellsCloud::Object::string->new(); # string | File to upload
@@ -325,7 +325,7 @@ eval {
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling LiteCellsApi->post_metadata: $@\n";
+    warn "Exception when calling LightCellsApi->post_metadata: $@\n";
 }
 ```
 
@@ -359,8 +359,8 @@ No authorization required
 ### Example 
 ```perl
 use Data::Dumper;
-use AsposeCellsCloud::LiteCellsApi;
-my $api_instance = AsposeCellsCloud::LiteCellsApi->new(
+use AsposeCellsCloud::LightCellsApi;
+my $api_instance = AsposeCellsCloud::LightCellsApi->new(
 );
 
 my $file = AsposeCellsCloud::Object::string->new(); # string | File to upload
@@ -371,7 +371,7 @@ eval {
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling LiteCellsApi->post_protect: $@\n";
+    warn "Exception when calling LightCellsApi->post_protect: $@\n";
 }
 ```
 
@@ -405,8 +405,8 @@ No authorization required
 ### Example 
 ```perl
 use Data::Dumper;
-use AsposeCellsCloud::LiteCellsApi;
-my $api_instance = AsposeCellsCloud::LiteCellsApi->new(
+use AsposeCellsCloud::LightCellsApi;
+my $api_instance = AsposeCellsCloud::LightCellsApi->new(
 );
 
 my $file = AsposeCellsCloud::Object::string->new(); # string | File to upload
@@ -418,7 +418,7 @@ eval {
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling LiteCellsApi->post_search: $@\n";
+    warn "Exception when calling LightCellsApi->post_search: $@\n";
 }
 ```
 
@@ -453,8 +453,8 @@ No authorization required
 ### Example 
 ```perl
 use Data::Dumper;
-use AsposeCellsCloud::LiteCellsApi;
-my $api_instance = AsposeCellsCloud::LiteCellsApi->new(
+use AsposeCellsCloud::LightCellsApi;
+my $api_instance = AsposeCellsCloud::LightCellsApi->new(
 );
 
 my $file = AsposeCellsCloud::Object::string->new(); # string | File to upload
@@ -468,7 +468,7 @@ eval {
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling LiteCellsApi->post_split: $@\n";
+    warn "Exception when calling LightCellsApi->post_split: $@\n";
 }
 ```
 
@@ -505,8 +505,8 @@ No authorization required
 ### Example 
 ```perl
 use Data::Dumper;
-use AsposeCellsCloud::LiteCellsApi;
-my $api_instance = AsposeCellsCloud::LiteCellsApi->new(
+use AsposeCellsCloud::LightCellsApi;
+my $api_instance = AsposeCellsCloud::LightCellsApi->new(
 );
 
 my $file = AsposeCellsCloud::Object::string->new(); # string | File to upload
@@ -517,7 +517,7 @@ eval {
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling LiteCellsApi->post_unlock: $@\n";
+    warn "Exception when calling LightCellsApi->post_unlock: $@\n";
 }
 ```
 
@@ -551,8 +551,8 @@ No authorization required
 ### Example 
 ```perl
 use Data::Dumper;
-use AsposeCellsCloud::LiteCellsApi;
-my $api_instance = AsposeCellsCloud::LiteCellsApi->new(
+use AsposeCellsCloud::LightCellsApi;
+my $api_instance = AsposeCellsCloud::LightCellsApi->new(
 );
 
 my $file = '/path/to/file.txt'; # File | File to upload
@@ -564,7 +564,7 @@ eval {
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling LiteCellsApi->post_watermark: $@\n";
+    warn "Exception when calling LightCellsApi->post_watermark: $@\n";
 }
 ```
 

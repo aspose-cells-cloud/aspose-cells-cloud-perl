@@ -51,21 +51,16 @@ my $CELLNAME = 'A1';
 my $RANGE = 'A1:C10';
 my $CELLAREA = 'A1:C10';
 
-my $api = get_client();
+my $api = get_litecells();
 
 
 #
 # cells_workbook_post_workbooks_merge other storage test
 #
 {
-    my $name = $BOOK1; # replace NULL with a proper value
-    my $merge_with = 'myDocument.xlsx'; # replace NULL with a proper value
-    my $folder = $TEMPFOLDER; # replace NULL with a proper value
-    ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;
-    ready_file('api'=> $api, 'file'=>$merge_with ,'folder' =>$folder, 'storage_name' => "DropBox") ;
-    my $merge_file =  $folder . '/' . $merge_with;
-    $result = $api->cells_workbook_post_workbooks_merge(name => $name, merge_with => $merge_file,
-     folder => $folder,merged_storage_name => 'DropBox');
-    ok($result->status eq 'OK' ,'cells_workbook_post_workbooks_merge OK');
+    my $filemap = {$BOOK1 => get_path(file=>$BOOK1),$MYDOC => get_path(file=>$MYDOC)};
+    my $extendedqueryparameters = { 'OnePagePerSheet' => 'false'};
+    my $result = $api->post_export(file => $filemap , object_type => 'workbook',format => 'pdf'  ,extended_query_parameters => $extendedqueryparameters);
+    ok($result,'post_export objects  extend test OK');
 }
 1;

@@ -403,8 +403,8 @@ my $api = get_client();
     close (DATA);    
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
     # ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
-    $result = $api->cells_workbook_put_convert_workbook( workbook => $Book1_data, format => $format, password => $password, out_path => $out_path,folder =>$folder);
-    ok(length($result) > 10 ,'post_batch_convert OK');
+    $result = $api->cells_workbook_put_convert_workbook( workbook => $Book1_data, format => $format, password => $password, folder =>$folder);
+    ok(length($result) > 10 ,'cells_workbook_put_convert_workbook pdf OK');
 }
 
 #
@@ -424,8 +424,8 @@ my $api = get_client();
     close (DATA);
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
     # ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
-    $result = $api->cells_workbook_put_convert_workbook( workbook => $Book1_data, format => $format, password => $password, out_path => $out_path,folder =>$folder);
-    ok(length($result) > 10 ,'post_batch_convert OK');
+    $result = $api->cells_workbook_put_convert_workbook( workbook => $Book1_data, format => $format, password => $password, folder =>$folder);
+    ok(length($result) > 0 ,'cells_workbook_put_convert_workbook md OK');
 }
 
 #
@@ -557,7 +557,7 @@ my $api = get_client();
     my $folder = $TEMPFOLDER; # replace NULL with a proper value
     # ready_file('api'=> $api, 'file'=>$name ,'folder' =>$folder) ;  
     $result = $api->cells_workbook_put_convert_workbook( workbook => $Book1_data, format => $format, password => $password, out_path => $out_path,folder =>$folder,extended_query_parameters => $extendedqueryparameters);
-    ok(length($result) > 10 ,'post_batch_convert OK');
+    ok(length($result) > 10 ,'cells_workbook_put_convert_workbook OK');
 }
 {
     my $name = $BOOK1; # replace NULL with a proper value

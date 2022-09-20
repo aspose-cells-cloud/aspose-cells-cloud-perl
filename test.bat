@@ -22,3 +22,4 @@ perl.exe t\CellsWorksheetsApiTest.t
 perl.exe t\CellsWorksheetValidationsApiTest.t
 perl.exe t\CellsImport.t
 perl.exe t\CellsBatchTest.t
+perl.exe t\CellsConvertTest.t

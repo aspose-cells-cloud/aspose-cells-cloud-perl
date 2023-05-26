@@ -34,7 +34,12 @@ Copy-Item -Path "MANIFEST" -Destination  "temp/$packageFolder/MANIFEST"
 Copy-Item -Path "META.json" -Destination  "temp/$packageFolder/META.json" 
 Copy-Item -Path "META.yml" -Destination  "temp/$packageFolder/META.yml" 
 Copy-Item -Path "README.md" -Destination  "temp/$packageFolder/README.md" 
-Compress-7Zip -ArchiveFileName  "$packageFolder.tar" -Path  "temp"  -Format Tar  
+$null = Set-Location .\temp
+tar -czvf "$packageFolder.tar.gz" $packageFolder
+Move-Item "$packageFolder.tar.gz" ../packages/
+Set-Location ../
+Remove-Item  -Path "temp" -Recurse
+# Compress-7Zip -ArchiveFileName  "$packageFolder.tar" -Path  "temp"  -Format Tar  
 # Compress-7Zip -ArchiveFileName  "packages/$packageFolder.tar.gz" -Path  "$packageFolder.tar" -Format  GZip
 # Remove-Item  -Path "temp" -Recurse
 # Remove-Item  -Path "$packageFolder.tar"

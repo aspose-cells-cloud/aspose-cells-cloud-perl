@@ -111,8 +111,6 @@ sub run_http_request {
     if (defined $self->upload_files) {   
         my $map_file = $self->upload_files;
         while ( my ($filename,$value) = each( %$map_file ) ) {
-                print($filename."\n");
-                 print($value."\n");
                 $form_params->{$filename} = [$value ,$filename,'application/octet-stream'];
         }
     } 

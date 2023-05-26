@@ -547,7 +547,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::DeleteWorksheetPivotTableFilterRequest->new();
         $request->{name} =  $remoteName;
-        $request->{sheet_name} =  'Sheet4';
+        $request->{sheet_name} =  'Sheet3';
         $request->{pivot_table_index} =  0;
         $request->{field_index} =  0;
         $request->{need_re_calculate} =  'true';

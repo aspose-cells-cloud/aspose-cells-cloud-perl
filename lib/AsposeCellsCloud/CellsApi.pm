@@ -36237,6 +36237,145 @@ sub post_batch_convert{
     return $_response_object;
 
 }
+#
+# PostBatchProtectRequest
+#
+# 
+# 
+# @batchProtectRequest  BatchProtectRequest (required)     
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'PostBatchProtectRequest',
+            description => 'PostBatchProtect Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'post_batch_protect' } = { 
+    	summary => '',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub post_batch_protect{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# PostBatchLockRequest
+#
+# 
+# 
+# @batchLockRequest  BatchLockRequest (required)     
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'PostBatchLockRequest',
+            description => 'PostBatchLock Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'post_batch_lock' } = { 
+    	summary => '',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub post_batch_lock{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# PostBatchUnlockRequest
+#
+# 
+# 
+# @batchLockRequest  BatchLockRequest (required)     
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'PostBatchUnlockRequest',
+            description => 'PostBatchUnlock Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'post_batch_unlock' } = { 
+    	summary => '',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub post_batch_unlock{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# PostBatchSplitRequest
+#
+# 
+# 
+# @batchSplitRequest  BatchSplitRequest (required)     
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'PostBatchSplitRequest',
+            description => 'PostBatchSplit Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'post_batch_split' } = { 
+    	summary => '',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub post_batch_split{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
 
 #
 # GetExtractBarcodesRequest

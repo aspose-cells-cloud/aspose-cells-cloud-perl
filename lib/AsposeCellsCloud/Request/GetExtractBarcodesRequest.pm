@@ -59,10 +59,10 @@ sub new {
 
 
 # Run Operation Request
-# GetExtractBarcodesRequest.name :   ,
-# GetExtractBarcodesRequest.sheetName :   ,
-# GetExtractBarcodesRequest.pictureIndex :   ,
-# GetExtractBarcodesRequest.folder :   ,
+# GetExtractBarcodesRequest.name : The workbook name.  ,
+# GetExtractBarcodesRequest.sheetName : The worksheet name.  ,
+# GetExtractBarcodesRequest.pictureIndex : Picture index.  ,
+# GetExtractBarcodesRequest.folder : Workbook folder.  ,
 # GetExtractBarcodesRequest.storageName :    
 
 {
@@ -74,7 +74,7 @@ sub new {
        }
     };
     __PACKAGE__->method_documentation->{ 'get_extract_barcodes' } = { 
-    	summary => '',
+    	summary => 'Extract barcodes from worksheet picture.',
         params => $params,
         returns => 'BarcodeResponseList',
     };
@@ -137,28 +137,28 @@ __PACKAGE__->method_documentation({
      'name' => {
      	datatype => 'string',
      	base_name => 'name',
-     	description => '',
+     	description => 'The workbook name.',
      	format => '',
      	read_only => '',
      		},
      'sheet_name' => {
      	datatype => 'string',
      	base_name => 'sheetName',
-     	description => '',
+     	description => 'The worksheet name.',
      	format => '',
      	read_only => '',
      		},
      'picture_index' => {
      	datatype => 'int',
      	base_name => 'pictureIndex',
-     	description => '',
+     	description => 'Picture index.',
      	format => '',
      	read_only => '',
      		},
      'folder' => {
      	datatype => 'string',
      	base_name => 'folder',
-     	description => '',
+     	description => 'Workbook folder.',
      	format => '',
      	read_only => '',
      		},

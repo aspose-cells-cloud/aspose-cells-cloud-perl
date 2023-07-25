@@ -1180,6 +1180,7 @@ lib/AsposeCellsCloud/Request/PostImportRequest.pm
 lib/AsposeCellsCloud/Request/PostWatermarkRequest.pm
 lib/AsposeCellsCloud/Request/PostClearObjectsRequest.pm
 lib/AsposeCellsCloud/Request/PostReverseRequest.pm
+lib/AsposeCellsCloud/Request/PostRepairRequest.pm
 lib/AsposeCellsCloud/Request/PostRotateRequest.pm
 lib/AsposeCellsCloud/Request/PostMetadataRequest.pm
 lib/AsposeCellsCloud/Request/GetMetadataRequest.pm

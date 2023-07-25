@@ -41362,6 +41362,42 @@ sub post_reverse{
 }
 
 #
+# PostRepairRequest
+#
+# 
+# 
+# @File  string (required)  File to upload  
+# @format  string      
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'PostRepairRequest',
+            description => 'PostRepair Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'post_repair' } = { 
+    	summary => '',
+        params => $params,
+        returns => 'FilesResult',
+    };
+}
+#
+# @return FilesResult
+#
+sub post_repair{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('FilesResult', $response);
+    return $_response_object;
+}
+
+#
 # PostRotateRequest
 #
 # 

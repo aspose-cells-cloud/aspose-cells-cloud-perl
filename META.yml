@@ -20,7 +20,7 @@ provides:
     file: lib/AsposeCellsCloud/ApiFactory.pm
   AsposeCellsCloud::CellsApi:
     file: lib/AsposeCellsCloud/CellsApi.pm
-    version: 23.6
+    version: 23.7
   AsposeCellsCloud::LiteCellsApi:
     file: lib/AsposeCellsCloud/LiteCellsApi.pm
   AsposeCellsCloud::LightCellsApi:
@@ -1023,6 +1023,8 @@ provides:
     file: lib/AsposeCellsCloud/Request/PostClearObjectsRequest.pm
   AsposeCellsCloud::Request::PostReverseRequest:
     file: lib/AsposeCellsCloud/Request/PostReverseRequest.pm
+  AsposeCellsCloud::Request::PostRepairRequest:
+    file: lib/AsposeCellsCloud/Request/PostRepairRequest.pm
   AsposeCellsCloud::Request::PostRotateRequest:
     file: lib/AsposeCellsCloud/Request/PostRotateRequest.pm
   AsposeCellsCloud::Request::PostMetadataRequest:
@@ -1428,5 +1430,5 @@ requires:
   strict: '0'
   utf8: '0'
   warnings: '0'
-version: 23.6
+version: 23.7
 x_serialization_backend: 'CPAN::Meta::YAML version 0.018'

@@ -1,4 +1,4 @@
-use Test::More tests => 212; #TODO update number of test cases
+use Test::More tests => 216; #TODO update number of test cases
 use Test::Exception;
 
 use lib 'lib';
@@ -16,6 +16,7 @@ use AsposeCellsCloud::Request::PostProtectRequest;
 use AsposeCellsCloud::Request::PostSearchRequest;
 use AsposeCellsCloud::Request::PostReplaceRequest;
 use AsposeCellsCloud::Request::PostReplaceRequest;
+use AsposeCellsCloud::Request::PostRepairRequest;
 use AsposeCellsCloud::Request::PostWatermarkRequest;
 use AsposeCellsCloud::Request::PostClearObjectsRequest;
 use AsposeCellsCloud::Request::PostReverseRequest;
@@ -4971,6 +4972,90 @@ my $api = get_cells();
         my $result =  $api->post_clear_objects(request=> $request);
         ok($result,'post_clear_objects test OK');
     }
+#
+    # LightCells->post_repair  test
+    #
+    { 
+      
+        my $book1Xlsx = 'Book1.xlsx';
+
+     
+        my $format = 'xlsx';
+
+        my $mapFiles = {};           
+
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
+
+        my $request = AsposeCellsCloud::Request::PostRepairRequest->new();
+        $request->{file} =  $mapFiles;
+        $request->{format} =  $format;
+        my $result =  $api->post_repair(request=> $request);
+        ok($result,'post_repair test OK');
+    }
+
+    #
+    # LightCells->post_repair  test
+    #
+    { 
+      
+        my $book1Xlsx = 'Book1.xlsx';
+
+     
+        my $format = 'pdf';
+
+        my $mapFiles = {};           
+
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
+
+        my $request = AsposeCellsCloud::Request::PostRepairRequest->new();
+        $request->{file} =  $mapFiles;
+        $request->{format} =  $format;
+        my $result =  $api->post_repair(request=> $request);
+        ok($result,'post_repair test OK');
+    }
+
+    #
+    # LightCells->post_repair  test
+    #
+    { 
+      
+        my $book1Xlsx = 'Book1.xlsx';
+
+     
+        my $format = 'csv';
+
+        my $mapFiles = {};           
+
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
+
+        my $request = AsposeCellsCloud::Request::PostRepairRequest->new();
+        $request->{file} =  $mapFiles;
+        $request->{format} =  $format;
+        my $result =  $api->post_repair(request=> $request);
+        ok($result,'post_repair test OK');
+    }
+
+    #
+    # LightCells->post_repair  test
+    #
+    { 
+      
+        my $book1Xlsx = 'Book1.xlsx';
+
+     
+        my $format = 'png';
+
+        my $mapFiles = {};           
+
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
+
+        my $request = AsposeCellsCloud::Request::PostRepairRequest->new();
+        $request->{file} =  $mapFiles;
+        $request->{format} =  $format;
+        my $result =  $api->post_repair(request=> $request);
+        ok($result,'post_repair test OK');
+    }
+
 
     #
     # LightCells->post_reverse  test

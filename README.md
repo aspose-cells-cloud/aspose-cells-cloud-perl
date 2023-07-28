@@ -23,6 +23,7 @@ Perl Cloud SDK wraps Aspose.Cells Cloud API. The SDK enhances your Android apps 
 ## Feature & Enhancements in Version 23.7
 
 - Support to repair api.
+- Remove GetExtractBarcodes API.
  
 ## Read & Write Spreadsheet Formats
 

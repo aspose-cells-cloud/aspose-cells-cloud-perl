@@ -38,13 +38,13 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
 
-        # my $request = AsposeCellsCloud::Request::GetWorksheetAutoFilterRequest->new();
-        # $request->{name} =  $remoteName;
-        # $request->{sheet_name} =  'Sheet1';
-        # $request->{folder} =  $remoteFolder;
-        # $request->{storage_name} =  '';
-        # my $result =  $api->get_worksheet_auto_filter(request=> $request);
-        # ok($result,'get_worksheet_auto_filter test OK');
+        my $request = AsposeCellsCloud::Request::GetWorksheetAutoFilterRequest->new();
+        $request->{name} =  $remoteName;
+        $request->{sheet_name} =  'Sheet1';
+        $request->{folder} =  $remoteFolder;
+        $request->{storage_name} =  '';
+        my $result =  $api->get_worksheet_auto_filter(request=> $request);
+        ok($result,'get_worksheet_auto_filter test OK');
     }
 
     

@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::OoxmlSaveOptions;
+package AsposeCellsCloud::Object::Protection;
 
 require 5.6.0;
 use strict;
@@ -35,7 +35,7 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
-use AsposeCellsCloud::Object::SaveOptions; 
+ 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -119,99 +119,127 @@ sub _deserialize {
 
 
 __PACKAGE__->class_documentation({description => '',
-                                  class => 'OoxmlSaveOptions',
+                                  class => 'Protection',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'export_cell_name' => {
+     'allow_deleting_column' => {
      	datatype => 'boolean',
-     	base_name => 'ExportCellName',
+     	base_name => 'AllowDeletingColumn',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'update_zoom' => {
+     'allow_deleting_row' => {
      	datatype => 'boolean',
-     	base_name => 'UpdateZoom',
+     	base_name => 'AllowDeletingRow',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'enable_zip64' => {
+     'allow_filtering' => {
      	datatype => 'boolean',
-     	base_name => 'EnableZip64',
+     	base_name => 'AllowFiltering',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'embed_ooxml_as_ole_object' => {
+     'allow_formatting_cell' => {
      	datatype => 'boolean',
-     	base_name => 'EmbedOoxmlAsOleObject',
+     	base_name => 'AllowFormattingCell',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'compression_type' => {
+     'allow_formatting_column' => {
+     	datatype => 'boolean',
+     	base_name => 'AllowFormattingColumn',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'allow_formatting_row' => {
+     	datatype => 'boolean',
+     	base_name => 'AllowFormattingRow',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'allow_inserting_column' => {
+     	datatype => 'boolean',
+     	base_name => 'AllowInsertingColumn',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'allow_inserting_hyperlink' => {
+     	datatype => 'boolean',
+     	base_name => 'AllowInsertingHyperlink',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'allow_inserting_row' => {
+     	datatype => 'boolean',
+     	base_name => 'AllowInsertingRow',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'allow_sorting' => {
+     	datatype => 'boolean',
+     	base_name => 'AllowSorting',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'allow_using_pivot_table' => {
+     	datatype => 'boolean',
+     	base_name => 'AllowUsingPivotTable',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'allow_editing_content' => {
+     	datatype => 'boolean',
+     	base_name => 'AllowEditingContent',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'allow_editing_object' => {
+     	datatype => 'boolean',
+     	base_name => 'AllowEditingObject',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'allow_editing_scenario' => {
+     	datatype => 'boolean',
+     	base_name => 'AllowEditingScenario',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'password' => {
      	datatype => 'string',
-     	base_name => 'CompressionType',
+     	base_name => 'Password',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'save_format' => {
-     	datatype => 'string',
-     	base_name => 'SaveFormat',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'cached_file_folder' => {
-     	datatype => 'string',
-     	base_name => 'CachedFileFolder',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'clear_data' => {
+     'allow_selecting_locked_cell' => {
      	datatype => 'boolean',
-     	base_name => 'ClearData',
+     	base_name => 'AllowSelectingLockedCell',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'create_directory' => {
+     'allow_selecting_unlocked_cell' => {
      	datatype => 'boolean',
-     	base_name => 'CreateDirectory',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'enable_http_compression' => {
-     	datatype => 'boolean',
-     	base_name => 'EnableHTTPCompression',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'refresh_chart_cache' => {
-     	datatype => 'boolean',
-     	base_name => 'RefreshChartCache',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'sort_names' => {
-     	datatype => 'boolean',
-     	base_name => 'SortNames',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'validate_merged_areas' => {
-     	datatype => 'boolean',
-     	base_name => 'ValidateMergedAreas',
+     	base_name => 'AllowSelectingUnlockedCell',
      	description => '',
      	format => '',
      	read_only => '',
@@ -219,35 +247,43 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->swagger_types( {
-    'export_cell_name' => 'boolean',
-    'update_zoom' => 'boolean',
-    'enable_zip64' => 'boolean',
-    'embed_ooxml_as_ole_object' => 'boolean',
-    'compression_type' => 'string',
-    'save_format' => 'string',
-    'cached_file_folder' => 'string',
-    'clear_data' => 'boolean',
-    'create_directory' => 'boolean',
-    'enable_http_compression' => 'boolean',
-    'refresh_chart_cache' => 'boolean',
-    'sort_names' => 'boolean',
-    'validate_merged_areas' => 'boolean' 
+    'allow_deleting_column' => 'boolean',
+    'allow_deleting_row' => 'boolean',
+    'allow_filtering' => 'boolean',
+    'allow_formatting_cell' => 'boolean',
+    'allow_formatting_column' => 'boolean',
+    'allow_formatting_row' => 'boolean',
+    'allow_inserting_column' => 'boolean',
+    'allow_inserting_hyperlink' => 'boolean',
+    'allow_inserting_row' => 'boolean',
+    'allow_sorting' => 'boolean',
+    'allow_using_pivot_table' => 'boolean',
+    'allow_editing_content' => 'boolean',
+    'allow_editing_object' => 'boolean',
+    'allow_editing_scenario' => 'boolean',
+    'password' => 'string',
+    'allow_selecting_locked_cell' => 'boolean',
+    'allow_selecting_unlocked_cell' => 'boolean' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'export_cell_name' => 'ExportCellName',
-    'update_zoom' => 'UpdateZoom',
-    'enable_zip64' => 'EnableZip64',
-    'embed_ooxml_as_ole_object' => 'EmbedOoxmlAsOleObject',
-    'compression_type' => 'CompressionType',
-    'save_format' => 'SaveFormat',
-    'cached_file_folder' => 'CachedFileFolder',
-    'clear_data' => 'ClearData',
-    'create_directory' => 'CreateDirectory',
-    'enable_http_compression' => 'EnableHTTPCompression',
-    'refresh_chart_cache' => 'RefreshChartCache',
-    'sort_names' => 'SortNames',
-    'validate_merged_areas' => 'ValidateMergedAreas' 
+    'allow_deleting_column' => 'AllowDeletingColumn',
+    'allow_deleting_row' => 'AllowDeletingRow',
+    'allow_filtering' => 'AllowFiltering',
+    'allow_formatting_cell' => 'AllowFormattingCell',
+    'allow_formatting_column' => 'AllowFormattingColumn',
+    'allow_formatting_row' => 'AllowFormattingRow',
+    'allow_inserting_column' => 'AllowInsertingColumn',
+    'allow_inserting_hyperlink' => 'AllowInsertingHyperlink',
+    'allow_inserting_row' => 'AllowInsertingRow',
+    'allow_sorting' => 'AllowSorting',
+    'allow_using_pivot_table' => 'AllowUsingPivotTable',
+    'allow_editing_content' => 'AllowEditingContent',
+    'allow_editing_object' => 'AllowEditingObject',
+    'allow_editing_scenario' => 'AllowEditingScenario',
+    'password' => 'Password',
+    'allow_selecting_locked_cell' => 'AllowSelectingLockedCell',
+    'allow_selecting_unlocked_cell' => 'AllowSelectingUnlockedCell' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

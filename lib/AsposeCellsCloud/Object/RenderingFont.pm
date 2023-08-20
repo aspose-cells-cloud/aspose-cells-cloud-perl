@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::OoxmlSaveOptions;
+package AsposeCellsCloud::Object::RenderingFont;
 
 require 5.6.0;
 use strict;
@@ -35,7 +35,7 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
-use AsposeCellsCloud::Object::SaveOptions; 
+use AsposeCellsCloud::Object::Color; 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -119,99 +119,43 @@ sub _deserialize {
 
 
 __PACKAGE__->class_documentation({description => '',
-                                  class => 'OoxmlSaveOptions',
+                                  class => 'RenderingFont',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'export_cell_name' => {
-     	datatype => 'boolean',
-     	base_name => 'ExportCellName',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'update_zoom' => {
-     	datatype => 'boolean',
-     	base_name => 'UpdateZoom',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'enable_zip64' => {
-     	datatype => 'boolean',
-     	base_name => 'EnableZip64',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'embed_ooxml_as_ole_object' => {
-     	datatype => 'boolean',
-     	base_name => 'EmbedOoxmlAsOleObject',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'compression_type' => {
+     'name' => {
      	datatype => 'string',
-     	base_name => 'CompressionType',
+     	base_name => 'Name',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'save_format' => {
-     	datatype => 'string',
-     	base_name => 'SaveFormat',
+     'size' => {
+     	datatype => 'double',
+     	base_name => 'Size',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'cached_file_folder' => {
-     	datatype => 'string',
-     	base_name => 'CachedFileFolder',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'clear_data' => {
+     'bold' => {
      	datatype => 'boolean',
-     	base_name => 'ClearData',
+     	base_name => 'Bold',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'create_directory' => {
+     'italic' => {
      	datatype => 'boolean',
-     	base_name => 'CreateDirectory',
+     	base_name => 'Italic',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'enable_http_compression' => {
-     	datatype => 'boolean',
-     	base_name => 'EnableHTTPCompression',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'refresh_chart_cache' => {
-     	datatype => 'boolean',
-     	base_name => 'RefreshChartCache',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'sort_names' => {
-     	datatype => 'boolean',
-     	base_name => 'SortNames',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'validate_merged_areas' => {
-     	datatype => 'boolean',
-     	base_name => 'ValidateMergedAreas',
+     'color' => {
+     	datatype => 'Color',
+     	base_name => 'Color',
      	description => '',
      	format => '',
      	read_only => '',
@@ -219,35 +163,19 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->swagger_types( {
-    'export_cell_name' => 'boolean',
-    'update_zoom' => 'boolean',
-    'enable_zip64' => 'boolean',
-    'embed_ooxml_as_ole_object' => 'boolean',
-    'compression_type' => 'string',
-    'save_format' => 'string',
-    'cached_file_folder' => 'string',
-    'clear_data' => 'boolean',
-    'create_directory' => 'boolean',
-    'enable_http_compression' => 'boolean',
-    'refresh_chart_cache' => 'boolean',
-    'sort_names' => 'boolean',
-    'validate_merged_areas' => 'boolean' 
+    'name' => 'string',
+    'size' => 'double',
+    'bold' => 'boolean',
+    'italic' => 'boolean',
+    'color' => 'Color' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'export_cell_name' => 'ExportCellName',
-    'update_zoom' => 'UpdateZoom',
-    'enable_zip64' => 'EnableZip64',
-    'embed_ooxml_as_ole_object' => 'EmbedOoxmlAsOleObject',
-    'compression_type' => 'CompressionType',
-    'save_format' => 'SaveFormat',
-    'cached_file_folder' => 'CachedFileFolder',
-    'clear_data' => 'ClearData',
-    'create_directory' => 'CreateDirectory',
-    'enable_http_compression' => 'EnableHTTPCompression',
-    'refresh_chart_cache' => 'RefreshChartCache',
-    'sort_names' => 'SortNames',
-    'validate_merged_areas' => 'ValidateMergedAreas' 
+    'name' => 'Name',
+    'size' => 'Size',
+    'bold' => 'Bold',
+    'italic' => 'Italic',
+    'color' => 'Color' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

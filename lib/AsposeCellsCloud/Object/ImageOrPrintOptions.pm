@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::PdfSaveOptions;
+package AsposeCellsCloud::Object::ImageOrPrintOptions;
 
 require 5.6.0;
 use strict;
@@ -35,9 +35,7 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
-use AsposeCellsCloud::Object::PdfSecurityOptions;
-use AsposeCellsCloud::Object::RenderingWatermark;
-use AsposeCellsCloud::Object::SaveOptions; 
+ 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -121,92 +119,36 @@ sub _deserialize {
 
 
 __PACKAGE__->class_documentation({description => '',
-                                  class => 'PdfSaveOptions',
+                                  class => 'ImageOrPrintOptions',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'display_doc_title' => {
+     'text_cross_type' => {
+     	datatype => 'string',
+     	base_name => 'TextCrossType',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'gridline_type' => {
+     	datatype => 'string',
+     	base_name => 'GridlineType',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'output_blank_page_when_nothing_to_print' => {
      	datatype => 'boolean',
-     	base_name => 'DisplayDocTitle',
+     	base_name => 'OutputBlankPageWhenNothingToPrint',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'export_document_structure' => {
+     'check_workbook_default_font' => {
      	datatype => 'boolean',
-     	base_name => 'ExportDocumentStructure',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'emf_render_setting' => {
-     	datatype => 'string',
-     	base_name => 'EmfRenderSetting',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'custom_properties_export' => {
-     	datatype => 'string',
-     	base_name => 'CustomPropertiesExport',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'optimization_type' => {
-     	datatype => 'string',
-     	base_name => 'OptimizationType',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'producer' => {
-     	datatype => 'string',
-     	base_name => 'Producer',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'pdf_compression' => {
-     	datatype => 'string',
-     	base_name => 'PdfCompression',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'font_encoding' => {
-     	datatype => 'string',
-     	base_name => 'FontEncoding',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'watermark' => {
-     	datatype => 'RenderingWatermark',
-     	base_name => 'Watermark',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'calculate_formula' => {
-     	datatype => 'boolean',
-     	base_name => 'CalculateFormula',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'check_font_compatibility' => {
-     	datatype => 'boolean',
-     	base_name => 'CheckFontCompatibility',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'compliance' => {
-     	datatype => 'string',
-     	base_name => 'Compliance',
+     	base_name => 'CheckWorkbookDefaultFont',
      	description => '',
      	format => '',
      	read_only => '',
@@ -218,37 +160,121 @@ __PACKAGE__->method_documentation({
      	format => '',
      	read_only => '',
      		},
-     'one_page_per_sheet' => {
+     'is_optimized' => {
      	datatype => 'boolean',
-     	base_name => 'OnePagePerSheet',
+     	base_name => 'IsOptimized',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'printing_page_type' => {
+     'page_count' => {
+     	datatype => 'int',
+     	base_name => 'PageCount',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'page_index' => {
+     	datatype => 'int',
+     	base_name => 'PageIndex',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'is_font_substitution_char_granularity' => {
+     	datatype => 'boolean',
+     	base_name => 'IsFontSubstitutionCharGranularity',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'transparent' => {
+     	datatype => 'boolean',
+     	base_name => 'Transparent',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'only_area' => {
+     	datatype => 'boolean',
+     	base_name => 'OnlyArea',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'svg_fit_to_view_port' => {
+     	datatype => 'boolean',
+     	base_name => 'SVGFitToViewPort',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'embeded_image_name_in_svg' => {
      	datatype => 'string',
-     	base_name => 'PrintingPageType',
+     	base_name => 'EmbededImageNameInSvg',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'security_options' => {
-     	datatype => 'PdfSecurityOptions',
-     	base_name => 'SecurityOptions',
+     'all_columns_in_one_page_per_sheet' => {
+     	datatype => 'boolean',
+     	base_name => 'AllColumnsInOnePagePerSheet',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'desired_ppi' => {
+     'print_with_status_dialog' => {
+     	datatype => 'boolean',
+     	base_name => 'PrintWithStatusDialog',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'horizontal_resolution' => {
      	datatype => 'int',
-     	base_name => 'desiredPPI',
+     	base_name => 'HorizontalResolution',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'jpeg_quality' => {
+     'vertical_resolution' => {
      	datatype => 'int',
-     	base_name => 'jpegQuality',
+     	base_name => 'VerticalResolution',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'default_edit_language' => {
+     	datatype => 'string',
+     	base_name => 'DefaultEditLanguage',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'tiff_color_depth' => {
+     	datatype => 'string',
+     	base_name => 'TiffColorDepth',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'tiff_compression' => {
+     	datatype => 'string',
+     	base_name => 'TiffCompression',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'printing_page' => {
+     	datatype => 'string',
+     	base_name => 'PrintingPage',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'quality' => {
+     	datatype => 'int',
+     	base_name => 'Quality',
      	description => '',
      	format => '',
      	read_only => '',
@@ -260,58 +286,16 @@ __PACKAGE__->method_documentation({
      	format => '',
      	read_only => '',
      		},
-     'save_format' => {
+     'one_page_per_sheet' => {
+     	datatype => 'boolean',
+     	base_name => 'OnePagePerSheet',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'tiff_binarization_method' => {
      	datatype => 'string',
-     	base_name => 'SaveFormat',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'cached_file_folder' => {
-     	datatype => 'string',
-     	base_name => 'CachedFileFolder',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'clear_data' => {
-     	datatype => 'boolean',
-     	base_name => 'ClearData',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'create_directory' => {
-     	datatype => 'boolean',
-     	base_name => 'CreateDirectory',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'enable_http_compression' => {
-     	datatype => 'boolean',
-     	base_name => 'EnableHTTPCompression',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'refresh_chart_cache' => {
-     	datatype => 'boolean',
-     	base_name => 'RefreshChartCache',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'sort_names' => {
-     	datatype => 'boolean',
-     	base_name => 'SortNames',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'validate_merged_areas' => {
-     	datatype => 'boolean',
-     	base_name => 'ValidateMergedAreas',
+     	base_name => 'TiffBinarizationMethod',
      	description => '',
      	format => '',
      	read_only => '',
@@ -319,63 +303,59 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->swagger_types( {
-    'display_doc_title' => 'boolean',
-    'export_document_structure' => 'boolean',
-    'emf_render_setting' => 'string',
-    'custom_properties_export' => 'string',
-    'optimization_type' => 'string',
-    'producer' => 'string',
-    'pdf_compression' => 'string',
-    'font_encoding' => 'string',
-    'watermark' => 'RenderingWatermark',
-    'calculate_formula' => 'boolean',
-    'check_font_compatibility' => 'boolean',
-    'compliance' => 'string',
+    'text_cross_type' => 'string',
+    'gridline_type' => 'string',
+    'output_blank_page_when_nothing_to_print' => 'boolean',
+    'check_workbook_default_font' => 'boolean',
     'default_font' => 'string',
-    'one_page_per_sheet' => 'boolean',
-    'printing_page_type' => 'string',
-    'security_options' => 'PdfSecurityOptions',
-    'desired_ppi' => 'int',
-    'jpeg_quality' => 'int',
+    'is_optimized' => 'boolean',
+    'page_count' => 'int',
+    'page_index' => 'int',
+    'is_font_substitution_char_granularity' => 'boolean',
+    'transparent' => 'boolean',
+    'only_area' => 'boolean',
+    'svg_fit_to_view_port' => 'boolean',
+    'embeded_image_name_in_svg' => 'string',
+    'all_columns_in_one_page_per_sheet' => 'boolean',
+    'print_with_status_dialog' => 'boolean',
+    'horizontal_resolution' => 'int',
+    'vertical_resolution' => 'int',
+    'default_edit_language' => 'string',
+    'tiff_color_depth' => 'string',
+    'tiff_compression' => 'string',
+    'printing_page' => 'string',
+    'quality' => 'int',
     'image_type' => 'string',
-    'save_format' => 'string',
-    'cached_file_folder' => 'string',
-    'clear_data' => 'boolean',
-    'create_directory' => 'boolean',
-    'enable_http_compression' => 'boolean',
-    'refresh_chart_cache' => 'boolean',
-    'sort_names' => 'boolean',
-    'validate_merged_areas' => 'boolean' 
+    'one_page_per_sheet' => 'boolean',
+    'tiff_binarization_method' => 'string' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'display_doc_title' => 'DisplayDocTitle',
-    'export_document_structure' => 'ExportDocumentStructure',
-    'emf_render_setting' => 'EmfRenderSetting',
-    'custom_properties_export' => 'CustomPropertiesExport',
-    'optimization_type' => 'OptimizationType',
-    'producer' => 'Producer',
-    'pdf_compression' => 'PdfCompression',
-    'font_encoding' => 'FontEncoding',
-    'watermark' => 'Watermark',
-    'calculate_formula' => 'CalculateFormula',
-    'check_font_compatibility' => 'CheckFontCompatibility',
-    'compliance' => 'Compliance',
+    'text_cross_type' => 'TextCrossType',
+    'gridline_type' => 'GridlineType',
+    'output_blank_page_when_nothing_to_print' => 'OutputBlankPageWhenNothingToPrint',
+    'check_workbook_default_font' => 'CheckWorkbookDefaultFont',
     'default_font' => 'DefaultFont',
-    'one_page_per_sheet' => 'OnePagePerSheet',
-    'printing_page_type' => 'PrintingPageType',
-    'security_options' => 'SecurityOptions',
-    'desired_ppi' => 'desiredPPI',
-    'jpeg_quality' => 'jpegQuality',
+    'is_optimized' => 'IsOptimized',
+    'page_count' => 'PageCount',
+    'page_index' => 'PageIndex',
+    'is_font_substitution_char_granularity' => 'IsFontSubstitutionCharGranularity',
+    'transparent' => 'Transparent',
+    'only_area' => 'OnlyArea',
+    'svg_fit_to_view_port' => 'SVGFitToViewPort',
+    'embeded_image_name_in_svg' => 'EmbededImageNameInSvg',
+    'all_columns_in_one_page_per_sheet' => 'AllColumnsInOnePagePerSheet',
+    'print_with_status_dialog' => 'PrintWithStatusDialog',
+    'horizontal_resolution' => 'HorizontalResolution',
+    'vertical_resolution' => 'VerticalResolution',
+    'default_edit_language' => 'DefaultEditLanguage',
+    'tiff_color_depth' => 'TiffColorDepth',
+    'tiff_compression' => 'TiffCompression',
+    'printing_page' => 'PrintingPage',
+    'quality' => 'Quality',
     'image_type' => 'ImageType',
-    'save_format' => 'SaveFormat',
-    'cached_file_folder' => 'CachedFileFolder',
-    'clear_data' => 'ClearData',
-    'create_directory' => 'CreateDirectory',
-    'enable_http_compression' => 'EnableHTTPCompression',
-    'refresh_chart_cache' => 'RefreshChartCache',
-    'sort_names' => 'SortNames',
-    'validate_merged_areas' => 'ValidateMergedAreas' 
+    'one_page_per_sheet' => 'OnePagePerSheet',
+    'tiff_binarization_method' => 'TiffBinarizationMethod' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::OoxmlSaveOptions;
+package AsposeCellsCloud::Object::ProtectWorkbookRequst;
 
 require 5.6.0;
 use strict;
@@ -35,7 +35,8 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
-use AsposeCellsCloud::Object::SaveOptions; 
+use AsposeCellsCloud::Object::DigitalSignature;
+use AsposeCellsCloud::Object::Protection; 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -119,99 +120,50 @@ sub _deserialize {
 
 
 __PACKAGE__->class_documentation({description => '',
-                                  class => 'OoxmlSaveOptions',
+                                  class => 'ProtectWorkbookRequst',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'export_cell_name' => {
+     'aways_open_only_ready' => {
      	datatype => 'boolean',
-     	base_name => 'ExportCellName',
+     	base_name => 'AwaysOpenOnlyReady',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'update_zoom' => {
-     	datatype => 'boolean',
-     	base_name => 'UpdateZoom',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'enable_zip64' => {
-     	datatype => 'boolean',
-     	base_name => 'EnableZip64',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'embed_ooxml_as_ole_object' => {
-     	datatype => 'boolean',
-     	base_name => 'EmbedOoxmlAsOleObject',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'compression_type' => {
+     'encrypt_with_password' => {
      	datatype => 'string',
-     	base_name => 'CompressionType',
+     	base_name => 'EncryptWithPassword',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'save_format' => {
+     'protect_current_sheet' => {
+     	datatype => 'Protection',
+     	base_name => 'ProtectCurrentSheet',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'protect_workbook_structure' => {
      	datatype => 'string',
-     	base_name => 'SaveFormat',
+     	base_name => 'ProtectWorkbookStructure',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'cached_file_folder' => {
-     	datatype => 'string',
-     	base_name => 'CachedFileFolder',
+     'digital_signature' => {
+     	datatype => 'DigitalSignature',
+     	base_name => 'DigitalSignature',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'clear_data' => {
+     'mark_as_final' => {
      	datatype => 'boolean',
-     	base_name => 'ClearData',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'create_directory' => {
-     	datatype => 'boolean',
-     	base_name => 'CreateDirectory',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'enable_http_compression' => {
-     	datatype => 'boolean',
-     	base_name => 'EnableHTTPCompression',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'refresh_chart_cache' => {
-     	datatype => 'boolean',
-     	base_name => 'RefreshChartCache',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'sort_names' => {
-     	datatype => 'boolean',
-     	base_name => 'SortNames',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'validate_merged_areas' => {
-     	datatype => 'boolean',
-     	base_name => 'ValidateMergedAreas',
+     	base_name => 'MarkAsFinal',
      	description => '',
      	format => '',
      	read_only => '',
@@ -219,35 +171,21 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->swagger_types( {
-    'export_cell_name' => 'boolean',
-    'update_zoom' => 'boolean',
-    'enable_zip64' => 'boolean',
-    'embed_ooxml_as_ole_object' => 'boolean',
-    'compression_type' => 'string',
-    'save_format' => 'string',
-    'cached_file_folder' => 'string',
-    'clear_data' => 'boolean',
-    'create_directory' => 'boolean',
-    'enable_http_compression' => 'boolean',
-    'refresh_chart_cache' => 'boolean',
-    'sort_names' => 'boolean',
-    'validate_merged_areas' => 'boolean' 
+    'aways_open_only_ready' => 'boolean',
+    'encrypt_with_password' => 'string',
+    'protect_current_sheet' => 'Protection',
+    'protect_workbook_structure' => 'string',
+    'digital_signature' => 'DigitalSignature',
+    'mark_as_final' => 'boolean' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'export_cell_name' => 'ExportCellName',
-    'update_zoom' => 'UpdateZoom',
-    'enable_zip64' => 'EnableZip64',
-    'embed_ooxml_as_ole_object' => 'EmbedOoxmlAsOleObject',
-    'compression_type' => 'CompressionType',
-    'save_format' => 'SaveFormat',
-    'cached_file_folder' => 'CachedFileFolder',
-    'clear_data' => 'ClearData',
-    'create_directory' => 'CreateDirectory',
-    'enable_http_compression' => 'EnableHTTPCompression',
-    'refresh_chart_cache' => 'RefreshChartCache',
-    'sort_names' => 'SortNames',
-    'validate_merged_areas' => 'ValidateMergedAreas' 
+    'aways_open_only_ready' => 'AwaysOpenOnlyReady',
+    'encrypt_with_password' => 'EncryptWithPassword',
+    'protect_current_sheet' => 'ProtectCurrentSheet',
+    'protect_workbook_structure' => 'ProtectWorkbookStructure',
+    'digital_signature' => 'DigitalSignature',
+    'mark_as_final' => 'MarkAsFinal' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

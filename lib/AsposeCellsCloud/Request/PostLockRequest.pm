@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::PostProtectRequest;
+package AsposeCellsCloud::Request::PostLockRequest;
 
 require 5.6.0;
 use strict;
@@ -59,9 +59,8 @@ sub new {
 
 
 # Run Operation Request
-# PostProtectRequest.File : File to upload  ,
-# PostProtectRequest.protectWorkbookRequst :   ,
-# PostProtectRequest.password :    
+# PostLockRequest.File : File to upload  ,
+# PostLockRequest.password :    
 
 {
     my $params = {
@@ -71,8 +70,8 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'post_protect' } = { 
-    	summary => 'Protect MS Excel and OpenDocument Spreadsheet by making them password protected.',
+    __PACKAGE__->method_documentation->{ 'post_lock' } = { 
+    	summary => '',
         params => $params,
         returns => 'FilesResult',
     };
@@ -84,7 +83,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = '/cells/protect';
+    my $_resource_path = '/cells/lock';
 
     my $_method = 'POST';
     my $query_params = {};
@@ -102,7 +101,7 @@ sub run_http_request {
         $query_params->{'password'} = $client->to_query_value($self->password);      
     } 
     my $_body_data;
-
+ 
 
     if (defined $self->file) {   
         my $map_file = $self->file;
@@ -111,11 +110,6 @@ sub run_http_request {
         }
     } 
 
-    # body params
-    if (defined $self->protect_workbook_requst) {
-        #$_body_data = $self->protect_workbook_requst;
-         $_body_data = JSON->new->convert_blessed->encode( $self->protect_workbook_requst);
-    }
     # authentication setting, if any
     my $auth_settings = [qw()];
 
@@ -133,13 +127,6 @@ __PACKAGE__->method_documentation({
      	format => '',
      	read_only => '',
      		},
-     'protect_workbook_requst' => {
-     	datatype => 'ProtectWorkbookRequst',
-     	base_name => 'protectWorkbookRequst',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
      'password' => {
      	datatype => 'string',
      	base_name => 'password',
@@ -152,7 +139,6 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->attribute_map( {
     'file' => 'File',
-    'protect_workbook_requst' => 'protectWorkbookRequst',
     'password' => 'password' 
 } );
 

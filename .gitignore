@@ -17,5 +17,4 @@ nytprof.out
 *.bs
 /_eumm/
 packages
-TestData/roywang.pfx
 test_results.xml

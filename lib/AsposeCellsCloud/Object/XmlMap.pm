@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::BarcodeResponseList;
+package AsposeCellsCloud::Object::XmlMap;
 
 require 5.6.0;
 use strict;
@@ -35,7 +35,7 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
- 
+use AsposeCellsCloud::Object::XmlDataBinding; 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -118,22 +118,46 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => '            ',
-                                  class => 'BarcodeResponseList',
+__PACKAGE__->class_documentation({description => 'Represents Xml map information. ',
+                                  class => 'XmlMap',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-    
+     'name' => {
+     	datatype => 'string',
+     	base_name => 'Name',
+     	description => 'Returns or sets the name of the object. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'root_element_name' => {
+     	datatype => 'string',
+     	base_name => 'RootElementName',
+     	description => 'Gets root element name. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'data_binding' => {
+     	datatype => 'XmlDataBinding',
+     	base_name => 'DataBinding',
+     	description => 'Gets an  of this map. ',
+     	format => '',
+     	read_only => '',
+     		},    
 });
 
 __PACKAGE__->swagger_types( {
- 
+    'name' => 'string',
+    'root_element_name' => 'string',
+    'data_binding' => 'XmlDataBinding' 
 } );
 
 __PACKAGE__->attribute_map( {
- 
+    'name' => 'Name',
+    'root_element_name' => 'RootElementName',
+    'data_binding' => 'DataBinding' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

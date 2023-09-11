@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::BarcodeResponse;
+package AsposeCellsCloud::Object::PivotGlobalizationSettings;
 
 require 5.6.0;
 use strict;
@@ -118,55 +118,22 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => '',
-                                  class => 'BarcodeResponse',
+__PACKAGE__->class_documentation({description => 'Represents the globalization settings for pivot tables. ',
+                                  class => 'PivotGlobalizationSettings',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'barcode_value' => {
-     	datatype => 'string',
-     	base_name => 'BarcodeValue',
-     	description => 'Gets or sets barcode data.            ',
-     	format => '',
-     	read_only => '',
-     		},
-     'barcode_type' => {
-     	datatype => 'string',
-     	base_name => 'BarcodeType',
-     	description => 'Gets or sets type of the barcode.            ',
-     	format => '',
-     	read_only => '',
-     		},
-     'region' => {
-     	datatype => 'ARRAY[Point]',
-     	base_name => 'Region',
-     	description => 'Gets or sets region with barcode.            ',
-     	format => '',
-     	read_only => '',
-     		},
-     'checksum' => {
-     	datatype => 'string',
-     	base_name => 'Checksum',
-     	description => 'Gets or sets checksum of barcode.            ',
-     	format => '',
-     	read_only => '',
-     		},    
+    
 });
 
 __PACKAGE__->swagger_types( {
-    'barcode_value' => 'string',
-    'barcode_type' => 'string',
-    'region' => 'ARRAY[Point]',
-    'checksum' => 'string' 
+ 
 } );
 
 __PACKAGE__->attribute_map( {
-    'barcode_value' => 'BarcodeValue',
-    'barcode_type' => 'BarcodeType',
-    'region' => 'Region',
-    'checksum' => 'Checksum' 
+ 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

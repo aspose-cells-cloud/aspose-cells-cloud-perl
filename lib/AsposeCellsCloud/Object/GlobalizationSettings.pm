@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::CalculationOptions;
+package AsposeCellsCloud::Object::GlobalizationSettings;
 
 require 5.6.0;
 use strict;
@@ -35,9 +35,8 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
-use AsposeCellsCloud::Object::AbstractCalculationEngine;
-use AsposeCellsCloud::Object::AbstractCalculationMonitor;
-use AsposeCellsCloud::Object::Workbook; 
+use AsposeCellsCloud::Object::ChartGlobalizationSettings;
+use AsposeCellsCloud::Object::PivotGlobalizationSettings; 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -120,82 +119,64 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => '',
-                                  class => 'CalculationOptions',
+__PACKAGE__->class_documentation({description => 'Represents the globalization settings. ',
+                                  class => 'GlobalizationSettings',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'calc_stack_size' => {
-     	datatype => 'int',
-     	base_name => 'CalcStackSize',
-     	description => '',
+     'chart_settings' => {
+     	datatype => 'ChartGlobalizationSettings',
+     	base_name => 'ChartSettings',
+     	description => 'Gets or sets the globalization settings for Chart. ',
      	format => '',
      	read_only => '',
      		},
-     'ignore_error' => {
-     	datatype => 'boolean',
-     	base_name => 'IgnoreError',
-     	description => '',
+     'pivot_settings' => {
+     	datatype => 'PivotGlobalizationSettings',
+     	base_name => 'PivotSettings',
+     	description => 'Gets or sets the globalization settings for pivot table. ',
      	format => '',
      	read_only => '',
      		},
-     'precision_strategy' => {
+     'list_separator' => {
      	datatype => 'string',
-     	base_name => 'PrecisionStrategy',
-     	description => '',
+     	base_name => 'ListSeparator',
+     	description => 'Gets the separator for list, parameters of function, ...etc. ',
      	format => '',
      	read_only => '',
      		},
-     'recursive' => {
-     	datatype => 'boolean',
-     	base_name => 'Recursive',
-     	description => '',
+     'row_separator_of_formula_array' => {
+     	datatype => 'string',
+     	base_name => 'RowSeparatorOfFormulaArray',
+     	description => 'Gets the separator for rows in array data in formula. ',
      	format => '',
      	read_only => '',
      		},
-     'custom_engine' => {
-     	datatype => 'AbstractCalculationEngine',
-     	base_name => 'CustomEngine',
-     	description => 'The custom formula calculation engine to extend the default calculation engine of Aspose.Cells. ',
-     	format => '',
-     	read_only => '',
-     		},
-     'calculation_monitor' => {
-     	datatype => 'AbstractCalculationMonitor',
-     	base_name => 'CalculationMonitor',
-     	description => 'The monitor for user to track the progress of formula calculation. ',
-     	format => '',
-     	read_only => '',
-     		},
-     'linked_data_sources' => {
-     	datatype => 'ARRAY[Workbook]',
-     	base_name => 'LinkedDataSources',
-     	description => 'Specifies the data sources for external links used in formulas. ',
+     'column_separator_of_formula_array' => {
+     	datatype => 'string',
+     	base_name => 'ColumnSeparatorOfFormulaArray',
+     	description => 'Gets the separator for the items in array`s row data in formula. ',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'calc_stack_size' => 'int',
-    'ignore_error' => 'boolean',
-    'precision_strategy' => 'string',
-    'recursive' => 'boolean',
-    'custom_engine' => 'AbstractCalculationEngine',
-    'calculation_monitor' => 'AbstractCalculationMonitor',
-    'linked_data_sources' => 'ARRAY[Workbook]' 
+    'chart_settings' => 'ChartGlobalizationSettings',
+    'pivot_settings' => 'PivotGlobalizationSettings',
+    'list_separator' => 'string',
+    'row_separator_of_formula_array' => 'string',
+    'column_separator_of_formula_array' => 'string' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'calc_stack_size' => 'CalcStackSize',
-    'ignore_error' => 'IgnoreError',
-    'precision_strategy' => 'PrecisionStrategy',
-    'recursive' => 'Recursive',
-    'custom_engine' => 'CustomEngine',
-    'calculation_monitor' => 'CalculationMonitor',
-    'linked_data_sources' => 'LinkedDataSources' 
+    'chart_settings' => 'ChartSettings',
+    'pivot_settings' => 'PivotSettings',
+    'list_separator' => 'ListSeparator',
+    'row_separator_of_formula_array' => 'RowSeparatorOfFormulaArray',
+    'column_separator_of_formula_array' => 'ColumnSeparatorOfFormulaArray' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

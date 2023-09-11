@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::CalculationOptions;
+package AsposeCellsCloud::Object::XmlDataBinding;
 
 require 5.6.0;
 use strict;
@@ -35,9 +35,7 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
-use AsposeCellsCloud::Object::AbstractCalculationEngine;
-use AsposeCellsCloud::Object::AbstractCalculationMonitor;
-use AsposeCellsCloud::Object::Workbook; 
+ 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -120,82 +118,28 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => '',
-                                  class => 'CalculationOptions',
+__PACKAGE__->class_documentation({description => 'Represents Xml Data Binding information. ',
+                                  class => 'XmlDataBinding',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'calc_stack_size' => {
-     	datatype => 'int',
-     	base_name => 'CalcStackSize',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'ignore_error' => {
-     	datatype => 'boolean',
-     	base_name => 'IgnoreError',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'precision_strategy' => {
+     'url' => {
      	datatype => 'string',
-     	base_name => 'PrecisionStrategy',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'recursive' => {
-     	datatype => 'boolean',
-     	base_name => 'Recursive',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'custom_engine' => {
-     	datatype => 'AbstractCalculationEngine',
-     	base_name => 'CustomEngine',
-     	description => 'The custom formula calculation engine to extend the default calculation engine of Aspose.Cells. ',
-     	format => '',
-     	read_only => '',
-     		},
-     'calculation_monitor' => {
-     	datatype => 'AbstractCalculationMonitor',
-     	base_name => 'CalculationMonitor',
-     	description => 'The monitor for user to track the progress of formula calculation. ',
-     	format => '',
-     	read_only => '',
-     		},
-     'linked_data_sources' => {
-     	datatype => 'ARRAY[Workbook]',
-     	base_name => 'LinkedDataSources',
-     	description => 'Specifies the data sources for external links used in formulas. ',
+     	base_name => 'Url',
+     	description => 'Gets source url of this data binding. ',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'calc_stack_size' => 'int',
-    'ignore_error' => 'boolean',
-    'precision_strategy' => 'string',
-    'recursive' => 'boolean',
-    'custom_engine' => 'AbstractCalculationEngine',
-    'calculation_monitor' => 'AbstractCalculationMonitor',
-    'linked_data_sources' => 'ARRAY[Workbook]' 
+    'url' => 'string' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'calc_stack_size' => 'CalcStackSize',
-    'ignore_error' => 'IgnoreError',
-    'precision_strategy' => 'PrecisionStrategy',
-    'recursive' => 'Recursive',
-    'custom_engine' => 'CustomEngine',
-    'calculation_monitor' => 'CalculationMonitor',
-    'linked_data_sources' => 'LinkedDataSources' 
+    'url' => 'Url' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

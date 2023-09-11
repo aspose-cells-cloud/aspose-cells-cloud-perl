@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::CalculationOptions;
+package AsposeCellsCloud::Object::AbstractCalculationEngine;
 
 require 5.6.0;
 use strict;
@@ -35,9 +35,7 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
-use AsposeCellsCloud::Object::AbstractCalculationEngine;
-use AsposeCellsCloud::Object::AbstractCalculationMonitor;
-use AsposeCellsCloud::Object::Workbook; 
+ 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -120,82 +118,46 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => '',
-                                  class => 'CalculationOptions',
+__PACKAGE__->class_documentation({description => 'Represents user`s custom calculation engine to extend the default calculation engine of Aspose.Cells. ',
+                                  class => 'AbstractCalculationEngine',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'calc_stack_size' => {
-     	datatype => 'int',
-     	base_name => 'CalcStackSize',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'ignore_error' => {
+     'is_param_literal_required' => {
      	datatype => 'boolean',
-     	base_name => 'IgnoreError',
-     	description => '',
+     	base_name => 'IsParamLiteralRequired',
+     	description => 'Indicates whether this engine needs the literal text of parameter while doing calculation. Default value is false. ',
      	format => '',
      	read_only => '',
      		},
-     'precision_strategy' => {
-     	datatype => 'string',
-     	base_name => 'PrecisionStrategy',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'recursive' => {
+     'is_param_array_mode_required' => {
      	datatype => 'boolean',
-     	base_name => 'Recursive',
-     	description => '',
+     	base_name => 'IsParamArrayModeRequired',
+     	description => 'Indicates whether this engine needs the parameter to be calculated in array mode. Default value is false.            If  is required when calculating custom            functions, this property needs to be set as true. ',
      	format => '',
      	read_only => '',
      		},
-     'custom_engine' => {
-     	datatype => 'AbstractCalculationEngine',
-     	base_name => 'CustomEngine',
-     	description => 'The custom formula calculation engine to extend the default calculation engine of Aspose.Cells. ',
-     	format => '',
-     	read_only => '',
-     		},
-     'calculation_monitor' => {
-     	datatype => 'AbstractCalculationMonitor',
-     	base_name => 'CalculationMonitor',
-     	description => 'The monitor for user to track the progress of formula calculation. ',
-     	format => '',
-     	read_only => '',
-     		},
-     'linked_data_sources' => {
-     	datatype => 'ARRAY[Workbook]',
-     	base_name => 'LinkedDataSources',
-     	description => 'Specifies the data sources for external links used in formulas. ',
+     'process_built_in_functions' => {
+     	datatype => 'boolean',
+     	base_name => 'ProcessBuiltInFunctions',
+     	description => 'Whether built-in functions that have been supported by the built-in engine            should be checked and processed by this implementation.            Default is false.            If user needs to change the calculation logic of some built-in functions, this property should be set as true.            Otherwise please leave this property as false for performance consideration. ',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'calc_stack_size' => 'int',
-    'ignore_error' => 'boolean',
-    'precision_strategy' => 'string',
-    'recursive' => 'boolean',
-    'custom_engine' => 'AbstractCalculationEngine',
-    'calculation_monitor' => 'AbstractCalculationMonitor',
-    'linked_data_sources' => 'ARRAY[Workbook]' 
+    'is_param_literal_required' => 'boolean',
+    'is_param_array_mode_required' => 'boolean',
+    'process_built_in_functions' => 'boolean' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'calc_stack_size' => 'CalcStackSize',
-    'ignore_error' => 'IgnoreError',
-    'precision_strategy' => 'PrecisionStrategy',
-    'recursive' => 'Recursive',
-    'custom_engine' => 'CustomEngine',
-    'calculation_monitor' => 'CalculationMonitor',
-    'linked_data_sources' => 'LinkedDataSources' 
+    'is_param_literal_required' => 'IsParamLiteralRequired',
+    'is_param_array_mode_required' => 'IsParamArrayModeRequired',
+    'process_built_in_functions' => 'ProcessBuiltInFunctions' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

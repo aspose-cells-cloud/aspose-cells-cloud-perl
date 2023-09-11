@@ -695,6 +695,8 @@ lib/AsposeCellsCloud/Object/FilesUploadResult.pm
 lib/AsposeCellsCloud/Object/StorageFile.pm
 lib/AsposeCellsCloud/Object/GoogleDriveStorageFile.pm
 lib/AsposeCellsCloud/Object/AboveAverage.pm
+lib/AsposeCellsCloud/Object/AbstractCalculationEngine.pm
+lib/AsposeCellsCloud/Object/AbstractCalculationMonitor.pm
 lib/AsposeCellsCloud/Object/AutoFilter.pm
 lib/AsposeCellsCloud/Object/AutoFitterOptions.pm
 lib/AsposeCellsCloud/Object/Border.pm
@@ -732,6 +734,8 @@ lib/AsposeCellsCloud/Object/Font.pm
 lib/AsposeCellsCloud/Object/FontSetting.pm
 lib/AsposeCellsCloud/Object/FormatCondition.pm
 lib/AsposeCellsCloud/Object/FormulaFormatCondition.pm
+lib/AsposeCellsCloud/Object/FormulaSettings.pm
+lib/AsposeCellsCloud/Object/GlobalizationSettings.pm
 lib/AsposeCellsCloud/Object/HorizontalPageBreak.pm
 lib/AsposeCellsCloud/Object/HorizontalPageBreaks.pm
 lib/AsposeCellsCloud/Object/Hyperlink.pm
@@ -754,6 +758,7 @@ lib/AsposeCellsCloud/Object/PasteOptions.pm
 lib/AsposeCellsCloud/Object/PdfSecurityOptions.pm
 lib/AsposeCellsCloud/Object/Protection.pm
 lib/AsposeCellsCloud/Object/ProtectSheetParameter.pm
+lib/AsposeCellsCloud/Object/QueryTable.pm
 lib/AsposeCellsCloud/Object/Range.pm
 lib/AsposeCellsCloud/Object/Ranges.pm
 lib/AsposeCellsCloud/Object/Row.pm
@@ -782,6 +787,9 @@ lib/AsposeCellsCloud/Object/Workbook.pm
 lib/AsposeCellsCloud/Object/WorkbookSettings.pm
 lib/AsposeCellsCloud/Object/Worksheet.pm
 lib/AsposeCellsCloud/Object/Worksheets.pm
+lib/AsposeCellsCloud/Object/WriteProtection.pm
+lib/AsposeCellsCloud/Object/XmlDataBinding.pm
+lib/AsposeCellsCloud/Object/XmlMap.pm
 lib/AsposeCellsCloud/Object/CellsObjectOperateTaskParameter.pm
 lib/AsposeCellsCloud/Object/ConvertTaskParameter.pm
 lib/AsposeCellsCloud/Object/ConvertWorksheetTaskParameter.pm
@@ -958,6 +966,7 @@ lib/AsposeCellsCloud/Object/ProtectWorkbookRequst.pm
 lib/AsposeCellsCloud/Object/RangeCopyRequest.pm
 lib/AsposeCellsCloud/Object/RangeSetOutlineBorderRequest.pm
 lib/AsposeCellsCloud/Object/RangeSetStyleRequest.pm
+lib/AsposeCellsCloud/Object/RangeSortRequest.pm
 lib/AsposeCellsCloud/Object/TableTotalRequest.pm
 lib/AsposeCellsCloud/Object/TextWaterMarkerRequest.pm
 lib/AsposeCellsCloud/Object/TotalRequest.pm
@@ -972,6 +981,7 @@ lib/AsposeCellsCloud/Object/PivotFilter.pm
 lib/AsposeCellsCloud/Object/PivotItem.pm
 lib/AsposeCellsCloud/Object/PivotTable.pm
 lib/AsposeCellsCloud/Object/PivotTables.pm
+lib/AsposeCellsCloud/Object/PivotGlobalizationSettings.pm
 lib/AsposeCellsCloud/Object/CustomParserConfig.pm
 lib/AsposeCellsCloud/Object/Import2DimensionDoubleArrayOption.pm
 lib/AsposeCellsCloud/Object/Import2DimensionIntArrayOption.pm
@@ -1025,6 +1035,7 @@ lib/AsposeCellsCloud/Object/TextBox.pm
 lib/AsposeCellsCloud/Object/TextureFill.pm
 lib/AsposeCellsCloud/Object/TilePicOption.pm
 lib/AsposeCellsCloud/Object/DigitalSignature.pm
+lib/AsposeCellsCloud/Object/ChartGlobalizationSettings.pm
 lib/AsposeCellsCloud/Object/Axis.pm
 lib/AsposeCellsCloud/Object/Chart.pm
 lib/AsposeCellsCloud/Object/ChartArea.pm
@@ -1200,6 +1211,8 @@ lib/AsposeCellsCloud/Request/PostWorksheetListObjectRequest.pm
 lib/AsposeCellsCloud/Request/PostWorksheetListObjectConvertToRangeRequest.pm
 lib/AsposeCellsCloud/Request/PostWorksheetListObjectSummarizeWithPivotTableRequest.pm
 lib/AsposeCellsCloud/Request/PostWorksheetListObjectSortTableRequest.pm
+lib/AsposeCellsCloud/Request/PostWorksheetListObjectRemoveDuplicatesRequest.pm
+lib/AsposeCellsCloud/Request/PostWorksheetListObjectInsertSlicerRequest.pm
 lib/AsposeCellsCloud/Request/PostWorksheetListColumnRequest.pm
 lib/AsposeCellsCloud/Request/PostWorksheetListColumnsTotalRequest.pm
 lib/AsposeCellsCloud/Request/GetWorksheetOleObjectsRequest.pm
@@ -1264,6 +1277,7 @@ lib/AsposeCellsCloud/Request/PostWorksheetCellsRangeStyleRequest.pm
 lib/AsposeCellsCloud/Request/GetWorksheetCellsRangeValueRequest.pm
 lib/AsposeCellsCloud/Request/PostWorksheetCellsRangeValueRequest.pm
 lib/AsposeCellsCloud/Request/PostWorksheetCellsRangeMoveToRequest.pm
+lib/AsposeCellsCloud/Request/PostWorksheetCellsRangeSortRequest.pm
 lib/AsposeCellsCloud/Request/PostWorksheetCellsRangeOutlineBorderRequest.pm
 lib/AsposeCellsCloud/Request/PostWorksheetCellsRangeColumnWidthRequest.pm
 lib/AsposeCellsCloud/Request/PostWorksheetCellsRangeRowHeightRequest.pm

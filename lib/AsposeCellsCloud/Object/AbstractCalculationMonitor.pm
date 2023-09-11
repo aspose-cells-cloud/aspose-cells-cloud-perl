@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::CalculationOptions;
+package AsposeCellsCloud::Object::AbstractCalculationMonitor;
 
 require 5.6.0;
 use strict;
@@ -35,9 +35,7 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
-use AsposeCellsCloud::Object::AbstractCalculationEngine;
-use AsposeCellsCloud::Object::AbstractCalculationMonitor;
-use AsposeCellsCloud::Object::Workbook; 
+ 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -120,82 +118,46 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => '',
-                                  class => 'CalculationOptions',
+__PACKAGE__->class_documentation({description => 'Monitor for user to track the progress of formula calculation. ',
+                                  class => 'AbstractCalculationMonitor',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'calc_stack_size' => {
-     	datatype => 'int',
-     	base_name => 'CalcStackSize',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'ignore_error' => {
-     	datatype => 'boolean',
-     	base_name => 'IgnoreError',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'precision_strategy' => {
+     'original_value' => {
      	datatype => 'string',
-     	base_name => 'PrecisionStrategy',
-     	description => '',
+     	base_name => 'OriginalValue',
+     	description => 'Gets the old value of the calculated cell.            Should be used only in  and . ',
      	format => '',
      	read_only => '',
      		},
-     'recursive' => {
+     'value_changed' => {
      	datatype => 'boolean',
-     	base_name => 'Recursive',
-     	description => '',
+     	base_name => 'ValueChanged',
+     	description => 'Whether the cell`s value has been changed after the calculation.            Should be used only in . ',
      	format => '',
      	read_only => '',
      		},
-     'custom_engine' => {
-     	datatype => 'AbstractCalculationEngine',
-     	base_name => 'CustomEngine',
-     	description => 'The custom formula calculation engine to extend the default calculation engine of Aspose.Cells. ',
-     	format => '',
-     	read_only => '',
-     		},
-     'calculation_monitor' => {
-     	datatype => 'AbstractCalculationMonitor',
-     	base_name => 'CalculationMonitor',
-     	description => 'The monitor for user to track the progress of formula calculation. ',
-     	format => '',
-     	read_only => '',
-     		},
-     'linked_data_sources' => {
-     	datatype => 'ARRAY[Workbook]',
-     	base_name => 'LinkedDataSources',
-     	description => 'Specifies the data sources for external links used in formulas. ',
+     'calculated_value' => {
+     	datatype => 'string',
+     	base_name => 'CalculatedValue',
+     	description => 'Gets the newly calculated value of the cell.            Should be used only in . ',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'calc_stack_size' => 'int',
-    'ignore_error' => 'boolean',
-    'precision_strategy' => 'string',
-    'recursive' => 'boolean',
-    'custom_engine' => 'AbstractCalculationEngine',
-    'calculation_monitor' => 'AbstractCalculationMonitor',
-    'linked_data_sources' => 'ARRAY[Workbook]' 
+    'original_value' => 'string',
+    'value_changed' => 'boolean',
+    'calculated_value' => 'string' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'calc_stack_size' => 'CalcStackSize',
-    'ignore_error' => 'IgnoreError',
-    'precision_strategy' => 'PrecisionStrategy',
-    'recursive' => 'Recursive',
-    'custom_engine' => 'CustomEngine',
-    'calculation_monitor' => 'CalculationMonitor',
-    'linked_data_sources' => 'LinkedDataSources' 
+    'original_value' => 'OriginalValue',
+    'value_changed' => 'ValueChanged',
+    'calculated_value' => 'CalculatedValue' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

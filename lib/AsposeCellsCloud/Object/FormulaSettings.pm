@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::CalculationOptions;
+package AsposeCellsCloud::Object::FormulaSettings;
 
 require 5.6.0;
 use strict;
@@ -35,9 +35,7 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
-use AsposeCellsCloud::Object::AbstractCalculationEngine;
-use AsposeCellsCloud::Object::AbstractCalculationMonitor;
-use AsposeCellsCloud::Object::Workbook; 
+ 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -120,82 +118,118 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => '',
-                                  class => 'CalculationOptions',
+__PACKAGE__->class_documentation({description => 'Settings of formulas and calculation. ',
+                                  class => 'FormulaSettings',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'calc_stack_size' => {
-     	datatype => 'int',
-     	base_name => 'CalcStackSize',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'ignore_error' => {
+     'calculate_on_open' => {
      	datatype => 'boolean',
-     	base_name => 'IgnoreError',
-     	description => '',
+     	base_name => 'CalculateOnOpen',
+     	description => 'Indicates whether the application is required to perform a full calculation when the workbook is opened. ',
      	format => '',
      	read_only => '',
      		},
-     'precision_strategy' => {
+     'calculate_on_save' => {
+     	datatype => 'boolean',
+     	base_name => 'CalculateOnSave',
+     	description => 'Indicates whether recalculate the workbook before saving the document, when in manual calculation mode. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'force_full_calculation' => {
+     	datatype => 'boolean',
+     	base_name => 'ForceFullCalculation',
+     	description => 'Indicates whether calculates all formulas every time when a calculation is triggered. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'calculation_mode' => {
      	datatype => 'string',
-     	base_name => 'PrecisionStrategy',
-     	description => '',
+     	base_name => 'CalculationMode',
+     	description => 'Gets or sets the mode for workbook calculation in ms excel. ',
      	format => '',
      	read_only => '',
      		},
-     'recursive' => {
+     'calculation_id' => {
+     	datatype => 'string',
+     	base_name => 'CalculationId',
+     	description => 'Specifies the version of the calculation engine used to calculate values in the workbook. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'enable_iterative_calculation' => {
      	datatype => 'boolean',
-     	base_name => 'Recursive',
-     	description => '',
+     	base_name => 'EnableIterativeCalculation',
+     	description => 'Indicates whether enable iterative calculation to resolve circular references. ',
      	format => '',
      	read_only => '',
      		},
-     'custom_engine' => {
-     	datatype => 'AbstractCalculationEngine',
-     	base_name => 'CustomEngine',
-     	description => 'The custom formula calculation engine to extend the default calculation engine of Aspose.Cells. ',
+     'max_iteration' => {
+     	datatype => 'int',
+     	base_name => 'MaxIteration',
+     	description => 'The maximum iterations to resolve a circular reference. ',
      	format => '',
      	read_only => '',
      		},
-     'calculation_monitor' => {
-     	datatype => 'AbstractCalculationMonitor',
-     	base_name => 'CalculationMonitor',
-     	description => 'The monitor for user to track the progress of formula calculation. ',
+     'max_change' => {
+     	datatype => 'double',
+     	base_name => 'MaxChange',
+     	description => 'The maximum change to resolve a circular reference. ',
      	format => '',
      	read_only => '',
      		},
-     'linked_data_sources' => {
-     	datatype => 'ARRAY[Workbook]',
-     	base_name => 'LinkedDataSources',
-     	description => 'Specifies the data sources for external links used in formulas. ',
+     'precision_as_displayed' => {
+     	datatype => 'boolean',
+     	base_name => 'PrecisionAsDisplayed',
+     	description => 'Whether the precision of calculated result be set as they are displayed while calculating formulas ',
+     	format => '',
+     	read_only => '',
+     		},
+     'enable_calculation_chain' => {
+     	datatype => 'boolean',
+     	base_name => 'EnableCalculationChain',
+     	description => 'Whether enable calculation chain for formulas. Default is false. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'preserve_padding_spaces' => {
+     	datatype => 'boolean',
+     	base_name => 'PreservePaddingSpaces',
+     	description => 'Indicates whether preserve those spaces and line breaks that are padded between formula tokens            while getting and setting formulas.            Default value is false. ',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'calc_stack_size' => 'int',
-    'ignore_error' => 'boolean',
-    'precision_strategy' => 'string',
-    'recursive' => 'boolean',
-    'custom_engine' => 'AbstractCalculationEngine',
-    'calculation_monitor' => 'AbstractCalculationMonitor',
-    'linked_data_sources' => 'ARRAY[Workbook]' 
+    'calculate_on_open' => 'boolean',
+    'calculate_on_save' => 'boolean',
+    'force_full_calculation' => 'boolean',
+    'calculation_mode' => 'string',
+    'calculation_id' => 'string',
+    'enable_iterative_calculation' => 'boolean',
+    'max_iteration' => 'int',
+    'max_change' => 'double',
+    'precision_as_displayed' => 'boolean',
+    'enable_calculation_chain' => 'boolean',
+    'preserve_padding_spaces' => 'boolean' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'calc_stack_size' => 'CalcStackSize',
-    'ignore_error' => 'IgnoreError',
-    'precision_strategy' => 'PrecisionStrategy',
-    'recursive' => 'Recursive',
-    'custom_engine' => 'CustomEngine',
-    'calculation_monitor' => 'CalculationMonitor',
-    'linked_data_sources' => 'LinkedDataSources' 
+    'calculate_on_open' => 'CalculateOnOpen',
+    'calculate_on_save' => 'CalculateOnSave',
+    'force_full_calculation' => 'ForceFullCalculation',
+    'calculation_mode' => 'CalculationMode',
+    'calculation_id' => 'CalculationId',
+    'enable_iterative_calculation' => 'EnableIterativeCalculation',
+    'max_iteration' => 'MaxIteration',
+    'max_change' => 'MaxChange',
+    'precision_as_displayed' => 'PrecisionAsDisplayed',
+    'enable_calculation_chain' => 'EnableCalculationChain',
+    'preserve_padding_spaces' => 'PreservePaddingSpaces' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

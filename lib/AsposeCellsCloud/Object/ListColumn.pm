@@ -152,6 +152,13 @@ __PACKAGE__->method_documentation({
      	description => 'Gets and sets the formula of the list column.            ',
      	format => '',
      	read_only => '',
+     		},
+     'totals_row_label' => {
+     	datatype => 'string',
+     	base_name => 'TotalsRowLabel',
+     	description => 'Gets and sets the display labels of total row. ',
+     	format => '',
+     	read_only => '',
      		},    
 });
 
@@ -159,14 +166,16 @@ __PACKAGE__->swagger_types( {
     'name' => 'string',
     'range' => 'Range',
     'totals_calculation' => 'string',
-    'formula' => 'string' 
+    'formula' => 'string',
+    'totals_row_label' => 'string' 
 } );
 
 __PACKAGE__->attribute_map( {
     'name' => 'Name',
     'range' => 'Range',
     'totals_calculation' => 'TotalsCalculation',
-    'formula' => 'Formula' 
+    'formula' => 'Formula',
+    'totals_row_label' => 'TotalsRowLabel' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

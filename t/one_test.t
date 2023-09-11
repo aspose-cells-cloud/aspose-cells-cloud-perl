@@ -21,6 +21,7 @@ use AsposeCellsCloud::Request::PostWorksheetMatchNonBlanksRequest;
 use AsposeCellsCloud::Request::PostWorksheetAutoFilterRefreshRequest;
 use AsposeCellsCloud::Request::DeleteWorksheetDateFilterRequest;
 use AsposeCellsCloud::Request::DeleteWorksheetFilterRequest;
+use AsposeCellsCloud::Request::PutConvertWorkbookRequest;
 
 require './t/CellsTestBase.pl';
 
@@ -32,19 +33,20 @@ my $api = get_cells();
     { 
         my $remoteFolder = 'TestData/In';
       
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
+        my $localName = 'cloud.png';
+        my $remoteName = 'cloud.png';
+    
+        my $format = 'csv';
 
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
+        my $mapFiles = {};           
 
-        my $request = AsposeCellsCloud::Request::GetWorksheetAutoFilterRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{sheet_name} =  'Sheet1';
-        $request->{folder} =  $remoteFolder;
-        $request->{storage_name} =  '';
-        my $result =  $api->get_worksheet_auto_filter(request=> $request);
-        ok($result,'get_worksheet_auto_filter test OK');
+         $mapFiles->{$localName}= "TestData/".$localName ;
+
+        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
+        $request->{file} =  $mapFiles;
+        $request->{format} =  $format;
+        my $result =  $api->put_convert_workbook(request=> $request);
+        ok('put_convert_workbook test OK');
     }
 
     

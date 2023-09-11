@@ -38,7 +38,9 @@ use DateTime;
 use AsposeCellsCloud::Object::AutoFilter;
 use AsposeCellsCloud::Object::Link;
 use AsposeCellsCloud::Object::LinkElement;
-use AsposeCellsCloud::Object::ListColumn; 
+use AsposeCellsCloud::Object::ListColumn;
+use AsposeCellsCloud::Object::Range;
+use AsposeCellsCloud::Object::XmlMap; 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -233,6 +235,48 @@ __PACKAGE__->method_documentation({
      	format => '',
      	read_only => '',
      		},
+     'data_range' => {
+     	datatype => 'Range',
+     	base_name => 'DataRange',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'data_source_type' => {
+     	datatype => 'string',
+     	base_name => 'DataSourceType',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'comment' => {
+     	datatype => 'string',
+     	base_name => 'Comment',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'xml_map' => {
+     	datatype => 'XmlMap',
+     	base_name => 'XmlMap',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'alternative_text' => {
+     	datatype => 'string',
+     	base_name => 'AlternativeText',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'alternative_description' => {
+     	datatype => 'string',
+     	base_name => 'AlternativeDescription',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
      'link' => {
      	datatype => 'Link',
      	base_name => 'link',
@@ -258,6 +302,12 @@ __PACKAGE__->swagger_types( {
     'show_totals' => 'boolean',
     'table_style_name' => 'string',
     'table_style_type' => 'string',
+    'data_range' => 'Range',
+    'data_source_type' => 'string',
+    'comment' => 'string',
+    'xml_map' => 'XmlMap',
+    'alternative_text' => 'string',
+    'alternative_description' => 'string',
     'link' => 'Link' 
 } );
 
@@ -277,6 +327,12 @@ __PACKAGE__->attribute_map( {
     'show_totals' => 'ShowTotals',
     'table_style_name' => 'TableStyleName',
     'table_style_type' => 'TableStyleType',
+    'data_range' => 'DataRange',
+    'data_source_type' => 'DataSourceType',
+    'comment' => 'Comment',
+    'xml_map' => 'XmlMap',
+    'alternative_text' => 'AlternativeText',
+    'alternative_description' => 'AlternativeDescription',
     'link' => 'link' 
 } );
 

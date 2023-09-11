@@ -35,7 +35,9 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
- 
+use AsposeCellsCloud::Object::FormulaSettings;
+use AsposeCellsCloud::Object::GlobalizationSettings;
+use AsposeCellsCloud::Object::WriteProtection; 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -439,6 +441,132 @@ __PACKAGE__->method_documentation({
      	description => 'The width of the window, in unit of point.            ',
      	format => '',
      	read_only => '',
+     		},
+     'author' => {
+     	datatype => 'string',
+     	base_name => 'Author',
+     	description => 'Gets and sets the author of the file. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'check_custom_number_format' => {
+     	datatype => 'boolean',
+     	base_name => 'CheckCustomNumberFormat',
+     	description => 'Indicates whether checking custom number format when setting Style.Custom. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'protection_type' => {
+     	datatype => 'string',
+     	base_name => 'ProtectionType',
+     	description => 'Gets the protection type of the workbook. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'globalization_settings' => {
+     	datatype => 'GlobalizationSettings',
+     	base_name => 'GlobalizationSettings',
+     	description => 'Gets and sets the globalization settings. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'password' => {
+     	datatype => 'string',
+     	base_name => 'Password',
+     	description => 'Represents Workbook file encryption password. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'write_protection' => {
+     	datatype => 'WriteProtection',
+     	base_name => 'WriteProtection',
+     	description => 'Provides access to the workbook write protection options. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'is_encrypted' => {
+     	datatype => 'boolean',
+     	base_name => 'IsEncrypted',
+     	description => 'Gets a value that indicates whether a password is required to open this workbook. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'is_protected' => {
+     	datatype => 'boolean',
+     	base_name => 'IsProtected',
+     	description => 'Gets a value that indicates whether the structure or window of the Workbook is protected. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'max_row' => {
+     	datatype => 'int',
+     	base_name => 'MaxRow',
+     	description => 'Gets the max row index, zero-based. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'max_column' => {
+     	datatype => 'int',
+     	base_name => 'MaxColumn',
+     	description => 'Gets the max column index, zero-based. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'significant_digits' => {
+     	datatype => 'int',
+     	base_name => 'SignificantDigits',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'check_compatibility' => {
+     	datatype => 'boolean',
+     	base_name => 'CheckCompatibility',
+     	description => 'Indicates whether check compatibility with earlier versions when saving workbook. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'paper_size' => {
+     	datatype => 'string',
+     	base_name => 'PaperSize',
+     	description => 'Gets and sets the default print paper size. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'max_rows_of_shared_formula' => {
+     	datatype => 'int',
+     	base_name => 'MaxRowsOfSharedFormula',
+     	description => 'Gets and sets the max row number of shared formula. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'compliance' => {
+     	datatype => 'string',
+     	base_name => 'Compliance',
+     	description => 'Specifies the OOXML version for the output document. The default value is Ecma376_2006. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'quote_prefix_to_style' => {
+     	datatype => 'boolean',
+     	base_name => 'QuotePrefixToStyle',
+     	description => 'Indicates whether setting  property when entering the string value(which starts  with single quote mark ) to the cell ',
+     	format => '',
+     	read_only => '',
+     		},
+     'formula_settings' => {
+     	datatype => 'FormulaSettings',
+     	base_name => 'FormulaSettings',
+     	description => 'Gets the settings for formula-related features. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'force_full_calculate' => {
+     	datatype => 'boolean',
+     	base_name => 'ForceFullCalculate',
+     	description => 'Fully calculates every time when a calculation is triggered. ',
+     	format => '',
+     	read_only => '',
      		},    
 });
 
@@ -487,7 +615,25 @@ __PACKAGE__->swagger_types( {
     'window_height' => 'double',
     'window_left' => 'double',
     'window_top' => 'double',
-    'window_width' => 'double' 
+    'window_width' => 'double',
+    'author' => 'string',
+    'check_custom_number_format' => 'boolean',
+    'protection_type' => 'string',
+    'globalization_settings' => 'GlobalizationSettings',
+    'password' => 'string',
+    'write_protection' => 'WriteProtection',
+    'is_encrypted' => 'boolean',
+    'is_protected' => 'boolean',
+    'max_row' => 'int',
+    'max_column' => 'int',
+    'significant_digits' => 'int',
+    'check_compatibility' => 'boolean',
+    'paper_size' => 'string',
+    'max_rows_of_shared_formula' => 'int',
+    'compliance' => 'string',
+    'quote_prefix_to_style' => 'boolean',
+    'formula_settings' => 'FormulaSettings',
+    'force_full_calculate' => 'boolean' 
 } );
 
 __PACKAGE__->attribute_map( {
@@ -535,7 +681,25 @@ __PACKAGE__->attribute_map( {
     'window_height' => 'WindowHeight',
     'window_left' => 'WindowLeft',
     'window_top' => 'WindowTop',
-    'window_width' => 'WindowWidth' 
+    'window_width' => 'WindowWidth',
+    'author' => 'Author',
+    'check_custom_number_format' => 'CheckCustomNumberFormat',
+    'protection_type' => 'ProtectionType',
+    'globalization_settings' => 'GlobalizationSettings',
+    'password' => 'Password',
+    'write_protection' => 'WriteProtection',
+    'is_encrypted' => 'IsEncrypted',
+    'is_protected' => 'IsProtected',
+    'max_row' => 'MaxRow',
+    'max_column' => 'MaxColumn',
+    'significant_digits' => 'SignificantDigits',
+    'check_compatibility' => 'CheckCompatibility',
+    'paper_size' => 'PaperSize',
+    'max_rows_of_shared_formula' => 'MaxRowsOfSharedFormula',
+    'compliance' => 'Compliance',
+    'quote_prefix_to_style' => 'QuotePrefixToStyle',
+    'formula_settings' => 'FormulaSettings',
+    'force_full_calculate' => 'ForceFullCalculate' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

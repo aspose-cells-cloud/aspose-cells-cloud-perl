@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::CalculationOptions;
+package AsposeCellsCloud::Object::WriteProtection;
 
 require 5.6.0;
 use strict;
@@ -35,9 +35,7 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
-use AsposeCellsCloud::Object::AbstractCalculationEngine;
-use AsposeCellsCloud::Object::AbstractCalculationMonitor;
-use AsposeCellsCloud::Object::Workbook; 
+ 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -120,82 +118,55 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => '',
-                                  class => 'CalculationOptions',
+__PACKAGE__->class_documentation({description => 'Specifies write protection settings for a workbook. ',
+                                  class => 'WriteProtection',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'calc_stack_size' => {
-     	datatype => 'int',
-     	base_name => 'CalcStackSize',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'ignore_error' => {
-     	datatype => 'boolean',
-     	base_name => 'IgnoreError',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'precision_strategy' => {
+     'author' => {
      	datatype => 'string',
-     	base_name => 'PrecisionStrategy',
-     	description => '',
+     	base_name => 'Author',
+     	description => 'Gets and sets the author. ',
      	format => '',
      	read_only => '',
      		},
-     'recursive' => {
+     'recommend_read_only' => {
      	datatype => 'boolean',
-     	base_name => 'Recursive',
-     	description => '',
+     	base_name => 'RecommendReadOnly',
+     	description => 'Indicates if the Read Only Recommended option is selected. ',
      	format => '',
      	read_only => '',
      		},
-     'custom_engine' => {
-     	datatype => 'AbstractCalculationEngine',
-     	base_name => 'CustomEngine',
-     	description => 'The custom formula calculation engine to extend the default calculation engine of Aspose.Cells. ',
+     'is_write_protected' => {
+     	datatype => 'boolean',
+     	base_name => 'IsWriteProtected',
+     	description => 'Indicates whether this workbook is write protected. ',
      	format => '',
      	read_only => '',
      		},
-     'calculation_monitor' => {
-     	datatype => 'AbstractCalculationMonitor',
-     	base_name => 'CalculationMonitor',
-     	description => 'The monitor for user to track the progress of formula calculation. ',
-     	format => '',
-     	read_only => '',
-     		},
-     'linked_data_sources' => {
-     	datatype => 'ARRAY[Workbook]',
-     	base_name => 'LinkedDataSources',
-     	description => 'Specifies the data sources for external links used in formulas. ',
+     'password' => {
+     	datatype => 'string',
+     	base_name => 'Password',
+     	description => 'Sets the protected password to modify the file. ',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'calc_stack_size' => 'int',
-    'ignore_error' => 'boolean',
-    'precision_strategy' => 'string',
-    'recursive' => 'boolean',
-    'custom_engine' => 'AbstractCalculationEngine',
-    'calculation_monitor' => 'AbstractCalculationMonitor',
-    'linked_data_sources' => 'ARRAY[Workbook]' 
+    'author' => 'string',
+    'recommend_read_only' => 'boolean',
+    'is_write_protected' => 'boolean',
+    'password' => 'string' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'calc_stack_size' => 'CalcStackSize',
-    'ignore_error' => 'IgnoreError',
-    'precision_strategy' => 'PrecisionStrategy',
-    'recursive' => 'Recursive',
-    'custom_engine' => 'CustomEngine',
-    'calculation_monitor' => 'CalculationMonitor',
-    'linked_data_sources' => 'LinkedDataSources' 
+    'author' => 'Author',
+    'recommend_read_only' => 'RecommendReadOnly',
+    'is_write_protected' => 'IsWriteProtected',
+    'password' => 'Password' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

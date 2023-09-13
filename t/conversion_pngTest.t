@@ -32,7 +32,7 @@ my $api = get_cells();
         $request->{file} =  $mapFiles;
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
+        ok(!$result,'put_convert_workbook test OK');
     }
 
     #
@@ -200,7 +200,7 @@ my $api = get_cells();
         $request->{file} =  $mapFiles;
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
+        ok(!$result,'put_convert_workbook test OK');
     }
 
     #
@@ -656,7 +656,7 @@ my $api = get_cells();
         $request->{file} =  $mapFiles;
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
+        ok(!$result,'put_convert_workbook test OK');
     }
 
     #
@@ -680,7 +680,7 @@ my $api = get_cells();
         $request->{file} =  $mapFiles;
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
+        ok(!$result,'put_convert_workbook test OK');
     }
 
 

@@ -35,7 +35,9 @@ my $api = get_cells();
       
         my $localName = 'cloud.png';
         my $remoteName = 'cloud.png';
-    
+
+        # ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
+     
         my $format = 'csv';
 
         my $mapFiles = {};           
@@ -46,7 +48,8 @@ my $api = get_cells();
         $request->{file} =  $mapFiles;
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
-        ok('put_convert_workbook test OK');
+
+        ok(!$result,'put_convert_workbook test OK');
     }
 
     

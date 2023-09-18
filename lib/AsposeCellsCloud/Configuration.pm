@@ -111,7 +111,7 @@ sub new {
 
 	# class/static variables
 	$p{http_timeout} //= 180;
-	$p{http_user_agent} //= 'Apose.Cells.Cloud.SDK/23.8/perl';
+	$p{http_user_agent} //= 'Apose.Cells.Cloud.SDK/23.9/perl';
 
 	# authentication setting
 	$p{api_key} //= {};

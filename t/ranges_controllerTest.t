@@ -12,6 +12,8 @@ use AsposeCellsCloud::Object::Style;
 use AsposeCellsCloud::Object::Font;
 use AsposeCellsCloud::Object::RangeSetOutlineBorderRequest;
 use AsposeCellsCloud::Object::Color;
+use AsposeCellsCloud::Object::DataSorter;
+use AsposeCellsCloud::Object::RangeSortRequest;
 use AsposeCellsCloud::Request::PostWorksheetCellsRangesRequest;
 use AsposeCellsCloud::Request::PostWorksheetCellsRangeMergeRequest;
 use AsposeCellsCloud::Request::PostWorksheetCellsRangeUnMergeRequest;

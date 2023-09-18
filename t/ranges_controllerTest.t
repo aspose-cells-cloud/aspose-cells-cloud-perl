@@ -1,4 +1,4 @@
-use Test::More tests => 12; #TODO update number of test cases
+use Test::More tests => 13; #TODO update number of test cases
 use Test::Exception;
 
 use lib 'lib';
@@ -24,6 +24,7 @@ use AsposeCellsCloud::Request::PostWorksheetCellsRangeColumnWidthRequest;
 use AsposeCellsCloud::Request::PostWorksheetCellsRangeRowHeightRequest;
 use AsposeCellsCloud::Request::PutWorksheetCellsRangeRequest;
 use AsposeCellsCloud::Request::DeleteWorksheetCellsRangeRequest;
+use AsposeCellsCloud::Request::PostWorksheetCellsRangeSortRequest;
 
 require './t/CellsTestBase.pl';
 
@@ -376,5 +377,35 @@ my $api = get_cells();
         ok($result,'delete_worksheet_cells_range test OK');
     }
 
+    #
+    # RangesController->post_worksheet_cells_range_sort  test
+    #
+    { 
+        my $remoteFolder = 'TestData/In';
+      
+        my $localName = 'Group.xlsx';
+        my $remoteName = 'Group.xlsx';
 
+        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
+     
+        my $range_operate_data_sorter = AsposeCellsCloud::Object::DataSorter->new();
+         $range_operate_data_sorter->{case_sensitive} = 'true'  ;
+        my $range_operate_cell_area = AsposeCellsCloud::Object::Range->new();
+         $range_operate_cell_area->{column_count} = 3  ;
+         $range_operate_cell_area->{first_column} = 0  ;
+         $range_operate_cell_area->{first_row} = 0  ;
+         $range_operate_cell_area->{row_count} = 15  ;
+        my $range_operate = AsposeCellsCloud::Object::RangeSortRequest->new();
+         $range_operate->{data_sorter} = $range_operate_data_sorter  ;
+         $range_operate->{cell_area} = $range_operate_cell_area  ;
+
+        my $request = AsposeCellsCloud::Request::PostWorksheetCellsRangeSortRequest->new();
+        $request->{name} =  $remoteName;
+        $request->{sheet_name} =  'book1';
+        $request->{range_operate} =  $range_operate;
+        $request->{folder} =  $remoteFolder;
+        $request->{storage_name} =  '';
+        my $result =  $api->post_worksheet_cells_range_sort(request=> $request);
+        ok($result,'post_worksheet_cells_range_sort test OK');
+    }
 1;

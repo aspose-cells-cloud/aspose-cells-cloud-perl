@@ -1,4 +1,4 @@
-use Test::More tests => 11; #TODO update number of test cases
+use Test::More tests => 13; #TODO update number of test cases
 use Test::Exception;
 
 use lib 'lib';
@@ -21,6 +21,8 @@ use AsposeCellsCloud::Request::PostWorksheetListObjectSummarizeWithPivotTableReq
 use AsposeCellsCloud::Request::PostWorksheetListObjectSortTableRequest;
 use AsposeCellsCloud::Request::PostWorksheetListColumnRequest;
 use AsposeCellsCloud::Request::PostWorksheetListColumnsTotalRequest;
+use AsposeCellsCloud::Request::PostWorksheetListObjectRemoveDuplicatesRequest;
+use AsposeCellsCloud::Request::PostWorksheetListObjectInsertSlicerRequest;
 
 require './t/CellsTestBase.pl';
 
@@ -299,6 +301,53 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_list_columns_total(request=> $request);
         ok($result,'post_worksheet_list_columns_total test OK');
+    }
+
+
+    #
+    # ListObjectsController->post_worksheet_list_object_remove_duplicates  test
+    #
+    { 
+        my $remoteFolder = 'TestData/In';
+      
+        my $localName = 'TestTables.xlsx';
+        my $remoteName = 'TestTables.xlsx';
+
+        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
+     
+
+        my $request = AsposeCellsCloud::Request::PostWorksheetListObjectRemoveDuplicatesRequest->new();
+        $request->{name} =  $remoteName;
+        $request->{sheet_name} =  'Sheet2';
+        $request->{list_object_index} =  0;
+        $request->{folder} =  $remoteFolder;
+        $request->{storage_name} =  '';
+        my $result =  $api->post_worksheet_list_object_remove_duplicates(request=> $request);
+        ok($result,'post_worksheet_list_object_remove_duplicates test OK');
+    }
+
+    #
+    # ListObjectsController->post_worksheet_list_object_insert_slicer  test
+    #
+    { 
+        my $remoteFolder = 'TestData/In';
+      
+        my $localName = 'TestTables.xlsx';
+        my $remoteName = 'TestTables.xlsx';
+
+        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
+     
+
+        my $request = AsposeCellsCloud::Request::PostWorksheetListObjectInsertSlicerRequest->new();
+        $request->{name} =  $remoteName;
+        $request->{sheet_name} =  'Sheet1';
+        $request->{list_object_index} =  0;
+        $request->{column_index} =  2;
+        $request->{dest_cell_name} =  'j9';
+        $request->{folder} =  $remoteFolder;
+        $request->{storage_name} =  '';
+        my $result =  $api->post_worksheet_list_object_insert_slicer(request=> $request);
+        ok($result,'post_worksheet_list_object_insert_slicer test OK');
     }
 
 

@@ -59,11 +59,11 @@ sub new {
 
 
 # Run Operation Request
-# PostWorksheetListObjectRemoveDuplicatesRequest.name :   ,
-# PostWorksheetListObjectRemoveDuplicatesRequest.sheetName :   ,
-# PostWorksheetListObjectRemoveDuplicatesRequest.listObjectIndex :   ,
-# PostWorksheetListObjectRemoveDuplicatesRequest.folder :   ,
-# PostWorksheetListObjectRemoveDuplicatesRequest.storageName :    
+# PostWorksheetListObjectRemoveDuplicatesRequest.name : The workbook name.  ,
+# PostWorksheetListObjectRemoveDuplicatesRequest.sheetName : The worksheet name.  ,
+# PostWorksheetListObjectRemoveDuplicatesRequest.listObjectIndex : List object index.  ,
+# PostWorksheetListObjectRemoveDuplicatesRequest.folder : Original workbook folder.  ,
+# PostWorksheetListObjectRemoveDuplicatesRequest.storageName : Storage name.   
 
 {
     my $params = {
@@ -137,35 +137,35 @@ __PACKAGE__->method_documentation({
      'name' => {
      	datatype => 'string',
      	base_name => 'name',
-     	description => '',
+     	description => 'The workbook name.',
      	format => '',
      	read_only => '',
      		},
      'sheet_name' => {
      	datatype => 'string',
      	base_name => 'sheetName',
-     	description => '',
+     	description => 'The worksheet name.',
      	format => '',
      	read_only => '',
      		},
      'list_object_index' => {
      	datatype => 'int',
      	base_name => 'listObjectIndex',
-     	description => '',
+     	description => 'List object index.',
      	format => '',
      	read_only => '',
      		},
      'folder' => {
      	datatype => 'string',
      	base_name => 'folder',
-     	description => '',
+     	description => 'Original workbook folder.',
      	format => '',
      	read_only => '',
      		},
      'storage_name' => {
      	datatype => 'string',
      	base_name => 'storageName',
-     	description => '',
+     	description => 'Storage name.',
      	format => '',
      	read_only => '',
      		},    

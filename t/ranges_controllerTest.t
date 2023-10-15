@@ -14,7 +14,7 @@ use AsposeCellsCloud::Object::RangeSetOutlineBorderRequest;
 use AsposeCellsCloud::Object::Color;
 use AsposeCellsCloud::Object::DataSorter;
 use AsposeCellsCloud::Object::RangeSortRequest;
-use AsposeCellsCloud::Request::PostWorksheetCellsRangesRequest;
+use AsposeCellsCloud::Request::PostWorksheetCellsRangesCopyRequest;
 use AsposeCellsCloud::Request::PostWorksheetCellsRangeMergeRequest;
 use AsposeCellsCloud::Request::PostWorksheetCellsRangeUnMergeRequest;
 use AsposeCellsCloud::Request::PostWorksheetCellsRangeStyleRequest;
@@ -33,7 +33,7 @@ require './t/CellsTestBase.pl';
 my $api = get_cells();
 
     #
-    # RangesController->post_worksheet_cells_ranges  test
+    # RangesController->post_worksheet_cells_ranges_copy  test
     #
     { 
         my $remoteFolder = 'TestData/In';
@@ -58,7 +58,7 @@ my $api = get_cells();
          $range_operate->{source} = $range_operate_source  ;
          $range_operate->{target} = $range_operate_target  ;
 
-        my $request = AsposeCellsCloud::Request::PostWorksheetCellsRangesRequest->new();
+        my $request = AsposeCellsCloud::Request::PostWorksheetCellsRangesCopyRequest->new();
         $request->{name} =  $remoteName;
         $request->{sheet_name} =  'Sheet1';
         $request->{range_operate} =  $range_operate;

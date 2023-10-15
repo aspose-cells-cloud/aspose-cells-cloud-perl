@@ -59,13 +59,13 @@ sub new {
 
 
 # Run Operation Request
-# PostWorksheetListObjectInsertSlicerRequest.name :   ,
-# PostWorksheetListObjectInsertSlicerRequest.sheetName :   ,
-# PostWorksheetListObjectInsertSlicerRequest.listObjectIndex :   ,
-# PostWorksheetListObjectInsertSlicerRequest.columnIndex :   ,
-# PostWorksheetListObjectInsertSlicerRequest.destCellName :   ,
-# PostWorksheetListObjectInsertSlicerRequest.folder :   ,
-# PostWorksheetListObjectInsertSlicerRequest.storageName :    
+# PostWorksheetListObjectInsertSlicerRequest.name : The workbook name.  ,
+# PostWorksheetListObjectInsertSlicerRequest.sheetName : The worksheet name.  ,
+# PostWorksheetListObjectInsertSlicerRequest.listObjectIndex : List object index.  ,
+# PostWorksheetListObjectInsertSlicerRequest.columnIndex : The index of ListColumn in ListObject.ListColumns   ,
+# PostWorksheetListObjectInsertSlicerRequest.destCellName : The cell in the upper-left corner of the Slicer range.   ,
+# PostWorksheetListObjectInsertSlicerRequest.folder : Original workbook folder.  ,
+# PostWorksheetListObjectInsertSlicerRequest.storageName : Storage name.   
 
 {
     my $params = {
@@ -147,49 +147,49 @@ __PACKAGE__->method_documentation({
      'name' => {
      	datatype => 'string',
      	base_name => 'name',
-     	description => '',
+     	description => 'The workbook name.',
      	format => '',
      	read_only => '',
      		},
      'sheet_name' => {
      	datatype => 'string',
      	base_name => 'sheetName',
-     	description => '',
+     	description => 'The worksheet name.',
      	format => '',
      	read_only => '',
      		},
      'list_object_index' => {
      	datatype => 'int',
      	base_name => 'listObjectIndex',
-     	description => '',
+     	description => 'List object index.',
      	format => '',
      	read_only => '',
      		},
      'column_index' => {
      	datatype => 'int',
      	base_name => 'columnIndex',
-     	description => '',
+     	description => 'The index of ListColumn in ListObject.ListColumns ',
      	format => '',
      	read_only => '',
      		},
      'dest_cell_name' => {
      	datatype => 'string',
      	base_name => 'destCellName',
-     	description => '',
+     	description => 'The cell in the upper-left corner of the Slicer range. ',
      	format => '',
      	read_only => '',
      		},
      'folder' => {
      	datatype => 'string',
      	base_name => 'folder',
-     	description => '',
+     	description => 'Original workbook folder.',
      	format => '',
      	read_only => '',
      		},
      'storage_name' => {
      	datatype => 'string',
      	base_name => 'storageName',
-     	description => '',
+     	description => 'Storage name.',
      	format => '',
      	read_only => '',
      		},    

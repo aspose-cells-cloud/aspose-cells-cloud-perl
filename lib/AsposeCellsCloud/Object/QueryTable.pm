@@ -118,7 +118,7 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => '',
+__PACKAGE__->class_documentation({description => 'Represents QueryTable information.',
                                   class => 'QueryTable',
                                   required => [], # TODO
 }                                 );
@@ -128,35 +128,35 @@ __PACKAGE__->method_documentation({
      'connection_id' => {
      	datatype => 'int',
      	base_name => 'ConnectionId',
-     	description => '',
+     	description => 'Gets the connection id of the query table.',
      	format => '',
      	read_only => '',
      		},
      'name' => {
      	datatype => 'string',
      	base_name => 'Name',
-     	description => '',
+     	description => 'Gets the name of querytable.',
      	format => '',
      	read_only => '',
      		},
      'result_range' => {
      	datatype => 'Range',
      	base_name => 'ResultRange',
-     	description => '',
+     	description => 'Gets the range of the result.',
      	format => '',
      	read_only => '',
      		},
      'preserve_formatting' => {
      	datatype => 'boolean',
      	base_name => 'PreserveFormatting',
-     	description => '',
+     	description => 'Returns or sets the PreserveFormatting of the object.',
      	format => '',
      	read_only => '',
      		},
      'adjust_column_width' => {
      	datatype => 'boolean',
      	base_name => 'AdjustColumnWidth',
-     	description => '',
+     	description => 'Returns or sets the AdjustColumnWidth of the object.',
      	format => '',
      	read_only => '',
      		},    

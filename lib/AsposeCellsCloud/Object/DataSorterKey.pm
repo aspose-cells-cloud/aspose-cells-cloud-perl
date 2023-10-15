@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::ProtectWorkbookRequst;
+package AsposeCellsCloud::Object::DataSorterKey;
 
 require 5.6.0;
 use strict;
@@ -35,8 +35,7 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
-use AsposeCellsCloud::Object::DigitalSignature;
-use AsposeCellsCloud::Object::Protection; 
+use AsposeCellsCloud::Object::Color; 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -119,73 +118,73 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => '',
-                                  class => 'ProtectWorkbookRequst',
+__PACKAGE__->class_documentation({description => 'Represents the key of the data sorter. ',
+                                  class => 'DataSorterKey',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'aways_open_only_ready' => {
-     	datatype => 'boolean',
-     	base_name => 'AwaysOpenOnlyReady',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'encrypt_with_password' => {
+     'order' => {
      	datatype => 'string',
-     	base_name => 'EncryptWithPassword',
-     	description => '',
+     	base_name => 'Order',
+     	description => 'Indicates the order of sorting. ',
      	format => '',
      	read_only => '',
      		},
-     'protect_current_sheet' => {
-     	datatype => 'Protection',
-     	base_name => 'ProtectCurrentSheet',
-     	description => '',
+     'index' => {
+     	datatype => 'int',
+     	base_name => 'Index',
+     	description => 'Gets the sorted column index(absolute position, column A is 0, B is 1, ...). ',
      	format => '',
      	read_only => '',
      		},
-     'protect_workbook_structure' => {
+     'type' => {
      	datatype => 'string',
-     	base_name => 'ProtectWorkbookStructure',
-     	description => '',
+     	base_name => 'Type',
+     	description => 'Represents the type of sorting. ',
      	format => '',
      	read_only => '',
      		},
-     'digital_signature' => {
-     	datatype => 'DigitalSignature',
-     	base_name => 'DigitalSignature',
-     	description => '',
+     'icon_set_type' => {
+     	datatype => 'string',
+     	base_name => 'IconSetType',
+     	description => 'Represents the icon set type. ',
      	format => '',
      	read_only => '',
      		},
-     'mark_as_final' => {
-     	datatype => 'boolean',
-     	base_name => 'MarkAsFinal',
-     	description => '',
+     'icon_id' => {
+     	datatype => 'int',
+     	base_name => 'IconId',
+     	description => 'Represents the id of the icon set type. ',
+     	format => '',
+     	read_only => '',
+     		},
+     'color' => {
+     	datatype => 'Color',
+     	base_name => 'Color',
+     	description => 'Gets the sorted color. ',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'aways_open_only_ready' => 'boolean',
-    'encrypt_with_password' => 'string',
-    'protect_current_sheet' => 'Protection',
-    'protect_workbook_structure' => 'string',
-    'digital_signature' => 'DigitalSignature',
-    'mark_as_final' => 'boolean' 
+    'order' => 'string',
+    'index' => 'int',
+    'type' => 'string',
+    'icon_set_type' => 'string',
+    'icon_id' => 'int',
+    'color' => 'Color' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'aways_open_only_ready' => 'AwaysOpenOnlyReady',
-    'encrypt_with_password' => 'EncryptWithPassword',
-    'protect_current_sheet' => 'ProtectCurrentSheet',
-    'protect_workbook_structure' => 'ProtectWorkbookStructure',
-    'digital_signature' => 'DigitalSignature',
-    'mark_as_final' => 'MarkAsFinal' 
+    'order' => 'Order',
+    'index' => 'Index',
+    'type' => 'Type',
+    'icon_set_type' => 'IconSetType',
+    'icon_id' => 'IconId',
+    'color' => 'Color' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

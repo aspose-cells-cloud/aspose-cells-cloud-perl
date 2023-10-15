@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::PostWorksheetCellsRangesRequest;
+package AsposeCellsCloud::Request::PostWorksheetCellsRangesCopyRequest;
 
 require 5.6.0;
 use strict;
@@ -59,11 +59,11 @@ sub new {
 
 
 # Run Operation Request
-# PostWorksheetCellsRangesRequest.name : The workbook name.  ,
-# PostWorksheetCellsRangesRequest.sheetName : The worksheet name.  ,
-# PostWorksheetCellsRangesRequest.rangeOperate : copydata,copystyle,copyto,copyvalue  ,
-# PostWorksheetCellsRangesRequest.folder : Original workbook folder.  ,
-# PostWorksheetCellsRangesRequest.storageName : Storage name.   
+# PostWorksheetCellsRangesCopyRequest.name : The workbook name.  ,
+# PostWorksheetCellsRangesCopyRequest.sheetName : The worksheet name.  ,
+# PostWorksheetCellsRangesCopyRequest.rangeOperate : copydata,copystyle,copyto,copyvalue  ,
+# PostWorksheetCellsRangesCopyRequest.folder : Original workbook folder.  ,
+# PostWorksheetCellsRangesCopyRequest.storageName : Storage name.   
 
 {
     my $params = {
@@ -73,7 +73,7 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'post_worksheet_cells_ranges' } = { 
+    __PACKAGE__->method_documentation->{ 'post_worksheet_cells_ranges_copy' } = { 
     	summary => 'Copys content to destination range from source range in worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
@@ -86,7 +86,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = '/cells/{name}/worksheets/{sheetName}/ranges';
+    my $_resource_path = '/cells/{name}/worksheets/{sheetName}/ranges/copy';
 
     my $_method = 'POST';
     my $query_params = {};

@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::RangeSetStyleRequest;
+package AsposeCellsCloud::Object::ProtectWorkbookRequest;
 
 require 5.6.0;
 use strict;
@@ -35,8 +35,8 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
-use AsposeCellsCloud::Object::Range;
-use AsposeCellsCloud::Object::Style; 
+use AsposeCellsCloud::Object::DigitalSignature;
+use AsposeCellsCloud::Object::Protection; 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -119,37 +119,73 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => 'Indicates range set style request.',
-                                  class => 'RangeSetStyleRequest',
+__PACKAGE__->class_documentation({description => 'Indicates protect workbook request',
+                                  class => 'ProtectWorkbookRequest',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'range' => {
-     	datatype => 'Range',
-     	base_name => 'Range',
-     	description => 'Encapsulates the object that represents a range of cells within a spreadsheet.',
+     'aways_open_read_only' => {
+     	datatype => 'boolean',
+     	base_name => 'AwaysOpenReadOnly',
+     	description => 'Indicates aways open read-only.',
      	format => '',
      	read_only => '',
      		},
-     'style' => {
-     	datatype => 'Style',
-     	base_name => 'Style',
-     	description => 'Represents display style of excel document,such as font,color,alignment,border,etc.            ',
+     'encrypt_with_password' => {
+     	datatype => 'string',
+     	base_name => 'EncryptWithPassword',
+     	description => 'Indicates encrypt with password.',
+     	format => '',
+     	read_only => '',
+     		},
+     'protect_current_sheet' => {
+     	datatype => 'Protection',
+     	base_name => 'ProtectCurrentSheet',
+     	description => 'Represents the various types of protection options available for a worksheet.            ',
+     	format => '',
+     	read_only => '',
+     		},
+     'protect_workbook_structure' => {
+     	datatype => 'string',
+     	base_name => 'ProtectWorkbookStructure',
+     	description => 'Indicates protect workbook structure. All, Contents, Objects, Scenarios, Structure, Windows, and None.',
+     	format => '',
+     	read_only => '',
+     		},
+     'digital_signature' => {
+     	datatype => 'DigitalSignature',
+     	base_name => 'DigitalSignature',
+     	description => 'Indicates signature in file.',
+     	format => '',
+     	read_only => '',
+     		},
+     'mark_as_final' => {
+     	datatype => 'boolean',
+     	base_name => 'MarkAsFinal',
+     	description => 'Indicates mark as final.',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'range' => 'Range',
-    'style' => 'Style' 
+    'aways_open_read_only' => 'boolean',
+    'encrypt_with_password' => 'string',
+    'protect_current_sheet' => 'Protection',
+    'protect_workbook_structure' => 'string',
+    'digital_signature' => 'DigitalSignature',
+    'mark_as_final' => 'boolean' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'range' => 'Range',
-    'style' => 'Style' 
+    'aways_open_read_only' => 'AwaysOpenReadOnly',
+    'encrypt_with_password' => 'EncryptWithPassword',
+    'protect_current_sheet' => 'ProtectCurrentSheet',
+    'protect_workbook_structure' => 'ProtectWorkbookStructure',
+    'digital_signature' => 'DigitalSignature',
+    'mark_as_final' => 'MarkAsFinal' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

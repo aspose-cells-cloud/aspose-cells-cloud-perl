@@ -61,7 +61,7 @@ sub new {
 # Run Operation Request
 # PostWorksheetCellsRangeSortRequest.name : The workbook name.  ,
 # PostWorksheetCellsRangeSortRequest.sheetName : The worksheet name.  ,
-# PostWorksheetCellsRangeSortRequest.rangeOperate : Range Set OutlineBorder Request   ,
+# PostWorksheetCellsRangeSortRequest.rangeSortRequest : Range Sort Request   ,
 # PostWorksheetCellsRangeSortRequest.folder : Original workbook folder.  ,
 # PostWorksheetCellsRangeSortRequest.storageName : Storage name.   
 
@@ -120,9 +120,9 @@ sub run_http_request {
     my $_body_data;
 
     # body params
-    if (defined $self->range_operate) {
-        #$_body_data = $self->range_operate;
-         $_body_data = JSON->new->convert_blessed->encode( $self->range_operate);
+    if (defined $self->range_sort_request) {
+        #$_body_data = $self->range_sort_request;
+         $_body_data = JSON->new->convert_blessed->encode( $self->range_sort_request);
     }
     # authentication setting, if any
     my $auth_settings = [qw()];
@@ -148,10 +148,10 @@ __PACKAGE__->method_documentation({
      	format => '',
      	read_only => '',
      		},
-     'range_operate' => {
+     'range_sort_request' => {
      	datatype => 'RangeSortRequest',
-     	base_name => 'rangeOperate',
-     	description => 'Range Set OutlineBorder Request ',
+     	base_name => 'rangeSortRequest',
+     	description => 'Range Sort Request ',
      	format => '',
      	read_only => '',
      		},
@@ -175,7 +175,7 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->attribute_map( {
     'name' => 'name',
     'sheet_name' => 'sheetName',
-    'range_operate' => 'rangeOperate',
+    'range_sort_request' => 'rangeSortRequest',
     'folder' => 'folder',
     'storage_name' => 'storageName' 
 } );

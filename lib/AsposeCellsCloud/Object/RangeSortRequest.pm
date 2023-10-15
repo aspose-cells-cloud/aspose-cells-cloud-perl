@@ -119,7 +119,7 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => '',
+__PACKAGE__->class_documentation({description => 'Indicates range sort request',
                                   class => 'RangeSortRequest',
                                   required => [], # TODO
 }                                 );
@@ -129,14 +129,14 @@ __PACKAGE__->method_documentation({
      'data_sorter' => {
      	datatype => 'DataSorter',
      	base_name => 'DataSorter',
-     	description => '',
+     	description => 'Summary description for DataSorter.',
      	format => '',
      	read_only => '',
      		},
      'cell_area' => {
      	datatype => 'Range',
      	base_name => 'CellArea',
-     	description => '',
+     	description => 'Encapsulates the object that represents a range of cells within a spreadsheet.',
      	format => '',
      	read_only => '',
      		},    

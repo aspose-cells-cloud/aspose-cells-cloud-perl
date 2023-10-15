@@ -40932,7 +40932,7 @@ sub post_lock{
 # Protect MS Excel and OpenDocument Spreadsheet by making them password protected.
 # 
 # @File  string (required)  File to upload  
-# @protectWorkbookRequst  ProtectWorkbookRequst (required)    
+# @protectWorkbookRequest  ProtectWorkbookRequest (required)    
 # @password  string      
 #
 {

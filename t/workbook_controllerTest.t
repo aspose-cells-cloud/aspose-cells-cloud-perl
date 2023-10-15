@@ -135,13 +135,13 @@ my $api = get_cells();
 
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
-        my $protection = AsposeCellsCloud::Object::WorkbookProtectionRequest->new();
-         $protection->{password} = '123456'  ;
-         $protection->{protection_type} = 'ALL'  ;
+        my $protection = AsposeCellsCloud::Object::ProtectWorkbookRequest->new();
+         $protection->{encrypt_with_password} = '123456'  ;
+         $protection->{aways_open_read_only} = $true ;
 
         my $request = AsposeCellsCloud::Request::PostProtectWorkbookRequest->new();
         $request->{name} =  $remoteName;
-        $request->{protection} =  $protection;
+        $request->{protectWorkbookRequest} =  $protection;
         $request->{folder} =  $remoteFolder;
         $request->{storage_name} =  '';
         my $result =  $api->post_protect_workbook(request=> $request);
@@ -157,15 +157,11 @@ my $api = get_cells();
         my $localName = 'Book1.xlsx';
         my $remoteName = 'Book1.xlsx';
 
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $protection = AsposeCellsCloud::Object::WorkbookProtectionRequest->new();
-         $protection->{password} = '123456'  ;
-         $protection->{protection_type} = 'ALL'  ;
+        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ;      
 
         my $request = AsposeCellsCloud::Request::DeleteUnProtectWorkbookRequest->new();
         $request->{name} =  $remoteName;
-        $request->{protection} =  $protection;
+        $request->{password} =  '123456';
         $request->{folder} =  $remoteFolder;
         $request->{storage_name} =  '';
         my $result =  $api->delete_un_protect_workbook(request=> $request);

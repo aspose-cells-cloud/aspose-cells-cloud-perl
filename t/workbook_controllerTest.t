@@ -13,6 +13,7 @@ use AsposeCellsCloud::Object::ImportIntArrayOption;
 use AsposeCellsCloud::Object::CalculationOptions;
 use AsposeCellsCloud::Object::WorkbookSettings;
 use AsposeCellsCloud::Object::TextWaterMarkerRequest;
+use AsposeCellsCloud::Object::ProtectWorkbookRequest;
 use AsposeCellsCloud::Request::PostDigitalSignatureRequest;
 use AsposeCellsCloud::Request::PostEncryptWorkbookRequest;
 use AsposeCellsCloud::Request::DeleteDecryptWorkbookRequest;
@@ -137,7 +138,7 @@ my $api = get_cells();
      
         my $protection = AsposeCellsCloud::Object::ProtectWorkbookRequest->new();
          $protection->{encrypt_with_password} = '123456'  ;
-         $protection->{aways_open_read_only} = $true ;
+         $protection->{aways_open_read_only} = 'true' ;
 
         my $request = AsposeCellsCloud::Request::PostProtectWorkbookRequest->new();
         $request->{name} =  $remoteName;

@@ -137,7 +137,7 @@ my $api = get_cells();
      
         my $protection = AsposeCellsCloud::Object::ProtectWorkbookRequest->new();
          $protection->{encrypt_with_password} = '123456'  ;
-         $protection->{aways_open_read_only} = $true ;
+         $protection->{aways_open_read_only} = 'true' ;
 
         my $request = AsposeCellsCloud::Request::PostProtectWorkbookRequest->new();
         $request->{name} =  $remoteName;

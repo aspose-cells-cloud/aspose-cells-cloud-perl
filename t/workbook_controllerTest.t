@@ -13,6 +13,7 @@ use AsposeCellsCloud::Object::ImportIntArrayOption;
 use AsposeCellsCloud::Object::CalculationOptions;
 use AsposeCellsCloud::Object::WorkbookSettings;
 use AsposeCellsCloud::Object::TextWaterMarkerRequest;
+use AsposeCellsCloud::Object::ProtectWorkbookRequest;
 use AsposeCellsCloud::Request::PostDigitalSignatureRequest;
 use AsposeCellsCloud::Request::PostEncryptWorkbookRequest;
 use AsposeCellsCloud::Request::DeleteDecryptWorkbookRequest;

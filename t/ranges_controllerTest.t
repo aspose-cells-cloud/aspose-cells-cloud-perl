@@ -404,7 +404,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostWorksheetCellsRangeSortRequest->new();
         $request->{name} =  $remoteName;
         $request->{sheet_name} =  'book1';
-        $request->{range_operate} =  $range_operate;
+        $request->{range_sort_request} =  $range_operate;
         $request->{folder} =  $remoteFolder;
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_cells_range_sort(request=> $request);

@@ -1,8 +1,8 @@
-# AsposeCellsCloud::Object::TotalRequest 
+# AsposeCellsCloud::Object::ChartGlobalizationSettings 
 
 ## Load the model package
 ```perl
-use AsposeCellsCloud::Object::TotalRequest;
+use AsposeCellsCloud::Object::ChartGlobalizationSettings;
 ```
 
 ## Properties

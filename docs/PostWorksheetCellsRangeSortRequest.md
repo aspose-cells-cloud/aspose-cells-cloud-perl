@@ -1,8 +1,8 @@
-# AsposeCellsCloud::Request::PostWorksheetCellsRanges 
+# AsposeCellsCloud::Request::PostWorksheetCellsRangeSort 
 
 ## Load the model package
 ```perl
-use AsposeCellsCloud::Request::PostWorksheetCellsRanges;
+use AsposeCellsCloud::Request::PostWorksheetCellsRangeSort;
 ```
 
 ## Properties
@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** | The workbook name. |
 **sheet_name** | **string** | The worksheet name. |
-**range_operate** | **RangeCopyRequest** | copydata,copystyle,copyto,copyvalue |
+**range_sort_request** | **RangeSortRequest** | Range Sort Request  |
 **folder** | **string** | Original workbook folder. |
 **storage_name** | **string** | Storage name. |  
 

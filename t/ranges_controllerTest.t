@@ -12,8 +12,8 @@ use AsposeCellsCloud::Object::Style;
 use AsposeCellsCloud::Object::Font;
 use AsposeCellsCloud::Object::RangeSetOutlineBorderRequest;
 use AsposeCellsCloud::Object::Color;
-use AsposeCellsCloud::Object::DataSorter;
 use AsposeCellsCloud::Object::RangeSortRequest;
+use AsposeCellsCloud::Object::DataSorter;
 use AsposeCellsCloud::Request::PostWorksheetCellsRangesCopyRequest;
 use AsposeCellsCloud::Request::PostWorksheetCellsRangeMergeRequest;
 use AsposeCellsCloud::Request::PostWorksheetCellsRangeUnMergeRequest;
@@ -64,8 +64,8 @@ my $api = get_cells();
         $request->{range_operate} =  $range_operate;
         $request->{folder} =  $remoteFolder;
         $request->{storage_name} =  '';
-        my $result =  $api->post_worksheet_cells_ranges(request=> $request);
-        ok($result,'post_worksheet_cells_ranges test OK');
+        my $result =  $api->post_worksheet_cells_ranges_copy(request=> $request);
+        ok($result,'post_worksheet_cells_ranges_copy test OK');
     }
 
     #
@@ -390,24 +390,26 @@ my $api = get_cells();
 
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
-        my $range_operate_data_sorter = AsposeCellsCloud::Object::DataSorter->new();
-         $range_operate_data_sorter->{case_sensitive} = 'true'  ;
-        my $range_operate_cell_area = AsposeCellsCloud::Object::Range->new();
-         $range_operate_cell_area->{column_count} = 3  ;
-         $range_operate_cell_area->{first_column} = 0  ;
-         $range_operate_cell_area->{first_row} = 0  ;
-         $range_operate_cell_area->{row_count} = 15  ;
-        my $range_operate = AsposeCellsCloud::Object::RangeSortRequest->new();
-         $range_operate->{data_sorter} = $range_operate_data_sorter  ;
-         $range_operate->{cell_area} = $range_operate_cell_area  ;
+        my $range_sort_request_data_sorter = AsposeCellsCloud::Object::DataSorter->new();
+         $range_sort_request_data_sorter->{case_sensitive} = 'true'  ;
+        my $range_sort_request_cell_area = AsposeCellsCloud::Object::Range->new();
+         $range_sort_request_cell_area->{column_count} = 3  ;
+         $range_sort_request_cell_area->{first_column} = 0  ;
+         $range_sort_request_cell_area->{first_row} = 0  ;
+         $range_sort_request_cell_area->{row_count} = 15  ;
+        my $range_sort_request = AsposeCellsCloud::Object::RangeSortRequest->new();
+         $range_sort_request->{data_sorter} = $range_sort_request_data_sorter  ;
+         $range_sort_request->{cell_area} = $range_sort_request_cell_area  ;
 
         my $request = AsposeCellsCloud::Request::PostWorksheetCellsRangeSortRequest->new();
         $request->{name} =  $remoteName;
         $request->{sheet_name} =  'book1';
-        $request->{range_sort_request} =  $range_operate;
+        $request->{range_sort_request} =  $range_sort_request;
         $request->{folder} =  $remoteFolder;
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_cells_range_sort(request=> $request);
         ok($result,'post_worksheet_cells_range_sort test OK');
     }
+
+
 1;

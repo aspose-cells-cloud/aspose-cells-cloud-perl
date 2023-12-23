@@ -117,7 +117,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::GetWorksheetPivotTableFiltersRequest->new();
         $request->{name} =  $remoteName;
-        $request->{sheet_name} =  'Sheet3';
+        $request->{sheet_name} =  'Sheet4';
         $request->{pivot_table_index} =  0;
         $request->{folder} =  $remoteFolder;
         $request->{storage_name} =  '';
@@ -162,7 +162,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PutWorksheetPivotTableRequest->new();
         $request->{name} =  $remoteName;
-        $request->{sheet_name} =  'Sheet3';
+        $request->{sheet_name} =  'Sheet4';
         $request->{folder} =  $remoteFolder;
         $request->{source_data} =  '=Sheet1!C6:E13';
         $request->{dest_cell_name} =  'C1';

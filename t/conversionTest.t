@@ -1,4 +1,4 @@
-use Test::More tests => 112; #TODO update number of test cases
+use Test::More tests => 75; #TODO update number of test cases
 use Test::Exception;
 
 use lib 'lib';
@@ -27,33 +27,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'csv';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.csv';
-
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
-         $save_options->{save_format} = $format  ;
-
-        my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{newfilename} =  $newfilename;
-        $request->{save_options} =  $save_options;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->post_workbook_save_as(request=> $request);
-        ok($result,'post_workbook_save_as test OK');
-    }
-
-    #
-    # Conversion->post_workbook_save_as  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'xls';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.xls';
+        my $newfilename = 'outResult/PostExcelSaveAs.csv';
 
         my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
          $save_options->{save_format} = $format  ;
@@ -79,7 +53,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'html';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.html';
+        my $newfilename = 'outResult/PostExcelSaveAs.html';
 
         my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
          $save_options->{save_format} = $format  ;
@@ -105,7 +79,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'mhtml';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.mhtml';
+        my $newfilename = 'outResult/PostExcelSaveAs.mhtml';
 
         my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
          $save_options->{save_format} = $format  ;
@@ -131,7 +105,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'ods';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.ods';
+        my $newfilename = 'outResult/PostExcelSaveAs.ods';
 
         my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
          $save_options->{save_format} = $format  ;
@@ -157,7 +131,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'pdf';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.pdf';
+        my $newfilename = 'outResult/PostExcelSaveAs.pdf';
 
         my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
          $save_options->{save_format} = $format  ;
@@ -183,7 +157,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'xml';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.xml';
+        my $newfilename = 'outResult/PostExcelSaveAs.xml';
 
         my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
          $save_options->{save_format} = $format  ;
@@ -209,7 +183,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'txt';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.txt';
+        my $newfilename = 'outResult/PostExcelSaveAs.txt';
 
         my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
          $save_options->{save_format} = $format  ;
@@ -235,7 +209,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'tif';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.tif';
+        my $newfilename = 'outResult/PostExcelSaveAs.tif';
 
         my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
          $save_options->{save_format} = $format  ;
@@ -261,111 +235,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'xlsb';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.xlsb';
-
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
-         $save_options->{save_format} = $format  ;
-
-        my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{newfilename} =  $newfilename;
-        $request->{save_options} =  $save_options;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->post_workbook_save_as(request=> $request);
-        ok($result,'post_workbook_save_as test OK');
-    }
-
-    #
-    # Conversion->post_workbook_save_as  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'xlsm';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.xlsm';
-
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
-         $save_options->{save_format} = $format  ;
-
-        my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{newfilename} =  $newfilename;
-        $request->{save_options} =  $save_options;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->post_workbook_save_as(request=> $request);
-        ok($result,'post_workbook_save_as test OK');
-    }
-
-    #
-    # Conversion->post_workbook_save_as  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'xlsx';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.xlsx';
-
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
-         $save_options->{save_format} = $format  ;
-
-        my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{newfilename} =  $newfilename;
-        $request->{save_options} =  $save_options;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->post_workbook_save_as(request=> $request);
-        ok($result,'post_workbook_save_as test OK');
-    }
-
-    #
-    # Conversion->post_workbook_save_as  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'xltm';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.xltm';
-
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
-         $save_options->{save_format} = $format  ;
-
-        my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{newfilename} =  $newfilename;
-        $request->{save_options} =  $save_options;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->post_workbook_save_as(request=> $request);
-        ok($result,'post_workbook_save_as test OK');
-    }
-
-    #
-    # Conversion->post_workbook_save_as  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'xltx';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.xltx';
+        my $newfilename = 'outResult/PostExcelSaveAs.xlsb';
 
         my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
          $save_options->{save_format} = $format  ;
@@ -391,7 +261,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'xps';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.xps';
+        my $newfilename = 'outResult/PostExcelSaveAs.xps';
 
         my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
          $save_options->{save_format} = $format  ;
@@ -417,111 +287,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'png';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.png';
-
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
-         $save_options->{save_format} = $format  ;
-
-        my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{newfilename} =  $newfilename;
-        $request->{save_options} =  $save_options;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->post_workbook_save_as(request=> $request);
-        ok($result,'post_workbook_save_as test OK');
-    }
-
-    #
-    # Conversion->post_workbook_save_as  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'jpg';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.jpg';
-
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
-         $save_options->{save_format} = $format  ;
-
-        my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{newfilename} =  $newfilename;
-        $request->{save_options} =  $save_options;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->post_workbook_save_as(request=> $request);
-        ok($result,'post_workbook_save_as test OK');
-    }
-
-    #
-    # Conversion->post_workbook_save_as  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'gif';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.gif';
-
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
-         $save_options->{save_format} = $format  ;
-
-        my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{newfilename} =  $newfilename;
-        $request->{save_options} =  $save_options;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->post_workbook_save_as(request=> $request);
-        ok($result,'post_workbook_save_as test OK');
-    }
-
-    #
-    # Conversion->post_workbook_save_as  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'emf';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.emf';
-
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
-         $save_options->{save_format} = $format  ;
-
-        my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{newfilename} =  $newfilename;
-        $request->{save_options} =  $save_options;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->post_workbook_save_as(request=> $request);
-        ok($result,'post_workbook_save_as test OK');
-    }
-
-    #
-    # Conversion->post_workbook_save_as  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'bmp';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.bmp';
+        my $newfilename = 'outResult/PostExcelSaveAs.png';
 
         my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
          $save_options->{save_format} = $format  ;
@@ -547,7 +313,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'md';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.md';
+        my $newfilename = 'outResult/PostExcelSaveAs.md';
 
         my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
          $save_options->{save_format} = $format  ;
@@ -573,33 +339,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'numbers';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.numbers';
-
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
-         $save_options->{save_format} = $format  ;
-
-        my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{newfilename} =  $newfilename;
-        $request->{save_options} =  $save_options;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->post_workbook_save_as(request=> $request);
-        ok($result,'post_workbook_save_as test OK');
-    }
-
-    #
-    # Conversion->post_workbook_save_as  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'wmf';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.wmf';
+        my $newfilename = 'outResult/PostExcelSaveAs.numbers';
 
         my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
          $save_options->{save_format} = $format  ;
@@ -625,7 +365,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'svg';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.svg';
+        my $newfilename = 'outResult/PostExcelSaveAs.svg';
 
         my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
          $save_options->{save_format} = $format  ;
@@ -651,7 +391,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'docx';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.docx';
+        my $newfilename = 'outResult/PostExcelSaveAs.docx';
 
         my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
          $save_options->{save_format} = $format  ;
@@ -677,7 +417,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'pptx';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.pptx';
+        my $newfilename = 'outResult/PostExcelSaveAs.pptx';
 
         my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
          $save_options->{save_format} = $format  ;
@@ -703,7 +443,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'json';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.json';
+        my $newfilename = 'outResult/PostExcelSaveAs.json';
 
         my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
          $save_options->{save_format} = $format  ;
@@ -729,7 +469,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'sql';
-        my $newfilename = 'dotNetSDK/OutResult/PostExcelSaveAs.sql';
+        my $newfilename = 'outResult/PostExcelSaveAs.sql';
 
         my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
          $save_options->{save_format} = $format  ;
@@ -776,28 +516,6 @@ my $api = get_cells();
 
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
-        my $format = 'xls';
-
-
-        my $request = AsposeCellsCloud::Request::GetWorkbookRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{format} =  $format;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->get_workbook(request=> $request);
-        ok($result,'get_workbook test OK');
-    }
-
-    #
-    # Conversion->get_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
         my $format = 'html';
 
 
@@ -952,116 +670,6 @@ my $api = get_cells();
 
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
-        my $format = 'xlsb';
-
-
-        my $request = AsposeCellsCloud::Request::GetWorkbookRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{format} =  $format;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->get_workbook(request=> $request);
-        ok($result,'get_workbook test OK');
-    }
-
-    #
-    # Conversion->get_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'xlsm';
-
-
-        my $request = AsposeCellsCloud::Request::GetWorkbookRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{format} =  $format;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->get_workbook(request=> $request);
-        ok($result,'get_workbook test OK');
-    }
-
-    #
-    # Conversion->get_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'xlsx';
-
-
-        my $request = AsposeCellsCloud::Request::GetWorkbookRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{format} =  $format;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->get_workbook(request=> $request);
-        ok($result,'get_workbook test OK');
-    }
-
-    #
-    # Conversion->get_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'xltm';
-
-
-        my $request = AsposeCellsCloud::Request::GetWorkbookRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{format} =  $format;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->get_workbook(request=> $request);
-        ok($result,'get_workbook test OK');
-    }
-
-    #
-    # Conversion->get_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'xltx';
-
-
-        my $request = AsposeCellsCloud::Request::GetWorkbookRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{format} =  $format;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->get_workbook(request=> $request);
-        ok($result,'get_workbook test OK');
-    }
-
-    #
-    # Conversion->get_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
         my $format = 'xps';
 
 
@@ -1106,94 +714,6 @@ my $api = get_cells();
 
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
-        my $format = 'jpg';
-
-
-        my $request = AsposeCellsCloud::Request::GetWorkbookRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{format} =  $format;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->get_workbook(request=> $request);
-        ok($result,'get_workbook test OK');
-    }
-
-    #
-    # Conversion->get_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'gif';
-
-
-        my $request = AsposeCellsCloud::Request::GetWorkbookRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{format} =  $format;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->get_workbook(request=> $request);
-        ok($result,'get_workbook test OK');
-    }
-
-    #
-    # Conversion->get_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'emf';
-
-
-        my $request = AsposeCellsCloud::Request::GetWorkbookRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{format} =  $format;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->get_workbook(request=> $request);
-        ok($result,'get_workbook test OK');
-    }
-
-    #
-    # Conversion->get_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'bmp';
-
-
-        my $request = AsposeCellsCloud::Request::GetWorkbookRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{format} =  $format;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->get_workbook(request=> $request);
-        ok($result,'get_workbook test OK');
-    }
-
-    #
-    # Conversion->get_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
         my $format = 'md';
 
 
@@ -1217,28 +737,6 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'numbers';
-
-
-        my $request = AsposeCellsCloud::Request::GetWorkbookRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{format} =  $format;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->get_workbook(request=> $request);
-        ok($result,'get_workbook test OK');
-    }
-
-    #
-    # Conversion->get_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'wmf';
 
 
         my $request = AsposeCellsCloud::Request::GetWorkbookRequest->new();
@@ -1610,102 +1108,6 @@ my $api = get_cells();
 
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
-        my $format = 'xlsm';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    }
-
-    #
-    # Conversion->put_convert_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'xlsx';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    }
-
-    #
-    # Conversion->put_convert_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'xltm';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    }
-
-    #
-    # Conversion->put_convert_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'xltx';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    }
-
-    #
-    # Conversion->put_convert_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
         my $format = 'xps';
 
         my $mapFiles = {};           
@@ -1731,102 +1133,6 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'png';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    }
-
-    #
-    # Conversion->put_convert_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'jpg';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    }
-
-    #
-    # Conversion->put_convert_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'gif';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    }
-
-    #
-    # Conversion->put_convert_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'emf';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    }
-
-    #
-    # Conversion->put_convert_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'bmp';
 
         my $mapFiles = {};           
 
@@ -2043,7 +1349,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'csv';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.csv';
+        my $outPath = 'outResult/ConvertWorkbook.csv';
 
         my $mapFiles = {};           
 
@@ -2069,7 +1375,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'xls';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.xls';
+        my $outPath = 'outResult/ConvertWorkbook.xls';
 
         my $mapFiles = {};           
 
@@ -2095,7 +1401,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'html';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.html';
+        my $outPath = 'outResult/ConvertWorkbook.html';
 
         my $mapFiles = {};           
 
@@ -2121,7 +1427,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'mhtml';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.mhtml';
+        my $outPath = 'outResult/ConvertWorkbook.mhtml';
 
         my $mapFiles = {};           
 
@@ -2147,7 +1453,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'ods';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.ods';
+        my $outPath = 'outResult/ConvertWorkbook.ods';
 
         my $mapFiles = {};           
 
@@ -2173,7 +1479,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'pdf';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.pdf';
+        my $outPath = 'outResult/ConvertWorkbook.pdf';
 
         my $mapFiles = {};           
 
@@ -2199,7 +1505,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'xml';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.xml';
+        my $outPath = 'outResult/ConvertWorkbook.xml';
 
         my $mapFiles = {};           
 
@@ -2225,7 +1531,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'txt';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.txt';
+        my $outPath = 'outResult/ConvertWorkbook.txt';
 
         my $mapFiles = {};           
 
@@ -2251,7 +1557,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'tif';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.tif';
+        my $outPath = 'outResult/ConvertWorkbook.tif';
 
         my $mapFiles = {};           
 
@@ -2277,59 +1583,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'xlsb';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.xlsb';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        $request->{out_path} =  $outPath;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    }
-
-    #
-    # Conversion->put_convert_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'xlsm';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.xlsm';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        $request->{out_path} =  $outPath;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    }
-
-    #
-    # Conversion->put_convert_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'xlsx';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.xlsx';
+        my $outPath = 'outResult/ConvertWorkbook.xlsb';
 
         my $mapFiles = {};           
 
@@ -2355,33 +1609,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'xltm';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.xltm';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        $request->{out_path} =  $outPath;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    }
-
-    #
-    # Conversion->put_convert_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'xltx';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.xltx';
+        my $outPath = 'outResult/ConvertWorkbook.xltm';
 
         my $mapFiles = {};           
 
@@ -2407,7 +1635,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'xps';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.xps';
+        my $outPath = 'outResult/ConvertWorkbook.xps';
 
         my $mapFiles = {};           
 
@@ -2433,111 +1661,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'png';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.png';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        $request->{out_path} =  $outPath;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    }
-
-    #
-    # Conversion->put_convert_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'jpg';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.jpg';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        $request->{out_path} =  $outPath;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    }
-
-    #
-    # Conversion->put_convert_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'gif';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.gif';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        $request->{out_path} =  $outPath;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    }
-
-    #
-    # Conversion->put_convert_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'emf';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.emf';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        $request->{out_path} =  $outPath;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    }
-
-    #
-    # Conversion->put_convert_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'bmp';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.bmp';
+        my $outPath = 'outResult/ConvertWorkbook.png';
 
         my $mapFiles = {};           
 
@@ -2563,7 +1687,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'md';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.md';
+        my $outPath = 'outResult/ConvertWorkbook.md';
 
         my $mapFiles = {};           
 
@@ -2589,33 +1713,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'numbers';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.numbers';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        $request->{out_path} =  $outPath;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    }
-
-    #
-    # Conversion->put_convert_workbook  test
-    #
-    { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'wmf';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.wmf';
+        my $outPath = 'outResult/ConvertWorkbook.numbers';
 
         my $mapFiles = {};           
 
@@ -2641,7 +1739,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'svg';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.svg';
+        my $outPath = 'outResult/ConvertWorkbook.svg';
 
         my $mapFiles = {};           
 
@@ -2667,7 +1765,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'docx';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.docx';
+        my $outPath = 'outResult/ConvertWorkbook.docx';
 
         my $mapFiles = {};           
 
@@ -2693,7 +1791,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'pptx';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.pptx';
+        my $outPath = 'outResult/ConvertWorkbook.pptx';
 
         my $mapFiles = {};           
 
@@ -2719,7 +1817,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'json';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.json';
+        my $outPath = 'outResult/ConvertWorkbook.json';
 
         my $mapFiles = {};           
 
@@ -2745,7 +1843,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'sql';
-        my $outPath = 'dotNetSDK/OutResult/ConvertWorkbook.sql';
+        my $outPath = 'outResult/ConvertWorkbook.sql';
 
         my $mapFiles = {};           
 

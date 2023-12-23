@@ -47,7 +47,7 @@ my $api = get_cells();
      
 
         my $request = AsposeCellsCloud::Request::CreateFolderRequest->new();
-        $request->{path} =  'OutResul/NewFolder';
+        $request->{path} =  'OutResult/NewFolder';
         $request->{storage_name} =  '';
         my $result =  $api->create_folder(request=> $request);
         ok('create_folder test OK'); 

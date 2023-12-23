@@ -1,5 +1,3 @@
-
-
 function GetVersionFromMETA {
     param (
         [Parameter(ValueFromPipelineByPropertyName=$true)]

@@ -37,7 +37,7 @@ my $api = get_cells();
         my $batch_convert_request = AsposeCellsCloud::Object::BatchConvertRequest->new();
          $batch_convert_request->{source_folder} = $remoteFolder  ;
          $batch_convert_request->{format} = 'pdf'  ;
-         $batch_convert_request->{out_folder} = 'TestResult'  ;
+         $batch_convert_request->{out_folder} = 'OutResult'  ;
          $batch_convert_request->{match_condition} = $batch_convert_request_match_condition  ;
 
         my $request = AsposeCellsCloud::Request::PostBatchConvertRequest->new();
@@ -66,7 +66,7 @@ my $api = get_cells();
          $batch_protect_request->{source_folder} = $remoteFolder  ;
          $batch_protect_request->{protection_type} = 'All'  ;
          $batch_protect_request->{password} = '123456'  ;
-         $batch_protect_request->{out_folder} = 'TestResult'  ;
+         $batch_protect_request->{out_folder} = 'OutResult'  ;
          $batch_protect_request->{match_condition} = $batch_protect_request_match_condition  ;
 
         my $request = AsposeCellsCloud::Request::PostBatchProtectRequest->new();
@@ -94,7 +94,7 @@ my $api = get_cells();
         my $batch_lock_request = AsposeCellsCloud::Object::BatchLockRequest->new();
          $batch_lock_request->{source_folder} = $remoteFolder  ;
          $batch_lock_request->{password} = '123456'  ;
-         $batch_lock_request->{out_folder} = 'TestResult'  ;
+         $batch_lock_request->{out_folder} = 'OutResult'  ;
          $batch_lock_request->{match_condition} = $batch_lock_request_match_condition  ;
 
         my $request = AsposeCellsCloud::Request::PostBatchLockRequest->new();
@@ -122,7 +122,7 @@ my $api = get_cells();
         my $batch_lock_request = AsposeCellsCloud::Object::BatchLockRequest->new();
          $batch_lock_request->{source_folder} = $remoteFolder  ;
          $batch_lock_request->{password} = '123456'  ;
-         $batch_lock_request->{out_folder} = 'TestResult'  ;
+         $batch_lock_request->{out_folder} = 'OutResult'  ;
          $batch_lock_request->{match_condition} = $batch_lock_request_match_condition  ;
 
         my $request = AsposeCellsCloud::Request::PostBatchUnlockRequest->new();

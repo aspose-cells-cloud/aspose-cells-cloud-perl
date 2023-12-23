@@ -34,7 +34,6 @@ sub get_cells
     my $client_id = $ENV{'CellsCloudClientId'}; # replace NULL with a proper value
     my $client_secret =  $ENV{'CellsCloudClientSecret'}; # replace NULL with a proper value
     my $config = AsposeCellsCloud::Configuration->new('base_url' =>$ENV{'CellsCloudApiBaseUrl'},'api_version' => 'v3.0', client_id => $client_id, client_secret => $client_secret);
-    # my $config = AsposeCellsCloud::Configuration->new('base_url' =>'https://cells-api.qa.aspose.cloud','api_version' => 'v3.0', client_id => $client_id, client_secret => $client_secret);
     my $client = AsposeCellsCloud::ApiClient->new( $config);
     my $oauth_api = AsposeCellsCloud::CellsApi->new($client);
     return $oauth_api;

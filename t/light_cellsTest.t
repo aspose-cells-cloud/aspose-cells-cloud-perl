@@ -1,10 +1,11 @@
-use Test::More tests => 216; #TODO update number of test cases
+use Test::More tests => 210; #TODO update number of test cases
 use Test::Exception;
 
 use lib 'lib';
 use strict;
 use warnings;
 
+use AsposeCellsCloud::Object::ProtectWorkbookRequest;
 use AsposeCellsCloud::Object::CellsDocumentProperty;
 use AsposeCellsCloud::Request::PostSplitRequest;
 use AsposeCellsCloud::Request::PostAssembleRequest;
@@ -13,12 +14,13 @@ use AsposeCellsCloud::Request::PostCompressRequest;
 use AsposeCellsCloud::Request::PostMergeRequest;
 use AsposeCellsCloud::Request::PostUnlockRequest;
 use AsposeCellsCloud::Request::PostProtectRequest;
+use AsposeCellsCloud::Request::PostProtectRequest;
 use AsposeCellsCloud::Request::PostSearchRequest;
 use AsposeCellsCloud::Request::PostReplaceRequest;
 use AsposeCellsCloud::Request::PostReplaceRequest;
-use AsposeCellsCloud::Request::PostRepairRequest;
 use AsposeCellsCloud::Request::PostWatermarkRequest;
 use AsposeCellsCloud::Request::PostClearObjectsRequest;
+use AsposeCellsCloud::Request::PostRepairRequest;
 use AsposeCellsCloud::Request::PostReverseRequest;
 use AsposeCellsCloud::Request::GetMetadataRequest;
 use AsposeCellsCloud::Request::DeleteMetadataRequest;
@@ -37,7 +39,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'csv';
+        my $outFormat = 'csv';
 
         my $mapFiles = {};           
 
@@ -46,7 +48,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -60,7 +62,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'xls';
+        my $outFormat = 'xls';
 
         my $mapFiles = {};           
 
@@ -69,7 +71,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -83,7 +85,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'html';
+        my $outFormat = 'html';
 
         my $mapFiles = {};           
 
@@ -92,7 +94,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -106,7 +108,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'mhtml';
+        my $outFormat = 'mhtml';
 
         my $mapFiles = {};           
 
@@ -115,7 +117,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -129,7 +131,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'ods';
+        my $outFormat = 'ods';
 
         my $mapFiles = {};           
 
@@ -138,7 +140,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -152,7 +154,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'pdf';
+        my $outFormat = 'pdf';
 
         my $mapFiles = {};           
 
@@ -161,7 +163,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -175,7 +177,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'xml';
+        my $outFormat = 'xml';
 
         my $mapFiles = {};           
 
@@ -184,7 +186,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -198,7 +200,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'txt';
+        my $outFormat = 'txt';
 
         my $mapFiles = {};           
 
@@ -207,7 +209,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -221,7 +223,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'tif';
+        my $outFormat = 'tif';
 
         my $mapFiles = {};           
 
@@ -230,7 +232,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -244,7 +246,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'xlsb';
+        my $outFormat = 'xlsb';
 
         my $mapFiles = {};           
 
@@ -253,7 +255,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -267,7 +269,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'xlsm';
+        my $outFormat = 'xlsx';
 
         my $mapFiles = {};           
 
@@ -276,7 +278,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -290,7 +292,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'xlsx';
+        my $outFormat = 'xps';
 
         my $mapFiles = {};           
 
@@ -299,7 +301,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -313,7 +315,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'xltm';
+        my $outFormat = 'png';
 
         my $mapFiles = {};           
 
@@ -322,7 +324,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -336,7 +338,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'xltx';
+        my $outFormat = 'jpg';
 
         my $mapFiles = {};           
 
@@ -345,7 +347,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -359,7 +361,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'xps';
+        my $outFormat = 'md';
 
         my $mapFiles = {};           
 
@@ -368,7 +370,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -382,7 +384,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'png';
+        my $outFormat = 'numbers';
 
         my $mapFiles = {};           
 
@@ -391,7 +393,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -405,7 +407,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'jpg';
+        my $outFormat = 'svg';
 
         my $mapFiles = {};           
 
@@ -414,7 +416,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -428,7 +430,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'gif';
+        my $outFormat = 'docx';
 
         my $mapFiles = {};           
 
@@ -437,7 +439,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -451,7 +453,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'emf';
+        my $outFormat = 'pptx';
 
         my $mapFiles = {};           
 
@@ -460,7 +462,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -474,7 +476,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'bmp';
+        my $outFormat = 'json';
 
         my $mapFiles = {};           
 
@@ -483,7 +485,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -497,7 +499,7 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'md';
+        my $outFormat = 'sql';
 
         my $mapFiles = {};           
 
@@ -506,168 +508,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        my $result =  $api->post_split(request=> $request);
-        ok($result,'post_split test OK');
-    }
-
-    #
-    # LightCells->post_split  test
-    #
-    { 
-      
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
-
-     
-        my $format = 'numbers';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
-
-        my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        my $result =  $api->post_split(request=> $request);
-        ok($result,'post_split test OK');
-    }
-
-    #
-    # LightCells->post_split  test
-    #
-    { 
-      
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
-
-     
-        my $format = 'wmf';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
-
-        my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        my $result =  $api->post_split(request=> $request);
-        ok($result,'post_split test OK');
-    }
-
-    #
-    # LightCells->post_split  test
-    #
-    { 
-      
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
-
-     
-        my $format = 'svg';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
-
-        my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        my $result =  $api->post_split(request=> $request);
-        ok($result,'post_split test OK');
-    }
-
-    #
-    # LightCells->post_split  test
-    #
-    { 
-      
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
-
-     
-        my $format = 'docx';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
-
-        my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        my $result =  $api->post_split(request=> $request);
-        ok($result,'post_split test OK');
-    }
-
-    #
-    # LightCells->post_split  test
-    #
-    { 
-      
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
-
-     
-        my $format = 'pptx';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
-
-        my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        my $result =  $api->post_split(request=> $request);
-        ok($result,'post_split test OK');
-    }
-
-    #
-    # LightCells->post_split  test
-    #
-    { 
-      
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
-
-     
-        my $format = 'json';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
-
-        my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        my $result =  $api->post_split(request=> $request);
-        ok($result,'post_split test OK');
-    }
-
-    #
-    # LightCells->post_split  test
-    #
-    { 
-      
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
-
-     
-        my $format = 'sql';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
-
-        my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $outFormat;
         my $result =  $api->post_split(request=> $request);
         ok($result,'post_split test OK');
     }
@@ -3934,7 +3775,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -3959,7 +3800,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -3984,7 +3825,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4009,7 +3850,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4034,7 +3875,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4059,7 +3900,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4084,7 +3925,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4109,7 +3950,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4134,7 +3975,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4159,7 +4000,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4184,7 +4025,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4209,7 +4050,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4234,7 +4075,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4259,7 +4100,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4284,7 +4125,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4309,7 +4150,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4334,7 +4175,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4359,7 +4200,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4384,7 +4225,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4409,7 +4250,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4434,7 +4275,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4459,7 +4300,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4484,7 +4325,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4509,7 +4350,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4534,7 +4375,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4559,7 +4400,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4584,7 +4425,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4609,7 +4450,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         $request->{merge_to_one_sheet} =  $mergeToOneSheet;
         my $result =  $api->post_merge(request=> $request);
         ok($result,'post_merge test OK');
@@ -4645,12 +4486,40 @@ my $api = get_cells();
      
         my $mapFiles = {};           
 
+        my $protect_workbook_request = AsposeCellsCloud::Object::ProtectWorkbookRequest->new();
+         $protect_workbook_request->{aways_open_read_only} = 'true'  ;
+         $protect_workbook_request->{encrypt_with_password} = '123456'  ;
          $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
         my $request = AsposeCellsCloud::Request::PostProtectRequest->new();
         $request->{file} =  $mapFiles;
+        $request->{protect_workbook_request} =  $protect_workbook_request;
         $request->{password} =  '123456';
+        my $result =  $api->post_protect(request=> $request);
+        ok($result,'post_protect test OK');
+    }
+
+    #
+    # LightCells->post_protect  test
+    #
+    { 
+      
+        my $assemblyTestXlsx = 'assemblytest.xlsx';
+        my $dataSourceXlsx = 'datasource.xlsx';
+
+     
+        my $mapFiles = {};           
+
+        my $protect_workbook_request = AsposeCellsCloud::Object::ProtectWorkbookRequest->new();
+         $protect_workbook_request->{aways_open_read_only} = 'true'  ;
+         $protect_workbook_request->{encrypt_with_password} = '123456'  ;
+         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
+         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+
+        my $request = AsposeCellsCloud::Request::PostProtectRequest->new();
+        $request->{file} =  $mapFiles;
+        $request->{protect_workbook_request} =  $protect_workbook_request;
         my $result =  $api->post_protect(request=> $request);
         ok($result,'post_protect test OK');
     }
@@ -4972,7 +4841,8 @@ my $api = get_cells();
         my $result =  $api->post_clear_objects(request=> $request);
         ok($result,'post_clear_objects test OK');
     }
-#
+
+    #
     # LightCells->post_repair  test
     #
     { 
@@ -4988,7 +4858,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostRepairRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_repair(request=> $request);
         ok($result,'post_repair test OK');
     }
@@ -5009,7 +4879,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostRepairRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_repair(request=> $request);
         ok($result,'post_repair test OK');
     }
@@ -5030,7 +4900,7 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostRepairRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_repair(request=> $request);
         ok($result,'post_repair test OK');
     }
@@ -5051,11 +4921,10 @@ my $api = get_cells();
 
         my $request = AsposeCellsCloud::Request::PostRepairRequest->new();
         $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_repair(request=> $request);
         ok($result,'post_repair test OK');
     }
-
 
     #
     # LightCells->post_reverse  test
@@ -5075,7 +4944,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostReverseRequest->new();
         $request->{file} =  $mapFiles;
         $request->{rotate_type} =  $rotateType;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_reverse(request=> $request);
         ok($result,'post_reverse test OK');
     }
@@ -5098,7 +4967,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostReverseRequest->new();
         $request->{file} =  $mapFiles;
         $request->{rotate_type} =  $rotateType;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_reverse(request=> $request);
         ok($result,'post_reverse test OK');
     }
@@ -5121,7 +4990,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostReverseRequest->new();
         $request->{file} =  $mapFiles;
         $request->{rotate_type} =  $rotateType;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_reverse(request=> $request);
         ok($result,'post_reverse test OK');
     }
@@ -5144,7 +5013,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostReverseRequest->new();
         $request->{file} =  $mapFiles;
         $request->{rotate_type} =  $rotateType;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_reverse(request=> $request);
         ok($result,'post_reverse test OK');
     }
@@ -5167,7 +5036,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostReverseRequest->new();
         $request->{file} =  $mapFiles;
         $request->{rotate_type} =  $rotateType;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_reverse(request=> $request);
         ok($result,'post_reverse test OK');
     }
@@ -5190,7 +5059,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostReverseRequest->new();
         $request->{file} =  $mapFiles;
         $request->{rotate_type} =  $rotateType;
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_reverse(request=> $request);
         ok($result,'post_reverse test OK');
     }

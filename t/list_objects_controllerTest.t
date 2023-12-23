@@ -303,7 +303,6 @@ my $api = get_cells();
         ok($result,'post_worksheet_list_columns_total test OK');
     }
 
-
     #
     # ListObjectsController->post_worksheet_list_object_remove_duplicates  test
     #

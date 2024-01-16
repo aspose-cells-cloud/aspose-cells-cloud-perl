@@ -80,6 +80,7 @@ docs/Ranges.md
 docs/Row.md
 docs/Rows.md
 docs/SaveResult.md
+docs/PaginatedSaveOptions.md
 docs/SingleValue.md
 docs/SortKey.md
 docs/SplitResult.md
@@ -448,14 +449,14 @@ docs/GetChartAreaFillFormatRequest.md
 docs/GetChartAreaBorderRequest.md
 docs/GetWorksheetChartsRequest.md
 docs/GetWorksheetChartRequest.md
-docs/PutWorksheetAddChartRequest.md
-docs/DeleteWorksheetDeleteChartRequest.md
+docs/PutWorksheetChartRequest.md
+docs/DeleteWorksheetChartRequest.md
 docs/PostWorksheetChartRequest.md
 docs/GetWorksheetChartLegendRequest.md
 docs/PostWorksheetChartLegendRequest.md
 docs/PutWorksheetChartLegendRequest.md
 docs/DeleteWorksheetChartLegendRequest.md
-docs/DeleteWorksheetClearChartsRequest.md
+docs/DeleteWorksheetChartsRequest.md
 docs/GetWorksheetChartTitleRequest.md
 docs/PostWorksheetChartTitleRequest.md
 docs/PutWorksheetChartTitleRequest.md
@@ -553,6 +554,8 @@ docs/GetHeaderRequest.md
 docs/PostHeaderRequest.md
 docs/GetFooterRequest.md
 docs/PostFooterRequest.md
+docs/PostFitWideToPagesRequest.md
+docs/PostFitTallToPagesRequest.md
 docs/GetWorksheetPicturesRequest.md
 docs/GetWorksheetPictureWithFormatRequest.md
 docs/PutWorksheetAddPictureRequest.md
@@ -670,7 +673,7 @@ docs/GetWorksheetMergedCellRequest.md
 docs/GetWorksheetCalculateFormulaRequest.md
 docs/PostWorksheetCalculateFormulaRequest.md
 docs/PostWorksheetTextSearchRequest.md
-docs/PostWorsheetTextReplaceRequest.md
+docs/PostWorksheetTextReplaceRequest.md
 docs/PostWorksheetRangeSortRequest.md
 docs/PostAutofitWorksheetRowRequest.md
 docs/PostAutofitWorksheetRowsRequest.md
@@ -791,6 +794,7 @@ lib/AsposeCellsCloud/Object/Ranges.pm
 lib/AsposeCellsCloud/Object/Row.pm
 lib/AsposeCellsCloud/Object/Rows.pm
 lib/AsposeCellsCloud/Object/SaveResult.pm
+lib/AsposeCellsCloud/Object/PaginatedSaveOptions.pm
 lib/AsposeCellsCloud/Object/SingleValue.pm
 lib/AsposeCellsCloud/Object/SortKey.pm
 lib/AsposeCellsCloud/Object/SplitResult.pm
@@ -1159,14 +1163,14 @@ lib/AsposeCellsCloud/Request/GetChartAreaFillFormatRequest.pm
 lib/AsposeCellsCloud/Request/GetChartAreaBorderRequest.pm
 lib/AsposeCellsCloud/Request/GetWorksheetChartsRequest.pm
 lib/AsposeCellsCloud/Request/GetWorksheetChartRequest.pm
-lib/AsposeCellsCloud/Request/PutWorksheetAddChartRequest.pm
-lib/AsposeCellsCloud/Request/DeleteWorksheetDeleteChartRequest.pm
+lib/AsposeCellsCloud/Request/PutWorksheetChartRequest.pm
+lib/AsposeCellsCloud/Request/DeleteWorksheetChartRequest.pm
 lib/AsposeCellsCloud/Request/PostWorksheetChartRequest.pm
 lib/AsposeCellsCloud/Request/GetWorksheetChartLegendRequest.pm
 lib/AsposeCellsCloud/Request/PostWorksheetChartLegendRequest.pm
 lib/AsposeCellsCloud/Request/PutWorksheetChartLegendRequest.pm
 lib/AsposeCellsCloud/Request/DeleteWorksheetChartLegendRequest.pm
-lib/AsposeCellsCloud/Request/DeleteWorksheetClearChartsRequest.pm
+lib/AsposeCellsCloud/Request/DeleteWorksheetChartsRequest.pm
 lib/AsposeCellsCloud/Request/GetWorksheetChartTitleRequest.pm
 lib/AsposeCellsCloud/Request/PostWorksheetChartTitleRequest.pm
 lib/AsposeCellsCloud/Request/PutWorksheetChartTitleRequest.pm
@@ -1264,6 +1268,8 @@ lib/AsposeCellsCloud/Request/GetHeaderRequest.pm
 lib/AsposeCellsCloud/Request/PostHeaderRequest.pm
 lib/AsposeCellsCloud/Request/GetFooterRequest.pm
 lib/AsposeCellsCloud/Request/PostFooterRequest.pm
+lib/AsposeCellsCloud/Request/PostFitWideToPagesRequest.pm
+lib/AsposeCellsCloud/Request/PostFitTallToPagesRequest.pm
 lib/AsposeCellsCloud/Request/GetWorksheetPicturesRequest.pm
 lib/AsposeCellsCloud/Request/GetWorksheetPictureWithFormatRequest.pm
 lib/AsposeCellsCloud/Request/PutWorksheetAddPictureRequest.pm
@@ -1381,7 +1387,7 @@ lib/AsposeCellsCloud/Request/GetWorksheetMergedCellRequest.pm
 lib/AsposeCellsCloud/Request/GetWorksheetCalculateFormulaRequest.pm
 lib/AsposeCellsCloud/Request/PostWorksheetCalculateFormulaRequest.pm
 lib/AsposeCellsCloud/Request/PostWorksheetTextSearchRequest.pm
-lib/AsposeCellsCloud/Request/PostWorsheetTextReplaceRequest.pm
+lib/AsposeCellsCloud/Request/PostWorksheetTextReplaceRequest.pm
 lib/AsposeCellsCloud/Request/PostWorksheetRangeSortRequest.pm
 lib/AsposeCellsCloud/Request/PostAutofitWorksheetRowRequest.pm
 lib/AsposeCellsCloud/Request/PostAutofitWorksheetRowsRequest.pm

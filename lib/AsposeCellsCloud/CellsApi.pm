@@ -1,6 +1,6 @@
 =begin comment
 
-Copyright (c) 2023 Aspose.Cells Cloud
+Copyright (c) 2024 Aspose.Cells Cloud
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -1520,12 +1520,12 @@ sub post_cell_characters{
 #
 # GetWorksheetColumnsRequest
 #
-# Get worksheet columns description.
+# Retrieve descriptions of worksheet columns.
 # 
-# @name  string   The workbook name.  
+# @name  string   The file name.  
 # @sheetName  string   The worksheet name.  
-# @offset  int   Original workbook folder.  
-# @count  int   Storage name.  
+# @offset  int   The folder where the file is situated.  
+# @count  int   The storage name where the file is situated.  
 # @folder  string   The workdook folder.  
 # @storageName  string      
 #
@@ -1538,7 +1538,7 @@ sub post_cell_characters{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_columns' } = { 
-    	summary => 'Get worksheet columns description.',
+    	summary => 'Retrieve descriptions of worksheet columns.',
         params => $params,
         returns => 'ColumnsResponse',
     };
@@ -1560,15 +1560,15 @@ sub get_worksheet_columns{
 #
 # PostSetWorksheetColumnWidthRequest
 #
-# Sets worksheet column width.
+# Set worksheet column width.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @columnIndex  int (required)  The column index.  
 # @width  double (required)  Gets and sets the column width in unit of characters.  
 # @count  int     
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -1579,7 +1579,7 @@ sub get_worksheet_columns{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_set_worksheet_column_width' } = { 
-    	summary => 'Sets worksheet column width.',
+    	summary => 'Set worksheet column width.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -1601,13 +1601,13 @@ sub post_set_worksheet_column_width{
 #
 # GetWorksheetColumnRequest
 #
-# Gets worksheet column data by column`s index.
+# Retrieve worksheet column data by column index.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @columnIndex  int (required)  The column index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -1618,7 +1618,7 @@ sub post_set_worksheet_column_width{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_column' } = { 
-    	summary => 'Gets worksheet column data by column`s index.',
+    	summary => 'Retrieve worksheet column data by column index.',
         params => $params,
         returns => 'ColumnResponse',
     };
@@ -1640,15 +1640,15 @@ sub get_worksheet_column{
 #
 # PutInsertWorksheetColumnsRequest
 #
-# Insert worksheet columns.
+# Insert worksheet columns in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @columnIndex  int (required)  The column index.  
 # @columns  int (required)  The number of columns.  
 # @updateReference  boolean   Indicates if references in other worksheets will be updated.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -1659,7 +1659,7 @@ sub get_worksheet_column{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_insert_worksheet_columns' } = { 
-    	summary => 'Insert worksheet columns.',
+    	summary => 'Insert worksheet columns in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -1681,15 +1681,15 @@ sub put_insert_worksheet_columns{
 #
 # DeleteWorksheetColumnsRequest
 #
-# Delete worksheet columns.
+# Delete worksheet columns in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @columnIndex  int (required)  The column index.  
 # @columns  int (required)  The number of columns.  
 # @updateReference  boolean (required)  Indicates if references in other worksheets will be updated.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -1700,7 +1700,7 @@ sub put_insert_worksheet_columns{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_columns' } = { 
-    	summary => 'Delete worksheet columns.',
+    	summary => 'Delete worksheet columns in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -1722,14 +1722,14 @@ sub delete_worksheet_columns{
 #
 # PostHideWorksheetColumnsRequest
 #
-# Hide worksheet columns.
+# Hide worksheet columns in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @startColumn  int (required)  The begin column index to be operated.  
 # @totalColumns  int (required)  Number of columns to be operated.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -1740,7 +1740,7 @@ sub delete_worksheet_columns{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_hide_worksheet_columns' } = { 
-    	summary => 'Hide worksheet columns.',
+    	summary => 'Hide worksheet columns in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -1762,15 +1762,15 @@ sub post_hide_worksheet_columns{
 #
 # PostUnhideWorksheetColumnsRequest
 #
-# Unhide worksheet columns.
+# Unhide worksheet columns in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @startColumn  int (required)  The begin column index to be operated.  
 # @totalColumns  int (required)  Number of columns to be operated.  
 # @width  double   Gets and sets the column width in unit of characters.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -1781,7 +1781,7 @@ sub post_hide_worksheet_columns{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_unhide_worksheet_columns' } = { 
-    	summary => 'Unhide worksheet columns.',
+    	summary => 'Unhide worksheet columns in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -1803,15 +1803,15 @@ sub post_unhide_worksheet_columns{
 #
 # PostGroupWorksheetColumnsRequest
 #
-# Group worksheet columns.
+# Group worksheet columns in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @firstIndex  int (required)  The first column index to be operated.  
 # @lastIndex  int (required)  The last column index to be operated.  
 # @hide  boolean   columns visible state  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -1822,7 +1822,7 @@ sub post_unhide_worksheet_columns{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_group_worksheet_columns' } = { 
-    	summary => 'Group worksheet columns.',
+    	summary => 'Group worksheet columns in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -1846,12 +1846,12 @@ sub post_group_worksheet_columns{
 #
 # Ungroup worksheet columns.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @firstIndex  int (required)  The first column index to be operated.  
 # @lastIndex  int (required)  The last column index to be operated.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -1884,16 +1884,16 @@ sub post_ungroup_worksheet_columns{
 #
 # PostCopyWorksheetColumnsRequest
 #
-# Copy data to destination columns from source columns in worksheet.
+# Copy data from source columns to destination columns in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @sourceColumnIndex  int (required)  Source column index  
 # @destinationColumnIndex  int (required)  Destination column index  
 # @columnNumber  int (required)  The copied column number  
 # @worksheet  string   The destination worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -1904,7 +1904,7 @@ sub post_ungroup_worksheet_columns{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_copy_worksheet_columns' } = { 
-    	summary => 'Copy data to destination columns from source columns in worksheet.',
+    	summary => 'Copy data from source columns to destination columns in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -1926,14 +1926,14 @@ sub post_copy_worksheet_columns{
 #
 # PostColumnStyleRequest
 #
-# Sets column style in worksheet.
+# Set column style in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @columnIndex  int (required)  The column index.  
 # @style  Style (required)  Represents display style of excel document,such as font,color,alignment,border,etc.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -1944,7 +1944,7 @@ sub post_copy_worksheet_columns{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_column_style' } = { 
-    	summary => 'Sets column style in worksheet.',
+    	summary => 'Set column style in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -1966,14 +1966,14 @@ sub post_column_style{
 #
 # GetWorksheetRowsRequest
 #
-# Get rows description in worksheet.
+# Retrieve descriptions of rows in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @offset  int   Original workbook folder.  
-# @count  int   Storage name.  
-# @folder  string     
-# @storageName  string      
+# @offset  int   Row offset.  
+# @count  int   Display rows number.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -1984,7 +1984,7 @@ sub post_column_style{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_rows' } = { 
-    	summary => 'Get rows description in worksheet.',
+    	summary => 'Retrieve descriptions of rows in the worksheet.',
         params => $params,
         returns => 'RowsResponse',
     };
@@ -2006,13 +2006,13 @@ sub get_worksheet_rows{
 #
 # GetWorksheetRowRequest
 #
-# Gets row data by row`s index in worksheet.
+# Retrieve row data by the row`s index in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @rowIndex  int (required)  The row index.  
-# @folder  string   The workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -2023,7 +2023,7 @@ sub get_worksheet_rows{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_row' } = { 
-    	summary => 'Gets row data by row`s index in worksheet.',
+    	summary => 'Retrieve row data by the row`s index in the worksheet.',
         params => $params,
         returns => 'RowResponse',
     };
@@ -2045,13 +2045,13 @@ sub get_worksheet_row{
 #
 # DeleteWorksheetRowRequest
 #
-# Deletes row in worksheet.
+# Delete a row in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @rowIndex  int (required)  The row index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -2062,7 +2062,7 @@ sub get_worksheet_row{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_row' } = { 
-    	summary => 'Deletes row in worksheet.',
+    	summary => 'Delete a row in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -2084,15 +2084,15 @@ sub delete_worksheet_row{
 #
 # DeleteWorksheetRowsRequest
 #
-# Delete several rows in worksheet.
+# Delete several rows in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @startrow  int (required)  The begin row index to be operated.  
 # @totalRows  int   Number of rows to be operated.  
 # @updateReference  boolean   Indicates if update references in other worksheets.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -2103,7 +2103,7 @@ sub delete_worksheet_row{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_rows' } = { 
-    	summary => 'Delete several rows in worksheet.',
+    	summary => 'Delete several rows in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -2125,15 +2125,15 @@ sub delete_worksheet_rows{
 #
 # PutInsertWorksheetRowsRequest
 #
-# Insert several new rows in worksheet.
+# Insert several new rows in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @startrow  int (required)  The begin row index to be operated.  
 # @totalRows  int   Number of rows to be operated.  
 # @updateReference  boolean   Indicates if update references in other worksheets.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -2144,7 +2144,7 @@ sub delete_worksheet_rows{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_insert_worksheet_rows' } = { 
-    	summary => 'Insert several new rows in worksheet.',
+    	summary => 'Insert several new rows in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -2166,13 +2166,13 @@ sub put_insert_worksheet_rows{
 #
 # PutInsertWorksheetRowRequest
 #
-# Inserts new row in worksheet.
+# Insert a new row in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @rowIndex  int (required)  The new row index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -2183,7 +2183,7 @@ sub put_insert_worksheet_rows{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_insert_worksheet_row' } = { 
-    	summary => 'Inserts new row in worksheet.',
+    	summary => 'Insert a new row in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -2205,15 +2205,15 @@ sub put_insert_worksheet_row{
 #
 # PostUpdateWorksheetRowRequest
 #
-# Updates row in worksheet.
+# Update height of rows in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @rowIndex  int (required)  The row index.  
 # @height  double   The new row height.  
 # @count  int     
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -2224,7 +2224,7 @@ sub put_insert_worksheet_row{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_update_worksheet_row' } = { 
-    	summary => 'Updates row in worksheet.',
+    	summary => 'Update height of rows in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -2248,12 +2248,12 @@ sub post_update_worksheet_row{
 #
 # Hide rows in worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @startrow  int (required)  The begin row index to be operated.  
 # @totalRows  int (required)  Number of rows to be operated.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -2286,15 +2286,15 @@ sub post_hide_worksheet_rows{
 #
 # PostUnhideWorksheetRowsRequest
 #
-# Unhide rows in worksheet.
+# Unhide rows in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @startrow  int (required)  The begin row index to be operated.  
 # @totalRows  int (required)  Number of rows to be operated.  
 # @height  double   The new row height.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -2305,7 +2305,7 @@ sub post_hide_worksheet_rows{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_unhide_worksheet_rows' } = { 
-    	summary => 'Unhide rows in worksheet.',
+    	summary => 'Unhide rows in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -2327,15 +2327,15 @@ sub post_unhide_worksheet_rows{
 #
 # PostGroupWorksheetRowsRequest
 #
-# Group rows in worksheet.
+# Group rows in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @firstIndex  int (required)  The first row index to be operated.  
 # @lastIndex  int (required)  The last row index to be operated.  
 # @hide  boolean   rows visible state  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -2346,7 +2346,7 @@ sub post_unhide_worksheet_rows{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_group_worksheet_rows' } = { 
-    	summary => 'Group rows in worksheet.',
+    	summary => 'Group rows in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -2368,15 +2368,15 @@ sub post_group_worksheet_rows{
 #
 # PostUngroupWorksheetRowsRequest
 #
-# Ungroup rows in worksheet.
+# Ungroup rows in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @firstIndex  int (required)  The first row index to be operated.  
 # @lastIndex  int (required)  The last row index to be operated.  
 # @isAll  boolean   Is all row to be operated  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -2387,7 +2387,7 @@ sub post_group_worksheet_rows{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_ungroup_worksheet_rows' } = { 
-    	summary => 'Ungroup rows in worksheet.',
+    	summary => 'Ungroup rows in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -2409,16 +2409,16 @@ sub post_ungroup_worksheet_rows{
 #
 # PostCopyWorksheetRowsRequest
 #
-# Copies data and formats of some whole rows in worksheet.
+# Copy data and formats from specific entire rows in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @sourceRowIndex  int (required)  Source row index  
 # @destinationRowIndex  int (required)  Destination row index  
 # @rowNumber  int (required)  The copied row number  
 # @worksheet  string   The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -2429,7 +2429,7 @@ sub post_ungroup_worksheet_rows{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_copy_worksheet_rows' } = { 
-    	summary => 'Copies data and formats of some whole rows in worksheet.',
+    	summary => 'Copy data and formats from specific entire rows in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -2451,14 +2451,14 @@ sub post_copy_worksheet_rows{
 #
 # PostRowStyleRequest
 #
-# Applies formats for a whole row in worksheet.
+# Apply formats to an entire row in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @rowIndex  int (required)  The row index.  
 # @style  Style (required)  Style description.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -2469,7 +2469,7 @@ sub post_copy_worksheet_rows{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_row_style' } = { 
-    	summary => 'Applies formats for a whole row in worksheet.',
+    	summary => 'Apply formats to an entire row in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -2754,7 +2754,7 @@ sub get_worksheet_chart{
 }
 
 #
-# PutWorksheetAddChartRequest
+# PutWorksheetChartRequest
 #
 # Add a new chart in the worksheet.
 # 
@@ -2780,12 +2780,12 @@ sub get_worksheet_chart{
 {
     my $params = {
        'request' =>{
-            data_type => 'PutWorksheetAddChartRequest',
-            description => 'PutWorksheetAddChart Request.',
+            data_type => 'PutWorksheetChartRequest',
+            description => 'PutWorksheetChart Request.',
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'put_worksheet_add_chart' } = { 
+    __PACKAGE__->method_documentation->{ 'put_worksheet_chart' } = { 
     	summary => 'Add a new chart in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
@@ -2794,7 +2794,7 @@ sub get_worksheet_chart{
 #
 # @return CellsCloudResponse
 #
-sub put_worksheet_add_chart{
+sub put_worksheet_chart{
     my ($self, %args) = @_;
     my $request = $args{'request'};
     my $response = $request->run_http_request('client' => $self->{api_client} );
@@ -2806,7 +2806,7 @@ sub put_worksheet_add_chart{
 }
 
 #
-# DeleteWorksheetDeleteChartRequest
+# DeleteWorksheetChartRequest
 #
 # Delete a chart by index in the worksheet.
 # 
@@ -2819,12 +2819,12 @@ sub put_worksheet_add_chart{
 {
     my $params = {
        'request' =>{
-            data_type => 'DeleteWorksheetDeleteChartRequest',
-            description => 'DeleteWorksheetDeleteChart Request.',
+            data_type => 'DeleteWorksheetChartRequest',
+            description => 'DeleteWorksheetChart Request.',
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'delete_worksheet_delete_chart' } = { 
+    __PACKAGE__->method_documentation->{ 'delete_worksheet_chart' } = { 
     	summary => 'Delete a chart by index in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
@@ -2833,7 +2833,7 @@ sub put_worksheet_add_chart{
 #
 # @return CellsCloudResponse
 #
-sub delete_worksheet_delete_chart{
+sub delete_worksheet_chart{
     my ($self, %args) = @_;
     my $request = $args{'request'};
     my $response = $request->run_http_request('client' => $self->{api_client} );
@@ -2966,7 +2966,7 @@ sub post_worksheet_chart_legend{
 #
 # PutWorksheetChartLegendRequest
 #
-# Show chart legend in worksheet.
+# Show chart legend in the worksheet.
 # 
 # @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
@@ -2983,7 +2983,7 @@ sub post_worksheet_chart_legend{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_worksheet_chart_legend' } = { 
-    	summary => 'Show chart legend in worksheet.',
+    	summary => 'Show chart legend in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -3005,7 +3005,7 @@ sub put_worksheet_chart_legend{
 #
 # DeleteWorksheetChartLegendRequest
 #
-# Hides chart legend in worksheet.
+# Hides chart legend in the worksheet.
 # 
 # @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
@@ -3022,7 +3022,7 @@ sub put_worksheet_chart_legend{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_chart_legend' } = { 
-    	summary => 'Hides chart legend in worksheet.',
+    	summary => 'Hides chart legend in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -3042,9 +3042,9 @@ sub delete_worksheet_chart_legend{
 }
 
 #
-# DeleteWorksheetClearChartsRequest
+# DeleteWorksheetChartsRequest
 #
-# Clear the charts in worksheets.
+# Clear the charts in the worksheets.
 # 
 # @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
@@ -3054,13 +3054,13 @@ sub delete_worksheet_chart_legend{
 {
     my $params = {
        'request' =>{
-            data_type => 'DeleteWorksheetClearChartsRequest',
-            description => 'DeleteWorksheetClearCharts Request.',
+            data_type => 'DeleteWorksheetChartsRequest',
+            description => 'DeleteWorksheetCharts Request.',
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'delete_worksheet_clear_charts' } = { 
-    	summary => 'Clear the charts in worksheets.',
+    __PACKAGE__->method_documentation->{ 'delete_worksheet_charts' } = { 
+    	summary => 'Clear the charts in the worksheets.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -3068,7 +3068,7 @@ sub delete_worksheet_chart_legend{
 #
 # @return CellsCloudResponse
 #
-sub delete_worksheet_clear_charts{
+sub delete_worksheet_charts{
     my ($self, %args) = @_;
     my $request = $args{'request'};
     my $response = $request->run_http_request('client' => $self->{api_client} );
@@ -3082,7 +3082,7 @@ sub delete_worksheet_clear_charts{
 #
 # GetWorksheetChartTitleRequest
 #
-# Gets chart title description in worksheet.
+# Retrieve chart title description in the worksheet.
 # 
 # @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
@@ -3099,7 +3099,7 @@ sub delete_worksheet_clear_charts{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_chart_title' } = { 
-    	summary => 'Gets chart title description in worksheet.',
+    	summary => 'Retrieve chart title description in the worksheet.',
         params => $params,
         returns => 'TitleResponse',
     };
@@ -3121,12 +3121,12 @@ sub get_worksheet_chart_title{
 #
 # PostWorksheetChartTitleRequest
 #
-# Update chart title in worksheet.
+# Update chart title in the worksheet.
 # 
 # @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @chartIndex  int (required)  The chart index.  
-# @title  Title (required)  Chart title  
+# @title  Title (required)  TitleChart title  
 # @folder  string   The folder where the file is situated.  
 # @storageName  string   The storage name where the file is situated.   
 #
@@ -3139,7 +3139,7 @@ sub get_worksheet_chart_title{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_chart_title' } = { 
-    	summary => 'Update chart title in worksheet.',
+    	summary => 'Update chart title in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -3161,12 +3161,12 @@ sub post_worksheet_chart_title{
 #
 # PutWorksheetChartTitleRequest
 #
-# Add chart title / Set chart title visible
+# Set chart title in the worksheet.
 # 
 # @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @chartIndex  int (required)  The chart index.  
-# @title  Title   Chart title.  
+# @title  Title   TitleChart title.  
 # @folder  string   The folder where the file is situated.  
 # @storageName  string   The storage name where the file is situated.   
 #
@@ -3179,7 +3179,7 @@ sub post_worksheet_chart_title{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_worksheet_chart_title' } = { 
-    	summary => 'Add chart title / Set chart title visible',
+    	summary => 'Set chart title in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -3201,7 +3201,7 @@ sub put_worksheet_chart_title{
 #
 # DeleteWorksheetChartTitleRequest
 #
-# Hides chart title in worksheet.
+# Hide chart title in the worksheet.
 # 
 # @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
@@ -3218,7 +3218,7 @@ sub put_worksheet_chart_title{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_chart_title' } = { 
-    	summary => 'Hides chart title in worksheet.',
+    	summary => 'Hide chart title in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -3240,7 +3240,7 @@ sub delete_worksheet_chart_title{
 #
 # GetChartSeriesAxisRequest
 #
-# 
+# Retrieve descriptions of chart seriesaxis in the chart.
 # 
 # @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
@@ -3257,7 +3257,7 @@ sub delete_worksheet_chart_title{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_chart_series_axis' } = { 
-    	summary => '',
+    	summary => 'Retrieve descriptions of chart seriesaxis in the chart.',
         params => $params,
         returns => 'AxisResponse',
     };
@@ -3279,7 +3279,7 @@ sub get_chart_series_axis{
 #
 # GetChartCategoryAxisRequest
 #
-# 
+# Retrieve descriptions of chart series axis in the chart.
 # 
 # @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
@@ -3296,7 +3296,7 @@ sub get_chart_series_axis{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_chart_category_axis' } = { 
-    	summary => '',
+    	summary => 'Retrieve descriptions of chart series axis in the chart.',
         params => $params,
         returns => 'AxisResponse',
     };
@@ -3318,7 +3318,7 @@ sub get_chart_category_axis{
 #
 # GetChartValueAxisRequest
 #
-# 
+# Retrieve chart value axis in the chart.
 # 
 # @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
@@ -3335,7 +3335,7 @@ sub get_chart_category_axis{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_chart_value_axis' } = { 
-    	summary => '',
+    	summary => 'Retrieve chart value axis in the chart.',
         params => $params,
         returns => 'AxisResponse',
     };
@@ -3357,7 +3357,7 @@ sub get_chart_value_axis{
 #
 # GetChartSecondCategoryAxisRequest
 #
-# 
+# Retrieve chart second category axis in the chart
 # 
 # @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
@@ -3374,7 +3374,7 @@ sub get_chart_value_axis{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_chart_second_category_axis' } = { 
-    	summary => '',
+    	summary => 'Retrieve chart second category axis in the chart',
         params => $params,
         returns => 'AxisResponse',
     };
@@ -3396,7 +3396,7 @@ sub get_chart_second_category_axis{
 #
 # GetChartSecondValueAxisRequest
 #
-# 
+# Retrieve chart second value axis in the chart.
 # 
 # @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
@@ -3413,7 +3413,7 @@ sub get_chart_second_category_axis{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_chart_second_value_axis' } = { 
-    	summary => '',
+    	summary => 'Retrieve chart second value axis in the chart.',
         params => $params,
         returns => 'AxisResponse',
     };
@@ -3435,7 +3435,7 @@ sub get_chart_second_value_axis{
 #
 # PostChartSeriesAxisRequest
 #
-# 
+# Update chart series axis in the chart.
 # 
 # @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
@@ -3453,7 +3453,7 @@ sub get_chart_second_value_axis{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_chart_series_axis' } = { 
-    	summary => '',
+    	summary => 'Update chart series axis in the chart.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -3475,7 +3475,7 @@ sub post_chart_series_axis{
 #
 # PostChartCategoryAxisRequest
 #
-# 
+# Update chart category axis in the chart.
 # 
 # @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
@@ -3493,7 +3493,7 @@ sub post_chart_series_axis{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_chart_category_axis' } = { 
-    	summary => '',
+    	summary => 'Update chart category axis in the chart.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -3515,7 +3515,7 @@ sub post_chart_category_axis{
 #
 # PostChartValueAxisRequest
 #
-# 
+# Update chart value axis in the chart.
 # 
 # @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
@@ -3533,7 +3533,7 @@ sub post_chart_category_axis{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_chart_value_axis' } = { 
-    	summary => '',
+    	summary => 'Update chart value axis in the chart.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -3555,7 +3555,7 @@ sub post_chart_value_axis{
 #
 # PostChartSecondCategoryAxisRequest
 #
-# 
+# Update chart sencond category axis in the chart.
 # 
 # @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
@@ -3573,7 +3573,7 @@ sub post_chart_value_axis{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_chart_second_category_axis' } = { 
-    	summary => '',
+    	summary => 'Update chart sencond category axis in the chart.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -3595,7 +3595,7 @@ sub post_chart_second_category_axis{
 #
 # PostChartSecondValueAxisRequest
 #
-# 
+# Update chart sencond value axis in the chart.
 # 
 # @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
@@ -3613,7 +3613,7 @@ sub post_chart_second_category_axis{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_chart_second_value_axis' } = { 
-    	summary => '',
+    	summary => 'Update chart sencond value axis in the chart.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -3635,12 +3635,12 @@ sub post_chart_second_value_axis{
 #
 # GetWorksheetConditionalFormattingsRequest
 #
-# Get conditional formattings description.
+# Retrieve descriptions of conditional formattings in a worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -3651,7 +3651,7 @@ sub post_chart_second_value_axis{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_conditional_formattings' } = { 
-    	summary => 'Get conditional formattings description.',
+    	summary => 'Retrieve descriptions of conditional formattings in a worksheet.',
         params => $params,
         returns => 'ConditionalFormattingsResponse',
     };
@@ -3673,13 +3673,13 @@ sub get_worksheet_conditional_formattings{
 #
 # GetWorksheetConditionalFormattingRequest
 #
-# Gets conditional formatting description in worksheet.
+# Retrieve conditional formatting descriptions in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @index  int (required)  The conditional formatting index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -3690,7 +3690,7 @@ sub get_worksheet_conditional_formattings{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_conditional_formatting' } = { 
-    	summary => 'Gets conditional formatting description in worksheet.',
+    	summary => 'Retrieve conditional formatting descriptions in the worksheet.',
         params => $params,
         returns => 'ConditionalFormattingResponse',
     };
@@ -3712,14 +3712,14 @@ sub get_worksheet_conditional_formatting{
 #
 # PutWorksheetConditionalFormattingRequest
 #
-# Adds a condition formatting in worksheet.
+# Add conditional formatting in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @formatcondition  FormatCondition (required)    
 # @cellArea  string (required)  Adds a conditional formatted cell range.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -3730,7 +3730,7 @@ sub get_worksheet_conditional_formatting{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_worksheet_conditional_formatting' } = { 
-    	summary => 'Adds a condition formatting in worksheet.',
+    	summary => 'Add conditional formatting in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -3752,9 +3752,9 @@ sub put_worksheet_conditional_formatting{
 #
 # PutWorksheetFormatConditionRequest
 #
-# Adds a format condition in worksheet.
+# Add a format condition in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @index  int (required)  Gets the Conditional Formatting element at the specified index.  
 # @cellArea  string (required)  Adds a conditional formatted cell range.  
@@ -3762,8 +3762,8 @@ sub put_worksheet_conditional_formatting{
 # @operatorType  string (required)  Represents the operator type of conditional format and data validation(Between/Equal/GreaterThan/GreaterOrEqual/LessThan/None/NotBetween/NotEqual).  
 # @formula1  string (required)  The value or expression associated with conditional formatting.  
 # @formula2  string (required)  The value or expression associated with conditional formatting.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -3774,7 +3774,7 @@ sub put_worksheet_conditional_formatting{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_worksheet_format_condition' } = { 
-    	summary => 'Adds a format condition in worksheet.',
+    	summary => 'Add a format condition in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -3796,14 +3796,14 @@ sub put_worksheet_format_condition{
 #
 # PutWorksheetFormatConditionAreaRequest
 #
-# Adds a cell area for format condition.
+# Add a cell area for the format condition in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @index  int (required)  Gets the Conditional Formatting element at the specified index.  
 # @cellArea  string (required)  Adds a conditional formatted cell range.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -3814,7 +3814,7 @@ sub put_worksheet_format_condition{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_worksheet_format_condition_area' } = { 
-    	summary => 'Adds a cell area for format condition.',
+    	summary => 'Add a cell area for the format condition in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -3836,17 +3836,17 @@ sub put_worksheet_format_condition_area{
 #
 # PutWorksheetFormatConditionConditionRequest
 #
-# Adds a condition for format condition.
+# Add a condition for the format condition in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @index  int (required)  Gets the Conditional Formatting element at the specified index.  
 # @type  string (required)  Format condition type(CellValue/Expression/ColorScale/DataBar/IconSet/Top10/UniqueValues/DuplicateValues/ContainsText/NotContainsText/BeginsWith/EndsWith/ContainsBlanks/NotContainsBlanks/ContainsErrors/NotContainsErrors/TimePeriod/AboveAverage).  
 # @operatorType  string (required)  Represents the operator type of conditional format and data validation(Between/Equal/GreaterThan/GreaterOrEqual/LessThan/None/NotBetween/NotEqual).  
 # @formula1  string (required)  The value or expression associated with conditional formatting.  
 # @formula2  string (required)  The value or expression associated with conditional formatting.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -3857,7 +3857,7 @@ sub put_worksheet_format_condition_area{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_worksheet_format_condition_condition' } = { 
-    	summary => 'Adds a condition for format condition.',
+    	summary => 'Add a condition for the format condition in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -3879,12 +3879,12 @@ sub put_worksheet_format_condition_condition{
 #
 # DeleteWorksheetConditionalFormattingsRequest
 #
-# Clear all condition formattings.
+# Clear all conditional formattings in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -3895,7 +3895,7 @@ sub put_worksheet_format_condition_condition{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_conditional_formattings' } = { 
-    	summary => 'Clear all condition formattings.',
+    	summary => 'Clear all conditional formattings in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -3919,11 +3919,11 @@ sub delete_worksheet_conditional_formattings{
 #
 # Remove a conditional formatting.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @index  int (required)  Gets the Conditional Formatting element at the specified index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -3956,16 +3956,16 @@ sub delete_worksheet_conditional_formatting{
 #
 # DeleteWorksheetConditionalFormattingAreaRequest
 #
-# Removes cell area from conditional formatting.
+# Remove cell area from conditional formatting.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @startRow  int (required)  The start row of the range.  
 # @startColumn  int (required)  The start column of the range.  
 # @totalRows  int (required)  The number of rows of the range.  
 # @totalColumns  int (required)  The number of columns of the range.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -3976,7 +3976,7 @@ sub delete_worksheet_conditional_formatting{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_conditional_formatting_area' } = { 
-    	summary => 'Removes cell area from conditional formatting.',
+    	summary => 'Remove cell area from conditional formatting.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -4010,7 +4010,9 @@ sub delete_worksheet_conditional_formatting_area{
 # @storageName  string   The storage name where the file is situated.  
 # @outStorageName  string   The storage name where the output file is situated.  
 # @checkExcelRestriction  boolean   Whether check restriction of excel file when user modify cells related objects.  
-# @region  string   The regional settings for workbook.   
+# @region  string   The regional settings for workbook.  
+# @pageWideFitOnPerSheet  boolean   The page wide fit on worksheet.  
+# @pageTallFitOnPerSheet  boolean   The page tall fit on worksheet.   
 #
 {
     my $params = {
@@ -4052,7 +4054,9 @@ sub get_workbook{
 # @storageName  string   The storage name where the file is situated.  
 # @checkExcelRestriction  boolean   Whether check restriction of excel file when user modify cells related objects.  
 # @streamFormat  string   The format of the input file stream.   
-# @region  string   The regional settings for workbook.   
+# @region  string   The regional settings for workbook.  
+# @pageWideFitOnPerSheet  boolean   The page wide fit on worksheet.  
+# @pageTallFitOnPerSheet  boolean   The page tall fit on worksheet.   
 #
 {
     my $params = {
@@ -4096,7 +4100,9 @@ sub put_convert_workbook{
 # @storageName  string   The storage name where the file is situated.  
 # @outStorageName  string   The storage name where the output file is situated.  
 # @checkExcelRestriction  boolean   Whether check restriction of excel file when user modify cells related objects.  
-# @region  string   The regional settings for workbook.   
+# @region  string   The regional settings for workbook.  
+# @pageWideFitOnPerSheet  boolean   The page wide fit on worksheet.  
+# @pageTallFitOnPerSheet  boolean   The page tall fit on worksheet.   
 #
 {
     my $params = {
@@ -4678,12 +4684,12 @@ sub post_import_data{
 #
 # GetWorksheetHyperlinksRequest
 #
-# Get hyperlinks description in worksheet.
+# Retrieve descriptions of hyperlinks in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -4694,7 +4700,7 @@ sub post_import_data{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_hyperlinks' } = { 
-    	summary => 'Get hyperlinks description in worksheet.',
+    	summary => 'Retrieve descriptions of hyperlinks in the worksheet.',
         params => $params,
         returns => 'HyperlinksResponse',
     };
@@ -4716,13 +4722,13 @@ sub get_worksheet_hyperlinks{
 #
 # GetWorksheetHyperlinkRequest
 #
-# Gets hyperlink description by index in worksheet.
+# Retrieve hyperlink description by index in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @hyperlinkIndex  int (required)  The hyperlink`s index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -4733,7 +4739,7 @@ sub get_worksheet_hyperlinks{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_hyperlink' } = { 
-    	summary => 'Gets hyperlink description by index in worksheet.',
+    	summary => 'Retrieve hyperlink description by index in the worksheet.',
         params => $params,
         returns => 'HyperlinkResponse',
     };
@@ -4755,13 +4761,13 @@ sub get_worksheet_hyperlink{
 #
 # DeleteWorksheetHyperlinkRequest
 #
-# Deletes hyperlink by index in worksheet.
+# Delete hyperlink by index in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @hyperlinkIndex  int (required)  The hyperlink`s index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -4772,7 +4778,7 @@ sub get_worksheet_hyperlink{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_hyperlink' } = { 
-    	summary => 'Deletes hyperlink by index in worksheet.',
+    	summary => 'Delete hyperlink by index in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -4794,14 +4800,14 @@ sub delete_worksheet_hyperlink{
 #
 # PostWorksheetHyperlinkRequest
 #
-# Updates hyperlink by index in worksheet.
+# Update hyperlink by index in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @hyperlinkIndex  int (required)  The hyperlink`s index.  
 # @hyperlink  Hyperlink (required)  Hyperlink object  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -4812,7 +4818,7 @@ sub delete_worksheet_hyperlink{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_hyperlink' } = { 
-    	summary => 'Updates hyperlink by index in worksheet.',
+    	summary => 'Update hyperlink by index in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -4834,17 +4840,17 @@ sub post_worksheet_hyperlink{
 #
 # PutWorksheetHyperlinkRequest
 #
-# Adds hyperlink in worksheet.
+# Add hyperlink in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @firstRow  int (required)  First row of the hyperlink range.  
 # @firstColumn  int (required)  First column of the hyperlink range.  
 # @totalRows  int (required)  Number of rows in this hyperlink range.  
 # @totalColumns  int (required)  Number of columns of this hyperlink range.  
 # @address  string (required)  Address of the hyperlink.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -4855,7 +4861,7 @@ sub post_worksheet_hyperlink{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_worksheet_hyperlink' } = { 
-    	summary => 'Adds hyperlink in worksheet.',
+    	summary => 'Add hyperlink in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -4877,12 +4883,12 @@ sub put_worksheet_hyperlink{
 #
 # DeleteWorksheetHyperlinksRequest
 #
-# Delete all hyperlinks in worksheet.
+# Delete all hyperlinks in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -4893,7 +4899,7 @@ sub put_worksheet_hyperlink{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_hyperlinks' } = { 
-    	summary => 'Delete all hyperlinks in worksheet.',
+    	summary => 'Delete all hyperlinks in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -4919,7 +4925,7 @@ sub delete_worksheet_hyperlinks{
 # 
 # @File  string (required)  The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)  
 # @datasource  string (required)    
-# @format  string   The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)  
+# @outFormat  string   The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)  
 # @password  string   The password needed to open an Excel file.  
 # @checkExcelRestriction  boolean   Whether check restriction of excel file when user modify cells related objects.  
 # @region  string   The regional settings for workbook.   
@@ -5507,12 +5513,12 @@ sub delete_metadata{
 #
 # GetWorksheetListObjectsRequest
 #
-# Get listobjects description in worksheet.
+# Retrieve descriptions of ListObjects in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -5523,7 +5529,7 @@ sub delete_metadata{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_list_objects' } = { 
-    	summary => 'Get listobjects description in worksheet.',
+    	summary => 'Retrieve descriptions of ListObjects in the worksheet.',
         params => $params,
         returns => 'ListObjectsResponse',
     };
@@ -5545,14 +5551,14 @@ sub get_worksheet_list_objects{
 #
 # GetWorksheetListObjectRequest
 #
-# Gets list object description by index in worksheet.
+# Retrieve list object description by index in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @listobjectindex  int (required)  list object index.  
 # @format  string     
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -5563,7 +5569,7 @@ sub get_worksheet_list_objects{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_list_object' } = { 
-    	summary => 'Gets list object description by index in worksheet.',
+    	summary => 'Retrieve list object description by index in the worksheet.',
         params => $params,
         returns => 'string',
     };
@@ -5585,19 +5591,19 @@ sub get_worksheet_list_object{
 #
 # PutWorksheetListObjectRequest
 #
-# Adds a list object in worksheet.
+# Add a ListObject in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @startRow  int   The start row of the list range.  
-# @startColumn  int   The start row of the list range.  
+# @startColumn  int   The start column of the list range.  
 # @endRow  int   The start row of the list range.  
-# @endColumn  int   The start row of the list range.  
-# @folder  string   Original workbook folder.  
-# @hasHeaders  boolean   Whether the range has headers.  
-# @displayName  string     
-# @showTotals  boolean     
-# @storageName  string   Storage name.   
+# @endColumn  int   The start column of the list range.  
+# @folder  string   The folder where the file is situated.  
+# @hasHeaders  boolean   Indicate whether the range has headers.  
+# @displayName  string   Indicate whether display name.  
+# @showTotals  boolean   Indicate whether show totals.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -5608,7 +5614,7 @@ sub get_worksheet_list_object{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_worksheet_list_object' } = { 
-    	summary => 'Adds a list object in worksheet.',
+    	summary => 'Add a ListObject in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -5630,12 +5636,12 @@ sub put_worksheet_list_object{
 #
 # DeleteWorksheetListObjectsRequest
 #
-# Delete worksheet list objects in worksheet.
+# Delete ListObjects in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -5646,7 +5652,7 @@ sub put_worksheet_list_object{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_list_objects' } = { 
-    	summary => 'Delete worksheet list objects in worksheet.',
+    	summary => 'Delete ListObjects in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -5668,13 +5674,13 @@ sub delete_worksheet_list_objects{
 #
 # DeleteWorksheetListObjectRequest
 #
-# Deletes list object by index in worksheet.
+# Delete list object by index in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @listObjectIndex  int (required)  List object index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -5685,7 +5691,7 @@ sub delete_worksheet_list_objects{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_list_object' } = { 
-    	summary => 'Deletes list object by index in worksheet.',
+    	summary => 'Delete list object by index in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -5707,14 +5713,14 @@ sub delete_worksheet_list_object{
 #
 # PostWorksheetListObjectRequest
 #
-# Updates list object in worksheet.
+# Update list object by index in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @listObjectIndex  int (required)  list Object index  
 # @listObject  ListObject (required)  listObject dto in request body.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -5725,7 +5731,7 @@ sub delete_worksheet_list_object{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_list_object' } = { 
-    	summary => 'Updates list object in worksheet.',
+    	summary => 'Update list object by index in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -5747,13 +5753,13 @@ sub post_worksheet_list_object{
 #
 # PostWorksheetListObjectConvertToRangeRequest
 #
-# Converts list object to range in worksheet.
+# Convert list object to range in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @listObjectIndex  int (required)  List object index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -5764,7 +5770,7 @@ sub post_worksheet_list_object{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_list_object_convert_to_range' } = { 
-    	summary => 'Converts list object to range in worksheet.',
+    	summary => 'Convert list object to range in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -5786,15 +5792,15 @@ sub post_worksheet_list_object_convert_to_range{
 #
 # PostWorksheetListObjectSummarizeWithPivotTableRequest
 #
-# Creates pivot table with list object in worksheet.
+# Create a pivot table with a list object in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @listObjectIndex  int (required)  List object index.  
-# @destsheetName  string (required)  Target work sheet name.  
+# @listObjectIndex  int (required)  The list object index.  
+# @destsheetName  string (required)  The target worksheet name.  
 # @createPivotTableRequest  CreatePivotTableRequest (required)  Create pivot table request.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -5805,7 +5811,7 @@ sub post_worksheet_list_object_convert_to_range{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_list_object_summarize_with_pivot_table' } = { 
-    	summary => 'Creates pivot table with list object in worksheet.',
+    	summary => 'Create a pivot table with a list object in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -5827,14 +5833,14 @@ sub post_worksheet_list_object_summarize_with_pivot_table{
 #
 # PostWorksheetListObjectSortTableRequest
 #
-# Sorts list object in worksheet.
+# Sort list object in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @listObjectIndex  int (required)  List object index.  
+# @listObjectIndex  int (required)  The list object index.  
 # @dataSorter  DataSorter (required)  Represents sort order for the data range.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -5845,7 +5851,7 @@ sub post_worksheet_list_object_summarize_with_pivot_table{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_list_object_sort_table' } = { 
-    	summary => 'Sorts list object in worksheet.',
+    	summary => 'Sort list object in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -5867,13 +5873,13 @@ sub post_worksheet_list_object_sort_table{
 #
 # PostWorksheetListObjectRemoveDuplicatesRequest
 #
-# Remove duplicates on list object.
+# Remove duplicates in list object.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @listObjectIndex  int (required)  List object index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @listObjectIndex  int (required)  The list object index.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -5884,7 +5890,7 @@ sub post_worksheet_list_object_sort_table{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_list_object_remove_duplicates' } = { 
-    	summary => 'Remove duplicates on list object.',
+    	summary => 'Remove duplicates in list object.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -5908,13 +5914,13 @@ sub post_worksheet_list_object_remove_duplicates{
 #
 # Insert slicer for list object.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @listObjectIndex  int (required)  List object index.  
 # @columnIndex  int (required)  The index of ListColumn in ListObject.ListColumns   
 # @destCellName  string (required)  The cell in the upper-left corner of the Slicer range.   
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -5947,15 +5953,15 @@ sub post_worksheet_list_object_insert_slicer{
 #
 # PostWorksheetListColumnRequest
 #
-# Update list column properties.
+# Update list column in list object.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @listObjectIndex  int (required)  List object index.  
+# @listObjectIndex  int (required)  The list object index.  
 # @columnIndex  int (required)  Represents table column index.  
 # @listColumn  ListColumn (required)  Represents table column description.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -5966,7 +5972,7 @@ sub post_worksheet_list_object_insert_slicer{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_list_column' } = { 
-    	summary => 'Update list column properties.',
+    	summary => 'Update list column in list object.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -5988,14 +5994,14 @@ sub post_worksheet_list_column{
 #
 # PostWorksheetListColumnsTotalRequest
 #
-# Update table total of list columns.
+# Update total of list columns in the table.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @listObjectIndex  int (required)  List object index.  
 # @tableTotalRequests  ARRAY[TableTotalRequest] (required)  Represents table column description.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6006,7 +6012,7 @@ sub post_worksheet_list_column{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_list_columns_total' } = { 
-    	summary => 'Update table total of list columns.',
+    	summary => 'Update total of list columns in the table.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -6028,12 +6034,12 @@ sub post_worksheet_list_columns_total{
 #
 # GetWorksheetOleObjectsRequest
 #
-# Get OLE objects description in worksheet.
+# Retrieve descriptions of OLE objects in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Document`s folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6044,7 +6050,7 @@ sub post_worksheet_list_columns_total{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_ole_objects' } = { 
-    	summary => 'Get OLE objects description in worksheet.',
+    	summary => 'Retrieve descriptions of OLE objects in the worksheet.',
         params => $params,
         returns => 'OleObjectsResponse',
     };
@@ -6066,14 +6072,14 @@ sub get_worksheet_ole_objects{
 #
 # GetWorksheetOleObjectRequest
 #
-# Gets OLE object info or get the OLE object in some format.
+# Retrieve the OLE object in a specified format in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @objectNumber  int (required)  The object number.  
 # @format  string   Object conversion format(PNG/TIFF/JPEG/GIF/EMF/BMP).  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6084,7 +6090,7 @@ sub get_worksheet_ole_objects{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_ole_object' } = { 
-    	summary => 'Gets OLE object info or get the OLE object in some format.',
+    	summary => 'Retrieve the OLE object in a specified format in the worksheet.',
         params => $params,
         returns => 'string',
     };
@@ -6106,12 +6112,12 @@ sub get_worksheet_ole_object{
 #
 # DeleteWorksheetOleObjectsRequest
 #
-# Delete all OLE objects in  worksheet.
+# Delete all OLE objects in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worsheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6122,7 +6128,7 @@ sub get_worksheet_ole_object{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_ole_objects' } = { 
-    	summary => 'Delete all OLE objects in  worksheet.',
+    	summary => 'Delete all OLE objects in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -6144,13 +6150,13 @@ sub delete_worksheet_ole_objects{
 #
 # DeleteWorksheetOleObjectRequest
 #
-# Deletes an OLE object in worksheet.
+# Delete an OLE object in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worsheet name.  
 # @oleObjectIndex  int (required)  Ole object index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6161,7 +6167,7 @@ sub delete_worksheet_ole_objects{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_ole_object' } = { 
-    	summary => 'Deletes an OLE object in worksheet.',
+    	summary => 'Delete an OLE object in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -6185,12 +6191,12 @@ sub delete_worksheet_ole_object{
 #
 # Update an OLE object in worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worsheet name.  
 # @oleObjectIndex  int (required)  Ole object index.  
 # @ole  OleObject (required)  Ole Object description.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6223,18 +6229,18 @@ sub post_update_worksheet_ole_object{
 #
 # PutWorksheetOleObjectRequest
 #
-# Add an OLE object in worksheet.
+# Add an OLE object in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worsheet name.  
 # @upperLeftRow  int   Upper left row index  
 # @upperLeftColumn  int   Upper left column index  
 # @height  int   Height of oleObject, in unit of pixel  
 # @width  int   Width of oleObject, in unit of pixel  
-# @oleFile  string   OLE filename(full file name).  
-# @imageFile  string   Image filename(full file name).  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @oleFile  string   OLE filename path(full file name).  
+# @imageFile  string   Image filename path(full file name).  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6245,7 +6251,7 @@ sub post_update_worksheet_ole_object{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_worksheet_ole_object' } = { 
-    	summary => 'Add an OLE object in worksheet.',
+    	summary => 'Add an OLE object in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -6267,12 +6273,12 @@ sub put_worksheet_ole_object{
 #
 # GetVerticalPageBreaksRequest
 #
-# Get vertical page breaks description in worksheet.
+# Retrieve descriptions of vertical page breaks in the worksheet.
 # 
 # @name  string (required)  The workbook name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6283,7 +6289,7 @@ sub put_worksheet_ole_object{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_vertical_page_breaks' } = { 
-    	summary => 'Get vertical page breaks description in worksheet.',
+    	summary => 'Retrieve descriptions of vertical page breaks in the worksheet.',
         params => $params,
         returns => 'VerticalPageBreaksResponse',
     };
@@ -6305,12 +6311,12 @@ sub get_vertical_page_breaks{
 #
 # GetHorizontalPageBreaksRequest
 #
-# Get horizontal page breaks descripton in worksheet.
+# Retrieve descriptions of horizontal page breaks in the worksheet.
 # 
 # @name  string (required)  The workbook name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6321,7 +6327,7 @@ sub get_vertical_page_breaks{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_horizontal_page_breaks' } = { 
-    	summary => 'Get horizontal page breaks descripton in worksheet.',
+    	summary => 'Retrieve descriptions of horizontal page breaks in the worksheet.',
         params => $params,
         returns => 'HorizontalPageBreaksResponse',
     };
@@ -6343,13 +6349,13 @@ sub get_horizontal_page_breaks{
 #
 # GetVerticalPageBreakRequest
 #
-# Gets a vertical page break description in worksheet.
+# Retrieve a vertical page break description in the worksheet.
 # 
 # @name  string (required)  The workbook name.  
 # @sheetName  string (required)  The worksheet name.  
 # @index  int (required)  The zero based index of the element.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6360,7 +6366,7 @@ sub get_horizontal_page_breaks{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_vertical_page_break' } = { 
-    	summary => 'Gets a vertical page break description in worksheet.',
+    	summary => 'Retrieve a vertical page break description in the worksheet.',
         params => $params,
         returns => 'VerticalPageBreakResponse',
     };
@@ -6382,13 +6388,13 @@ sub get_vertical_page_break{
 #
 # GetHorizontalPageBreakRequest
 #
-# Gets a horizontal page breaks descripton in worksheet.
+# Retrieve a horizontal page break descripton in the worksheet.
 # 
 # @name  string (required)  The workbook name.  
 # @sheetName  string (required)  The worksheet name.  
 # @index  int (required)  The zero based index of the element.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6399,7 +6405,7 @@ sub get_vertical_page_break{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_horizontal_page_break' } = { 
-    	summary => 'Gets a horizontal page breaks descripton in worksheet.',
+    	summary => 'Retrieve a horizontal page break descripton in the worksheet.',
         params => $params,
         returns => 'HorizontalPageBreakResponse',
     };
@@ -6421,7 +6427,7 @@ sub get_horizontal_page_break{
 #
 # PutVerticalPageBreakRequest
 #
-# Adds a vertical page break in worksheet.
+# Add a vertical page break in the worksheet.
 # 
 # @name  string (required)  The workbook name.  
 # @sheetName  string (required)  The worksheet name.  
@@ -6430,8 +6436,8 @@ sub get_horizontal_page_break{
 # @row  int   Row index, zero based.  
 # @startRow  int   Start row index, zero based.  
 # @endRow  int   End row index, zero based.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6442,7 +6448,7 @@ sub get_horizontal_page_break{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_vertical_page_break' } = { 
-    	summary => 'Adds a vertical page break in worksheet.',
+    	summary => 'Add a vertical page break in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -6464,7 +6470,7 @@ sub put_vertical_page_break{
 #
 # PutHorizontalPageBreakRequest
 #
-# Adds a horizontal page breaks in worksheet.
+# Add a horizontal page breaks in the worksheet.
 # 
 # @name  string (required)  The workbook name.  
 # @sheetName  string (required)  The worksheet name.  
@@ -6473,8 +6479,8 @@ sub put_vertical_page_break{
 # @column  int   Column index, zero based.  
 # @startColumn  int   Start column index, zero based.  
 # @endColumn  int   End column index, zero based.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6485,7 +6491,7 @@ sub put_vertical_page_break{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_horizontal_page_break' } = { 
-    	summary => 'Adds a horizontal page breaks in worksheet.',
+    	summary => 'Add a horizontal page breaks in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -6507,13 +6513,13 @@ sub put_horizontal_page_break{
 #
 # DeleteVerticalPageBreaksRequest
 #
-# Delete vertical page breaks in worksheet.
+# Delete vertical page breaks in the worksheet.
 # 
 # @name  string (required)  The workbook name.  
 # @sheetName  string (required)  The worksheet name.  
 # @column  int   Column index, zero based.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6524,7 +6530,7 @@ sub put_horizontal_page_break{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_vertical_page_breaks' } = { 
-    	summary => 'Delete vertical page breaks in worksheet.',
+    	summary => 'Delete vertical page breaks in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -6546,13 +6552,13 @@ sub delete_vertical_page_breaks{
 #
 # DeleteHorizontalPageBreaksRequest
 #
-# Delete horizontal page breaks in worksheet.
+# Delete horizontal page breaks in the worksheet.
 # 
 # @name  string (required)  The workbook name.  
 # @sheetName  string (required)  The worksheet name.  
 # @row  int   Row index, zero based.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6563,7 +6569,7 @@ sub delete_vertical_page_breaks{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_horizontal_page_breaks' } = { 
-    	summary => 'Delete horizontal page breaks in worksheet.',
+    	summary => 'Delete horizontal page breaks in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -6585,13 +6591,13 @@ sub delete_horizontal_page_breaks{
 #
 # DeleteVerticalPageBreakRequest
 #
-# Delete a vertical page breaks in worksheet.
+# Delete a vertical page break in the worksheet.
 # 
 # @name  string (required)  The workbook name.  
 # @sheetName  string (required)  The worksheet name.  
-# @index  int (required)  Removes the VPageBreak element at a specified name. Element index, zero based.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @index  int (required)  Removes the vertical page break element at a specified name. Element index, zero based.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6602,7 +6608,7 @@ sub delete_horizontal_page_breaks{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_vertical_page_break' } = { 
-    	summary => 'Delete a vertical page breaks in worksheet.',
+    	summary => 'Delete a vertical page break in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -6624,13 +6630,13 @@ sub delete_vertical_page_break{
 #
 # DeleteHorizontalPageBreakRequest
 #
-# Delete a horizontal page breaks in worksheet.
+# Delete a horizontal page break in the worksheet.
 # 
 # @name  string (required)  The workbook name.  
 # @sheetName  string (required)  The worksheet name.  
-# @index  int (required)  Removes the HPageBreak element at a specified name. Element index, zero based.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @index  int (required)  Removes the horizontal page break element at a specified name. Element index, zero based.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6641,7 +6647,7 @@ sub delete_vertical_page_break{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_horizontal_page_break' } = { 
-    	summary => 'Delete a horizontal page breaks in worksheet.',
+    	summary => 'Delete a horizontal page break in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -6663,12 +6669,12 @@ sub delete_horizontal_page_break{
 #
 # GetPageSetupRequest
 #
-# Gets page setup description in worksheet.
+# Retrieve page setup description in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6679,7 +6685,7 @@ sub delete_horizontal_page_break{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_page_setup' } = { 
-    	summary => 'Gets page setup description in worksheet.',
+    	summary => 'Retrieve page setup description in the worksheet.',
         params => $params,
         returns => 'PageSetupResponse',
     };
@@ -6701,13 +6707,13 @@ sub get_page_setup{
 #
 # PostPageSetupRequest
 #
-# Updates page setup in worksheet.
+# Update page setup in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @pageSetup  PageSetup (required)  Page Setup description.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @pageSetup  PageSetup (required)  PageSetup Page Setup description.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6718,7 +6724,7 @@ sub get_page_setup{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_page_setup' } = { 
-    	summary => 'Updates page setup in worksheet.',
+    	summary => 'Update page setup in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -6740,12 +6746,12 @@ sub post_page_setup{
 #
 # DeleteHeaderFooterRequest
 #
-# Clears header footer in worksheet.
+# Clear header and footer in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6756,7 +6762,7 @@ sub post_page_setup{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_header_footer' } = { 
-    	summary => 'Clears header footer in worksheet.',
+    	summary => 'Clear header and footer in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -6778,12 +6784,12 @@ sub delete_header_footer{
 #
 # GetHeaderRequest
 #
-# Gets page header description in worksheet.
+# Retrieve page header description in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6794,7 +6800,7 @@ sub delete_header_footer{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_header' } = { 
-    	summary => 'Gets page header description in worksheet.',
+    	summary => 'Retrieve page header description in the worksheet.',
         params => $params,
         returns => 'PageSectionsResponse',
     };
@@ -6816,15 +6822,15 @@ sub get_header{
 #
 # PostHeaderRequest
 #
-# Updates page header in worksheet.
+# Update page header in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @section  int (required)  0:Left Section. 1:Center Section 2:Right Section  
 # @script  string (required)  Header format script.  
 # @isFirstPage  boolean (required)  Is first page(true/false).  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6835,7 +6841,7 @@ sub get_header{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_header' } = { 
-    	summary => 'Updates page header in worksheet.',
+    	summary => 'Update page header in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -6857,12 +6863,12 @@ sub post_header{
 #
 # GetFooterRequest
 #
-# Gets page footer description in worksheet.
+# Retrieve page footer description in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6873,7 +6879,7 @@ sub post_header{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_footer' } = { 
-    	summary => 'Gets page footer description in worksheet.',
+    	summary => 'Retrieve page footer description in the worksheet.',
         params => $params,
         returns => 'PageSectionsResponse',
     };
@@ -6895,15 +6901,15 @@ sub get_footer{
 #
 # PostFooterRequest
 #
-# Update  page footer description in worksheet.
+# Update page footer in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @section  int (required)  0:Left Section. 1:Center Section 2:Right Section  
 # @script  string (required)  Header format script.  
 # @isFirstPage  boolean (required)  Is first page(true/false).  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6914,7 +6920,7 @@ sub get_footer{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_footer' } = { 
-    	summary => 'Update  page footer description in worksheet.',
+    	summary => 'Update page footer in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -6934,14 +6940,90 @@ sub post_footer{
 }
 
 #
+# PostFitWideToPagesRequest
+#
+# Set the scale at which the page will fit wide when printed on the sheet.
+# 
+# @name  string (required)  The file name.  
+# @sheetName  string (required)  The worksheet name.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'PostFitWideToPagesRequest',
+            description => 'PostFitWideToPages Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'post_fit_wide_to_pages' } = { 
+    	summary => 'Set the scale at which the page will fit wide when printed on the sheet.',
+        params => $params,
+        returns => 'CellsCloudResponse',
+    };
+}
+#
+# @return CellsCloudResponse
+#
+sub post_fit_wide_to_pages{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('CellsCloudResponse', $response);
+    return $_response_object;
+}
+
+#
+# PostFitTallToPagesRequest
+#
+# Set the scale at which the page will fit tall when printed on the sheet.
+# 
+# @name  string (required)  The file name.  
+# @sheetName  string (required)  The worksheet name.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'PostFitTallToPagesRequest',
+            description => 'PostFitTallToPages Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'post_fit_tall_to_pages' } = { 
+    	summary => 'Set the scale at which the page will fit tall when printed on the sheet.',
+        params => $params,
+        returns => 'CellsCloudResponse',
+    };
+}
+#
+# @return CellsCloudResponse
+#
+sub post_fit_tall_to_pages{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('CellsCloudResponse', $response);
+    return $_response_object;
+}
+
+#
 # GetWorksheetPicturesRequest
 #
-# Get pictures description in worksheet.
+# Retrieve descriptions of pictures in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6952,7 +7034,7 @@ sub post_footer{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_pictures' } = { 
-    	summary => 'Get pictures description in worksheet.',
+    	summary => 'Retrieve descriptions of pictures in the worksheet.',
         params => $params,
         returns => 'PicturesResponse',
     };
@@ -6974,14 +7056,14 @@ sub get_worksheet_pictures{
 #
 # GetWorksheetPictureWithFormatRequest
 #
-# Gets a picture by number in worksheet.
+# Retrieve a picture by number in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @pictureNumber  int (required)  The picture number.  
+# @pictureNumber  int (required)  The picture index.  
 # @format  string (required)  Picture conversion format(PNG/TIFF/JPEG/GIF/EMF/BMP).  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -6992,7 +7074,7 @@ sub get_worksheet_pictures{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_picture_with_format' } = { 
-    	summary => 'Gets a picture by number in worksheet.',
+    	summary => 'Retrieve a picture by number in the worksheet.',
         params => $params,
         returns => 'string',
     };
@@ -7014,9 +7096,9 @@ sub get_worksheet_picture_with_format{
 #
 # PutWorksheetAddPictureRequest
 #
-# Adds a new picture in worksheet.
+# Add a new picture in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worsheet name.  
 # @picture  Picture   Pictute object  
 # @upperLeftRow  int   The image upper left row.  
@@ -7024,8 +7106,8 @@ sub get_worksheet_picture_with_format{
 # @lowerRightRow  int   The image low right row.  
 # @lowerRightColumn  int   The image low right column.  
 # @picturePath  string   The picture path, if not provided the picture data is inspected in the request body.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7036,7 +7118,7 @@ sub get_worksheet_picture_with_format{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_worksheet_add_picture' } = { 
-    	summary => 'Adds a new picture in worksheet.',
+    	summary => 'Add a new picture in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -7058,14 +7140,14 @@ sub put_worksheet_add_picture{
 #
 # PostWorksheetPictureRequest
 #
-# Updates a picture by index in worksheet.
+# Update a picture by index in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @pictureIndex  int (required)  The picture`s index.  
 # @picture  Picture (required)  Picture object description.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7076,7 +7158,7 @@ sub put_worksheet_add_picture{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_picture' } = { 
-    	summary => 'Updates a picture by index in worksheet.',
+    	summary => 'Update a picture by index in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -7098,13 +7180,13 @@ sub post_worksheet_picture{
 #
 # DeleteWorksheetPictureRequest
 #
-# Deletes a picture object in worksheet
+# Delete a picture object by index in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worsheet name.  
 # @pictureIndex  int (required)  Picture index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7115,7 +7197,7 @@ sub post_worksheet_picture{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_picture' } = { 
-    	summary => 'Deletes a picture object in worksheet',
+    	summary => 'Delete a picture object by index in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -7137,12 +7219,12 @@ sub delete_worksheet_picture{
 #
 # DeleteWorksheetPicturesRequest
 #
-# Delete all pictures in worksheet.
+# Delete all pictures in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7153,7 +7235,7 @@ sub delete_worksheet_picture{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_pictures' } = { 
-    	summary => 'Delete all pictures in worksheet.',
+    	summary => 'Delete all pictures in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -7175,12 +7257,12 @@ sub delete_worksheet_pictures{
 #
 # GetWorksheetPivotTablesRequest
 #
-# Get worksheet pivottables description.
+# Retrieve descriptions of pivottables  in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7191,7 +7273,7 @@ sub delete_worksheet_pictures{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_pivot_tables' } = { 
-    	summary => 'Get worksheet pivottables description.',
+    	summary => 'Retrieve descriptions of pivottables  in the worksheet.',
         params => $params,
         returns => 'PivotTablesResponse',
     };
@@ -7213,13 +7295,13 @@ sub get_worksheet_pivot_tables{
 #
 # GetWorksheetPivotTableRequest
 #
-# Gets a pivottable info by index in worksheet.
+# Retrieve PivotTable information by index in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @pivottableIndex  int (required)  Gets the PivotTable report by index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7230,7 +7312,7 @@ sub get_worksheet_pivot_tables{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_pivot_table' } = { 
-    	summary => 'Gets a pivottable info by index in worksheet.',
+    	summary => 'Retrieve PivotTable information by index in the worksheet.',
         params => $params,
         returns => 'PivotTableResponse',
     };
@@ -7252,15 +7334,15 @@ sub get_worksheet_pivot_table{
 #
 # GetPivotTableFieldRequest
 #
-# Gets pivot field description in pivot table.
+# Retrieve descriptions of pivot fields in the PivotTable.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @pivotTableIndex  int (required)  Gets the PivotTable report by index.  
-# @pivotFieldIndex  int (required)  The field index in the base fields.  
-# @pivotFieldType  string (required)  The fields area type(column/row).  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @pivotTableIndex  int (required)  The PivotTable index.  
+# @pivotFieldIndex  int (required)  The pivot field index of PivotTable.  
+# @pivotFieldType  string (required)  The field area type(column/row).  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7271,7 +7353,7 @@ sub get_worksheet_pivot_table{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_pivot_table_field' } = { 
-    	summary => 'Gets pivot field description in pivot table.',
+    	summary => 'Retrieve descriptions of pivot fields in the PivotTable.',
         params => $params,
         returns => 'PivotFieldResponse',
     };
@@ -7293,13 +7375,13 @@ sub get_pivot_table_field{
 #
 # GetWorksheetPivotTableFiltersRequest
 #
-# Gets pivot table filters in worksheet.
+# Gets PivotTable filters in worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @pivotTableIndex  int (required)  Gets the PivotTable report by index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @pivotTableIndex  int (required)  The PivotTable index.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7310,7 +7392,7 @@ sub get_pivot_table_field{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_pivot_table_filters' } = { 
-    	summary => 'Gets pivot table filters in worksheet.',
+    	summary => 'Gets PivotTable filters in worksheet.',
         params => $params,
         returns => 'PivotFiltersResponse',
     };
@@ -7332,14 +7414,14 @@ sub get_worksheet_pivot_table_filters{
 #
 # GetWorksheetPivotTableFilterRequest
 #
-# Gets pivot table filters in worksheet.
+# Retrieve PivotTable filters in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @pivotTableIndex  int (required)  Gets the PivotTable report by index.  
-# @filterIndex  int (required)  Gets the pivotfilter object at the specific index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @pivotTableIndex  int (required)  The PivotTable index in the worksheet.  
+# @filterIndex  int (required)  The pivot filter index of PivotTable.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7350,7 +7432,7 @@ sub get_worksheet_pivot_table_filters{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_pivot_table_filter' } = { 
-    	summary => 'Gets pivot table filters in worksheet.',
+    	summary => 'Retrieve PivotTable filters in the worksheet.',
         params => $params,
         returns => 'PivotFilterResponse',
     };
@@ -7372,16 +7454,16 @@ sub get_worksheet_pivot_table_filter{
 #
 # PutWorksheetPivotTableRequest
 #
-# Adds a pivot table in worksheet.
+# Add a PivotTable in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
+# @folder  string   The folder where the file is situated.  
 # @sourceData  string   The data for the new PivotTable cache.  
-# @destCellName  string   The cell in the upper-left corner of the PivotTable report`s destination range.  
-# @tableName  string   The name of the new PivotTable report.  
-# @useSameSource  boolean   Indicates whether using same data source when another existing pivot table has used this data source. If the property is true, it will save memory.  
-# @storageName  string   Storage name.   
+# @destCellName  string   The cell in the upper-left corner of the destination range for the PivotTable report.  
+# @tableName  string   The name of the new PivotTable.  
+# @useSameSource  boolean   Indicates whether using same data source when another existing PivotTable has used this data source. If the property is true, it will save memory.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7392,7 +7474,7 @@ sub get_worksheet_pivot_table_filter{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_worksheet_pivot_table' } = { 
-    	summary => 'Adds a pivot table in worksheet.',
+    	summary => 'Add a PivotTable in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -7414,16 +7496,16 @@ sub put_worksheet_pivot_table{
 #
 # PutPivotTableFieldRequest
 #
-# Adds a pivot field in pivot table
+# Add a pivot field in the PivotTable.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @pivotTableIndex  int (required)  Gets the PivotTable report by index.  
+# @pivotTableIndex  int (required)  The PivotTable index.  
 # @pivotFieldType  string (required)  The fields area type.  
-# @pivotTableFieldRequest  PivotTableFieldRequest (required)  Dto that conrains field indexes  
-# @needReCalculate  boolean   Whether the specific pivot table calculate(true/false).  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @pivotTableFieldRequest  PivotTableFieldRequest (required)  PivotTableFieldRequest The PivotTable field request.  
+# @needReCalculate  boolean   Whether the specific PivotTable calculate(true/false).  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7434,7 +7516,7 @@ sub put_worksheet_pivot_table{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_pivot_table_field' } = { 
-    	summary => 'Adds a pivot field in pivot table',
+    	summary => 'Add a pivot field in the PivotTable.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -7456,15 +7538,15 @@ sub put_pivot_table_field{
 #
 # PutWorksheetPivotTableFilterRequest
 #
-# Adds a pivot filter for piovt table index
+# Add a pivot filter to the PivotTable.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @pivotTableIndex  int (required)  Gets the PivotTable report by index.  
-# @filter  PivotFilter (required)  Pivot filter description.  
-# @needReCalculate  boolean   Whether the specific pivot table calculate(true/false).  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @filter  PivotFilter (required)  PivotFilter Pivot filter description.  
+# @needReCalculate  boolean   Whether the specific PivotTable calculate(true/false).  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7475,7 +7557,7 @@ sub put_pivot_table_field{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_worksheet_pivot_table_filter' } = { 
-    	summary => 'Adds a pivot filter for piovt table index',
+    	summary => 'Add a pivot filter to the PivotTable.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -7497,18 +7579,18 @@ sub put_worksheet_pivot_table_filter{
 #
 # PostPivotTableFieldHideItemRequest
 #
-# Hides pivot field item in pivot table.
+# Hide a pivot field item in the PivotTable.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @pivotTableIndex  int (required)  Gets the PivotTable report by index.  
+# @pivotTableIndex  int (required)  The PivotTable index.  
 # @pivotFieldType  string (required)  Represents PivotTable field type(Undefined/Row/Column/Page/Data).  
-# @fieldIndex  int (required)  Gets the PivotField Object at the specific index.  
-# @itemIndex  int (required)  The index of the pivotItem in the pivotField.  
+# @fieldIndex  int (required)  The pivot field index.  
+# @itemIndex  int (required)  The index of the pivot item in the pivot field.  
 # @isHide  boolean (required)  Whether the specific PivotItem is hidden(true/false).  
-# @needReCalculate  boolean   Whether the specific pivot table calculate(true/false).  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @needReCalculate  boolean   Whether the specific PivotTable calculate(true/false).  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7519,7 +7601,7 @@ sub put_worksheet_pivot_table_filter{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_pivot_table_field_hide_item' } = { 
-    	summary => 'Hides pivot field item in pivot table.',
+    	summary => 'Hide a pivot field item in the PivotTable.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -7541,16 +7623,16 @@ sub post_pivot_table_field_hide_item{
 #
 # PostPivotTableFieldMoveToRequest
 #
-# Moves pivot field in pivot table.
+# Move a pivot field in the PivotTable.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @pivotTableIndex  int (required)  Gets the PivotTable report by index.  
-# @fieldIndex  int (required)  Gets the PivotField Object at the specific index.  
+# @pivotTableIndex  int (required)  The PivotTable index.  
+# @fieldIndex  int (required)  The pivot field index.  
 # @from  string (required)  The fields area type(Column/Row/Page/Data/Undefined).  
 # @to  string (required)  The fields area type(Column/Row/Page/Data/Undefined).  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7561,7 +7643,7 @@ sub post_pivot_table_field_hide_item{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_pivot_table_field_move_to' } = { 
-    	summary => 'Moves pivot field in pivot table.',
+    	summary => 'Move a pivot field in the PivotTable.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -7583,17 +7665,17 @@ sub post_pivot_table_field_move_to{
 #
 # PostPivotTableCellStyleRequest
 #
-# Updates cell style in pivot table.
+# Update cell style in the PivotTable.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @pivotTableIndex  int (required)  Gets the PivotTable report by index.  
-# @column  int (required)  Column index of the cell.  
-# @row  int (required)  RowIndex of the cell.  
-# @style  Style (required)  Style description in request body.  
-# @needReCalculate  boolean   Whether the specific pivot table calculate(true/false).  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @pivotTableIndex  int (required)  The PivotTable index.  
+# @column  int (required)  The column index of the cell.  
+# @row  int (required)  The row index of the cell.  
+# @style  Style (required)  Style Style description in request body.  
+# @needReCalculate  boolean   Whether the specific PivotTable calculate(true/false).  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7604,7 +7686,7 @@ sub post_pivot_table_field_move_to{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_pivot_table_cell_style' } = { 
-    	summary => 'Updates cell style in pivot table.',
+    	summary => 'Update cell style in the PivotTable.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -7626,15 +7708,15 @@ sub post_pivot_table_cell_style{
 #
 # PostPivotTableStyleRequest
 #
-# Updates style in pivot table.
+# Update style in the PivotTable.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @pivotTableIndex  int (required)  Gets the PivotTable report by index.  
-# @style  Style (required)  Style description in request body.  
-# @needReCalculate  boolean   Whether the specific pivot table calculate(true/false).  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @pivotTableIndex  int (required)  The PivotTable index.  
+# @style  Style (required)  StyleStyle description in request body.  
+# @needReCalculate  boolean   Whether the specific PivotTable calculate(true/false).  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7645,7 +7727,7 @@ sub post_pivot_table_cell_style{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_pivot_table_style' } = { 
-    	summary => 'Updates style in pivot table.',
+    	summary => 'Update style in the PivotTable.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -7667,16 +7749,16 @@ sub post_pivot_table_style{
 #
 # PostPivotTableUpdatePivotFieldsRequest
 #
+# Update pivot fields in the PivotTable.
 # 
-# 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @pivotTableIndex  int (required)  Gets the PivotTable report by index.  
+# @pivotTableIndex  int (required)  The PivotTable index.  
 # @pivotFieldType  string (required)  Represents PivotTable field type(Undefined/Row/Column/Page/Data).  
-# @pivotField  PivotField (required)  Represents pivot field.  
-# @needReCalculate  boolean   Whether the specific pivot table calculate(true/false).  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @pivotField  PivotField (required)  PivotFieldRepresents pivot field.  
+# @needReCalculate  boolean   Whether the specific PivotTable calculate(true/false).  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7687,7 +7769,7 @@ sub post_pivot_table_style{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_pivot_table_update_pivot_fields' } = { 
-    	summary => '',
+    	summary => 'Update pivot fields in the PivotTable.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -7709,17 +7791,17 @@ sub post_pivot_table_update_pivot_fields{
 #
 # PostPivotTableUpdatePivotFieldRequest
 #
+# Update pivot field in the PivotTable.
 # 
-# 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @pivotTableIndex  int (required)  Gets the PivotTable report by index.  
-# @pivotFieldIndex  int (required)  Gets the PivotField Object at the specific index.  
+# @pivotTableIndex  int (required)  The PivotTable index.  
+# @pivotFieldIndex  int (required)  The pivot field index.  
 # @pivotFieldType  string (required)  Represents PivotTable field type(Undefined/Row/Column/Page/Data).  
 # @pivotField  PivotField (required)  Represents pivot field.  
-# @needReCalculate  boolean   Whether the specific pivot table calculate(true/false).  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @needReCalculate  boolean   Whether the specific PivotTable calculate(true/false).  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7730,7 +7812,7 @@ sub post_pivot_table_update_pivot_fields{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_pivot_table_update_pivot_field' } = { 
-    	summary => '',
+    	summary => 'Update pivot field in the PivotTable.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -7752,13 +7834,13 @@ sub post_pivot_table_update_pivot_field{
 #
 # PostWorksheetPivotTableCalculateRequest
 #
-# Calculates pivottable`s data to cells.
+# Calculate pivottable`s data to cells.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @pivotTableIndex  int (required)  Gets the PivotTable report by index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7769,7 +7851,7 @@ sub post_pivot_table_update_pivot_field{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_pivot_table_calculate' } = { 
-    	summary => 'Calculates pivottable`s data to cells.',
+    	summary => 'Calculate pivottable`s data to cells.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -7791,16 +7873,16 @@ sub post_worksheet_pivot_table_calculate{
 #
 # PostWorksheetPivotTableMoveRequest
 #
-# Moves pivot table in worksheet.
+# Move PivotTable in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @pivotTableIndex  int (required)  Gets the PivotTable report by index.  
 # @row  int   Row index.  
 # @column  int   Column index.  
 # @destCellName  string   The dest cell name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7811,7 +7893,7 @@ sub post_worksheet_pivot_table_calculate{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_pivot_table_move' } = { 
-    	summary => 'Moves pivot table in worksheet.',
+    	summary => 'Move PivotTable in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -7833,12 +7915,12 @@ sub post_worksheet_pivot_table_move{
 #
 # DeleteWorksheetPivotTablesRequest
 #
-# Delete pivot tables in worksheet.
+# Delete PivotTables in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7849,7 +7931,7 @@ sub post_worksheet_pivot_table_move{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_pivot_tables' } = { 
-    	summary => 'Delete pivot tables in worksheet.',
+    	summary => 'Delete PivotTables in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -7871,13 +7953,13 @@ sub delete_worksheet_pivot_tables{
 #
 # DeleteWorksheetPivotTableRequest
 #
-# Deletes  pivot table by index in worksheet.
+# Delete PivotTable by index in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @pivotTableIndex  int (required)  Gets the PivotTable report by index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7888,7 +7970,7 @@ sub delete_worksheet_pivot_tables{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_pivot_table' } = { 
-    	summary => 'Deletes  pivot table by index in worksheet.',
+    	summary => 'Delete PivotTable by index in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -7910,15 +7992,15 @@ sub delete_worksheet_pivot_table{
 #
 # DeletePivotTableFieldRequest
 #
-# Deletes pivot field in pivot table.
+# Delete a pivot field in the PivotTable.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @pivotTableIndex  int (required)  Gets the PivotTable report by index.  
 # @pivotFieldType  string (required)  The fields area type.  
-# @pivotTableFieldRequest  PivotTableFieldRequest (required)  Pivot table field request.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @pivotTableFieldRequest  PivotTableFieldRequest (required)  PivotTableFieldRequest PivotTable field request.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7929,7 +8011,7 @@ sub delete_worksheet_pivot_table{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_pivot_table_field' } = { 
-    	summary => 'Deletes pivot field in pivot table.',
+    	summary => 'Delete a pivot field in the PivotTable.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -7951,14 +8033,14 @@ sub delete_pivot_table_field{
 #
 # DeleteWorksheetPivotTableFiltersRequest
 #
-# Delete all pivot filters in piovt table.
+# Delete all pivot filters in the PivotTable.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @pivotTableIndex  int (required)  Gets the PivotTable report by index.  
-# @needReCalculate  boolean   Whether the specific pivot table calculate(true/false).  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @pivotTableIndex  int (required)  The PivotTable index.  
+# @needReCalculate  boolean   Whether the specific PivotTable calculate(true/false).  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -7969,7 +8051,7 @@ sub delete_pivot_table_field{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_pivot_table_filters' } = { 
-    	summary => 'Delete all pivot filters in piovt table.',
+    	summary => 'Delete all pivot filters in the PivotTable.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -7991,15 +8073,15 @@ sub delete_worksheet_pivot_table_filters{
 #
 # DeleteWorksheetPivotTableFilterRequest
 #
-# Deletes a pivot filter in piovt table.
+# Delete a pivot filter in the PivotTable.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @pivotTableIndex  int (required)  Gets the PivotTable report by index.  
 # @fieldIndex  int (required)  Gets the PivotField Object at the specific index.  
-# @needReCalculate  boolean   Whether the specific pivot table calculate(true/false).  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @needReCalculate  boolean   Whether the specific PivotTable calculate(true/false).  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -8010,7 +8092,7 @@ sub delete_worksheet_pivot_table_filters{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_pivot_table_filter' } = { 
-    	summary => 'Deletes a pivot filter in piovt table.',
+    	summary => 'Delete a pivot filter in the PivotTable.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -8032,12 +8114,12 @@ sub delete_worksheet_pivot_table_filter{
 #
 # GetDocumentPropertiesRequest
 #
-# Get document properties description.
+# Retrieve descriptions of Excel file properties.
 # 
 # @name  string (required)  The workbook name.  
-# @type  string     
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @type  string   Excel property type.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -8048,7 +8130,7 @@ sub delete_worksheet_pivot_table_filter{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_document_properties' } = { 
-    	summary => 'Get document properties description.',
+    	summary => 'Retrieve descriptions of Excel file properties.',
         params => $params,
         returns => 'CellsDocumentPropertiesResponse',
     };
@@ -8070,12 +8152,12 @@ sub get_document_properties{
 #
 # PutDocumentPropertyRequest
 #
-# Sets/creates a sdocument property.
+# Set or add an Excel property.
 # 
 # @name  string (required)  The workbook name.  
-# @property  CellsDocumentProperty (required)  Gets or sets the value of the property.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @property  CellsDocumentProperty (required)  Get or set the value of the property.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -8086,7 +8168,7 @@ sub get_document_properties{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_document_property' } = { 
-    	summary => 'Sets/creates a sdocument property.',
+    	summary => 'Set or add an Excel property.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -8108,12 +8190,12 @@ sub put_document_property{
 #
 # GetDocumentPropertyRequest
 #
-# Gets document property by name.
+# Get Excel property by name.
 # 
 # @name  string (required)  The workbook name.  
 # @propertyName  string (required)  The property name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -8124,7 +8206,7 @@ sub put_document_property{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_document_property' } = { 
-    	summary => 'Gets document property by name.',
+    	summary => 'Get Excel property by name.',
         params => $params,
         returns => 'CellsDocumentPropertyResponse',
     };
@@ -8146,13 +8228,13 @@ sub get_document_property{
 #
 # DeleteDocumentPropertyRequest
 #
-# Deletes a document property.
+# Delete an Excel property.
 # 
 # @name  string (required)  The workbook name.  
 # @propertyName  string (required)  The property name.  
 # @type  string     
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -8163,7 +8245,7 @@ sub get_document_property{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_document_property' } = { 
-    	summary => 'Deletes a document property.',
+    	summary => 'Delete an Excel property.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -8185,11 +8267,11 @@ sub delete_document_property{
 #
 # DeleteDocumentPropertiesRequest
 #
-# Delete all custom document properties and clean built-in ones.
+# Delete all custom document properties and reset built-in ones.
 # 
 # @name  string (required)  The workbook name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -8200,7 +8282,7 @@ sub delete_document_property{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_document_properties' } = { 
-    	summary => 'Delete all custom document properties and clean built-in ones.',
+    	summary => 'Delete all custom document properties and reset built-in ones.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -8597,11 +8679,11 @@ sub post_protect{
 #
 # PostWorksheetCellsRangesCopyRequest
 #
-# Copys content to destination range from source range in worksheet.
+# Copy content from the source range to the destination range in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @rangeOperate  RangeCopyRequest (required)  copydata,copystyle,copyto,copyvalue  
+# @rangeOperate  RangeCopyRequest (required)  RangeCopyRequestcopydata,copystyle,copyto,copyvalue  
 # @folder  string   Original workbook folder.  
 # @storageName  string   Storage name.   
 #
@@ -8614,7 +8696,7 @@ sub post_protect{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_cells_ranges_copy' } = { 
-    	summary => 'Copys content to destination range from source range in worksheet.',
+    	summary => 'Copy content from the source range to the destination range in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -8636,11 +8718,11 @@ sub post_worksheet_cells_ranges_copy{
 #
 # PostWorksheetCellsRangeMergeRequest
 #
-# Combines a range of cells into a single cell.
+# Merge a range of cells into a single cell.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @range  Range (required)  range description.  
+# @range  Range (required)  Rangerange description.  
 # @folder  string   Original workbook folder.  
 # @storageName  string   Storage name.   
 #
@@ -8653,7 +8735,7 @@ sub post_worksheet_cells_ranges_copy{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_cells_range_merge' } = { 
-    	summary => 'Combines a range of cells into a single cell.',
+    	summary => 'Merge a range of cells into a single cell.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -8675,11 +8757,11 @@ sub post_worksheet_cells_range_merge{
 #
 # PostWorksheetCellsRangeUnMergeRequest
 #
-# Unmerges merged cells of this range.
+# Unmerge merged cells within this range.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @range  Range (required)  range description.  
+# @range  Range (required)  Range range description.  
 # @folder  string   Original workbook folder.  
 # @storageName  string   Storage name.   
 #
@@ -8692,7 +8774,7 @@ sub post_worksheet_cells_range_merge{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_cells_range_un_merge' } = { 
-    	summary => 'Unmerges merged cells of this range.',
+    	summary => 'Unmerge merged cells within this range.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -8714,11 +8796,11 @@ sub post_worksheet_cells_range_un_merge{
 #
 # PostWorksheetCellsRangeStyleRequest
 #
-# Sets the style of the range.
+# Set the style for the specified range.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @rangeOperate  RangeSetStyleRequest (required)  Range Set Style Request   
+# @rangeOperate  RangeSetStyleRequest (required)  RangeSetStyleRequest Range Set Style Request   
 # @folder  string   Original workbook folder.  
 # @storageName  string   Storage name.   
 #
@@ -8731,7 +8813,7 @@ sub post_worksheet_cells_range_un_merge{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_cells_range_style' } = { 
-    	summary => 'Sets the style of the range.',
+    	summary => 'Set the style for the specified range.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -8753,11 +8835,11 @@ sub post_worksheet_cells_range_style{
 #
 # GetWorksheetCellsRangeValueRequest
 #
-# Get the value of cells in range.
+# Retrieve the values of cells within the specified range.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @namerange  string   range name.  
+# @namerange  string   The range name.  
 # @firstRow  int   Gets the index of the first row of the range.  
 # @firstColumn  int   Gets the index of the first columnn of the range.  
 # @rowCount  int   Gets the count of rows in the range.  
@@ -8774,7 +8856,7 @@ sub post_worksheet_cells_range_style{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_cells_range_value' } = { 
-    	summary => 'Get the value of cells in range.',
+    	summary => 'Retrieve the values of cells within the specified range.',
         params => $params,
         returns => 'RangeValueResponse',
     };
@@ -8796,14 +8878,14 @@ sub get_worksheet_cells_range_value{
 #
 # PostWorksheetCellsRangeValueRequest
 #
-# Puts a value into the range, if appropriate the value will be converted to other data type and cell`s number format will be reset.
+# Assign a value to the range; if necessary, the value will be converted to another data type, and the cell`s number format will be reset.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @range  Range (required)  range in worksheet   
-# @Value  string (required)  Input value  
+# @range  Range (required)  The range in worksheet.   
+# @Value  string (required)  Input value.  
 # @isConverted  boolean   True: converted to other data type if appropriate.  
-# @setStyle  boolean   True: set the number format to cell`s style when converting to other data type  
+# @setStyle  boolean   True: set the number format to cell`s style when converting to other data type.  
 # @folder  string   Original workbook folder.  
 # @storageName  string   Storage name.   
 #
@@ -8816,7 +8898,7 @@ sub get_worksheet_cells_range_value{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_cells_range_value' } = { 
-    	summary => 'Puts a value into the range, if appropriate the value will be converted to other data type and cell`s number format will be reset.',
+    	summary => 'Assign a value to the range; if necessary, the value will be converted to another data type, and the cell`s number format will be reset.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -8838,9 +8920,9 @@ sub post_worksheet_cells_range_value{
 #
 # PostWorksheetCellsRangeMoveToRequest
 #
-# Moves the current range to the dest range.
+# Move the current range to the destination range.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @range  Range (required)  range in worksheet   
 # @destRow  int (required)  The start row of the dest range.  
@@ -8857,7 +8939,7 @@ sub post_worksheet_cells_range_value{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_cells_range_move_to' } = { 
-    	summary => 'Moves the current range to the dest range.',
+    	summary => 'Move the current range to the destination range.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -8879,11 +8961,11 @@ sub post_worksheet_cells_range_move_to{
 #
 # PostWorksheetCellsRangeSortRequest
 #
-# Sets data sort around a range of cells.
+# Perform data sorting around a range of cells.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @rangeSortRequest  RangeSortRequest (required)  Range Sort Request   
+# @rangeSortRequest  RangeSortRequest (required)  RangeSortRequest Range Sort Request   
 # @folder  string   Original workbook folder.  
 # @storageName  string   Storage name.   
 #
@@ -8896,7 +8978,7 @@ sub post_worksheet_cells_range_move_to{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_cells_range_sort' } = { 
-    	summary => 'Sets data sort around a range of cells.',
+    	summary => 'Perform data sorting around a range of cells.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -8918,11 +9000,11 @@ sub post_worksheet_cells_range_sort{
 #
 # PostWorksheetCellsRangeOutlineBorderRequest
 #
-# Sets outline border around a range of cells.
+# Apply an outline border around a range of cells.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @rangeOperate  RangeSetOutlineBorderRequest (required)  Range Set OutlineBorder Request.  
+# @rangeOperate  RangeSetOutlineBorderRequest (required)  RangeSetOutlineBorderRequest Range Set OutlineBorder Request.  
 # @folder  string   Original workbook folder.  
 # @storageName  string   Storage name.   
 #
@@ -8935,7 +9017,7 @@ sub post_worksheet_cells_range_sort{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_cells_range_outline_border' } = { 
-    	summary => 'Sets outline border around a range of cells.',
+    	summary => 'Apply an outline border around a range of cells.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -8957,11 +9039,11 @@ sub post_worksheet_cells_range_outline_border{
 #
 # PostWorksheetCellsRangeColumnWidthRequest
 #
-# Sets column width of range.
+# Set the column width of the specified range.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @range  Range (required)  The range object.  
+# @range  Range (required)  Range The range object.  
 # @value  double (required)  Sets the column width of this range.  
 # @folder  string   Original workbook folder.  
 # @storageName  string   Storage name.   
@@ -8975,7 +9057,7 @@ sub post_worksheet_cells_range_outline_border{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_cells_range_column_width' } = { 
-    	summary => 'Sets column width of range.',
+    	summary => 'Set the column width of the specified range.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -8999,7 +9081,7 @@ sub post_worksheet_cells_range_column_width{
 #
 # Sets row height of range.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @range  Range (required)  The range object.  
 # @value  double (required)  Sets the column height of this range.  
@@ -9037,9 +9119,9 @@ sub post_worksheet_cells_range_row_height{
 #
 # PutWorksheetCellsRangeRequest
 #
-# Inserts a range of cells and shift cells according to the shift option.
+# Insert a range of cells and shift existing cells based on the specified shift option.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @range  string (required)  The range object.  
 # @shift  string (required)  Represent the shift options when deleting a range of cells(Down/Left/None/Right/Up).  
@@ -9055,7 +9137,7 @@ sub post_worksheet_cells_range_row_height{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_worksheet_cells_range' } = { 
-    	summary => 'Inserts a range of cells and shift cells according to the shift option.',
+    	summary => 'Insert a range of cells and shift existing cells based on the specified shift option.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -9077,9 +9159,9 @@ sub put_worksheet_cells_range{
 #
 # DeleteWorksheetCellsRangeRequest
 #
-# Deletes a range of cells and shift cells according to the shift option.
+# Delete a range of cells and shift existing cells based on the specified shift option.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @range  string (required)  The range object.  
 # @shift  string (required)  Represent the shift options when deleting a range of cells(Down/Left/None/Right/Up).  
@@ -9095,7 +9177,7 @@ sub put_worksheet_cells_range{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_cells_range' } = { 
-    	summary => 'Deletes a range of cells and shift cells according to the shift option.',
+    	summary => 'Delete a range of cells and shift existing cells based on the specified shift option.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -9117,12 +9199,12 @@ sub delete_worksheet_cells_range{
 #
 # GetWorksheetShapesRequest
 #
-# Get shapes description in worksheet.
+# Retrieve descriptions of shapes in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9133,7 +9215,7 @@ sub delete_worksheet_cells_range{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_shapes' } = { 
-    	summary => 'Get shapes description in worksheet.',
+    	summary => 'Retrieve descriptions of shapes in the worksheet.',
         params => $params,
         returns => 'ShapesResponse',
     };
@@ -9155,13 +9237,13 @@ sub get_worksheet_shapes{
 #
 # GetWorksheetShapeRequest
 #
-# Gets shape description in worksheet.
+# Retrieve description of shape in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @shapeindex  int (required)  shape index in worksheet shapes.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9172,7 +9254,7 @@ sub get_worksheet_shapes{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_shape' } = { 
-    	summary => 'Gets shape description in worksheet.',
+    	summary => 'Retrieve description of shape in the worksheet.',
         params => $params,
         returns => 'ShapeResponse',
     };
@@ -9194,20 +9276,20 @@ sub get_worksheet_shape{
 #
 # PutWorksheetShapeRequest
 #
-# Adds shape in worksheet.
+# Add a shape in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @shapeDTO  Shape     
-# @DrawingType  string   shape object type  
+# @DrawingType  string   Shape object type  
 # @upperLeftRow  int   Upper left row index.  
 # @upperLeftColumn  int   Upper left column index.  
 # @top  int   Represents the vertical offset of Spinner from its left row, in unit of pixel.  
 # @left  int   Represents the horizontal offset of Spinner from its left column, in unit of pixel.  
 # @width  int   Represents the height of Spinner, in unit of pixel.  
 # @height  int   Represents the width of Spinner, in unit of pixel.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9218,7 +9300,7 @@ sub get_worksheet_shape{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_worksheet_shape' } = { 
-    	summary => 'Adds shape in worksheet.',
+    	summary => 'Add a shape in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -9240,12 +9322,12 @@ sub put_worksheet_shape{
 #
 # DeleteWorksheetShapesRequest
 #
-# delete all shapes in worksheet.
+# Delete all shapes in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9256,7 +9338,7 @@ sub put_worksheet_shape{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_shapes' } = { 
-    	summary => 'delete all shapes in worksheet.',
+    	summary => 'Delete all shapes in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -9278,13 +9360,13 @@ sub delete_worksheet_shapes{
 #
 # DeleteWorksheetShapeRequest
 #
-# Deletes a shape in worksheet.
+# Delete a shape in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @shapeindex  int (required)  shape index in worksheet shapes.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9295,7 +9377,7 @@ sub delete_worksheet_shapes{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_shape' } = { 
-    	summary => 'Deletes a shape in worksheet.',
+    	summary => 'Delete a shape in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -9317,14 +9399,14 @@ sub delete_worksheet_shape{
 #
 # PostWorksheetShapeRequest
 #
-# Updates a shape in worksheet.
+# Update a shape in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @shapeindex  int (required)  shape index in worksheet shapes.  
 # @dto  Shape (required)  The shape description.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9335,7 +9417,7 @@ sub delete_worksheet_shape{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_shape' } = { 
-    	summary => 'Updates a shape in worksheet.',
+    	summary => 'Update a shape in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -9357,13 +9439,13 @@ sub post_worksheet_shape{
 #
 # PostWorksheetGroupShapeRequest
 #
+# Group shapes in the worksheet.
 # 
-# 
-# @name  string (required)    
-# @sheetName  string (required)    
-# @listShape  ARRAY[int?] (required)    
-# @folder  string     
-# @storageName  string      
+# @name  string (required)  The file name.  
+# @sheetName  string (required)  The worksheet name.  
+# @listShape  ARRAY[int?] (required)  Shape index array.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9374,7 +9456,7 @@ sub post_worksheet_shape{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_group_shape' } = { 
-    	summary => '',
+    	summary => 'Group shapes in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -9396,13 +9478,13 @@ sub post_worksheet_group_shape{
 #
 # PostWorksheetUngroupShapeRequest
 #
+# Ungroup shapes in the worksheet.
 # 
-# 
-# @name  string (required)    
-# @sheetName  string (required)    
+# @name  string (required)  The file name.  
+# @sheetName  string (required)  The worksheet name.  
 # @shapeindex  int (required)    
-# @folder  string     
-# @storageName  string      
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9413,7 +9495,7 @@ sub post_worksheet_group_shape{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_ungroup_shape' } = { 
-    	summary => '',
+    	summary => 'Ungroup shapes in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -9435,12 +9517,12 @@ sub post_worksheet_ungroup_shape{
 #
 # GetWorksheetSparklineGroupsRequest
 #
-# Get worksheet sparkline groups description.
+# Retrieve descriptions of sparkline groups in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9451,7 +9533,7 @@ sub post_worksheet_ungroup_shape{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_sparkline_groups' } = { 
-    	summary => 'Get worksheet sparkline groups description.',
+    	summary => 'Retrieve descriptions of sparkline groups in the worksheet.',
         params => $params,
         returns => 'SparklineGroupsResponse',
     };
@@ -9473,13 +9555,13 @@ sub get_worksheet_sparkline_groups{
 #
 # GetWorksheetSparklineGroupRequest
 #
-# Get worksheet sparkline group description.
+# Retrieve description of a sparkline group in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @sparklineIndex  int (required)  The zero based index of the element.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9490,7 +9572,7 @@ sub get_worksheet_sparkline_groups{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_sparkline_group' } = { 
-    	summary => 'Get worksheet sparkline group description.',
+    	summary => 'Retrieve description of a sparkline group in the worksheet.',
         params => $params,
         returns => 'SparklineGroupResponse',
     };
@@ -9512,12 +9594,12 @@ sub get_worksheet_sparkline_group{
 #
 # DeleteWorksheetSparklineGroupsRequest
 #
-# Delete worksheet sparkline groups description.
+# Delete sparkline groups in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9528,7 +9610,7 @@ sub get_worksheet_sparkline_group{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_sparkline_groups' } = { 
-    	summary => 'Delete worksheet sparkline groups description.',
+    	summary => 'Delete sparkline groups in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -9550,13 +9632,13 @@ sub delete_worksheet_sparkline_groups{
 #
 # DeleteWorksheetSparklineGroupRequest
 #
-# Delete worksheet sparkline group description.
+# Delete a sparkline group in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @sparklineIndex  int (required)  The zero based index of the element.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9567,7 +9649,7 @@ sub delete_worksheet_sparkline_groups{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_sparkline_group' } = { 
-    	summary => 'Delete worksheet sparkline group description.',
+    	summary => 'Delete a sparkline group in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -9589,16 +9671,16 @@ sub delete_worksheet_sparkline_group{
 #
 # PutWorksheetSparklineGroupRequest
 #
-# Put worksheet sparkline group description.
+# Add a sparkline group in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @type  string (required)  Represents the sparkline types(Line/Column/Stacked).  
 # @dataRange  string (required)  Specifies the data range of the sparkline group.  
 # @isVertical  boolean (required)  Specifies whether to plot the sparklines from the data range by row or by column.  
 # @locationRange  string (required)  Specifies where the sparklines to be placed.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9609,7 +9691,7 @@ sub delete_worksheet_sparkline_group{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_worksheet_sparkline_group' } = { 
-    	summary => 'Put worksheet sparkline group description.',
+    	summary => 'Add a sparkline group in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -9631,14 +9713,14 @@ sub put_worksheet_sparkline_group{
 #
 # PostWorksheetSparklineGroupRequest
 #
-# Post worksheet sparkline group description.
+# Update a sparkline group in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @sparklineGroupIndex  int (required)  The zero based index of the element.  
 # @sparklineGroup  SparklineGroup (required)  Spark line group description.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9649,7 +9731,7 @@ sub put_worksheet_sparkline_group{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_sparkline_group' } = { 
-    	summary => 'Post worksheet sparkline group description.',
+    	summary => 'Update a sparkline group in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -9706,11 +9788,11 @@ sub post_run_task{
 #
 # GetWorkbookDefaultStyleRequest
 #
-# Gets workbook default style description.
+# Retrieve the description of the default style for the workbook.
 # 
-# @name  string (required)  The workbook name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @name  string (required)  The file name.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9721,7 +9803,7 @@ sub post_run_task{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_workbook_default_style' } = { 
-    	summary => 'Gets workbook default style description.',
+    	summary => 'Retrieve the description of the default style for the workbook.',
         params => $params,
         returns => 'StyleResponse',
     };
@@ -9743,11 +9825,11 @@ sub get_workbook_default_style{
 #
 # GetWorkbookTextItemsRequest
 #
-# Get workbook`s text items.
+# Retrieve text items in the workbook.
 # 
-# @name  string (required)  The workbook name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @name  string (required)  The file name.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9758,7 +9840,7 @@ sub get_workbook_default_style{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_workbook_text_items' } = { 
-    	summary => 'Get workbook`s text items.',
+    	summary => 'Retrieve text items in the workbook.',
         params => $params,
         returns => 'TextItemsResponse',
     };
@@ -9780,11 +9862,11 @@ sub get_workbook_text_items{
 #
 # GetWorkbookNamesRequest
 #
-# Get workbook`s names.
+# Retrieve named ranges in the workbook.
 # 
-# @name  string (required)  The workbook name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @name  string (required)  The file name.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9795,7 +9877,7 @@ sub get_workbook_text_items{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_workbook_names' } = { 
-    	summary => 'Get workbook`s names.',
+    	summary => 'Retrieve named ranges in the workbook.',
         params => $params,
         returns => 'NamesResponse',
     };
@@ -9817,12 +9899,12 @@ sub get_workbook_names{
 #
 # PutWorkbookNameRequest
 #
-# Defines a new name in workbook.
+# Define a new name in the workbook.
 # 
-# @name  string (required)  The workbook name.  
-# @newName  Name (required)    
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @name  string (required)  The file name.  
+# @newName  Name (required)  Name  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9833,7 +9915,7 @@ sub get_workbook_names{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_workbook_name' } = { 
-    	summary => 'Defines a new name in workbook.',
+    	summary => 'Define a new name in the workbook.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -9855,12 +9937,12 @@ sub put_workbook_name{
 #
 # GetWorkbookNameRequest
 #
-# Gets workbook`s name description.
+# Retrieve description of a named range in the workbook.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @nameName  string (required)  The name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9871,7 +9953,7 @@ sub put_workbook_name{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_workbook_name' } = { 
-    	summary => 'Gets workbook`s name description.',
+    	summary => 'Retrieve description of a named range in the workbook.',
         params => $params,
         returns => 'NameResponse',
     };
@@ -9893,13 +9975,13 @@ sub get_workbook_name{
 #
 # PostWorkbookNameRequest
 #
-# Update workbook`s name.
+# Update a named range in the workbook.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @nameName  string (required)  the Aspose.Cells.Name element name.  
-# @newName  Name (required)  new name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @newName  Name (required)  Namenew name.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9910,7 +9992,7 @@ sub get_workbook_name{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_workbook_name' } = { 
-    	summary => 'Update workbook`s name.',
+    	summary => 'Update a named range in the workbook.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -9932,12 +10014,12 @@ sub post_workbook_name{
 #
 # GetWorkbookNameValueRequest
 #
-# Gets workbook`s name value.
+# Retrieve the value of a named range in the workbook.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @nameName  string (required)  the Aspose.Cells.Name element name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9948,7 +10030,7 @@ sub post_workbook_name{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_workbook_name_value' } = { 
-    	summary => 'Gets workbook`s name value.',
+    	summary => 'Retrieve the value of a named range in the workbook.',
         params => $params,
         returns => 'RangeValueResponse',
     };
@@ -9970,11 +10052,11 @@ sub get_workbook_name_value{
 #
 # DeleteWorkbookNamesRequest
 #
-# Delete workbook`s names.
+# Delete all named ranges in the workbook.
 # 
-# @name  string (required)  The workbook name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @name  string (required)  The file name.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -9985,7 +10067,7 @@ sub get_workbook_name_value{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_workbook_names' } = { 
-    	summary => 'Delete workbook`s names.',
+    	summary => 'Delete all named ranges in the workbook.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -10007,12 +10089,12 @@ sub delete_workbook_names{
 #
 # DeleteWorkbookNameRequest
 #
-# Gets workbook`s name description.
+# Delete a named range in the workbook.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @nameName  string (required)  the Aspose.Cells.Name element name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -10023,7 +10105,7 @@ sub delete_workbook_names{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_workbook_name' } = { 
-    	summary => 'Gets workbook`s name description.',
+    	summary => 'Delete a named range in the workbook.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -10045,12 +10127,12 @@ sub delete_workbook_name{
 #
 # PostWorkbooksMergeRequest
 #
-# Merge workbooks.
+# Merge a workbook into the existing workbook.
 # 
-# @name  string (required)  Workbook name.  
+# @name  string (required)  The file name.  
 # @mergeWith  string (required)  The workbook to merge with.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.  
 # @mergedStorageName  string   Storage name.   
 #
 {
@@ -10062,7 +10144,7 @@ sub delete_workbook_name{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_workbooks_merge' } = { 
-    	summary => 'Merge workbooks.',
+    	summary => 'Merge a workbook into the existing workbook.',
         params => $params,
         returns => 'WorkbookResponse',
     };
@@ -10084,12 +10166,12 @@ sub post_workbooks_merge{
 #
 # PostWorkbooksTextSearchRequest
 #
-# Search text in workbook.
+# Search for text in the workbook.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @text  string (required)  Text sample.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -10100,7 +10182,7 @@ sub post_workbooks_merge{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_workbooks_text_search' } = { 
-    	summary => 'Search text in workbook.',
+    	summary => 'Search for text in the workbook.',
         params => $params,
         returns => 'TextItemsResponse',
     };
@@ -10122,13 +10204,13 @@ sub post_workbooks_text_search{
 #
 # PostWorkbookTextReplaceRequest
 #
-# Replaces text in workbook.
+# Replace text in the workbook.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @oldValue  string (required)  The old value.  
 # @newValue  string (required)  The new value.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -10139,7 +10221,7 @@ sub post_workbooks_text_search{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_workbook_text_replace' } = { 
-    	summary => 'Replaces text in workbook.',
+    	summary => 'Replace text in the workbook.',
         params => $params,
         returns => 'WorkbookReplaceResponse',
     };
@@ -10161,14 +10243,14 @@ sub post_workbook_text_replace{
 #
 # PostWorkbookGetSmartMarkerResultRequest
 #
-# Smart marker processing result.
+# Smart marker processing.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @xmlFile  string   The xml file full path, if empty the data is read from request body.  
-# @folder  string   Original workbook folder.  
-# @outPath  string   Path to save result  
-# @storageName  string   Storage name.  
-# @outStorageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @outPath  string   The path to save result  
+# @storageName  string   The storage name where the file is situated.  
+# @outStorageName  string   The storage name where the result file is situated.   
 #
 {
     my $params = {
@@ -10179,7 +10261,7 @@ sub post_workbook_text_replace{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_workbook_get_smart_marker_result' } = { 
-    	summary => 'Smart marker processing result.',
+    	summary => 'Smart marker processing.',
         params => $params,
         returns => 'string',
     };
@@ -10201,14 +10283,14 @@ sub post_workbook_get_smart_marker_result{
 #
 # PutWorkbookCreateRequest
 #
-# Creates new workbook using deferent methods.
+# Create a new workbook using different methods.
 # 
 # @name  string (required)  The new document name.  
 # @templateFile  string   The template file, if the data not provided default workbook is created.  
 # @dataFile  string   Smart marker data file, if the data not provided the request content is checked for the data.  
 # @isWriteOver  boolean   Specifies whether to write over targer file.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.  
 # @checkExcelRestriction  boolean      
 #
 {
@@ -10220,7 +10302,7 @@ sub post_workbook_get_smart_marker_result{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_workbook_create' } = { 
-    	summary => 'Creates new workbook using deferent methods.',
+    	summary => 'Create a new workbook using different methods.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -10242,9 +10324,9 @@ sub put_workbook_create{
 #
 # PostWorkbookSplitRequest
 #
-# Splits workbook.
+# Split the workbook with a specific format.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @format  string   Split format.  
 # @outFolder  string     
 # @from  int   Start worksheet index.  
@@ -10252,8 +10334,8 @@ sub put_workbook_create{
 # @horizontalResolution  int   Image horizontal resolution.  
 # @verticalResolution  int   Image vertical resolution.  
 # @splitNameRule  string   rule name : sheetname  newguid   
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.  
 # @outStorageName  string      
 #
 {
@@ -10265,7 +10347,7 @@ sub put_workbook_create{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_workbook_split' } = { 
-    	summary => 'Splits workbook.',
+    	summary => 'Split the workbook with a specific format.',
         params => $params,
         returns => 'SplitResultResponse',
     };
@@ -10287,13 +10369,13 @@ sub post_workbook_split{
 #
 # PostWorkbookCalculateFormulaRequest
 #
-# Calculate all formulas in workbook.
+# Calculate all formulas in the workbook.
 # 
-# @name  string (required)  The workbook name.  
-# @options  CalculationOptions   Calculation Options.  
+# @name  string (required)  The file name.  
+# @options  CalculationOptions   CalculationOptions Calculation Options.  
 # @ignoreError  boolean   ignore Error.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -10304,7 +10386,7 @@ sub post_workbook_split{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_workbook_calculate_formula' } = { 
-    	summary => 'Calculate all formulas in workbook.',
+    	summary => 'Calculate all formulas in the workbook.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -10326,14 +10408,14 @@ sub post_workbook_calculate_formula{
 #
 # PostAutofitWorkbookRowsRequest
 #
-# Autofit workbook rows.
+# Autofit rows in the workbook.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @startRow  int   Start row.  
 # @endRow  int   End row.  
 # @onlyAuto  boolean   Only auto.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -10344,7 +10426,7 @@ sub post_workbook_calculate_formula{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_autofit_workbook_rows' } = { 
-    	summary => 'Autofit workbook rows.',
+    	summary => 'Autofit rows in the workbook.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -10366,13 +10448,13 @@ sub post_autofit_workbook_rows{
 #
 # PostAutofitWorkbookColumnsRequest
 #
-# 
+# Autofit columns in the workbook.
 # 
 # @name  string (required)    
-# @startColumn  int     
-# @endColumn  int     
-# @folder  string     
-# @storageName  string      
+# @startColumn  int   The start column index.  
+# @endColumn  int   The end column index.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -10383,7 +10465,7 @@ sub post_autofit_workbook_rows{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_autofit_workbook_columns' } = { 
-    	summary => '',
+    	summary => 'Autofit columns in the workbook.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -10405,11 +10487,11 @@ sub post_autofit_workbook_columns{
 #
 # GetWorkbookSettingsRequest
 #
-# Gets workbook settings description.
+# Retrieve descriptions of workbook settings.
 # 
-# @name  string (required)  The workbook name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @name  string (required)  The file name.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -10420,7 +10502,7 @@ sub post_autofit_workbook_columns{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_workbook_settings' } = { 
-    	summary => 'Gets workbook settings description.',
+    	summary => 'Retrieve descriptions of workbook settings.',
         params => $params,
         returns => 'WorkbookSettingsResponse',
     };
@@ -10442,12 +10524,12 @@ sub get_workbook_settings{
 #
 # PostWorkbookSettingsRequest
 #
-# Updates workbook setting.
+# Update setting in the workbook.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @settings  WorkbookSettings (required)  Workbook Setting description.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -10458,7 +10540,7 @@ sub get_workbook_settings{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_workbook_settings' } = { 
-    	summary => 'Updates workbook setting.',
+    	summary => 'Update setting in the workbook.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -10480,12 +10562,12 @@ sub post_workbook_settings{
 #
 # PutWorkbookBackgroundRequest
 #
-# Set workbook background.
+# Set background in the workbook.
 # 
-# @name  string (required)  The workbook name.  
-# @picPath  string   picture full path.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.  
+# @name  string (required)  The file name.  
+# @picPath  string   The picture full path.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.  
 # @File  string   File to upload   
 #
 {
@@ -10497,7 +10579,7 @@ sub post_workbook_settings{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_workbook_background' } = { 
-    	summary => 'Set workbook background.',
+    	summary => 'Set background in the workbook.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -10519,11 +10601,11 @@ sub put_workbook_background{
 #
 # DeleteWorkbookBackgroundRequest
 #
-# Delete workbook background.
+# Delete background in the workbook.
 # 
-# @name  string (required)  The workbook name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @name  string (required)  The file name.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -10534,7 +10616,7 @@ sub put_workbook_background{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_workbook_background' } = { 
-    	summary => 'Delete workbook background.',
+    	summary => 'Delete background in the workbook.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -10556,12 +10638,12 @@ sub delete_workbook_background{
 #
 # PutWorkbookWaterMarkerRequest
 #
-# Set workbook water marker.
+# Set water marker in the workbook.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @textWaterMarkerRequest  TextWaterMarkerRequest (required)  Text water marker request  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -10572,7 +10654,7 @@ sub delete_workbook_background{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_workbook_water_marker' } = { 
-    	summary => 'Set workbook water marker.',
+    	summary => 'Set water marker in the workbook.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -10594,11 +10676,11 @@ sub put_workbook_water_marker{
 #
 # GetPageCountRequest
 #
+# Get page count in the workbook.
 # 
-# 
-# @name  string (required)    
-# @folder  string     
-# @storageName  string      
+# @name  string (required)  The file name.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -10609,7 +10691,7 @@ sub put_workbook_water_marker{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_page_count' } = { 
-    	summary => '',
+    	summary => 'Get page count in the workbook.',
         params => $params,
         returns => 'int',
     };
@@ -10631,11 +10713,11 @@ sub get_page_count{
 #
 # GetWorksheetsRequest
 #
-# Get worksheets description.
+# Retrieve the description of worksheets from a workbook.
 # 
-# @name  string (required)  The workbook name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @name  string (required)  The file name.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -10646,7 +10728,7 @@ sub get_page_count{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheets' } = { 
-    	summary => 'Get worksheets description.',
+    	summary => 'Retrieve the description of worksheets from a workbook.',
         params => $params,
         returns => 'WorksheetsResponse',
     };
@@ -10668,17 +10750,17 @@ sub get_worksheets{
 #
 # GetWorksheetWithFormatRequest
 #
-# Gets worksheet in some format.
+# Retrieve the worksheet in a specified format from the workbook.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @format  string   Export format(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers).  
 # @verticalResolution  int   Image vertical resolution.  
 # @horizontalResolution  int   Image horizontal resolution.  
 # @area  string   Represents the range to be printed.  
 # @pageIndex  int   Represents the page to be printed  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -10689,7 +10771,7 @@ sub get_worksheets{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_with_format' } = { 
-    	summary => 'Gets worksheet in some format.',
+    	summary => 'Retrieve the worksheet in a specified format from the workbook.',
         params => $params,
         returns => 'string',
     };
@@ -10711,13 +10793,13 @@ sub get_worksheet_with_format{
 #
 # PutChangeVisibilityWorksheetRequest
 #
-# Changes worksheet visibility.
+# Change worksheet visibility in the workbook.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  Worksheet name.  
 # @isVisible  boolean (required)  New worksheet visibility value.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -10728,7 +10810,7 @@ sub get_worksheet_with_format{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_change_visibility_worksheet' } = { 
-    	summary => 'Changes worksheet visibility.',
+    	summary => 'Change worksheet visibility in the workbook.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -10750,12 +10832,12 @@ sub put_change_visibility_worksheet{
 #
 # PutActiveWorksheetRequest
 #
-# Active sheet
+# Set active worksheet index in the workbook.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -10766,7 +10848,7 @@ sub put_change_visibility_worksheet{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_active_worksheet' } = { 
-    	summary => 'Active sheet',
+    	summary => 'Set active worksheet index in the workbook.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -10788,15 +10870,15 @@ sub put_active_worksheet{
 #
 # PutInsertNewWorksheetRequest
 #
-# Inserts new worksheet in workbook.
+# Insert a new worksheet in the workbook.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @index  int (required)    
 # @sheettype  string (required)  Specifies the worksheet type(VB/Worksheet/Chart/BIFF4Macro/InternationalMacro/Other/Dialog).  
 # @newsheetname  string     
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -10807,7 +10889,7 @@ sub put_active_worksheet{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_insert_new_worksheet' } = { 
-    	summary => 'Inserts new worksheet in workbook.',
+    	summary => 'Insert a new worksheet in the workbook.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -10829,14 +10911,14 @@ sub put_insert_new_worksheet{
 #
 # PutAddNewWorksheetRequest
 #
-# Adds new worksheet in workbook.
+# Add a new worksheet in the workbook.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The new sheet name.  
 # @position  int   The new sheet position.  
 # @sheettype  string   Specifies the worksheet type(VB/Worksheet/Chart/BIFF4Macro/InternationalMacro/Other/Dialog).  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -10847,7 +10929,7 @@ sub put_insert_new_worksheet{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_add_new_worksheet' } = { 
-    	summary => 'Adds new worksheet in workbook.',
+    	summary => 'Add a new worksheet in the workbook.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -10869,12 +10951,12 @@ sub put_add_new_worksheet{
 #
 # DeleteWorksheetRequest
 #
-# Deletes a worksheet in workbook.
+# Delete a worksheet in the workbook.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -10885,7 +10967,7 @@ sub put_add_new_worksheet{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet' } = { 
-    	summary => 'Deletes a worksheet in workbook.',
+    	summary => 'Delete a worksheet in the workbook.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -10907,12 +10989,12 @@ sub delete_worksheet{
 #
 # DeleteWorksheetsRequest
 #
-# 
+# Delete matched worksheets in the workbook.
 # 
 # @name  string (required)    
 # @matchCondition  MatchConditionRequest     
-# @folder  string     
-# @storageName  string      
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -10923,7 +11005,7 @@ sub delete_worksheet{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheets' } = { 
-    	summary => '',
+    	summary => 'Delete matched worksheets in the workbook.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -10945,13 +11027,13 @@ sub delete_worksheets{
 #
 # PostMoveWorksheetRequest
 #
-# Move worksheet in workbook.
+# Move worksheet in the workbook.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @moving  WorksheetMovingRequest (required)  WorksheetMovingRequest with moving parameters.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -10962,7 +11044,7 @@ sub delete_worksheets{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_move_worksheet' } = { 
-    	summary => 'Move worksheet in workbook.',
+    	summary => 'Move worksheet in the workbook.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -10984,13 +11066,13 @@ sub post_move_worksheet{
 #
 # PutProtectWorksheetRequest
 #
-# Protects worksheet.
+# Protect worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @protectParameter  ProtectSheetParameter (required)  ProtectSheetParameter with protection settings.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11001,7 +11083,7 @@ sub post_move_worksheet{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_protect_worksheet' } = { 
-    	summary => 'Protects worksheet.',
+    	summary => 'Protect worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -11023,13 +11105,13 @@ sub put_protect_worksheet{
 #
 # DeleteUnprotectWorksheetRequest
 #
-# Unprotects worksheet.
+# Unprotect worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @protectParameter  ProtectSheetParameter (required)  WorksheetResponse with protection settings. Only password is used here.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11040,7 +11122,7 @@ sub put_protect_worksheet{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_unprotect_worksheet' } = { 
-    	summary => 'Unprotects worksheet.',
+    	summary => 'Unprotect worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -11062,12 +11144,12 @@ sub delete_unprotect_worksheet{
 #
 # GetWorksheetTextItemsRequest
 #
-# Get text items in worksheet.
+# Retrieve text items in the worksheet.
 # 
 # @name  string (required)  Workbook name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   The workbook`s folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11078,7 +11160,7 @@ sub delete_unprotect_worksheet{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_text_items' } = { 
-    	summary => 'Get text items in worksheet.',
+    	summary => 'Retrieve text items in the worksheet.',
         params => $params,
         returns => 'TextItemsResponse',
     };
@@ -11100,12 +11182,12 @@ sub get_worksheet_text_items{
 #
 # GetWorksheetCommentsRequest
 #
-# Get comments description in worksheet.
+# Retrieve the description of comments in the worksheet.
 # 
-# @name  string (required)  Workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11116,7 +11198,7 @@ sub get_worksheet_text_items{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_comments' } = { 
-    	summary => 'Get comments description in worksheet.',
+    	summary => 'Retrieve the description of comments in the worksheet.',
         params => $params,
         returns => 'CommentsResponse',
     };
@@ -11138,13 +11220,13 @@ sub get_worksheet_comments{
 #
 # GetWorksheetCommentRequest
 #
-# Gets comment by cell name in worksheet.
+# Retrieve the description of comment in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @cellName  string (required)  The cell name  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11155,7 +11237,7 @@ sub get_worksheet_comments{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_comment' } = { 
-    	summary => 'Gets comment by cell name in worksheet.',
+    	summary => 'Retrieve the description of comment in the worksheet.',
         params => $params,
         returns => 'CommentResponse',
     };
@@ -11177,14 +11259,14 @@ sub get_worksheet_comment{
 #
 # PutWorksheetCommentRequest
 #
-# Adds cell comment in worksheet.
+# Add cell comment in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @cellName  string (required)  The cell name.  
 # @comment  Comment (required)  Comment object.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11195,7 +11277,7 @@ sub get_worksheet_comment{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_worksheet_comment' } = { 
-    	summary => 'Adds cell comment in worksheet.',
+    	summary => 'Add cell comment in the worksheet.',
         params => $params,
         returns => 'CommentResponse',
     };
@@ -11217,14 +11299,14 @@ sub put_worksheet_comment{
 #
 # PostWorksheetCommentRequest
 #
-# Updates cell comment in worksheet.
+# Update cell comment in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @cellName  string (required)  The cell name.  
 # @comment  Comment (required)  Comment object.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11235,7 +11317,7 @@ sub put_worksheet_comment{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_comment' } = { 
-    	summary => 'Updates cell comment in worksheet.',
+    	summary => 'Update cell comment in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -11257,13 +11339,13 @@ sub post_worksheet_comment{
 #
 # DeleteWorksheetCommentRequest
 #
-# Deletes cell comment in worksheet.
+# Delete cell comment in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @cellName  string (required)  The cell name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11274,7 +11356,7 @@ sub post_worksheet_comment{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_comment' } = { 
-    	summary => 'Deletes cell comment in worksheet.',
+    	summary => 'Delete cell comment in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -11296,12 +11378,12 @@ sub delete_worksheet_comment{
 #
 # DeleteWorksheetCommentsRequest
 #
-# Delete all comments in worksheet.
+# Delete all comments in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11312,7 +11394,7 @@ sub delete_worksheet_comment{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_comments' } = { 
-    	summary => 'Delete all comments in worksheet.',
+    	summary => 'Delete all comments in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -11336,10 +11418,10 @@ sub delete_worksheet_comments{
 #
 # Get worksheet merged cells.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The workseet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11372,13 +11454,13 @@ sub get_worksheet_merged_cells{
 #
 # GetWorksheetMergedCellRequest
 #
-# Gets merged cell description by its index in worksheet.
+# Retrieve description of a merged cell by its index in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  Worksheet name.  
 # @mergedCellIndex  int (required)  Merged cell index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11389,7 +11471,7 @@ sub get_worksheet_merged_cells{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_merged_cell' } = { 
-    	summary => 'Gets merged cell description by its index in worksheet.',
+    	summary => 'Retrieve description of a merged cell by its index in the worksheet.',
         params => $params,
         returns => 'MergedCellResponse',
     };
@@ -11411,13 +11493,13 @@ sub get_worksheet_merged_cell{
 #
 # GetWorksheetCalculateFormulaRequest
 #
-# Calculates formula value in worksheet.
+# Calculate formula in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
-# @sheetName  string (required)  Worksheet name.  
+# @name  string (required)  The file name.  
+# @sheetName  string (required)  The worksheet name.  
 # @formula  string (required)  The formula.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11428,7 +11510,7 @@ sub get_worksheet_merged_cell{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_calculate_formula' } = { 
-    	summary => 'Calculates formula value in worksheet.',
+    	summary => 'Calculate formula in the worksheet.',
         params => $params,
         returns => 'SingleValueResponse',
     };
@@ -11450,13 +11532,13 @@ sub get_worksheet_calculate_formula{
 #
 # PostWorksheetCalculateFormulaRequest
 #
-# Calculates formula value in worksheet.
+# Calculate formula in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  Worksheet name.  
 # @formula  string (required)  The formula.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11467,7 +11549,7 @@ sub get_worksheet_calculate_formula{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_calculate_formula' } = { 
-    	summary => 'Calculates formula value in worksheet.',
+    	summary => 'Calculate formula in the worksheet.',
         params => $params,
         returns => 'SingleValueResponse',
     };
@@ -11489,9 +11571,9 @@ sub post_worksheet_calculate_formula{
 #
 # PostWorksheetTextSearchRequest
 #
-# Searchs text in worksheet.
+# Search for text in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @text  string (required)  Text to search.  
 # @folder  string   Original workbook folder.  
@@ -11506,7 +11588,7 @@ sub post_worksheet_calculate_formula{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_text_search' } = { 
-    	summary => 'Searchs text in worksheet.',
+    	summary => 'Search for text in the worksheet.',
         params => $params,
         returns => 'TextItemsResponse',
     };
@@ -11526,27 +11608,27 @@ sub post_worksheet_text_search{
 }
 
 #
-# PostWorsheetTextReplaceRequest
+# PostWorksheetTextReplaceRequest
 #
-# Replaces text in worksheet.
+# Replace old text with new text in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  Worksheet name.  
 # @oldValue  string (required)  The old text to replace.  
 # @newValue  string (required)  The new text to replace by.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
        'request' =>{
-            data_type => 'PostWorsheetTextReplaceRequest',
-            description => 'PostWorsheetTextReplace Request.',
+            data_type => 'PostWorksheetTextReplaceRequest',
+            description => 'PostWorksheetTextReplace Request.',
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'post_worsheet_text_replace' } = { 
-    	summary => 'Replaces text in worksheet.',
+    __PACKAGE__->method_documentation->{ 'post_worksheet_text_replace' } = { 
+    	summary => 'Replace old text with new text in the worksheet.',
         params => $params,
         returns => 'WorksheetReplaceResponse',
     };
@@ -11554,7 +11636,7 @@ sub post_worksheet_text_search{
 #
 # @return WorksheetReplaceResponse
 #
-sub post_worsheet_text_replace{
+sub post_worksheet_text_replace{
     my ($self, %args) = @_;
     my $request = $args{'request'};
     my $response = $request->run_http_request('client' => $self->{api_client} );
@@ -11568,14 +11650,14 @@ sub post_worsheet_text_replace{
 #
 # PostWorksheetRangeSortRequest
 #
-# Sorts range in worksheet.
+# Sort a range in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @cellArea  string (required)  The area needed to sort.  
 # @dataSorter  DataSorter (required)  DataSorter with sorting settings.  
-# @folder  string   The workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11586,7 +11668,7 @@ sub post_worsheet_text_replace{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_range_sort' } = { 
-    	summary => 'Sorts range in worksheet.',
+    	summary => 'Sort a range in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -11608,15 +11690,15 @@ sub post_worksheet_range_sort{
 #
 # PostAutofitWorksheetRowRequest
 #
-# Autofits row in worksheet.
+# Autofit a row in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @rowIndex  int (required)  Row index.  
-# @firstColumn  int (required)  First column index.  
-# @lastColumn  int (required)  Last column index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @rowIndex  int (required)  The row index.  
+# @firstColumn  int (required)  The first column index.  
+# @lastColumn  int (required)  The last column index.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11627,7 +11709,7 @@ sub post_worksheet_range_sort{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_autofit_worksheet_row' } = { 
-    	summary => 'Autofits row in worksheet.',
+    	summary => 'Autofit a row in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -11649,15 +11731,15 @@ sub post_autofit_worksheet_row{
 #
 # PostAutofitWorksheetRowsRequest
 #
-# Autofit rows in worksheet.
+# Autofit rows in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @startRow  int   Start row index.  
-# @endRow  int   End row index.  
+# @startRow  int   The start row index.  
+# @endRow  int   The end row index.  
 # @onlyAuto  boolean   Autofits all rows in this worksheet.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11668,7 +11750,7 @@ sub post_autofit_worksheet_row{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_autofit_worksheet_rows' } = { 
-    	summary => 'Autofit rows in worksheet.',
+    	summary => 'Autofit rows in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -11690,15 +11772,15 @@ sub post_autofit_worksheet_rows{
 #
 # PostAutofitWorksheetColumnsRequest
 #
+# Autofit columns in the worksheet.
 # 
-# 
-# @name  string (required)    
-# @sheetName  string (required)    
-# @startColumn  int     
-# @endColumn  int     
+# @name  string (required)  The file name.  
+# @sheetName  string (required)  The worksheet name.  
+# @startColumn  int   The start column index.  
+# @endColumn  int   The end column index.  
 # @onlyAuto  boolean     
-# @folder  string     
-# @storageName  string      
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11709,7 +11791,7 @@ sub post_autofit_worksheet_rows{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_autofit_worksheet_columns' } = { 
-    	summary => '',
+    	summary => 'Autofit columns in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -11731,13 +11813,13 @@ sub post_autofit_worksheet_columns{
 #
 # PutWorksheetBackgroundRequest
 #
-# Sets background image in worksheet.
+# Set background image in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @picPath  string   picture full filename.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.  
 # @File  string   File to upload   
 #
 {
@@ -11749,7 +11831,7 @@ sub post_autofit_worksheet_columns{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_worksheet_background' } = { 
-    	summary => 'Sets background image in worksheet.',
+    	summary => 'Set background image in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -11771,12 +11853,12 @@ sub put_worksheet_background{
 #
 # DeleteWorksheetBackgroundRequest
 #
-# Delete background image in worksheet.
+# Delete background image in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11787,7 +11869,7 @@ sub put_worksheet_background{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_background' } = { 
-    	summary => 'Delete background image in worksheet.',
+    	summary => 'Delete background image in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -11809,16 +11891,16 @@ sub delete_worksheet_background{
 #
 # PutWorksheetFreezePanesRequest
 #
-# Sets freeze panes in worksheet.
+# Set freeze panes in the worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @row  int (required)  Row index.  
 # @column  int (required)  Column index.  
 # @freezedRows  int (required)  Number of visible rows in top pane, no more than row index.  
 # @freezedColumns  int (required)  Number of visible columns in left pane, no more than column index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11829,7 +11911,7 @@ sub delete_worksheet_background{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_worksheet_freeze_panes' } = { 
-    	summary => 'Sets freeze panes in worksheet.',
+    	summary => 'Set freeze panes in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -11851,16 +11933,16 @@ sub put_worksheet_freeze_panes{
 #
 # DeleteWorksheetFreezePanesRequest
 #
-# Unfreezes panes in worksheet.
+# Unfreeze panes in worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @row  int (required)  Row index.  
 # @column  int (required)  Column index.  
 # @freezedRows  int (required)  Number of visible rows in top pane, no more than row index.  
 # @freezedColumns  int (required)  Number of visible columns in left pane, no more than column index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11871,7 +11953,7 @@ sub put_worksheet_freeze_panes{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_freeze_panes' } = { 
-    	summary => 'Unfreezes panes in worksheet.',
+    	summary => 'Unfreeze panes in worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -11893,16 +11975,16 @@ sub delete_worksheet_freeze_panes{
 #
 # PostCopyWorksheetRequest
 #
-# Copies contents and formats from another worksheet.
+# Copy contents and formats from another worksheet.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @sourceSheet  string (required)  Source worksheet.  
 # @options  CopyOptions (required)  Represents the copy options.  
 # @sourceWorkbook  string   source Workbook.  
 # @sourceFolder  string   Original workbook folder.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11913,7 +11995,7 @@ sub delete_worksheet_freeze_panes{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_copy_worksheet' } = { 
-    	summary => 'Copies contents and formats from another worksheet.',
+    	summary => 'Copy contents and formats from another worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -11935,13 +12017,13 @@ sub post_copy_worksheet{
 #
 # PostRenameWorksheetRequest
 #
-# Rename worksheet.
+# Rename worksheet in the workbook.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @newname  string (required)  New worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11952,7 +12034,7 @@ sub post_copy_worksheet{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_rename_worksheet' } = { 
-    	summary => 'Rename worksheet.',
+    	summary => 'Rename worksheet in the workbook.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -11974,13 +12056,13 @@ sub post_rename_worksheet{
 #
 # PostUpdateWorksheetPropertyRequest
 #
-# Update worksheet properties.
+# Update worksheet properties in the workbook.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @sheet  Worksheet (required)  The worksheet description.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -11991,7 +12073,7 @@ sub post_rename_worksheet{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_update_worksheet_property' } = { 
-    	summary => 'Update worksheet properties.',
+    	summary => 'Update worksheet properties in the workbook.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -12013,11 +12095,11 @@ sub post_update_worksheet_property{
 #
 # GetNamedRangesRequest
 #
-# Get worksheets ranges description.
+# Retrieve descriptions of ranges in the worksheets.
 # 
-# @name  string (required)  The workbook name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @name  string (required)  The file name.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -12028,7 +12110,7 @@ sub post_update_worksheet_property{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_named_ranges' } = { 
-    	summary => 'Get worksheets ranges description.',
+    	summary => 'Retrieve descriptions of ranges in the worksheets.',
         params => $params,
         returns => 'RangesResponse',
     };
@@ -12050,12 +12132,12 @@ sub get_named_ranges{
 #
 # GetNamedRangeValueRequest
 #
-# Get range values.
+# Retrieve values in range.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @namerange  string (required)  Range name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -12066,7 +12148,7 @@ sub get_named_ranges{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_named_range_value' } = { 
-    	summary => 'Get range values.',
+    	summary => 'Retrieve values in range.',
         params => $params,
         returns => 'RangeValueResponse',
     };
@@ -12088,13 +12170,13 @@ sub get_named_range_value{
 #
 # PostUpdateWorksheetZoomRequest
 #
-# Updates worksheet zoom.
+# Update the scaling percentage in the worksheet. It should be between 10 and 400.
 # 
-# @name  string (required)  The workbook name.  
+# @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @value  int (required)  Represents the scaling factor in percentage. It should be between 10 and 400.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -12105,7 +12187,7 @@ sub get_named_range_value{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_update_worksheet_zoom' } = { 
-    	summary => 'Updates worksheet zoom.',
+    	summary => 'Update the scaling percentage in the worksheet. It should be between 10 and 400.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -12127,12 +12209,12 @@ sub post_update_worksheet_zoom{
 #
 # GetWorksheetPageCountRequest
 #
+# Get page count in the worksheet.
 # 
-# 
-# @name  string (required)    
-# @sheetName  string (required)    
-# @folder  string     
-# @storageName  string      
+# @name  string (required)  The file name.  
+# @sheetName  string (required)  The worksheet name.  
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -12143,7 +12225,7 @@ sub post_update_worksheet_zoom{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_page_count' } = { 
-    	summary => '',
+    	summary => 'Get page count in the worksheet.',
         params => $params,
         returns => 'int',
     };
@@ -12165,12 +12247,12 @@ sub get_worksheet_page_count{
 #
 # GetWorksheetValidationsRequest
 #
-# Get validations description in worksheet.
+# Retrieve descriptions of validations in the worksheet.
 # 
 # @name  string (required)  The workbook name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -12181,7 +12263,7 @@ sub get_worksheet_page_count{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_validations' } = { 
-    	summary => 'Get validations description in worksheet.',
+    	summary => 'Retrieve descriptions of validations in the worksheet.',
         params => $params,
         returns => 'ValidationsResponse',
     };
@@ -12203,13 +12285,13 @@ sub get_worksheet_validations{
 #
 # GetWorksheetValidationRequest
 #
-# Gets a validation by index in worksheet.
+# Retrieve a validation by its index in the worksheet.
 # 
 # @name  string (required)  The workbook name.  
 # @sheetName  string (required)  The worksheet name.  
 # @validationIndex  int (required)  The validation index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -12220,7 +12302,7 @@ sub get_worksheet_validations{
        }
     };
     __PACKAGE__->method_documentation->{ 'get_worksheet_validation' } = { 
-    	summary => 'Gets a validation by index in worksheet.',
+    	summary => 'Retrieve a validation by its index in the worksheet.',
         params => $params,
         returns => 'ValidationResponse',
     };
@@ -12242,13 +12324,13 @@ sub get_worksheet_validation{
 #
 # PutWorksheetValidationRequest
 #
-# Adds a validation at index in worksheet.
+# Add a validation at index in the worksheet.
 # 
 # @name  string (required)  The workbook name.  
 # @sheetName  string (required)  The worksheet name.  
 # @range  string   Specified cells area  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -12259,7 +12341,7 @@ sub get_worksheet_validation{
        }
     };
     __PACKAGE__->method_documentation->{ 'put_worksheet_validation' } = { 
-    	summary => 'Adds a validation at index in worksheet.',
+    	summary => 'Add a validation at index in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -12281,14 +12363,14 @@ sub put_worksheet_validation{
 #
 # PostWorksheetValidationRequest
 #
-# Updates a validation by index in worksheet.
+# Update a validation by index in the worksheet.
 # 
 # @name  string (required)  The workbook name.  
 # @sheetName  string (required)  The worksheet name.  
 # @validationIndex  int (required)  The validation index.  
 # @validation  Validation (required)  Validation description.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -12299,7 +12381,7 @@ sub put_worksheet_validation{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_worksheet_validation' } = { 
-    	summary => 'Updates a validation by index in worksheet.',
+    	summary => 'Update a validation by index in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -12321,13 +12403,13 @@ sub post_worksheet_validation{
 #
 # DeleteWorksheetValidationRequest
 #
-# Deletes a validation by index in worksheet.
+# Delete a validation by index in worksheet.
 # 
 # @name  string (required)  The workbook name.  
 # @sheetName  string (required)  The worksheet name.  
 # @validationIndex  int (required)  The validation index.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -12338,7 +12420,7 @@ sub post_worksheet_validation{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_validation' } = { 
-    	summary => 'Deletes a validation by index in worksheet.',
+    	summary => 'Delete a validation by index in worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };
@@ -12360,12 +12442,12 @@ sub delete_worksheet_validation{
 #
 # DeleteWorksheetValidationsRequest
 #
-# Delete all validations in worksheet.
+# Delete all validations in the worksheet.
 # 
 # @name  string (required)  The workbook name.  
 # @sheetName  string (required)  The worksheet name.  
-# @folder  string   Original workbook folder.  
-# @storageName  string   Storage name.   
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -12376,7 +12458,7 @@ sub delete_worksheet_validation{
        }
     };
     __PACKAGE__->method_documentation->{ 'delete_worksheet_validations' } = { 
-    	summary => 'Delete all validations in worksheet.',
+    	summary => 'Delete all validations in the worksheet.',
         params => $params,
         returns => 'CellsCloudResponse',
     };

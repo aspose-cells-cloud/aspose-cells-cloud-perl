@@ -20,7 +20,7 @@ provides:
     file: lib/AsposeCellsCloud/ApiFactory.pm
   AsposeCellsCloud::CellsApi:
     file: lib/AsposeCellsCloud/CellsApi.pm
-    version: 23.12.1
+    version: 24.1.1
   AsposeCellsCloud::Configuration:
     file: lib/AsposeCellsCloud/Configuration.pm
   AsposeCellsCloud::Role:
@@ -189,6 +189,8 @@ provides:
     file: lib/AsposeCellsCloud/Object/Rows.pm
   AsposeCellsCloud::Object::SaveResult:
     file: lib/AsposeCellsCloud/Object/SaveResult.pm
+  AsposeCellsCloud::Object::PaginatedSaveOptions:
+    file: lib/AsposeCellsCloud/Object/PaginatedSaveOptions.pm
   AsposeCellsCloud::Object::SingleValue:
     file: lib/AsposeCellsCloud/Object/SingleValue.pm
   AsposeCellsCloud::Object::SortKey:
@@ -925,10 +927,10 @@ provides:
     file: lib/AsposeCellsCloud/Request/GetWorksheetChartsRequest.pm
   AsposeCellsCloud::Request::GetWorksheetChartRequest:
     file: lib/AsposeCellsCloud/Request/GetWorksheetChartRequest.pm
-  AsposeCellsCloud::Request::PutWorksheetAddChartRequest:
-    file: lib/AsposeCellsCloud/Request/PutWorksheetAddChartRequest.pm
-  AsposeCellsCloud::Request::DeleteWorksheetDeleteChartRequest:
-    file: lib/AsposeCellsCloud/Request/DeleteWorksheetDeleteChartRequest.pm
+  AsposeCellsCloud::Request::PutWorksheetChartRequest:
+    file: lib/AsposeCellsCloud/Request/PutWorksheetChartRequest.pm
+  AsposeCellsCloud::Request::DeleteWorksheetChartRequest:
+    file: lib/AsposeCellsCloud/Request/DeleteWorksheetChartRequest.pm
   AsposeCellsCloud::Request::PostWorksheetChartRequest:
     file: lib/AsposeCellsCloud/Request/PostWorksheetChartRequest.pm
   AsposeCellsCloud::Request::GetWorksheetChartLegendRequest:
@@ -939,8 +941,8 @@ provides:
     file: lib/AsposeCellsCloud/Request/PutWorksheetChartLegendRequest.pm
   AsposeCellsCloud::Request::DeleteWorksheetChartLegendRequest:
     file: lib/AsposeCellsCloud/Request/DeleteWorksheetChartLegendRequest.pm
-  AsposeCellsCloud::Request::DeleteWorksheetClearChartsRequest:
-    file: lib/AsposeCellsCloud/Request/DeleteWorksheetClearChartsRequest.pm
+  AsposeCellsCloud::Request::DeleteWorksheetChartsRequest:
+    file: lib/AsposeCellsCloud/Request/DeleteWorksheetChartsRequest.pm
   AsposeCellsCloud::Request::GetWorksheetChartTitleRequest:
     file: lib/AsposeCellsCloud/Request/GetWorksheetChartTitleRequest.pm
   AsposeCellsCloud::Request::PostWorksheetChartTitleRequest:
@@ -1135,6 +1137,10 @@ provides:
     file: lib/AsposeCellsCloud/Request/GetFooterRequest.pm
   AsposeCellsCloud::Request::PostFooterRequest:
     file: lib/AsposeCellsCloud/Request/PostFooterRequest.pm
+  AsposeCellsCloud::Request::PostFitWideToPagesRequest:
+    file: lib/AsposeCellsCloud/Request/PostFitWideToPagesRequest.pm
+  AsposeCellsCloud::Request::PostFitTallToPagesRequest:
+    file: lib/AsposeCellsCloud/Request/PostFitTallToPagesRequest.pm
   AsposeCellsCloud::Request::GetWorksheetPicturesRequest:
     file: lib/AsposeCellsCloud/Request/GetWorksheetPicturesRequest.pm
   AsposeCellsCloud::Request::GetWorksheetPictureWithFormatRequest:
@@ -1369,8 +1375,8 @@ provides:
     file: lib/AsposeCellsCloud/Request/PostWorksheetCalculateFormulaRequest.pm
   AsposeCellsCloud::Request::PostWorksheetTextSearchRequest:
     file: lib/AsposeCellsCloud/Request/PostWorksheetTextSearchRequest.pm
-  AsposeCellsCloud::Request::PostWorsheetTextReplaceRequest:
-    file: lib/AsposeCellsCloud/Request/PostWorsheetTextReplaceRequest.pm
+  AsposeCellsCloud::Request::PostWorksheetTextReplaceRequest:
+    file: lib/AsposeCellsCloud/Request/PostWorksheetTextReplaceRequest.pm
   AsposeCellsCloud::Request::PostWorksheetRangeSortRequest:
     file: lib/AsposeCellsCloud/Request/PostWorksheetRangeSortRequest.pm
   AsposeCellsCloud::Request::PostAutofitWorksheetRowRequest:
@@ -1466,5 +1472,5 @@ requires:
   strict: '0'
   utf8: '0'
   warnings: '0'
-version: 23.12.1
+version: 24.1.1
 x_serialization_backend: 'CPAN::Meta::YAML version 0.018'

@@ -1,4 +1,4 @@
-use Test::More tests => 7; #TODO update number of test cases
+use Test::More tests => 9; #TODO update number of test cases
 use Test::Exception;
 
 use lib 'lib';
@@ -13,6 +13,8 @@ use AsposeCellsCloud::Request::GetHeaderRequest;
 use AsposeCellsCloud::Request::PostHeaderRequest;
 use AsposeCellsCloud::Request::GetFooterRequest;
 use AsposeCellsCloud::Request::PostFooterRequest;
+use AsposeCellsCloud::Request::PostFitWideToPagesRequest;
+use AsposeCellsCloud::Request::PostFitTallToPagesRequest;
 
 require './t/CellsTestBase.pl';
 
@@ -174,6 +176,48 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_footer(request=> $request);
         ok($result,'post_footer test OK');
+    }
+
+    #
+    # PageSetupController->post_fit_wide_to_pages  test
+    #
+    { 
+        my $remoteFolder = 'TestData/In';
+      
+        my $localName = 'Book1.xlsx';
+        my $remoteName = 'Book1.xlsx';
+
+        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
+     
+
+        my $request = AsposeCellsCloud::Request::PostFitWideToPagesRequest->new();
+        $request->{name} =  $remoteName;
+        $request->{sheet_name} =  'Sheet1';
+        $request->{folder} =  $remoteFolder;
+        $request->{storage_name} =  '';
+        my $result =  $api->post_fit_wide_to_pages(request=> $request);
+        ok($result,'post_fit_wide_to_pages test OK');
+    }
+
+    #
+    # PageSetupController->post_fit_tall_to_pages  test
+    #
+    { 
+        my $remoteFolder = 'TestData/In';
+      
+        my $localName = 'Book1.xlsx';
+        my $remoteName = 'Book1.xlsx';
+
+        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
+     
+
+        my $request = AsposeCellsCloud::Request::PostFitTallToPagesRequest->new();
+        $request->{name} =  $remoteName;
+        $request->{sheet_name} =  'Sheet1';
+        $request->{folder} =  $remoteFolder;
+        $request->{storage_name} =  '';
+        my $result =  $api->post_fit_tall_to_pages(request=> $request);
+        ok($result,'post_fit_tall_to_pages test OK');
     }
 
 

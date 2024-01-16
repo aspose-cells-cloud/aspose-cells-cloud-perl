@@ -35,7 +35,7 @@ use AsposeCellsCloud::Request::GetWorksheetMergedCellRequest;
 use AsposeCellsCloud::Request::GetWorksheetCalculateFormulaRequest;
 use AsposeCellsCloud::Request::PostWorksheetCalculateFormulaRequest;
 use AsposeCellsCloud::Request::PostWorksheetTextSearchRequest;
-use AsposeCellsCloud::Request::PostWorsheetTextReplaceRequest;
+use AsposeCellsCloud::Request::PostWorksheetTextReplaceRequest;
 use AsposeCellsCloud::Request::PostWorksheetRangeSortRequest;
 use AsposeCellsCloud::Request::PostAutofitWorksheetRowRequest;
 use AsposeCellsCloud::Request::PostAutofitWorksheetRowsRequest;
@@ -577,7 +577,7 @@ my $api = get_cells();
     }
 
     #
-    # WorksheetController->post_worsheet_text_replace  test
+    # WorksheetController->post_worksheet_text_replace  test
     #
     { 
         my $remoteFolder = 'TestData/In';
@@ -588,15 +588,15 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
 
-        my $request = AsposeCellsCloud::Request::PostWorsheetTextReplaceRequest->new();
+        my $request = AsposeCellsCloud::Request::PostWorksheetTextReplaceRequest->new();
         $request->{name} =  $remoteName;
         $request->{sheet_name} =  'Sheet1';
         $request->{old_value} =  '123';
         $request->{new_value} =  '456';
         $request->{folder} =  $remoteFolder;
         $request->{storage_name} =  '';
-        my $result =  $api->post_worsheet_text_replace(request=> $request);
-        ok($result,'post_worsheet_text_replace test OK');
+        my $result =  $api->post_worksheet_text_replace(request=> $request);
+        ok($result,'post_worksheet_text_replace test OK');
     }
 
     #

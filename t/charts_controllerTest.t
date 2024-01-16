@@ -10,14 +10,14 @@ use AsposeCellsCloud::Object::Legend;
 use AsposeCellsCloud::Object::Title;
 use AsposeCellsCloud::Request::GetWorksheetChartsRequest;
 use AsposeCellsCloud::Request::GetWorksheetChartRequest;
-use AsposeCellsCloud::Request::PutWorksheetAddChartRequest;
-use AsposeCellsCloud::Request::DeleteWorksheetDeleteChartRequest;
+use AsposeCellsCloud::Request::PutWorksheetChartRequest;
+use AsposeCellsCloud::Request::DeleteWorksheetChartRequest;
 use AsposeCellsCloud::Request::PostWorksheetChartRequest;
 use AsposeCellsCloud::Request::GetWorksheetChartLegendRequest;
 use AsposeCellsCloud::Request::PostWorksheetChartLegendRequest;
 use AsposeCellsCloud::Request::PutWorksheetChartLegendRequest;
 use AsposeCellsCloud::Request::DeleteWorksheetChartLegendRequest;
-use AsposeCellsCloud::Request::DeleteWorksheetClearChartsRequest;
+use AsposeCellsCloud::Request::DeleteWorksheetChartsRequest;
 use AsposeCellsCloud::Request::GetWorksheetChartTitleRequest;
 use AsposeCellsCloud::Request::PostWorksheetChartTitleRequest;
 use AsposeCellsCloud::Request::PutWorksheetChartTitleRequest;
@@ -72,7 +72,7 @@ my $api = get_cells();
     }
 
     #
-    # ChartsController->put_worksheet_add_chart  test
+    # ChartsController->put_worksheet_chart  test
     #
     { 
         my $remoteFolder = 'TestData/In';
@@ -83,7 +83,7 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
 
-        my $request = AsposeCellsCloud::Request::PutWorksheetAddChartRequest->new();
+        my $request = AsposeCellsCloud::Request::PutWorksheetChartRequest->new();
         $request->{name} =  $remoteName;
         $request->{sheet_name} =  'Sheet4';
         $request->{chart_type} =  'Pie';
@@ -96,12 +96,12 @@ my $api = get_cells();
         $request->{title} =  'Aspose Chart';
         $request->{folder} =  $remoteFolder;
         $request->{storage_name} =  '';
-        my $result =  $api->put_worksheet_add_chart(request=> $request);
-        ok($result,'put_worksheet_add_chart test OK');
+        my $result =  $api->put_worksheet_chart(request=> $request);
+        ok($result,'put_worksheet_chart test OK');
     }
 
     #
-    # ChartsController->delete_worksheet_delete_chart  test
+    # ChartsController->delete_worksheet_chart  test
     #
     { 
         my $remoteFolder = 'TestData/In';
@@ -112,14 +112,14 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
 
-        my $request = AsposeCellsCloud::Request::DeleteWorksheetDeleteChartRequest->new();
+        my $request = AsposeCellsCloud::Request::DeleteWorksheetChartRequest->new();
         $request->{name} =  $remoteName;
         $request->{sheet_name} =  'Sheet4';
         $request->{chart_index} =  0;
         $request->{folder} =  $remoteFolder;
         $request->{storage_name} =  '';
-        my $result =  $api->delete_worksheet_delete_chart(request=> $request);
-        ok($result,'delete_worksheet_delete_chart test OK');
+        my $result =  $api->delete_worksheet_chart(request=> $request);
+        ok($result,'delete_worksheet_chart test OK');
     }
 
     #
@@ -240,7 +240,7 @@ my $api = get_cells();
     }
 
     #
-    # ChartsController->delete_worksheet_clear_charts  test
+    # ChartsController->delete_worksheet_charts  test
     #
     { 
         my $remoteFolder = 'TestData/In';
@@ -251,13 +251,13 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
 
-        my $request = AsposeCellsCloud::Request::DeleteWorksheetClearChartsRequest->new();
+        my $request = AsposeCellsCloud::Request::DeleteWorksheetChartsRequest->new();
         $request->{name} =  $remoteName;
         $request->{sheet_name} =  'Sheet4';
         $request->{folder} =  $remoteFolder;
         $request->{storage_name} =  '';
-        my $result =  $api->delete_worksheet_clear_charts(request=> $request);
-        ok($result,'delete_worksheet_clear_charts test OK');
+        my $result =  $api->delete_worksheet_charts(request=> $request);
+        ok($result,'delete_worksheet_charts test OK');
     }
 
     #

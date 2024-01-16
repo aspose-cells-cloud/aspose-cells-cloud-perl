@@ -532,7 +532,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -556,7 +556,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -580,7 +580,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -604,7 +604,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -628,7 +628,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -652,7 +652,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -676,7 +676,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -700,7 +700,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -724,7 +724,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -748,7 +748,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -772,7 +772,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -796,7 +796,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -820,7 +820,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -844,7 +844,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -868,7 +868,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -892,7 +892,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -916,7 +916,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -940,7 +940,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -964,7 +964,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -988,7 +988,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -1012,7 +1012,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -1036,7 +1036,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -1060,7 +1060,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -1084,7 +1084,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -1108,7 +1108,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -1132,7 +1132,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -1156,7 +1156,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }
@@ -1180,7 +1180,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
         $request->{file} =  $mapFiles;
         $request->{datasource} =  'ds';
-        $request->{format} =  $format;
+        $request->{out_format} =  $format;
         my $result =  $api->post_assemble(request=> $request);
         ok($result,'post_assemble test OK');
     }

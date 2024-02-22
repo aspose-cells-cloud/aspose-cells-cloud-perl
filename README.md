@@ -20,14 +20,11 @@ Perl Cloud SDK wraps Aspose.Cells Cloud API. The SDK enhances your Android apps 
 - Fetch the required shape from worksheet.
 - Leverage the power of named ranges.
 
-## Feature & Enhancements in Version 24.1.1
+## Feature & Enhancements in Version 24.2.1
 
 Full list of issues covering all changes in this release:
 
-- Fixed spelling mistakes for several functions.
-- Add the PostFitTallToPages method for page setup controller.
-- Add the PostFitWideToPages method for page setup controller.
-- Optimize save options about paginated.
+- Add the analyze excel api for analyze controller..
 
  
 ## Read & Write Spreadsheet Formats

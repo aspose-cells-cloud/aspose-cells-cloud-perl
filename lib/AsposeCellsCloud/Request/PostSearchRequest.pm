@@ -59,7 +59,7 @@ sub new {
 
 
 # Run Operation Request
-# PostSearchRequest.File : Find content  ,
+# PostSearchRequest.File : File to upload  ,
 # PostSearchRequest.text : Find content  ,
 # PostSearchRequest.password : The password needed to open an Excel file.  ,
 # PostSearchRequest.sheetname : The worksheet name. Locate the specified text content in the worksheet.  ,
@@ -138,7 +138,7 @@ __PACKAGE__->method_documentation({
      'file' => {
      	datatype => 'string',
      	base_name => 'File',
-     	description => 'Find content',
+     	description => 'File to upload',
      	format => '',
      	read_only => '',
      		},

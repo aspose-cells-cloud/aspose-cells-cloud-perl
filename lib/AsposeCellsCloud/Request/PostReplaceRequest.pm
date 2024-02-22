@@ -59,7 +59,7 @@ sub new {
 
 
 # Run Operation Request
-# PostReplaceRequest.File : Find content  ,
+# PostReplaceRequest.File : File to upload  ,
 # PostReplaceRequest.text : Find content  ,
 # PostReplaceRequest.newtext : Replace content  ,
 # PostReplaceRequest.password : The password needed to open an Excel file.  ,
@@ -143,7 +143,7 @@ __PACKAGE__->method_documentation({
      'file' => {
      	datatype => 'string',
      	base_name => 'File',
-     	description => 'Find content',
+     	description => 'File to upload',
      	format => '',
      	read_only => '',
      		},

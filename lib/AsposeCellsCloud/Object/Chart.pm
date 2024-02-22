@@ -395,14 +395,14 @@ __PACKAGE__->method_documentation({
      'title' => {
      	datatype => 'LinkElement',
      	base_name => 'Title',
-     	description => 'Gets the chart`s title.',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
      'type' => {
      	datatype => 'string',
      	base_name => 'Type',
-     	description => 'Gets or sets a chart`s type.',
+     	description => '',
      	format => '',
      	read_only => '',
      		},

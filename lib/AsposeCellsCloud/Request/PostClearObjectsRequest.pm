@@ -59,7 +59,7 @@ sub new {
 
 
 # Run Operation Request
-# PostClearObjectsRequest.File : chart/comment/picture/shape/listobject/hyperlink/oleobject/pivottable/validation/Background  ,
+# PostClearObjectsRequest.File : File to upload  ,
 # PostClearObjectsRequest.objecttype : chart/comment/picture/shape/listobject/hyperlink/oleobject/pivottable/validation/Background  ,
 # PostClearObjectsRequest.sheetname : The worksheet name, specify the scope of the deletion.  ,
 # PostClearObjectsRequest.outFormat : The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)  ,
@@ -148,7 +148,7 @@ __PACKAGE__->method_documentation({
      'file' => {
      	datatype => 'string',
      	base_name => 'File',
-     	description => 'chart/comment/picture/shape/listobject/hyperlink/oleobject/pivottable/validation/Background',
+     	description => 'File to upload',
      	format => '',
      	read_only => '',
      		},

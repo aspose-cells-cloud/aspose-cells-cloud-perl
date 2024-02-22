@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::Color;
+package AsposeCellsCloud::Object::AnalyzedTableDescription;
 
 require 5.6.0;
 use strict;
@@ -35,7 +35,9 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
- 
+use AsposeCellsCloud::Object::AnalyzedColumnDescription;
+use AsposeCellsCloud::Object::DiscoverChart;
+use AsposeCellsCloud::Object::DiscoverPivotTable; 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -118,55 +120,163 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => 'Color.',
-                                  class => 'Color',
+__PACKAGE__->class_documentation({description => '',
+                                  class => 'AnalyzedTableDescription',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'a' => {
-     	datatype => 'int',
-     	base_name => 'A',
-     	description => 'Gets the alpha component value of this System.Drawing.Color structure.            ',
+     'name' => {
+     	datatype => 'string',
+     	base_name => 'Name',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'r' => {
-     	datatype => 'int',
-     	base_name => 'R',
-     	description => 'Gets the red component value of this System.Drawing.Color structure.            ',
+     'sheet_name' => {
+     	datatype => 'string',
+     	base_name => 'SheetName',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'g' => {
-     	datatype => 'int',
-     	base_name => 'G',
-     	description => 'Gets the green component value of this System.Drawing.Color structure.',
+     'columns' => {
+     	datatype => 'ARRAY[AnalyzedColumnDescription]',
+     	base_name => 'Columns',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'b' => {
+     'date_columns' => {
+     	datatype => 'ARRAY[int?]',
+     	base_name => 'DateColumns',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'number_columns' => {
+     	datatype => 'ARRAY[int?]',
+     	base_name => 'NumberColumns',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'text_columns' => {
+     	datatype => 'ARRAY[int?]',
+     	base_name => 'TextColumns',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'exception_columns' => {
+     	datatype => 'ARRAY[int?]',
+     	base_name => 'ExceptionColumns',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'has_table_header_row' => {
+     	datatype => 'boolean',
+     	base_name => 'HasTableHeaderRow',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'has_table_total_row' => {
+     	datatype => 'boolean',
+     	base_name => 'HasTableTotalRow',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'start_data_column_index' => {
      	datatype => 'int',
-     	base_name => 'B',
-     	description => 'Gets the blue component value of this System.Drawing.Color structure.            ',
+     	base_name => 'StartDataColumnIndex',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'end_data_column_index' => {
+     	datatype => 'int',
+     	base_name => 'EndDataColumnIndex',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'start_data_row_index' => {
+     	datatype => 'int',
+     	base_name => 'StartDataRowIndex',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'end_data_row_index' => {
+     	datatype => 'int',
+     	base_name => 'EndDataRowIndex',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'thumbnail' => {
+     	datatype => 'string',
+     	base_name => 'Thumbnail',
+     	description => 'Base64String',
+     	format => '',
+     	read_only => '',
+     		},
+     'discover_charts' => {
+     	datatype => 'ARRAY[DiscoverChart]',
+     	base_name => 'DiscoverCharts',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'discover_pivot_tables' => {
+     	datatype => 'ARRAY[DiscoverPivotTable]',
+     	base_name => 'DiscoverPivotTables',
+     	description => '',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'a' => 'int',
-    'r' => 'int',
-    'g' => 'int',
-    'b' => 'int' 
+    'name' => 'string',
+    'sheet_name' => 'string',
+    'columns' => 'ARRAY[AnalyzedColumnDescription]',
+    'date_columns' => 'ARRAY[int?]',
+    'number_columns' => 'ARRAY[int?]',
+    'text_columns' => 'ARRAY[int?]',
+    'exception_columns' => 'ARRAY[int?]',
+    'has_table_header_row' => 'boolean',
+    'has_table_total_row' => 'boolean',
+    'start_data_column_index' => 'int',
+    'end_data_column_index' => 'int',
+    'start_data_row_index' => 'int',
+    'end_data_row_index' => 'int',
+    'thumbnail' => 'string',
+    'discover_charts' => 'ARRAY[DiscoverChart]',
+    'discover_pivot_tables' => 'ARRAY[DiscoverPivotTable]' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'a' => 'A',
-    'r' => 'R',
-    'g' => 'G',
-    'b' => 'B' 
+    'name' => 'Name',
+    'sheet_name' => 'SheetName',
+    'columns' => 'Columns',
+    'date_columns' => 'DateColumns',
+    'number_columns' => 'NumberColumns',
+    'text_columns' => 'TextColumns',
+    'exception_columns' => 'ExceptionColumns',
+    'has_table_header_row' => 'HasTableHeaderRow',
+    'has_table_total_row' => 'HasTableTotalRow',
+    'start_data_column_index' => 'StartDataColumnIndex',
+    'end_data_column_index' => 'EndDataColumnIndex',
+    'start_data_row_index' => 'StartDataRowIndex',
+    'end_data_row_index' => 'EndDataRowIndex',
+    'thumbnail' => 'Thumbnail',
+    'discover_charts' => 'DiscoverCharts',
+    'discover_pivot_tables' => 'DiscoverPivotTables' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

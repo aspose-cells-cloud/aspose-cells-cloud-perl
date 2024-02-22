@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::Color;
+package AsposeCellsCloud::Object::DiscoverChart;
 
 require 5.6.0;
 use strict;
@@ -118,55 +118,73 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => 'Color.',
-                                  class => 'Color',
+__PACKAGE__->class_documentation({description => '',
+                                  class => 'DiscoverChart',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'a' => {
-     	datatype => 'int',
-     	base_name => 'A',
-     	description => 'Gets the alpha component value of this System.Drawing.Color structure.            ',
+     'name' => {
+     	datatype => 'string',
+     	base_name => 'Name',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'r' => {
-     	datatype => 'int',
-     	base_name => 'R',
-     	description => 'Gets the red component value of this System.Drawing.Color structure.            ',
+     'sheet_name' => {
+     	datatype => 'string',
+     	base_name => 'SheetName',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'g' => {
-     	datatype => 'int',
-     	base_name => 'G',
-     	description => 'Gets the green component value of this System.Drawing.Color structure.',
+     'title' => {
+     	datatype => 'string',
+     	base_name => 'Title',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'b' => {
-     	datatype => 'int',
-     	base_name => 'B',
-     	description => 'Gets the blue component value of this System.Drawing.Color structure.            ',
+     'type' => {
+     	datatype => 'string',
+     	base_name => 'Type',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'data_range' => {
+     	datatype => 'string',
+     	base_name => 'DataRange',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'thumbnail' => {
+     	datatype => 'string',
+     	base_name => 'Thumbnail',
+     	description => 'Base64String',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'a' => 'int',
-    'r' => 'int',
-    'g' => 'int',
-    'b' => 'int' 
+    'name' => 'string',
+    'sheet_name' => 'string',
+    'title' => 'string',
+    'type' => 'string',
+    'data_range' => 'string',
+    'thumbnail' => 'string' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'a' => 'A',
-    'r' => 'R',
-    'g' => 'G',
-    'b' => 'B' 
+    'name' => 'Name',
+    'sheet_name' => 'SheetName',
+    'title' => 'Title',
+    'type' => 'Type',
+    'data_range' => 'DataRange',
+    'thumbnail' => 'Thumbnail' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

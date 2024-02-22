@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::Color;
+package AsposeCellsCloud::Object::WorksheetDataStatistics;
 
 require 5.6.0;
 use strict;
@@ -118,55 +118,109 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => 'Color.',
-                                  class => 'Color',
+__PACKAGE__->class_documentation({description => '',
+                                  class => 'WorksheetDataStatistics',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'a' => {
-     	datatype => 'int',
-     	base_name => 'A',
-     	description => 'Gets the alpha component value of this System.Drawing.Color structure.            ',
+     'name' => {
+     	datatype => 'string',
+     	base_name => 'Name',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'r' => {
+     'charts_count' => {
      	datatype => 'int',
-     	base_name => 'R',
-     	description => 'Gets the red component value of this System.Drawing.Color structure.            ',
+     	base_name => 'ChartsCount',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'g' => {
+     'tables_count' => {
      	datatype => 'int',
-     	base_name => 'G',
-     	description => 'Gets the green component value of this System.Drawing.Color structure.',
+     	base_name => 'TablesCount',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'b' => {
+     'pivot_tables_count' => {
      	datatype => 'int',
-     	base_name => 'B',
-     	description => 'Gets the blue component value of this System.Drawing.Color structure.            ',
+     	base_name => 'PivotTablesCount',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'shapes_count' => {
+     	datatype => 'int',
+     	base_name => 'ShapesCount',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'hyperlinks_count' => {
+     	datatype => 'int',
+     	base_name => 'HyperlinksCount',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'query_tables_count' => {
+     	datatype => 'int',
+     	base_name => 'QueryTablesCount',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'cells_count' => {
+     	datatype => 'int',
+     	base_name => 'CellsCount',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'cells_count_in_table' => {
+     	datatype => 'int',
+     	base_name => 'CellsCountInTable',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'cells_count_is_formula' => {
+     	datatype => 'int',
+     	base_name => 'CellsCountIsFormula',
+     	description => '',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'a' => 'int',
-    'r' => 'int',
-    'g' => 'int',
-    'b' => 'int' 
+    'name' => 'string',
+    'charts_count' => 'int',
+    'tables_count' => 'int',
+    'pivot_tables_count' => 'int',
+    'shapes_count' => 'int',
+    'hyperlinks_count' => 'int',
+    'query_tables_count' => 'int',
+    'cells_count' => 'int',
+    'cells_count_in_table' => 'int',
+    'cells_count_is_formula' => 'int' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'a' => 'A',
-    'r' => 'R',
-    'g' => 'G',
-    'b' => 'B' 
+    'name' => 'Name',
+    'charts_count' => 'ChartsCount',
+    'tables_count' => 'TablesCount',
+    'pivot_tables_count' => 'PivotTablesCount',
+    'shapes_count' => 'ShapesCount',
+    'hyperlinks_count' => 'HyperlinksCount',
+    'query_tables_count' => 'QueryTablesCount',
+    'cells_count' => 'CellsCount',
+    'cells_count_in_table' => 'CellsCountInTable',
+    'cells_count_is_formula' => 'CellsCountIsFormula' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

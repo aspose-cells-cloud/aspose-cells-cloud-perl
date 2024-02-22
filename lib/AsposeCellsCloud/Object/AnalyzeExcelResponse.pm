@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::Color;
+package AsposeCellsCloud::Object::AnalyzeExcelResponse;
 
 require 5.6.0;
 use strict;
@@ -35,7 +35,7 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
- 
+use AsposeCellsCloud::Object::AnalyzeSuggestion; 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -118,55 +118,28 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => 'Color.',
-                                  class => 'Color',
+__PACKAGE__->class_documentation({description => '',
+                                  class => 'AnalyzeExcelResponse',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'a' => {
-     	datatype => 'int',
-     	base_name => 'A',
-     	description => 'Gets the alpha component value of this System.Drawing.Color structure.            ',
-     	format => '',
-     	read_only => '',
-     		},
-     'r' => {
-     	datatype => 'int',
-     	base_name => 'R',
-     	description => 'Gets the red component value of this System.Drawing.Color structure.            ',
-     	format => '',
-     	read_only => '',
-     		},
-     'g' => {
-     	datatype => 'int',
-     	base_name => 'G',
-     	description => 'Gets the green component value of this System.Drawing.Color structure.',
-     	format => '',
-     	read_only => '',
-     		},
-     'b' => {
-     	datatype => 'int',
-     	base_name => 'B',
-     	description => 'Gets the blue component value of this System.Drawing.Color structure.            ',
+     'suggestions' => {
+     	datatype => 'ARRAY[AnalyzeSuggestion]',
+     	base_name => 'Suggestions',
+     	description => '',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'a' => 'int',
-    'r' => 'int',
-    'g' => 'int',
-    'b' => 'int' 
+    'suggestions' => 'ARRAY[AnalyzeSuggestion]' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'a' => 'A',
-    'r' => 'R',
-    'g' => 'G',
-    'b' => 'B' 
+    'suggestions' => 'Suggestions' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::Color;
+package AsposeCellsCloud::Object::ExcelDataStatistics;
 
 require 5.6.0;
 use strict;
@@ -35,7 +35,7 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
- 
+use AsposeCellsCloud::Object::WorksheetDataStatistics; 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -118,55 +118,37 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => 'Color.',
-                                  class => 'Color',
+__PACKAGE__->class_documentation({description => '',
+                                  class => 'ExcelDataStatistics',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'a' => {
-     	datatype => 'int',
-     	base_name => 'A',
-     	description => 'Gets the alpha component value of this System.Drawing.Color structure.            ',
+     'worksheet_data_statistics' => {
+     	datatype => 'ARRAY[WorksheetDataStatistics]',
+     	base_name => 'WorksheetDataStatistics',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'r' => {
+     'names_count' => {
      	datatype => 'int',
-     	base_name => 'R',
-     	description => 'Gets the red component value of this System.Drawing.Color structure.            ',
-     	format => '',
-     	read_only => '',
-     		},
-     'g' => {
-     	datatype => 'int',
-     	base_name => 'G',
-     	description => 'Gets the green component value of this System.Drawing.Color structure.',
-     	format => '',
-     	read_only => '',
-     		},
-     'b' => {
-     	datatype => 'int',
-     	base_name => 'B',
-     	description => 'Gets the blue component value of this System.Drawing.Color structure.            ',
+     	base_name => 'NamesCount',
+     	description => '',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'a' => 'int',
-    'r' => 'int',
-    'g' => 'int',
-    'b' => 'int' 
+    'worksheet_data_statistics' => 'ARRAY[WorksheetDataStatistics]',
+    'names_count' => 'int' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'a' => 'A',
-    'r' => 'R',
-    'g' => 'G',
-    'b' => 'B' 
+    'worksheet_data_statistics' => 'WorksheetDataStatistics',
+    'names_count' => 'NamesCount' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

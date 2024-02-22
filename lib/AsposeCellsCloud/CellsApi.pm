@@ -59,6 +59,41 @@ sub new {
 }
 
 #
+# PostAnalyzeExcelRequest
+#
+# Perform business analysis of data in Excel files.
+# 
+# @analyzeExcelRequest  AnalyzeExcelRequest (required)  Excel files and analysis output requirements   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'PostAnalyzeExcelRequest',
+            description => 'PostAnalyzeExcel Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'post_analyze_excel' } = { 
+    	summary => 'Perform business analysis of data in Excel files.',
+        params => $params,
+        returns => 'ARRAY[AnalyzedResult]',
+    };
+}
+#
+# @return ARRAY[AnalyzedResult]
+#
+sub post_analyze_excel{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[AnalyzedResult]', $response);
+    return $_response_object;
+}
+
+#
 # GetWorksheetAutoFilterRequest
 #
 # Retrieve the description of auto filters from a worksheet.
@@ -1524,10 +1559,10 @@ sub post_cell_characters{
 # 
 # @name  string   The file name.  
 # @sheetName  string   The worksheet name.  
-# @offset  int   The folder where the file is situated.  
-# @count  int   The storage name where the file is situated.  
-# @folder  string   The workdook folder.  
-# @storageName  string      
+# @offset  int   The workdook folder.  
+# @count  int     
+# @folder  string   The folder where the file is situated.  
+# @storageName  string   The storage name where the file is situated.   
 #
 {
     my $params = {
@@ -4047,7 +4082,7 @@ sub get_workbook{
 #
 # Convert the workbook from the requested content into files in different formats.
 # 
-# @File  string (required)  The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers).  
+# @File  string (required)  File to upload  
 # @format  string   The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers).  
 # @password  string   The password needed to open an Excel file.  
 # @outPath  string   Path to save the result. If it`s a single file, the `outPath` should encompass both the filename and extension. In the case of multiple files, the `outPath` should only include the folder.  
@@ -4137,7 +4172,7 @@ sub post_workbook_save_as{
 #
 # Convert Excel file to PDF files.
 # 
-# @File  string (required)  The password needed to open an Excel file.  
+# @File  string (required)  File to upload  
 # @password  string   The password needed to open an Excel file.  
 # @checkExcelRestriction  boolean   Whether check restriction of excel file when user modify cells related objects.  
 # @region  string   The regional settings for workbook.   
@@ -4175,7 +4210,7 @@ sub post_convert_workbook_to_pdf{
 #
 # Convert Excel file to PNG files.
 # 
-# @File  string (required)  The password needed to open an Excel file.  
+# @File  string (required)  File to upload  
 # @password  string   The password needed to open an Excel file.  
 # @checkExcelRestriction  boolean   Whether check restriction of excel file when user modify cells related objects.  
 # @region  string   The regional settings for workbook.   
@@ -4213,7 +4248,7 @@ sub post_convert_workbook_to_png{
 #
 # Convert Excel file to Docx files.
 # 
-# @File  string (required)  The password needed to open an Excel file.  
+# @File  string (required)  File to upload  
 # @password  string   The password needed to open an Excel file.  
 # @checkExcelRestriction  boolean   Whether check restriction of excel file when user modify cells related objects.  
 # @region  string   The regional settings for workbook.   
@@ -4251,7 +4286,7 @@ sub post_convert_workbook_to_docx{
 #
 # Convert Excel file to Pptx files.
 # 
-# @File  string (required)  The password needed to open an Excel file.  
+# @File  string (required)  File to upload  
 # @password  string   The password needed to open an Excel file.  
 # @checkExcelRestriction  boolean   Whether check restriction of excel file when user modify cells related objects.  
 # @region  string   The regional settings for workbook.   
@@ -4289,7 +4324,7 @@ sub post_convert_workbook_to_pptx{
 #
 # Convert Excel file to HTML files.
 # 
-# @File  string (required)  The password needed to open an Excel file.  
+# @File  string (required)  File to upload  
 # @password  string   The password needed to open an Excel file.  
 # @checkExcelRestriction  boolean   Whether check restriction of excel file when user modify cells related objects.  
 # @region  string   The regional settings for workbook.   
@@ -4327,7 +4362,7 @@ sub post_convert_workbook_to_html{
 #
 # Convert Excel file to Markdown files.
 # 
-# @File  string (required)  The password needed to open an Excel file.  
+# @File  string (required)  File to upload  
 # @password  string   The password needed to open an Excel file.  
 # @checkExcelRestriction  boolean   Whether check restriction of excel file when user modify cells related objects.  
 # @region  string   The regional settings for workbook.   
@@ -4365,7 +4400,7 @@ sub post_convert_workbook_to_markdown{
 #
 # Convert Excel file to Json files.
 # 
-# @File  string (required)  The password needed to open an Excel file.  
+# @File  string (required)  File to upload  
 # @password  string   The password needed to open an Excel file.  
 # @checkExcelRestriction  boolean   Whether check restriction of excel file when user modify cells related objects.  
 # @region  string   The regional settings for workbook.   
@@ -4403,7 +4438,7 @@ sub post_convert_workbook_to_json{
 #
 # Convert Excel file to SQL Script files.
 # 
-# @File  string (required)  The password needed to open an Excel file.  
+# @File  string (required)  File to upload  
 # @password  string   The password needed to open an Excel file.  
 # @checkExcelRestriction  boolean   Whether check restriction of excel file when user modify cells related objects.  
 # @region  string   The regional settings for workbook.   
@@ -4441,7 +4476,7 @@ sub post_convert_workbook_to_sql{
 #
 # Convert Excel file to Csv files.
 # 
-# @File  string (required)  The password needed to open an Excel file.  
+# @File  string (required)  File to upload  
 # @password  string   The password needed to open an Excel file.  
 # @checkExcelRestriction  boolean   Whether check restriction of excel file when user modify cells related objects.  
 # @region  string   The regional settings for workbook.   
@@ -4479,7 +4514,7 @@ sub post_convert_workbook_to_csv{
 #
 # Export Excel internal elements or the workbook itself to various format files.
 # 
-# @File  string (required)  Exported object type:workbook/worksheet/chart/comment/picture/shape/listobject/oleobject.  
+# @File  string (required)  File to upload  
 # @objectType  string   Exported object type:workbook/worksheet/chart/comment/picture/shape/listobject/oleobject.  
 # @format  string   The conversion format(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers).  
 # @password  string   The password needed to open an Excel file.  
@@ -4923,7 +4958,7 @@ sub delete_worksheet_hyperlinks{
 #
 # Assemble data files with template files to generate files in various formats.
 # 
-# @File  string (required)  The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)  
+# @File  string (required)  File to upload  
 # @datasource  string (required)    
 # @outFormat  string   The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)  
 # @password  string   The password needed to open an Excel file.  
@@ -4963,7 +4998,7 @@ sub post_assemble{
 #
 # Compress files and generate target files in various formats, supported file formats are include Xls, Xlsx, Xlsm, Xlsb, Ods and more.
 # 
-# @File  string (required)  Compress level. The compression ratio 1-100.  
+# @File  string (required)  File to upload  
 # @CompressLevel  int   Compress level. The compression ratio 1-100.  
 # @password  string   The password needed to open an Excel file.  
 # @checkExcelRestriction  boolean   Whether check restriction of excel file when user modify cells related objects.   
@@ -5001,12 +5036,12 @@ sub post_compress{
 #
 # Merge cells in the worksheet.
 # 
-# @File  string (required)  The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)  
-# @outFormat  string   The password needed to open an Excel file.  
-# @mergeToOneSheet  boolean   Whether check restriction of excel file when user modify cells related objects.  
-# @password  string   The regional settings for workbook.  
-# @checkExcelRestriction  boolean   Upload files.  
-# @region  string      
+# @File  string (required)  File to upload  
+# @outFormat  string   The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)  
+# @mergeToOneSheet  boolean   Merge all workbooks into a sheet.  
+# @password  string   The password needed to open an Excel file.  
+# @checkExcelRestriction  boolean   Whether check restriction of excel file when user modify cells related objects.  
+# @region  string   The regional settings for workbook.   
 #
 {
     my $params = {
@@ -5041,7 +5076,7 @@ sub post_merge{
 #
 # Split Excel spreadsheet files based on worksheets and create output files in various formats.
 # 
-# @File  string (required)  The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)  
+# @File  string (required)  File to upload  
 # @outFormat  string (required)  The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)  
 # @password  string   The password needed to open an Excel file.  
 # @from  int   sheet index  
@@ -5082,7 +5117,7 @@ sub post_split{
 #
 # Search for specified text within Excel files.
 # 
-# @File  string (required)  Find content  
+# @File  string (required)  File to upload  
 # @text  string (required)  Find content  
 # @password  string   The password needed to open an Excel file.  
 # @sheetname  string   The worksheet name. Locate the specified text content in the worksheet.  
@@ -5121,7 +5156,7 @@ sub post_search{
 #
 # Replace specified text with new text in Excel files.
 # 
-# @File  string (required)  Find content  
+# @File  string (required)  File to upload  
 # @text  string (required)  Find content  
 # @newtext  string (required)  Replace content  
 # @password  string   The password needed to open an Excel file.  
@@ -5161,7 +5196,7 @@ sub post_replace{
 #
 # Import data into an Excel file and generate output files in various formats.
 # 
-# @File  string (required)  The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)  
+# @File  string (required)  File to upload  
 # @outFormat  string   The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)  
 # @password  string   The password needed to open an Excel file.  
 # @checkExcelRestriction  boolean   Whether check restriction of excel file when user modify cells related objects.  
@@ -5200,8 +5235,8 @@ sub post_import{
 #
 # Add Text Watermark to Excel files and generate output files in various formats.
 # 
-# @File  string (required)  e.g. #1032ff  
-# @text  string (required)    
+# @File  string (required)  File to upload  
+# @text  string (required)  background text.  
 # @color  string (required)  e.g. #1032ff  
 # @outFormat  string   The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)  
 # @password  string   The password needed to open an Excel file.  
@@ -5241,7 +5276,7 @@ sub post_watermark{
 #
 # Clear internal elements in Excel files and generate output files in various formats.
 # 
-# @File  string (required)  chart/comment/picture/shape/listobject/hyperlink/oleobject/pivottable/validation/Background  
+# @File  string (required)  File to upload  
 # @objecttype  string (required)  chart/comment/picture/shape/listobject/hyperlink/oleobject/pivottable/validation/Background  
 # @sheetname  string   The worksheet name, specify the scope of the deletion.  
 # @outFormat  string   The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)  
@@ -5282,7 +5317,7 @@ sub post_clear_objects{
 #
 # Reverse rows or columns in Excel files and create output files in various formats.
 # 
-# @File  string (required)  rows/cols/both  
+# @File  string (required)  File to upload  
 # @rotateType  string (required)  rows/cols/both  
 # @outFormat  string   The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)  
 # @password  string   The password needed to open an Excel file.  
@@ -5322,7 +5357,7 @@ sub post_reverse{
 #
 # Repair abnormal files and generate files in various formats.
 # 
-# @File  string (required)  The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)  
+# @File  string (required)  File to upload  
 # @outFormat  string   The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)   
 #
 {
@@ -5358,7 +5393,7 @@ sub post_repair{
 #
 # Rotate rows, columns, or other objects in Excel files and save them in various formats.
 # 
-# @File  string (required)  270/90/row/col/row2col  
+# @File  string (required)  File to upload  
 # @rotateType  string (required)  270/90/row/col/row2col  
 # @outFormat  string   The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)  
 # @password  string   The password needed to open an Excel file.  
@@ -5398,7 +5433,7 @@ sub post_rotate{
 #
 # Update document properties in Excel file, and save them is various formats.
 # 
-# @File  string (required)  document properties  
+# @File  string (required)  File to upload  
 # @cellsDocuments  ARRAY[CellsDocumentProperty] (required)  document properties  
 # @password  string   The password needed to open an Excel file.  
 # @checkExcelRestriction  boolean   Whether check restriction of excel file when user modify cells related objects.  
@@ -5438,7 +5473,7 @@ sub post_metadata{
 #
 # Get cells document properties.
 # 
-# @File  string (required)  Cells document property name.  
+# @File  string (required)  File to upload  
 # @type  string   Cells document property name.  
 # @password  string   The password needed to open an Excel file.  
 # @checkExcelRestriction  boolean   Whether check restriction of excel file when user modify cells related objects.   
@@ -5476,7 +5511,7 @@ sub get_metadata{
 #
 # Delete cells document properties in Excel file, and save them is various formats.
 # 
-# @File  string (required)  Cells document property name.  
+# @File  string (required)  File to upload  
 # @type  string   Cells document property name.  
 # @outFormat  string   The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)  
 # @password  string   The password needed to open an Excel file.  
@@ -8572,7 +8607,7 @@ sub delete_document_un_protect_from_changes{
 #
 # Unlock Excel files.
 # 
-# @File  string (required)  The password needed to open an Excel file.  
+# @File  string (required)  File to upload  
 # @password  string (required)  The password needed to open an Excel file.   
 #
 {
@@ -8608,7 +8643,7 @@ sub post_unlock{
 #
 # Lock Excel files.
 # 
-# @File  string (required)  The password needed to open an Excel file.  
+# @File  string (required)  File to upload  
 # @password  string (required)  The password needed to open an Excel file.   
 #
 {
@@ -8644,7 +8679,7 @@ sub post_lock{
 #
 # Excel files encryption.
 # 
-# @File  string (required)  The password needed to open an Excel file.  
+# @File  string (required)  File to upload  
 # @protectWorkbookRequest  ProtectWorkbookRequest (required)    
 # @password  string   The password needed to open an Excel file.   
 #

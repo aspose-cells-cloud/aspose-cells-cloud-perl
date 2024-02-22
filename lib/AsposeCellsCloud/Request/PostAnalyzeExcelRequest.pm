@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::GetWorksheetColumnsRequest;
+package AsposeCellsCloud::Request::PostAnalyzeExcelRequest;
 
 require 5.6.0;
 use strict;
@@ -59,12 +59,7 @@ sub new {
 
 
 # Run Operation Request
-# GetWorksheetColumnsRequest.name : The file name.  ,
-# GetWorksheetColumnsRequest.sheetName : The worksheet name.  ,
-# GetWorksheetColumnsRequest.offset : The workdook folder.  ,
-# GetWorksheetColumnsRequest.count :   ,
-# GetWorksheetColumnsRequest.folder : The folder where the file is situated.  ,
-# GetWorksheetColumnsRequest.storageName : The storage name where the file is situated.   
+# PostAnalyzeExcelRequest.analyzeExcelRequest : Excel files and analysis output requirements   
 
 {
     my $params = {
@@ -74,10 +69,10 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'get_worksheet_columns' } = { 
-    	summary => 'Retrieve descriptions of worksheet columns.',
+    __PACKAGE__->method_documentation->{ 'post_analyze_excel' } = { 
+    	summary => 'Perform business analysis of data in Excel files.',
         params => $params,
-        returns => 'ColumnsResponse',
+        returns => 'ARRAY[AnalyzedResult]',
     };
 }
 
@@ -87,9 +82,9 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = '/cells/{name}/worksheets/{sheetName}/cells/columns/';
+    my $_resource_path = '/cells/analyze';
 
-    my $_method = 'GET';
+    my $_method = 'POST';
     my $query_params = {};
     my $header_params = {};
     my $form_params = {};
@@ -100,33 +95,15 @@ sub run_http_request {
         $header_params->{'Accept'} = $_header_accept;
     }
     $header_params->{'Content-Type'} = $client->select_header_content_type('application/json');
-    if(defined $self->name){
-        my $_base_variable = "{" . "name" . "}";
-        my $_base_value = $client->to_path_value($self->name);
-        $_resource_path =~ s/$_base_variable/$_base_value/g;        
-    }
-
-    if(defined $self->sheet_name){
-        my $_base_variable = "{" . "sheetName" . "}";
-        my $_base_value = $client->to_path_value($self->sheet_name);
-        $_resource_path =~ s/$_base_variable/$_base_value/g;        
-    } 
-    if(defined $self->offset){
-        $query_params->{'offset'} = $client->to_query_value($self->offset);      
-    }
-
-    if(defined $self->count){
-        $query_params->{'count'} = $client->to_query_value($self->count);      
-    }
-
-    if(defined $self->folder){
-        $query_params->{'folder'} = $client->to_query_value($self->folder);      
-    }
-
-    if(defined $self->storage_name){
-        $query_params->{'storageName'} = $client->to_query_value($self->storage_name);      
-    } 
+ 
+ 
     my $_body_data;
+
+    # body params
+    if (defined $self->analyze_excel_request) {
+        #$_body_data = $self->analyze_excel_request;
+         $_body_data = JSON->new->convert_blessed->encode( $self->analyze_excel_request);
+    }
     # authentication setting, if any
     my $auth_settings = [qw()];
 
@@ -137,45 +114,10 @@ sub run_http_request {
 
 
 __PACKAGE__->method_documentation({
-     'name' => {
-     	datatype => 'string',
-     	base_name => 'name',
-     	description => 'The file name.',
-     	format => '',
-     	read_only => '',
-     		},
-     'sheet_name' => {
-     	datatype => 'string',
-     	base_name => 'sheetName',
-     	description => 'The worksheet name.',
-     	format => '',
-     	read_only => '',
-     		},
-     'offset' => {
-     	datatype => 'int',
-     	base_name => 'offset',
-     	description => 'The workdook folder.',
-     	format => '',
-     	read_only => '',
-     		},
-     'count' => {
-     	datatype => 'int',
-     	base_name => 'count',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'folder' => {
-     	datatype => 'string',
-     	base_name => 'folder',
-     	description => 'The folder where the file is situated.',
-     	format => '',
-     	read_only => '',
-     		},
-     'storage_name' => {
-     	datatype => 'string',
-     	base_name => 'storageName',
-     	description => 'The storage name where the file is situated.',
+     'analyze_excel_request' => {
+     	datatype => 'AnalyzeExcelRequest',
+     	base_name => 'analyzeExcelRequest',
+     	description => 'Excel files and analysis output requirements',
      	format => '',
      	read_only => '',
      		},    
@@ -183,12 +125,7 @@ __PACKAGE__->method_documentation({
 
 
 __PACKAGE__->attribute_map( {
-    'name' => 'name',
-    'sheet_name' => 'sheetName',
-    'offset' => 'offset',
-    'count' => 'count',
-    'folder' => 'folder',
-    'storage_name' => 'storageName' 
+    'analyze_excel_request' => 'analyzeExcelRequest' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::Color;
+package AsposeCellsCloud::Object::AnalyzedResult;
 
 require 5.6.0;
 use strict;
@@ -35,7 +35,8 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
- 
+use AsposeCellsCloud::Object::AnalyzedTableDescription;
+use AsposeCellsCloud::Object::ExcelDataStatistics; 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -118,55 +119,64 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => 'Color.',
-                                  class => 'Color',
+__PACKAGE__->class_documentation({description => '',
+                                  class => 'AnalyzedResult',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'a' => {
-     	datatype => 'int',
-     	base_name => 'A',
-     	description => 'Gets the alpha component value of this System.Drawing.Color structure.            ',
+     'filename' => {
+     	datatype => 'string',
+     	base_name => 'Filename',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'r' => {
-     	datatype => 'int',
-     	base_name => 'R',
-     	description => 'Gets the red component value of this System.Drawing.Color structure.            ',
+     'description' => {
+     	datatype => 'string',
+     	base_name => 'Description',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'g' => {
-     	datatype => 'int',
-     	base_name => 'G',
-     	description => 'Gets the green component value of this System.Drawing.Color structure.',
+     'basic_statistics' => {
+     	datatype => 'ExcelDataStatistics',
+     	base_name => 'BasicStatistics',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'b' => {
-     	datatype => 'int',
-     	base_name => 'B',
-     	description => 'Gets the blue component value of this System.Drawing.Color structure.            ',
+     'results' => {
+     	datatype => 'ARRAY[AnalyzedTableDescription]',
+     	base_name => 'Results',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'suggested_file' => {
+     	datatype => 'string',
+     	base_name => 'SuggestedFile',
+     	description => 'base64String Excel file',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'a' => 'int',
-    'r' => 'int',
-    'g' => 'int',
-    'b' => 'int' 
+    'filename' => 'string',
+    'description' => 'string',
+    'basic_statistics' => 'ExcelDataStatistics',
+    'results' => 'ARRAY[AnalyzedTableDescription]',
+    'suggested_file' => 'string' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'a' => 'A',
-    'r' => 'R',
-    'g' => 'G',
-    'b' => 'B' 
+    'filename' => 'Filename',
+    'description' => 'Description',
+    'basic_statistics' => 'BasicStatistics',
+    'results' => 'Results',
+    'suggested_file' => 'SuggestedFile' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

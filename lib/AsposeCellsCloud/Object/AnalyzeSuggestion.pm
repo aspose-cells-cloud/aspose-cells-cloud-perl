@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::Color;
+package AsposeCellsCloud::Object::AnalyzeSuggestion;
 
 require 5.6.0;
 use strict;
@@ -118,55 +118,91 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => 'Color.',
-                                  class => 'Color',
+__PACKAGE__->class_documentation({description => '',
+                                  class => 'AnalyzeSuggestion',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'a' => {
-     	datatype => 'int',
-     	base_name => 'A',
-     	description => 'Gets the alpha component value of this System.Drawing.Color structure.            ',
+     'name' => {
+     	datatype => 'string',
+     	base_name => 'Name',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'r' => {
-     	datatype => 'int',
-     	base_name => 'R',
-     	description => 'Gets the red component value of this System.Drawing.Color structure.            ',
+     'filename' => {
+     	datatype => 'string',
+     	base_name => 'Filename',
+     	description => 'Excel file name.',
      	format => '',
      	read_only => '',
      		},
-     'g' => {
-     	datatype => 'int',
-     	base_name => 'G',
-     	description => 'Gets the green component value of this System.Drawing.Color structure.',
+     'sheet_name' => {
+     	datatype => 'string',
+     	base_name => 'SheetName',
+     	description => 'The worksheet where the data is aAnalyzed.',
      	format => '',
      	read_only => '',
      		},
-     'b' => {
-     	datatype => 'int',
-     	base_name => 'B',
-     	description => 'Gets the blue component value of this System.Drawing.Color structure.            ',
+     'date_source_type' => {
+     	datatype => 'string',
+     	base_name => 'DateSourceType',
+     	description => 'The type of data being analyzed.',
+     	format => '',
+     	read_only => '',
+     		},
+     'suggested_output_type' => {
+     	datatype => 'string',
+     	base_name => 'SuggestedOutputType',
+     	description => 'Based on the results of the data analysis, suggestions for creating new data types are given.',
+     	format => '',
+     	read_only => '',
+     		},
+     'description' => {
+     	datatype => 'string',
+     	base_name => 'Description',
+     	description => 'Based on the results of the data analysis, a business description of the new data object is created.',
+     	format => '',
+     	read_only => '',
+     		},
+     'data_souce_thumbnail' => {
+     	datatype => 'string',
+     	base_name => 'DataSouceThumbnail',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'thumbnail' => {
+     	datatype => 'string',
+     	base_name => 'Thumbnail',
+     	description => '',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'a' => 'int',
-    'r' => 'int',
-    'g' => 'int',
-    'b' => 'int' 
+    'name' => 'string',
+    'filename' => 'string',
+    'sheet_name' => 'string',
+    'date_source_type' => 'string',
+    'suggested_output_type' => 'string',
+    'description' => 'string',
+    'data_souce_thumbnail' => 'string',
+    'thumbnail' => 'string' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'a' => 'A',
-    'r' => 'R',
-    'g' => 'G',
-    'b' => 'B' 
+    'name' => 'Name',
+    'filename' => 'Filename',
+    'sheet_name' => 'SheetName',
+    'date_source_type' => 'DateSourceType',
+    'suggested_output_type' => 'SuggestedOutputType',
+    'description' => 'Description',
+    'data_souce_thumbnail' => 'DataSouceThumbnail',
+    'thumbnail' => 'Thumbnail' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

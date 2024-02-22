@@ -59,7 +59,7 @@ sub new {
 
 
 # Run Operation Request
-# PostProtectRequest.File : The password needed to open an Excel file.  ,
+# PostProtectRequest.File : File to upload  ,
 # PostProtectRequest.protectWorkbookRequest :   ,
 # PostProtectRequest.password : The password needed to open an Excel file.   
 
@@ -129,7 +129,7 @@ __PACKAGE__->method_documentation({
      'file' => {
      	datatype => 'string',
      	base_name => 'File',
-     	description => 'The password needed to open an Excel file.',
+     	description => 'File to upload',
      	format => '',
      	read_only => '',
      		},

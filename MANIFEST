@@ -157,6 +157,7 @@ docs/TxtSaveOptions.md
 docs/XlsbSaveOptions.md
 docs/XlsSaveOptions.md
 docs/XpsSaveOptions.md
+docs/AnalyzeExcelResponse.md
 docs/ArcShapeResponse.md
 docs/AutoFilterResponse.md
 docs/AutoShapeResponse.md
@@ -267,6 +268,7 @@ docs/WorkbooksResponse.md
 docs/WorksheetReplaceResponse.md
 docs/WorksheetResponse.md
 docs/WorksheetsResponse.md
+docs/AnalyzeExcelRequest.md
 docs/BatchConvertRequest.md
 docs/BatchLockRequest.md
 docs/BatchProtectRequest.md
@@ -380,8 +382,17 @@ docs/Title.md
 docs/Trendline.md
 docs/Trendlines.md
 docs/Walls.md
+docs/AnalyzedColumnDescription.md
+docs/AnalyzedResult.md
+docs/AnalyzedTableDescription.md
+docs/AnalyzeSuggestion.md
+docs/DiscoverChart.md
+docs/DiscoverPivotTable.md
+docs/ExcelDataStatistics.md
+docs/WorksheetDataStatistics.md
 docs/Error.md
 docs/ErrorDetails.md
+docs/PostAnalyzeExcelRequest.md
 docs/GetWorksheetAutoFilterRequest.md
 docs/PutWorksheetDateFilterRequest.md
 docs/PutWorksheetFilterRequest.md
@@ -871,6 +882,7 @@ lib/AsposeCellsCloud/Object/TxtSaveOptions.pm
 lib/AsposeCellsCloud/Object/XlsbSaveOptions.pm
 lib/AsposeCellsCloud/Object/XlsSaveOptions.pm
 lib/AsposeCellsCloud/Object/XpsSaveOptions.pm
+lib/AsposeCellsCloud/Object/AnalyzeExcelResponse.pm
 lib/AsposeCellsCloud/Object/ArcShapeResponse.pm
 lib/AsposeCellsCloud/Object/AutoFilterResponse.pm
 lib/AsposeCellsCloud/Object/AutoShapeResponse.pm
@@ -981,6 +993,7 @@ lib/AsposeCellsCloud/Object/WorkbooksResponse.pm
 lib/AsposeCellsCloud/Object/WorksheetReplaceResponse.pm
 lib/AsposeCellsCloud/Object/WorksheetResponse.pm
 lib/AsposeCellsCloud/Object/WorksheetsResponse.pm
+lib/AsposeCellsCloud/Object/AnalyzeExcelRequest.pm
 lib/AsposeCellsCloud/Object/BatchConvertRequest.pm
 lib/AsposeCellsCloud/Object/BatchLockRequest.pm
 lib/AsposeCellsCloud/Object/BatchProtectRequest.pm
@@ -1094,8 +1107,17 @@ lib/AsposeCellsCloud/Object/Title.pm
 lib/AsposeCellsCloud/Object/Trendline.pm
 lib/AsposeCellsCloud/Object/Trendlines.pm
 lib/AsposeCellsCloud/Object/Walls.pm
+lib/AsposeCellsCloud/Object/AnalyzedColumnDescription.pm
+lib/AsposeCellsCloud/Object/AnalyzedResult.pm
+lib/AsposeCellsCloud/Object/AnalyzedTableDescription.pm
+lib/AsposeCellsCloud/Object/AnalyzeSuggestion.pm
+lib/AsposeCellsCloud/Object/DiscoverChart.pm
+lib/AsposeCellsCloud/Object/DiscoverPivotTable.pm
+lib/AsposeCellsCloud/Object/ExcelDataStatistics.pm
+lib/AsposeCellsCloud/Object/WorksheetDataStatistics.pm
 lib/AsposeCellsCloud/Object/Error.pm
 lib/AsposeCellsCloud/Object/ErrorDetails.pm
+lib/AsposeCellsCloud/Request/PostAnalyzeExcelRequest.pm
 lib/AsposeCellsCloud/Request/GetWorksheetAutoFilterRequest.pm
 lib/AsposeCellsCloud/Request/PutWorksheetDateFilterRequest.pm
 lib/AsposeCellsCloud/Request/PutWorksheetFilterRequest.pm

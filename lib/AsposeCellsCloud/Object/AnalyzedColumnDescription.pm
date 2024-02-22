@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::Color;
+package AsposeCellsCloud::Object::AnalyzedColumnDescription;
 
 require 5.6.0;
 use strict;
@@ -118,55 +118,100 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => 'Color.',
-                                  class => 'Color',
+__PACKAGE__->class_documentation({description => 'How to use the properties of each column: currently divided into timeline, product line, numerical statistics line             How to present the product, a unified plan            How to solve the problem of full digital?            Full text How to solve it?            Two columns: Text, Number is the easiest            Three columns: Text, Text, Number                    text, number, number --- date date ; Date Numeric ; Numeric Digital             What about four columns, five columns?',
+                                  class => 'AnalyzedColumnDescription',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'a' => {
+     'index' => {
      	datatype => 'int',
-     	base_name => 'A',
-     	description => 'Gets the alpha component value of this System.Drawing.Color structure.            ',
+     	base_name => 'Index',
+     	description => 'Column index.',
      	format => '',
      	read_only => '',
      		},
-     'r' => {
+     'column_index' => {
      	datatype => 'int',
-     	base_name => 'R',
-     	description => 'Gets the red component value of this System.Drawing.Color structure.            ',
+     	base_name => 'ColumnIndex',
+     	description => 'The true position index value of the column.',
      	format => '',
      	read_only => '',
      		},
-     'g' => {
-     	datatype => 'int',
-     	base_name => 'G',
-     	description => 'Gets the green component value of this System.Drawing.Color structure.',
+     'title' => {
+     	datatype => 'string',
+     	base_name => 'Title',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'b' => {
+     'repetition_rate' => {
+     	datatype => 'double',
+     	base_name => 'RepetitionRate',
+     	description => 'When the repetition rate is high, can it be viewed as a group display?',
+     	format => '',
+     	read_only => '',
+     		},
+     'column_data_data_type' => {
+     	datatype => 'string',
+     	base_name => 'ColumnDataDataType',
+     	description => 'The column type is identified, and the attributes of the column are determined after data analysis.',
+     	format => '',
+     	read_only => '',
+     		},
+     'number_category_type' => {
+     	datatype => 'string',
+     	base_name => 'NumberCategoryType',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'text_category_type' => {
+     	datatype => 'string',
+     	base_name => 'TextCategoryType',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'style_number' => {
      	datatype => 'int',
-     	base_name => 'B',
-     	description => 'Gets the blue component value of this System.Drawing.Color structure.            ',
+     	base_name => 'StyleNumber',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'column_data_exception_description' => {
+     	datatype => 'string',
+     	base_name => 'columnDataExceptionDescription',
+     	description => 'Column data exception description.',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'a' => 'int',
-    'r' => 'int',
-    'g' => 'int',
-    'b' => 'int' 
+    'index' => 'int',
+    'column_index' => 'int',
+    'title' => 'string',
+    'repetition_rate' => 'double',
+    'column_data_data_type' => 'string',
+    'number_category_type' => 'string',
+    'text_category_type' => 'string',
+    'style_number' => 'int',
+    'column_data_exception_description' => 'string' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'a' => 'A',
-    'r' => 'R',
-    'g' => 'G',
-    'b' => 'B' 
+    'index' => 'Index',
+    'column_index' => 'ColumnIndex',
+    'title' => 'Title',
+    'repetition_rate' => 'RepetitionRate',
+    'column_data_data_type' => 'ColumnDataDataType',
+    'number_category_type' => 'NumberCategoryType',
+    'text_category_type' => 'TextCategoryType',
+    'style_number' => 'StyleNumber',
+    'column_data_exception_description' => 'columnDataExceptionDescription' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

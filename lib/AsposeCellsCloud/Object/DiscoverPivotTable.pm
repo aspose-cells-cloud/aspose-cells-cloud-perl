@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::Color;
+package AsposeCellsCloud::Object::DiscoverPivotTable;
 
 require 5.6.0;
 use strict;
@@ -118,55 +118,82 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => 'Color.',
-                                  class => 'Color',
+__PACKAGE__->class_documentation({description => '',
+                                  class => 'DiscoverPivotTable',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'a' => {
-     	datatype => 'int',
-     	base_name => 'A',
-     	description => 'Gets the alpha component value of this System.Drawing.Color structure.            ',
+     'name' => {
+     	datatype => 'string',
+     	base_name => 'Name',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'r' => {
-     	datatype => 'int',
-     	base_name => 'R',
-     	description => 'Gets the red component value of this System.Drawing.Color structure.            ',
+     'title' => {
+     	datatype => 'string',
+     	base_name => 'Title',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'g' => {
-     	datatype => 'int',
-     	base_name => 'G',
-     	description => 'Gets the green component value of this System.Drawing.Color structure.',
+     'data_range' => {
+     	datatype => 'string',
+     	base_name => 'DataRange',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'b' => {
-     	datatype => 'int',
-     	base_name => 'B',
-     	description => 'Gets the blue component value of this System.Drawing.Color structure.            ',
+     'pivot_field_rows' => {
+     	datatype => 'ARRAY[int?]',
+     	base_name => 'PivotFieldRows',
+     	description => 'Represents row fields in a PivotTable report.',
+     	format => '',
+     	read_only => '',
+     		},
+     'pivot_field_columns' => {
+     	datatype => 'ARRAY[int?]',
+     	base_name => 'PivotFieldColumns',
+     	description => 'Represents column fields in a PivotTable report.',
+     	format => '',
+     	read_only => '',
+     		},
+     'pivot_field_data' => {
+     	datatype => 'ARRAY[int?]',
+     	base_name => 'PivotFieldData',
+     	description => 'Represents data fields in a PivotTable report.',
+     	format => '',
+     	read_only => '',
+     		},
+     'thumbnail' => {
+     	datatype => 'string',
+     	base_name => 'Thumbnail',
+     	description => 'Base64String',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'a' => 'int',
-    'r' => 'int',
-    'g' => 'int',
-    'b' => 'int' 
+    'name' => 'string',
+    'title' => 'string',
+    'data_range' => 'string',
+    'pivot_field_rows' => 'ARRAY[int?]',
+    'pivot_field_columns' => 'ARRAY[int?]',
+    'pivot_field_data' => 'ARRAY[int?]',
+    'thumbnail' => 'string' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'a' => 'A',
-    'r' => 'R',
-    'g' => 'G',
-    'b' => 'B' 
+    'name' => 'Name',
+    'title' => 'Title',
+    'data_range' => 'DataRange',
+    'pivot_field_rows' => 'PivotFieldRows',
+    'pivot_field_columns' => 'PivotFieldColumns',
+    'pivot_field_data' => 'PivotFieldData',
+    'thumbnail' => 'Thumbnail' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

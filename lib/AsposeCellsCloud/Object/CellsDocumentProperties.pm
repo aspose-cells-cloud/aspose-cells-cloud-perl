@@ -118,7 +118,7 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => '',
+__PACKAGE__->class_documentation({description => 'Excel properties',
                                   class => 'CellsDocumentProperties',
                                   required => [], # TODO
 }                                 );
@@ -128,7 +128,7 @@ __PACKAGE__->method_documentation({
      'document_property_list' => {
      	datatype => 'ARRAY[CellsDocumentProperty]',
      	base_name => 'DocumentPropertyList',
-     	description => '',
+     	description => 'Document property list.',
      	format => '',
      	read_only => '',
      		},    

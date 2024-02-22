@@ -59,7 +59,7 @@ sub new {
 
 
 # Run Operation Request
-# PostMetadataRequest.File : document properties  ,
+# PostMetadataRequest.File : File to upload  ,
 # PostMetadataRequest.cellsDocuments : document properties  ,
 # PostMetadataRequest.password : The password needed to open an Excel file.  ,
 # PostMetadataRequest.checkExcelRestriction : Whether check restriction of excel file when user modify cells related objects.  ,
@@ -144,7 +144,7 @@ __PACKAGE__->method_documentation({
      'file' => {
      	datatype => 'string',
      	base_name => 'File',
-     	description => 'document properties',
+     	description => 'File to upload',
      	format => '',
      	read_only => '',
      		},

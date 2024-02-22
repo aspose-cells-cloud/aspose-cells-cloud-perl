@@ -59,7 +59,7 @@ sub new {
 
 
 # Run Operation Request
-# DeleteMetadataRequest.File : Cells document property name.  ,
+# DeleteMetadataRequest.File : File to upload  ,
 # DeleteMetadataRequest.type : Cells document property name.  ,
 # DeleteMetadataRequest.outFormat : The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)  ,
 # DeleteMetadataRequest.password : The password needed to open an Excel file.  ,
@@ -138,7 +138,7 @@ __PACKAGE__->method_documentation({
      'file' => {
      	datatype => 'string',
      	base_name => 'File',
-     	description => 'Cells document property name.',
+     	description => 'File to upload',
      	format => '',
      	read_only => '',
      		},

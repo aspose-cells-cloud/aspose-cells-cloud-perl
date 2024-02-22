@@ -10,10 +10,14 @@ function GetVersionFromMETA {
             if ($_ -match "/CellsApi.pm") {
                 $NeedGet = $true                           
             }if($NeedGet -and $_ -match "version" ){               
-                if( $_ -match "\d+.\d+"){   
+                if( $_ -match "\d+.\d+.\d+"){   
                     $NeedGet = $false                 
                    return $matches[0]
                 }
+                if( $_ -match "\d+.\d+"){   
+                    $NeedGet = $false                 
+                   return $matches[0]
+                }                
             }
         } 
     }

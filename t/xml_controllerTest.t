@@ -6,7 +6,7 @@ use strict;
 use warnings;
 
 use AsposeCellsCloud::Object::ImportXMLRequest;
-use AsposeCellsCloud::Object::FileSource;
+use AsposeCellsCloud::Object::DataSource;
 use AsposeCellsCloud::Object::ImportPosition;
 use AsposeCellsCloud::Request::PostWorkbookExportXMLRequest;
 use AsposeCellsCloud::Request::PostWorkbookImportXMLRequest;
@@ -48,9 +48,9 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
         ready_file('api'=> $api, 'file'=> $dataXML ,'folder' =>$remoteFolder . '/data.xml', 'storage'=>'') ; 
      
-        my $import_xml_request_xml_file_source = AsposeCellsCloud::Object::FileSource->new();
-         $import_xml_request_xml_file_source->{file_source_type} = 'CloudFileSystem'  ;
-         $import_xml_request_xml_file_source->{file_path} = $remoteFolder . '/data.xml'  ;
+        my $import_xml_request_xml_file_source = AsposeCellsCloud::Object::DataSource->new();
+         $import_xml_request_xml_file_source->{data_source_type} = 'CloudFileSystem'  ;
+         $import_xml_request_xml_file_source->{data_path} = $remoteFolder . '/data.xml'  ;
         my $import_xml_request_import_position = AsposeCellsCloud::Object::ImportPosition->new();
          $import_xml_request_import_position->{sheet_name} = 'Sheet1'  ;
          $import_xml_request_import_position->{row_index} = 3  ;

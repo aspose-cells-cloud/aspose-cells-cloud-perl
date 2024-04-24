@@ -18,9 +18,9 @@ my $upload_file_request = AsposeCellsCloud::Request::UploadFileRequest->new( 'Up
 
 my $upload_file_request = AsposeCellsCloud::Request::UploadFileRequest->new( 'UploadFiles'=>{ $dataXML => $dataXML  }  ,'path'=>$remoteFolder . '/data.xml' );
  
-my $import_xml_request_xml_file_source = AsposeCellsCloud::Object::FileSource->new();
- $import_xml_request_xml_file_source->{file_source_type} = 'CloudFileSystem'  ;
- $import_xml_request_xml_file_source->{file_path} = $remoteFolder . '/data.xml'  ;
+my $import_xml_request_xml_file_source = AsposeCellsCloud::Object::DataSource->new();
+ $import_xml_request_xml_file_source->{data_source_type} = 'CloudFileSystem'  ;
+ $import_xml_request_xml_file_source->{data_path} = $remoteFolder . '/data.xml'  ;
 my $import_xml_request_import_position = AsposeCellsCloud::Object::ImportPosition->new();
  $import_xml_request_import_position->{sheet_name} = 'Sheet1'  ;
  $import_xml_request_import_position->{row_index} = 3  ;

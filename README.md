@@ -119,7 +119,7 @@ $instance->put_convert_workbook(request=> $request);
 
 # Release history version
 
-## Feature & Enhancements in Version 24.3
+## Enhancements in Version 24.3
 
 - Support data deduplication.
 - Support data filling.

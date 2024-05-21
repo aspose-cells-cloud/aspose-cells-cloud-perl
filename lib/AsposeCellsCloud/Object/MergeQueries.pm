@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::SplitResultDocument;
+package AsposeCellsCloud::Object::MergeQueries;
 
 require 5.6.0;
 use strict;
@@ -35,8 +35,9 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
-use AsposeCellsCloud::Object::Link;
-use AsposeCellsCloud::Object::LinkElement; 
+use AsposeCellsCloud::Object::DataItem;
+use AsposeCellsCloud::Object::DataSource;
+use AsposeCellsCloud::Object::FileInfo; 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -119,23 +120,72 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => '',
-                                  class => 'SplitResultDocument',
+__PACKAGE__->class_documentation({description => 'Represents merge quesies.',
+                                  class => 'MergeQueries',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'id' => {
-     	datatype => 'int',
-     	base_name => 'Id',
+     'data_source_a' => {
+     	datatype => 'DataSource',
+     	base_name => 'DataSourceA',
+     	description => 'Indicates the source of the mount data.',
+     	format => '',
+     	read_only => '',
+     		},
+     'file_info_a' => {
+     	datatype => 'FileInfo',
+     	base_name => 'FileInfoA',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'link' => {
-     	datatype => 'Link',
-     	base_name => 'link',
+     'data_item_a' => {
+     	datatype => 'DataItem',
+     	base_name => 'DataItemA',
+     	description => 'Represents data item.',
+     	format => '',
+     	read_only => '',
+     		},
+     'data_a_index_field' => {
+     	datatype => 'string',
+     	base_name => 'DataAIndexField',
+     	description => 'Represents index field  of DataA',
+     	format => '',
+     	read_only => '',
+     		},
+     'data_source_b' => {
+     	datatype => 'DataSource',
+     	base_name => 'DataSourceB',
+     	description => 'Indicates the source of the mount data.',
+     	format => '',
+     	read_only => '',
+     		},
+     'file_info_b' => {
+     	datatype => 'FileInfo',
+     	base_name => 'FileInfoB',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'data_item_b' => {
+     	datatype => 'DataItem',
+     	base_name => 'DataItemB',
+     	description => 'Represents data item.',
+     	format => '',
+     	read_only => '',
+     		},
+     'data_b_index_field' => {
+     	datatype => 'string',
+     	base_name => 'DataBIndexField',
+     	description => 'Represents index field  of DataB',
+     	format => '',
+     	read_only => '',
+     		},
+     'join_type' => {
+     	datatype => 'string',
+     	base_name => 'JoinType',
      	description => '',
      	format => '',
      	read_only => '',
@@ -143,13 +193,27 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->swagger_types( {
-    'id' => 'int',
-    'link' => 'Link' 
+    'data_source_a' => 'DataSource',
+    'file_info_a' => 'FileInfo',
+    'data_item_a' => 'DataItem',
+    'data_a_index_field' => 'string',
+    'data_source_b' => 'DataSource',
+    'file_info_b' => 'FileInfo',
+    'data_item_b' => 'DataItem',
+    'data_b_index_field' => 'string',
+    'join_type' => 'string' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'id' => 'Id',
-    'link' => 'link' 
+    'data_source_a' => 'DataSourceA',
+    'file_info_a' => 'FileInfoA',
+    'data_item_a' => 'DataItemA',
+    'data_a_index_field' => 'DataAIndexField',
+    'data_source_b' => 'DataSourceB',
+    'file_info_b' => 'FileInfoB',
+    'data_item_b' => 'DataItemB',
+    'data_b_index_field' => 'DataBIndexField',
+    'join_type' => 'JoinType' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

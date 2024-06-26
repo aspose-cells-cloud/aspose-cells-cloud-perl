@@ -1,6 +1,6 @@
 =begin comment
 
-Copyright (c) 2023 Aspose.Cells Cloud
+Copyright (c) 2024 Aspose.Cells Cloud
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::TotalRequest;
+package AsposeCellsCloud::Object::AppliedOperate;
 
 require 5.6.0;
 use strict;
@@ -118,22 +118,28 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => '',
-                                  class => 'TotalRequest',
+__PACKAGE__->class_documentation({description => 'A data operation that is used to obtain a query of data.',
+                                  class => 'AppliedOperate',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-    
+     'applied_operate_type' => {
+     	datatype => 'string',
+     	base_name => 'AppliedOperateType',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},    
 });
 
 __PACKAGE__->swagger_types( {
- 
+    'applied_operate_type' => 'string' 
 } );
 
 __PACKAGE__->attribute_map( {
- 
+    'applied_operate_type' => 'AppliedOperateType' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

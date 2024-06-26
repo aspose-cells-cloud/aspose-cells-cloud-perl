@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::Transformation;
+package AsposeCellsCloud::Object::DataQuery;
 
 require 5.6.0;
 use strict;
@@ -35,8 +35,9 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
-use AsposeCellsCloud::Object::PivotColumn;
-use AsposeCellsCloud::Object::UnpivotColumn; 
+use AsposeCellsCloud::Object::DataItem;
+use AsposeCellsCloud::Object::DataSource;
+use AsposeCellsCloud::Object::FileInfo; 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -119,37 +120,64 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => '',
-                                  class => 'Transformation',
+__PACKAGE__->class_documentation({description => 'Data query.',
+                                  class => 'DataQuery',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'pivot_column' => {
-     	datatype => 'PivotColumn',
-     	base_name => 'PivotColumn',
-     	description => 'long table to a wide table.',
+     'name' => {
+     	datatype => 'string',
+     	base_name => 'Name',
+     	description => 'Define a name for data query. Unique identification.',
      	format => '',
      	read_only => '',
      		},
-     'unpivot_column' => {
-     	datatype => 'UnpivotColumn',
-     	base_name => 'UnpivotColumn',
-     	description => 'wide table to a long table',
+     'data_source_data_type' => {
+     	datatype => 'string',
+     	base_name => 'DataSourceDataType',
+     	description => 'The specific data object type. When the value is File, DataItem is invalid.',
+     	format => '',
+     	read_only => '',
+     		},
+     'data_source' => {
+     	datatype => 'DataSource',
+     	base_name => 'DataSource',
+     	description => 'Indicates the source of the mount data.',
+     	format => '',
+     	read_only => '',
+     		},
+     'file_info' => {
+     	datatype => 'FileInfo',
+     	base_name => 'FileInfo',
+     	description => 'When data souce is request files, FileInfo store the contents of the file.',
+     	format => '',
+     	read_only => '',
+     		},
+     'data_item' => {
+     	datatype => 'DataItem',
+     	base_name => 'DataItem',
+     	description => 'The specific data object type and name.',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'pivot_column' => 'PivotColumn',
-    'unpivot_column' => 'UnpivotColumn' 
+    'name' => 'string',
+    'data_source_data_type' => 'string',
+    'data_source' => 'DataSource',
+    'file_info' => 'FileInfo',
+    'data_item' => 'DataItem' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'pivot_column' => 'PivotColumn',
-    'unpivot_column' => 'UnpivotColumn' 
+    'name' => 'Name',
+    'data_source_data_type' => 'DataSourceDataType',
+    'data_source' => 'DataSource',
+    'file_info' => 'FileInfo',
+    'data_item' => 'DataItem' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

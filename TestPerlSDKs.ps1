@@ -14,6 +14,7 @@ foreach ($item in Get-ChildItem ".\t\" -Include *.t  -name) {
             $passed++
         }
     }
+    Start-Sleep 5
 }
 $total = $passed
 $EndTime = Get-Date

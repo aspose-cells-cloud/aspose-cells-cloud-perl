@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::QueryTable;
+package AsposeCellsCloud::Object::AppliedStep;
 
 require 5.6.0;
 use strict;
@@ -35,7 +35,7 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
-use AsposeCellsCloud::Object::Range; 
+use AsposeCellsCloud::Object::AppliedOperate; 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -118,64 +118,37 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => 'Represents QueryTable information.',
-                                  class => 'QueryTable',
+__PACKAGE__->class_documentation({description => 'Each data manipulation step that is performed when you get the query data.',
+                                  class => 'AppliedStep',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'connection_id' => {
-     	datatype => 'int',
-     	base_name => 'ConnectionId',
-     	description => 'Gets the connection id of the query table.',
-     	format => '',
-     	read_only => '',
-     		},
-     'name' => {
+     'step_name' => {
      	datatype => 'string',
-     	base_name => 'Name',
-     	description => 'Gets the name of querytable.',
+     	base_name => 'StepName',
+     	description => 'Data manipulation step name.',
      	format => '',
      	read_only => '',
      		},
-     'result_range' => {
-     	datatype => 'Range',
-     	base_name => 'ResultRange',
-     	description => 'Gets the range of the result.',
-     	format => '',
-     	read_only => '',
-     		},
-     'preserve_formatting' => {
-     	datatype => 'boolean',
-     	base_name => 'PreserveFormatting',
-     	description => 'Returns or sets the PreserveFormatting of the object.',
-     	format => '',
-     	read_only => '',
-     		},
-     'adjust_column_width' => {
-     	datatype => 'boolean',
-     	base_name => 'AdjustColumnWidth',
-     	description => 'Returns or sets the AdjustColumnWidth of the object.',
+     'applied_operate' => {
+     	datatype => 'AppliedOperate',
+     	base_name => 'AppliedOperate',
+     	description => 'Data manipulation name.',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'connection_id' => 'int',
-    'name' => 'string',
-    'result_range' => 'Range',
-    'preserve_formatting' => 'boolean',
-    'adjust_column_width' => 'boolean' 
+    'step_name' => 'string',
+    'applied_operate' => 'AppliedOperate' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'connection_id' => 'ConnectionId',
-    'name' => 'Name',
-    'result_range' => 'ResultRange',
-    'preserve_formatting' => 'PreserveFormatting',
-    'adjust_column_width' => 'AdjustColumnWidth' 
+    'step_name' => 'StepName',
+    'applied_operate' => 'AppliedOperate' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

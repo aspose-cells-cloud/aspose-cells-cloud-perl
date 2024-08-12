@@ -20,7 +20,7 @@ my $api = get_cells();
     #
     # OleObjectsController->get_worksheet_ole_objects  test
     #
-    { 
+    subtest 'Testing OleObjectsController->get_worksheet_ole_objects' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -36,12 +36,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_ole_objects(request=> $request);
         ok($result,'get_worksheet_ole_objects test OK');
-    }
+    };
 
     #
     # OleObjectsController->get_worksheet_ole_object  test
     #
-    { 
+    subtest 'Testing OleObjectsController->get_worksheet_ole_object' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -59,12 +59,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_ole_object(request=> $request);
         ok($result,'get_worksheet_ole_object test OK');
-    }
+    };
 
     #
     # OleObjectsController->delete_worksheet_ole_objects  test
     #
-    { 
+    subtest 'Testing OleObjectsController->delete_worksheet_ole_objects' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -80,12 +80,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_ole_objects(request=> $request);
         ok($result,'delete_worksheet_ole_objects test OK');
-    }
+    };
 
     #
     # OleObjectsController->delete_worksheet_ole_object  test
     #
-    { 
+    subtest 'Testing OleObjectsController->delete_worksheet_ole_object' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -102,12 +102,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_ole_object(request=> $request);
         ok($result,'delete_worksheet_ole_object test OK');
-    }
+    };
 
     #
     # OleObjectsController->post_update_worksheet_ole_object  test
     #
-    { 
+    subtest 'Testing OleObjectsController->post_update_worksheet_ole_object' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -130,12 +130,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_update_worksheet_ole_object(request=> $request);
         ok($result,'post_update_worksheet_ole_object test OK');
-    }
+    };
 
     #
     # OleObjectsController->put_worksheet_ole_object  test
     #
-    { 
+    subtest 'Testing OleObjectsController->put_worksheet_ole_object' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -161,7 +161,7 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_ole_object(request=> $request);
         ok($result,'put_worksheet_ole_object test OK');
-    }
+    };
 
 
 1;

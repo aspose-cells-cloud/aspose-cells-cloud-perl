@@ -39,7 +39,7 @@ my $api = get_cells();
     #
     # PivotTablesController->get_worksheet_pivot_tables  test
     #
-    { 
+    subtest 'Testing PivotTablesController->get_worksheet_pivot_tables' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -55,12 +55,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_pivot_tables(request=> $request);
         ok($result,'get_worksheet_pivot_tables test OK');
-    }
+    };
 
     #
     # PivotTablesController->get_worksheet_pivot_table  test
     #
-    { 
+    subtest 'Testing PivotTablesController->get_worksheet_pivot_table' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -77,12 +77,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_pivot_table(request=> $request);
         ok($result,'get_worksheet_pivot_table test OK');
-    }
+    };
 
     #
     # PivotTablesController->get_pivot_table_field  test
     #
-    { 
+    subtest 'Testing PivotTablesController->get_pivot_table_field' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -101,12 +101,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_pivot_table_field(request=> $request);
         ok($result,'get_pivot_table_field test OK');
-    }
+    };
 
     #
     # PivotTablesController->get_worksheet_pivot_table_filters  test
     #
-    { 
+    subtest 'Testing PivotTablesController->get_worksheet_pivot_table_filters' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -123,12 +123,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_pivot_table_filters(request=> $request);
         ok($result,'get_worksheet_pivot_table_filters test OK');
-    }
+    };
 
     #
     # PivotTablesController->get_worksheet_pivot_table_filter  test
     #
-    { 
+    subtest 'Testing PivotTablesController->get_worksheet_pivot_table_filter' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -146,12 +146,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_pivot_table_filter(request=> $request);
         ok($result,'get_worksheet_pivot_table_filter test OK');
-    }
+    };
 
     #
     # PivotTablesController->put_worksheet_pivot_table  test
     #
-    { 
+    subtest 'Testing PivotTablesController->put_worksheet_pivot_table' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -171,12 +171,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_pivot_table(request=> $request);
         ok($result,'put_worksheet_pivot_table test OK');
-    }
+    };
 
     #
     # PivotTablesController->put_pivot_table_field  test
     #
-    { 
+    subtest 'Testing PivotTablesController->put_pivot_table_field' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -199,12 +199,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_pivot_table_field(request=> $request);
         ok($result,'put_pivot_table_field test OK');
-    }
+    };
 
     #
     # PivotTablesController->put_worksheet_pivot_table_filter  test
     #
-    { 
+    subtest 'Testing PivotTablesController->put_worksheet_pivot_table_filter' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -226,12 +226,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_pivot_table_filter(request=> $request);
         ok($result,'put_worksheet_pivot_table_filter test OK');
-    }
+    };
 
     #
     # PivotTablesController->post_pivot_table_field_hide_item  test
     #
-    { 
+    subtest 'Testing PivotTablesController->post_pivot_table_field_hide_item' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -253,12 +253,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_pivot_table_field_hide_item(request=> $request);
         ok($result,'post_pivot_table_field_hide_item test OK');
-    }
+    };
 
     #
     # PivotTablesController->post_pivot_table_field_move_to  test
     #
-    { 
+    subtest 'Testing PivotTablesController->post_pivot_table_field_move_to' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -278,12 +278,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_pivot_table_field_move_to(request=> $request);
         ok($result,'post_pivot_table_field_move_to test OK');
-    }
+    };
 
     #
     # PivotTablesController->post_pivot_table_cell_style  test
     #
-    { 
+    subtest 'Testing PivotTablesController->post_pivot_table_cell_style' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -308,12 +308,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_pivot_table_cell_style(request=> $request);
         ok($result,'post_pivot_table_cell_style test OK');
-    }
+    };
 
     #
     # PivotTablesController->post_pivot_table_style  test
     #
-    { 
+    subtest 'Testing PivotTablesController->post_pivot_table_style' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -336,12 +336,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_pivot_table_style(request=> $request);
         ok($result,'post_pivot_table_style test OK');
-    }
+    };
 
     #
     # PivotTablesController->post_pivot_table_update_pivot_fields  test
     #
-    { 
+    subtest 'Testing PivotTablesController->post_pivot_table_update_pivot_fields' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -363,12 +363,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_pivot_table_update_pivot_fields(request=> $request);
         ok($result,'post_pivot_table_update_pivot_fields test OK');
-    }
+    };
 
     #
     # PivotTablesController->post_pivot_table_update_pivot_field  test
     #
-    { 
+    subtest 'Testing PivotTablesController->post_pivot_table_update_pivot_field' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -391,12 +391,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_pivot_table_update_pivot_field(request=> $request);
         ok($result,'post_pivot_table_update_pivot_field test OK');
-    }
+    };
 
     #
     # PivotTablesController->post_worksheet_pivot_table_calculate  test
     #
-    { 
+    subtest 'Testing PivotTablesController->post_worksheet_pivot_table_calculate' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -413,12 +413,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_pivot_table_calculate(request=> $request);
         ok($result,'post_worksheet_pivot_table_calculate test OK');
-    }
+    };
 
     #
     # PivotTablesController->post_worksheet_pivot_table_move  test
     #
-    { 
+    subtest 'Testing PivotTablesController->post_worksheet_pivot_table_move' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -438,12 +438,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_pivot_table_move(request=> $request);
         ok($result,'post_worksheet_pivot_table_move test OK');
-    }
+    };
 
     #
     # PivotTablesController->delete_worksheet_pivot_tables  test
     #
-    { 
+    subtest 'Testing PivotTablesController->delete_worksheet_pivot_tables' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -459,12 +459,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_pivot_tables(request=> $request);
         ok($result,'delete_worksheet_pivot_tables test OK');
-    }
+    };
 
     #
     # PivotTablesController->delete_worksheet_pivot_table  test
     #
-    { 
+    subtest 'Testing PivotTablesController->delete_worksheet_pivot_table' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -481,12 +481,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_pivot_table(request=> $request);
         ok($result,'delete_worksheet_pivot_table test OK');
-    }
+    };
 
     #
     # PivotTablesController->delete_pivot_table_field  test
     #
-    { 
+    subtest 'Testing PivotTablesController->delete_pivot_table_field' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -508,12 +508,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_pivot_table_field(request=> $request);
         ok($result,'delete_pivot_table_field test OK');
-    }
+    };
 
     #
     # PivotTablesController->delete_worksheet_pivot_table_filters  test
     #
-    { 
+    subtest 'Testing PivotTablesController->delete_worksheet_pivot_table_filters' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -531,12 +531,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_pivot_table_filters(request=> $request);
         ok($result,'delete_worksheet_pivot_table_filters test OK');
-    }
+    };
 
     #
     # PivotTablesController->delete_worksheet_pivot_table_filter  test
     #
-    { 
+    subtest 'Testing PivotTablesController->delete_worksheet_pivot_table_filter' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -555,7 +555,7 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_pivot_table_filter(request=> $request);
         ok($result,'delete_worksheet_pivot_table_filter test OK');
-    }
+    };
 
 
 1;

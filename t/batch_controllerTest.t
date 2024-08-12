@@ -21,7 +21,7 @@ my $api = get_cells();
     #
     # BatchController->post_batch_convert  test
     #
-    { 
+    subtest 'Testing BatchController->post_batch_convert' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localBook1 = 'Book1.xlsx';
@@ -44,12 +44,12 @@ my $api = get_cells();
         $request->{batch_convert_request} =  $batch_convert_request;
         my $result =  $api->post_batch_convert(request=> $request);
         ok($result,'post_batch_convert test OK');
-    }
+    };
 
     #
     # BatchController->post_batch_protect  test
     #
-    { 
+    subtest 'Testing BatchController->post_batch_protect' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localBook1 = 'Book1.xlsx';
@@ -73,12 +73,12 @@ my $api = get_cells();
         $request->{batch_protect_request} =  $batch_protect_request;
         my $result =  $api->post_batch_protect(request=> $request);
         ok($result,'post_batch_protect test OK');
-    }
+    };
 
     #
     # BatchController->post_batch_lock  test
     #
-    { 
+    subtest 'Testing BatchController->post_batch_lock' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localBook1 = 'Book1.xlsx';
@@ -101,12 +101,12 @@ my $api = get_cells();
         $request->{batch_lock_request} =  $batch_lock_request;
         my $result =  $api->post_batch_lock(request=> $request);
         ok($result,'post_batch_lock test OK');
-    }
+    };
 
     #
     # BatchController->post_batch_unlock  test
     #
-    { 
+    subtest 'Testing BatchController->post_batch_unlock' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localBook1 = 'Book1.xlsx';
@@ -129,7 +129,7 @@ my $api = get_cells();
         $request->{batch_lock_request} =  $batch_lock_request;
         my $result =  $api->post_batch_unlock(request=> $request);
         ok($result,'post_batch_unlock test OK');
-    }
+    };
 
 
 1;

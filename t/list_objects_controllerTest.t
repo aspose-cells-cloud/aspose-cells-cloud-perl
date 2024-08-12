@@ -31,7 +31,7 @@ my $api = get_cells();
     #
     # ListObjectsController->get_worksheet_list_objects  test
     #
-    { 
+    subtest 'Testing ListObjectsController->get_worksheet_list_objects' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -47,12 +47,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_list_objects(request=> $request);
         ok($result,'get_worksheet_list_objects test OK');
-    }
+    };
 
     #
     # ListObjectsController->get_worksheet_list_object  test
     #
-    { 
+    subtest 'Testing ListObjectsController->get_worksheet_list_object' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -70,12 +70,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_list_object(request=> $request);
         ok($result,'get_worksheet_list_object test OK');
-    }
+    };
 
     #
     # ListObjectsController->put_worksheet_list_object  test
     #
-    { 
+    subtest 'Testing ListObjectsController->put_worksheet_list_object' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -98,12 +98,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_list_object(request=> $request);
         ok($result,'put_worksheet_list_object test OK');
-    }
+    };
 
     #
     # ListObjectsController->delete_worksheet_list_objects  test
     #
-    { 
+    subtest 'Testing ListObjectsController->delete_worksheet_list_objects' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -119,12 +119,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_list_objects(request=> $request);
         ok($result,'delete_worksheet_list_objects test OK');
-    }
+    };
 
     #
     # ListObjectsController->delete_worksheet_list_object  test
     #
-    { 
+    subtest 'Testing ListObjectsController->delete_worksheet_list_object' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -141,12 +141,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_list_object(request=> $request);
         ok($result,'delete_worksheet_list_object test OK');
-    }
+    };
 
     #
     # ListObjectsController->post_worksheet_list_object  test
     #
-    { 
+    subtest 'Testing ListObjectsController->post_worksheet_list_object' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -166,12 +166,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_list_object(request=> $request);
         ok($result,'post_worksheet_list_object test OK');
-    }
+    };
 
     #
     # ListObjectsController->post_worksheet_list_object_convert_to_range  test
     #
-    { 
+    subtest 'Testing ListObjectsController->post_worksheet_list_object_convert_to_range' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -188,12 +188,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_list_object_convert_to_range(request=> $request);
         ok($result,'post_worksheet_list_object_convert_to_range test OK');
-    }
+    };
 
     #
     # ListObjectsController->post_worksheet_list_object_summarize_with_pivot_table  test
     #
-    { 
+    subtest 'Testing ListObjectsController->post_worksheet_list_object_summarize_with_pivot_table' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -223,12 +223,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_list_object_summarize_with_pivot_table(request=> $request);
         ok($result,'post_worksheet_list_object_summarize_with_pivot_table test OK');
-    }
+    };
 
     #
     # ListObjectsController->post_worksheet_list_object_sort_table  test
     #
-    { 
+    subtest 'Testing ListObjectsController->post_worksheet_list_object_sort_table' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -248,12 +248,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_list_object_sort_table(request=> $request);
         ok($result,'post_worksheet_list_object_sort_table test OK');
-    }
+    };
 
     #
     # ListObjectsController->post_worksheet_list_column  test
     #
-    { 
+    subtest 'Testing ListObjectsController->post_worksheet_list_column' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -274,12 +274,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_list_column(request=> $request);
         ok($result,'post_worksheet_list_column test OK');
-    }
+    };
 
     #
     # ListObjectsController->post_worksheet_list_columns_total  test
     #
-    { 
+    subtest 'Testing ListObjectsController->post_worksheet_list_columns_total' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -301,12 +301,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_list_columns_total(request=> $request);
         ok($result,'post_worksheet_list_columns_total test OK');
-    }
+    };
 
     #
     # ListObjectsController->post_worksheet_list_object_remove_duplicates  test
     #
-    { 
+    subtest 'Testing ListObjectsController->post_worksheet_list_object_remove_duplicates' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestTables.xlsx';
@@ -323,12 +323,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_list_object_remove_duplicates(request=> $request);
         ok($result,'post_worksheet_list_object_remove_duplicates test OK');
-    }
+    };
 
     #
     # ListObjectsController->post_worksheet_list_object_insert_slicer  test
     #
-    { 
+    subtest 'Testing ListObjectsController->post_worksheet_list_object_insert_slicer' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestTables.xlsx';
@@ -347,7 +347,7 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_list_object_insert_slicer(request=> $request);
         ok($result,'post_worksheet_list_object_insert_slicer test OK');
-    }
+    };
 
 
 1;

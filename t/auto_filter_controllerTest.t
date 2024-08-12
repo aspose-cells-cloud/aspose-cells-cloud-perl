@@ -29,7 +29,7 @@ my $api = get_cells();
     #
     # AutoFilterController->get_worksheet_auto_filter  test
     #
-    { 
+    subtest 'Testing AutoFilterController->get_worksheet_auto_filter' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -45,12 +45,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_auto_filter(request=> $request);
         ok($result,'get_worksheet_auto_filter test OK');
-    }
+    };
 
     #
     # AutoFilterController->put_worksheet_date_filter  test
     #
-    { 
+    subtest 'Testing AutoFilterController->put_worksheet_date_filter' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -72,12 +72,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_date_filter(request=> $request);
         ok($result,'put_worksheet_date_filter test OK');
-    }
+    };
 
     #
     # AutoFilterController->put_worksheet_filter  test
     #
-    { 
+    subtest 'Testing AutoFilterController->put_worksheet_filter' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -98,12 +98,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_filter(request=> $request);
         ok($result,'put_worksheet_filter test OK');
-    }
+    };
 
     #
     # AutoFilterController->put_worksheet_icon_filter  test
     #
-    { 
+    subtest 'Testing AutoFilterController->put_worksheet_icon_filter' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -125,12 +125,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_icon_filter(request=> $request);
         ok($result,'put_worksheet_icon_filter test OK');
-    }
+    };
 
     #
     # AutoFilterController->put_worksheet_custom_filter  test
     #
-    { 
+    subtest 'Testing AutoFilterController->put_worksheet_custom_filter' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -152,12 +152,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_custom_filter(request=> $request);
         ok($result,'put_worksheet_custom_filter test OK');
-    }
+    };
 
     #
     # AutoFilterController->put_worksheet_dynamic_filter  test
     #
-    { 
+    subtest 'Testing AutoFilterController->put_worksheet_dynamic_filter' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -178,12 +178,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_dynamic_filter(request=> $request);
         ok($result,'put_worksheet_dynamic_filter test OK');
-    }
+    };
 
     #
     # AutoFilterController->put_worksheet_filter_top10  test
     #
-    { 
+    subtest 'Testing AutoFilterController->put_worksheet_filter_top10' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -206,12 +206,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_filter_top10(request=> $request);
         ok($result,'put_worksheet_filter_top10 test OK');
-    }
+    };
 
     #
     # AutoFilterController->put_worksheet_color_filter  test
     #
-    { 
+    subtest 'Testing AutoFilterController->put_worksheet_color_filter' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -242,12 +242,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_color_filter(request=> $request);
         ok($result,'put_worksheet_color_filter test OK');
-    }
+    };
 
     #
     # AutoFilterController->post_worksheet_match_blanks  test
     #
-    { 
+    subtest 'Testing AutoFilterController->post_worksheet_match_blanks' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -264,12 +264,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_match_blanks(request=> $request);
         ok($result,'post_worksheet_match_blanks test OK');
-    }
+    };
 
     #
     # AutoFilterController->post_worksheet_match_non_blanks  test
     #
-    { 
+    subtest 'Testing AutoFilterController->post_worksheet_match_non_blanks' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -286,12 +286,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_match_non_blanks(request=> $request);
         ok($result,'post_worksheet_match_non_blanks test OK');
-    }
+    };
 
     #
     # AutoFilterController->post_worksheet_auto_filter_refresh  test
     #
-    { 
+    subtest 'Testing AutoFilterController->post_worksheet_auto_filter_refresh' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -307,12 +307,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_auto_filter_refresh(request=> $request);
         ok($result,'post_worksheet_auto_filter_refresh test OK');
-    }
+    };
 
     #
     # AutoFilterController->delete_worksheet_date_filter  test
     #
-    { 
+    subtest 'Testing AutoFilterController->delete_worksheet_date_filter' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -331,12 +331,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_date_filter(request=> $request);
         ok($result,'delete_worksheet_date_filter test OK');
-    }
+    };
 
     #
     # AutoFilterController->delete_worksheet_filter  test
     #
-    { 
+    subtest 'Testing AutoFilterController->delete_worksheet_filter' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -354,7 +354,7 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_filter(request=> $request);
         ok($result,'delete_worksheet_filter test OK');
-    }
+    };
 
 
 1;

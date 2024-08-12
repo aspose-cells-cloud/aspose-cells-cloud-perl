@@ -18,7 +18,7 @@ my $api = get_cells();
     #
     # XmlController->post_workbook_export_xml  test
     #
-    { 
+    subtest 'Testing XmlController->post_workbook_export_xml' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Template.xlsx';
@@ -33,12 +33,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_workbook_export_xml(request=> $request);
         ok($result,'post_workbook_export_xml test OK');
-    }
+    };
 
     #
     # XmlController->post_workbook_import_xml  test
     #
-    { 
+    subtest 'Testing XmlController->post_workbook_import_xml' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Template.xlsx';
@@ -66,7 +66,7 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_workbook_import_xml(request=> $request);
         ok($result,'post_workbook_import_xml test OK');
-    }
+    };
 
 
 1;

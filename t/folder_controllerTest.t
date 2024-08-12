@@ -18,7 +18,7 @@ my $api = get_cells();
     #
     # FolderController->get_files_list  test
     #
-    { 
+    subtest 'Testing FolderController->get_files_list' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -32,12 +32,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_files_list(request=> $request);
         ok($result,'get_files_list test OK');
-    }
+    };
 
     #
     # FolderController->create_folder  test
     #
-    { 
+    subtest 'Testing FolderController->create_folder' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -51,12 +51,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->create_folder(request=> $request);
         ok('create_folder test OK'); 
-    }
+    };
 
     #
     # FolderController->copy_folder  test
     #
-    { 
+    subtest 'Testing FolderController->copy_folder' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -72,12 +72,12 @@ my $api = get_cells();
         $request->{dest_storage_name} =  '';
         my $result =  $api->copy_folder(request=> $request);
         ok('copy_folder test OK'); 
-    }
+    };
 
     #
     # FolderController->move_folder  test
     #
-    { 
+    subtest 'Testing FolderController->move_folder' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -93,12 +93,12 @@ my $api = get_cells();
         $request->{dest_storage_name} =  '';
         my $result =  $api->move_folder(request=> $request);
         ok('move_folder test OK'); 
-    }
+    };
 
     #
     # FolderController->delete_folder  test
     #
-    { 
+    subtest 'Testing FolderController->delete_folder' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -113,7 +113,7 @@ my $api = get_cells();
         $request->{recursive} =  'true';
         my $result =  $api->delete_folder(request=> $request);
         ok('delete_folder test OK'); 
-    }
+    };
 
 
 1;

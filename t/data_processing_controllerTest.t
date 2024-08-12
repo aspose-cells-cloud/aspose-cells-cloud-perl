@@ -29,7 +29,7 @@ my $api = get_cells();
     #
     # DataProcessingController->post_workbook_data_cleansing  test
     #
-    { 
+    subtest 'Testing DataProcessingController->post_workbook_data_cleansing' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'BookCsvDuplicateData.csv';
@@ -54,12 +54,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_workbook_data_cleansing(request=> $request);
         ok($result,'post_workbook_data_cleansing test OK');
-    }
+    };
 
     #
     # DataProcessingController->post_workbook_data_deduplication  test
     #
-    { 
+    subtest 'Testing DataProcessingController->post_workbook_data_deduplication' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'BookCsvDuplicateData.csv';
@@ -77,12 +77,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_workbook_data_deduplication(request=> $request);
         ok($result,'post_workbook_data_deduplication test OK');
-    }
+    };
 
     #
     # DataProcessingController->post_workbook_data_fill  test
     #
-    { 
+    subtest 'Testing DataProcessingController->post_workbook_data_fill' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'BookCsvDuplicateData.csv';
@@ -104,12 +104,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_workbook_data_fill(request=> $request);
         ok($result,'post_workbook_data_fill test OK');
-    }
+    };
 
     #
     # DataProcessingController->post_data_transformation  test
     #
-    { 
+    subtest 'Testing DataProcessingController->post_data_transformation' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'BookTableL2W.xlsx';
@@ -142,8 +142,7 @@ my $api = get_cells();
          $data_transformation_request_applied_steps_applied_step0_applied_operate->{applied_operate_type} = 'UnpivotColumn'  ;
          $data_transformation_request_applied_steps_applied_step0_applied_operate->{value_map_name} = 'Count'  ;
          $data_transformation_request_applied_steps_applied_step0_applied_operate->{column_map_name} = 'Date'  ;
-         $data_transformation_request_applied_steps_applied_step0_applied_operate->{unpivot_column_names} = [];
-         push ( @{$data_transformation_request_applied_steps_applied_step0_applied_operate->{unpivot_column_names}}, '2017'  );
+         $data_transformation_request_applied_steps_applied_step0_applied_operate->{unpivot_column_names} = []; push ( @{$data_transformation_request_applied_steps_applied_step0_applied_operate->{unpivot_column_names}}, '2017'  );
          push ( @{$data_transformation_request_applied_steps_applied_step0_applied_operate->{unpivot_column_names}}, '2018'  );
          push ( @{$data_transformation_request_applied_steps_applied_step0_applied_operate->{unpivot_column_names}}, '2019'  );  ;
         my $data_transformation_request_applied_steps_applied_step0 = AsposeCellsCloud::Object::AppliedStep->new();
@@ -158,7 +157,7 @@ my $api = get_cells();
         $request->{data_transformation_request} =  $data_transformation_request;
         my $result =  $api->post_data_transformation(request=> $request);
         ok($result,'post_data_transformation test OK');
-    }
+    };
 
 
 1;

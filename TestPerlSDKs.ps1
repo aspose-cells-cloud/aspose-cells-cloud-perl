@@ -6,7 +6,7 @@ $failed = 0
 $skipped =0
 foreach ($item in Get-ChildItem ".\t\" -Include *.t  -name) {
     Write-Host $item
-    [string[]]$lines = perl ".\t\$item"
+    [string[]]$lines = prove ".\t\$item"
     foreach ($line in $lines)
     {
         if($line  -match "ok")

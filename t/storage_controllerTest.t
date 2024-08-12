@@ -17,7 +17,7 @@ my $api = get_cells();
     #
     # StorageController->storage_exists  test
     #
-    { 
+    subtest 'Testing StorageController->storage_exists' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -30,12 +30,12 @@ my $api = get_cells();
         $request->{storage_name} =  'Default';
         my $result =  $api->storage_exists(request=> $request);
         ok($result,'storage_exists test OK');
-    }
+    };
 
     #
     # StorageController->object_exists  test
     #
-    { 
+    subtest 'Testing StorageController->object_exists' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -50,12 +50,12 @@ my $api = get_cells();
         $request->{version_id} =  '';
         my $result =  $api->object_exists(request=> $request);
         ok($result,'object_exists test OK');
-    }
+    };
 
     #
     # StorageController->get_disc_usage  test
     #
-    { 
+    subtest 'Testing StorageController->get_disc_usage' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -68,12 +68,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_disc_usage(request=> $request);
         ok($result,'get_disc_usage test OK');
-    }
+    };
 
     #
     # StorageController->get_file_versions  test
     #
-    { 
+    subtest 'Testing StorageController->get_file_versions' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -87,7 +87,7 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_file_versions(request=> $request);
         ok($result,'get_file_versions test OK');
-    }
+    };
 
 
 1;

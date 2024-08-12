@@ -20,7 +20,7 @@ my $api = get_cells();
     #
     # PicturesController->get_worksheet_pictures  test
     #
-    { 
+    subtest 'Testing PicturesController->get_worksheet_pictures' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -36,12 +36,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_pictures(request=> $request);
         ok($result,'get_worksheet_pictures test OK');
-    }
+    };
 
     #
     # PicturesController->get_worksheet_picture_with_format  test
     #
-    { 
+    subtest 'Testing PicturesController->get_worksheet_picture_with_format' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -59,12 +59,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_picture_with_format(request=> $request);
         ok($result,'get_worksheet_picture_with_format test OK');
-    }
+    };
 
     #
     # PicturesController->put_worksheet_add_picture  test
     #
-    { 
+    subtest 'Testing PicturesController->put_worksheet_add_picture' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -87,12 +87,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_add_picture(request=> $request);
         ok($result,'put_worksheet_add_picture test OK');
-    }
+    };
 
     #
     # PicturesController->post_worksheet_picture  test
     #
-    { 
+    subtest 'Testing PicturesController->post_worksheet_picture' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -113,12 +113,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_picture(request=> $request);
         ok($result,'post_worksheet_picture test OK');
-    }
+    };
 
     #
     # PicturesController->delete_worksheet_picture  test
     #
-    { 
+    subtest 'Testing PicturesController->delete_worksheet_picture' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -135,12 +135,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_picture(request=> $request);
         ok($result,'delete_worksheet_picture test OK');
-    }
+    };
 
     #
     # PicturesController->delete_worksheet_pictures  test
     #
-    { 
+    subtest 'Testing PicturesController->delete_worksheet_pictures' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -156,7 +156,7 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_pictures(request=> $request);
         ok($result,'delete_worksheet_pictures test OK');
-    }
+    };
 
 
 1;

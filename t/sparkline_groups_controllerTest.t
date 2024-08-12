@@ -20,7 +20,7 @@ my $api = get_cells();
     #
     # SparklineGroupsController->get_worksheet_sparkline_groups  test
     #
-    { 
+    subtest 'Testing SparklineGroupsController->get_worksheet_sparkline_groups' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -36,12 +36,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_sparkline_groups(request=> $request);
         ok($result,'get_worksheet_sparkline_groups test OK');
-    }
+    };
 
     #
     # SparklineGroupsController->get_worksheet_sparkline_group  test
     #
-    { 
+    subtest 'Testing SparklineGroupsController->get_worksheet_sparkline_group' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -58,12 +58,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_sparkline_group(request=> $request);
         ok($result,'get_worksheet_sparkline_group test OK');
-    }
+    };
 
     #
     # SparklineGroupsController->delete_worksheet_sparkline_groups  test
     #
-    { 
+    subtest 'Testing SparklineGroupsController->delete_worksheet_sparkline_groups' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -79,12 +79,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_sparkline_groups(request=> $request);
         ok($result,'delete_worksheet_sparkline_groups test OK');
-    }
+    };
 
     #
     # SparklineGroupsController->delete_worksheet_sparkline_group  test
     #
-    { 
+    subtest 'Testing SparklineGroupsController->delete_worksheet_sparkline_group' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -101,12 +101,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_sparkline_group(request=> $request);
         ok($result,'delete_worksheet_sparkline_group test OK');
-    }
+    };
 
     #
     # SparklineGroupsController->put_worksheet_sparkline_group  test
     #
-    { 
+    subtest 'Testing SparklineGroupsController->put_worksheet_sparkline_group' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -126,12 +126,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_sparkline_group(request=> $request);
         ok($result,'put_worksheet_sparkline_group test OK');
-    }
+    };
 
     #
     # SparklineGroupsController->post_worksheet_sparkline_group  test
     #
-    { 
+    subtest 'Testing SparklineGroupsController->post_worksheet_sparkline_group' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'TestCase.xlsx';
@@ -152,7 +152,7 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_sparkline_group(request=> $request);
         ok($result,'post_worksheet_sparkline_group test OK');
-    }
+    };
 
 
 1;

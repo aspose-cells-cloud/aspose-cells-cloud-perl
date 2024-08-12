@@ -59,7 +59,7 @@ my $api = get_cells();
     #
     # WorksheetController->get_worksheets  test
     #
-    { 
+    subtest 'Testing WorksheetController->get_worksheets' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -74,12 +74,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheets(request=> $request);
         ok($result,'get_worksheets test OK');
-    }
+    };
 
     #
     # WorksheetController->get_worksheet_with_format  test
     #
-    { 
+    subtest 'Testing WorksheetController->get_worksheet_with_format' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -97,12 +97,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_with_format(request=> $request);
         ok($result,'get_worksheet_with_format test OK');
-    }
+    };
 
     #
     # WorksheetController->put_change_visibility_worksheet  test
     #
-    { 
+    subtest 'Testing WorksheetController->put_change_visibility_worksheet' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -119,12 +119,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_change_visibility_worksheet(request=> $request);
         ok($result,'put_change_visibility_worksheet test OK');
-    }
+    };
 
     #
     # WorksheetController->put_active_worksheet  test
     #
-    { 
+    subtest 'Testing WorksheetController->put_active_worksheet' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -140,12 +140,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_active_worksheet(request=> $request);
         ok($result,'put_active_worksheet test OK');
-    }
+    };
 
     #
     # WorksheetController->put_insert_new_worksheet  test
     #
-    { 
+    subtest 'Testing WorksheetController->put_insert_new_worksheet' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -164,12 +164,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_insert_new_worksheet(request=> $request);
         ok($result,'put_insert_new_worksheet test OK');
-    }
+    };
 
     #
     # WorksheetController->put_add_new_worksheet  test
     #
-    { 
+    subtest 'Testing WorksheetController->put_add_new_worksheet' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -187,12 +187,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_add_new_worksheet(request=> $request);
         ok($result,'put_add_new_worksheet test OK');
-    }
+    };
 
     #
     # WorksheetController->delete_worksheet  test
     #
-    { 
+    subtest 'Testing WorksheetController->delete_worksheet' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -208,12 +208,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet(request=> $request);
         ok($result,'delete_worksheet test OK');
-    }
+    };
 
     #
     # WorksheetController->delete_worksheets  test
     #
-    { 
+    subtest 'Testing WorksheetController->delete_worksheets' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -231,12 +231,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheets(request=> $request);
         ok($result,'delete_worksheets test OK');
-    }
+    };
 
     #
     # WorksheetController->post_move_worksheet  test
     #
-    { 
+    subtest 'Testing WorksheetController->post_move_worksheet' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -256,12 +256,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_move_worksheet(request=> $request);
         ok($result,'post_move_worksheet test OK');
-    }
+    };
 
     #
     # WorksheetController->put_protect_worksheet  test
     #
-    { 
+    subtest 'Testing WorksheetController->put_protect_worksheet' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -281,12 +281,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_protect_worksheet(request=> $request);
         ok($result,'put_protect_worksheet test OK');
-    }
+    };
 
     #
     # WorksheetController->delete_unprotect_worksheet  test
     #
-    { 
+    subtest 'Testing WorksheetController->delete_unprotect_worksheet' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -306,12 +306,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_unprotect_worksheet(request=> $request);
         ok($result,'delete_unprotect_worksheet test OK');
-    }
+    };
 
     #
     # WorksheetController->get_worksheet_text_items  test
     #
-    { 
+    subtest 'Testing WorksheetController->get_worksheet_text_items' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -327,12 +327,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_text_items(request=> $request);
         ok($result,'get_worksheet_text_items test OK');
-    }
+    };
 
     #
     # WorksheetController->get_worksheet_comments  test
     #
-    { 
+    subtest 'Testing WorksheetController->get_worksheet_comments' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -348,12 +348,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_comments(request=> $request);
         ok($result,'get_worksheet_comments test OK');
-    }
+    };
 
     #
     # WorksheetController->get_worksheet_comment  test
     #
-    { 
+    subtest 'Testing WorksheetController->get_worksheet_comment' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -370,12 +370,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_comment(request=> $request);
         ok($result,'get_worksheet_comment test OK');
-    }
+    };
 
     #
     # WorksheetController->put_worksheet_comment  test
     #
-    { 
+    subtest 'Testing WorksheetController->put_worksheet_comment' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -396,12 +396,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_comment(request=> $request);
         ok($result,'put_worksheet_comment test OK');
-    }
+    };
 
     #
     # WorksheetController->post_worksheet_comment  test
     #
-    { 
+    subtest 'Testing WorksheetController->post_worksheet_comment' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -422,12 +422,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_comment(request=> $request);
         ok($result,'post_worksheet_comment test OK');
-    }
+    };
 
     #
     # WorksheetController->delete_worksheet_comment  test
     #
-    { 
+    subtest 'Testing WorksheetController->delete_worksheet_comment' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -444,12 +444,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_comment(request=> $request);
         ok($result,'delete_worksheet_comment test OK');
-    }
+    };
 
     #
     # WorksheetController->delete_worksheet_comments  test
     #
-    { 
+    subtest 'Testing WorksheetController->delete_worksheet_comments' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -465,12 +465,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_comments(request=> $request);
         ok($result,'delete_worksheet_comments test OK');
-    }
+    };
 
     #
     # WorksheetController->get_worksheet_merged_cells  test
     #
-    { 
+    subtest 'Testing WorksheetController->get_worksheet_merged_cells' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -486,12 +486,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_merged_cells(request=> $request);
         ok($result,'get_worksheet_merged_cells test OK');
-    }
+    };
 
     #
     # WorksheetController->get_worksheet_merged_cell  test
     #
-    { 
+    subtest 'Testing WorksheetController->get_worksheet_merged_cell' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -508,12 +508,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_merged_cell(request=> $request);
         ok($result,'get_worksheet_merged_cell test OK');
-    }
+    };
 
     #
     # WorksheetController->get_worksheet_calculate_formula  test
     #
-    { 
+    subtest 'Testing WorksheetController->get_worksheet_calculate_formula' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -530,12 +530,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_calculate_formula(request=> $request);
         ok($result,'get_worksheet_calculate_formula test OK');
-    }
+    };
 
     #
     # WorksheetController->post_worksheet_calculate_formula  test
     #
-    { 
+    subtest 'Testing WorksheetController->post_worksheet_calculate_formula' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -552,12 +552,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_calculate_formula(request=> $request);
         ok($result,'post_worksheet_calculate_formula test OK');
-    }
+    };
 
     #
     # WorksheetController->post_worksheet_text_search  test
     #
-    { 
+    subtest 'Testing WorksheetController->post_worksheet_text_search' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -574,12 +574,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_text_search(request=> $request);
         ok($result,'post_worksheet_text_search test OK');
-    }
+    };
 
     #
     # WorksheetController->post_worksheet_text_replace  test
     #
-    { 
+    subtest 'Testing WorksheetController->post_worksheet_text_replace' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -597,12 +597,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_text_replace(request=> $request);
         ok($result,'post_worksheet_text_replace test OK');
-    }
+    };
 
     #
     # WorksheetController->post_worksheet_range_sort  test
     #
-    { 
+    subtest 'Testing WorksheetController->post_worksheet_range_sort' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -622,12 +622,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_range_sort(request=> $request);
         ok($result,'post_worksheet_range_sort test OK');
-    }
+    };
 
     #
     # WorksheetController->post_autofit_worksheet_row  test
     #
-    { 
+    subtest 'Testing WorksheetController->post_autofit_worksheet_row' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -646,12 +646,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_autofit_worksheet_row(request=> $request);
         ok($result,'post_autofit_worksheet_row test OK');
-    }
+    };
 
     #
     # WorksheetController->post_autofit_worksheet_rows  test
     #
-    { 
+    subtest 'Testing WorksheetController->post_autofit_worksheet_rows' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -670,12 +670,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_autofit_worksheet_rows(request=> $request);
         ok($result,'post_autofit_worksheet_rows test OK');
-    }
+    };
 
     #
     # WorksheetController->post_autofit_worksheet_columns  test
     #
-    { 
+    subtest 'Testing WorksheetController->post_autofit_worksheet_columns' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -694,12 +694,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_autofit_worksheet_columns(request=> $request);
         ok($result,'post_autofit_worksheet_columns test OK');
-    }
+    };
 
     #
     # WorksheetController->put_worksheet_background  test
     #
-    { 
+    subtest 'Testing WorksheetController->put_worksheet_background' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -718,12 +718,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_background(request=> $request);
         ok($result,'put_worksheet_background test OK');
-    }
+    };
 
     #
     # WorksheetController->delete_worksheet_background  test
     #
-    { 
+    subtest 'Testing WorksheetController->delete_worksheet_background' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -739,12 +739,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_background(request=> $request);
         ok($result,'delete_worksheet_background test OK');
-    }
+    };
 
     #
     # WorksheetController->put_worksheet_freeze_panes  test
     #
-    { 
+    subtest 'Testing WorksheetController->put_worksheet_freeze_panes' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -764,12 +764,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_freeze_panes(request=> $request);
         ok($result,'put_worksheet_freeze_panes test OK');
-    }
+    };
 
     #
     # WorksheetController->delete_worksheet_freeze_panes  test
     #
-    { 
+    subtest 'Testing WorksheetController->delete_worksheet_freeze_panes' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -789,12 +789,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_freeze_panes(request=> $request);
         ok($result,'delete_worksheet_freeze_panes test OK');
-    }
+    };
 
     #
     # WorksheetController->post_copy_worksheet  test
     #
-    { 
+    subtest 'Testing WorksheetController->post_copy_worksheet' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -816,12 +816,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_copy_worksheet(request=> $request);
         ok($result,'post_copy_worksheet test OK');
-    }
+    };
 
     #
     # WorksheetController->post_rename_worksheet  test
     #
-    { 
+    subtest 'Testing WorksheetController->post_rename_worksheet' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -838,12 +838,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_rename_worksheet(request=> $request);
         ok($result,'post_rename_worksheet test OK');
-    }
+    };
 
     #
     # WorksheetController->post_update_worksheet_property  test
     #
-    { 
+    subtest 'Testing WorksheetController->post_update_worksheet_property' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -863,12 +863,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_update_worksheet_property(request=> $request);
         ok($result,'post_update_worksheet_property test OK');
-    }
+    };
 
     #
     # WorksheetController->get_named_ranges  test
     #
-    { 
+    subtest 'Testing WorksheetController->get_named_ranges' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -883,12 +883,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_named_ranges(request=> $request);
         ok($result,'get_named_ranges test OK');
-    }
+    };
 
     #
     # WorksheetController->get_named_range_value  test
     #
-    { 
+    subtest 'Testing WorksheetController->get_named_range_value' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -904,12 +904,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_named_range_value(request=> $request);
         ok($result,'get_named_range_value test OK');
-    }
+    };
 
     #
     # WorksheetController->post_update_worksheet_zoom  test
     #
-    { 
+    subtest 'Testing WorksheetController->post_update_worksheet_zoom' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -926,12 +926,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_update_worksheet_zoom(request=> $request);
         ok($result,'post_update_worksheet_zoom test OK');
-    }
+    };
 
     #
     # WorksheetController->get_worksheet_page_count  test
     #
-    { 
+    subtest 'Testing WorksheetController->get_worksheet_page_count' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -947,7 +947,7 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_page_count(request=> $request);
         ok($result,'get_worksheet_page_count test OK');
-    }
+    };
 
 
 1;

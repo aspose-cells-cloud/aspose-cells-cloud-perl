@@ -16,7 +16,7 @@ my $api = get_cells();
     #
     # ChartAreaController->get_chart_area  test
     #
-    { 
+    subtest 'Testing ChartAreaController->get_chart_area' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -33,12 +33,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_chart_area(request=> $request);
         ok($result,'get_chart_area test OK');
-    }
+    };
 
     #
     # ChartAreaController->get_chart_area_fill_format  test
     #
-    { 
+    subtest 'Testing ChartAreaController->get_chart_area_fill_format' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -55,12 +55,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_chart_area_fill_format(request=> $request);
         ok($result,'get_chart_area_fill_format test OK');
-    }
+    };
 
     #
     # ChartAreaController->get_chart_area_border  test
     #
-    { 
+    subtest 'Testing ChartAreaController->get_chart_area_border' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -77,7 +77,7 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_chart_area_border(request=> $request);
         ok($result,'get_chart_area_border test OK');
-    }
+    };
 
 
 1;

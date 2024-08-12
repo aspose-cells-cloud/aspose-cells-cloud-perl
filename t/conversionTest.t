@@ -18,7 +18,7 @@ my $api = get_cells();
     #
     # Conversion->post_workbook_save_as  test
     #
-    { 
+    subtest 'Testing Conversion->post_workbook_save_as' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -39,12 +39,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->post_workbook_save_as(request=> $request);
         ok($result,'post_workbook_save_as test OK');
-    }
+    };
 
     #
     # Conversion->post_workbook_save_as  test
     #
-    { 
+    subtest 'Testing Conversion->post_workbook_save_as' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -65,12 +65,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->post_workbook_save_as(request=> $request);
         ok($result,'post_workbook_save_as test OK');
-    }
+    };
 
     #
     # Conversion->post_workbook_save_as  test
     #
-    { 
+    subtest 'Testing Conversion->post_workbook_save_as' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -91,12 +91,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->post_workbook_save_as(request=> $request);
         ok($result,'post_workbook_save_as test OK');
-    }
+    };
 
     #
     # Conversion->post_workbook_save_as  test
     #
-    { 
+    subtest 'Testing Conversion->post_workbook_save_as' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -117,12 +117,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->post_workbook_save_as(request=> $request);
         ok($result,'post_workbook_save_as test OK');
-    }
+    };
 
     #
     # Conversion->post_workbook_save_as  test
     #
-    { 
+    subtest 'Testing Conversion->post_workbook_save_as' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -143,12 +143,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->post_workbook_save_as(request=> $request);
         ok($result,'post_workbook_save_as test OK');
-    }
+    };
 
     #
     # Conversion->post_workbook_save_as  test
     #
-    { 
+    subtest 'Testing Conversion->post_workbook_save_as' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -169,12 +169,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->post_workbook_save_as(request=> $request);
         ok($result,'post_workbook_save_as test OK');
-    }
+    };
 
     #
     # Conversion->post_workbook_save_as  test
     #
-    { 
+    subtest 'Testing Conversion->post_workbook_save_as' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -195,12 +195,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->post_workbook_save_as(request=> $request);
         ok($result,'post_workbook_save_as test OK');
-    }
+    };
 
     #
     # Conversion->post_workbook_save_as  test
     #
-    { 
+    subtest 'Testing Conversion->post_workbook_save_as' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -221,12 +221,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->post_workbook_save_as(request=> $request);
         ok($result,'post_workbook_save_as test OK');
-    }
+    };
 
     #
     # Conversion->post_workbook_save_as  test
     #
-    { 
+    subtest 'Testing Conversion->post_workbook_save_as' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -247,12 +247,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->post_workbook_save_as(request=> $request);
         ok($result,'post_workbook_save_as test OK');
-    }
+    };
 
     #
     # Conversion->post_workbook_save_as  test
     #
-    { 
+    subtest 'Testing Conversion->post_workbook_save_as' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -273,12 +273,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->post_workbook_save_as(request=> $request);
         ok($result,'post_workbook_save_as test OK');
-    }
+    };
 
     #
     # Conversion->post_workbook_save_as  test
     #
-    { 
+    subtest 'Testing Conversion->post_workbook_save_as' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -299,12 +299,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->post_workbook_save_as(request=> $request);
         ok($result,'post_workbook_save_as test OK');
-    }
+    };
 
     #
     # Conversion->post_workbook_save_as  test
     #
-    { 
+    subtest 'Testing Conversion->post_workbook_save_as' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -325,12 +325,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->post_workbook_save_as(request=> $request);
         ok($result,'post_workbook_save_as test OK');
-    }
+    };
 
     #
     # Conversion->post_workbook_save_as  test
     #
-    { 
+    subtest 'Testing Conversion->post_workbook_save_as' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -351,12 +351,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->post_workbook_save_as(request=> $request);
         ok($result,'post_workbook_save_as test OK');
-    }
+    };
 
     #
     # Conversion->post_workbook_save_as  test
     #
-    { 
+    subtest 'Testing Conversion->post_workbook_save_as' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -377,12 +377,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->post_workbook_save_as(request=> $request);
         ok($result,'post_workbook_save_as test OK');
-    }
+    };
 
     #
     # Conversion->post_workbook_save_as  test
     #
-    { 
+    subtest 'Testing Conversion->post_workbook_save_as' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -403,12 +403,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->post_workbook_save_as(request=> $request);
         ok($result,'post_workbook_save_as test OK');
-    }
+    };
 
     #
     # Conversion->post_workbook_save_as  test
     #
-    { 
+    subtest 'Testing Conversion->post_workbook_save_as' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -429,12 +429,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->post_workbook_save_as(request=> $request);
         ok($result,'post_workbook_save_as test OK');
-    }
+    };
 
     #
     # Conversion->post_workbook_save_as  test
     #
-    { 
+    subtest 'Testing Conversion->post_workbook_save_as' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -455,12 +455,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->post_workbook_save_as(request=> $request);
         ok($result,'post_workbook_save_as test OK');
-    }
+    };
 
     #
     # Conversion->post_workbook_save_as  test
     #
-    { 
+    subtest 'Testing Conversion->post_workbook_save_as' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -481,12 +481,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->post_workbook_save_as(request=> $request);
         ok($result,'post_workbook_save_as test OK');
-    }
+    };
 
     #
     # Conversion->get_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->get_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -503,12 +503,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->get_workbook(request=> $request);
         ok($result,'get_workbook test OK');
-    }
+    };
 
     #
     # Conversion->get_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->get_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -525,12 +525,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->get_workbook(request=> $request);
         ok($result,'get_workbook test OK');
-    }
+    };
 
     #
     # Conversion->get_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->get_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -547,12 +547,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->get_workbook(request=> $request);
         ok($result,'get_workbook test OK');
-    }
+    };
 
     #
     # Conversion->get_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->get_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -569,12 +569,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->get_workbook(request=> $request);
         ok($result,'get_workbook test OK');
-    }
+    };
 
     #
     # Conversion->get_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->get_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -591,12 +591,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->get_workbook(request=> $request);
         ok($result,'get_workbook test OK');
-    }
+    };
 
     #
     # Conversion->get_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->get_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -613,12 +613,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->get_workbook(request=> $request);
         ok($result,'get_workbook test OK');
-    }
+    };
 
     #
     # Conversion->get_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->get_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -635,12 +635,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->get_workbook(request=> $request);
         ok($result,'get_workbook test OK');
-    }
+    };
 
     #
     # Conversion->get_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->get_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -657,12 +657,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->get_workbook(request=> $request);
         ok($result,'get_workbook test OK');
-    }
+    };
 
     #
     # Conversion->get_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->get_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -679,12 +679,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->get_workbook(request=> $request);
         ok($result,'get_workbook test OK');
-    }
+    };
 
     #
     # Conversion->get_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->get_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -701,12 +701,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->get_workbook(request=> $request);
         ok($result,'get_workbook test OK');
-    }
+    };
 
     #
     # Conversion->get_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->get_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -723,12 +723,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->get_workbook(request=> $request);
         ok($result,'get_workbook test OK');
-    }
+    };
 
     #
     # Conversion->get_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->get_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -745,12 +745,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->get_workbook(request=> $request);
         ok($result,'get_workbook test OK');
-    }
+    };
 
     #
     # Conversion->get_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->get_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -767,12 +767,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->get_workbook(request=> $request);
         ok($result,'get_workbook test OK');
-    }
+    };
 
     #
     # Conversion->get_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->get_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -789,12 +789,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->get_workbook(request=> $request);
         ok($result,'get_workbook test OK');
-    }
+    };
 
     #
     # Conversion->get_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->get_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -811,12 +811,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->get_workbook(request=> $request);
         ok($result,'get_workbook test OK');
-    }
+    };
 
     #
     # Conversion->get_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->get_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -833,12 +833,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->get_workbook(request=> $request);
         ok($result,'get_workbook test OK');
-    }
+    };
 
     #
     # Conversion->get_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->get_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -855,12 +855,12 @@ my $api = get_cells();
         $request->{folder} =  $remoteFolder;
         my $result =  $api->get_workbook(request=> $request);
         ok($result,'get_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -879,12 +879,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -903,12 +903,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -927,12 +927,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -951,12 +951,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -975,12 +975,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -999,12 +999,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1023,12 +1023,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1047,12 +1047,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1071,12 +1071,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1095,12 +1095,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1119,12 +1119,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1143,12 +1143,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1167,12 +1167,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1191,12 +1191,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1215,12 +1215,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1239,12 +1239,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1263,12 +1263,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1287,12 +1287,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1311,12 +1311,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1335,12 +1335,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1361,12 +1361,12 @@ my $api = get_cells();
         $request->{out_path} =  $outPath;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1387,12 +1387,12 @@ my $api = get_cells();
         $request->{out_path} =  $outPath;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1413,12 +1413,12 @@ my $api = get_cells();
         $request->{out_path} =  $outPath;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1439,12 +1439,12 @@ my $api = get_cells();
         $request->{out_path} =  $outPath;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1465,12 +1465,12 @@ my $api = get_cells();
         $request->{out_path} =  $outPath;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1491,12 +1491,12 @@ my $api = get_cells();
         $request->{out_path} =  $outPath;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1517,12 +1517,12 @@ my $api = get_cells();
         $request->{out_path} =  $outPath;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1543,12 +1543,12 @@ my $api = get_cells();
         $request->{out_path} =  $outPath;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1569,12 +1569,12 @@ my $api = get_cells();
         $request->{out_path} =  $outPath;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1595,12 +1595,12 @@ my $api = get_cells();
         $request->{out_path} =  $outPath;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1621,12 +1621,12 @@ my $api = get_cells();
         $request->{out_path} =  $outPath;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1647,12 +1647,12 @@ my $api = get_cells();
         $request->{out_path} =  $outPath;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1673,12 +1673,12 @@ my $api = get_cells();
         $request->{out_path} =  $outPath;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1699,12 +1699,12 @@ my $api = get_cells();
         $request->{out_path} =  $outPath;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1725,12 +1725,12 @@ my $api = get_cells();
         $request->{out_path} =  $outPath;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1751,12 +1751,12 @@ my $api = get_cells();
         $request->{out_path} =  $outPath;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1777,12 +1777,12 @@ my $api = get_cells();
         $request->{out_path} =  $outPath;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1803,12 +1803,12 @@ my $api = get_cells();
         $request->{out_path} =  $outPath;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1829,12 +1829,12 @@ my $api = get_cells();
         $request->{out_path} =  $outPath;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # Conversion->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing Conversion->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -1855,7 +1855,7 @@ my $api = get_cells();
         $request->{out_path} =  $outPath;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
 
 1;

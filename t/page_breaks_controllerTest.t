@@ -23,7 +23,7 @@ my $api = get_cells();
     #
     # PageBreaksController->get_vertical_page_breaks  test
     #
-    { 
+    subtest 'Testing PageBreaksController->get_vertical_page_breaks' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -39,12 +39,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_vertical_page_breaks(request=> $request);
         ok($result,'get_vertical_page_breaks test OK');
-    }
+    };
 
     #
     # PageBreaksController->get_horizontal_page_breaks  test
     #
-    { 
+    subtest 'Testing PageBreaksController->get_horizontal_page_breaks' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -60,12 +60,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_horizontal_page_breaks(request=> $request);
         ok($result,'get_horizontal_page_breaks test OK');
-    }
+    };
 
     #
     # PageBreaksController->get_vertical_page_break  test
     #
-    { 
+    subtest 'Testing PageBreaksController->get_vertical_page_break' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -82,12 +82,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_vertical_page_break(request=> $request);
         ok($result,'get_vertical_page_break test OK');
-    }
+    };
 
     #
     # PageBreaksController->get_horizontal_page_break  test
     #
-    { 
+    subtest 'Testing PageBreaksController->get_horizontal_page_break' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -104,12 +104,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_horizontal_page_break(request=> $request);
         ok($result,'get_horizontal_page_break test OK');
-    }
+    };
 
     #
     # PageBreaksController->put_vertical_page_break  test
     #
-    { 
+    subtest 'Testing PageBreaksController->put_vertical_page_break' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -130,12 +130,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_vertical_page_break(request=> $request);
         ok($result,'put_vertical_page_break test OK');
-    }
+    };
 
     #
     # PageBreaksController->put_horizontal_page_break  test
     #
-    { 
+    subtest 'Testing PageBreaksController->put_horizontal_page_break' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -156,12 +156,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_horizontal_page_break(request=> $request);
         ok($result,'put_horizontal_page_break test OK');
-    }
+    };
 
     #
     # PageBreaksController->delete_vertical_page_breaks  test
     #
-    { 
+    subtest 'Testing PageBreaksController->delete_vertical_page_breaks' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -178,12 +178,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_vertical_page_breaks(request=> $request);
         ok($result,'delete_vertical_page_breaks test OK');
-    }
+    };
 
     #
     # PageBreaksController->delete_horizontal_page_breaks  test
     #
-    { 
+    subtest 'Testing PageBreaksController->delete_horizontal_page_breaks' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -200,12 +200,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_horizontal_page_breaks(request=> $request);
         ok($result,'delete_horizontal_page_breaks test OK');
-    }
+    };
 
     #
     # PageBreaksController->delete_vertical_page_break  test
     #
-    { 
+    subtest 'Testing PageBreaksController->delete_vertical_page_break' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -222,12 +222,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_vertical_page_break(request=> $request);
         ok($result,'delete_vertical_page_break test OK');
-    }
+    };
 
     #
     # PageBreaksController->delete_horizontal_page_break  test
     #
-    { 
+    subtest 'Testing PageBreaksController->delete_horizontal_page_break' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -244,7 +244,7 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_horizontal_page_break(request=> $request);
         ok($result,'delete_horizontal_page_break test OK');
-    }
+    };
 
 
 1;

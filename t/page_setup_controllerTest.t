@@ -23,7 +23,7 @@ my $api = get_cells();
     #
     # PageSetupController->get_page_setup  test
     #
-    { 
+    subtest 'Testing PageSetupController->get_page_setup' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -39,12 +39,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_page_setup(request=> $request);
         ok($result,'get_page_setup test OK');
-    }
+    };
 
     #
     # PageSetupController->post_page_setup  test
     #
-    { 
+    subtest 'Testing PageSetupController->post_page_setup' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -65,12 +65,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_page_setup(request=> $request);
         ok($result,'post_page_setup test OK');
-    }
+    };
 
     #
     # PageSetupController->delete_header_footer  test
     #
-    { 
+    subtest 'Testing PageSetupController->delete_header_footer' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -86,12 +86,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_header_footer(request=> $request);
         ok($result,'delete_header_footer test OK');
-    }
+    };
 
     #
     # PageSetupController->get_header  test
     #
-    { 
+    subtest 'Testing PageSetupController->get_header' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -107,12 +107,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_header(request=> $request);
         ok($result,'get_header test OK');
-    }
+    };
 
     #
     # PageSetupController->post_header  test
     #
-    { 
+    subtest 'Testing PageSetupController->post_header' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -131,12 +131,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_header(request=> $request);
         ok($result,'post_header test OK');
-    }
+    };
 
     #
     # PageSetupController->get_footer  test
     #
-    { 
+    subtest 'Testing PageSetupController->get_footer' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -152,12 +152,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_footer(request=> $request);
         ok($result,'get_footer test OK');
-    }
+    };
 
     #
     # PageSetupController->post_footer  test
     #
-    { 
+    subtest 'Testing PageSetupController->post_footer' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -176,12 +176,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_footer(request=> $request);
         ok($result,'post_footer test OK');
-    }
+    };
 
     #
     # PageSetupController->post_fit_wide_to_pages  test
     #
-    { 
+    subtest 'Testing PageSetupController->post_fit_wide_to_pages' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -197,12 +197,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_fit_wide_to_pages(request=> $request);
         ok($result,'post_fit_wide_to_pages test OK');
-    }
+    };
 
     #
     # PageSetupController->post_fit_tall_to_pages  test
     #
-    { 
+    subtest 'Testing PageSetupController->post_fit_tall_to_pages' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -218,7 +218,7 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_fit_tall_to_pages(request=> $request);
         ok($result,'post_fit_tall_to_pages test OK');
-    }
+    };
 
 
 1;

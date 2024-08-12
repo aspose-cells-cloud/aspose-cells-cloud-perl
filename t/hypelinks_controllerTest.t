@@ -20,7 +20,7 @@ my $api = get_cells();
     #
     # HypelinksController->get_worksheet_hyperlinks  test
     #
-    { 
+    subtest 'Testing HypelinksController->get_worksheet_hyperlinks' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -36,12 +36,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_hyperlinks(request=> $request);
         ok($result,'get_worksheet_hyperlinks test OK');
-    }
+    };
 
     #
     # HypelinksController->get_worksheet_hyperlink  test
     #
-    { 
+    subtest 'Testing HypelinksController->get_worksheet_hyperlink' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -58,12 +58,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_hyperlink(request=> $request);
         ok($result,'get_worksheet_hyperlink test OK');
-    }
+    };
 
     #
     # HypelinksController->delete_worksheet_hyperlink  test
     #
-    { 
+    subtest 'Testing HypelinksController->delete_worksheet_hyperlink' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -80,12 +80,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_hyperlink(request=> $request);
         ok($result,'delete_worksheet_hyperlink test OK');
-    }
+    };
 
     #
     # HypelinksController->post_worksheet_hyperlink  test
     #
-    { 
+    subtest 'Testing HypelinksController->post_worksheet_hyperlink' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -105,12 +105,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_hyperlink(request=> $request);
         ok($result,'post_worksheet_hyperlink test OK');
-    }
+    };
 
     #
     # HypelinksController->put_worksheet_hyperlink  test
     #
-    { 
+    subtest 'Testing HypelinksController->put_worksheet_hyperlink' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -131,12 +131,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_hyperlink(request=> $request);
         ok($result,'put_worksheet_hyperlink test OK');
-    }
+    };
 
     #
     # HypelinksController->delete_worksheet_hyperlinks  test
     #
-    { 
+    subtest 'Testing HypelinksController->delete_worksheet_hyperlinks' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -152,7 +152,7 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_hyperlinks(request=> $request);
         ok($result,'delete_worksheet_hyperlinks test OK');
-    }
+    };
 
 
 1;

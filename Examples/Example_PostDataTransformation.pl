@@ -40,10 +40,9 @@ my $data_transformation_request_applied_steps_applied_step0_applied_operate = As
  $data_transformation_request_applied_steps_applied_step0_applied_operate->{applied_operate_type} = 'UnpivotColumn'  ;
  $data_transformation_request_applied_steps_applied_step0_applied_operate->{value_map_name} = 'Count'  ;
  $data_transformation_request_applied_steps_applied_step0_applied_operate->{column_map_name} = 'Date'  ;
- $data_transformation_request_applied_steps_applied_step0_applied_operate->{unpivot_column_names} = []; 
- push ( @{$data_transformation_request_applied_steps_applied_step0_applied_operate->{unpivot_column_names}}, '2017'  );
- push ( @{$data_transformation_request_applied_steps_applied_step0_applied_operate->{unpivot_column_names}}, '2018'  );
- push ( @{$data_transformation_request_applied_steps_applied_step0_applied_operate->{unpivot_column_names}}, '2019'  );  ;
+ $data_transformation_request_applied_steps_applied_step0_applied_operate->{unpivot_column_names} = []; push ( @{$applied_operate->{unpivot_column_names}}, '2017'  );
+ push ( @{$applied_operate->{unpivot_column_names}}, '2018'  );
+ push ( @{$applied_operate->{unpivot_column_names}}, '2019'  );  ;
 my $data_transformation_request_applied_steps_applied_step0 = AsposeCellsCloud::Object::AppliedStep->new();
  $data_transformation_request_applied_steps_applied_step0->{step_name} = 'UnpivotColumn'  ;
  $data_transformation_request_applied_steps_applied_step0->{applied_operate} = $data_transformation_request_applied_steps_applied_step0_applied_operate  ;

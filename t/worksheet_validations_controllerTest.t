@@ -20,7 +20,7 @@ my $api = get_cells();
     #
     # WorksheetValidationsController->get_worksheet_validations  test
     #
-    { 
+    subtest 'Testing WorksheetValidationsController->get_worksheet_validations' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -36,12 +36,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_validations(request=> $request);
         ok($result,'get_worksheet_validations test OK');
-    }
+    };
 
     #
     # WorksheetValidationsController->get_worksheet_validation  test
     #
-    { 
+    subtest 'Testing WorksheetValidationsController->get_worksheet_validation' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -58,12 +58,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_validation(request=> $request);
         ok($result,'get_worksheet_validation test OK');
-    }
+    };
 
     #
     # WorksheetValidationsController->put_worksheet_validation  test
     #
-    { 
+    subtest 'Testing WorksheetValidationsController->put_worksheet_validation' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -80,12 +80,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_validation(request=> $request);
         ok($result,'put_worksheet_validation test OK');
-    }
+    };
 
     #
     # WorksheetValidationsController->post_worksheet_validation  test
     #
-    { 
+    subtest 'Testing WorksheetValidationsController->post_worksheet_validation' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -106,12 +106,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_validation(request=> $request);
         ok($result,'post_worksheet_validation test OK');
-    }
+    };
 
     #
     # WorksheetValidationsController->delete_worksheet_validation  test
     #
-    { 
+    subtest 'Testing WorksheetValidationsController->delete_worksheet_validation' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -128,12 +128,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_validation(request=> $request);
         ok($result,'delete_worksheet_validation test OK');
-    }
+    };
 
     #
     # WorksheetValidationsController->delete_worksheet_validations  test
     #
-    { 
+    subtest 'Testing WorksheetValidationsController->delete_worksheet_validations' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -149,7 +149,7 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_validations(request=> $request);
         ok($result,'delete_worksheet_validations test OK');
-    }
+    };
 
 
 1;

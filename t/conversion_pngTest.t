@@ -14,7 +14,7 @@ my $api = get_cells();
     #
     # ConversionPng->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing ConversionPng->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'cloud.png';
@@ -33,12 +33,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # ConversionPng->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing ConversionPng->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'cloud.png';
@@ -57,12 +57,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # ConversionPng->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing ConversionPng->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'cloud.png';
@@ -81,12 +81,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # ConversionPng->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing ConversionPng->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'cloud.png';
@@ -105,12 +105,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # ConversionPng->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing ConversionPng->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'cloud.png';
@@ -129,12 +129,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # ConversionPng->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing ConversionPng->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'cloud.png';
@@ -153,12 +153,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # ConversionPng->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing ConversionPng->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'cloud.png';
@@ -177,12 +177,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # ConversionPng->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing ConversionPng->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'cloud.png';
@@ -201,12 +201,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # ConversionPng->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing ConversionPng->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'cloud.png';
@@ -225,12 +225,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # ConversionPng->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing ConversionPng->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'cloud.png';
@@ -249,12 +249,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # ConversionPng->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing ConversionPng->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'cloud.png';
@@ -273,12 +273,12 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
     #
     # ConversionPng->put_convert_workbook  test
     #
-    { 
+    subtest 'Testing ConversionPng->put_convert_workbook' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'cloud.png';
@@ -297,7 +297,7 @@ my $api = get_cells();
         $request->{format} =  $format;
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
-    }
+    };
 
 
 1;

@@ -18,7 +18,7 @@ my $api = get_cells();
     #
     # FileController->download_file  test
     #
-    { 
+    subtest 'Testing FileController->download_file' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -33,12 +33,12 @@ my $api = get_cells();
         $request->{version_id} =  '';
         my $result =  $api->download_file(request=> $request);
         ok($result,'download_file test OK');
-    }
+    };
 
     #
     # FileController->upload_file  test
     #
-    { 
+    subtest 'Testing FileController->upload_file' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -56,12 +56,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->upload_file(request=> $request);
         ok($result,'upload_file test OK');
-    }
+    };
 
     #
     # FileController->copy_file  test
     #
-    { 
+    subtest 'Testing FileController->copy_file' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -78,12 +78,12 @@ my $api = get_cells();
         $request->{version_id} =  '';
         my $result =  $api->copy_file(request=> $request);
         ok('copy_file test OK'); 
-    }
+    };
 
     #
     # FileController->move_file  test
     #
-    { 
+    subtest 'Testing FileController->move_file' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -100,12 +100,12 @@ my $api = get_cells();
         $request->{version_id} =  '';
         my $result =  $api->move_file(request=> $request);
         ok('move_file test OK'); 
-    }
+    };
 
     #
     # FileController->delete_file  test
     #
-    { 
+    subtest 'Testing FileController->delete_file' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -120,7 +120,7 @@ my $api = get_cells();
         $request->{version_id} =  '';
         my $result =  $api->delete_file(request=> $request);
         ok('delete_file test OK'); 
-    }
+    };
 
 
 1;

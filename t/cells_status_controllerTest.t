@@ -15,7 +15,7 @@ my $api = get_cells();
     #
     # CellsStatusController->get_cells_cloud_services_health_check  test
     #
-    { 
+    subtest 'Testing CellsStatusController->get_cells_cloud_services_health_check' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -27,12 +27,12 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::GetCellsCloudServicesHealthCheckRequest->new();
         my $result =  $api->get_cells_cloud_services_health_check(request=> $request);
         ok($result,'get_cells_cloud_services_health_check test OK');
-    }
+    };
 
     #
     # CellsStatusController->get_cells_cloud_service_status  test
     #
-    { 
+    subtest 'Testing CellsStatusController->get_cells_cloud_service_status' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -44,7 +44,7 @@ my $api = get_cells();
         my $request = AsposeCellsCloud::Request::GetCellsCloudServiceStatusRequest->new();
         my $result =  $api->get_cells_cloud_service_status(request=> $request);
         ok($result,'get_cells_cloud_service_status test OK');
-    }
+    };
 
 
 1;

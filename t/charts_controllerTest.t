@@ -30,7 +30,7 @@ my $api = get_cells();
     #
     # ChartsController->get_worksheet_charts  test
     #
-    { 
+    subtest 'Testing ChartsController->get_worksheet_charts' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -46,12 +46,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_charts(request=> $request);
         ok($result,'get_worksheet_charts test OK');
-    }
+    };
 
     #
     # ChartsController->get_worksheet_chart  test
     #
-    { 
+    subtest 'Testing ChartsController->get_worksheet_chart' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -69,12 +69,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_chart(request=> $request);
         ok($result,'get_worksheet_chart test OK');
-    }
+    };
 
     #
     # ChartsController->put_worksheet_chart  test
     #
-    { 
+    subtest 'Testing ChartsController->put_worksheet_chart' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -98,12 +98,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_chart(request=> $request);
         ok($result,'put_worksheet_chart test OK');
-    }
+    };
 
     #
     # ChartsController->delete_worksheet_chart  test
     #
-    { 
+    subtest 'Testing ChartsController->delete_worksheet_chart' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -120,12 +120,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_chart(request=> $request);
         ok($result,'delete_worksheet_chart test OK');
-    }
+    };
 
     #
     # ChartsController->post_worksheet_chart  test
     #
-    { 
+    subtest 'Testing ChartsController->post_worksheet_chart' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -146,12 +146,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_chart(request=> $request);
         ok($result,'post_worksheet_chart test OK');
-    }
+    };
 
     #
     # ChartsController->get_worksheet_chart_legend  test
     #
-    { 
+    subtest 'Testing ChartsController->get_worksheet_chart_legend' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -168,12 +168,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_chart_legend(request=> $request);
         ok($result,'get_worksheet_chart_legend test OK');
-    }
+    };
 
     #
     # ChartsController->post_worksheet_chart_legend  test
     #
-    { 
+    subtest 'Testing ChartsController->post_worksheet_chart_legend' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -193,12 +193,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_chart_legend(request=> $request);
         ok($result,'post_worksheet_chart_legend test OK');
-    }
+    };
 
     #
     # ChartsController->put_worksheet_chart_legend  test
     #
-    { 
+    subtest 'Testing ChartsController->put_worksheet_chart_legend' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -215,12 +215,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_chart_legend(request=> $request);
         ok($result,'put_worksheet_chart_legend test OK');
-    }
+    };
 
     #
     # ChartsController->delete_worksheet_chart_legend  test
     #
-    { 
+    subtest 'Testing ChartsController->delete_worksheet_chart_legend' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -237,12 +237,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_chart_legend(request=> $request);
         ok($result,'delete_worksheet_chart_legend test OK');
-    }
+    };
 
     #
     # ChartsController->delete_worksheet_charts  test
     #
-    { 
+    subtest 'Testing ChartsController->delete_worksheet_charts' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -258,12 +258,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_charts(request=> $request);
         ok($result,'delete_worksheet_charts test OK');
-    }
+    };
 
     #
     # ChartsController->get_worksheet_chart_title  test
     #
-    { 
+    subtest 'Testing ChartsController->get_worksheet_chart_title' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -280,12 +280,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_chart_title(request=> $request);
         ok($result,'get_worksheet_chart_title test OK');
-    }
+    };
 
     #
     # ChartsController->post_worksheet_chart_title  test
     #
-    { 
+    subtest 'Testing ChartsController->post_worksheet_chart_title' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -305,12 +305,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_chart_title(request=> $request);
         ok($result,'post_worksheet_chart_title test OK');
-    }
+    };
 
     #
     # ChartsController->put_worksheet_chart_title  test
     #
-    { 
+    subtest 'Testing ChartsController->put_worksheet_chart_title' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -330,12 +330,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_chart_title(request=> $request);
         ok($result,'put_worksheet_chart_title test OK');
-    }
+    };
 
     #
     # ChartsController->delete_worksheet_chart_title  test
     #
-    { 
+    subtest 'Testing ChartsController->delete_worksheet_chart_title' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -352,7 +352,7 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_chart_title(request=> $request);
         ok($result,'delete_worksheet_chart_title test OK');
-    }
+    };
 
 
 1;

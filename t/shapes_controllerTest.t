@@ -22,7 +22,7 @@ my $api = get_cells();
     #
     # ShapesController->get_worksheet_shapes  test
     #
-    { 
+    subtest 'Testing ShapesController->get_worksheet_shapes' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -38,12 +38,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_shapes(request=> $request);
         ok($result,'get_worksheet_shapes test OK');
-    }
+    };
 
     #
     # ShapesController->get_worksheet_shape  test
     #
-    { 
+    subtest 'Testing ShapesController->get_worksheet_shape' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -60,12 +60,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_shape(request=> $request);
         ok($result,'get_worksheet_shape test OK');
-    }
+    };
 
     #
     # ShapesController->put_worksheet_shape  test
     #
-    { 
+    subtest 'Testing ShapesController->put_worksheet_shape' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -91,12 +91,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_shape(request=> $request);
         ok($result,'put_worksheet_shape test OK');
-    }
+    };
 
     #
     # ShapesController->delete_worksheet_shapes  test
     #
-    { 
+    subtest 'Testing ShapesController->delete_worksheet_shapes' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -112,12 +112,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_shapes(request=> $request);
         ok($result,'delete_worksheet_shapes test OK');
-    }
+    };
 
     #
     # ShapesController->delete_worksheet_shape  test
     #
-    { 
+    subtest 'Testing ShapesController->delete_worksheet_shape' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -134,12 +134,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_shape(request=> $request);
         ok($result,'delete_worksheet_shape test OK');
-    }
+    };
 
     #
     # ShapesController->post_worksheet_shape  test
     #
-    { 
+    subtest 'Testing ShapesController->post_worksheet_shape' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -159,12 +159,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_shape(request=> $request);
         ok($result,'post_worksheet_shape test OK');
-    }
+    };
 
     #
     # ShapesController->post_worksheet_group_shape  test
     #
-    { 
+    subtest 'Testing ShapesController->post_worksheet_group_shape' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -184,12 +184,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_group_shape(request=> $request);
         ok($result,'post_worksheet_group_shape test OK');
-    }
+    };
 
     #
     # ShapesController->post_worksheet_ungroup_shape  test
     #
-    { 
+    subtest 'Testing ShapesController->post_worksheet_ungroup_shape' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -206,7 +206,7 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_ungroup_shape(request=> $request);
         ok($result,'post_worksheet_ungroup_shape test OK');
-    }
+    };
 
 
 1;

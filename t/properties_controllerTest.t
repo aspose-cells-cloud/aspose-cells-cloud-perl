@@ -19,7 +19,7 @@ my $api = get_cells();
     #
     # PropertiesController->get_document_properties  test
     #
-    { 
+    subtest 'Testing PropertiesController->get_document_properties' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -35,12 +35,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_document_properties(request=> $request);
         ok($result,'get_document_properties test OK');
-    }
+    };
 
     #
     # PropertiesController->get_document_property  test
     #
-    { 
+    subtest 'Testing PropertiesController->get_document_property' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -56,12 +56,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_document_property(request=> $request);
         ok($result,'get_document_property test OK');
-    }
+    };
 
     #
     # PropertiesController->put_document_property  test
     #
-    { 
+    subtest 'Testing PropertiesController->put_document_property' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -80,12 +80,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_document_property(request=> $request);
         ok($result,'put_document_property test OK');
-    }
+    };
 
     #
     # PropertiesController->delete_document_property  test
     #
-    { 
+    subtest 'Testing PropertiesController->delete_document_property' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -102,12 +102,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_document_property(request=> $request);
         ok($result,'delete_document_property test OK');
-    }
+    };
 
     #
     # PropertiesController->delete_document_properties  test
     #
-    { 
+    subtest 'Testing PropertiesController->delete_document_properties' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -122,7 +122,7 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_document_properties(request=> $request);
         ok($result,'delete_document_properties test OK');
-    }
+    };
 
 
 1;

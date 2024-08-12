@@ -23,7 +23,7 @@ my $api = get_cells();
     #
     # ConditionalFormattingsController->get_worksheet_conditional_formattings  test
     #
-    { 
+    subtest 'Testing ConditionalFormattingsController->get_worksheet_conditional_formattings' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -39,12 +39,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_conditional_formattings(request=> $request);
         ok($result,'get_worksheet_conditional_formattings test OK');
-    }
+    };
 
     #
     # ConditionalFormattingsController->get_worksheet_conditional_formatting  test
     #
-    { 
+    subtest 'Testing ConditionalFormattingsController->get_worksheet_conditional_formatting' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -61,12 +61,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_conditional_formatting(request=> $request);
         ok($result,'get_worksheet_conditional_formatting test OK');
-    }
+    };
 
     #
     # ConditionalFormattingsController->put_worksheet_conditional_formatting  test
     #
-    { 
+    subtest 'Testing ConditionalFormattingsController->put_worksheet_conditional_formatting' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -89,12 +89,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_conditional_formatting(request=> $request);
         ok($result,'put_worksheet_conditional_formatting test OK');
-    }
+    };
 
     #
     # ConditionalFormattingsController->put_worksheet_format_condition  test
     #
-    { 
+    subtest 'Testing ConditionalFormattingsController->put_worksheet_format_condition' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -116,12 +116,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_format_condition(request=> $request);
         ok($result,'put_worksheet_format_condition test OK');
-    }
+    };
 
     #
     # ConditionalFormattingsController->put_worksheet_format_condition_area  test
     #
-    { 
+    subtest 'Testing ConditionalFormattingsController->put_worksheet_format_condition_area' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -139,12 +139,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_format_condition_area(request=> $request);
         ok($result,'put_worksheet_format_condition_area test OK');
-    }
+    };
 
     #
     # ConditionalFormattingsController->put_worksheet_format_condition_condition  test
     #
-    { 
+    subtest 'Testing ConditionalFormattingsController->put_worksheet_format_condition_condition' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -165,12 +165,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_format_condition_condition(request=> $request);
         ok($result,'put_worksheet_format_condition_condition test OK');
-    }
+    };
 
     #
     # ConditionalFormattingsController->delete_worksheet_conditional_formattings  test
     #
-    { 
+    subtest 'Testing ConditionalFormattingsController->delete_worksheet_conditional_formattings' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -186,12 +186,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_conditional_formattings(request=> $request);
         ok($result,'delete_worksheet_conditional_formattings test OK');
-    }
+    };
 
     #
     # ConditionalFormattingsController->delete_worksheet_conditional_formatting  test
     #
-    { 
+    subtest 'Testing ConditionalFormattingsController->delete_worksheet_conditional_formatting' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -208,12 +208,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_conditional_formatting(request=> $request);
         ok($result,'delete_worksheet_conditional_formatting test OK');
-    }
+    };
 
     #
     # ConditionalFormattingsController->delete_worksheet_conditional_formatting_area  test
     #
-    { 
+    subtest 'Testing ConditionalFormattingsController->delete_worksheet_conditional_formatting_area' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -233,7 +233,7 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_conditional_formatting_area(request=> $request);
         ok($result,'delete_worksheet_conditional_formatting_area test OK');
-    }
+    };
 
 
 1;

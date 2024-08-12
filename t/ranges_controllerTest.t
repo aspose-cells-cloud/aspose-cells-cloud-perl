@@ -35,7 +35,7 @@ my $api = get_cells();
     #
     # RangesController->post_worksheet_cells_ranges_copy  test
     #
-    { 
+    subtest 'Testing RangesController->post_worksheet_cells_ranges_copy' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -66,12 +66,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_cells_ranges_copy(request=> $request);
         ok($result,'post_worksheet_cells_ranges_copy test OK');
-    }
+    };
 
     #
     # RangesController->post_worksheet_cells_range_merge  test
     #
-    { 
+    subtest 'Testing RangesController->post_worksheet_cells_range_merge' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -93,12 +93,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_cells_range_merge(request=> $request);
         ok($result,'post_worksheet_cells_range_merge test OK');
-    }
+    };
 
     #
     # RangesController->post_worksheet_cells_range_un_merge  test
     #
-    { 
+    subtest 'Testing RangesController->post_worksheet_cells_range_un_merge' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -120,12 +120,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_cells_range_un_merge(request=> $request);
         ok($result,'post_worksheet_cells_range_un_merge test OK');
-    }
+    };
 
     #
     # RangesController->post_worksheet_cells_range_style  test
     #
-    { 
+    subtest 'Testing RangesController->post_worksheet_cells_range_style' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -154,12 +154,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_cells_range_style(request=> $request);
         ok($result,'post_worksheet_cells_range_style test OK');
-    }
+    };
 
     #
     # RangesController->get_worksheet_cells_range_value  test
     #
-    { 
+    subtest 'Testing RangesController->get_worksheet_cells_range_value' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -180,12 +180,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->get_worksheet_cells_range_value(request=> $request);
         ok($result,'get_worksheet_cells_range_value test OK');
-    }
+    };
 
     #
     # RangesController->post_worksheet_cells_range_value  test
     #
-    { 
+    subtest 'Testing RangesController->post_worksheet_cells_range_value' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -210,12 +210,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_cells_range_value(request=> $request);
         ok($result,'post_worksheet_cells_range_value test OK');
-    }
+    };
 
     #
     # RangesController->post_worksheet_cells_range_move_to  test
     #
-    { 
+    subtest 'Testing RangesController->post_worksheet_cells_range_move_to' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -239,12 +239,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_cells_range_move_to(request=> $request);
         ok($result,'post_worksheet_cells_range_move_to test OK');
-    }
+    };
 
     #
     # RangesController->post_worksheet_cells_range_outline_border  test
     #
-    { 
+    subtest 'Testing RangesController->post_worksheet_cells_range_outline_border' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -275,12 +275,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_cells_range_outline_border(request=> $request);
         ok($result,'post_worksheet_cells_range_outline_border test OK');
-    }
+    };
 
     #
     # RangesController->post_worksheet_cells_range_column_width  test
     #
-    { 
+    subtest 'Testing RangesController->post_worksheet_cells_range_column_width' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -303,12 +303,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_cells_range_column_width(request=> $request);
         ok($result,'post_worksheet_cells_range_column_width test OK');
-    }
+    };
 
     #
     # RangesController->post_worksheet_cells_range_row_height  test
     #
-    { 
+    subtest 'Testing RangesController->post_worksheet_cells_range_row_height' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -331,12 +331,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_cells_range_row_height(request=> $request);
         ok($result,'post_worksheet_cells_range_row_height test OK');
-    }
+    };
 
     #
     # RangesController->put_worksheet_cells_range  test
     #
-    { 
+    subtest 'Testing RangesController->put_worksheet_cells_range' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -354,12 +354,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->put_worksheet_cells_range(request=> $request);
         ok($result,'put_worksheet_cells_range test OK');
-    }
+    };
 
     #
     # RangesController->delete_worksheet_cells_range  test
     #
-    { 
+    subtest 'Testing RangesController->delete_worksheet_cells_range' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Book1.xlsx';
@@ -377,12 +377,12 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->delete_worksheet_cells_range(request=> $request);
         ok($result,'delete_worksheet_cells_range test OK');
-    }
+    };
 
     #
     # RangesController->post_worksheet_cells_range_sort  test
     #
-    { 
+    subtest 'Testing RangesController->post_worksheet_cells_range_sort' => sub { 
         my $remoteFolder = 'TestData/In';
       
         my $localName = 'Group.xlsx';
@@ -409,7 +409,7 @@ my $api = get_cells();
         $request->{storage_name} =  '';
         my $result =  $api->post_worksheet_cells_range_sort(request=> $request);
         ok($result,'post_worksheet_cells_range_sort test OK');
-    }
+    };
 
 
 1;

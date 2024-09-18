@@ -67,8 +67,9 @@ my $api = get_cells();
 
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
+        my @deduplication_region_ranges = [];
         my $deduplication_region = AsposeCellsCloud::Object::DeduplicationRegion->new();
-
+         $deduplication_region->{ranges} = [];   ;
 
         my $request = AsposeCellsCloud::Request::PostWorkbookDataDeduplicationRequest->new();
         $request->{name} =  $remoteName;

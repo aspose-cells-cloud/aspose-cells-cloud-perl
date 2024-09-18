@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::ProtectWorkbookRequest;
+package AsposeCellsCloud::Object::WordCaseOptions;
 
 require 5.6.0;
 use strict;
@@ -35,8 +35,9 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
-use AsposeCellsCloud::Object::DigitalSignature;
-use AsposeCellsCloud::Object::Protection; 
+use AsposeCellsCloud::Object::DataSource;
+use AsposeCellsCloud::Object::FileInfo;
+use AsposeCellsCloud::Object::ScopeOptions; 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -119,82 +120,55 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => 'Indicates protect workbook request',
-                                  class => 'ProtectWorkbookRequest',
+__PACKAGE__->class_documentation({description => '',
+                                  class => 'WordCaseOptions',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'aways_open_read_only' => {
-     	datatype => 'boolean',
-     	base_name => 'AwaysOpenReadOnly',
-     	description => 'Indicates aways open read-only.',
+     'data_source' => {
+     	datatype => 'DataSource',
+     	base_name => 'DataSource',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'encrypt_with_password' => {
+     'file_info' => {
+     	datatype => 'FileInfo',
+     	base_name => 'FileInfo',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'word_case_type' => {
      	datatype => 'string',
-     	base_name => 'EncryptWithPassword',
-     	description => 'Indicates encrypt with password.',
+     	base_name => 'WordCaseType',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'protect_current_sheet' => {
-     	datatype => 'Protection',
-     	base_name => 'ProtectCurrentSheet',
-     	description => 'Represents the various types of protection options available for a worksheet.            ',
-     	format => '',
-     	read_only => '',
-     		},
-     'protect_all_sheets' => {
-     	datatype => 'Protection',
-     	base_name => 'ProtectAllSheets',
-     	description => 'Represents the various types of protection options available for all worksheets.            ',
-     	format => '',
-     	read_only => '',
-     		},
-     'protect_workbook_structure' => {
-     	datatype => 'string',
-     	base_name => 'ProtectWorkbookStructure',
-     	description => 'Indicates protect workbook structure. All, Contents, Objects, Scenarios, Structure, Windows, and None.',
-     	format => '',
-     	read_only => '',
-     		},
-     'digital_signature' => {
-     	datatype => 'DigitalSignature',
-     	base_name => 'DigitalSignature',
-     	description => 'Indicates signature in file.',
-     	format => '',
-     	read_only => '',
-     		},
-     'mark_as_final' => {
-     	datatype => 'boolean',
-     	base_name => 'MarkAsFinal',
-     	description => 'Indicates mark as final.',
+     'scope_options' => {
+     	datatype => 'ScopeOptions',
+     	base_name => 'ScopeOptions',
+     	description => '',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'aways_open_read_only' => 'boolean',
-    'encrypt_with_password' => 'string',
-    'protect_current_sheet' => 'Protection',
-    'protect_all_sheets' => 'Protection',
-    'protect_workbook_structure' => 'string',
-    'digital_signature' => 'DigitalSignature',
-    'mark_as_final' => 'boolean' 
+    'data_source' => 'DataSource',
+    'file_info' => 'FileInfo',
+    'word_case_type' => 'string',
+    'scope_options' => 'ScopeOptions' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'aways_open_read_only' => 'AwaysOpenReadOnly',
-    'encrypt_with_password' => 'EncryptWithPassword',
-    'protect_current_sheet' => 'ProtectCurrentSheet',
-    'protect_all_sheets' => 'ProtectAllSheets',
-    'protect_workbook_structure' => 'ProtectWorkbookStructure',
-    'digital_signature' => 'DigitalSignature',
-    'mark_as_final' => 'MarkAsFinal' 
+    'data_source' => 'DataSource',
+    'file_info' => 'FileInfo',
+    'word_case_type' => 'WordCaseType',
+    'scope_options' => 'ScopeOptions' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

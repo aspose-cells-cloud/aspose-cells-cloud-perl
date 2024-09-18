@@ -1,4 +1,4 @@
-use Test::More tests => 2; #TODO update number of test cases
+use Test::More tests => 3; #TODO update number of test cases
 use Test::Exception;
 
 use lib 'lib';
@@ -9,8 +9,10 @@ use AsposeCellsCloud::Object::AddTextOptions;
 use AsposeCellsCloud::Object::DataSource;
 use AsposeCellsCloud::Object::TrimContentOptions;
 use AsposeCellsCloud::Object::ScopeOptions;
+use AsposeCellsCloud::Object::WordCaseOptions;
 use AsposeCellsCloud::Request::PostAddTextContentRequest;
 use AsposeCellsCloud::Request::PostTrimContentRequest;
+use AsposeCellsCloud::Request::PostUpdateWordCaseRequest;
 
 require './t/CellsTestBase.pl';
 
@@ -71,6 +73,33 @@ my $api = get_cells();
         $request->{trim_content_options} =  $trim_content_options;
         my $result =  $api->post_trim_content(request=> $request);
         ok($result,'post_trim_content test OK');
+    };
+
+    #
+    # TextProcessingController->post_update_word_case  test
+    #
+    subtest 'Testing TextProcessingController->post_update_word_case' => sub { 
+        my $remoteFolder = 'TestData/In';
+      
+        my $localName = 'BookText.xlsx';
+        my $remoteName = 'BookText.xlsx';
+
+        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
+     
+        my $word_case_options_data_source = AsposeCellsCloud::Object::DataSource->new();
+         $word_case_options_data_source->{data_source_type} = 'CloudFileSystem'  ;
+         $word_case_options_data_source->{data_path} = 'BookText.xlsx'  ;
+        my $word_case_options_scope_options = AsposeCellsCloud::Object::ScopeOptions->new();
+         $word_case_options_scope_options->{scope} = 'EntireWorkbook'  ;
+        my $word_case_options = AsposeCellsCloud::Object::WordCaseOptions->new();
+         $word_case_options->{data_source} = $word_case_options_data_source  ;
+         $word_case_options->{word_case_type} = 'None'  ;
+         $word_case_options->{scope_options} = $word_case_options_scope_options  ;
+
+        my $request = AsposeCellsCloud::Request::PostUpdateWordCaseRequest->new();
+        $request->{word_case_options} =  $word_case_options;
+        my $result =  $api->post_update_word_case(request=> $request);
+        ok($result,'post_update_word_case test OK');
     };
 
 

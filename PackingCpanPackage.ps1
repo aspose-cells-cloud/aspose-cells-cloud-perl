@@ -9,15 +9,15 @@ function GetVersionFromMETA {
         (Get-Content $File ) | Foreach-Object {
             if ($_ -match "/CellsApi.pm") {
                 $NeedGet = $true                           
-            }if($NeedGet -and $_ -match "version" ){               
+            }if($NeedGet -and $_ -match "version" ){    
                 if( $_ -match "\d+.\d+.\d+"){   
                     $NeedGet = $false                 
                    return $matches[0]
-                }
+                }            
                 if( $_ -match "\d+.\d+"){   
                     $NeedGet = $false                 
                    return $matches[0]
-                }                
+                }
             }
         } 
     }

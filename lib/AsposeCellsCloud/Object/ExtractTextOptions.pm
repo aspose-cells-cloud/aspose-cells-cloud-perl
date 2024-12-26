@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::Top10Filter;
+package AsposeCellsCloud::Object::ExtractTextOptions;
 
 require 5.6.0;
 use strict;
@@ -35,7 +35,9 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
- 
+use AsposeCellsCloud::Object::BaseOperateOptions;
+use AsposeCellsCloud::Object::DataSource;
+use AsposeCellsCloud::Object::FileInfo; 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -118,64 +120,118 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => '           Represents the top 10 filter.           ',
-                                  class => 'Top10Filter',
+__PACKAGE__->class_documentation({description => '',
+                                  class => 'ExtractTextOptions',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'field_index' => {
-     	datatype => 'int',
-     	base_name => 'FieldIndex',
+     'name' => {
+     	datatype => 'string',
+     	base_name => 'Name',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'criteria' => {
+     'data_source' => {
+     	datatype => 'DataSource',
+     	base_name => 'DataSource',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'file_info' => {
+     	datatype => 'FileInfo',
+     	base_name => 'FileInfo',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'worksheet' => {
      	datatype => 'string',
-     	base_name => 'Criteria',
-     	description => ' ',
+     	base_name => 'Worksheet',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'is_percent' => {
-     	datatype => 'boolean',
-     	base_name => 'IsPercent',
-     	description => 'Indicates whether the items is percent. ',
+     'range' => {
+     	datatype => 'string',
+     	base_name => 'Range',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'is_top' => {
-     	datatype => 'boolean',
-     	base_name => 'IsTop',
-     	description => 'Indicates whether it`s top filter. ',
+     'extract_text_type' => {
+     	datatype => 'string',
+     	base_name => 'ExtractTextType',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'items' => {
+     'before_text' => {
+     	datatype => 'string',
+     	base_name => 'BeforeText',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'after_text' => {
+     	datatype => 'string',
+     	base_name => 'AfterText',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'before_position' => {
      	datatype => 'int',
-     	base_name => 'Items',
-     	description => 'Gets and sets the items of the filter. ',
+     	base_name => 'BeforePosition',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'after_position' => {
+     	datatype => 'int',
+     	base_name => 'AfterPosition',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'out_position_range' => {
+     	datatype => 'string',
+     	base_name => 'OutPositionRange',
+     	description => '',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'field_index' => 'int',
-    'criteria' => 'string',
-    'is_percent' => 'boolean',
-    'is_top' => 'boolean',
-    'items' => 'int' 
+    'name' => 'string',
+    'data_source' => 'DataSource',
+    'file_info' => 'FileInfo',
+    'worksheet' => 'string',
+    'range' => 'string',
+    'extract_text_type' => 'string',
+    'before_text' => 'string',
+    'after_text' => 'string',
+    'before_position' => 'int',
+    'after_position' => 'int',
+    'out_position_range' => 'string' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'field_index' => 'FieldIndex',
-    'criteria' => 'Criteria',
-    'is_percent' => 'IsPercent',
-    'is_top' => 'IsTop',
-    'items' => 'Items' 
+    'name' => 'Name',
+    'data_source' => 'DataSource',
+    'file_info' => 'FileInfo',
+    'worksheet' => 'Worksheet',
+    'range' => 'Range',
+    'extract_text_type' => 'ExtractTextType',
+    'before_text' => 'BeforeText',
+    'after_text' => 'AfterText',
+    'before_position' => 'BeforePosition',
+    'after_position' => 'AfterPosition',
+    'out_position_range' => 'OutPositionRange' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

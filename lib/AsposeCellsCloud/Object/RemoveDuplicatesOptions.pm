@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::Top10Filter;
+package AsposeCellsCloud::Object::RemoveDuplicatesOptions;
 
 require 5.6.0;
 use strict;
@@ -35,7 +35,9 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
- 
+use AsposeCellsCloud::Object::BaseOperateOptions;
+use AsposeCellsCloud::Object::DataSource;
+use AsposeCellsCloud::Object::FileInfo; 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -118,64 +120,73 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => '           Represents the top 10 filter.           ',
-                                  class => 'Top10Filter',
+__PACKAGE__->class_documentation({description => '',
+                                  class => 'RemoveDuplicatesOptions',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'field_index' => {
-     	datatype => 'int',
-     	base_name => 'FieldIndex',
+     'name' => {
+     	datatype => 'string',
+     	base_name => 'Name',
      	description => '',
      	format => '',
      	read_only => '',
      		},
-     'criteria' => {
+     'data_source' => {
+     	datatype => 'DataSource',
+     	base_name => 'DataSource',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'file_info' => {
+     	datatype => 'FileInfo',
+     	base_name => 'FileInfo',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'worksheet' => {
      	datatype => 'string',
-     	base_name => 'Criteria',
-     	description => ' ',
+     	base_name => 'Worksheet',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'is_percent' => {
-     	datatype => 'boolean',
-     	base_name => 'IsPercent',
-     	description => 'Indicates whether the items is percent. ',
+     'remove_duplicates_area' => {
+     	datatype => 'string',
+     	base_name => 'RemoveDuplicatesArea',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'is_top' => {
-     	datatype => 'boolean',
-     	base_name => 'IsTop',
-     	description => 'Indicates whether it`s top filter. ',
-     	format => '',
-     	read_only => '',
-     		},
-     'items' => {
-     	datatype => 'int',
-     	base_name => 'Items',
-     	description => 'Gets and sets the items of the filter. ',
+     'remove_duplicates_area_value' => {
+     	datatype => 'string',
+     	base_name => 'RemoveDuplicatesAreaValue',
+     	description => '',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'field_index' => 'int',
-    'criteria' => 'string',
-    'is_percent' => 'boolean',
-    'is_top' => 'boolean',
-    'items' => 'int' 
+    'name' => 'string',
+    'data_source' => 'DataSource',
+    'file_info' => 'FileInfo',
+    'worksheet' => 'string',
+    'remove_duplicates_area' => 'string',
+    'remove_duplicates_area_value' => 'string' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'field_index' => 'FieldIndex',
-    'criteria' => 'Criteria',
-    'is_percent' => 'IsPercent',
-    'is_top' => 'IsTop',
-    'items' => 'Items' 
+    'name' => 'Name',
+    'data_source' => 'DataSource',
+    'file_info' => 'FileInfo',
+    'worksheet' => 'Worksheet',
+    'remove_duplicates_area' => 'RemoveDuplicatesArea',
+    'remove_duplicates_area_value' => 'RemoveDuplicatesAreaValue' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

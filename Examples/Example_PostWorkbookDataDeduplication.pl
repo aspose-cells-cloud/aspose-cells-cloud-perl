@@ -15,8 +15,9 @@ my $remoteName = 'BookCsvDuplicateData.csv';
 
 my $upload_file_request = AsposeCellsCloud::Request::UploadFileRequest->new( 'UploadFiles'=>{ $localName => $localName  }  ,'path'=>$remoteFolder . '/' . $remoteName );
  
+my @deduplication_region_ranges = [];
 my $deduplication_region = AsposeCellsCloud::Object::DeduplicationRegion->new();
-
+ $deduplication_region->{ranges} = [];   ;
 
 my $request = AsposeCellsCloud::Request::PostWorkbookDataDeduplicationRequest->new();
 $request->{name} =  $remoteName;

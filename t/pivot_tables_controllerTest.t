@@ -10,6 +10,9 @@ use AsposeCellsCloud::Object::PivotFilter;
 use AsposeCellsCloud::Object::Style;
 use AsposeCellsCloud::Object::Font;
 use AsposeCellsCloud::Object::PivotField;
+use AsposeCellsCloud::Object::AutoFilter;
+use AsposeCellsCloud::Object::FilterColumn;
+use AsposeCellsCloud::Object::Top10Filter;
 use AsposeCellsCloud::Request::GetWorksheetPivotTablesRequest;
 use AsposeCellsCloud::Request::GetWorksheetPivotTableRequest;
 use AsposeCellsCloud::Request::GetPivotTableFieldRequest;
@@ -205,29 +208,35 @@ my $api = get_cells();
     # PivotTablesController->put_worksheet_pivot_table_filter  test
     #
     subtest 'Testing PivotTablesController->put_worksheet_pivot_table_filter' => sub { 
-        # wait next version
-        # my $remoteFolder = 'TestData/In';
+        my $remoteFolder = 'TestData/In';
       
-        # my $localName = 'TestCase.xlsx';
-        # my $remoteName = 'TestCase.xlsx';
+        my $localName = 'TestCase.xlsx';
+        my $remoteName = 'TestCase.xlsx';
 
-        # ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        # my $filter = AsposeCellsCloud::Object::PivotFilter->new();
-        #  $filter->{field_index} = 1  ;
-        #  $filter->{filter_type} = 'Count'  ;
+        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
+        my $filter_column =  AsposeCellsCloud::Object::FilterColumn->new()  ;
+        $filter_column->{filter_type} = 'Top10Filter' ; 
+        $filter_column->{top10_filter} =  AsposeCellsCloud::Object::Top10Filter->new()  ;
+        $filter_column->{top10_filter}->{is_percent} =  'true' ;
+        $filter_column->{top10_filter}->{items} =  1 ;
+        $filter_column->{top10_filter}->{field_index} = 0 ; 
 
-        # my $request = AsposeCellsCloud::Request::PutWorksheetPivotTableFilterRequest->new();
-        # $request->{name} =  $remoteName;
-        # $request->{sheet_name} =  'Sheet4';
-        # $request->{pivot_table_index} =  0;
-        # $request->{filter} =  $filter;
-        # $request->{need_re_calculate} =  'true';
-        # $request->{folder} =  $remoteFolder;
-        # $request->{storage_name} =  '';
-        # my $result =  $api->put_worksheet_pivot_table_filter(request=> $request);
-        # ok($result,'put_worksheet_pivot_table_filter test OK');
-        ok(1,'put_worksheet_pivot_table_filter test OK');
+        my $auto_filter = AsposeCellsCloud::Object::AutoFilter->new();
+        $auto_filter->{filter_columns} = []; push ( @{$auto_filter->{filter_columns}}, $filter_column );
+        my $filter = AsposeCellsCloud::Object::PivotFilter->new();
+        $filter->{field_index} = 1  ;
+        $filter->{filter_type} = 'Count'  ;
+        $filter->{auto_filter} = $auto_filter;
+        my $request = AsposeCellsCloud::Request::PutWorksheetPivotTableFilterRequest->new();
+        $request->{name} =  $remoteName;
+        $request->{sheet_name} =  'Sheet4';
+        $request->{pivot_table_index} =  0;
+        $request->{filter} =  $filter;
+        $request->{need_re_calculate} =  'true';
+        $request->{folder} =  $remoteFolder;
+        $request->{storage_name} =  '';
+        my $result =  $api->put_worksheet_pivot_table_filter(request=> $request);
+        ok($result,'put_worksheet_pivot_table_filter test OK');
     };
 
     #

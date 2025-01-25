@@ -16,7 +16,7 @@ my $remoteName = 'TestCase.xlsx';
 my $upload_file_request = AsposeCellsCloud::Request::UploadFileRequest->new( 'UploadFiles'=>{ $localName => $localName  }  ,'path'=>$remoteFolder . '/' . $remoteName );
  
 my $filter = AsposeCellsCloud::Object::PivotFilter->new();
- $filter->{field_index} = 1  ;
+ $filter->{field_index} = 0  ;
  $filter->{filter_type} = 'Count'  ;
 
 my $request = AsposeCellsCloud::Request::PutWorksheetPivotTableFilterRequest->new();

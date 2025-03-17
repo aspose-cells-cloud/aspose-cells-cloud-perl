@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::GetWorkbookDefaultStyleRequest;
+package AsposeCellsCloud::Request::GetAllStylesRequest;
 
 require 5.6.0;
 use strict;
@@ -59,9 +59,9 @@ sub new {
 
 
 # Run Operation Request
-# GetWorkbookDefaultStyleRequest.name : The file name.  ,
-# GetWorkbookDefaultStyleRequest.folder : The folder where the file is situated.  ,
-# GetWorkbookDefaultStyleRequest.storageName : The storage name where the file is situated.   
+# GetAllStylesRequest.name :   ,
+# GetAllStylesRequest.folder :   ,
+# GetAllStylesRequest.storageName :    
 
 {
     my $params = {
@@ -71,10 +71,10 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'get_workbook_default_style' } = { 
-    	summary => 'Retrieve the description of the default style for the workbook .',
+    __PACKAGE__->method_documentation->{ 'get_all_styles' } = { 
+    	summary => 'Get all style in the workbook.',
         params => $params,
-        returns => 'StyleResponse',
+        returns => 'StylesResponse',
     };
 }
 
@@ -84,7 +84,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = '/cells/{name}/defaultstyle';
+    my $_resource_path = '/cells/{name}/allstyles';
 
     my $_method = 'GET';
     my $query_params = {};
@@ -123,21 +123,21 @@ __PACKAGE__->method_documentation({
      'name' => {
      	datatype => 'string',
      	base_name => 'name',
-     	description => 'The file name.',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
      'folder' => {
      	datatype => 'string',
      	base_name => 'folder',
-     	description => 'The folder where the file is situated.',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
      'storage_name' => {
      	datatype => 'string',
      	base_name => 'storageName',
-     	description => 'The storage name where the file is situated.',
+     	description => '',
      	format => '',
      	read_only => '',
      		},    

@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::FilesResult;
+package AsposeCellsCloud::Object::ConvertWorkbookOptions;
 
 require 5.6.0;
 use strict;
@@ -35,7 +35,11 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
-use AsposeCellsCloud::Object::FileInfo; 
+use AsposeCellsCloud::Object::BaseOperateOptions;
+use AsposeCellsCloud::Object::DataSource;
+use AsposeCellsCloud::Object::FileInfo;
+use AsposeCellsCloud::Object::PageSetup;
+use AsposeCellsCloud::Object::SaveOptions; 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -118,28 +122,82 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => 'Class features: Weekly lectures, group projects, midterm and final exams, and participation in class discussions.',
-                                  class => 'FilesResult',
+__PACKAGE__->class_documentation({description => '',
+                                  class => 'ConvertWorkbookOptions',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'files' => {
-     	datatype => 'ARRAY[FileInfo]',
-     	base_name => 'Files',
-     	description => 'A property named **Files** of type **IList FileInfo ** containing a collection of file information objects.',
+     'name' => {
+     	datatype => 'string',
+     	base_name => 'Name',
+     	description => 'The class has a public property named "Name" with a getter and setter method.',
+     	format => '',
+     	read_only => '',
+     		},
+     'data_source' => {
+     	datatype => 'DataSource',
+     	base_name => 'DataSource',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'file_info' => {
+     	datatype => 'FileInfo',
+     	base_name => 'FileInfo',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'page_setup' => {
+     	datatype => 'PageSetup',
+     	base_name => 'PageSetup',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'save_options' => {
+     	datatype => 'SaveOptions',
+     	base_name => 'SaveOptions',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'convert_format' => {
+     	datatype => 'string',
+     	base_name => 'ConvertFormat',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'check_excel_restriction' => {
+     	datatype => 'boolean',
+     	base_name => 'CheckExcelRestriction',
+     	description => '',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'files' => 'ARRAY[FileInfo]' 
+    'name' => 'string',
+    'data_source' => 'DataSource',
+    'file_info' => 'FileInfo',
+    'page_setup' => 'PageSetup',
+    'save_options' => 'SaveOptions',
+    'convert_format' => 'string',
+    'check_excel_restriction' => 'boolean' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'files' => 'Files' 
+    'name' => 'Name',
+    'data_source' => 'DataSource',
+    'file_info' => 'FileInfo',
+    'page_setup' => 'PageSetup',
+    'save_options' => 'SaveOptions',
+    'convert_format' => 'ConvertFormat',
+    'check_excel_restriction' => 'CheckExcelRestriction' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

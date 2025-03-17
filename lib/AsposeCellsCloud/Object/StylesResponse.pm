@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::FilesResult;
+package AsposeCellsCloud::Object::StylesResponse;
 
 require 5.6.0;
 use strict;
@@ -35,7 +35,8 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
-use AsposeCellsCloud::Object::FileInfo; 
+use AsposeCellsCloud::Object::CellsCloudResponse;
+use AsposeCellsCloud::Object::Styles; 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -118,28 +119,46 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => 'Class features: Weekly lectures, group projects, midterm and final exams, and participation in class discussions.',
-                                  class => 'FilesResult',
+__PACKAGE__->class_documentation({description => 'Represents the Styles Response.',
+                                  class => 'StylesResponse',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'files' => {
-     	datatype => 'ARRAY[FileInfo]',
-     	base_name => 'Files',
-     	description => 'A property named **Files** of type **IList FileInfo ** containing a collection of file information objects.',
+     'styles' => {
+     	datatype => 'Styles',
+     	base_name => 'Styles',
+     	description => 'collection of styles.',
+     	format => '',
+     	read_only => '',
+     		},
+     'code' => {
+     	datatype => 'int',
+     	base_name => 'Code',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'status' => {
+     	datatype => 'string',
+     	base_name => 'Status',
+     	description => '',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'files' => 'ARRAY[FileInfo]' 
+    'styles' => 'Styles',
+    'code' => 'int',
+    'status' => 'string' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'files' => 'Files' 
+    'styles' => 'Styles',
+    'code' => 'Code',
+    'status' => 'Status' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::FilesResult;
+package AsposeCellsCloud::Object::SpecifyCellsObject;
 
 require 5.6.0;
 use strict;
@@ -35,7 +35,7 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
-use AsposeCellsCloud::Object::FileInfo; 
+ 
 
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -118,28 +118,46 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => 'Class features: Weekly lectures, group projects, midterm and final exams, and participation in class discussions.',
-                                  class => 'FilesResult',
+__PACKAGE__->class_documentation({description => '',
+                                  class => 'SpecifyCellsObject',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'files' => {
-     	datatype => 'ARRAY[FileInfo]',
-     	base_name => 'Files',
-     	description => 'A property named **Files** of type **IList FileInfo ** containing a collection of file information objects.',
+     'worksheet_name' => {
+     	datatype => 'string',
+     	base_name => 'WorksheetName',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'page_index' => {
+     	datatype => 'int',
+     	base_name => 'PageIndex',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'region' => {
+     	datatype => 'string',
+     	base_name => 'Region',
+     	description => '',
      	format => '',
      	read_only => '',
      		},    
 });
 
 __PACKAGE__->swagger_types( {
-    'files' => 'ARRAY[FileInfo]' 
+    'worksheet_name' => 'string',
+    'page_index' => 'int',
+    'region' => 'string' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'files' => 'Files' 
+    'worksheet_name' => 'WorksheetName',
+    'page_index' => 'PageIndex',
+    'region' => 'Region' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::GetWorkbookDefaultStyleRequest;
+package AsposeCellsCloud::Request::AddPictureInCellRequest;
 
 require 5.6.0;
 use strict;
@@ -59,9 +59,12 @@ sub new {
 
 
 # Run Operation Request
-# GetWorkbookDefaultStyleRequest.name : The file name.  ,
-# GetWorkbookDefaultStyleRequest.folder : The folder where the file is situated.  ,
-# GetWorkbookDefaultStyleRequest.storageName : The storage name where the file is situated.   
+# AddPictureInCellRequest.name :   ,
+# AddPictureInCellRequest.sheetName :   ,
+# AddPictureInCellRequest.cellName :   ,
+# AddPictureInCellRequest.picturePath :   ,
+# AddPictureInCellRequest.folder :   ,
+# AddPictureInCellRequest.storageName :    
 
 {
     my $params = {
@@ -71,10 +74,10 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'get_workbook_default_style' } = { 
-    	summary => 'Retrieve the description of the default style for the workbook .',
+    __PACKAGE__->method_documentation->{ 'add_picture_in_cell' } = { 
+    	summary => 'add new picture in the cells.',
         params => $params,
-        returns => 'StyleResponse',
+        returns => 'CellsCloudResponse',
     };
 }
 
@@ -84,9 +87,9 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = '/cells/{name}/defaultstyle';
+    my $_resource_path = '/cells/{name}/worksheets/{sheetName}/pictures/addPictureInCell';
 
-    my $_method = 'GET';
+    my $_method = 'POST';
     my $query_params = {};
     my $header_params = {};
     my $form_params = {};
@@ -101,7 +104,21 @@ sub run_http_request {
         my $_base_variable = "{" . "name" . "}";
         my $_base_value = $client->to_path_value($self->name);
         $_resource_path =~ s/$_base_variable/$_base_value/g;        
+    }
+
+    if(defined $self->sheet_name){
+        my $_base_variable = "{" . "sheetName" . "}";
+        my $_base_value = $client->to_path_value($self->sheet_name);
+        $_resource_path =~ s/$_base_variable/$_base_value/g;        
     } 
+    if(defined $self->cell_name){
+        $query_params->{'cellName'} = $client->to_query_value($self->cell_name);      
+    }
+
+    if(defined $self->picture_path){
+        $query_params->{'picturePath'} = $client->to_query_value($self->picture_path);      
+    }
+
     if(defined $self->folder){
         $query_params->{'folder'} = $client->to_query_value($self->folder);      
     }
@@ -123,21 +140,42 @@ __PACKAGE__->method_documentation({
      'name' => {
      	datatype => 'string',
      	base_name => 'name',
-     	description => 'The file name.',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'sheet_name' => {
+     	datatype => 'string',
+     	base_name => 'sheetName',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'cell_name' => {
+     	datatype => 'string',
+     	base_name => 'cellName',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'picture_path' => {
+     	datatype => 'string',
+     	base_name => 'picturePath',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
      'folder' => {
      	datatype => 'string',
      	base_name => 'folder',
-     	description => 'The folder where the file is situated.',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
      'storage_name' => {
      	datatype => 'string',
      	base_name => 'storageName',
-     	description => 'The storage name where the file is situated.',
+     	description => '',
      	format => '',
      	read_only => '',
      		},    
@@ -146,6 +184,9 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->attribute_map( {
     'name' => 'name',
+    'sheet_name' => 'sheetName',
+    'cell_name' => 'cellName',
+    'picture_path' => 'picturePath',
     'folder' => 'folder',
     'storage_name' => 'storageName' 
 } );

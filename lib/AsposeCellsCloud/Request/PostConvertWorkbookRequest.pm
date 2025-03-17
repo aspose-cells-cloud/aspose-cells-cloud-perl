@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::GetWorkbookDefaultStyleRequest;
+package AsposeCellsCloud::Request::PostConvertWorkbookRequest;
 
 require 5.6.0;
 use strict;
@@ -59,9 +59,7 @@ sub new {
 
 
 # Run Operation Request
-# GetWorkbookDefaultStyleRequest.name : The file name.  ,
-# GetWorkbookDefaultStyleRequest.folder : The folder where the file is situated.  ,
-# GetWorkbookDefaultStyleRequest.storageName : The storage name where the file is situated.   
+# PostConvertWorkbookRequest.convertWorkbookOptions :    
 
 {
     my $params = {
@@ -71,10 +69,10 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'get_workbook_default_style' } = { 
-    	summary => 'Retrieve the description of the default style for the workbook .',
+    __PACKAGE__->method_documentation->{ 'post_convert_workbook' } = { 
+    	summary => '',
         params => $params,
-        returns => 'StyleResponse',
+        returns => 'FileInfo',
     };
 }
 
@@ -84,9 +82,9 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = '/cells/{name}/defaultstyle';
+    my $_resource_path = '/cells/convertWorkbook';
 
-    my $_method = 'GET';
+    my $_method = 'POST';
     my $query_params = {};
     my $header_params = {};
     my $form_params = {};
@@ -97,19 +95,15 @@ sub run_http_request {
         $header_params->{'Accept'} = $_header_accept;
     }
     $header_params->{'Content-Type'} = $client->select_header_content_type('application/json');
-    if(defined $self->name){
-        my $_base_variable = "{" . "name" . "}";
-        my $_base_value = $client->to_path_value($self->name);
-        $_resource_path =~ s/$_base_variable/$_base_value/g;        
-    } 
-    if(defined $self->folder){
-        $query_params->{'folder'} = $client->to_query_value($self->folder);      
-    }
-
-    if(defined $self->storage_name){
-        $query_params->{'storageName'} = $client->to_query_value($self->storage_name);      
-    } 
+ 
+ 
     my $_body_data;
+
+    # body params
+    if (defined $self->convert_workbook_options) {
+        #$_body_data = $self->convert_workbook_options;
+         $_body_data = JSON->new->convert_blessed->encode( $self->convert_workbook_options);
+    }
     # authentication setting, if any
     my $auth_settings = [qw()];
 
@@ -120,24 +114,10 @@ sub run_http_request {
 
 
 __PACKAGE__->method_documentation({
-     'name' => {
-     	datatype => 'string',
-     	base_name => 'name',
-     	description => 'The file name.',
-     	format => '',
-     	read_only => '',
-     		},
-     'folder' => {
-     	datatype => 'string',
-     	base_name => 'folder',
-     	description => 'The folder where the file is situated.',
-     	format => '',
-     	read_only => '',
-     		},
-     'storage_name' => {
-     	datatype => 'string',
-     	base_name => 'storageName',
-     	description => 'The storage name where the file is situated.',
+     'convert_workbook_options' => {
+     	datatype => 'ConvertWorkbookOptions',
+     	base_name => 'convertWorkbookOptions',
+     	description => '',
      	format => '',
      	read_only => '',
      		},    
@@ -145,9 +125,7 @@ __PACKAGE__->method_documentation({
 
 
 __PACKAGE__->attribute_map( {
-    'name' => 'name',
-    'folder' => 'folder',
-    'storage_name' => 'storageName' 
+    'convert_workbook_options' => 'convertWorkbookOptions' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

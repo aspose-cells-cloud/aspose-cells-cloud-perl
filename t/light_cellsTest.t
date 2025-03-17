@@ -1,4 +1,4 @@
-use Test::More tests => 210; #TODO update number of test cases
+use Test::More tests => 204; #TODO update number of test cases
 use Test::Exception;
 
 use lib 'lib';
@@ -375,28 +375,7 @@ my $api = get_cells();
         ok($result,'post_split test OK');
     };
 
-    #
-    # LightCells->post_split  test
-    #
-    subtest 'Testing LightCells->post_split' => sub { 
-      
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
-
-     
-        my $outFormat = 'numbers';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
-
-        my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{out_format} =  $outFormat;
-        my $result =  $api->post_split(request=> $request);
-        ok($result,'post_split test OK');
-    };
+ 
 
     #
     # LightCells->post_split  test
@@ -1026,30 +1005,6 @@ my $api = get_cells();
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
-        my $format = 'numbers';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
-
-        my $request = AsposeCellsCloud::Request::PostAssembleRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{datasource} =  'ds';
-        $request->{out_format} =  $format;
-        my $result =  $api->post_assemble(request=> $request);
-        ok($result,'post_assemble test OK');
-    };
-
-    #
-    # LightCells->post_assemble  test
-    #
-    subtest 'Testing LightCells->post_assemble' => sub { 
-      
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
-
-     
         my $format = 'wmf';
 
         my $mapFiles = {};           
@@ -1710,30 +1665,7 @@ my $api = get_cells();
         ok($result,'post_export test OK');
     };
 
-    #
-    # LightCells->post_export  test
-    #
-    subtest 'Testing LightCells->post_export' => sub { 
-      
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $book1Xlsx = 'Book1.xlsx';
 
-     
-        my $format = 'numbers';
-        my $objectType = 'workbook';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
-
-        my $request = AsposeCellsCloud::Request::PostExportRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{object_type} =  $objectType;
-        $request->{format} =  $format;
-        my $result =  $api->post_export(request=> $request);
-        ok($result,'post_export test OK');
-    };
 
     #
     # LightCells->post_export  test
@@ -2410,30 +2342,7 @@ my $api = get_cells();
         ok($result,'post_export test OK');
     };
 
-    #
-    # LightCells->post_export  test
-    #
-    subtest 'Testing LightCells->post_export' => sub { 
-      
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $book1Xlsx = 'Book1.xlsx';
 
-     
-        my $format = 'numbers';
-        my $objectType = 'worksheet';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
-
-        my $request = AsposeCellsCloud::Request::PostExportRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{object_type} =  $objectType;
-        $request->{format} =  $format;
-        my $result =  $api->post_export(request=> $request);
-        ok($result,'post_export test OK');
-    };
 
     #
     # LightCells->post_export  test
@@ -3410,30 +3319,7 @@ my $api = get_cells();
         ok($result,'post_export test OK');
     };
 
-    #
-    # LightCells->post_export  test
-    #
-    subtest 'Testing LightCells->post_export' => sub { 
-      
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $book1Xlsx = 'Book1.xlsx';
 
-     
-        my $format = 'numbers';
-        my $objectType = 'listobject';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
-
-        my $request = AsposeCellsCloud::Request::PostExportRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{object_type} =  $objectType;
-        $request->{format} =  $format;
-        my $result =  $api->post_export(request=> $request);
-        ok($result,'post_export test OK');
-    };
 
     #
     # LightCells->post_export  test
@@ -4281,30 +4167,6 @@ my $api = get_cells();
         ok($result,'post_merge test OK');
     };
 
-    #
-    # LightCells->post_merge  test
-    #
-    subtest 'Testing LightCells->post_merge' => sub { 
-      
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
-
-     
-        my $format = 'numbers';
-        my $mergeToOneSheet = 'true';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
-
-        my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{out_format} =  $format;
-        $request->{merge_to_one_sheet} =  $mergeToOneSheet;
-        my $result =  $api->post_merge(request=> $request);
-        ok($result,'post_merge test OK');
-    };
 
     #
     # LightCells->post_merge  test

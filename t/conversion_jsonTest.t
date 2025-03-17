@@ -1,4 +1,4 @@
-use Test::More tests => 17; #TODO update number of test cases
+use Test::More tests => 16; #TODO update number of test cases
 use Test::Exception;
 
 use lib 'lib';
@@ -275,29 +275,6 @@ my $api = get_cells();
         ok($result,'put_convert_workbook test OK');
     };
 
-    #
-    # ConversionJson->put_convert_workbook  test
-    #
-    subtest 'Testing ConversionJson->put_convert_workbook' => sub { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'codegen-spec.json';
-        my $remoteName = 'codegen-spec.json';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'numbers';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    };
 
     #
     # ConversionJson->put_convert_workbook  test

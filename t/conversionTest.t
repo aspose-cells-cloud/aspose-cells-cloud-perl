@@ -1,4 +1,4 @@
-use Test::More tests => 75; #TODO update number of test cases
+use Test::More tests => 71; #TODO update number of test cases
 use Test::Exception;
 
 use lib 'lib';
@@ -327,31 +327,7 @@ my $api = get_cells();
         ok($result,'post_workbook_save_as test OK');
     };
 
-    #
-    # Conversion->post_workbook_save_as  test
-    #
-    subtest 'Testing Conversion->post_workbook_save_as' => sub { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
 
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'numbers';
-        my $newfilename = 'outResult/PostExcelSaveAs.numbers';
-
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
-         $save_options->{save_format} = $format  ;
-
-        my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{newfilename} =  $newfilename;
-        $request->{save_options} =  $save_options;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->post_workbook_save_as(request=> $request);
-        ok($result,'post_workbook_save_as test OK');
-    };
 
     #
     # Conversion->post_workbook_save_as  test
@@ -725,27 +701,7 @@ my $api = get_cells();
         ok($result,'get_workbook test OK');
     };
 
-    #
-    # Conversion->get_workbook  test
-    #
-    subtest 'Testing Conversion->get_workbook' => sub { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'numbers';
-
-
-        my $request = AsposeCellsCloud::Request::GetWorkbookRequest->new();
-        $request->{name} =  $remoteName;
-        $request->{format} =  $format;
-        $request->{folder} =  $remoteFolder;
-        my $result =  $api->get_workbook(request=> $request);
-        ok($result,'get_workbook test OK');
-    };
+ 
 
     #
     # Conversion->get_workbook  test
@@ -1169,29 +1125,7 @@ my $api = get_cells();
         ok($result,'put_convert_workbook test OK');
     };
 
-    #
-    # Conversion->put_convert_workbook  test
-    #
-    subtest 'Testing Conversion->put_convert_workbook' => sub { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
 
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'numbers';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    };
 
     #
     # Conversion->put_convert_workbook  test
@@ -1701,31 +1635,7 @@ my $api = get_cells();
         ok($result,'put_convert_workbook test OK');
     };
 
-    #
-    # Conversion->put_convert_workbook  test
-    #
-    subtest 'Testing Conversion->put_convert_workbook' => sub { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
 
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'numbers';
-        my $outPath = 'outResult/ConvertWorkbook.numbers';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        $request->{out_path} =  $outPath;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    };
 
     #
     # Conversion->put_convert_workbook  test

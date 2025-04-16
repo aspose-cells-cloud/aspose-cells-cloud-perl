@@ -1,11 +1,11 @@
-use Test::More tests => 71; #TODO update number of test cases
+use Test::More tests => 70; #TODO update number of test cases
 use Test::Exception;
 
 use lib 'lib';
 use strict;
 use warnings;
 
-use AsposeCellsCloud::Object::PdfSaveOptions;
+use AsposeCellsCloud::Object::SaveOptions;
 use AsposeCellsCloud::Request::PostWorkbookSaveAsRequest;
 use AsposeCellsCloud::Request::GetWorkbookRequest;
 use AsposeCellsCloud::Request::PutConvertWorkbookRequest;
@@ -29,7 +29,7 @@ my $api = get_cells();
         my $format = 'csv';
         my $newfilename = 'outResult/PostExcelSaveAs.csv';
 
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
+        my $save_options = AsposeCellsCloud::Object::SaveOptions->new();
          $save_options->{save_format} = $format  ;
 
         my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
@@ -55,7 +55,7 @@ my $api = get_cells();
         my $format = 'html';
         my $newfilename = 'outResult/PostExcelSaveAs.html';
 
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
+        my $save_options = AsposeCellsCloud::Object::SaveOptions->new();
          $save_options->{save_format} = $format  ;
 
         my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
@@ -81,7 +81,7 @@ my $api = get_cells();
         my $format = 'mhtml';
         my $newfilename = 'outResult/PostExcelSaveAs.mhtml';
 
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
+        my $save_options = AsposeCellsCloud::Object::SaveOptions->new();
          $save_options->{save_format} = $format  ;
 
         my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
@@ -107,7 +107,7 @@ my $api = get_cells();
         my $format = 'ods';
         my $newfilename = 'outResult/PostExcelSaveAs.ods';
 
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
+        my $save_options = AsposeCellsCloud::Object::SaveOptions->new();
          $save_options->{save_format} = $format  ;
 
         my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
@@ -133,7 +133,7 @@ my $api = get_cells();
         my $format = 'pdf';
         my $newfilename = 'outResult/PostExcelSaveAs.pdf';
 
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
+        my $save_options = AsposeCellsCloud::Object::SaveOptions->new();
          $save_options->{save_format} = $format  ;
 
         my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
@@ -159,7 +159,7 @@ my $api = get_cells();
         my $format = 'xml';
         my $newfilename = 'outResult/PostExcelSaveAs.xml';
 
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
+        my $save_options = AsposeCellsCloud::Object::SaveOptions->new();
          $save_options->{save_format} = $format  ;
 
         my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
@@ -185,7 +185,7 @@ my $api = get_cells();
         my $format = 'txt';
         my $newfilename = 'outResult/PostExcelSaveAs.txt';
 
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
+        my $save_options = AsposeCellsCloud::Object::SaveOptions->new();
          $save_options->{save_format} = $format  ;
 
         my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
@@ -211,7 +211,7 @@ my $api = get_cells();
         my $format = 'tif';
         my $newfilename = 'outResult/PostExcelSaveAs.tif';
 
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
+        my $save_options = AsposeCellsCloud::Object::SaveOptions->new();
          $save_options->{save_format} = $format  ;
 
         my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
@@ -237,7 +237,7 @@ my $api = get_cells();
         my $format = 'xlsb';
         my $newfilename = 'outResult/PostExcelSaveAs.xlsb';
 
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
+        my $save_options = AsposeCellsCloud::Object::SaveOptions->new();
          $save_options->{save_format} = $format  ;
 
         my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
@@ -263,7 +263,7 @@ my $api = get_cells();
         my $format = 'xps';
         my $newfilename = 'outResult/PostExcelSaveAs.xps';
 
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
+        my $save_options = AsposeCellsCloud::Object::SaveOptions->new();
          $save_options->{save_format} = $format  ;
 
         my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
@@ -289,7 +289,7 @@ my $api = get_cells();
         my $format = 'png';
         my $newfilename = 'outResult/PostExcelSaveAs.png';
 
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
+        my $save_options = AsposeCellsCloud::Object::SaveOptions->new();
          $save_options->{save_format} = $format  ;
 
         my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
@@ -315,7 +315,7 @@ my $api = get_cells();
         my $format = 'md';
         my $newfilename = 'outResult/PostExcelSaveAs.md';
 
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
+        my $save_options = AsposeCellsCloud::Object::SaveOptions->new();
          $save_options->{save_format} = $format  ;
 
         my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
@@ -326,8 +326,6 @@ my $api = get_cells();
         my $result =  $api->post_workbook_save_as(request=> $request);
         ok($result,'post_workbook_save_as test OK');
     };
-
-
 
     #
     # Conversion->post_workbook_save_as  test
@@ -343,7 +341,7 @@ my $api = get_cells();
         my $format = 'svg';
         my $newfilename = 'outResult/PostExcelSaveAs.svg';
 
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
+        my $save_options = AsposeCellsCloud::Object::SaveOptions->new();
          $save_options->{save_format} = $format  ;
 
         my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
@@ -369,7 +367,7 @@ my $api = get_cells();
         my $format = 'docx';
         my $newfilename = 'outResult/PostExcelSaveAs.docx';
 
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
+        my $save_options = AsposeCellsCloud::Object::SaveOptions->new();
          $save_options->{save_format} = $format  ;
 
         my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
@@ -395,7 +393,7 @@ my $api = get_cells();
         my $format = 'pptx';
         my $newfilename = 'outResult/PostExcelSaveAs.pptx';
 
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
+        my $save_options = AsposeCellsCloud::Object::SaveOptions->new();
          $save_options->{save_format} = $format  ;
 
         my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
@@ -421,7 +419,7 @@ my $api = get_cells();
         my $format = 'json';
         my $newfilename = 'outResult/PostExcelSaveAs.json';
 
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
+        my $save_options = AsposeCellsCloud::Object::SaveOptions->new();
          $save_options->{save_format} = $format  ;
 
         my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
@@ -447,7 +445,7 @@ my $api = get_cells();
         my $format = 'sql';
         my $newfilename = 'outResult/PostExcelSaveAs.sql';
 
-        my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
+        my $save_options = AsposeCellsCloud::Object::SaveOptions->new();
          $save_options->{save_format} = $format  ;
 
         my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();
@@ -700,8 +698,6 @@ my $api = get_cells();
         my $result =  $api->get_workbook(request=> $request);
         ok($result,'get_workbook test OK');
     };
-
- 
 
     #
     # Conversion->get_workbook  test
@@ -1113,32 +1109,6 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'md';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    };
-
-
-
-    #
-    # Conversion->put_convert_workbook  test
-    #
-    subtest 'Testing Conversion->put_convert_workbook' => sub { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'Book1.xlsx';
-        my $remoteName = 'Book1.xlsx';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'wmf';
 
         my $mapFiles = {};           
 
@@ -1634,8 +1604,6 @@ my $api = get_cells();
         my $result =  $api->put_convert_workbook(request=> $request);
         ok($result,'put_convert_workbook test OK');
     };
-
-
 
     #
     # Conversion->put_convert_workbook  test

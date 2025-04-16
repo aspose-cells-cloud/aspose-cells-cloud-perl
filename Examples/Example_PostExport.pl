@@ -9,7 +9,6 @@ my $config = AsposeCellsCloud::Configuration->new( client_id => $ENV{'CellsCloud
 my $instance = AsposeCellsCloud::CellsApi->new(AsposeCellsCloud::ApiClient->new( $config));
 
   
-my $assemblyTestXlsx = 'assemblytest.xlsx';
 my $book1Xlsx = 'Book1.xlsx';
 
  
@@ -18,7 +17,6 @@ my $objectType = 'workbook';
 
 my $mapFiles = {};           
 
- $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
  $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
 my $request = AsposeCellsCloud::Request::PostExportRequest->new();

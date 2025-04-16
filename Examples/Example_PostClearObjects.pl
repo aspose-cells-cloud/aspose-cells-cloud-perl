@@ -10,7 +10,6 @@ my $instance = AsposeCellsCloud::CellsApi->new(AsposeCellsCloud::ApiClient->new(
 
   
 my $book1Xlsx = 'Book1.xlsx';
-my $dataSourceXlsx = 'datasource.xlsx';
 
  
 my $objecttype = 'chart';
@@ -18,7 +17,6 @@ my $objecttype = 'chart';
 my $mapFiles = {};           
 
  $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
- $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
 my $request = AsposeCellsCloud::Request::PostClearObjectsRequest->new();
 $request->{file} =  $mapFiles;

@@ -9,13 +9,11 @@ my $config = AsposeCellsCloud::Configuration->new( client_id => $ENV{'CellsCloud
 my $instance = AsposeCellsCloud::CellsApi->new(AsposeCellsCloud::ApiClient->new( $config));
 
   
-my $assemblyTestXlsx = 'assemblytest.xlsx';
 my $dataSourceXlsx = 'datasource.xlsx';
 
  
 my $mapFiles = {};           
 
- $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
  $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
 my $request = AsposeCellsCloud::Request::PostSearchRequest->new();

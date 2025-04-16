@@ -18,7 +18,7 @@ my $upload_file_request = AsposeCellsCloud::Request::UploadFileRequest->new( 'Up
 my $format = 'csv';
 my $newfilename = 'outResult/PostExcelSaveAs.csv';
 
-my $save_options = AsposeCellsCloud::Object::PdfSaveOptions->new();
+my $save_options = AsposeCellsCloud::Object::SaveOptions->new();
  $save_options->{save_format} = $format  ;
 
 my $request = AsposeCellsCloud::Request::PostWorkbookSaveAsRequest->new();

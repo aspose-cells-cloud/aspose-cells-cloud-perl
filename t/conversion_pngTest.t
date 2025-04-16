@@ -1,4 +1,4 @@
-use Test::More tests => 12; #TODO update number of test cases
+use Test::More tests => 11; #TODO update number of test cases
 use Test::Exception;
 
 use lib 'lib';
@@ -215,30 +215,6 @@ my $api = get_cells();
         ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
      
         my $format = 'md';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$localName}= "TestData/".$localName ;
-
-        my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{format} =  $format;
-        my $result =  $api->put_convert_workbook(request=> $request);
-        ok($result,'put_convert_workbook test OK');
-    };
-
-    #
-    # ConversionPng->put_convert_workbook  test
-    #
-    subtest 'Testing ConversionPng->put_convert_workbook' => sub { 
-        my $remoteFolder = 'TestData/In';
-      
-        my $localName = 'cloud.png';
-        my $remoteName = 'cloud.png';
-
-        ready_file('api'=> $api, 'file'=> $localName ,'folder' =>$remoteFolder . '/' . $remoteName, 'storage'=>'') ; 
-     
-        my $format = 'numbers';
 
         my $mapFiles = {};           
 

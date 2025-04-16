@@ -9,16 +9,14 @@ my $config = AsposeCellsCloud::Configuration->new( client_id => $ENV{'CellsCloud
 my $instance = AsposeCellsCloud::CellsApi->new(AsposeCellsCloud::ApiClient->new( $config));
 
   
-my $assemblyTestXlsx = 'assemblytest.xlsx';
-my $dataSourceXlsx = 'datasource.xlsx';
+my $book1Xlsx = 'Book1.xlsx';
 
  
 my $outFormat = 'csv';
 
 my $mapFiles = {};           
 
- $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
- $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+ $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
 my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
 $request->{file} =  $mapFiles;

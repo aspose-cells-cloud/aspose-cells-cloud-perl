@@ -1,4 +1,4 @@
-use Test::More tests => 4; #TODO update number of test cases
+use Test::More tests => 5; #TODO update number of test cases
 use Test::Exception;
 
 use lib 'lib';
@@ -9,10 +9,12 @@ use AsposeCellsCloud::Object::BatchConvertRequest;
 use AsposeCellsCloud::Object::MatchConditionRequest;
 use AsposeCellsCloud::Object::BatchProtectRequest;
 use AsposeCellsCloud::Object::BatchLockRequest;
+use AsposeCellsCloud::Object::BatchSplitRequest;
 use AsposeCellsCloud::Request::PostBatchConvertRequest;
 use AsposeCellsCloud::Request::PostBatchProtectRequest;
 use AsposeCellsCloud::Request::PostBatchLockRequest;
 use AsposeCellsCloud::Request::PostBatchUnlockRequest;
+use AsposeCellsCloud::Request::PostBatchSplitRequest;
 
 require './t/CellsTestBase.pl';
 
@@ -129,6 +131,34 @@ my $api = get_cells();
         $request->{batch_lock_request} =  $batch_lock_request;
         my $result =  $api->post_batch_unlock(request=> $request);
         ok($result,'post_batch_unlock test OK');
+    };
+
+    #
+    # BatchController->post_batch_split  test
+    #
+    subtest 'Testing BatchController->post_batch_split' => sub { 
+        my $remoteFolder = 'TestData/In';
+      
+        my $localBook1 = 'Book1.xlsx';
+        my $remoteBook1 = 'Book1.xlsx';
+        my $localMyDoc = 'myDocument.xlsx';
+        my $remoteMyDoc = 'myDocument.xlsx';
+
+        ready_file('api'=> $api, 'file'=> $localBook1 ,'folder' =>$remoteFolder . '/' . $remoteBook1, 'storage'=>'') ; 
+        ready_file('api'=> $api, 'file'=> $localMyDoc ,'folder' =>$remoteFolder . '/' . $remoteMyDoc, 'storage'=>'') ; 
+     
+        my $batch_split_request_match_condition = AsposeCellsCloud::Object::MatchConditionRequest->new();
+         $batch_split_request_match_condition->{regex_pattern} = '(^Book)(.+)(xlsx$)'  ;
+        my $batch_split_request = AsposeCellsCloud::Object::BatchSplitRequest->new();
+         $batch_split_request->{source_folder} = $remoteFolder  ;
+         $batch_split_request->{format} = 'Pdf'  ;
+         $batch_split_request->{out_folder} = 'OutResult'  ;
+         $batch_split_request->{match_condition} = $batch_split_request_match_condition  ;
+
+        my $request = AsposeCellsCloud::Request::PostBatchSplitRequest->new();
+        $request->{batch_split_request} =  $batch_split_request;
+        my $result =  $api->post_batch_split(request=> $request);
+        ok($result,'post_batch_split test OK');
     };
 
 

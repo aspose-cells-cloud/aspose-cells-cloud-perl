@@ -1,4 +1,4 @@
-use Test::More tests => 204; #TODO update number of test cases
+use Test::More tests => 202; #TODO update number of test cases
 use Test::Exception;
 
 use lib 'lib';
@@ -13,6 +13,7 @@ use AsposeCellsCloud::Request::PostExportRequest;
 use AsposeCellsCloud::Request::PostCompressRequest;
 use AsposeCellsCloud::Request::PostMergeRequest;
 use AsposeCellsCloud::Request::PostUnlockRequest;
+use AsposeCellsCloud::Request::PostLockRequest;
 use AsposeCellsCloud::Request::PostProtectRequest;
 use AsposeCellsCloud::Request::PostProtectRequest;
 use AsposeCellsCloud::Request::PostSearchRequest;
@@ -35,16 +36,14 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_split' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
+        my $book1Xlsx = 'Book1.xlsx';
 
      
         my $outFormat = 'csv';
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
@@ -58,16 +57,14 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_split' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
+        my $book1Xlsx = 'Book1.xlsx';
 
      
         my $outFormat = 'xls';
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
@@ -81,16 +78,14 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_split' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
+        my $book1Xlsx = 'Book1.xlsx';
 
      
         my $outFormat = 'html';
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
@@ -104,16 +99,14 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_split' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
+        my $book1Xlsx = 'Book1.xlsx';
 
      
         my $outFormat = 'mhtml';
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
@@ -127,16 +120,14 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_split' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
+        my $book1Xlsx = 'Book1.xlsx';
 
      
         my $outFormat = 'ods';
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
@@ -150,16 +141,14 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_split' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
+        my $book1Xlsx = 'Book1.xlsx';
 
      
         my $outFormat = 'pdf';
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
@@ -173,16 +162,14 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_split' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
+        my $book1Xlsx = 'Book1.xlsx';
 
      
         my $outFormat = 'xml';
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
@@ -196,16 +183,14 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_split' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
+        my $book1Xlsx = 'Book1.xlsx';
 
      
         my $outFormat = 'txt';
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
@@ -219,16 +204,14 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_split' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
+        my $book1Xlsx = 'Book1.xlsx';
 
      
         my $outFormat = 'tif';
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
@@ -242,16 +225,14 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_split' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
+        my $book1Xlsx = 'Book1.xlsx';
 
      
         my $outFormat = 'xlsb';
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
@@ -265,16 +246,14 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_split' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
+        my $book1Xlsx = 'Book1.xlsx';
 
      
         my $outFormat = 'xlsx';
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
@@ -288,16 +267,14 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_split' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
+        my $book1Xlsx = 'Book1.xlsx';
 
      
         my $outFormat = 'xps';
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
@@ -311,16 +288,14 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_split' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
+        my $book1Xlsx = 'Book1.xlsx';
 
      
         my $outFormat = 'png';
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
@@ -334,16 +309,14 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_split' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
+        my $book1Xlsx = 'Book1.xlsx';
 
      
         my $outFormat = 'jpg';
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
@@ -357,16 +330,14 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_split' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
+        my $book1Xlsx = 'Book1.xlsx';
 
      
         my $outFormat = 'md';
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
@@ -375,23 +346,19 @@ my $api = get_cells();
         ok($result,'post_split test OK');
     };
 
- 
-
     #
     # LightCells->post_split  test
     #
     subtest 'Testing LightCells->post_split' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
+        my $book1Xlsx = 'Book1.xlsx';
 
      
         my $outFormat = 'svg';
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
@@ -405,16 +372,14 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_split' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
+        my $book1Xlsx = 'Book1.xlsx';
 
      
         my $outFormat = 'docx';
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
@@ -428,16 +393,14 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_split' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
+        my $book1Xlsx = 'Book1.xlsx';
 
      
         my $outFormat = 'pptx';
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
@@ -451,16 +414,14 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_split' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
+        my $book1Xlsx = 'Book1.xlsx';
 
      
         my $outFormat = 'json';
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
@@ -474,16 +435,14 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_split' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
+        my $book1Xlsx = 'Book1.xlsx';
 
      
         my $outFormat = 'sql';
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
+         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSplitRequest->new();
         $request->{file} =  $mapFiles;
@@ -1145,7 +1104,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1154,7 +1112,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1170,7 +1127,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1179,7 +1135,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1195,7 +1150,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1204,7 +1158,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1220,7 +1173,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1229,7 +1181,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1245,7 +1196,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1254,7 +1204,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1270,7 +1219,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1279,7 +1227,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1295,7 +1242,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1304,7 +1250,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1320,7 +1265,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1329,7 +1273,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1345,7 +1288,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1354,7 +1296,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1370,7 +1311,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1379,7 +1319,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1395,7 +1334,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1404,7 +1342,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1420,7 +1357,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1429,7 +1365,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1445,7 +1380,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1454,7 +1388,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1470,7 +1403,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1479,7 +1411,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1495,7 +1426,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1504,7 +1434,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1520,7 +1449,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1529,7 +1457,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1545,7 +1472,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1554,7 +1480,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1570,7 +1495,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1579,7 +1503,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1595,7 +1518,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1604,7 +1526,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1620,7 +1541,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1629,7 +1549,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1645,7 +1564,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1654,7 +1572,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1665,14 +1582,11 @@ my $api = get_cells();
         ok($result,'post_export test OK');
     };
 
-
-
     #
     # LightCells->post_export  test
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1681,7 +1595,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1697,7 +1610,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1706,7 +1618,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1722,7 +1633,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1731,7 +1641,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1747,7 +1656,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1756,7 +1664,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1772,7 +1679,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1781,7 +1687,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1797,7 +1702,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1806,7 +1710,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1822,7 +1725,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1831,7 +1733,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1847,7 +1748,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1856,7 +1756,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1872,7 +1771,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1881,7 +1779,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1897,7 +1794,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1906,7 +1802,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1922,7 +1817,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1931,7 +1825,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1947,7 +1840,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1956,7 +1848,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1972,7 +1863,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -1981,7 +1871,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -1997,7 +1886,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2006,7 +1894,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2022,7 +1909,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2031,7 +1917,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2047,7 +1932,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2056,7 +1940,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2072,7 +1955,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2081,7 +1963,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2097,7 +1978,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2106,7 +1986,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2122,7 +2001,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2131,7 +2009,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2147,7 +2024,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2156,7 +2032,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2172,7 +2047,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2181,7 +2055,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2197,7 +2070,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2206,7 +2078,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2222,7 +2093,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2231,7 +2101,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2247,7 +2116,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2256,7 +2124,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2272,7 +2139,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2281,7 +2147,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2297,7 +2162,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2306,7 +2170,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2322,7 +2185,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2331,34 +2193,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
-
-        my $request = AsposeCellsCloud::Request::PostExportRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{object_type} =  $objectType;
-        $request->{format} =  $format;
-        my $result =  $api->post_export(request=> $request);
-        ok($result,'post_export test OK');
-    };
-
-
-
-    #
-    # LightCells->post_export  test
-    #
-    subtest 'Testing LightCells->post_export' => sub { 
-      
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $book1Xlsx = 'Book1.xlsx';
-
-     
-        my $format = 'wmf';
-        my $objectType = 'worksheet';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2374,7 +2208,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2383,7 +2216,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2399,7 +2231,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2408,7 +2239,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2424,7 +2254,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2433,7 +2262,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2449,7 +2277,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2458,7 +2285,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2474,7 +2300,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2483,7 +2308,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2499,7 +2323,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2508,7 +2331,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2524,7 +2346,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2533,7 +2354,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2549,7 +2369,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2558,7 +2377,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2574,7 +2392,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2583,7 +2400,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2599,7 +2415,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2608,7 +2423,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2624,7 +2438,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2633,7 +2446,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2649,7 +2461,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2658,7 +2469,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2674,7 +2484,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2683,7 +2492,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2699,7 +2507,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2708,7 +2515,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2724,7 +2530,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2733,7 +2538,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2749,7 +2553,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2758,7 +2561,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2774,7 +2576,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2783,7 +2584,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2799,7 +2599,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2808,7 +2607,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2824,7 +2622,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2833,7 +2630,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2849,7 +2645,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2858,7 +2653,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2874,7 +2668,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2883,7 +2676,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2899,7 +2691,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2908,7 +2699,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2924,7 +2714,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2933,7 +2722,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2949,7 +2737,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2958,7 +2745,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2974,7 +2760,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -2983,7 +2768,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -2999,7 +2783,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3008,7 +2791,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3024,7 +2806,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3033,7 +2814,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3049,7 +2829,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3058,7 +2837,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3074,7 +2852,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3083,7 +2860,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3099,7 +2875,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3108,7 +2883,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3124,7 +2898,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3133,7 +2906,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3149,7 +2921,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3158,7 +2929,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3174,7 +2944,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3183,7 +2952,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3199,7 +2967,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3208,7 +2975,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3224,7 +2990,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3233,7 +2998,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3249,7 +3013,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3258,7 +3021,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3274,7 +3036,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3283,7 +3044,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3299,7 +3059,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3308,34 +3067,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
-
-        my $request = AsposeCellsCloud::Request::PostExportRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{object_type} =  $objectType;
-        $request->{format} =  $format;
-        my $result =  $api->post_export(request=> $request);
-        ok($result,'post_export test OK');
-    };
-
-
-
-    #
-    # LightCells->post_export  test
-    #
-    subtest 'Testing LightCells->post_export' => sub { 
-      
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $book1Xlsx = 'Book1.xlsx';
-
-     
-        my $format = 'wmf';
-        my $objectType = 'listobject';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3351,7 +3082,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3360,7 +3090,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3376,7 +3105,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3385,7 +3113,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3401,7 +3128,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3410,7 +3136,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3426,7 +3151,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3435,7 +3159,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3451,7 +3174,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3460,7 +3182,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3476,7 +3197,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3485,7 +3205,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3501,7 +3220,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3510,7 +3228,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3526,7 +3243,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3535,7 +3251,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3551,7 +3266,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3560,7 +3274,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3576,7 +3289,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_export' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $book1Xlsx = 'Book1.xlsx';
 
      
@@ -3585,7 +3297,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
 
         my $request = AsposeCellsCloud::Request::PostExportRequest->new();
@@ -3601,7 +3312,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_compress' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
@@ -3609,7 +3319,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
         my $request = AsposeCellsCloud::Request::PostCompressRequest->new();
@@ -3624,7 +3333,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_compress' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
@@ -3632,7 +3340,6 @@ my $api = get_cells();
 
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
         my $request = AsposeCellsCloud::Request::PostCompressRequest->new();
@@ -4152,32 +3859,6 @@ my $api = get_cells();
 
      
         my $format = 'md';
-        my $mergeToOneSheet = 'true';
-
-        my $mapFiles = {};           
-
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
-
-        my $request = AsposeCellsCloud::Request::PostMergeRequest->new();
-        $request->{file} =  $mapFiles;
-        $request->{out_format} =  $format;
-        $request->{merge_to_one_sheet} =  $mergeToOneSheet;
-        my $result =  $api->post_merge(request=> $request);
-        ok($result,'post_merge test OK');
-    };
-
-
-    #
-    # LightCells->post_merge  test
-    #
-    subtest 'Testing LightCells->post_merge' => sub { 
-      
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
-
-     
-        my $format = 'wmf';
         my $mergeToOneSheet = 'true';
 
         my $mapFiles = {};           
@@ -4338,12 +4019,30 @@ my $api = get_cells();
     };
 
     #
+    # LightCells->post_lock  test
+    #
+    subtest 'Testing LightCells->post_lock' => sub { 
+      
+        my $needlockXlsx = 'needlock.xlsx';
+
+     
+        my $mapFiles = {};           
+
+         $mapFiles->{$needlockXlsx}= "TestData/".$needlockXlsx ;
+
+        my $request = AsposeCellsCloud::Request::PostLockRequest->new();
+        $request->{file} =  $mapFiles;
+        $request->{password} =  '123456';
+        my $result =  $api->post_lock(request=> $request);
+        ok($result,'post_lock test OK');
+    };
+
+    #
     # LightCells->post_protect  test
     #
     subtest 'Testing LightCells->post_protect' => sub { 
       
         my $assemblyTestXlsx = 'assemblytest.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
 
      
         my $mapFiles = {};           
@@ -4352,7 +4051,6 @@ my $api = get_cells();
          $protect_workbook_request->{aways_open_read_only} = 'true'  ;
          $protect_workbook_request->{encrypt_with_password} = '123456'  ;
          $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
         my $request = AsposeCellsCloud::Request::PostProtectRequest->new();
         $request->{file} =  $mapFiles;
@@ -4367,7 +4065,6 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_protect' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
@@ -4376,7 +4073,6 @@ my $api = get_cells();
         my $protect_workbook_request = AsposeCellsCloud::Object::ProtectWorkbookRequest->new();
          $protect_workbook_request->{aways_open_read_only} = 'true'  ;
          $protect_workbook_request->{encrypt_with_password} = '123456'  ;
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
         my $request = AsposeCellsCloud::Request::PostProtectRequest->new();
@@ -4391,13 +4087,11 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_search' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
         my $request = AsposeCellsCloud::Request::PostSearchRequest->new();
@@ -4412,13 +4106,11 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_replace' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
         my $request = AsposeCellsCloud::Request::PostReplaceRequest->new();
@@ -4434,13 +4126,11 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_replace' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
         my $request = AsposeCellsCloud::Request::PostReplaceRequest->new();
@@ -4457,13 +4147,11 @@ my $api = get_cells();
     #
     subtest 'Testing LightCells->post_watermark' => sub { 
       
-        my $assemblyTestXlsx = 'assemblytest.xlsx';
         my $dataSourceXlsx = 'datasource.xlsx';
 
      
         my $mapFiles = {};           
 
-         $mapFiles->{$assemblyTestXlsx}= "TestData/".$assemblyTestXlsx ;
          $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
         my $request = AsposeCellsCloud::Request::PostWatermarkRequest->new();
@@ -4480,7 +4168,6 @@ my $api = get_cells();
     subtest 'Testing LightCells->post_clear_objects' => sub { 
       
         my $book1Xlsx = 'Book1.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
 
      
         my $objecttype = 'chart';
@@ -4488,7 +4175,6 @@ my $api = get_cells();
         my $mapFiles = {};           
 
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
         my $request = AsposeCellsCloud::Request::PostClearObjectsRequest->new();
         $request->{file} =  $mapFiles;
@@ -4503,7 +4189,6 @@ my $api = get_cells();
     subtest 'Testing LightCells->post_clear_objects' => sub { 
       
         my $book1Xlsx = 'Book1.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
 
      
         my $objecttype = 'comment';
@@ -4511,7 +4196,6 @@ my $api = get_cells();
         my $mapFiles = {};           
 
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
         my $request = AsposeCellsCloud::Request::PostClearObjectsRequest->new();
         $request->{file} =  $mapFiles;
@@ -4526,7 +4210,6 @@ my $api = get_cells();
     subtest 'Testing LightCells->post_clear_objects' => sub { 
       
         my $book1Xlsx = 'Book1.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
 
      
         my $objecttype = 'picture';
@@ -4534,7 +4217,6 @@ my $api = get_cells();
         my $mapFiles = {};           
 
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
         my $request = AsposeCellsCloud::Request::PostClearObjectsRequest->new();
         $request->{file} =  $mapFiles;
@@ -4549,7 +4231,6 @@ my $api = get_cells();
     subtest 'Testing LightCells->post_clear_objects' => sub { 
       
         my $book1Xlsx = 'Book1.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
 
      
         my $objecttype = 'shape';
@@ -4557,7 +4238,6 @@ my $api = get_cells();
         my $mapFiles = {};           
 
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
         my $request = AsposeCellsCloud::Request::PostClearObjectsRequest->new();
         $request->{file} =  $mapFiles;
@@ -4572,7 +4252,6 @@ my $api = get_cells();
     subtest 'Testing LightCells->post_clear_objects' => sub { 
       
         my $book1Xlsx = 'Book1.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
 
      
         my $objecttype = 'listobject';
@@ -4580,7 +4259,6 @@ my $api = get_cells();
         my $mapFiles = {};           
 
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
         my $request = AsposeCellsCloud::Request::PostClearObjectsRequest->new();
         $request->{file} =  $mapFiles;
@@ -4595,7 +4273,6 @@ my $api = get_cells();
     subtest 'Testing LightCells->post_clear_objects' => sub { 
       
         my $book1Xlsx = 'Book1.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
 
      
         my $objecttype = 'hyperlink';
@@ -4603,7 +4280,6 @@ my $api = get_cells();
         my $mapFiles = {};           
 
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
         my $request = AsposeCellsCloud::Request::PostClearObjectsRequest->new();
         $request->{file} =  $mapFiles;
@@ -4618,7 +4294,6 @@ my $api = get_cells();
     subtest 'Testing LightCells->post_clear_objects' => sub { 
       
         my $book1Xlsx = 'Book1.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
 
      
         my $objecttype = 'oleobject';
@@ -4626,7 +4301,6 @@ my $api = get_cells();
         my $mapFiles = {};           
 
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
         my $request = AsposeCellsCloud::Request::PostClearObjectsRequest->new();
         $request->{file} =  $mapFiles;
@@ -4641,7 +4315,6 @@ my $api = get_cells();
     subtest 'Testing LightCells->post_clear_objects' => sub { 
       
         my $book1Xlsx = 'Book1.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
 
      
         my $objecttype = 'pivottable';
@@ -4649,7 +4322,6 @@ my $api = get_cells();
         my $mapFiles = {};           
 
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
         my $request = AsposeCellsCloud::Request::PostClearObjectsRequest->new();
         $request->{file} =  $mapFiles;
@@ -4664,7 +4336,6 @@ my $api = get_cells();
     subtest 'Testing LightCells->post_clear_objects' => sub { 
       
         my $book1Xlsx = 'Book1.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
 
      
         my $objecttype = 'validation';
@@ -4672,7 +4343,6 @@ my $api = get_cells();
         my $mapFiles = {};           
 
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
         my $request = AsposeCellsCloud::Request::PostClearObjectsRequest->new();
         $request->{file} =  $mapFiles;
@@ -4687,7 +4357,6 @@ my $api = get_cells();
     subtest 'Testing LightCells->post_clear_objects' => sub { 
       
         my $book1Xlsx = 'Book1.xlsx';
-        my $dataSourceXlsx = 'datasource.xlsx';
 
      
         my $objecttype = 'background';
@@ -4695,7 +4364,6 @@ my $api = get_cells();
         my $mapFiles = {};           
 
          $mapFiles->{$book1Xlsx}= "TestData/".$book1Xlsx ;
-         $mapFiles->{$dataSourceXlsx}= "TestData/".$dataSourceXlsx ;
 
         my $request = AsposeCellsCloud::Request::PostClearObjectsRequest->new();
         $request->{file} =  $mapFiles;

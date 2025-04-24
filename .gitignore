@@ -20,3 +20,4 @@ packages
 test_results.xml
 #t\one_test.t
 integratetests/
+.vscode/

@@ -51,7 +51,7 @@ jobs:
         shell: cmd
       
       - name: Install Perl modules
-        run: cpanm Log::Any
+        run: cpanm --notest Log::Any
         shell: cmd
               
       - name: Build SDK Package

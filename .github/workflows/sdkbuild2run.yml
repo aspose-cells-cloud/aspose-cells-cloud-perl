@@ -45,7 +45,15 @@ jobs:
           cpan install JSON
           cpan install LWP::UserAgent          
         shell: cmd
-        
+
+      - name: Install cpanm
+        run: perl -MCPAN -e "install App::cpanminus"
+        shell: cmd
+      
+      - name: Install Perl modules
+        run: cpanm Log::Any
+        shell: cmd
+              
       - name: Build SDK Package
         run: |
           perl Build.PL && ./Build

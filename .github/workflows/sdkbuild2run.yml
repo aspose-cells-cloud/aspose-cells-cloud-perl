@@ -32,9 +32,11 @@ jobs:
       - name: Verify Perl installation
         run: |
           perl -v
-          cpan -v
         shell: cmd
-
+      - name: Check cpan version
+        run: cpan -v
+        shell: cmd
+      
       - name: Install Perl dependencies
         run: |
           cpan install JSON

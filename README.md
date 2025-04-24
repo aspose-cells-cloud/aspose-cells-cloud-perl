@@ -24,24 +24,16 @@ use AsposeCellsCloud::Request::PutConvertWorkbookRequest;
 
 my $config = AsposeCellsCloud::Configuration->new( client_id => $ENV{'CellsCloudClientId'}, client_secret => $ENV{'CellsCloudClientSecret'});
 my $instance = AsposeCellsCloud::CellsApi->new(AsposeCellsCloud::ApiClient->new( $config));
-
-my $remoteFolder = 'TestData/In';
-
-my $localName = 'Book1.xlsx';
-my $remoteName = 'Book1.xlsx';
-
-my $upload_file_request = AsposeCellsCloud::Request::UploadFileRequest->new( 'UploadFiles'=>{ $localName => $localName  }  ,'path'=>$remoteFolder . '/' . $remoteName );
-
 my $format = 'csv';
-
 my $mapFiles = {};           
-
- $mapFiles->{$localName}= "TestData/".$localName ;
-
+$mapFiles->{'CompanySales.xlsx'}= "examples/CompanySales.xlsx";
 my $request = AsposeCellsCloud::Request::PutConvertWorkbookRequest->new();
 $request->{file} =  $mapFiles;
 $request->{format} =  $format;
-$instance->put_convert_workbook(request=> $request);
+my $response = $instance->put_convert_workbook(request=> $request);
+open (my $fh, '>', 'CompanySales.csv') or die "No open CompanySales.csv $!";
+print $fh $response;
+close($fh);
 ```
 
 # Perl module for Aspose.Cells Cloud

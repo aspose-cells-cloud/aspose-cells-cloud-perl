@@ -33,16 +33,17 @@ jobs:
         run: |
           perl -v
         shell: cmd
+
       - name: Check cpan version
         run: cpan -v
         shell: cmd
       
       - name: Install Perl dependencies
         run: |
-          cpan install JSON
-          cpan install LWP::UserAgent
-          cpan install Log::Any
           cpan install URI::Query
+          cpan install Log::Any
+          cpan install JSON
+          cpan install LWP::UserAgent          
         shell: cmd
         
       - name: Build SDK Package

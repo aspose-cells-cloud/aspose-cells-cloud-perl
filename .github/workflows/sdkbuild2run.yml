@@ -39,6 +39,8 @@ jobs:
         run: |
           cpan install JSON
           cpan install LWP::UserAgent
+          cpan install Log::Any
+          cpan install URI::Query
         shell: cmd
         
       - name: Build SDK Package

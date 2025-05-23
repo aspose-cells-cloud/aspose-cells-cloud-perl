@@ -195,11 +195,19 @@ sub call_api {
     $self->update_params_for_auth($header_params, $query_params, $auth_settings ); 
 
 
-    my $_url = $self->{config}{base_url}."/" .$self->{config}{api_version} . $resource_path;
+    my $_url = $self->{config}{base_url}."/" . $resource_path;
+
     if($get_token){
         $_url = $self->{config}{base_url} . $resource_path;
     }
+    print "=========================\n";
+    print $_url;
+    print "=========================\n";
 
+    # build header
+
+    $header_params->{'x-aspose-client'} = 'perl sdk';
+    $header_params->{'x-aspose-client-version'} = '25.5';  
     # build query 
     if (%$query_params) {
         $_url = ($_url . '?' . eval { URI::Query->new($query_params)->stringify });

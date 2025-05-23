@@ -20,7 +20,7 @@ provides:
     file: lib/AsposeCellsCloud/ApiFactory.pm
   AsposeCellsCloud::CellsApi:
     file: lib/AsposeCellsCloud/CellsApi.pm
-    version: 25.4
+    version: 25.5
   AsposeCellsCloud::Configuration:
     file: lib/AsposeCellsCloud/Configuration.pm
   AsposeCellsCloud::Role:
@@ -69,6 +69,8 @@ provides:
     file: lib/AsposeCellsCloud/Object/Cells.pm
   AsposeCellsCloud::Object::CellsCloudFileInfo:
     file: lib/AsposeCellsCloud/Object/CellsCloudFileInfo.pm
+  AsposeCellsCloud::Object::CellsCloudPublicKey:
+    file: lib/AsposeCellsCloud/Object/CellsCloudPublicKey.pm
   AsposeCellsCloud::Object::CellsColor:
     file: lib/AsposeCellsCloud/Object/CellsColor.pm
   AsposeCellsCloud::Object::CellsDocumentProperties:
@@ -315,6 +317,8 @@ provides:
     file: lib/AsposeCellsCloud/Object/ListObjects.pm
   AsposeCellsCloud::Object::PivotGlobalizationSettings:
     file: lib/AsposeCellsCloud/Object/PivotGlobalizationSettings.pm
+  AsposeCellsCloud::Object::DbfSaveOptions:
+    file: lib/AsposeCellsCloud/Object/DbfSaveOptions.pm
   AsposeCellsCloud::Object::DifSaveOptions:
     file: lib/AsposeCellsCloud/Object/DifSaveOptions.pm
   AsposeCellsCloud::Object::DocxSaveOptions:
@@ -333,6 +337,8 @@ provides:
     file: lib/AsposeCellsCloud/Object/OdsSaveOptions.pm
   AsposeCellsCloud::Object::OoxmlSaveOptions:
     file: lib/AsposeCellsCloud/Object/OoxmlSaveOptions.pm
+  AsposeCellsCloud::Object::PclSaveOptions:
+    file: lib/AsposeCellsCloud/Object/PclSaveOptions.pm
   AsposeCellsCloud::Object::PdfSaveOptions:
     file: lib/AsposeCellsCloud/Object/PdfSaveOptions.pm
   AsposeCellsCloud::Object::PptxSaveOptions:
@@ -351,6 +357,8 @@ provides:
     file: lib/AsposeCellsCloud/Object/XlsbSaveOptions.pm
   AsposeCellsCloud::Object::XlsSaveOptions:
     file: lib/AsposeCellsCloud/Object/XlsSaveOptions.pm
+  AsposeCellsCloud::Object::XmlSaveOptions:
+    file: lib/AsposeCellsCloud/Object/XmlSaveOptions.pm
   AsposeCellsCloud::Object::XpsSaveOptions:
     file: lib/AsposeCellsCloud/Object/XpsSaveOptions.pm
   AsposeCellsCloud::Object::ArcShapeResponse:
@@ -373,6 +381,8 @@ provides:
     file: lib/AsposeCellsCloud/Object/CellResponse.pm
   AsposeCellsCloud::Object::CellsCloudFileInfoResponse:
     file: lib/AsposeCellsCloud/Object/CellsCloudFileInfoResponse.pm
+  AsposeCellsCloud::Object::CellsCloudPublicKeyResponse:
+    file: lib/AsposeCellsCloud/Object/CellsCloudPublicKeyResponse.pm
   AsposeCellsCloud::Object::CellsCloudResponse:
     file: lib/AsposeCellsCloud/Object/CellsCloudResponse.pm
   AsposeCellsCloud::Object::CellsDocumentPropertiesResponse:
@@ -1173,6 +1183,8 @@ provides:
     file: lib/AsposeCellsCloud/Request/PutWorksheetHyperlinkRequest.pm
   AsposeCellsCloud::Request::DeleteWorksheetHyperlinksRequest:
     file: lib/AsposeCellsCloud/Request/DeleteWorksheetHyperlinksRequest.pm
+  AsposeCellsCloud::Request::GetPublicKeyRequest:
+    file: lib/AsposeCellsCloud/Request/GetPublicKeyRequest.pm
   AsposeCellsCloud::Request::PostAssembleRequest:
     file: lib/AsposeCellsCloud/Request/PostAssembleRequest.pm
   AsposeCellsCloud::Request::PostCompressRequest:
@@ -1638,5 +1650,5 @@ requires:
   strict: '0'
   utf8: '0'
   warnings: '0'
-version: 25.4
+version: 25.5
 x_serialization_backend: 'CPAN::Meta::YAML version 0.018'

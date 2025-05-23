@@ -35,6 +35,7 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
+use File::Basename;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -85,7 +86,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = '/cells/storage/folder/move/{srcPath}';
+    my $_resource_path = 'v3.0/cells/storage/folder/move/{srcPath}';
 
     my $_method = 'PUT';
     my $query_params = {};

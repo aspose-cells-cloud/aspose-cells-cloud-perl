@@ -20,6 +20,7 @@ docs/Cell.md
 docs/CellArea.md
 docs/Cells.md
 docs/CellsCloudFileInfo.md
+docs/CellsCloudPublicKey.md
 docs/CellsColor.md
 docs/CellsDocumentProperties.md
 docs/CellsDocumentProperty.md
@@ -143,6 +144,7 @@ docs/ListColumn.md
 docs/ListObject.md
 docs/ListObjects.md
 docs/PivotGlobalizationSettings.md
+docs/DbfSaveOptions.md
 docs/DifSaveOptions.md
 docs/DocxSaveOptions.md
 docs/HtmlSaveOptions.md
@@ -152,6 +154,7 @@ docs/MarkdownSaveOptions.md
 docs/MHtmlSaveOptions.md
 docs/OdsSaveOptions.md
 docs/OoxmlSaveOptions.md
+docs/PclSaveOptions.md
 docs/PdfSaveOptions.md
 docs/PptxSaveOptions.md
 docs/SaveOptions.md
@@ -161,6 +164,7 @@ docs/SvgSaveOptions.md
 docs/TxtSaveOptions.md
 docs/XlsbSaveOptions.md
 docs/XlsSaveOptions.md
+docs/XmlSaveOptions.md
 docs/XpsSaveOptions.md
 docs/ArcShapeResponse.md
 docs/AutoFilterResponse.md
@@ -172,6 +176,7 @@ docs/ButtonResponse.md
 docs/CalculateFormulaResponse.md
 docs/CellResponse.md
 docs/CellsCloudFileInfoResponse.md
+docs/CellsCloudPublicKeyResponse.md
 docs/CellsCloudResponse.md
 docs/CellsDocumentPropertiesResponse.md
 docs/CellsDocumentPropertyResponse.md
@@ -572,6 +577,7 @@ docs/DeleteWorksheetHyperlinkRequest.md
 docs/PostWorksheetHyperlinkRequest.md
 docs/PutWorksheetHyperlinkRequest.md
 docs/DeleteWorksheetHyperlinksRequest.md
+docs/GetPublicKeyRequest.md
 docs/PostAssembleRequest.md
 docs/PostCompressRequest.md
 docs/PostMergeRequest.md
@@ -817,6 +823,7 @@ lib/AsposeCellsCloud/Object/Cell.pm
 lib/AsposeCellsCloud/Object/CellArea.pm
 lib/AsposeCellsCloud/Object/Cells.pm
 lib/AsposeCellsCloud/Object/CellsCloudFileInfo.pm
+lib/AsposeCellsCloud/Object/CellsCloudPublicKey.pm
 lib/AsposeCellsCloud/Object/CellsColor.pm
 lib/AsposeCellsCloud/Object/CellsDocumentProperties.pm
 lib/AsposeCellsCloud/Object/CellsDocumentProperty.pm
@@ -940,6 +947,7 @@ lib/AsposeCellsCloud/Object/ListColumn.pm
 lib/AsposeCellsCloud/Object/ListObject.pm
 lib/AsposeCellsCloud/Object/ListObjects.pm
 lib/AsposeCellsCloud/Object/PivotGlobalizationSettings.pm
+lib/AsposeCellsCloud/Object/DbfSaveOptions.pm
 lib/AsposeCellsCloud/Object/DifSaveOptions.pm
 lib/AsposeCellsCloud/Object/DocxSaveOptions.pm
 lib/AsposeCellsCloud/Object/HtmlSaveOptions.pm
@@ -949,6 +957,7 @@ lib/AsposeCellsCloud/Object/MarkdownSaveOptions.pm
 lib/AsposeCellsCloud/Object/MHtmlSaveOptions.pm
 lib/AsposeCellsCloud/Object/OdsSaveOptions.pm
 lib/AsposeCellsCloud/Object/OoxmlSaveOptions.pm
+lib/AsposeCellsCloud/Object/PclSaveOptions.pm
 lib/AsposeCellsCloud/Object/PdfSaveOptions.pm
 lib/AsposeCellsCloud/Object/PptxSaveOptions.pm
 lib/AsposeCellsCloud/Object/SaveOptions.pm
@@ -958,6 +967,7 @@ lib/AsposeCellsCloud/Object/SvgSaveOptions.pm
 lib/AsposeCellsCloud/Object/TxtSaveOptions.pm
 lib/AsposeCellsCloud/Object/XlsbSaveOptions.pm
 lib/AsposeCellsCloud/Object/XlsSaveOptions.pm
+lib/AsposeCellsCloud/Object/XmlSaveOptions.pm
 lib/AsposeCellsCloud/Object/XpsSaveOptions.pm
 lib/AsposeCellsCloud/Object/ArcShapeResponse.pm
 lib/AsposeCellsCloud/Object/AutoFilterResponse.pm
@@ -969,6 +979,7 @@ lib/AsposeCellsCloud/Object/ButtonResponse.pm
 lib/AsposeCellsCloud/Object/CalculateFormulaResponse.pm
 lib/AsposeCellsCloud/Object/CellResponse.pm
 lib/AsposeCellsCloud/Object/CellsCloudFileInfoResponse.pm
+lib/AsposeCellsCloud/Object/CellsCloudPublicKeyResponse.pm
 lib/AsposeCellsCloud/Object/CellsCloudResponse.pm
 lib/AsposeCellsCloud/Object/CellsDocumentPropertiesResponse.pm
 lib/AsposeCellsCloud/Object/CellsDocumentPropertyResponse.pm
@@ -1369,6 +1380,7 @@ lib/AsposeCellsCloud/Request/DeleteWorksheetHyperlinkRequest.pm
 lib/AsposeCellsCloud/Request/PostWorksheetHyperlinkRequest.pm
 lib/AsposeCellsCloud/Request/PutWorksheetHyperlinkRequest.pm
 lib/AsposeCellsCloud/Request/DeleteWorksheetHyperlinksRequest.pm
+lib/AsposeCellsCloud/Request/GetPublicKeyRequest.pm
 lib/AsposeCellsCloud/Request/PostAssembleRequest.pm
 lib/AsposeCellsCloud/Request/PostCompressRequest.pm
 lib/AsposeCellsCloud/Request/PostMergeRequest.pm

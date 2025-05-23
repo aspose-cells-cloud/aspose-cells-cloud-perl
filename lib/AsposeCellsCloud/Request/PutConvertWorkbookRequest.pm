@@ -35,6 +35,7 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
+use File::Basename;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -71,6 +72,9 @@ sub new {
 # PutConvertWorkbookRequest.pageTallFitOnPerSheet : The page tall fit on worksheet.  ,
 # PutConvertWorkbookRequest.sheetName :   ,
 # PutConvertWorkbookRequest.pageIndex :   ,
+# PutConvertWorkbookRequest.onePagePerSheet :   ,
+# PutConvertWorkbookRequest.AutoRowsFit :   ,
+# PutConvertWorkbookRequest.AutoColumnsFit :   ,
 # PutConvertWorkbookRequest.FontsLocation : Use Custom fonts.   
 
 {
@@ -94,7 +98,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = '/cells/convert';
+    my $_resource_path = 'v3.0/cells/convert';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -150,6 +154,18 @@ sub run_http_request {
 
     if(defined $self->page_index){
         $query_params->{'pageIndex'} = $client->to_query_value($self->page_index);      
+    }
+
+    if(defined $self->one_page_per_sheet){
+        $query_params->{'onePagePerSheet'} = $client->to_query_value($self->one_page_per_sheet);      
+    }
+
+    if(defined $self->auto_rows_fit){
+        $query_params->{'AutoRowsFit'} = $client->to_query_value($self->auto_rows_fit);      
+    }
+
+    if(defined $self->auto_columns_fit){
+        $query_params->{'AutoColumnsFit'} = $client->to_query_value($self->auto_columns_fit);      
     }
 
     if(defined $self->fonts_location){
@@ -259,6 +275,27 @@ __PACKAGE__->method_documentation({
      	format => '',
      	read_only => '',
      		},
+     'one_page_per_sheet' => {
+     	datatype => 'string',
+     	base_name => 'onePagePerSheet',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'auto_rows_fit' => {
+     	datatype => 'string',
+     	base_name => 'AutoRowsFit',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'auto_columns_fit' => {
+     	datatype => 'string',
+     	base_name => 'AutoColumnsFit',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
      'fonts_location' => {
      	datatype => 'string',
      	base_name => 'FontsLocation',
@@ -282,6 +319,9 @@ __PACKAGE__->attribute_map( {
     'page_tall_fit_on_per_sheet' => 'pageTallFitOnPerSheet',
     'sheet_name' => 'sheetName',
     'page_index' => 'pageIndex',
+    'one_page_per_sheet' => 'onePagePerSheet',
+    'auto_rows_fit' => 'AutoRowsFit',
+    'auto_columns_fit' => 'AutoColumnsFit',
     'fonts_location' => 'FontsLocation' 
 } );
 

@@ -4083,6 +4083,8 @@ sub delete_worksheet_conditional_formatting_area{
 # @region  string   The regional settings for workbook.  
 # @pageWideFitOnPerSheet  boolean   The page wide fit on worksheet.  
 # @pageTallFitOnPerSheet  boolean   The page tall fit on worksheet.  
+# @onePagePerSheet  boolean     
+# @onlyAutofitTable  boolean     
 # @FontsLocation  string   Use Custom fonts.   
 #
 {
@@ -4130,6 +4132,9 @@ sub get_workbook{
 # @pageTallFitOnPerSheet  boolean   The page tall fit on worksheet.  
 # @sheetName  string     
 # @pageIndex  int     
+# @onePagePerSheet  boolean     
+# @AutoRowsFit  boolean     
+# @AutoColumnsFit  boolean     
 # @FontsLocation  string   Use Custom fonts.   
 #
 {
@@ -4177,6 +4182,7 @@ sub put_convert_workbook{
 # @region  string   The regional settings for workbook.  
 # @pageWideFitOnPerSheet  boolean   The page wide fit on worksheet.  
 # @pageTallFitOnPerSheet  boolean   The page tall fit on worksheet.  
+# @onePagePerSheet  boolean     
 # @FontsLocation  string   Use Custom fonts.   
 #
 {
@@ -5438,6 +5444,41 @@ sub delete_worksheet_hyperlinks{
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('CellsCloudResponse', $response);
+    return $_response_object;
+}
+
+#
+# GetPublicKeyRequest
+#
+# Get publi key.
+# 
+ 
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'GetPublicKeyRequest',
+            description => 'GetPublicKey Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'get_public_key' } = { 
+    	summary => 'Get publi key.',
+        params => $params,
+        returns => 'CellsCloudPublicKeyResponse',
+    };
+}
+#
+# @return CellsCloudPublicKeyResponse
+#
+sub get_public_key{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('CellsCloudPublicKeyResponse', $response);
     return $_response_object;
 }
 
@@ -11402,7 +11443,9 @@ sub post_workbook_calculate_formula{
 # @endRow  int   End row.  
 # @onlyAuto  boolean   Only auto.  
 # @folder  string   The folder where the file is situated.  
-# @storageName  string   The storage name where the file is situated.   
+# @storageName  string   The storage name where the file is situated.  
+# @firstColumn  int     
+# @lastColumn  int      
 #
 {
     my $params = {
@@ -12722,10 +12765,11 @@ sub post_worksheet_range_sort{
 # @name  string (required)  The file name.  
 # @sheetName  string (required)  The worksheet name.  
 # @rowIndex  int (required)  The row index.  
-# @firstColumn  int (required)  The first column index.  
-# @lastColumn  int (required)  The last column index.  
+# @firstColumn  int   The first column index.  
+# @lastColumn  int   The last column index.  
 # @folder  string   The folder where the file is situated.  
-# @storageName  string   The storage name where the file is situated.   
+# @storageName  string   The storage name where the file is situated.  
+# @rowCount  int      
 #
 {
     my $params = {

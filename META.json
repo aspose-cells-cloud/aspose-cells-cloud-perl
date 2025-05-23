@@ -63,7 +63,7 @@
       },
       "AsposeCellsCloud::CellsApi" : {
          "file" : "lib/AsposeCellsCloud/CellsApi.pm",
-         "version" : "25.4"
+         "version" : "25.5"
       },    
       "AsposeCellsCloud::Configuration" : {
          "file" : "lib/AsposeCellsCloud/Configuration.pm"
@@ -130,6 +130,9 @@
       },
       "AsposeCellsCloud::Object::CellsCloudFileInfo" : {
          "file" : "lib/AsposeCellsCloud/Object/CellsCloudFileInfo.pm"
+      },
+      "AsposeCellsCloud::Object::CellsCloudPublicKey" : {
+         "file" : "lib/AsposeCellsCloud/Object/CellsCloudPublicKey.pm"
       },
       "AsposeCellsCloud::Object::CellsColor" : {
          "file" : "lib/AsposeCellsCloud/Object/CellsColor.pm"
@@ -500,6 +503,9 @@
       "AsposeCellsCloud::Object::PivotGlobalizationSettings" : {
          "file" : "lib/AsposeCellsCloud/Object/PivotGlobalizationSettings.pm"
       },
+      "AsposeCellsCloud::Object::DbfSaveOptions" : {
+         "file" : "lib/AsposeCellsCloud/Object/DbfSaveOptions.pm"
+      },
       "AsposeCellsCloud::Object::DifSaveOptions" : {
          "file" : "lib/AsposeCellsCloud/Object/DifSaveOptions.pm"
       },
@@ -527,6 +533,9 @@
       "AsposeCellsCloud::Object::OoxmlSaveOptions" : {
          "file" : "lib/AsposeCellsCloud/Object/OoxmlSaveOptions.pm"
       },
+      "AsposeCellsCloud::Object::PclSaveOptions" : {
+         "file" : "lib/AsposeCellsCloud/Object/PclSaveOptions.pm"
+      },
       "AsposeCellsCloud::Object::PdfSaveOptions" : {
          "file" : "lib/AsposeCellsCloud/Object/PdfSaveOptions.pm"
       },
@@ -553,6 +562,9 @@
       },
       "AsposeCellsCloud::Object::XlsSaveOptions" : {
          "file" : "lib/AsposeCellsCloud/Object/XlsSaveOptions.pm"
+      },
+      "AsposeCellsCloud::Object::XmlSaveOptions" : {
+         "file" : "lib/AsposeCellsCloud/Object/XmlSaveOptions.pm"
       },
       "AsposeCellsCloud::Object::XpsSaveOptions" : {
          "file" : "lib/AsposeCellsCloud/Object/XpsSaveOptions.pm"
@@ -586,6 +598,9 @@
       },
       "AsposeCellsCloud::Object::CellsCloudFileInfoResponse" : {
          "file" : "lib/AsposeCellsCloud/Object/CellsCloudFileInfoResponse.pm"
+      },
+      "AsposeCellsCloud::Object::CellsCloudPublicKeyResponse" : {
+         "file" : "lib/AsposeCellsCloud/Object/CellsCloudPublicKeyResponse.pm"
       },
       "AsposeCellsCloud::Object::CellsCloudResponse" : {
          "file" : "lib/AsposeCellsCloud/Object/CellsCloudResponse.pm"
@@ -1787,6 +1802,9 @@
       "AsposeCellsCloud::Request::DeleteWorksheetHyperlinksRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/DeleteWorksheetHyperlinksRequest.pm"
       },
+      "AsposeCellsCloud::Request::GetPublicKeyRequest" : {
+         "file" : "lib/AsposeCellsCloud/Request/GetPublicKeyRequest.pm"
+      },
       "AsposeCellsCloud::Request::PostAssembleRequest" : {
          "file" : "lib/AsposeCellsCloud/Request/PostAssembleRequest.pm"
       },
@@ -2455,6 +2473,6 @@
       }
    },
    "release_status" : "stable",
-   "version" : "25.4",
+   "version" : "25.5",
    "x_serialization_backend" : "JSON::PP version 2.27400"
 }

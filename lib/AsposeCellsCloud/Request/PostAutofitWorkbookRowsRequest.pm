@@ -35,6 +35,7 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
+use File::Basename;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -64,7 +65,9 @@ sub new {
 # PostAutofitWorkbookRowsRequest.endRow : End row.  ,
 # PostAutofitWorkbookRowsRequest.onlyAuto : Only auto.  ,
 # PostAutofitWorkbookRowsRequest.folder : The folder where the file is situated.  ,
-# PostAutofitWorkbookRowsRequest.storageName : The storage name where the file is situated.   
+# PostAutofitWorkbookRowsRequest.storageName : The storage name where the file is situated.  ,
+# PostAutofitWorkbookRowsRequest.firstColumn :   ,
+# PostAutofitWorkbookRowsRequest.lastColumn :    
 
 {
     my $params = {
@@ -87,7 +90,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = '/cells/{name}/autofitrows';
+    my $_resource_path = 'v3.0/cells/{name}/autofitrows';
 
     my $_method = 'POST';
     my $query_params = {};
@@ -123,6 +126,14 @@ sub run_http_request {
 
     if(defined $self->storage_name){
         $query_params->{'storageName'} = $client->to_query_value($self->storage_name);      
+    }
+
+    if(defined $self->first_column){
+        $query_params->{'firstColumn'} = $client->to_query_value($self->first_column);      
+    }
+
+    if(defined $self->last_column){
+        $query_params->{'lastColumn'} = $client->to_query_value($self->last_column);      
     } 
     my $_body_data;
     # authentication setting, if any
@@ -176,6 +187,20 @@ __PACKAGE__->method_documentation({
      	description => 'The storage name where the file is situated.',
      	format => '',
      	read_only => '',
+     		},
+     'first_column' => {
+     	datatype => 'int',
+     	base_name => 'firstColumn',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'last_column' => {
+     	datatype => 'int',
+     	base_name => 'lastColumn',
+     	description => '',
+     	format => '',
+     	read_only => '',
      		},    
 });
 
@@ -186,7 +211,9 @@ __PACKAGE__->attribute_map( {
     'end_row' => 'endRow',
     'only_auto' => 'onlyAuto',
     'folder' => 'folder',
-    'storage_name' => 'storageName' 
+    'storage_name' => 'storageName',
+    'first_column' => 'firstColumn',
+    'last_column' => 'lastColumn' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

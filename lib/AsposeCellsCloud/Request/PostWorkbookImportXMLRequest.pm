@@ -138,11 +138,14 @@ sub run_http_request {
     } 
     my $_body_data;
 
+
     # body params
     if (defined $self->import_xml_request) {
-        #$_body_data = $self->import_xml_request;
          $_body_data = JSON->new->convert_blessed->encode( $self->import_xml_request);
     }
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

@@ -83,7 +83,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v3.0/cells/storage/{storageName}/exist';
+    my $_resource_path = 'v4.0/cells/storage/{storageName}/exist';
 
     my $_method = 'GET';
     my $query_params = {};
@@ -103,6 +103,9 @@ sub run_http_request {
     } 
  
     my $_body_data;
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

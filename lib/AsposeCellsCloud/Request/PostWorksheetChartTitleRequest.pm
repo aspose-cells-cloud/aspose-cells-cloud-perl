@@ -127,11 +127,14 @@ sub run_http_request {
     } 
     my $_body_data;
 
+
     # body params
     if (defined $self->title) {
-        #$_body_data = $self->title;
          $_body_data = JSON->new->convert_blessed->encode( $self->title);
     }
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

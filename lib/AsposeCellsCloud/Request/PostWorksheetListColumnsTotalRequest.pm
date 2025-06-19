@@ -127,11 +127,14 @@ sub run_http_request {
     } 
     my $_body_data;
 
+
     # body params
     if (defined $self->table_total_requests) {
-        #$_body_data = $self->table_total_requests;
          $_body_data = JSON->new->convert_blessed->encode( $self->table_total_requests);
     }
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

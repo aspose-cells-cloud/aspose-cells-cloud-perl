@@ -94,16 +94,16 @@ close($fh);
 - Import/Export: Facilitates importing data from various sources into spreadsheets and exporting spreadsheet data to other formats.
 - Security Management: Offers a range of security features like data encryption, access control, and permission management to safeguard the security and integrity of spreadsheet data.
 
-## Feature & Enhancements in Version v25.5.0
+## Feature & Enhancements in Version v25.6.1
 
 Full list of issues covering all changes in this release:
 
 |**Summary**| **Category** |
 | :- |:-------------|
-| Add the new API for getting the public key for encrypting the password. | New Feature |
-| Optimize the convert workbook feature: Add auto-fit row parameter. | Improvement |
-| Optimize auto-fit rows for the worksheet. | Improvement |
-| Optimize auto-fit rows for worksheet: Add firstColumn and lastColumn. | Improvement |
+| Support delete blank rows, columns, and worksheets. | New Feature |
+| Optimize search context for remote spreadsheet features by splitting them into independent APIs, each dedicated to a specific operational area. | New Feature |
+| Optimize search broken links for remote spreadsheet features by splitting them into independent APIs, each dedicated to a specific operational area. | New Feature |
+| Optimize replace context for remote spreadsheet features by splitting them into independent APIs, each dedicated to a specific operational area. | New Feature |
 
 ## Available SDKs
 

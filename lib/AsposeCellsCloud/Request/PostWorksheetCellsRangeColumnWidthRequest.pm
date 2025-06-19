@@ -125,11 +125,14 @@ sub run_http_request {
     } 
     my $_body_data;
 
+
     # body params
     if (defined $self->range) {
-        #$_body_data = $self->range;
          $_body_data = JSON->new->convert_blessed->encode( $self->range);
     }
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

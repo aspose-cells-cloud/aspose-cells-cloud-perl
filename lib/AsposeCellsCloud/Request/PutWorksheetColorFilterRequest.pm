@@ -140,11 +140,14 @@ sub run_http_request {
     } 
     my $_body_data;
 
+
     # body params
     if (defined $self->color_filter) {
-        #$_body_data = $self->color_filter;
          $_body_data = JSON->new->convert_blessed->encode( $self->color_filter);
     }
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

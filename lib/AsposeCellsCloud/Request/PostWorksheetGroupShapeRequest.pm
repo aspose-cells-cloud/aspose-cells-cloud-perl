@@ -120,11 +120,14 @@ sub run_http_request {
     } 
     my $_body_data;
 
+
     # body params
     if (defined $self->list_shape) {
-        #$_body_data = $self->list_shape;
          $_body_data = JSON->new->convert_blessed->encode( $self->list_shape);
     }
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

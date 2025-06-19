@@ -113,11 +113,14 @@ sub run_http_request {
     } 
     my $_body_data;
 
+
     # body params
     if (defined $self->property) {
-        #$_body_data = $self->property;
          $_body_data = JSON->new->convert_blessed->encode( $self->property);
     }
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

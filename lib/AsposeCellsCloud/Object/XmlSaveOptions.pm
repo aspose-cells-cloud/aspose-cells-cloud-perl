@@ -119,7 +119,7 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => 'Represents the options of saving dbf file.',
+__PACKAGE__->class_documentation({description => '',
                                   class => 'XmlSaveOptions',
                                   required => [], # TODO
 }                                 );
@@ -129,42 +129,42 @@ __PACKAGE__->method_documentation({
      'sheet_indexes' => {
      	datatype => 'ARRAY[int?]',
      	base_name => 'SheetIndexes',
-     	description => 'Represents the indexes of exported sheets.',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
      'export_area' => {
      	datatype => 'CellArea',
      	base_name => 'ExportArea',
-     	description => 'Gets or sets the exporting range.',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
      'has_header_row' => {
      	datatype => 'boolean',
      	base_name => 'HasHeaderRow',
-     	description => 'Indicates whether the range contains header row.',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
      'xml_map_name' => {
      	datatype => 'string',
      	base_name => 'XmlMapName',
-     	description => 'Indicates whether exporting xml map in the file.',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
      'sheet_name_as_element_name' => {
      	datatype => 'boolean',
      	base_name => 'SheetNameAsElementName',
-     	description => 'Indicates whether exporting sheet`s name as the name of the element.',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
      'data_as_attribute' => {
      	datatype => 'boolean',
      	base_name => 'DataAsAttribute',
-     	description => 'Indicates whether exporting data as attributes of element.',
+     	description => '',
      	format => '',
      	read_only => '',
      		},

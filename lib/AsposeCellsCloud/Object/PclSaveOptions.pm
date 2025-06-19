@@ -118,7 +118,7 @@ sub _deserialize {
 }
 
 
-__PACKAGE__->class_documentation({description => 'Represents the options of saving dbf file.',
+__PACKAGE__->class_documentation({description => '',
                                   class => 'PclSaveOptions',
                                   required => [], # TODO
 }                                 );

@@ -142,11 +142,14 @@ sub run_http_request {
     } 
     my $_body_data;
 
+
     # body params
     if (defined $self->style) {
-        #$_body_data = $self->style;
          $_body_data = JSON->new->convert_blessed->encode( $self->style);
     }
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

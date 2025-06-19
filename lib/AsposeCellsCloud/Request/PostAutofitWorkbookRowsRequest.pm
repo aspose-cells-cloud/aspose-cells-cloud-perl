@@ -66,8 +66,8 @@ sub new {
 # PostAutofitWorkbookRowsRequest.onlyAuto : Only auto.  ,
 # PostAutofitWorkbookRowsRequest.folder : The folder where the file is situated.  ,
 # PostAutofitWorkbookRowsRequest.storageName : The storage name where the file is situated.  ,
-# PostAutofitWorkbookRowsRequest.firstColumn :   ,
-# PostAutofitWorkbookRowsRequest.lastColumn :    
+# PostAutofitWorkbookRowsRequest.firstColumn : First column index.  ,
+# PostAutofitWorkbookRowsRequest.lastColumn : Last column index.   
 
 {
     my $params = {
@@ -136,6 +136,9 @@ sub run_http_request {
         $query_params->{'lastColumn'} = $client->to_query_value($self->last_column);      
     } 
     my $_body_data;
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 
@@ -191,14 +194,14 @@ __PACKAGE__->method_documentation({
      'first_column' => {
      	datatype => 'int',
      	base_name => 'firstColumn',
-     	description => '',
+     	description => 'First column index.',
      	format => '',
      	read_only => '',
      		},
      'last_column' => {
      	datatype => 'int',
      	base_name => 'lastColumn',
-     	description => '',
+     	description => 'Last column index.',
      	format => '',
      	read_only => '',
      		},    

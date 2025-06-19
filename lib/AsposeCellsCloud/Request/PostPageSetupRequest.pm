@@ -120,11 +120,14 @@ sub run_http_request {
     } 
     my $_body_data;
 
+
     # body params
     if (defined $self->page_setup) {
-        #$_body_data = $self->page_setup;
          $_body_data = JSON->new->convert_blessed->encode( $self->page_setup);
     }
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

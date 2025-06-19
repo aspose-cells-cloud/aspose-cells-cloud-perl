@@ -100,11 +100,14 @@ sub run_http_request {
  
     my $_body_data;
 
+
     # body params
     if (defined $self->trim_content_options) {
-        #$_body_data = $self->trim_content_options;
          $_body_data = JSON->new->convert_blessed->encode( $self->trim_content_options);
     }
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

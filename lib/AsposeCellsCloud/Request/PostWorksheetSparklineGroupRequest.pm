@@ -127,11 +127,14 @@ sub run_http_request {
     } 
     my $_body_data;
 
+
     # body params
     if (defined $self->sparkline_group) {
-        #$_body_data = $self->sparkline_group;
          $_body_data = JSON->new->convert_blessed->encode( $self->sparkline_group);
     }
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

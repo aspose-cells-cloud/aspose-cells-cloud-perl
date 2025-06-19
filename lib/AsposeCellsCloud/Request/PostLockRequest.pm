@@ -102,14 +102,15 @@ sub run_http_request {
         $query_params->{'password'} = $client->to_query_value($self->password);      
     } 
     my $_body_data;
- 
+
 
     if (defined $self->file) {   
         my $map_file = $self->file;
         while ( my ($filename,$value) = each( %$map_file ) ) {
                 $form_params->{$filename} = [$value ,$filename,'application/octet-stream'];
         }
-    } 
+    }
+ 
 
     # authentication setting, if any
     my $auth_settings = [qw()];

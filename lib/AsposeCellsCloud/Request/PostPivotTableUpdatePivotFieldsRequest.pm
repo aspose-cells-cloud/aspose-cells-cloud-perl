@@ -137,11 +137,14 @@ sub run_http_request {
     } 
     my $_body_data;
 
+
     # body params
     if (defined $self->pivot_field) {
-        #$_body_data = $self->pivot_field;
          $_body_data = JSON->new->convert_blessed->encode( $self->pivot_field);
     }
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

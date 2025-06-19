@@ -127,11 +127,14 @@ sub run_http_request {
     } 
     my $_body_data;
 
+
     # body params
     if (defined $self->comment) {
-        #$_body_data = $self->comment;
          $_body_data = JSON->new->convert_blessed->encode( $self->comment);
     }
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

@@ -127,11 +127,14 @@ sub run_http_request {
     } 
     my $_body_data;
 
+
     # body params
     if (defined $self->data_sorter) {
-        #$_body_data = $self->data_sorter;
          $_body_data = JSON->new->convert_blessed->encode( $self->data_sorter);
     }
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

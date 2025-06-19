@@ -127,11 +127,14 @@ sub run_http_request {
     } 
     my $_body_data;
 
+
     # body params
     if (defined $self->list_object) {
-        #$_body_data = $self->list_object;
          $_body_data = JSON->new->convert_blessed->encode( $self->list_object);
     }
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

@@ -155,11 +155,14 @@ sub run_http_request {
     } 
     my $_body_data;
 
+
     # body params
     if (defined $self->shape_dto) {
-        #$_body_data = $self->shape_dto;
          $_body_data = JSON->new->convert_blessed->encode( $self->shape_dto);
     }
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

@@ -71,7 +71,7 @@ sub new {
        }
     };
     __PACKAGE__->method_documentation->{ 'post_access_token' } = { 
-    	summary => 'Get Access Token Result',
+    	summary => 'Get Access Token Result: The Cells Cloud Get Token API acts as a proxy service,forwarding user requests to the Aspose Cloud authentication server and returning the resulting access token to the client.',
         params => $params,
         returns => 'string',
     };
@@ -83,7 +83,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v3.0/cells/connect/token';
+    my $_resource_path = 'v4.0/cells/connect/token';
 
     my $_method = 'POST';
     my $query_params = {};
@@ -99,6 +99,9 @@ sub run_http_request {
  
  
     my $_body_data;
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

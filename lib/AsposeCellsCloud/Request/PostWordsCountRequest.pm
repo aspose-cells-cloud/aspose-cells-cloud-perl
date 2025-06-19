@@ -100,11 +100,14 @@ sub run_http_request {
  
     my $_body_data;
 
+
     # body params
     if (defined $self->words_count_options) {
-        #$_body_data = $self->words_count_options;
          $_body_data = JSON->new->convert_blessed->encode( $self->words_count_options);
     }
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

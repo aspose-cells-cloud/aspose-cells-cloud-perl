@@ -71,7 +71,7 @@ sub new {
        }
     };
     __PACKAGE__->method_documentation->{ 'get_public_key' } = { 
-    	summary => 'Get publi key.',
+    	summary => 'Get an asymmetric public key.',
         params => $params,
         returns => 'CellsCloudPublicKeyResponse',
     };
@@ -83,7 +83,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v3.0/cells/publickey';
+    my $_resource_path = 'v4.0/cells/publickey';
 
     my $_method = 'GET';
     my $query_params = {};
@@ -99,6 +99,9 @@ sub run_http_request {
  
  
     my $_body_data;
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

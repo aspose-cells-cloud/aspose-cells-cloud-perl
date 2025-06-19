@@ -132,11 +132,14 @@ sub run_http_request {
     } 
     my $_body_data;
 
+
     # body params
     if (defined $self->filter) {
-        #$_body_data = $self->filter;
          $_body_data = JSON->new->convert_blessed->encode( $self->filter);
     }
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 

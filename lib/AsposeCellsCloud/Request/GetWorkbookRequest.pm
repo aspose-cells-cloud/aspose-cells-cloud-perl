@@ -73,7 +73,7 @@ sub new {
 # GetWorkbookRequest.region : The regional settings for workbook.  ,
 # GetWorkbookRequest.pageWideFitOnPerSheet : The page wide fit on worksheet.  ,
 # GetWorkbookRequest.pageTallFitOnPerSheet : The page tall fit on worksheet.  ,
-# GetWorkbookRequest.onePagePerSheet :   ,
+# GetWorkbookRequest.onePagePerSheet : When converting to PDF format, one page per sheet.  ,
 # GetWorkbookRequest.onlyAutofitTable :   ,
 # GetWorkbookRequest.FontsLocation : Use Custom fonts.   
 
@@ -176,6 +176,9 @@ sub run_http_request {
         $query_params->{'FontsLocation'} = $client->to_query_value($self->fonts_location);      
     } 
     my $_body_data;
+
+ 
+
     # authentication setting, if any
     my $auth_settings = [qw()];
 
@@ -280,7 +283,7 @@ __PACKAGE__->method_documentation({
      'one_page_per_sheet' => {
      	datatype => 'string',
      	base_name => 'onePagePerSheet',
-     	description => '',
+     	description => 'When converting to PDF format, one page per sheet.',
      	format => '',
      	read_only => '',
      		},

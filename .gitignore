@@ -22,3 +22,6 @@ test_results.xml
 integratetests/
 .vscode/
 examples/one_test.pl
+test_results.xml
+t/
+testdata/

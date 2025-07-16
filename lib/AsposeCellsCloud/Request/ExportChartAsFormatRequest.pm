@@ -61,8 +61,8 @@ sub new {
 
 # Run Operation Request
 # ExportChartAsFormatRequest.name : (Required) The name of the workbook file to be retrieved.  ,
-# ExportChartAsFormatRequest.worksheet :   ,
-# ExportChartAsFormatRequest.chartIndex :   ,
+# ExportChartAsFormatRequest.worksheet : worksheet name  ,
+# ExportChartAsFormatRequest.chartIndex : chart index  ,
 # ExportChartAsFormatRequest.format : (Required) The desired pdf or image format  (e.g., "png", "Pdf", "svg").  ,
 # ExportChartAsFormatRequest.folder : (Optional) The folder path where the workbook is stored. The default is null.  ,
 # ExportChartAsFormatRequest.storageName : (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  ,
@@ -178,14 +178,14 @@ __PACKAGE__->method_documentation({
      'worksheet' => {
      	datatype => 'string',
      	base_name => 'worksheet',
-     	description => '',
+     	description => 'worksheet name',
      	format => '',
      	read_only => '',
      		},
      'chart_index' => {
      	datatype => 'int',
      	base_name => 'chartIndex',
-     	description => '',
+     	description => 'chart index',
      	format => '',
      	read_only => '',
      		},

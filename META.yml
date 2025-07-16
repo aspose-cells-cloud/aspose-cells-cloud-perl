@@ -20,7 +20,7 @@ provides:
     file: lib/AsposeCellsCloud/ApiFactory.pm
   AsposeCellsCloud::CellsApi:
     file: lib/AsposeCellsCloud/CellsApi.pm
-    version: 25.6.1
+    version: 25.7
   AsposeCellsCloud::Configuration:
     file: lib/AsposeCellsCloud/Configuration.pm
   AsposeCellsCloud::Role:
@@ -929,10 +929,40 @@ provides:
     file: lib/AsposeCellsCloud/Request/CheckCloudServiceHealthRequest.pm
   AsposeCellsCloud::Request::ExportSpreadsheetAsFormatRequest:
     file: lib/AsposeCellsCloud/Request/ExportSpreadsheetAsFormatRequest.pm
+  AsposeCellsCloud::Request::ExportWorksheetAsFormatRequest:
+    file: lib/AsposeCellsCloud/Request/ExportWorksheetAsFormatRequest.pm
   AsposeCellsCloud::Request::ExportChartAsFormatRequest:
     file: lib/AsposeCellsCloud/Request/ExportChartAsFormatRequest.pm
+  AsposeCellsCloud::Request::ExportTableAsFormatRequest:
+    file: lib/AsposeCellsCloud/Request/ExportTableAsFormatRequest.pm
+  AsposeCellsCloud::Request::ExportRangeAsFormatRequest:
+    file: lib/AsposeCellsCloud/Request/ExportRangeAsFormatRequest.pm
   AsposeCellsCloud::Request::ConvertSpreadsheetRequest:
     file: lib/AsposeCellsCloud/Request/ConvertSpreadsheetRequest.pm
+  AsposeCellsCloud::Request::ConvertWorksheetToImageRequest:
+    file: lib/AsposeCellsCloud/Request/ConvertWorksheetToImageRequest.pm
+  AsposeCellsCloud::Request::ConvertWorksheetToPdfRequest:
+    file: lib/AsposeCellsCloud/Request/ConvertWorksheetToPdfRequest.pm
+  AsposeCellsCloud::Request::ConvertTableToImageRequest:
+    file: lib/AsposeCellsCloud/Request/ConvertTableToImageRequest.pm
+  AsposeCellsCloud::Request::ConvertTableToPdfRequest:
+    file: lib/AsposeCellsCloud/Request/ConvertTableToPdfRequest.pm
+  AsposeCellsCloud::Request::ConvertTableToCsvRequest:
+    file: lib/AsposeCellsCloud/Request/ConvertTableToCsvRequest.pm
+  AsposeCellsCloud::Request::ConvertTableToHtmlRequest:
+    file: lib/AsposeCellsCloud/Request/ConvertTableToHtmlRequest.pm
+  AsposeCellsCloud::Request::ConvertTableToJsonRequest:
+    file: lib/AsposeCellsCloud/Request/ConvertTableToJsonRequest.pm
+  AsposeCellsCloud::Request::ConvertRangeToImageRequest:
+    file: lib/AsposeCellsCloud/Request/ConvertRangeToImageRequest.pm
+  AsposeCellsCloud::Request::ConvertRangeToPdfRequest:
+    file: lib/AsposeCellsCloud/Request/ConvertRangeToPdfRequest.pm
+  AsposeCellsCloud::Request::ConvertRangeToCsvRequest:
+    file: lib/AsposeCellsCloud/Request/ConvertRangeToCsvRequest.pm
+  AsposeCellsCloud::Request::ConvertRangeToHtmlRequest:
+    file: lib/AsposeCellsCloud/Request/ConvertRangeToHtmlRequest.pm
+  AsposeCellsCloud::Request::ConvertRangeToJsonRequest:
+    file: lib/AsposeCellsCloud/Request/ConvertRangeToJsonRequest.pm
   AsposeCellsCloud::Request::ConvertChartToImageRequest:
     file: lib/AsposeCellsCloud/Request/ConvertChartToImageRequest.pm
   AsposeCellsCloud::Request::ConvertChartToPdfRequest:
@@ -951,6 +981,10 @@ provides:
     file: lib/AsposeCellsCloud/Request/SplitRemoteSpreadsheetRequest.pm
   AsposeCellsCloud::Request::GetPublicKeyRequest:
     file: lib/AsposeCellsCloud/Request/GetPublicKeyRequest.pm
+  AsposeCellsCloud::Request::ProtectSpreadsheetRequest:
+    file: lib/AsposeCellsCloud/Request/ProtectSpreadsheetRequest.pm
+  AsposeCellsCloud::Request::UnprotectSpreadsheetRequest:
+    file: lib/AsposeCellsCloud/Request/UnprotectSpreadsheetRequest.pm
   AsposeCellsCloud::Request::SearchSpreadsheetContentRequest:
     file: lib/AsposeCellsCloud/Request/SearchSpreadsheetContentRequest.pm
   AsposeCellsCloud::Request::SearchContentInRemoteSpreadsheetRequest:
@@ -1718,5 +1752,5 @@ requires:
   strict: '0'
   utf8: '0'
   warnings: '0'
-version: 25.6.1
+version: 25.7
 x_serialization_backend: 'CPAN::Meta::YAML version 0.018'

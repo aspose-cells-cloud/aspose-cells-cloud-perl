@@ -207,13 +207,57 @@ sub export_spreadsheet_as_format{
 }
 
 #
+# ExportWorksheetAsFormatRequest
+#
+# Converts a worksheet of spreadsheet in cloud storage to the specified format.
+# 
+# @name  string (required)  (Required) The name of the workbook file to be retrieved.  
+# @worksheet  string (required)    
+# @format  string (required)  (Required) The desired pdf or image format  (e.g., "png", "Pdf", "svg").  
+# @folder  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
+# @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @outStorageName  string   Output file Storage Name.  
+# @fontsLocation  string   Use Custom fonts.  
+# @regoin  string   The spreadsheet region setting.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'ExportWorksheetAsFormatRequest',
+            description => 'ExportWorksheetAsFormat Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'export_worksheet_as_format' } = { 
+    	summary => 'Converts a worksheet of spreadsheet in cloud storage to the specified format.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub export_worksheet_as_format{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
 # ExportChartAsFormatRequest
 #
 # Converts a chart of spreadsheet in cloud storage to the specified format.
 # 
 # @name  string (required)  (Required) The name of the workbook file to be retrieved.  
-# @worksheet  string (required)    
-# @chartIndex  int (required)    
+# @worksheet  string (required)  worksheet name  
+# @chartIndex  int (required)  chart index  
 # @format  string (required)  (Required) The desired pdf or image format  (e.g., "png", "Pdf", "svg").  
 # @folder  string   (Optional) The folder path where the workbook is stored. The default is null.  
 # @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
@@ -241,6 +285,96 @@ sub export_spreadsheet_as_format{
 # @return string
 #
 sub export_chart_as_format{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# ExportTableAsFormatRequest
+#
+# Converts a table of spreadsheet in cloud storage to the specified format.
+# 
+# @name  string (required)  (Required) The name of the workbook file to be retrieved.  
+# @worksheet  string (required)  worksheet name  
+# @tableName  string (required)  table name  
+# @format  string (required)  (Required) The desired format  (e.g., "png", "Pdf", "svg").  
+# @folder  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
+# @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @outStorageName  string   Output file Storage Name.  
+# @fontsLocation  string   Use Custom fonts.  
+# @regoin  string   The spreadsheet region setting.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'ExportTableAsFormatRequest',
+            description => 'ExportTableAsFormat Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'export_table_as_format' } = { 
+    	summary => 'Converts a table of spreadsheet in cloud storage to the specified format.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub export_table_as_format{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# ExportRangeAsFormatRequest
+#
+# Converts the range of spreadsheet in cloud storage to the specified format.
+# 
+# @name  string (required)  (Required) The name of the workbook file to be retrieved.  
+# @worksheet  string (required)  worksheet name  
+# @range  string (required)  range: A1:C12  
+# @format  string (required)  (Required) The desired format  (e.g., "png", "Pdf", "svg").  
+# @folder  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @storageName  string   (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  
+# @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @outStorageName  string   Output file Storage Name.  
+# @fontsLocation  string   Use Custom fonts.  
+# @regoin  string   The spreadsheet region setting.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'ExportRangeAsFormatRequest',
+            description => 'ExportRangeAsFormat Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'export_range_as_format' } = { 
+    	summary => 'Converts the range of spreadsheet in cloud storage to the specified format.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub export_range_as_format{
     my ($self, %args) = @_;
     my $request = $args{'request'};
     my $response = $request->run_http_request('client' => $self->{api_client} );
@@ -282,6 +416,512 @@ sub export_chart_as_format{
 # @return string
 #
 sub convert_spreadsheet{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# ConvertWorksheetToImageRequest
+#
+# Converts a worksheet of spreadsheet on a local drive to the image format.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @worksheet  string (required)  worksheet name of spreadsheet.  
+# @format  string (required)  image format:svg, png, and so on.  
+# @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @outStorageName  string   Output file Storage Name.  
+# @fontsLocation  string   Use Custom fonts.  
+# @regoin  string   The spreadsheet region setting.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'ConvertWorksheetToImageRequest',
+            description => 'ConvertWorksheetToImage Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'convert_worksheet_to_image' } = { 
+    	summary => 'Converts a worksheet of spreadsheet on a local drive to the image format.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub convert_worksheet_to_image{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# ConvertWorksheetToPdfRequest
+#
+# Converts a worksheet of spreadsheet on a local drive to the pdf file.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @worksheet  string (required)  worksheet name of spreadsheet.  
+# @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @outStorageName  string   Output file Storage Name.  
+# @fontsLocation  string   Use Custom fonts.  
+# @regoin  string   The spreadsheet region setting.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'ConvertWorksheetToPdfRequest',
+            description => 'ConvertWorksheetToPdf Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'convert_worksheet_to_pdf' } = { 
+    	summary => 'Converts a worksheet of spreadsheet on a local drive to the pdf file.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub convert_worksheet_to_pdf{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# ConvertTableToImageRequest
+#
+# Converts a table of spreadsheet on a local drive to the image file.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @worksheet  string (required)  worksheet name of spreadsheet.  
+# @tableName  string (required)  table name  
+# @format  string (required)  file format.    
+# @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @outStorageName  string   Output file Storage Name.  
+# @fontsLocation  string   Use Custom fonts.  
+# @regoin  string   The spreadsheet region setting.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'ConvertTableToImageRequest',
+            description => 'ConvertTableToImage Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'convert_table_to_image' } = { 
+    	summary => 'Converts a table of spreadsheet on a local drive to the image file.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub convert_table_to_image{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# ConvertTableToPdfRequest
+#
+# Converts a table of spreadsheet on a local drive to the pdf file.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @worksheet  string (required)  worksheet name of spreadsheet.  
+# @tableName  string (required)  table name  
+# @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @outStorageName  string   Output file Storage Name.  
+# @fontsLocation  string   Use Custom fonts.  
+# @regoin  string   The spreadsheet region setting.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'ConvertTableToPdfRequest',
+            description => 'ConvertTableToPdf Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'convert_table_to_pdf' } = { 
+    	summary => 'Converts a table of spreadsheet on a local drive to the pdf file.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub convert_table_to_pdf{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# ConvertTableToCsvRequest
+#
+# Converts a table of spreadsheet on a local drive to the csv file.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @worksheet  string (required)  worksheet name of spreadsheet.  
+# @tableName  string (required)  table name  
+# @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @outStorageName  string   Output file Storage Name.  
+# @fontsLocation  string   Use Custom fonts.  
+# @regoin  string   The spreadsheet region setting.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'ConvertTableToCsvRequest',
+            description => 'ConvertTableToCsv Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'convert_table_to_csv' } = { 
+    	summary => 'Converts a table of spreadsheet on a local drive to the csv file.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub convert_table_to_csv{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# ConvertTableToHtmlRequest
+#
+# Converts a table of spreadsheet on a local drive to the html file.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @worksheet  string (required)  worksheet name of spreadsheet.  
+# @tableName  string (required)  table name  
+# @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @outStorageName  string   Output file Storage Name.  
+# @fontsLocation  string   Use Custom fonts.  
+# @regoin  string   The spreadsheet region setting.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'ConvertTableToHtmlRequest',
+            description => 'ConvertTableToHtml Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'convert_table_to_html' } = { 
+    	summary => 'Converts a table of spreadsheet on a local drive to the html file.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub convert_table_to_html{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# ConvertTableToJsonRequest
+#
+# Converts a table of spreadsheet on a local drive to the json file.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @worksheet  string (required)  worksheet name of spreadsheet.  
+# @tableName  string (required)  table name  
+# @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @outStorageName  string   Output file Storage Name.  
+# @fontsLocation  string   Use Custom fonts.  
+# @regoin  string   The spreadsheet region setting.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'ConvertTableToJsonRequest',
+            description => 'ConvertTableToJson Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'convert_table_to_json' } = { 
+    	summary => 'Converts a table of spreadsheet on a local drive to the json file.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub convert_table_to_json{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# ConvertRangeToImageRequest
+#
+# Converts a range of spreadsheet on a local drive to the image file.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @worksheet  string (required)  worksheet name of spreadsheet.  
+# @range  string (required)  cell area. e.g. A1:C10  
+# @format  string (required)  file format. e.g. png, svg, tiff   
+# @printHeadings  boolean   Represents if row and column headings are printed with this page.  
+# @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @outStorageName  string   Output file Storage Name.  
+# @fontsLocation  string   Use Custom fonts.  
+# @regoin  string   The spreadsheet region setting.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'ConvertRangeToImageRequest',
+            description => 'ConvertRangeToImage Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'convert_range_to_image' } = { 
+    	summary => 'Converts a range of spreadsheet on a local drive to the image file.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub convert_range_to_image{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# ConvertRangeToPdfRequest
+#
+# Converts a range of spreadsheet on a local drive to the pdf file.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @worksheet  string (required)  worksheet name of spreadsheet.  
+# @range  string (required)  cell area. e.g. A1:C10  
+# @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @outStorageName  string   Output file Storage Name.  
+# @fontsLocation  string   Use Custom fonts.  
+# @regoin  string   The spreadsheet region setting.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'ConvertRangeToPdfRequest',
+            description => 'ConvertRangeToPdf Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'convert_range_to_pdf' } = { 
+    	summary => 'Converts a range of spreadsheet on a local drive to the pdf file.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub convert_range_to_pdf{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# ConvertRangeToCsvRequest
+#
+# Converts a range of spreadsheet on a local drive to the csv file.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @worksheet  string (required)  worksheet name of spreadsheet.  
+# @range  string (required)  cell area. e.g. A1:C10  
+# @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @outStorageName  string   Output file Storage Name.  
+# @fontsLocation  string   Use Custom fonts.  
+# @regoin  string   The spreadsheet region setting.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'ConvertRangeToCsvRequest',
+            description => 'ConvertRangeToCsv Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'convert_range_to_csv' } = { 
+    	summary => 'Converts a range of spreadsheet on a local drive to the csv file.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub convert_range_to_csv{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# ConvertRangeToHtmlRequest
+#
+# Converts a range of spreadsheet on a local drive to the html file.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @worksheet  string (required)  worksheet name of spreadsheet.  
+# @range  string (required)  cell area. e.g. A1:C10  
+# @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @outStorageName  string   Output file Storage Name.  
+# @fontsLocation  string   Use Custom fonts.  
+# @regoin  string   The spreadsheet region setting.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'ConvertRangeToHtmlRequest',
+            description => 'ConvertRangeToHtml Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'convert_range_to_html' } = { 
+    	summary => 'Converts a range of spreadsheet on a local drive to the html file.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub convert_range_to_html{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# ConvertRangeToJsonRequest
+#
+# Converts a range of spreadsheet on a local drive to the json file.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @worksheet  string (required)  worksheet name of spreadsheet.  
+# @range  string (required)  cell area. e.g. A1:C10  
+# @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @outStorageName  string   Output file Storage Name.  
+# @fontsLocation  string   Use Custom fonts.  
+# @regoin  string   The spreadsheet region setting.  
+# @password  string   The password for opening spreadsheet file.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'ConvertRangeToJsonRequest',
+            description => 'ConvertRangeToJson Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'convert_range_to_json' } = { 
+    	summary => 'Converts a range of spreadsheet on a local drive to the json file.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub convert_range_to_json{
     my ($self, %args) = @_;
     my $request = $args{'request'};
     my $response = $request->run_http_request('client' => $self->{api_client} );
@@ -672,6 +1312,86 @@ sub get_public_key{
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('CellsCloudPublicKeyResponse', $response);
+    return $_response_object;
+}
+
+#
+# ProtectSpreadsheetRequest
+#
+# Applies dual-layer password protection to Excel spreadsheets, supporting both open and modify passwords with encryption.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @password  string (required)  Spreadsheet file encryption password.  
+# @modifyPassword  string (required)  Sets the protected password to modify the file.  
+# @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @outStorageName  string   Output file Storage Name.  
+# @regoin  string   The spreadsheet region setting.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'ProtectSpreadsheetRequest',
+            description => 'ProtectSpreadsheet Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'protect_spreadsheet' } = { 
+    	summary => 'Applies dual-layer password protection to Excel spreadsheets, supporting both open and modify passwords with encryption.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub protect_spreadsheet{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# UnprotectSpreadsheetRequest
+#
+# Removes dual-layer password protection from Excel spreadsheets, supporting both open and modify passwords with encryption.
+# 
+# @Spreadsheet  string (required)  Upload spreadsheet file.  
+# @password  string (required)  Spreadsheet file encryption password.  
+# @modifyPassword  string (required)  Sets the protected password to modify the file.  
+# @outPath  string   (Optional) The folder path where the workbook is stored. The default is null.  
+# @outStorageName  string   Output file Storage Name.  
+# @regoin  string   The spreadsheet region setting.   
+#
+{
+    my $params = {
+       'request' =>{
+            data_type => 'UnprotectSpreadsheetRequest',
+            description => 'UnprotectSpreadsheet Request.',
+            required => '0',
+       }
+    };
+    __PACKAGE__->method_documentation->{ 'unprotect_spreadsheet' } = { 
+    	summary => 'Removes dual-layer password protection from Excel spreadsheets, supporting both open and modify passwords with encryption.',
+        params => $params,
+        returns => 'string',
+    };
+}
+#
+# @return string
+#
+sub unprotect_spreadsheet{
+    my ($self, %args) = @_;
+    my $request = $args{'request'};
+    my $response = $request->run_http_request('client' => $self->{api_client} );
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
     return $_response_object;
 }
 
@@ -12285,9 +13005,9 @@ sub post_run_task{
 #
 # PostAddTextContentRequest
 #
-# Adds text content to a workbook at specified positions within cells based on provided options using ASP.NET Core Web API.
+# Adds text content to a specified location within a document. It requires an object that defines the text to be added and the insertion location.
 # 
-# @addTextOptions  AddTextOptions (required)     
+# @addTextOptions  AddTextOptions (required)  that specifies the text content and the position where the text should be added.   
 #
 {
     my $params = {
@@ -12298,7 +13018,7 @@ sub post_run_task{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_add_text_content' } = { 
-    	summary => 'Adds text content to a workbook at specified positions within cells based on provided options using ASP.NET Core Web API.',
+    	summary => 'Adds text content to a specified location within a document. It requires an object that defines the text to be added and the insertion location.',
         params => $params,
         returns => 'FileInfo',
     };
@@ -12320,7 +13040,7 @@ sub post_add_text_content{
 #
 # PostTrimContentRequest
 #
-# 
+# The PostTrimContent API is designed to process and trim content within a specified range in a spreadsheet. This API allows users to remove extra spaces, line breaks, or other unnecessary characters from the content of selected cells. It is particularly useful for cleaning up data entries and ensuring consistency in spreadsheet formatting
 # 
 # @trimContentOptions  TrimContentOptions (required)     
 #
@@ -12333,7 +13053,7 @@ sub post_add_text_content{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_trim_content' } = { 
-    	summary => '',
+    	summary => 'The PostTrimContent API is designed to process and trim content within a specified range in a spreadsheet. This API allows users to remove extra spaces, line breaks, or other unnecessary characters from the content of selected cells. It is particularly useful for cleaning up data entries and ensuring consistency in spreadsheet formatting',
         params => $params,
         returns => 'FileInfo',
     };
@@ -12355,7 +13075,7 @@ sub post_trim_content{
 #
 # PostUpdateWordCaseRequest
 #
-# 
+# Managing inconsistent text case in spreadsheets (Excel, Google Sheets, CSV) can be frustrating, especially with large datasets. The PostUpdateWordCase WEB API solves this by automating text case conversions, ensuring clean and standardized data.
 # 
 # @wordCaseOptions  WordCaseOptions (required)     
 #
@@ -12368,7 +13088,7 @@ sub post_trim_content{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_update_word_case' } = { 
-    	summary => '',
+    	summary => 'Managing inconsistent text case in spreadsheets (Excel, Google Sheets, CSV) can be frustrating, especially with large datasets. The PostUpdateWordCase WEB API solves this by automating text case conversions, ensuring clean and standardized data.',
         params => $params,
         returns => 'FileInfo',
     };
@@ -12390,7 +13110,7 @@ sub post_update_word_case{
 #
 # PostRemoveCharactersRequest
 #
-# 
+# A comprehensive set of tools for cleaning text content within selected cells. It allows users to remove specific characters, character sets, and substrings, ensuring that the text is standardized and free from unwanted symbols or sequences.
 # 
 # @removeCharactersOptions  RemoveCharactersOptions (required)     
 #
@@ -12403,7 +13123,7 @@ sub post_update_word_case{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_remove_characters' } = { 
-    	summary => '',
+    	summary => 'A comprehensive set of tools for cleaning text content within selected cells. It allows users to remove specific characters, character sets, and substrings, ensuring that the text is standardized and free from unwanted symbols or sequences.',
         params => $params,
         returns => 'FileInfo',
     };
@@ -12425,7 +13145,7 @@ sub post_remove_characters{
 #
 # PostConvertTextRequest
 #
-# 
+# Enhance Excel data through essential text conversions: convert text to numbers, replace characters and line breaks, and remove accents.
 # 
 # @convertTextOptions  ConvertTextOptions (required)     
 #
@@ -12438,7 +13158,7 @@ sub post_remove_characters{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_convert_text' } = { 
-    	summary => '',
+    	summary => 'Enhance Excel data through essential text conversions: convert text to numbers, replace characters and line breaks, and remove accents.',
         params => $params,
         returns => 'FileInfo',
     };
@@ -12460,7 +13180,7 @@ sub post_convert_text{
 #
 # PostRemoveDuplicatesRequest
 #
-# 
+# Efficiently remove duplicate substrings from Excel cells. Select a range, specify delimiters, and apply options to eliminate repeated text segments.
 # 
 # @removeDuplicatesOptions  RemoveDuplicatesOptions (required)     
 #
@@ -12473,7 +13193,7 @@ sub post_convert_text{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_remove_duplicates' } = { 
-    	summary => '',
+    	summary => 'Efficiently remove duplicate substrings from Excel cells. Select a range, specify delimiters, and apply options to eliminate repeated text segments.',
         params => $params,
         returns => 'FileInfo',
     };
@@ -12495,7 +13215,7 @@ sub post_remove_duplicates{
 #
 # PostExtractTextRequest
 #
-# 
+# Effortlessly extract text and numbers from Excel cells with precise options. This API allows extraction of first/last characters, text between delimiters, and numbers from strings, with output as static values or formulas.
 # 
 # @extractTextOptions  ExtractTextOptions (required)     
 #
@@ -12508,7 +13228,7 @@ sub post_remove_duplicates{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_extract_text' } = { 
-    	summary => '',
+    	summary => 'Effortlessly extract text and numbers from Excel cells with precise options. This API allows extraction of first/last characters, text between delimiters, and numbers from strings, with output as static values or formulas.',
         params => $params,
         returns => 'FileInfo',
     };
@@ -12530,7 +13250,7 @@ sub post_extract_text{
 #
 # PostSplitTextRequest
 #
-# 
+# Efficiently divides Excel cell content into columns or rows based on specified delimiters or patterns. Supports Character-based splitting, Custom string splitting, Mask and wildcard splitting for pattern-based division, Line break division, Column or row splitting, Delimiter removal or retention.
 # 
 # @splitTextOptions  SplitTextOptions (required)     
 #
@@ -12543,7 +13263,7 @@ sub post_extract_text{
        }
     };
     __PACKAGE__->method_documentation->{ 'post_split_text' } = { 
-    	summary => '',
+    	summary => 'Efficiently divides Excel cell content into columns or rows based on specified delimiters or patterns. Supports Character-based splitting, Custom string splitting, Mask and wildcard splitting for pattern-based division, Line break division, Column or row splitting, Delimiter removal or retention.',
         params => $params,
         returns => 'FileInfo',
     };

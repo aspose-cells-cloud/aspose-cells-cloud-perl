@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Object::BrokenLinksReponse;
+package AsposeCellsCloud::Object::AggregateResultByColorResponse;
 
 require 5.6.0;
 use strict;
@@ -35,7 +35,7 @@ use Module::Runtime qw(use_module);
 use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
-use AsposeCellsCloud::Object::BrokenLink;
+use AsposeCellsCloud::Object::AggregateResultByColor;
 use AsposeCellsCloud::Object::CellsCloudResponse; 
 
 
@@ -120,15 +120,15 @@ sub _deserialize {
 
 
 __PACKAGE__->class_documentation({description => '',
-                                  class => 'BrokenLinksReponse',
+                                  class => 'AggregateResultByColorResponse',
                                   required => [], # TODO
 }                                 );
 
 
 __PACKAGE__->method_documentation({
-     'broken_links' => {
-     	datatype => 'ARRAY[BrokenLink]',
-     	base_name => 'BrokenLinks',
+     'aggregate_results' => {
+     	datatype => 'ARRAY[AggregateResultByColor]',
+     	base_name => 'AggregateResults',
      	description => '',
      	format => '',
      	read_only => '',
@@ -150,13 +150,13 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->swagger_types( {
-    'broken_links' => 'ARRAY[BrokenLink]',
+    'aggregate_results' => 'ARRAY[AggregateResultByColor]',
     'code' => 'int',
     'status' => 'string' 
 } );
 
 __PACKAGE__->attribute_map( {
-    'broken_links' => 'BrokenLinks',
+    'aggregate_results' => 'AggregateResults',
     'code' => 'Code',
     'status' => 'Status' 
 } );

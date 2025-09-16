@@ -65,7 +65,7 @@ sub new {
 # UnprotectSpreadsheetRequest.modifyPassword : Sets the protected password to modify the file.  ,
 # UnprotectSpreadsheetRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
 # UnprotectSpreadsheetRequest.outStorageName : Output file Storage Name.  ,
-# UnprotectSpreadsheetRequest.regoin : The spreadsheet region setting.   
+# UnprotectSpreadsheetRequest.region : The spreadsheet region setting.   
 
 {
     my $params = {
@@ -118,8 +118,8 @@ sub run_http_request {
         $query_params->{'outStorageName'} = $client->to_query_value($self->out_storage_name);      
     }
 
-    if(defined $self->regoin){
-        $query_params->{'regoin'} = $client->to_query_value($self->regoin);      
+    if(defined $self->region){
+        $query_params->{'region'} = $client->to_query_value($self->region);      
     } 
     my $_body_data;
 
@@ -172,9 +172,9 @@ __PACKAGE__->method_documentation({
      	format => '',
      	read_only => '',
      		},
-     'regoin' => {
+     'region' => {
      	datatype => 'string',
-     	base_name => 'regoin',
+     	base_name => 'region',
      	description => 'The spreadsheet region setting.',
      	format => '',
      	read_only => '',
@@ -188,7 +188,7 @@ __PACKAGE__->attribute_map( {
     'modify_password' => 'modifyPassword',
     'out_path' => 'outPath',
     'out_storage_name' => 'outStorageName',
-    'regoin' => 'regoin' 
+    'region' => 'region' 
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

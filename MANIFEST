@@ -9,6 +9,7 @@ docs/FilesList.md
 docs/FilesUploadResult.md
 docs/StorageFile.md
 docs/GoogleDriveStorageFile.md
+docs/AggregateResultByColor.md
 docs/BrokenLink.md
 docs/CellArea.md
 docs/CellsCloudFileInfo.md
@@ -18,6 +19,7 @@ docs/PdfSecurityOptions.md
 docs/Range.md
 docs/SaveResult.md
 docs/PaginatedSaveOptions.md
+docs/SpreadsheetTemplate.md
 docs/TextItem.md
 docs/DbfSaveOptions.md
 docs/DifSaveOptions.md
@@ -42,7 +44,8 @@ docs/XlsbSaveOptions.md
 docs/XlsSaveOptions.md
 docs/XmlSaveOptions.md
 docs/XpsSaveOptions.md
-docs/BrokenLinksReponse.md
+docs/AggregateResultByColorResponse.md
+docs/BrokenLinksResponse.md
 docs/CellsCloudFileInfoResponse.md
 docs/CellsCloudPublicKeyResponse.md
 docs/CellsCloudResponse.md
@@ -446,6 +449,8 @@ docs/DiscoverChart.md
 docs/DiscoverPivotTable.md
 docs/ExcelDataStatistics.md
 docs/WorksheetDataStatistics.md
+docs/AggregateCellsByColorRequest.md
+docs/MathCalculateRequest.md
 docs/PostAccessTokenRequest.md
 docs/GetAsposeCellsCloudStatusRequest.md
 docs/CheckCloudServiceHealthRequest.md
@@ -455,6 +460,8 @@ docs/ExportChartAsFormatRequest.md
 docs/ExportTableAsFormatRequest.md
 docs/ExportRangeAsFormatRequest.md
 docs/ConvertSpreadsheetRequest.md
+docs/ConvertSpreadsheetToPdfRequest.md
+docs/ConvertSpreadsheetToCsvRequest.md
 docs/ConvertWorksheetToImageRequest.md
 docs/ConvertWorksheetToPdfRequest.md
 docs/ConvertTableToImageRequest.md
@@ -475,7 +482,14 @@ docs/MergeSpreadsheetsInRemoteFolderRequest.md
 docs/MergeRemoteSpreadsheetRequest.md
 docs/SplitSpreadsheetRequest.md
 docs/SplitRemoteSpreadsheetRequest.md
+docs/ImportDataIntoSpreadsheetRequest.md
 docs/GetPublicKeyRequest.md
+docs/CreateSpreadsheetRequest.md
+docs/AddWorksheetToSpreadsheetRequest.md
+docs/DeleteWorksheetFromSpreadsheetRequest.md
+docs/RenameWorksheetInSpreadsheetRequest.md
+docs/MoveWorksheetInSpreadsheetRequest.md
+docs/CompressSpreadsheetRequest.md
 docs/ProtectSpreadsheetRequest.md
 docs/UnprotectSpreadsheetRequest.md
 docs/SearchSpreadsheetContentRequest.md
@@ -492,9 +506,12 @@ docs/SearchBrokenLinksInRemoteWorksheetRequest.md
 docs/SearchBrokenLinksInRemoteRangeRequest.md
 docs/SpecRequest.md
 docs/CodegenSpecRequest.md
+docs/TrimSpreadsheetContentRequest.md
+docs/TrimWorksheetRangeRequest.md
 docs/DeleteSpreadsheetBlankRowsRequest.md
 docs/DeleteSpreadsheetBlankColumnsRequest.md
 docs/DeleteSpreadsheetBlankWorksheetsRequest.md
+docs/SwapRangeRequest.md
 docs/DownloadFileRequest.md
 docs/UploadFileRequest.md
 docs/CopyFileRequest.md
@@ -863,6 +880,7 @@ lib/AsposeCellsCloud/Object/FilesList.pm
 lib/AsposeCellsCloud/Object/FilesUploadResult.pm
 lib/AsposeCellsCloud/Object/StorageFile.pm
 lib/AsposeCellsCloud/Object/GoogleDriveStorageFile.pm
+lib/AsposeCellsCloud/Object/AggregateResultByColor.pm
 lib/AsposeCellsCloud/Object/BrokenLink.pm
 lib/AsposeCellsCloud/Object/CellArea.pm
 lib/AsposeCellsCloud/Object/CellsCloudFileInfo.pm
@@ -872,6 +890,7 @@ lib/AsposeCellsCloud/Object/PdfSecurityOptions.pm
 lib/AsposeCellsCloud/Object/Range.pm
 lib/AsposeCellsCloud/Object/SaveResult.pm
 lib/AsposeCellsCloud/Object/PaginatedSaveOptions.pm
+lib/AsposeCellsCloud/Object/SpreadsheetTemplate.pm
 lib/AsposeCellsCloud/Object/TextItem.pm
 lib/AsposeCellsCloud/Object/DbfSaveOptions.pm
 lib/AsposeCellsCloud/Object/DifSaveOptions.pm
@@ -896,7 +915,8 @@ lib/AsposeCellsCloud/Object/XlsbSaveOptions.pm
 lib/AsposeCellsCloud/Object/XlsSaveOptions.pm
 lib/AsposeCellsCloud/Object/XmlSaveOptions.pm
 lib/AsposeCellsCloud/Object/XpsSaveOptions.pm
-lib/AsposeCellsCloud/Object/BrokenLinksReponse.pm
+lib/AsposeCellsCloud/Object/AggregateResultByColorResponse.pm
+lib/AsposeCellsCloud/Object/BrokenLinksResponse.pm
 lib/AsposeCellsCloud/Object/CellsCloudFileInfoResponse.pm
 lib/AsposeCellsCloud/Object/CellsCloudPublicKeyResponse.pm
 lib/AsposeCellsCloud/Object/CellsCloudResponse.pm
@@ -1300,6 +1320,8 @@ lib/AsposeCellsCloud/Object/DiscoverChart.pm
 lib/AsposeCellsCloud/Object/DiscoverPivotTable.pm
 lib/AsposeCellsCloud/Object/ExcelDataStatistics.pm
 lib/AsposeCellsCloud/Object/WorksheetDataStatistics.pm
+lib/AsposeCellsCloud/Request/AggregateCellsByColorRequest.pm
+lib/AsposeCellsCloud/Request/MathCalculateRequest.pm
 lib/AsposeCellsCloud/Request/PostAccessTokenRequest.pm
 lib/AsposeCellsCloud/Request/GetAsposeCellsCloudStatusRequest.pm
 lib/AsposeCellsCloud/Request/CheckCloudServiceHealthRequest.pm
@@ -1309,6 +1331,8 @@ lib/AsposeCellsCloud/Request/ExportChartAsFormatRequest.pm
 lib/AsposeCellsCloud/Request/ExportTableAsFormatRequest.pm
 lib/AsposeCellsCloud/Request/ExportRangeAsFormatRequest.pm
 lib/AsposeCellsCloud/Request/ConvertSpreadsheetRequest.pm
+lib/AsposeCellsCloud/Request/ConvertSpreadsheetToPdfRequest.pm
+lib/AsposeCellsCloud/Request/ConvertSpreadsheetToCsvRequest.pm
 lib/AsposeCellsCloud/Request/ConvertWorksheetToImageRequest.pm
 lib/AsposeCellsCloud/Request/ConvertWorksheetToPdfRequest.pm
 lib/AsposeCellsCloud/Request/ConvertTableToImageRequest.pm
@@ -1329,7 +1353,14 @@ lib/AsposeCellsCloud/Request/MergeSpreadsheetsInRemoteFolderRequest.pm
 lib/AsposeCellsCloud/Request/MergeRemoteSpreadsheetRequest.pm
 lib/AsposeCellsCloud/Request/SplitSpreadsheetRequest.pm
 lib/AsposeCellsCloud/Request/SplitRemoteSpreadsheetRequest.pm
+lib/AsposeCellsCloud/Request/ImportDataIntoSpreadsheetRequest.pm
 lib/AsposeCellsCloud/Request/GetPublicKeyRequest.pm
+lib/AsposeCellsCloud/Request/CreateSpreadsheetRequest.pm
+lib/AsposeCellsCloud/Request/AddWorksheetToSpreadsheetRequest.pm
+lib/AsposeCellsCloud/Request/DeleteWorksheetFromSpreadsheetRequest.pm
+lib/AsposeCellsCloud/Request/RenameWorksheetInSpreadsheetRequest.pm
+lib/AsposeCellsCloud/Request/MoveWorksheetInSpreadsheetRequest.pm
+lib/AsposeCellsCloud/Request/CompressSpreadsheetRequest.pm
 lib/AsposeCellsCloud/Request/ProtectSpreadsheetRequest.pm
 lib/AsposeCellsCloud/Request/UnprotectSpreadsheetRequest.pm
 lib/AsposeCellsCloud/Request/SearchSpreadsheetContentRequest.pm
@@ -1346,9 +1377,12 @@ lib/AsposeCellsCloud/Request/SearchBrokenLinksInRemoteWorksheetRequest.pm
 lib/AsposeCellsCloud/Request/SearchBrokenLinksInRemoteRangeRequest.pm
 lib/AsposeCellsCloud/Request/SpecRequest.pm
 lib/AsposeCellsCloud/Request/CodegenSpecRequest.pm
+lib/AsposeCellsCloud/Request/TrimSpreadsheetContentRequest.pm
+lib/AsposeCellsCloud/Request/TrimWorksheetRangeRequest.pm
 lib/AsposeCellsCloud/Request/DeleteSpreadsheetBlankRowsRequest.pm
 lib/AsposeCellsCloud/Request/DeleteSpreadsheetBlankColumnsRequest.pm
 lib/AsposeCellsCloud/Request/DeleteSpreadsheetBlankWorksheetsRequest.pm
+lib/AsposeCellsCloud/Request/SwapRangeRequest.pm
 lib/AsposeCellsCloud/Request/DownloadFileRequest.pm
 lib/AsposeCellsCloud/Request/UploadFileRequest.pm
 lib/AsposeCellsCloud/Request/CopyFileRequest.pm

@@ -1,16 +1,14 @@
-# AsposeCellsCloud::Object::BrokenLinksReponse 
+# AsposeCellsCloud::Object::SpreadsheetTemplate 
 
 ## Load the model package
 ```perl
-use AsposeCellsCloud::Object::BrokenLinksReponse;
+use AsposeCellsCloud::Object::SpreadsheetTemplate;
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BrokenLinks** | **ARRAY[BrokenLink]** |  |
-**Code** | **int** |  |
-**Status** | **string** |  |  
+  
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

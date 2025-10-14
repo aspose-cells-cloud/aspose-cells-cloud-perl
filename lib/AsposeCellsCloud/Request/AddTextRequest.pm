@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::DeleteSpreadsheetBlankWorksheetsRequest;
+package AsposeCellsCloud::Request::AddTextRequest;
 
 require 5.6.0;
 use strict;
@@ -60,11 +60,17 @@ sub new {
 
 
 # Run Operation Request
-# DeleteSpreadsheetBlankWorksheetsRequest.Spreadsheet : Upload spreadsheet file.  ,
-# DeleteSpreadsheetBlankWorksheetsRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
-# DeleteSpreadsheetBlankWorksheetsRequest.outStorageName : Output file Storage Name.  ,
-# DeleteSpreadsheetBlankWorksheetsRequest.region : The spreadsheet region setting.  ,
-# DeleteSpreadsheetBlankWorksheetsRequest.password : The password for opening spreadsheet file.   
+# AddTextRequest.Spreadsheet : Upload spreadsheet file.  ,
+# AddTextRequest.text : Specify the added text content.  ,
+# AddTextRequest.position : Indicates the specific location for adding text content.None, AtTheBeginning, AtTheEnd, BeforeText, AfterText.    ,
+# AddTextRequest.selectText : Indicates selecting the specific position to add text based on the content of the text.  ,
+# AddTextRequest.skipEmptyCells : Indicates skip empty cells.  ,
+# AddTextRequest.worksheet : Specify the worksheet of spreadsheet.  ,
+# AddTextRequest.range : Specify the worksheet range of spreadsheet.  ,
+# AddTextRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
+# AddTextRequest.outStorageName : Output file Storage Name.  ,
+# AddTextRequest.region : The spreadsheet region setting.  ,
+# AddTextRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -74,8 +80,8 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'delete_spreadsheet_blank_worksheets' } = { 
-    	summary => 'Delete all blank rows that do not contain any data or other objects.',
+    __PACKAGE__->method_documentation->{ 'add_text' } = { 
+    	summary => 'Specify appending text to multiple cells at once, allowing you to add prefixes, suffixes, labels, or any specific characters. You can choose the exact position of the text—in the beginning, at the end, or before or after certain characters in the cell.',
         params => $params,
         returns => 'string',
     };
@@ -87,7 +93,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v4.0/cells/delete/blank-worksheets';
+    my $_resource_path = 'v4.0/cells/content/add/text';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -101,6 +107,30 @@ sub run_http_request {
     }
     $header_params->{'Content-Type'} = $client->select_header_content_type('multipart/form-data');
  
+    if(defined $self->text){
+        $query_params->{'text'} = $client->to_query_value($self->text);      
+    }
+
+    if(defined $self->position){
+        $query_params->{'position'} = $client->to_query_value($self->position);      
+    }
+
+    if(defined $self->select_text){
+        $query_params->{'selectText'} = $client->to_query_value($self->select_text);      
+    }
+
+    if(defined $self->skip_empty_cells){
+        $query_params->{'skipEmptyCells'} = $client->to_query_value($self->skip_empty_cells);      
+    }
+
+    if(defined $self->worksheet){
+        $query_params->{'worksheet'} = $client->to_query_value($self->worksheet);      
+    }
+
+    if(defined $self->range){
+        $query_params->{'range'} = $client->to_query_value($self->range);      
+    }
+
     if(defined $self->out_path){
         $query_params->{'outPath'} = $client->to_query_value($self->out_path);      
     }
@@ -119,7 +149,9 @@ sub run_http_request {
     my $_body_data;
 
 
-    $form_params->{basename($self->spreadsheet)} = [$self->spreadsheet ,basename($self->spreadsheet),'application/octet-stream'];
+    if (defined $self->spreadsheet) {   
+        $form_params->{basename($self->spreadsheet)} = [$self->spreadsheet ,basename($self->spreadsheet),'application/octet-stream'];
+    }
  
 
     # authentication setting, if any
@@ -136,6 +168,48 @@ __PACKAGE__->method_documentation({
      	datatype => 'string',
      	base_name => 'Spreadsheet',
      	description => 'Upload spreadsheet file.',
+     	format => '',
+     	read_only => '',
+     		},
+     'text' => {
+     	datatype => 'string',
+     	base_name => 'text',
+     	description => 'Specify the added text content.',
+     	format => '',
+     	read_only => '',
+     		},
+     'position' => {
+     	datatype => 'string',
+     	base_name => 'position',
+     	description => 'Indicates the specific location for adding text content.None, AtTheBeginning, AtTheEnd, BeforeText, AfterText.  ',
+     	format => '',
+     	read_only => '',
+     		},
+     'select_text' => {
+     	datatype => 'string',
+     	base_name => 'selectText',
+     	description => 'Indicates selecting the specific position to add text based on the content of the text.',
+     	format => '',
+     	read_only => '',
+     		},
+     'skip_empty_cells' => {
+     	datatype => 'string',
+     	base_name => 'skipEmptyCells',
+     	description => 'Indicates skip empty cells.',
+     	format => '',
+     	read_only => '',
+     		},
+     'worksheet' => {
+     	datatype => 'string',
+     	base_name => 'worksheet',
+     	description => 'Specify the worksheet of spreadsheet.',
+     	format => '',
+     	read_only => '',
+     		},
+     'range' => {
+     	datatype => 'string',
+     	base_name => 'range',
+     	description => 'Specify the worksheet range of spreadsheet.',
      	format => '',
      	read_only => '',
      		},
@@ -172,6 +246,12 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->attribute_map( {
     'spreadsheet' => 'Spreadsheet',
+    'text' => 'text',
+    'position' => 'position',
+    'select_text' => 'selectText',
+    'skip_empty_cells' => 'skipEmptyCells',
+    'worksheet' => 'worksheet',
+    'range' => 'range',
     'out_path' => 'outPath',
     'out_storage_name' => 'outStorageName',
     'region' => 'region',

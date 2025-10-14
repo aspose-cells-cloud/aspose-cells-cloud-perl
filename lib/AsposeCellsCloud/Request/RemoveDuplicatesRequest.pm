@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::DeleteSpreadsheetBlankColumnsRequest;
+package AsposeCellsCloud::Request::RemoveDuplicatesRequest;
 
 require 5.6.0;
 use strict;
@@ -60,11 +60,14 @@ sub new {
 
 
 # Run Operation Request
-# DeleteSpreadsheetBlankColumnsRequest.Spreadsheet : Upload spreadsheet file.  ,
-# DeleteSpreadsheetBlankColumnsRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
-# DeleteSpreadsheetBlankColumnsRequest.outStorageName : Output file Storage Name.  ,
-# DeleteSpreadsheetBlankColumnsRequest.region : The spreadsheet region setting.  ,
-# DeleteSpreadsheetBlankColumnsRequest.password : The password for opening spreadsheet file.   
+# RemoveDuplicatesRequest.Spreadsheet : Upload spreadsheet file.  ,
+# RemoveDuplicatesRequest.worksheet :   ,
+# RemoveDuplicatesRequest.range :   ,
+# RemoveDuplicatesRequest.table :   ,
+# RemoveDuplicatesRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
+# RemoveDuplicatesRequest.outStorageName : Output file Storage Name.  ,
+# RemoveDuplicatesRequest.region : The spreadsheet region setting.  ,
+# RemoveDuplicatesRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -74,8 +77,8 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'delete_spreadsheet_blank_columns' } = { 
-    	summary => 'Delete all blank rows that do not contain any data or other objects.',
+    __PACKAGE__->method_documentation->{ 'remove_duplicates' } = { 
+    	summary => '',
         params => $params,
         returns => 'string',
     };
@@ -87,7 +90,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v4.0/cells/delete/blank-columns';
+    my $_resource_path = 'v4.0/cells/remove/duplicates';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -101,6 +104,18 @@ sub run_http_request {
     }
     $header_params->{'Content-Type'} = $client->select_header_content_type('multipart/form-data');
  
+    if(defined $self->worksheet){
+        $query_params->{'worksheet'} = $client->to_query_value($self->worksheet);      
+    }
+
+    if(defined $self->range){
+        $query_params->{'range'} = $client->to_query_value($self->range);      
+    }
+
+    if(defined $self->table){
+        $query_params->{'table'} = $client->to_query_value($self->table);      
+    }
+
     if(defined $self->out_path){
         $query_params->{'outPath'} = $client->to_query_value($self->out_path);      
     }
@@ -119,7 +134,9 @@ sub run_http_request {
     my $_body_data;
 
 
-    $form_params->{basename($self->spreadsheet)} = [$self->spreadsheet ,basename($self->spreadsheet),'application/octet-stream'];
+    if (defined $self->spreadsheet) {   
+        $form_params->{basename($self->spreadsheet)} = [$self->spreadsheet ,basename($self->spreadsheet),'application/octet-stream'];
+    }
  
 
     # authentication setting, if any
@@ -136,6 +153,27 @@ __PACKAGE__->method_documentation({
      	datatype => 'string',
      	base_name => 'Spreadsheet',
      	description => 'Upload spreadsheet file.',
+     	format => '',
+     	read_only => '',
+     		},
+     'worksheet' => {
+     	datatype => 'string',
+     	base_name => 'worksheet',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'range' => {
+     	datatype => 'string',
+     	base_name => 'range',
+     	description => '',
+     	format => '',
+     	read_only => '',
+     		},
+     'table' => {
+     	datatype => 'string',
+     	base_name => 'table',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
@@ -172,6 +210,9 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->attribute_map( {
     'spreadsheet' => 'Spreadsheet',
+    'worksheet' => 'worksheet',
+    'range' => 'range',
+    'table' => 'table',
     'out_path' => 'outPath',
     'out_storage_name' => 'outStorageName',
     'region' => 'region',

@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::TrimWorksheetRangeRequest;
+package AsposeCellsCloud::Request::ExtractTextRequest;
 
 require 5.6.0;
 use strict;
@@ -60,20 +60,19 @@ sub new {
 
 
 # Run Operation Request
-# TrimWorksheetRangeRequest.Spreadsheet : Upload spreadsheet file.  ,
-# TrimWorksheetRangeRequest.worksheet :   ,
-# TrimWorksheetRangeRequest.range :   ,
-# TrimWorksheetRangeRequest.trimContent :   ,
-# TrimWorksheetRangeRequest.trimLeading :   ,
-# TrimWorksheetRangeRequest.trimTrailing :   ,
-# TrimWorksheetRangeRequest.trimSpaceBetweenWordTo1 :   ,
-# TrimWorksheetRangeRequest.trimNonBreakingSpaces :   ,
-# TrimWorksheetRangeRequest.removeExtraLineBreaks :   ,
-# TrimWorksheetRangeRequest.removeAllLineBreaks :   ,
-# TrimWorksheetRangeRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
-# TrimWorksheetRangeRequest.outStorageName : Output file Storage Name.  ,
-# TrimWorksheetRangeRequest.region : The spreadsheet region setting.  ,
-# TrimWorksheetRangeRequest.password : The password for opening spreadsheet file.   
+# ExtractTextRequest.Spreadsheet : Upload spreadsheet file.  ,
+# ExtractTextRequest.extractTextType : Indicates extract text type.  ,
+# ExtractTextRequest.beforeText : Indicates extracting the text before the specified characters or substrings.  ,
+# ExtractTextRequest.afterText : Indicates extracting the text after the specified characters or substrings.  ,
+# ExtractTextRequest.beforePosition : Indicates retrieving the first character or a specified number of characters from the left side of the selected cell.  ,
+# ExtractTextRequest.afterPosition : Indicates retrieving the first character or a specified number of characters from the right side of the selected cell.  ,
+# ExtractTextRequest.outPositionRange : Indicates the output location for the extracted text.  ,
+# ExtractTextRequest.worksheet : Specify the worksheet of spreadsheet.  ,
+# ExtractTextRequest.range : Specify the worksheet range of spreadsheet.  ,
+# ExtractTextRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
+# ExtractTextRequest.outStorageName : Output file Storage Name.  ,
+# ExtractTextRequest.region : The spreadsheet region setting.  ,
+# ExtractTextRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -83,8 +82,8 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'trim_worksheet_range' } = { 
-    	summary => '',
+    __PACKAGE__->method_documentation->{ 'extract_text' } = { 
+    	summary => 'Indicates extracting substrings, text characters, and numbers from a spreadsheet cell into another cell without having to use complex FIND, MIN, LEFT, or RIGHT formulas.',
         params => $params,
         returns => 'string',
     };
@@ -96,7 +95,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v4.0/cells/content/trim/worksheet';
+    my $_resource_path = 'v4.0/cells/content/extract/text';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -110,40 +109,36 @@ sub run_http_request {
     }
     $header_params->{'Content-Type'} = $client->select_header_content_type('multipart/form-data');
  
+    if(defined $self->extract_text_type){
+        $query_params->{'extractTextType'} = $client->to_query_value($self->extract_text_type);      
+    }
+
+    if(defined $self->before_text){
+        $query_params->{'beforeText'} = $client->to_query_value($self->before_text);      
+    }
+
+    if(defined $self->after_text){
+        $query_params->{'afterText'} = $client->to_query_value($self->after_text);      
+    }
+
+    if(defined $self->before_position){
+        $query_params->{'beforePosition'} = $client->to_query_value($self->before_position);      
+    }
+
+    if(defined $self->after_position){
+        $query_params->{'afterPosition'} = $client->to_query_value($self->after_position);      
+    }
+
+    if(defined $self->out_position_range){
+        $query_params->{'outPositionRange'} = $client->to_query_value($self->out_position_range);      
+    }
+
     if(defined $self->worksheet){
         $query_params->{'worksheet'} = $client->to_query_value($self->worksheet);      
     }
 
     if(defined $self->range){
         $query_params->{'range'} = $client->to_query_value($self->range);      
-    }
-
-    if(defined $self->trim_content){
-        $query_params->{'trimContent'} = $client->to_query_value($self->trim_content);      
-    }
-
-    if(defined $self->trim_leading){
-        $query_params->{'trimLeading'} = $client->to_query_value($self->trim_leading);      
-    }
-
-    if(defined $self->trim_trailing){
-        $query_params->{'trimTrailing'} = $client->to_query_value($self->trim_trailing);      
-    }
-
-    if(defined $self->trim_space_between_word_to1){
-        $query_params->{'trimSpaceBetweenWordTo1'} = $client->to_query_value($self->trim_space_between_word_to1);      
-    }
-
-    if(defined $self->trim_non_breaking_spaces){
-        $query_params->{'trimNonBreakingSpaces'} = $client->to_query_value($self->trim_non_breaking_spaces);      
-    }
-
-    if(defined $self->remove_extra_line_breaks){
-        $query_params->{'removeExtraLineBreaks'} = $client->to_query_value($self->remove_extra_line_breaks);      
-    }
-
-    if(defined $self->remove_all_line_breaks){
-        $query_params->{'removeAllLineBreaks'} = $client->to_query_value($self->remove_all_line_breaks);      
     }
 
     if(defined $self->out_path){
@@ -164,7 +159,9 @@ sub run_http_request {
     my $_body_data;
 
 
-    $form_params->{basename($self->spreadsheet)} = [$self->spreadsheet ,basename($self->spreadsheet),'application/octet-stream'];
+    if (defined $self->spreadsheet) {   
+        $form_params->{basename($self->spreadsheet)} = [$self->spreadsheet ,basename($self->spreadsheet),'application/octet-stream'];
+    }
  
 
     # authentication setting, if any
@@ -184,66 +181,59 @@ __PACKAGE__->method_documentation({
      	format => '',
      	read_only => '',
      		},
+     'extract_text_type' => {
+     	datatype => 'string',
+     	base_name => 'extractTextType',
+     	description => 'Indicates extract text type.',
+     	format => '',
+     	read_only => '',
+     		},
+     'before_text' => {
+     	datatype => 'string',
+     	base_name => 'beforeText',
+     	description => 'Indicates extracting the text before the specified characters or substrings.',
+     	format => '',
+     	read_only => '',
+     		},
+     'after_text' => {
+     	datatype => 'string',
+     	base_name => 'afterText',
+     	description => 'Indicates extracting the text after the specified characters or substrings.',
+     	format => '',
+     	read_only => '',
+     		},
+     'before_position' => {
+     	datatype => 'int',
+     	base_name => 'beforePosition',
+     	description => 'Indicates retrieving the first character or a specified number of characters from the left side of the selected cell.',
+     	format => '',
+     	read_only => '',
+     		},
+     'after_position' => {
+     	datatype => 'int',
+     	base_name => 'afterPosition',
+     	description => 'Indicates retrieving the first character or a specified number of characters from the right side of the selected cell.',
+     	format => '',
+     	read_only => '',
+     		},
+     'out_position_range' => {
+     	datatype => 'string',
+     	base_name => 'outPositionRange',
+     	description => 'Indicates the output location for the extracted text.',
+     	format => '',
+     	read_only => '',
+     		},
      'worksheet' => {
      	datatype => 'string',
      	base_name => 'worksheet',
-     	description => '',
+     	description => 'Specify the worksheet of spreadsheet.',
      	format => '',
      	read_only => '',
      		},
      'range' => {
      	datatype => 'string',
      	base_name => 'range',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'trim_content' => {
-     	datatype => 'string',
-     	base_name => 'trimContent',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'trim_leading' => {
-     	datatype => 'string',
-     	base_name => 'trimLeading',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'trim_trailing' => {
-     	datatype => 'string',
-     	base_name => 'trimTrailing',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'trim_space_between_word_to1' => {
-     	datatype => 'string',
-     	base_name => 'trimSpaceBetweenWordTo1',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'trim_non_breaking_spaces' => {
-     	datatype => 'string',
-     	base_name => 'trimNonBreakingSpaces',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'remove_extra_line_breaks' => {
-     	datatype => 'string',
-     	base_name => 'removeExtraLineBreaks',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
-     'remove_all_line_breaks' => {
-     	datatype => 'string',
-     	base_name => 'removeAllLineBreaks',
-     	description => '',
+     	description => 'Specify the worksheet range of spreadsheet.',
      	format => '',
      	read_only => '',
      		},
@@ -280,15 +270,14 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->attribute_map( {
     'spreadsheet' => 'Spreadsheet',
+    'extract_text_type' => 'extractTextType',
+    'before_text' => 'beforeText',
+    'after_text' => 'afterText',
+    'before_position' => 'beforePosition',
+    'after_position' => 'afterPosition',
+    'out_position_range' => 'outPositionRange',
     'worksheet' => 'worksheet',
     'range' => 'range',
-    'trim_content' => 'trimContent',
-    'trim_leading' => 'trimLeading',
-    'trim_trailing' => 'trimTrailing',
-    'trim_space_between_word_to1' => 'trimSpaceBetweenWordTo1',
-    'trim_non_breaking_spaces' => 'trimNonBreakingSpaces',
-    'remove_extra_line_breaks' => 'removeExtraLineBreaks',
-    'remove_all_line_breaks' => 'removeAllLineBreaks',
     'out_path' => 'outPath',
     'out_storage_name' => 'outStorageName',
     'region' => 'region',

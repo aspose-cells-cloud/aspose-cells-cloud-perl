@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::TrimSpreadsheetContentRequest;
+package AsposeCellsCloud::Request::TrimCharacterRequest;
 
 require 5.6.0;
 use strict;
@@ -60,18 +60,20 @@ sub new {
 
 
 # Run Operation Request
-# TrimSpreadsheetContentRequest.Spreadsheet : Upload spreadsheet file.  ,
-# TrimSpreadsheetContentRequest.trimContent :   ,
-# TrimSpreadsheetContentRequest.trimLeading :   ,
-# TrimSpreadsheetContentRequest.trimTrailing :   ,
-# TrimSpreadsheetContentRequest.trimSpaceBetweenWordTo1 :   ,
-# TrimSpreadsheetContentRequest.trimNonBreakingSpaces :   ,
-# TrimSpreadsheetContentRequest.removeExtraLineBreaks :   ,
-# TrimSpreadsheetContentRequest.removeAllLineBreaks :   ,
-# TrimSpreadsheetContentRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
-# TrimSpreadsheetContentRequest.outStorageName : Output file Storage Name.  ,
-# TrimSpreadsheetContentRequest.region : The spreadsheet region setting.  ,
-# TrimSpreadsheetContentRequest.password : The password for opening spreadsheet file.   
+# TrimCharacterRequest.Spreadsheet : Upload spreadsheet file.  ,
+# TrimCharacterRequest.trimContent : Specify the trim content.  ,
+# TrimCharacterRequest.trimLeading : Specify to trim content from the beginning.  ,
+# TrimCharacterRequest.trimTrailing : Specify to trim content from the end.  ,
+# TrimCharacterRequest.trimSpaceBetweenWordTo1 : Remove excess spaces between words within a cell.  ,
+# TrimCharacterRequest.trimNonBreakingSpaces : Remove non-breaking spaces.  ,
+# TrimCharacterRequest.removeExtraLineBreaks : Remove extra line breaks.  ,
+# TrimCharacterRequest.removeAllLineBreaks : Remove all line breaks.  ,
+# TrimCharacterRequest.worksheet : Specify the worksheet of spreadsheet.  ,
+# TrimCharacterRequest.range : Specify the worksheet range of spreadsheet.  ,
+# TrimCharacterRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
+# TrimCharacterRequest.outStorageName : Output file Storage Name.  ,
+# TrimCharacterRequest.region : The spreadsheet region setting.  ,
+# TrimCharacterRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -81,7 +83,7 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'trim_spreadsheet_content' } = { 
+    __PACKAGE__->method_documentation->{ 'trim_character' } = { 
     	summary => 'The TrimSpreadsheetContent API is designed to process and trim content within a spreadsheet. This API allows users to remove extra spaces, line breaks, or other unnecessary characters from the content of selected cells. It is particularly useful for cleaning up data entries and ensuring consistency in spreadsheet formatting',
         params => $params,
         returns => 'string',
@@ -136,6 +138,14 @@ sub run_http_request {
         $query_params->{'removeAllLineBreaks'} = $client->to_query_value($self->remove_all_line_breaks);      
     }
 
+    if(defined $self->worksheet){
+        $query_params->{'worksheet'} = $client->to_query_value($self->worksheet);      
+    }
+
+    if(defined $self->range){
+        $query_params->{'range'} = $client->to_query_value($self->range);      
+    }
+
     if(defined $self->out_path){
         $query_params->{'outPath'} = $client->to_query_value($self->out_path);      
     }
@@ -154,7 +164,9 @@ sub run_http_request {
     my $_body_data;
 
 
-    $form_params->{basename($self->spreadsheet)} = [$self->spreadsheet ,basename($self->spreadsheet),'application/octet-stream'];
+    if (defined $self->spreadsheet) {   
+        $form_params->{basename($self->spreadsheet)} = [$self->spreadsheet ,basename($self->spreadsheet),'application/octet-stream'];
+    }
  
 
     # authentication setting, if any
@@ -177,49 +189,63 @@ __PACKAGE__->method_documentation({
      'trim_content' => {
      	datatype => 'string',
      	base_name => 'trimContent',
-     	description => '',
+     	description => 'Specify the trim content.',
      	format => '',
      	read_only => '',
      		},
      'trim_leading' => {
      	datatype => 'string',
      	base_name => 'trimLeading',
-     	description => '',
+     	description => 'Specify to trim content from the beginning.',
      	format => '',
      	read_only => '',
      		},
      'trim_trailing' => {
      	datatype => 'string',
      	base_name => 'trimTrailing',
-     	description => '',
+     	description => 'Specify to trim content from the end.',
      	format => '',
      	read_only => '',
      		},
      'trim_space_between_word_to1' => {
      	datatype => 'string',
      	base_name => 'trimSpaceBetweenWordTo1',
-     	description => '',
+     	description => 'Remove excess spaces between words within a cell.',
      	format => '',
      	read_only => '',
      		},
      'trim_non_breaking_spaces' => {
      	datatype => 'string',
      	base_name => 'trimNonBreakingSpaces',
-     	description => '',
+     	description => 'Remove non-breaking spaces.',
      	format => '',
      	read_only => '',
      		},
      'remove_extra_line_breaks' => {
      	datatype => 'string',
      	base_name => 'removeExtraLineBreaks',
-     	description => '',
+     	description => 'Remove extra line breaks.',
      	format => '',
      	read_only => '',
      		},
      'remove_all_line_breaks' => {
      	datatype => 'string',
      	base_name => 'removeAllLineBreaks',
-     	description => '',
+     	description => 'Remove all line breaks.',
+     	format => '',
+     	read_only => '',
+     		},
+     'worksheet' => {
+     	datatype => 'string',
+     	base_name => 'worksheet',
+     	description => 'Specify the worksheet of spreadsheet.',
+     	format => '',
+     	read_only => '',
+     		},
+     'range' => {
+     	datatype => 'string',
+     	base_name => 'range',
+     	description => 'Specify the worksheet range of spreadsheet.',
      	format => '',
      	read_only => '',
      		},
@@ -263,6 +289,8 @@ __PACKAGE__->attribute_map( {
     'trim_non_breaking_spaces' => 'trimNonBreakingSpaces',
     'remove_extra_line_breaks' => 'removeExtraLineBreaks',
     'remove_all_line_breaks' => 'removeAllLineBreaks',
+    'worksheet' => 'worksheet',
+    'range' => 'range',
     'out_path' => 'outPath',
     'out_storage_name' => 'outStorageName',
     'region' => 'region',

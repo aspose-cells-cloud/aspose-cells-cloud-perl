@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::DeleteSpreadsheetBlankRowsRequest;
+package AsposeCellsCloud::Request::ConvertTextRequest;
 
 require 5.6.0;
 use strict;
@@ -60,11 +60,16 @@ sub new {
 
 
 # Run Operation Request
-# DeleteSpreadsheetBlankRowsRequest.Spreadsheet : Upload spreadsheet file.  ,
-# DeleteSpreadsheetBlankRowsRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
-# DeleteSpreadsheetBlankRowsRequest.outStorageName : Output file Storage Name.  ,
-# DeleteSpreadsheetBlankRowsRequest.region : The spreadsheet region setting.  ,
-# DeleteSpreadsheetBlankRowsRequest.password : The password for opening spreadsheet file.   
+# ConvertTextRequest.Spreadsheet : Upload spreadsheet file.  ,
+# ConvertTextRequest.convertTextType : Indicates the conversion of text type.  ,
+# ConvertTextRequest.sourceCharacters : Indicates the source characters.  ,
+# ConvertTextRequest.targetCharacters : Indicates the target characters.  ,
+# ConvertTextRequest.worksheet : Specify the worksheet of spreadsheet.  ,
+# ConvertTextRequest.range : Specify the worksheet range of spreadsheet.  ,
+# ConvertTextRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
+# ConvertTextRequest.outStorageName : Output file Storage Name.  ,
+# ConvertTextRequest.region : The spreadsheet region setting.  ,
+# ConvertTextRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -74,8 +79,8 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'delete_spreadsheet_blank_rows' } = { 
-    	summary => 'Delete all blank rows that do not contain any data or other objects.',
+    __PACKAGE__->method_documentation->{ 'convert_text' } = { 
+    	summary => 'Indicates converting the numbers stored as text into the correct number format, replacing unwanted characters and line breaks with the desired characters, and converting accented characters to their equivalent characters without accents.',
         params => $params,
         returns => 'string',
     };
@@ -87,7 +92,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v4.0/cells/delete/blank-rows';
+    my $_resource_path = 'v4.0/cells/content/convert/text';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -101,6 +106,26 @@ sub run_http_request {
     }
     $header_params->{'Content-Type'} = $client->select_header_content_type('multipart/form-data');
  
+    if(defined $self->convert_text_type){
+        $query_params->{'convertTextType'} = $client->to_query_value($self->convert_text_type);      
+    }
+
+    if(defined $self->source_characters){
+        $query_params->{'sourceCharacters'} = $client->to_query_value($self->source_characters);      
+    }
+
+    if(defined $self->target_characters){
+        $query_params->{'targetCharacters'} = $client->to_query_value($self->target_characters);      
+    }
+
+    if(defined $self->worksheet){
+        $query_params->{'worksheet'} = $client->to_query_value($self->worksheet);      
+    }
+
+    if(defined $self->range){
+        $query_params->{'range'} = $client->to_query_value($self->range);      
+    }
+
     if(defined $self->out_path){
         $query_params->{'outPath'} = $client->to_query_value($self->out_path);      
     }
@@ -119,7 +144,9 @@ sub run_http_request {
     my $_body_data;
 
 
-    $form_params->{basename($self->spreadsheet)} = [$self->spreadsheet ,basename($self->spreadsheet),'application/octet-stream'];
+    if (defined $self->spreadsheet) {   
+        $form_params->{basename($self->spreadsheet)} = [$self->spreadsheet ,basename($self->spreadsheet),'application/octet-stream'];
+    }
  
 
     # authentication setting, if any
@@ -136,6 +163,41 @@ __PACKAGE__->method_documentation({
      	datatype => 'string',
      	base_name => 'Spreadsheet',
      	description => 'Upload spreadsheet file.',
+     	format => '',
+     	read_only => '',
+     		},
+     'convert_text_type' => {
+     	datatype => 'string',
+     	base_name => 'convertTextType',
+     	description => 'Indicates the conversion of text type.',
+     	format => '',
+     	read_only => '',
+     		},
+     'source_characters' => {
+     	datatype => 'string',
+     	base_name => 'sourceCharacters',
+     	description => 'Indicates the source characters.',
+     	format => '',
+     	read_only => '',
+     		},
+     'target_characters' => {
+     	datatype => 'string',
+     	base_name => 'targetCharacters',
+     	description => 'Indicates the target characters.',
+     	format => '',
+     	read_only => '',
+     		},
+     'worksheet' => {
+     	datatype => 'string',
+     	base_name => 'worksheet',
+     	description => 'Specify the worksheet of spreadsheet.',
+     	format => '',
+     	read_only => '',
+     		},
+     'range' => {
+     	datatype => 'string',
+     	base_name => 'range',
+     	description => 'Specify the worksheet range of spreadsheet.',
      	format => '',
      	read_only => '',
      		},
@@ -172,6 +234,11 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->attribute_map( {
     'spreadsheet' => 'Spreadsheet',
+    'convert_text_type' => 'convertTextType',
+    'source_characters' => 'sourceCharacters',
+    'target_characters' => 'targetCharacters',
+    'worksheet' => 'worksheet',
+    'range' => 'range',
     'out_path' => 'outPath',
     'out_storage_name' => 'outStorageName',
     'region' => 'region',

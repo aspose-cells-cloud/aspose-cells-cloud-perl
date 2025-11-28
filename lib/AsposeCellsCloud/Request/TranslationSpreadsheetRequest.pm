@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::SearchBrokenLinksInRemoteRangeRequest;
+package AsposeCellsCloud::Request::TranslationSpreadsheetRequest;
 
 require 5.6.0;
 use strict;
@@ -60,13 +60,10 @@ sub new {
 
 
 # Run Operation Request
-# SearchBrokenLinksInRemoteRangeRequest.name : The name of the workbook file to be search.  ,
-# SearchBrokenLinksInRemoteRangeRequest.worksheet : Specify the worksheet for the lookup.  ,
-# SearchBrokenLinksInRemoteRangeRequest.cellArea : Specify the cell area for the lookup  ,
-# SearchBrokenLinksInRemoteRangeRequest.folder : The folder path where the workbook is stored.  ,
-# SearchBrokenLinksInRemoteRangeRequest.storageName : (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  ,
-# SearchBrokenLinksInRemoteRangeRequest.region : The spreadsheet region setting.  ,
-# SearchBrokenLinksInRemoteRangeRequest.password : The password for opening spreadsheet file.   
+# TranslationSpreadsheetRequest.Spreadsheet : Upload spreadsheet file.  ,
+# TranslationSpreadsheetRequest.targetLanguage : The target language code for translation (e.g., "es", "fr", "de").  ,
+# TranslationSpreadsheetRequest.region : The spreadsheet region setting.  ,
+# TranslationSpreadsheetRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -76,10 +73,10 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'search_broken_links_in_remote_range' } = { 
-    	summary => 'Search broken links in the range of remoted spreadsheet.',
+    __PACKAGE__->method_documentation->{ 'translation_spreadsheet' } = { 
+    	summary => 'Translates the entire spreadsheet to the specified target language.',
         params => $params,
-        returns => 'BrokenLinksResponse',
+        returns => 'string',
     };
 }
 
@@ -89,7 +86,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v4.0/cells/{name}/worksheets/{worksheet}/ranges/{cellArea}/search/broken-links';
+    my $_resource_path = 'v4.0/cells/translate/spreadsheet';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -101,30 +98,10 @@ sub run_http_request {
     if ($_header_accept) {
         $header_params->{'Accept'} = $_header_accept;
     }
-    $header_params->{'Content-Type'} = $client->select_header_content_type('application/json');
-    if(defined $self->name){
-        my $_base_variable = "{" . "name" . "}";
-        my $_base_value = $client->to_path_value($self->name);
-        $_resource_path =~ s/$_base_variable/$_base_value/g;        
-    }
-
-    if(defined $self->worksheet){
-        my $_base_variable = "{" . "worksheet" . "}";
-        my $_base_value = $client->to_path_value($self->worksheet);
-        $_resource_path =~ s/$_base_variable/$_base_value/g;        
-    }
-
-    if(defined $self->cell_area){
-        my $_base_variable = "{" . "cellArea" . "}";
-        my $_base_value = $client->to_path_value($self->cell_area);
-        $_resource_path =~ s/$_base_variable/$_base_value/g;        
-    } 
-    if(defined $self->folder){
-        $query_params->{'folder'} = $client->to_query_value($self->folder);      
-    }
-
-    if(defined $self->storage_name){
-        $query_params->{'storageName'} = $client->to_query_value($self->storage_name);      
+    $header_params->{'Content-Type'} = $client->select_header_content_type('multipart/form-data');
+ 
+    if(defined $self->target_language){
+        $query_params->{'targetLanguage'} = $client->to_query_value($self->target_language);      
     }
 
     if(defined $self->region){
@@ -136,6 +113,10 @@ sub run_http_request {
     } 
     my $_body_data;
 
+
+    if (defined $self->spreadsheet) {   
+        $form_params->{basename($self->spreadsheet)} = [$self->spreadsheet ,basename($self->spreadsheet),'application/octet-stream'];
+    }
  
 
     # authentication setting, if any
@@ -148,38 +129,17 @@ sub run_http_request {
 
 
 __PACKAGE__->method_documentation({
-     'name' => {
+     'spreadsheet' => {
      	datatype => 'string',
-     	base_name => 'name',
-     	description => 'The name of the workbook file to be search.',
+     	base_name => 'Spreadsheet',
+     	description => 'Upload spreadsheet file.',
      	format => '',
      	read_only => '',
      		},
-     'worksheet' => {
+     'target_language' => {
      	datatype => 'string',
-     	base_name => 'worksheet',
-     	description => 'Specify the worksheet for the lookup.',
-     	format => '',
-     	read_only => '',
-     		},
-     'cell_area' => {
-     	datatype => 'string',
-     	base_name => 'cellArea',
-     	description => 'Specify the cell area for the lookup',
-     	format => '',
-     	read_only => '',
-     		},
-     'folder' => {
-     	datatype => 'string',
-     	base_name => 'folder',
-     	description => 'The folder path where the workbook is stored.',
-     	format => '',
-     	read_only => '',
-     		},
-     'storage_name' => {
-     	datatype => 'string',
-     	base_name => 'storageName',
-     	description => '(Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.',
+     	base_name => 'targetLanguage',
+     	description => 'The target language code for translation (e.g., "es", "fr", "de").',
      	format => '',
      	read_only => '',
      		},
@@ -201,11 +161,8 @@ __PACKAGE__->method_documentation({
 
 
 __PACKAGE__->attribute_map( {
-    'name' => 'name',
-    'worksheet' => 'worksheet',
-    'cell_area' => 'cellArea',
-    'folder' => 'folder',
-    'storage_name' => 'storageName',
+    'spreadsheet' => 'Spreadsheet',
+    'target_language' => 'targetLanguage',
     'region' => 'region',
     'password' => 'password' 
 } );

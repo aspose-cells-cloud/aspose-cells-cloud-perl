@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::SplitTextRequest;
+package AsposeCellsCloud::Request::ConvertSpreadsheetToJsonRequest;
 
 require 5.6.0;
 use strict;
@@ -60,18 +60,12 @@ sub new {
 
 
 # Run Operation Request
-# SplitTextRequest.Spreadsheet : Upload spreadsheet file.  ,
-# SplitTextRequest.delimiters : Indicates the custom delimiter.  ,
-# SplitTextRequest.keepDelimitersInResultingCells : Indicates keep delimiters in resulting cells.  ,
-# SplitTextRequest.keepDelimitersPosition : Indicates keep delimiters position.  ,
-# SplitTextRequest.HowToSplit : Indicates  ,
-# SplitTextRequest.outPositionRange : Indicates split delimiters type.  ,
-# SplitTextRequest.worksheet : Specify the worksheet of spreadsheet.  ,
-# SplitTextRequest.range : Specify the worksheet range of spreadsheet.  ,
-# SplitTextRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
-# SplitTextRequest.outStorageName : Output file Storage Name.  ,
-# SplitTextRequest.region : The spreadsheet region setting.  ,
-# SplitTextRequest.password : The password for opening spreadsheet file.   
+# ConvertSpreadsheetToJsonRequest.Spreadsheet : Upload spreadsheet file.  ,
+# ConvertSpreadsheetToJsonRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
+# ConvertSpreadsheetToJsonRequest.outStorageName : Output file Storage Name.  ,
+# ConvertSpreadsheetToJsonRequest.fontsLocation : Use Custom fonts.  ,
+# ConvertSpreadsheetToJsonRequest.region : The spreadsheet region setting.  ,
+# ConvertSpreadsheetToJsonRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -81,8 +75,8 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'split_text' } = { 
-    	summary => 'Indicates performing text segmentation on the specified area according to the segmentation method, and outputting to the designated interval.',
+    __PACKAGE__->method_documentation->{ 'convert_spreadsheet_to_json' } = { 
+    	summary => '',
         params => $params,
         returns => 'string',
     };
@@ -94,7 +88,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v4.0/cells/content/split/text';
+    my $_resource_path = 'v4.0/cells/convert/spreadsheet/json';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -108,40 +102,16 @@ sub run_http_request {
     }
     $header_params->{'Content-Type'} = $client->select_header_content_type('multipart/form-data');
  
-    if(defined $self->delimiters){
-        $query_params->{'delimiters'} = $client->to_query_value($self->delimiters);      
-    }
-
-    if(defined $self->keep_delimiters_in_resulting_cells){
-        $query_params->{'keepDelimitersInResultingCells'} = $client->to_query_value($self->keep_delimiters_in_resulting_cells);      
-    }
-
-    if(defined $self->keep_delimiters_position){
-        $query_params->{'keepDelimitersPosition'} = $client->to_query_value($self->keep_delimiters_position);      
-    }
-
-    if(defined $self->how_to_split){
-        $query_params->{'HowToSplit'} = $client->to_query_value($self->how_to_split);      
-    }
-
-    if(defined $self->out_position_range){
-        $query_params->{'outPositionRange'} = $client->to_query_value($self->out_position_range);      
-    }
-
-    if(defined $self->worksheet){
-        $query_params->{'worksheet'} = $client->to_query_value($self->worksheet);      
-    }
-
-    if(defined $self->range){
-        $query_params->{'range'} = $client->to_query_value($self->range);      
-    }
-
     if(defined $self->out_path){
         $query_params->{'outPath'} = $client->to_query_value($self->out_path);      
     }
 
     if(defined $self->out_storage_name){
         $query_params->{'outStorageName'} = $client->to_query_value($self->out_storage_name);      
+    }
+
+    if(defined $self->fonts_location){
+        $query_params->{'fontsLocation'} = $client->to_query_value($self->fonts_location);      
     }
 
     if(defined $self->region){
@@ -176,55 +146,6 @@ __PACKAGE__->method_documentation({
      	format => '',
      	read_only => '',
      		},
-     'delimiters' => {
-     	datatype => 'string',
-     	base_name => 'delimiters',
-     	description => 'Indicates the custom delimiter.',
-     	format => '',
-     	read_only => '',
-     		},
-     'keep_delimiters_in_resulting_cells' => {
-     	datatype => 'string',
-     	base_name => 'keepDelimitersInResultingCells',
-     	description => 'Indicates keep delimiters in resulting cells.',
-     	format => '',
-     	read_only => '',
-     		},
-     'keep_delimiters_position' => {
-     	datatype => 'string',
-     	base_name => 'keepDelimitersPosition',
-     	description => 'Indicates keep delimiters position.',
-     	format => '',
-     	read_only => '',
-     		},
-     'how_to_split' => {
-     	datatype => 'string',
-     	base_name => 'HowToSplit',
-     	description => 'Indicates',
-     	format => '',
-     	read_only => '',
-     		},
-     'out_position_range' => {
-     	datatype => 'string',
-     	base_name => 'outPositionRange',
-     	description => 'Indicates split delimiters type.',
-     	format => '',
-     	read_only => '',
-     		},
-     'worksheet' => {
-     	datatype => 'string',
-     	base_name => 'worksheet',
-     	description => 'Specify the worksheet of spreadsheet.',
-     	format => '',
-     	read_only => '',
-     		},
-     'range' => {
-     	datatype => 'string',
-     	base_name => 'range',
-     	description => 'Specify the worksheet range of spreadsheet.',
-     	format => '',
-     	read_only => '',
-     		},
      'out_path' => {
      	datatype => 'string',
      	base_name => 'outPath',
@@ -236,6 +157,13 @@ __PACKAGE__->method_documentation({
      	datatype => 'string',
      	base_name => 'outStorageName',
      	description => 'Output file Storage Name.',
+     	format => '',
+     	read_only => '',
+     		},
+     'fonts_location' => {
+     	datatype => 'string',
+     	base_name => 'fontsLocation',
+     	description => 'Use Custom fonts.',
      	format => '',
      	read_only => '',
      		},
@@ -258,15 +186,9 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->attribute_map( {
     'spreadsheet' => 'Spreadsheet',
-    'delimiters' => 'delimiters',
-    'keep_delimiters_in_resulting_cells' => 'keepDelimitersInResultingCells',
-    'keep_delimiters_position' => 'keepDelimitersPosition',
-    'how_to_split' => 'HowToSplit',
-    'out_position_range' => 'outPositionRange',
-    'worksheet' => 'worksheet',
-    'range' => 'range',
     'out_path' => 'outPath',
     'out_storage_name' => 'outStorageName',
+    'fonts_location' => 'fontsLocation',
     'region' => 'region',
     'password' => 'password' 
 } );

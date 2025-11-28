@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::SplitTextRequest;
+package AsposeCellsCloud::Request::RemoveDuplicateSubstringsRequest;
 
 require 5.6.0;
 use strict;
@@ -60,18 +60,16 @@ sub new {
 
 
 # Run Operation Request
-# SplitTextRequest.Spreadsheet : Upload spreadsheet file.  ,
-# SplitTextRequest.delimiters : Indicates the custom delimiter.  ,
-# SplitTextRequest.keepDelimitersInResultingCells : Indicates keep delimiters in resulting cells.  ,
-# SplitTextRequest.keepDelimitersPosition : Indicates keep delimiters position.  ,
-# SplitTextRequest.HowToSplit : Indicates  ,
-# SplitTextRequest.outPositionRange : Indicates split delimiters type.  ,
-# SplitTextRequest.worksheet : Specify the worksheet of spreadsheet.  ,
-# SplitTextRequest.range : Specify the worksheet range of spreadsheet.  ,
-# SplitTextRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
-# SplitTextRequest.outStorageName : Output file Storage Name.  ,
-# SplitTextRequest.region : The spreadsheet region setting.  ,
-# SplitTextRequest.password : The password for opening spreadsheet file.   
+# RemoveDuplicateSubstringsRequest.Spreadsheet : Upload spreadsheet file.  ,
+# RemoveDuplicateSubstringsRequest.delimiters :   ,
+# RemoveDuplicateSubstringsRequest.treatConsecutiveDelimitersAsOne :   ,
+# RemoveDuplicateSubstringsRequest.caseSensitive :   ,
+# RemoveDuplicateSubstringsRequest.worksheet :   ,
+# RemoveDuplicateSubstringsRequest.range :   ,
+# RemoveDuplicateSubstringsRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
+# RemoveDuplicateSubstringsRequest.outStorageName : Output file Storage Name.  ,
+# RemoveDuplicateSubstringsRequest.region : The spreadsheet region setting.  ,
+# RemoveDuplicateSubstringsRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -81,8 +79,8 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'split_text' } = { 
-    	summary => 'Indicates performing text segmentation on the specified area according to the segmentation method, and outputting to the designated interval.',
+    __PACKAGE__->method_documentation->{ 'remove_duplicate_substrings' } = { 
+    	summary => 'Finds and removes repeated substrings inside every cell of the chosen range, using user-defined or preset delimiters, while preserving formulas, formatting and data-validation.',
         params => $params,
         returns => 'string',
     };
@@ -94,7 +92,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v4.0/cells/content/split/text';
+    my $_resource_path = 'v4.0/cells/content/remove/duplicate-substrings';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -112,20 +110,12 @@ sub run_http_request {
         $query_params->{'delimiters'} = $client->to_query_value($self->delimiters);      
     }
 
-    if(defined $self->keep_delimiters_in_resulting_cells){
-        $query_params->{'keepDelimitersInResultingCells'} = $client->to_query_value($self->keep_delimiters_in_resulting_cells);      
+    if(defined $self->treat_consecutive_delimiters_as_one){
+        $query_params->{'treatConsecutiveDelimitersAsOne'} = $client->to_query_value($self->treat_consecutive_delimiters_as_one);      
     }
 
-    if(defined $self->keep_delimiters_position){
-        $query_params->{'keepDelimitersPosition'} = $client->to_query_value($self->keep_delimiters_position);      
-    }
-
-    if(defined $self->how_to_split){
-        $query_params->{'HowToSplit'} = $client->to_query_value($self->how_to_split);      
-    }
-
-    if(defined $self->out_position_range){
-        $query_params->{'outPositionRange'} = $client->to_query_value($self->out_position_range);      
+    if(defined $self->case_sensitive){
+        $query_params->{'caseSensitive'} = $client->to_query_value($self->case_sensitive);      
     }
 
     if(defined $self->worksheet){
@@ -179,49 +169,35 @@ __PACKAGE__->method_documentation({
      'delimiters' => {
      	datatype => 'string',
      	base_name => 'delimiters',
-     	description => 'Indicates the custom delimiter.',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'keep_delimiters_in_resulting_cells' => {
+     'treat_consecutive_delimiters_as_one' => {
      	datatype => 'string',
-     	base_name => 'keepDelimitersInResultingCells',
-     	description => 'Indicates keep delimiters in resulting cells.',
+     	base_name => 'treatConsecutiveDelimitersAsOne',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
-     'keep_delimiters_position' => {
+     'case_sensitive' => {
      	datatype => 'string',
-     	base_name => 'keepDelimitersPosition',
-     	description => 'Indicates keep delimiters position.',
-     	format => '',
-     	read_only => '',
-     		},
-     'how_to_split' => {
-     	datatype => 'string',
-     	base_name => 'HowToSplit',
-     	description => 'Indicates',
-     	format => '',
-     	read_only => '',
-     		},
-     'out_position_range' => {
-     	datatype => 'string',
-     	base_name => 'outPositionRange',
-     	description => 'Indicates split delimiters type.',
+     	base_name => 'caseSensitive',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
      'worksheet' => {
      	datatype => 'string',
      	base_name => 'worksheet',
-     	description => 'Specify the worksheet of spreadsheet.',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
      'range' => {
      	datatype => 'string',
      	base_name => 'range',
-     	description => 'Specify the worksheet range of spreadsheet.',
+     	description => '',
      	format => '',
      	read_only => '',
      		},
@@ -259,10 +235,8 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->attribute_map( {
     'spreadsheet' => 'Spreadsheet',
     'delimiters' => 'delimiters',
-    'keep_delimiters_in_resulting_cells' => 'keepDelimitersInResultingCells',
-    'keep_delimiters_position' => 'keepDelimitersPosition',
-    'how_to_split' => 'HowToSplit',
-    'out_position_range' => 'outPositionRange',
+    'treat_consecutive_delimiters_as_one' => 'treatConsecutiveDelimitersAsOne',
+    'case_sensitive' => 'caseSensitive',
     'worksheet' => 'worksheet',
     'range' => 'range',
     'out_path' => 'outPath',

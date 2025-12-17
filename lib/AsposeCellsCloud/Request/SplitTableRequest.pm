@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::RemoveDuplicateSubstringsRequest;
+package AsposeCellsCloud::Request::SplitTableRequest;
 
 require 5.6.0;
 use strict;
@@ -60,16 +60,18 @@ sub new {
 
 
 # Run Operation Request
-# RemoveDuplicateSubstringsRequest.Spreadsheet : Upload spreadsheet file.  ,
-# RemoveDuplicateSubstringsRequest.delimiters : comma, semicolon, space, tab, line-break   ,
-# RemoveDuplicateSubstringsRequest.treatConsecutiveDelimitersAsOne : collapse adjacent delimiters into a single separator.  ,
-# RemoveDuplicateSubstringsRequest.caseSensitive :   ,
-# RemoveDuplicateSubstringsRequest.worksheet :   ,
-# RemoveDuplicateSubstringsRequest.range :   ,
-# RemoveDuplicateSubstringsRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
-# RemoveDuplicateSubstringsRequest.outStorageName : Output file Storage Name.  ,
-# RemoveDuplicateSubstringsRequest.region : The spreadsheet region setting.  ,
-# RemoveDuplicateSubstringsRequest.password : The password for opening spreadsheet file.   
+# SplitTableRequest.Spreadsheet : Upload spreadsheet file.  ,
+# SplitTableRequest.worksheet : Worksheet containing the table.  ,
+# SplitTableRequest.tableName : Data table that needs to be split.  ,
+# SplitTableRequest.splitColumnName : Column name to split by.  ,
+# SplitTableRequest.saveSplitColumn : Whether to keep the data in the split column.  ,
+# SplitTableRequest.toNewWorkbook : Export destination control: true - Creates new workbook files containing the split data; false - Adds a new worksheet to the current workbook.  ,
+# SplitTableRequest.toMultipleFiles : true - Exports table data as **multiple separate files** (returned as ZIP archive);false - Stores all data in a **single file** with multiple sheets. Default: false.  ,
+# SplitTableRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
+# SplitTableRequest.outStorageName : Output file Storage Name.  ,
+# SplitTableRequest.fontsLocation : Use Custom fonts.  ,
+# SplitTableRequest.region : The spreadsheet region setting.  ,
+# SplitTableRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -79,8 +81,8 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'remove_duplicate_substrings' } = { 
-    	summary => 'Finds and removes repeated substrings inside every cell of the chosen range, using user-defined or preset delimiters, while preserving formulas, formatting and data-validation.',
+    __PACKAGE__->method_documentation->{ 'split_table' } = { 
+    	summary => 'Split an Excel worksheet into multiple sheets by column value.',
         params => $params,
         returns => 'string',
     };
@@ -92,7 +94,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v4.0/cells/content/remove/duplicate-substrings';
+    my $_resource_path = 'v4.0/cells/split/table';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -106,24 +108,28 @@ sub run_http_request {
     }
     $header_params->{'Content-Type'} = $client->select_header_content_type('multipart/form-data');
  
-    if(defined $self->delimiters){
-        $query_params->{'delimiters'} = $client->to_query_value($self->delimiters);      
-    }
-
-    if(defined $self->treat_consecutive_delimiters_as_one){
-        $query_params->{'treatConsecutiveDelimitersAsOne'} = $client->to_query_value($self->treat_consecutive_delimiters_as_one);      
-    }
-
-    if(defined $self->case_sensitive){
-        $query_params->{'caseSensitive'} = $client->to_query_value($self->case_sensitive);      
-    }
-
     if(defined $self->worksheet){
         $query_params->{'worksheet'} = $client->to_query_value($self->worksheet);      
     }
 
-    if(defined $self->range){
-        $query_params->{'range'} = $client->to_query_value($self->range);      
+    if(defined $self->table_name){
+        $query_params->{'tableName'} = $client->to_query_value($self->table_name);      
+    }
+
+    if(defined $self->split_column_name){
+        $query_params->{'splitColumnName'} = $client->to_query_value($self->split_column_name);      
+    }
+
+    if(defined $self->save_split_column){
+        $query_params->{'saveSplitColumn'} = $client->to_query_value($self->save_split_column);      
+    }
+
+    if(defined $self->to_new_workbook){
+        $query_params->{'toNewWorkbook'} = $client->to_query_value($self->to_new_workbook);      
+    }
+
+    if(defined $self->to_multiple_files){
+        $query_params->{'toMultipleFiles'} = $client->to_query_value($self->to_multiple_files);      
     }
 
     if(defined $self->out_path){
@@ -132,6 +138,10 @@ sub run_http_request {
 
     if(defined $self->out_storage_name){
         $query_params->{'outStorageName'} = $client->to_query_value($self->out_storage_name);      
+    }
+
+    if(defined $self->fonts_location){
+        $query_params->{'fontsLocation'} = $client->to_query_value($self->fonts_location);      
     }
 
     if(defined $self->region){
@@ -166,38 +176,45 @@ __PACKAGE__->method_documentation({
      	format => '',
      	read_only => '',
      		},
-     'delimiters' => {
-     	datatype => 'string',
-     	base_name => 'delimiters',
-     	description => 'comma, semicolon, space, tab, line-break ',
-     	format => '',
-     	read_only => '',
-     		},
-     'treat_consecutive_delimiters_as_one' => {
-     	datatype => 'string',
-     	base_name => 'treatConsecutiveDelimitersAsOne',
-     	description => 'collapse adjacent delimiters into a single separator.',
-     	format => '',
-     	read_only => '',
-     		},
-     'case_sensitive' => {
-     	datatype => 'string',
-     	base_name => 'caseSensitive',
-     	description => '',
-     	format => '',
-     	read_only => '',
-     		},
      'worksheet' => {
      	datatype => 'string',
      	base_name => 'worksheet',
-     	description => '',
+     	description => 'Worksheet containing the table.',
      	format => '',
      	read_only => '',
      		},
-     'range' => {
+     'table_name' => {
      	datatype => 'string',
-     	base_name => 'range',
-     	description => '',
+     	base_name => 'tableName',
+     	description => 'Data table that needs to be split.',
+     	format => '',
+     	read_only => '',
+     		},
+     'split_column_name' => {
+     	datatype => 'string',
+     	base_name => 'splitColumnName',
+     	description => 'Column name to split by.',
+     	format => '',
+     	read_only => '',
+     		},
+     'save_split_column' => {
+     	datatype => 'string',
+     	base_name => 'saveSplitColumn',
+     	description => 'Whether to keep the data in the split column.',
+     	format => '',
+     	read_only => '',
+     		},
+     'to_new_workbook' => {
+     	datatype => 'string',
+     	base_name => 'toNewWorkbook',
+     	description => 'Export destination control: true - Creates new workbook files containing the split data; false - Adds a new worksheet to the current workbook.',
+     	format => '',
+     	read_only => '',
+     		},
+     'to_multiple_files' => {
+     	datatype => 'string',
+     	base_name => 'toMultipleFiles',
+     	description => 'true - Exports table data as **multiple separate files** (returned as ZIP archive);false - Stores all data in a **single file** with multiple sheets. Default: false.',
      	format => '',
      	read_only => '',
      		},
@@ -212,6 +229,13 @@ __PACKAGE__->method_documentation({
      	datatype => 'string',
      	base_name => 'outStorageName',
      	description => 'Output file Storage Name.',
+     	format => '',
+     	read_only => '',
+     		},
+     'fonts_location' => {
+     	datatype => 'string',
+     	base_name => 'fontsLocation',
+     	description => 'Use Custom fonts.',
      	format => '',
      	read_only => '',
      		},
@@ -234,13 +258,15 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->attribute_map( {
     'spreadsheet' => 'Spreadsheet',
-    'delimiters' => 'delimiters',
-    'treat_consecutive_delimiters_as_one' => 'treatConsecutiveDelimitersAsOne',
-    'case_sensitive' => 'caseSensitive',
     'worksheet' => 'worksheet',
-    'range' => 'range',
+    'table_name' => 'tableName',
+    'split_column_name' => 'splitColumnName',
+    'save_split_column' => 'saveSplitColumn',
+    'to_new_workbook' => 'toNewWorkbook',
+    'to_multiple_files' => 'toMultipleFiles',
     'out_path' => 'outPath',
     'out_storage_name' => 'outStorageName',
+    'fonts_location' => 'fontsLocation',
     'region' => 'region',
     'password' => 'password' 
 } );

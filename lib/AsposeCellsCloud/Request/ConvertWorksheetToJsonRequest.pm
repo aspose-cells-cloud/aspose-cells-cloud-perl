@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::RepairSpreadsheetRequest;
+package AsposeCellsCloud::Request::ConvertWorksheetToJsonRequest;
 
 require 5.6.0;
 use strict;
@@ -60,11 +60,13 @@ sub new {
 
 
 # Run Operation Request
-# RepairSpreadsheetRequest.Spreadsheet : Upload spreadsheet file.  ,
-# RepairSpreadsheetRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
-# RepairSpreadsheetRequest.outStorageName : Output file Storage Name.  ,
-# RepairSpreadsheetRequest.region : The spreadsheet region setting.  ,
-# RepairSpreadsheetRequest.password : The password for opening spreadsheet file.   
+# ConvertWorksheetToJsonRequest.Spreadsheet : Upload spreadsheet file.  ,
+# ConvertWorksheetToJsonRequest.worksheet : worksheet name of spreadsheet.  ,
+# ConvertWorksheetToJsonRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
+# ConvertWorksheetToJsonRequest.outStorageName : Output file Storage Name.  ,
+# ConvertWorksheetToJsonRequest.fontsLocation : Use Custom fonts.  ,
+# ConvertWorksheetToJsonRequest.region : The spreadsheet region setting.  ,
+# ConvertWorksheetToJsonRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -74,8 +76,8 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'repair_spreadsheet' } = { 
-    	summary => 'The Web API endpoint allows users to repair a spreadsheet.',
+    __PACKAGE__->method_documentation->{ 'convert_worksheet_to_json' } = { 
+    	summary => 'Converts a worksheet of spreadsheet on a local drive to the JSON file.',
         params => $params,
         returns => 'string',
     };
@@ -87,7 +89,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v4.0/cells/spreadsheet/repair';
+    my $_resource_path = 'v4.0/cells/convert/worksheet/json';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -101,12 +103,20 @@ sub run_http_request {
     }
     $header_params->{'Content-Type'} = $client->select_header_content_type('multipart/form-data');
  
+    if(defined $self->worksheet){
+        $query_params->{'worksheet'} = $client->to_query_value($self->worksheet);      
+    }
+
     if(defined $self->out_path){
         $query_params->{'outPath'} = $client->to_query_value($self->out_path);      
     }
 
     if(defined $self->out_storage_name){
         $query_params->{'outStorageName'} = $client->to_query_value($self->out_storage_name);      
+    }
+
+    if(defined $self->fonts_location){
+        $query_params->{'fontsLocation'} = $client->to_query_value($self->fonts_location);      
     }
 
     if(defined $self->region){
@@ -141,6 +151,13 @@ __PACKAGE__->method_documentation({
      	format => '',
      	read_only => '',
      		},
+     'worksheet' => {
+     	datatype => 'string',
+     	base_name => 'worksheet',
+     	description => 'worksheet name of spreadsheet.',
+     	format => '',
+     	read_only => '',
+     		},
      'out_path' => {
      	datatype => 'string',
      	base_name => 'outPath',
@@ -152,6 +169,13 @@ __PACKAGE__->method_documentation({
      	datatype => 'string',
      	base_name => 'outStorageName',
      	description => 'Output file Storage Name.',
+     	format => '',
+     	read_only => '',
+     		},
+     'fonts_location' => {
+     	datatype => 'string',
+     	base_name => 'fontsLocation',
+     	description => 'Use Custom fonts.',
      	format => '',
      	read_only => '',
      		},
@@ -174,8 +198,10 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->attribute_map( {
     'spreadsheet' => 'Spreadsheet',
+    'worksheet' => 'worksheet',
     'out_path' => 'outPath',
     'out_storage_name' => 'outStorageName',
+    'fonts_location' => 'fontsLocation',
     'region' => 'region',
     'password' => 'password' 
 } );

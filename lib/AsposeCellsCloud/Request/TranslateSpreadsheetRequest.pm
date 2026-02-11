@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::TranslationSpreadsheetRequest;
+package AsposeCellsCloud::Request::TranslateSpreadsheetRequest;
 
 require 5.6.0;
 use strict;
@@ -60,10 +60,10 @@ sub new {
 
 
 # Run Operation Request
-# TranslationSpreadsheetRequest.Spreadsheet : Upload spreadsheet file.  ,
-# TranslationSpreadsheetRequest.targetLanguage : The target language code for translation (e.g., "es", "fr", "de").  ,
-# TranslationSpreadsheetRequest.region : The spreadsheet region setting.  ,
-# TranslationSpreadsheetRequest.password : The password for opening spreadsheet file.   
+# TranslateSpreadsheetRequest.Spreadsheet : Upload spreadsheet file.  ,
+# TranslateSpreadsheetRequest.targetLanguage : The target language code for translation (e.g., "es", "fr", "de").  ,
+# TranslateSpreadsheetRequest.region : The spreadsheet region setting.  ,
+# TranslateSpreadsheetRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -73,7 +73,7 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'translation_spreadsheet' } = { 
+    __PACKAGE__->method_documentation->{ 'translate_spreadsheet' } = { 
     	summary => 'Translates the entire spreadsheet to the specified target language.',
         params => $params,
         returns => 'string',

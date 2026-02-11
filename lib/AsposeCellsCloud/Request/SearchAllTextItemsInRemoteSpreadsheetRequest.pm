@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::RepairSpreadsheetRequest;
+package AsposeCellsCloud::Request::SearchAllTextItemsInRemoteSpreadsheetRequest;
 
 require 5.6.0;
 use strict;
@@ -60,11 +60,11 @@ sub new {
 
 
 # Run Operation Request
-# RepairSpreadsheetRequest.Spreadsheet : Upload spreadsheet file.  ,
-# RepairSpreadsheetRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
-# RepairSpreadsheetRequest.outStorageName : Output file Storage Name.  ,
-# RepairSpreadsheetRequest.region : The spreadsheet region setting.  ,
-# RepairSpreadsheetRequest.password : The password for opening spreadsheet file.   
+# SearchAllTextItemsInRemoteSpreadsheetRequest.name : The name of the workbook file.  ,
+# SearchAllTextItemsInRemoteSpreadsheetRequest.folder : The folder path where the workbook is stored.  ,
+# SearchAllTextItemsInRemoteSpreadsheetRequest.storageName : (Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.  ,
+# SearchAllTextItemsInRemoteSpreadsheetRequest.region : The spreadsheet region setting.  ,
+# SearchAllTextItemsInRemoteSpreadsheetRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -74,10 +74,10 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'repair_spreadsheet' } = { 
-    	summary => 'The Web API endpoint allows users to repair a spreadsheet.',
+    __PACKAGE__->method_documentation->{ 'search_all_text_items_in_remote_spreadsheet' } = { 
+    	summary => 'Get all text items in the remote spreadsheet.',
         params => $params,
-        returns => 'string',
+        returns => 'SearchResponse',
     };
 }
 
@@ -87,7 +87,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v4.0/cells/spreadsheet/repair';
+    my $_resource_path = 'v4.0/cells/{name}/search/content/all-textitems';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -99,14 +99,18 @@ sub run_http_request {
     if ($_header_accept) {
         $header_params->{'Accept'} = $_header_accept;
     }
-    $header_params->{'Content-Type'} = $client->select_header_content_type('multipart/form-data');
- 
-    if(defined $self->out_path){
-        $query_params->{'outPath'} = $client->to_query_value($self->out_path);      
+    $header_params->{'Content-Type'} = $client->select_header_content_type('application/json');
+    if(defined $self->name){
+        my $_base_variable = "{" . "name" . "}";
+        my $_base_value = $client->to_path_value($self->name);
+        $_resource_path =~ s/$_base_variable/$_base_value/g;        
+    } 
+    if(defined $self->folder){
+        $query_params->{'folder'} = $client->to_query_value($self->folder);      
     }
 
-    if(defined $self->out_storage_name){
-        $query_params->{'outStorageName'} = $client->to_query_value($self->out_storage_name);      
+    if(defined $self->storage_name){
+        $query_params->{'storageName'} = $client->to_query_value($self->storage_name);      
     }
 
     if(defined $self->region){
@@ -118,10 +122,6 @@ sub run_http_request {
     } 
     my $_body_data;
 
-
-    if (defined $self->spreadsheet) {   
-        $form_params->{basename($self->spreadsheet)} = [$self->spreadsheet ,basename($self->spreadsheet),'application/octet-stream'];
-    }
  
 
     # authentication setting, if any
@@ -134,24 +134,24 @@ sub run_http_request {
 
 
 __PACKAGE__->method_documentation({
-     'spreadsheet' => {
+     'name' => {
      	datatype => 'string',
-     	base_name => 'Spreadsheet',
-     	description => 'Upload spreadsheet file.',
+     	base_name => 'name',
+     	description => 'The name of the workbook file.',
      	format => '',
      	read_only => '',
      		},
-     'out_path' => {
+     'folder' => {
      	datatype => 'string',
-     	base_name => 'outPath',
-     	description => '(Optional) The folder path where the workbook is stored. The default is null.',
+     	base_name => 'folder',
+     	description => 'The folder path where the workbook is stored.',
      	format => '',
      	read_only => '',
      		},
-     'out_storage_name' => {
+     'storage_name' => {
      	datatype => 'string',
-     	base_name => 'outStorageName',
-     	description => 'Output file Storage Name.',
+     	base_name => 'storageName',
+     	description => '(Optional) The name of the storage if using custom cloud storage. Use default storage if omitted.',
      	format => '',
      	read_only => '',
      		},
@@ -173,9 +173,9 @@ __PACKAGE__->method_documentation({
 
 
 __PACKAGE__->attribute_map( {
-    'spreadsheet' => 'Spreadsheet',
-    'out_path' => 'outPath',
-    'out_storage_name' => 'outStorageName',
+    'name' => 'name',
+    'folder' => 'folder',
+    'storage_name' => 'storageName',
     'region' => 'region',
     'password' => 'password' 
 } );

@@ -23,7 +23,7 @@ SOFTWARE.
 
 =cut
 
-package AsposeCellsCloud::Request::RepairSpreadsheetRequest;
+package AsposeCellsCloud::Request::GetWorksheetsWithLocalSpreadsheetRequest;
 
 require 5.6.0;
 use strict;
@@ -60,11 +60,9 @@ sub new {
 
 
 # Run Operation Request
-# RepairSpreadsheetRequest.Spreadsheet : Upload spreadsheet file.  ,
-# RepairSpreadsheetRequest.outPath : (Optional) The folder path where the workbook is stored. The default is null.  ,
-# RepairSpreadsheetRequest.outStorageName : Output file Storage Name.  ,
-# RepairSpreadsheetRequest.region : The spreadsheet region setting.  ,
-# RepairSpreadsheetRequest.password : The password for opening spreadsheet file.   
+# GetWorksheetsWithLocalSpreadsheetRequest.Spreadsheet : Upload spreadsheet file.  ,
+# GetWorksheetsWithLocalSpreadsheetRequest.region : The spreadsheet region setting.  ,
+# GetWorksheetsWithLocalSpreadsheetRequest.password : The password for opening spreadsheet file.   
 
 {
     my $params = {
@@ -74,8 +72,8 @@ sub new {
             required => '0',
        }
     };
-    __PACKAGE__->method_documentation->{ 'repair_spreadsheet' } = { 
-    	summary => 'The Web API endpoint allows users to repair a spreadsheet.',
+    __PACKAGE__->method_documentation->{ 'get_worksheets_with_local_spreadsheet' } = { 
+    	summary => 'Fetches a complete list of worksheets from the currently active local spreadsheet.',
         params => $params,
         returns => 'string',
     };
@@ -87,7 +85,7 @@ sub run_http_request {
     my $client = $args{'client'};
 
     # parse inputs
-    my $_resource_path = 'v4.0/cells/spreadsheet/repair';
+    my $_resource_path = 'v4.0/cells/spreadsheet/worksheets';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -101,14 +99,6 @@ sub run_http_request {
     }
     $header_params->{'Content-Type'} = $client->select_header_content_type('multipart/form-data');
  
-    if(defined $self->out_path){
-        $query_params->{'outPath'} = $client->to_query_value($self->out_path);      
-    }
-
-    if(defined $self->out_storage_name){
-        $query_params->{'outStorageName'} = $client->to_query_value($self->out_storage_name);      
-    }
-
     if(defined $self->region){
         $query_params->{'region'} = $client->to_query_value($self->region);      
     }
@@ -141,20 +131,6 @@ __PACKAGE__->method_documentation({
      	format => '',
      	read_only => '',
      		},
-     'out_path' => {
-     	datatype => 'string',
-     	base_name => 'outPath',
-     	description => '(Optional) The folder path where the workbook is stored. The default is null.',
-     	format => '',
-     	read_only => '',
-     		},
-     'out_storage_name' => {
-     	datatype => 'string',
-     	base_name => 'outStorageName',
-     	description => 'Output file Storage Name.',
-     	format => '',
-     	read_only => '',
-     		},
      'region' => {
      	datatype => 'string',
      	base_name => 'region',
@@ -174,8 +150,6 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->attribute_map( {
     'spreadsheet' => 'Spreadsheet',
-    'out_path' => 'outPath',
-    'out_storage_name' => 'outStorageName',
     'region' => 'region',
     'password' => 'password' 
 } );
